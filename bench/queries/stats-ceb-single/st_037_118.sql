@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM comments as c WHERE c.Score=0 AND c.CreationDate>=CAST('2010-09-05 16:04:35' AS TIMESTAMP) AND c.CreationDate<=CAST('2014-09-11 04:35:36' AS TIMESTAMP)

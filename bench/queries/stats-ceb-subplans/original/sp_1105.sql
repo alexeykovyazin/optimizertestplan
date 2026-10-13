@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p WHERE p.Id = v.PostId AND p.Score<=67;

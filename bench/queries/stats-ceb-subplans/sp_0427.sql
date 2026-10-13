@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, posts as p WHERE u.Id = c.UserId AND u.Id = p.OwnerUserId AND u.Views>=0 AND u.Views<=75 AND c.CreationDate>=CAST('2010-07-31 05:18:59' AS TIMESTAMP) AND c.CreationDate<=CAST('2014-09-12 07:59:13' AS TIMESTAMP) AND p.Score>=-2 AND p.ViewCount>=0 AND p.ViewCount<=18281

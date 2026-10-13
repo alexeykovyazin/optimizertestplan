@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl WHERE pl.CreationDate<='2014-06-25 13:05:06'::timestamp;

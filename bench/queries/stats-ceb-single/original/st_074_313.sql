@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.Score>=-4 AND p.ViewCount>=0 AND p.ViewCount<=5977 AND p.AnswerCount<=4 AND p.CommentCount>=0 AND p.CommentCount<=11 AND p.CreationDate>='2011-01-25 08:31:41'::timestamp;

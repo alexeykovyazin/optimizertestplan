@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postLinks as pl, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = b.UserId AND p.AnswerCount>=0 AND p.AnswerCount<=4 AND p.CreationDate<='2014-09-12 15:56:19'::timestamp AND pl.LinkTypeId=1 AND pl.CreationDate>='2011-03-07 16:05:24'::timestamp;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Views>=0 AND u.CreationDate<=CAST('2014-08-19 21:33:14' AS TIMESTAMP)

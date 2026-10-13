@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c WHERE p.Id = c.PostId AND p.PostTypeId=1 AND p.Score=2 AND p.FavoriteCount<=12 AND c.CreationDate<='2014-09-11 13:24:22'::timestamp;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.RelatedPostId AND pl.LinkTypeId=1 AND p.AnswerCount<=4 AND p.FavoriteCount>=0;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postHistory as ph WHERE u.Id = p.OwnerUserId AND u.Id = ph.UserId AND u.Views>=0 AND u.Views<=75 AND p.Score>=-2 AND p.ViewCount>=0 AND p.ViewCount<=18281 AND ph.PostHistoryTypeId=2;

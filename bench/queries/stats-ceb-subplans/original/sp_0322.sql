@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, posts as p, users as u WHERE p.OwnerUserId = u.Id AND c.UserId = u.Id AND v.UserId = u.Id AND v.BountyAmount<=50 AND p.Score<=13 AND p.AnswerCount>=0 AND p.AnswerCount<=4 AND p.CommentCount>=0 AND p.FavoriteCount<=2;

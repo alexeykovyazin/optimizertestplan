@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.RelatedPostId AND pl.CreationDate>=CAST('2010-10-27 10:02:57' AS TIMESTAMP) AND pl.CreationDate<=CAST('2014-09-04 17:23:50' AS TIMESTAMP) AND p.PostTypeId=1 AND p.AnswerCount>=0 AND p.CommentCount>=0 AND p.CommentCount<=14

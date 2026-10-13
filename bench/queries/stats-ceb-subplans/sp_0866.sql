@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, votes as v WHERE u.Id = v.UserId AND u.Views>=0 AND u.CreationDate<=CAST('2014-08-19 21:33:14' AS TIMESTAMP) AND v.BountyAmount<=50 AND v.CreationDate>=CAST('2010-07-21 00:00:00' AS TIMESTAMP) AND v.CreationDate<=CAST('2014-09-14 00:00:00' AS TIMESTAMP)

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE p.OwnerUserId = u.Id AND u.Reputation>=1 AND u.UpVotes>=0 AND u.UpVotes<=117 AND p.Score>=-7

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.ViewCount<=7710 AND p.CommentCount<=12 AND p.FavoriteCount>=0 AND p.FavoriteCount<=4 AND p.CreationDate>=CAST('2010-07-27 03:58:22' AS TIMESTAMP)

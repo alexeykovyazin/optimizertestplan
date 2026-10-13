@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, comments as c, users as u WHERE u.Id = c.UserId AND u.Id = ph.UserId

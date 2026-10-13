@@ -1,0 +1,40 @@
+# Измерения конфигурации оптимизатора (раздел 7 плана).
+# Хеш этого файла входит в ключ эталона (4.2).
+#
+# ВАЖНО (ограничение текущей среды): базовый инстанс на порту 3055 —
+# Firebird 5.0.5 HQbird, общий для других задач. Его firebird.conf НЕ меняется.
+# Поэтому измерения, требующие изменения конфигурации сервера
+# (SubQueryConversion), выполняются в выделенном инстансе; сессионные
+# измерения (SET OPTIMIZE) доступны сразу.
+
+base_instance:
+  dsn: "inet://localhost:3055/{dbfile}"
+  user: SYSDBA
+  note: "Firebird 5.0.5.1879 HQbird. RDB$SQL.EXPLAIN (CARDINALITY) недоступен — это FB 6."
+
+measurements:
+  - id: main
+    description: "Основная конфигурация (значения по умолчанию)"
+    contours: [fast, nightly]
+    settings: {}
+
+  - id: first_rows
+    description: "OPTIMIZE FOR FIRST ROWS (сессия), запросы с тегом top_n; метрика — время до первой строки"
+    contours: [nightly]
+    settings:
+      session: "SET OPTIMIZE FOR FIRST ROWS"
+    note: "Параметр OptimizeForFirstRows в FB5 по умолчанию ALL ROWS."
+
+  - id: subquery_conversion
+    description: "SubQueryConversion = true (только через firebird.conf выделенного инстанса), запросы с тегами subquery, exists_in"
+    contours: [nightly]
+    settings:
+      config:
+        SubQueryConversion: true
+    note: "FB 5.0.1+; по умолчанию выключено. Требует отдельного инстанса."
+
+  - id: index_pk
+    description: "Конфигурация индексов pk (без вторичных индексов)"
+    contours: [nightly]
+    settings:
+      index_config: pk

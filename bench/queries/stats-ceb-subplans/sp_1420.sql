@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, votes as v WHERE u.Id = v.UserId AND u.CreationDate>=CAST('2010-07-19 20:11:48' AS TIMESTAMP) AND u.CreationDate<=CAST('2014-07-09 20:37:10' AS TIMESTAMP) AND v.CreationDate<=CAST('2014-09-11 00:00:00' AS TIMESTAMP)

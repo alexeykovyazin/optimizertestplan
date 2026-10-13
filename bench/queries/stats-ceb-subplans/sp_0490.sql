@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c, postLinks as pl WHERE p.Id = pl.RelatedPostId AND p.Id = c.PostId AND p.Score=1 AND p.ViewCount>=0 AND p.FavoriteCount>=0 AND pl.LinkTypeId=1 AND pl.CreationDate>=CAST('2011-04-12 15:23:59' AS TIMESTAMP)

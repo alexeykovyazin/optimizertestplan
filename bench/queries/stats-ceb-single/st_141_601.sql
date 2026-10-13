@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.PostTypeId=1 AND p.AnswerCount>=0 AND p.CommentCount>=0 AND p.CommentCount<=14

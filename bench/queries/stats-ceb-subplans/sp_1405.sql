@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, posts as p WHERE c.UserId = u.Id AND u.Id = p.OwnerUserId AND u.Reputation>=1 AND c.Score=0 AND p.AnswerCount<=5 AND p.CommentCount>=0 AND p.CommentCount<=11 AND p.FavoriteCount<=27

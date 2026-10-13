@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.PostTypeId=1 AND p.Score>=-1 AND p.FavoriteCount>=0 AND p.FavoriteCount<=20;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p WHERE p.Id = v.PostId AND p.Score>=0 AND p.Score<=16 AND p.ViewCount>=0 AND p.CreationDate<=CAST('2014-09-09 12:00:50' AS TIMESTAMP)

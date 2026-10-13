@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.CommentCount<=18 AND p.CreationDate>=CAST('2010-07-23 07:27:31' AS TIMESTAMP) AND p.CreationDate<=CAST('2014-09-09 01:43:00' AS TIMESTAMP)

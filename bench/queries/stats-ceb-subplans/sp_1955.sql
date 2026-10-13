@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c, users as u WHERE p.OwnerUserId = u.Id AND c.UserId = u.Id AND p.AnswerCount>=0 AND p.AnswerCount<=9 AND p.CreationDate>=CAST('2010-07-20 18:17:25' AS TIMESTAMP) AND p.CreationDate<=CAST('2014-08-26 12:57:22' AS TIMESTAMP) AND c.Score=2

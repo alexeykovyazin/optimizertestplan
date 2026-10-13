@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, posts as p, users as u WHERE c.UserId = u.Id AND v.UserId = u.Id AND p.OwnerUserId = u.Id AND v.BountyAmount>=0 AND v.CreationDate>='2010-05-19 00:00:00'::timestamp AND c.Score=2 AND p.AnswerCount>=0 AND p.AnswerCount<=9 AND p.CreationDate>='2010-07-20 18:17:25'::timestamp AND p.CreationDate<='2014-08-26 12:57:22'::timestamp;

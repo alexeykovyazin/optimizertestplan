@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, postHistory as ph WHERE u.Id = c.UserId AND u.Id = ph.UserId AND c.Score=0;

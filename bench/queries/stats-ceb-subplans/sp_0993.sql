@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, posts as p, postLinks as pl WHERE p.Id = pl.RelatedPostId AND p.Id = ph.PostId AND p.Score<=32 AND p.ViewCount<=4146 AND pl.LinkTypeId=1

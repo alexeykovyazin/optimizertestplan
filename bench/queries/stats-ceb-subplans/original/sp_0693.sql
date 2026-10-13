@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postLinks as pl, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = b.UserId AND p.Score>=0 AND p.Score<=13 AND p.FavoriteCount>=0 AND pl.LinkTypeId=1 AND pl.CreationDate>='2011-03-11 18:50:29'::timestamp;

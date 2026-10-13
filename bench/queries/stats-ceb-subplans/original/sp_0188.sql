@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, votes as v WHERE u.Id = v.UserId AND u.UpVotes>=0 AND u.UpVotes<=18 AND v.BountyAmount>=0 AND v.BountyAmount<=300 AND v.CreationDate>='2010-07-29 00:00:00'::timestamp;

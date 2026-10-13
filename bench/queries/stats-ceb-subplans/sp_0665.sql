@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, comments as c, posts as p, votes as v, users as u WHERE p.Id = v.PostId AND u.Id = b.UserId AND p.Id = c.PostId AND u.Id = p.OwnerUserId

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v WHERE v.CreationDate>=CAST('2010-07-20 00:00:00' AS TIMESTAMP)

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postHistory as ph WHERE u.Id = p.OwnerUserId AND p.Id = ph.PostId AND u.Reputation>=1 AND u.Reputation<=642 AND u.DownVotes>=0 AND p.AnswerCount>=0 AND p.CommentCount>=0;

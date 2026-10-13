@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph WHERE ph.CreationDate<='2014-06-18 17:14:07'::timestamp;

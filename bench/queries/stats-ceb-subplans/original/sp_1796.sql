@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, users as u WHERE p.OwnerUserId = u.Id AND b.UserId = u.Id AND b.Date>='2010-07-20 20:47:27'::timestamp AND b.Date<='2014-09-09 13:24:28'::timestamp AND p.AnswerCount<=4 AND p.CommentCount>=0 AND p.CommentCount<=12 AND p.FavoriteCount>=0 AND p.FavoriteCount<=89 AND p.CreationDate<='2014-09-02 10:21:04'::timestamp;

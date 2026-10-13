@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM comments as c WHERE c.CreationDate>='2010-07-27 15:46:34'::timestamp AND c.CreationDate<='2014-09-12 08:15:14'::timestamp;

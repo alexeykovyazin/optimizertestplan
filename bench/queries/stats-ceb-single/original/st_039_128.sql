@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Views<=40 AND u.CreationDate>='2010-07-26 19:11:25'::timestamp AND u.CreationDate<='2014-09-11 22:26:42'::timestamp;

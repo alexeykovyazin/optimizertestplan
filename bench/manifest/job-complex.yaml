@@ -1,0 +1,902 @@
+- id: job_complex_01
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 080ebe6b
+  tables: 9
+  table_list:
+  - company_name
+  - company_type
+  - keyword
+  - link_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - movie_link
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_02
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 2f6b6550
+  tables: 8
+  table_list:
+  - company_name
+  - company_type
+  - keyword
+  - link_type
+  - movie_companies
+  - movie_keyword
+  - movie_link
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_03
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: a35b2096
+  tables: 9
+  table_list:
+  - company_name
+  - company_type
+  - keyword
+  - link_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - movie_link
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_04
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 98b0d0f9
+  tables: 9
+  table_list:
+  - company_name
+  - company_type
+  - keyword
+  - link_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - movie_link
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_05
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 9a2b1264
+  tables: 16
+  table_list:
+  - aka_title
+  - cast_info
+  - comp_cast_type
+  - company_name
+  - company_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: at -> "at" (AT reserved word in Firebird); MIN(1x blob.info) -> MIN(SUBSTRING(...
+    FROM 1 FOR 8000)) (movie_info/person_info are BLOB TEXT)
+- id: job_complex_06
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 445b5eb2
+  tables: 9
+  table_list:
+  - company_name
+  - company_type
+  - keyword
+  - link_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - movie_link
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_07
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 290ffccb
+  tables: 9
+  table_list:
+  - company_name
+  - company_type
+  - keyword
+  - link_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - movie_link
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_08
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 689bd93c
+  tables: 13
+  table_list:
+  - cast_info
+  - char_name
+  - comp_cast_type
+  - complete_cast
+  - info_type
+  - keyword
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(2x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_09
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: be2d1fd5
+  tables: 14
+  table_list:
+  - comp_cast_type
+  - company_name
+  - company_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_10
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 95a33d8f
+  tables: 8
+  table_list:
+  - cast_info
+  - company_name
+  - info_type
+  - movie_info
+  - movie_info_idx
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(2x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_11
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 96faaf78
+  tables: 14
+  table_list:
+  - aka_name
+  - aka_title
+  - cast_info
+  - char_name
+  - comp_cast_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_12
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 02235de7
+  tables: 14
+  table_list:
+  - aka_name
+  - cast_info
+  - char_name
+  - comp_cast_type
+  - company_name
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_13
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: e864acaf
+  tables: 13
+  table_list:
+  - aka_name
+  - aka_title
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: at -> "at" (AT reserved word in Firebird); MIN(1x blob.info) -> MIN(SUBSTRING(...
+    FROM 1 FOR 8000)) (movie_info/person_info are BLOB TEXT)
+- id: job_complex_14
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 3dbda7ee
+  tables: 7
+  table_list:
+  - aka_name
+  - cast_info
+  - company_name
+  - keyword
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_15
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: df0dd9a5
+  tables: 9
+  table_list:
+  - aka_title
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: at -> "at" (AT reserved word in Firebird)
+- id: job_complex_16
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 1d38aefb
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - movie_info
+  - movie_info_idx
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(2x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_17
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 5e915b80
+  tables: 14
+  table_list:
+  - aka_name
+  - char_name
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - string_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_18
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 449d0b88
+  tables: 9
+  table_list:
+  - aka_title
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: at -> "at" (AT reserved word in Firebird); MIN(1x blob.info) -> MIN(SUBSTRING(...
+    FROM 1 FOR 8000)) (movie_info/person_info are BLOB TEXT)
+- id: job_complex_19
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 738b061c
+  tables: 13
+  table_list:
+  - aka_name
+  - cast_info
+  - char_name
+  - company_name
+  - info_type
+  - keyword
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(2x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_20
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 01bcc585
+  tables: 15
+  table_list:
+  - cast_info
+  - comp_cast_type
+  - company_name
+  - company_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_21
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 9aa76b64
+  tables: 12
+  table_list:
+  - cast_info
+  - char_name
+  - company_name
+  - info_type
+  - keyword
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(2x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_22
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 88a5667a
+  tables: 6
+  table_list:
+  - cast_info
+  - char_name
+  - keyword
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_23
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: d57f4cad
+  tables: 13
+  table_list:
+  - aka_name
+  - cast_info
+  - char_name
+  - comp_cast_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_24
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 23c1dc31
+  tables: 9
+  table_list:
+  - aka_name
+  - cast_info
+  - char_name
+  - company_name
+  - keyword
+  - movie_companies
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_25
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: cbc88a67
+  tables: 14
+  table_list:
+  - aka_name
+  - cast_info
+  - char_name
+  - comp_cast_type
+  - company_name
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_26
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 1ec6121e
+  tables: 9
+  table_list:
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - many_tables
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(2x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_27
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: ab6b82ca
+  tables: 7
+  table_list:
+  - cast_info
+  - company_name
+  - keyword
+  - movie_companies
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_28
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 21b2f1a4
+  tables: 11
+  table_list:
+  - comp_cast_type
+  - company_name
+  - company_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: job_complex_29
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: 33178e1e
+  tables: 13
+  table_list:
+  - aka_name
+  - cast_info
+  - char_name
+  - comp_cast_type
+  - complete_cast
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  - many_tables
+  - or_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: MIN(1x blob.info) -> MIN(SUBSTRING(... FROM 1 FOR 8000)) (movie_info/person_info
+    are BLOB TEXT)
+- id: job_complex_30
+  suite: job-complex
+  db: imdb
+  index_config:
+  - pk
+  template: c8255921
+  tables: 7
+  table_list:
+  - cast_info
+  - company_name
+  - keyword
+  - movie_companies
+  - movie_keyword
+  - name
+  - title
+  tags:
+  - aggregate
+  - cyclic_join
+  - fk_fk_join
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null

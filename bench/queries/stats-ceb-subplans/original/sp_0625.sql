@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p, postLinks as pl, postHistory as ph, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = v.UserId AND u.Id = ph.UserId AND v.CreationDate>='2010-07-20 00:00:00'::timestamp AND p.AnswerCount>=0 AND p.FavoriteCount>=0 AND pl.LinkTypeId=1 AND ph.PostHistoryTypeId=2;

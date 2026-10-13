@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, votes as v WHERE p.Id = v.PostId AND p.Score<=22

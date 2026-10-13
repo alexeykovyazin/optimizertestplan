@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, users as u WHERE p.OwnerUserId = u.Id AND b.UserId = u.Id AND b.Date>='2010-07-20 10:34:10'::timestamp AND p.ViewCount>=0 AND p.ViewCount<=2024 AND u.Reputation>=1 AND u.Reputation<=750;

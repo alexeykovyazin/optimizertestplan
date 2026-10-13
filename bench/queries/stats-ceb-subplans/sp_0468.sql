@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c WHERE p.Id = c.PostId AND p.ViewCount>=0 AND c.CreationDate<=CAST('2014-09-08 15:58:08' AS TIMESTAMP)

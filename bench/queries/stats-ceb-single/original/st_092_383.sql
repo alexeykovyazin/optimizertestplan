@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.PostTypeId=2 AND p.CreationDate<='2014-08-26 22:40:26'::timestamp;

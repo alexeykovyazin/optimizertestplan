@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postHistory as ph, users as u WHERE u.Id = p.OwnerUserId AND u.Id = b.UserId AND u.Id = ph.UserId AND p.Score>=-2 AND p.CommentCount>=0 AND p.CommentCount<=12 AND p.FavoriteCount>=0 AND p.FavoriteCount<=6 AND ph.CreationDate<=CAST('2014-08-18 08:54:12' AS TIMESTAMP)

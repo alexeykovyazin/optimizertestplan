@@ -1,0 +1,10 @@
+db/
+results/
+third_party/
+.tmp/
+__pycache__/
+*.pyc
+*.fdb
+*.fbk
+# регенерируемые данные dbgen (bench/datasets/tpch/build_tpch.py, seed 42)
+*.tbl

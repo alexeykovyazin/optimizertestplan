@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE p.OwnerUserId = u.Id AND u.CreationDate<='2014-09-12 07:12:16'::timestamp AND p.CommentCount<=17;

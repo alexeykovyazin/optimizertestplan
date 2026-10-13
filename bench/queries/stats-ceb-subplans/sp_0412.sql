@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, votes as v, badges as b WHERE c.UserId = u.Id AND v.UserId = u.Id AND b.UserId = u.Id AND u.Reputation>=1 AND u.Reputation<=113 AND u.Views>=0 AND u.Views<=51 AND c.Score=1

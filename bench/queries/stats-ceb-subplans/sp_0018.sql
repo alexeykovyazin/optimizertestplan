@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE u.Id = p.OwnerUserId AND p.ViewCount>=0 AND p.ViewCount<=2897 AND p.CommentCount>=0 AND p.CommentCount<=16 AND p.FavoriteCount>=0 AND p.FavoriteCount<=10

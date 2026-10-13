@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE p.OwnerUserId = u.Id AND u.UpVotes<=230 AND u.CreationDate>=CAST('2010-09-22 01:07:10' AS TIMESTAMP) AND u.CreationDate<=CAST('2014-08-15 05:52:23' AS TIMESTAMP) AND p.AnswerCount>=0 AND p.AnswerCount<=9 AND p.CreationDate>=CAST('2010-07-20 18:17:25' AS TIMESTAMP) AND p.CreationDate<=CAST('2014-08-26 12:57:22' AS TIMESTAMP)

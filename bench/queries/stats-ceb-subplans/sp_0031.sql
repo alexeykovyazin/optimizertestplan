@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, votes as v WHERE u.Id = c.UserId AND u.Id = v.UserId AND u.Reputation>=1 AND u.Reputation<=691 AND c.CreationDate>=CAST('2010-08-10 17:55:45' AS TIMESTAMP)

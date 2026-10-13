@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c WHERE c.UserId = u.Id AND u.Views>=0 AND u.Views<=13

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c WHERE p.Id = c.PostId AND p.Score<=32 AND p.ViewCount<=4146 AND c.Score=0;

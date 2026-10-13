@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c WHERE c.UserId = u.Id AND u.Reputation>=1 AND c.Score=0;

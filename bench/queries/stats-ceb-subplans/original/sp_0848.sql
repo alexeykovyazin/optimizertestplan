@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, postLinks as pl, postHistory as ph, users as u, posts as p WHERE u.Id = c.UserId AND p.Id = c.PostId AND p.Id = pl.PostId AND p.Id = ph.PostId AND u.Id = v.UserId AND c.Score=0 AND c.CreationDate>='2010-07-20 06:26:28'::timestamp AND c.CreationDate<='2014-09-11 18:45:09'::timestamp AND ph.PostHistoryTypeId=5;

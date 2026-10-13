@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph WHERE ph.CreationDate>=CAST('2010-11-27 03:38:45' AS TIMESTAMP)

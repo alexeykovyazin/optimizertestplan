@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postLinks as pl, votes as v, badges as b WHERE p.Id = pl.RelatedPostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Id = v.PostId AND u.UpVotes>=0 AND p.ViewCount<=7710 AND p.CommentCount<=12 AND p.FavoriteCount>=0 AND p.FavoriteCount<=4 AND p.CreationDate>=CAST('2010-07-27 03:58:22' AS TIMESTAMP)

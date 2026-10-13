@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postLinks as pl WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Reputation>=1 AND u.DownVotes>=0 AND u.DownVotes<=0 AND u.UpVotes<=439 AND u.CreationDate<='2014-08-07 11:18:45'::timestamp AND p.AnswerCount>=0 AND p.FavoriteCount>=0 AND pl.LinkTypeId=1;

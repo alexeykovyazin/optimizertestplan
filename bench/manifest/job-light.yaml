@@ -1,0 +1,1429 @@
+- id: job_light_001
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d0186d5d
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 715
+- id: job_light_002
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: a54df6e4
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9
+- id: job_light_003
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 71ca1549
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 47
+- id: job_light_004
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 71ca1549
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16
+- id: job_light_005
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: a7f85c13
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 148552
+- id: job_light_006
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 33be1972
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 62682311
+- id: job_light_007
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 33be1972
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11990578
+- id: job_light_008
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 33be1972
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 157041640
+- id: job_light_009
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 8121bec7
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 850677
+- id: job_light_010
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 8121bec7
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 179616
+- id: job_light_011
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 8121bec7
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2031666
+- id: job_light_012
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 17de5baa
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6333736
+- id: job_light_013
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 17de5baa
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1931628
+- id: job_light_014
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 17de5baa
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 12738520
+- id: job_light_015
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6fb3c5c4
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1224
+- id: job_light_016
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d190d438
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13221
+- id: job_light_017
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6fb3c5c4
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 33
+- id: job_light_018
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6fb3c5c4
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1224
+- id: job_light_019
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d190d438
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 114182642
+- id: job_light_020
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 35b3222b
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4533382
+- id: job_light_021
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 35b3222b
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 695701
+- id: job_light_022
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 35b3222b
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 21454165
+- id: job_light_023
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d3379572
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13355828
+- id: job_light_024
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d3379572
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4450853
+- id: job_light_025
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d3379572
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 794591
+- id: job_light_026
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: fbd46de7
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4893440
+- id: job_light_027
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: fbd46de7
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1381288
+- id: job_light_028
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: eaec3bdd
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8720023
+- id: job_light_029
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: eaec3bdd
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2873214
+- id: job_light_030
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: ded861fb
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 56965403
+- id: job_light_031
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: b318deba
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7153
+- id: job_light_032
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 84db29ea
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 14102
+- id: job_light_033
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: c4200129
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 31339132
+- id: job_light_034
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 1179b30f
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 75440
+- id: job_light_035
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: '20225647'
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 72
+- id: job_light_036
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 1179b30f
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 305691
+- id: job_light_037
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 207fc962
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1919495
+- id: job_light_038
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: c53bbea6
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 150780
+- id: job_light_039
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 927e3408
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3243247
+- id: job_light_040
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 42f546a0
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1043763
+- id: job_light_041
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 2af7bdc5
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 512575801
+- id: job_light_042
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 636eb977
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 206778521
+- id: job_light_043
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 2af7bdc5
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 625302823
+- id: job_light_044
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 3123b505
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7796926
+- id: job_light_045
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 212012ce
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1831108
+- id: job_light_046
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6c6870e7
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2936093
+- id: job_light_047
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 212012ce
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16461908
+- id: job_light_048
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 67bbb91a
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 24675801
+- id: job_light_049
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 4adda0e0
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 132317651
+- id: job_light_050
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: d3f56137
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 90649862
+- id: job_light_051
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 7d177efd
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 151179813
+- id: job_light_052
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 7d177efd
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 84217062
+- id: job_light_053
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: f61e64de
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 333474
+- id: job_light_054
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: f61e64de
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 307213
+- id: job_light_055
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: f61e64de
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 658557
+- id: job_light_056
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6b6db01d
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8275169
+- id: job_light_057
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6b6db01d
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5060606
+- id: job_light_058
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 52dda14f
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1352809555
+- id: job_light_059
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 1e7a17e5
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 191935
+- id: job_light_060
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 52dda14f
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9537310863
+- id: job_light_061
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: dd183ac4
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 492943940
+- id: job_light_062
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: b4f7d747
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 32355583
+- id: job_light_063
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: b956a6dc
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 81495003
+- id: job_light_064
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: b956a6dc
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 51282842
+- id: job_light_065
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 8ac414b1
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 19006
+- id: job_light_066
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6b6db01d
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 26718423
+- id: job_light_067
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 6b6db01d
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 15813608
+- id: job_light_068
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 30ac3ad2
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1067496
+- id: job_light_069
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: 30ac3ad2
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 268172
+- id: job_light_070
+  suite: job-light
+  db: imdb
+  index_config:
+  - pk
+  template: b4f7d747
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 258385218

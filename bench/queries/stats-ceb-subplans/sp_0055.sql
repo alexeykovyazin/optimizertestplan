@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE p.OwnerUserId = u.Id AND u.Reputation>=1 AND u.Reputation<=6524 AND u.Views>=0 AND p.CreationDate>=CAST('2010-07-26 19:26:37' AS TIMESTAMP) AND p.CreationDate<=CAST('2014-08-22 14:43:39' AS TIMESTAMP)

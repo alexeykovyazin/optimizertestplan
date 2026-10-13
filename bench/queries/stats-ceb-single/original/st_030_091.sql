@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.Score<=48 AND p.AnswerCount<=8;

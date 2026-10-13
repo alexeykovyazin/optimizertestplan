@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v WHERE v.BountyAmount>=0 AND v.BountyAmount<=50

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.DownVotes=0 AND u.UpVotes>=0 AND u.UpVotes<=244;

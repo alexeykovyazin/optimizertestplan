@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p, postLinks as pl, postHistory as ph WHERE p.Id = pl.RelatedPostId AND p.Id = v.PostId AND p.Id = ph.PostId AND v.VoteTypeId=5 AND p.CommentCount>=0 AND ph.PostHistoryTypeId=2

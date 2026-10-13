@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p WHERE p.Id = v.PostId AND v.CreationDate>=CAST('2010-07-21 00:00:00' AS TIMESTAMP) AND v.CreationDate<=CAST('2014-09-14 00:00:00' AS TIMESTAMP) AND p.PostTypeId=1 AND p.AnswerCount>=0 AND p.CommentCount>=0 AND p.CommentCount<=14

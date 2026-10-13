@@ -1,0 +1,152 @@
+{
+ "kind_type": {
+  "id": "int",
+  "kind": "str"
+ },
+ "comp_cast_type": {
+  "id": "int",
+  "kind": "str"
+ },
+ "company_type": {
+  "id": "int",
+  "kind": "str"
+ },
+ "info_type": {
+  "id": "int",
+  "info": "str"
+ },
+ "link_type": {
+  "id": "int",
+  "link": "str"
+ },
+ "role_type": {
+  "id": "int",
+  "role": "str"
+ },
+ "keyword": {
+  "id": "int",
+  "keyword": "str",
+  "phonetic_code": "str"
+ },
+ "aka_name": {
+  "id": "int",
+  "person_id": "int",
+  "name": "str",
+  "imdb_index": "str",
+  "name_pcode_cf": "str",
+  "name_pcode_nf": "str",
+  "surname_pcode": "str",
+  "md5sum": "str"
+ },
+ "aka_title": {
+  "id": "int",
+  "movie_id": "int",
+  "title": "str",
+  "imdb_index": "str",
+  "kind_id": "int",
+  "production_year": "int",
+  "phonetic_code": "str",
+  "episode_of_id": "int",
+  "season_nr": "int",
+  "episode_nr": "int",
+  "note": "str",
+  "md5sum": "str"
+ },
+ "cast_info": {
+  "id": "int",
+  "person_id": "int",
+  "movie_id": "int",
+  "person_role_id": "int",
+  "note": "str",
+  "nr_order": "int",
+  "role_id": "int"
+ },
+ "char_name": {
+  "id": "int",
+  "name": "str",
+  "imdb_index": "str",
+  "imdb_id": "int",
+  "name_pcode_nf": "str",
+  "surname_pcode": "str",
+  "md5sum": "str"
+ },
+ "company_name": {
+  "id": "int",
+  "name": "str",
+  "country_code": "str",
+  "imdb_id": "int",
+  "name_pcode_nf": "str",
+  "name_pcode_sf": "str",
+  "md5sum": "str"
+ },
+ "complete_cast": {
+  "id": "int",
+  "movie_id": "int",
+  "subject_id": "int",
+  "status_id": "int"
+ },
+ "movie_companies": {
+  "id": "int",
+  "movie_id": "int",
+  "company_id": "int",
+  "company_type_id": "int",
+  "note": "str"
+ },
+ "movie_info": {
+  "id": "int",
+  "movie_id": "int",
+  "info_type_id": "int",
+  "info": "blob",
+  "note": "str"
+ },
+ "movie_info_idx": {
+  "id": "int",
+  "movie_id": "int",
+  "info_type_id": "int",
+  "info": "str",
+  "note": "str"
+ },
+ "movie_keyword": {
+  "id": "int",
+  "movie_id": "int",
+  "keyword_id": "int"
+ },
+ "movie_link": {
+  "id": "int",
+  "movie_id": "int",
+  "linked_movie_id": "int",
+  "link_type_id": "int"
+ },
+ "name": {
+  "id": "int",
+  "name": "str",
+  "imdb_index": "str",
+  "imdb_id": "int",
+  "gender": "str",
+  "name_pcode_cf": "str",
+  "name_pcode_nf": "str",
+  "surname_pcode": "str",
+  "md5sum": "str"
+ },
+ "person_info": {
+  "id": "int",
+  "person_id": "int",
+  "info_type_id": "int",
+  "info": "blob",
+  "note": "str"
+ },
+ "title": {
+  "id": "int",
+  "title": "str",
+  "imdb_index": "str",
+  "kind_id": "int",
+  "production_year": "int",
+  "imdb_id": "int",
+  "phonetic_code": "str",
+  "episode_of_id": "int",
+  "season_nr": "int",
+  "episode_nr": "int",
+  "series_years": "str",
+  "md5sum": "str"
+ }
+}

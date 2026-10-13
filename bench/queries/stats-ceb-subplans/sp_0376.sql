@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, comments as c, votes as v, users as u WHERE c.UserId = u.Id AND v.UserId = u.Id AND b.UserId = u.Id AND b."Date"<=CAST('2014-08-25 19:05:46' AS TIMESTAMP) AND c.Score=1 AND v.BountyAmount<=50

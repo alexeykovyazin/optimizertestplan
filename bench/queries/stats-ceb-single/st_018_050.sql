@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.CreationDate<=CAST('2014-09-12 07:12:16' AS TIMESTAMP)

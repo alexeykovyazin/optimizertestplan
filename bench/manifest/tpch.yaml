@@ -1,0 +1,406 @@
+- id: tpch_01
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: f8947c23
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (1x); interval-арифметика -> DATEADD (1x)
+- id: tpch_02
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: b3526635
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_03
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 191bf0d1
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: tpch_04
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 6884b2b9
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_05
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: '22444030'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_06
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: dff1f5cf
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_07
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: e265c916
+  tables: 2
+  table_list:
+  - l_shipdate
+  - supplier
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: tpch_08
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 08527d4c
+  tables: 2
+  table_list:
+  - o_orderdate
+  - part
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: tpch_09
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: af14d806
+  tables: 2
+  table_list:
+  - o_orderdate
+  - part
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_10
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 33593fc8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_11
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: a521004e
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: 1.0e-09
+  subplan_scope: null
+  result: null
+  port_notes: value -> "value" (VALUE reserved word in Firebird, 2x)
+- id: tpch_12
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: f3e96d0e
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_13
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 410fd71a
+  tables: 2
+  table_list:
+  - customer
+  - orders
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_14
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 6bbefad1
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - like_predicate
+  deterministic: true
+  float_tolerance: 1.0e-09
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_15
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: f40b218b
+  tables: 1
+  table_list:
+  - lineitem
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: create view + drop view -> одиночный запрос (view -> производная таблица,
+    тело повторено)
+- id: tpch_16
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: b8339a95
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - like_predicate
+  - not_in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_17
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 1f35a9ce
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_18
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 5d83c46a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_19
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 813c9c05
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_20
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: e4d3555a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - in_subquery
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: tpch_21
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 7b27ea26
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: tpch_22
+  suite: tpch
+  db: tpch-sf1
+  index_config:
+  - pk
+  template: 7712b477
+  tables: 2
+  table_list:
+  - '1'
+  - customer
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null

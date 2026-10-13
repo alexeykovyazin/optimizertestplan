@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, votes as v, users as u WHERE u.Id = b.UserId AND u.Id = v.UserId AND b."Date">=CAST('2010-07-19 19:39:10' AS TIMESTAMP) AND b."Date"<=CAST('2014-09-05 18:37:48' AS TIMESTAMP)

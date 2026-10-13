@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.PostId AND p.Score>=-1 AND p.Score<=19 AND p.CommentCount<=13

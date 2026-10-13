@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Reputation>=1 AND u.Reputation<=6524 AND u.Views>=0;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, postLinks as pl, posts as p, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = b.UserId AND p.ViewCount>=0

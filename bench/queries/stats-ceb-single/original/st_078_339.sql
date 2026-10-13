@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v WHERE v.CreationDate>='2010-07-19 00:00:00'::timestamp;

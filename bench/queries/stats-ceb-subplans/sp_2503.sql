@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, posts as p, postHistory as ph WHERE p.Id = c.PostId AND p.Id = v.PostId AND p.Id = ph.PostId AND p.AnswerCount>=0 AND p.CommentCount>=0

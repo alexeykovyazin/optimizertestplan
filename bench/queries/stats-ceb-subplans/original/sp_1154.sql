@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, comments as c, posts as p, users as u WHERE c.UserId = u.Id AND b.UserId = u.Id AND p.Id = c.PostId AND c.CreationDate>='2010-07-22 01:19:43'::timestamp AND p.Score>=-1 AND p.ViewCount>=0 AND p.CommentCount<=9;

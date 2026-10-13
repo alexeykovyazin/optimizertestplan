@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.PostTypeId=1 AND p.AnswerCount>=0 AND p.CreationDate>=CAST('2010-07-21 15:23:53' AS TIMESTAMP) AND p.CreationDate<=CAST('2014-09-11 23:26:14' AS TIMESTAMP)

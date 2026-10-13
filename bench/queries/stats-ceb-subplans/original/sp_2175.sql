@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postLinks as pl, badges as b WHERE p.Id = pl.RelatedPostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND u.DownVotes>=0 AND p.Score>=-1 AND p.Score<=14 AND pl.CreationDate<='2014-06-25 13:05:06'::timestamp AND b.Date>='2010-08-04 08:50:31'::timestamp AND b.Date<='2014-09-02 02:51:22'::timestamp;

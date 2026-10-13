@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, postHistory as ph, votes as v WHERE v.PostId = p.Id AND ph.PostId = p.Id

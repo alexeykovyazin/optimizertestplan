@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, votes as v, posts as p WHERE u.Id = p.OwnerUserId AND p.Id = v.PostId AND u.DownVotes<=2 AND u.UpVotes>=0 AND u.CreationDate>=CAST('2010-11-26 03:34:11' AS TIMESTAMP) AND v.CreationDate<=CAST('2014-09-12 00:00:00' AS TIMESTAMP) AND p.PostTypeId=1 AND p.Score>=-1 AND p.FavoriteCount>=0 AND p.FavoriteCount<=20

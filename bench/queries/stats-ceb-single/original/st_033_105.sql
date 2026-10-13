@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.CreationDate>='2010-07-20 01:27:29'::timestamp;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, postHistory as ph, posts as p WHERE p.Id = c.PostId AND p.Id = v.PostId AND p.Id = ph.PostId AND c.CreationDate>=CAST('2010-07-26 19:37:03' AS TIMESTAMP) AND ph.CreationDate>=CAST('2010-11-27 03:38:45' AS TIMESTAMP)

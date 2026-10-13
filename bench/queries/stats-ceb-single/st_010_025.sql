@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.Score>=0 AND p.Score<=15 AND p.ViewCount>=0 AND p.ViewCount<=3002 AND p.AnswerCount<=3 AND p.CommentCount<=10

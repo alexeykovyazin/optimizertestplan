@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, comments as c, postLinks as pl, posts as p WHERE p.Id = pl.PostId AND p.Id = c.PostId AND p.Id = ph.PostId AND ph.PostHistoryTypeId=5 AND pl.CreationDate>=CAST('2010-11-16 01:27:37' AS TIMESTAMP) AND pl.CreationDate<=CAST('2014-08-21 15:25:23' AS TIMESTAMP)

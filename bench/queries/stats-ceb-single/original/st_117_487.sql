@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.DownVotes=0 AND u.CreationDate<='2014-08-08 07:03:29'::timestamp;

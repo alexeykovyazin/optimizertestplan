@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, tags as t, posts as p WHERE p.Id = t.ExcerptPostId AND u.Id = p.OwnerUserId AND u.Views>=0 AND u.Views<=515 AND u.UpVotes>=0 AND u.CreationDate<='2014-09-07 13:46:41'::timestamp;

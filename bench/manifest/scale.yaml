@@ -1,0 +1,9792 @@
+- id: scale_001
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9251aa76
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 283812
+- id: scale_002
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 02d6c871
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1107925
+- id: scale_003
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e12d7884
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11306022
+- id: scale_004
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9971f893
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_005
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9fe13a7b
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 44007524882
+- id: scale_006
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8b5e14be
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 281934531
+- id: scale_007
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2476485
+- id: scale_008
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 19fb093a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2973114
+- id: scale_009
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1533909
+- id: scale_010
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2b95abae
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2609129
+- id: scale_011
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 47c16f15
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 460185
+- id: scale_012
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: debd5cb3
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9067075
+- id: scale_013
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1f998d60
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 119565
+- id: scale_014
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 47653f28
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 994094709
+- id: scale_015
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2399de2d
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4523930
+- id: scale_016
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b9efd1c8
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9565151
+- id: scale_017
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 792c8702
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 183733
+- id: scale_018
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 893f1199
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 20959155
+- id: scale_019
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f64247b8
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1380035
+- id: scale_020
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 19fb093a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2986860
+- id: scale_021
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9fe13a7b
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 75018948820
+- id: scale_022
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: be66b1ad
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 543367
+- id: scale_023
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4f51d547
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5030235
+- id: scale_024
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 412228bb
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 57628813
+- id: scale_025
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c30a706b
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 587070
+- id: scale_026
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 457a4aa7
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6802505908
+- id: scale_027
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f3844374
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5405252
+- id: scale_028
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 19392e45
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16
+- id: scale_029
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9971f893
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 919850
+- id: scale_030
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fa93fc0d
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10111
+- id: scale_031
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a02653f7
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 960788
+- id: scale_032
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 094daa4f
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1334883
+- id: scale_033
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 16270a3c
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 876047
+- id: scale_034
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3333aa7e
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 23426182
+- id: scale_035
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6f1d1e07
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 351514575
+- id: scale_036
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 52eeaf5b
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 14824459
+- id: scale_037
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e4e1e81c
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1274246
+- id: scale_038
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 328857
+- id: scale_039
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 25ce8150
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9
+- id: scale_040
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b48c58b0
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 391125
+- id: scale_041
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1f865e9b
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 90750250
+- id: scale_042
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3ca69e08
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16085115
+- id: scale_043
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4516c5d1
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 14835720
+- id: scale_044
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca6078ea
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 133181
+- id: scale_045
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a53f8a2c
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 139398
+- id: scale_046
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1351608
+- id: scale_047
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 02d6c871
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1485030
+- id: scale_048
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5993b534
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 521661092
+- id: scale_049
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e034b3e7
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1102769
+- id: scale_050
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 242fbb90
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 717308
+- id: scale_051
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 368218
+- id: scale_052
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '51505574'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9098501
+- id: scale_053
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2e9a697c
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13860668
+- id: scale_054
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e5a6f37c
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 464212226736
+- id: scale_055
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a76381c9
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 85426
+- id: scale_056
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5307f884
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 314907
+- id: scale_057
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 297845
+- id: scale_058
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 915037cd
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1
+- id: scale_059
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fabe1931
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 278429
+- id: scale_060
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ea88b5a6
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 311663737
+- id: scale_061
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f00e8982
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16816470
+- id: scale_062
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83b696ea
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 885729
+- id: scale_063
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 11dda344
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 606627622
+- id: scale_064
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70f8d140
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 376129
+- id: scale_065
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e1229a96
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 14802622
+- id: scale_066
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3c314242
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13614904
+- id: scale_067
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 854713
+- id: scale_068
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '29329182'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6798769
+- id: scale_069
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2547786
+- id: scale_070
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 98f6e32a
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 32454121
+- id: scale_071
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8c7c7aa6
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 19659246
+- id: scale_072
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2f0f6f2f
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1555864
+- id: scale_073
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 348e6e24
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 177
+- id: scale_074
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fe4c01a5
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 14345735941
+- id: scale_075
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c6cfbd4c
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 194081501
+- id: scale_076
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 47c16f15
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 920110
+- id: scale_077
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2fbd5ad2
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3642045
+- id: scale_078
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9f60b1c7
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1274246
+- id: scale_079
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 57109c71
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 91690
+- id: scale_080
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2546b46f
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 122028
+- id: scale_081
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a985dcee
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 90003
+- id: scale_082
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ceb705ee
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 218613694
+- id: scale_083
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 06150c05
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 33302158
+- id: scale_084
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4d70f1a6
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1810007
+- id: scale_085
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f6c737d1
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 117477848
+- id: scale_086
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7548855
+- id: scale_087
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d2e5e660
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 204544074
+- id: scale_088
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 63b6288d
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_089
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 492fcb85
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1159221575
+- id: scale_090
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8c44320b
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3036719
+- id: scale_091
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0a77fd4c
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1042011
+- id: scale_092
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4afe9aeb
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1093558
+- id: scale_093
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ff664444
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 60340
+- id: scale_094
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 004c290b
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 72
+- id: scale_095
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 44c3d6ea
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4829607980
+- id: scale_096
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 520878
+- id: scale_097
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5869026
+- id: scale_098
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9e9b6550
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 215765477
+- id: scale_099
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 616637f8
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8583388
+- id: scale_100
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9bbcf0e5
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2478571
+- id: scale_101
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b9efd1c8
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7286865
+- id: scale_102
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0e3177aa
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8966
+- id: scale_103
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b5f6f711
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1017032
+- id: scale_104
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4e909e6b
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 539979
+- id: scale_105
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a011be61
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 165417463
+- id: scale_106
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '49827595'
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5057211125
+- id: scale_107
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f3261034
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_108
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '73724278'
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3633744
+- id: scale_109
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f3e4b36b
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 518327
+- id: scale_110
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '51505574'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 19545869
+- id: scale_111
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 86bbef46
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 69264
+- id: scale_112
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 51c68781
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1511778564
+- id: scale_113
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2233850
+- id: scale_114
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0b6f37da
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 353075
+- id: scale_115
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7ffe22eb
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2718195
+- id: scale_116
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e7ae86b7
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 19225208
+- id: scale_117
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 259281c4
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2377927
+- id: scale_118
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6d419b31
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7346931
+- id: scale_119
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 485844f0
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16433081
+- id: scale_120
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: aed87d7b
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2156169
+- id: scale_121
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7a08998d
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1084056
+- id: scale_122
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9992155e
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 89863
+- id: scale_123
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 816d5a21
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 12670688
+- id: scale_124
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4e64d1f9
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_125
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2f7dffd3
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 202649
+- id: scale_126
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c45563bb
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8966694
+- id: scale_127
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1f3f297e
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 74468
+- id: scale_128
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c26bbef2
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 21
+- id: scale_129
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3143191
+- id: scale_130
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '29329182'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 27301880
+- id: scale_131
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0515257c
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 17266
+- id: scale_132
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 099d008f
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 372207
+- id: scale_133
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0b6f37da
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 391036
+- id: scale_134
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a0e7e9e0
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 94864161
+- id: scale_135
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9d9dd751
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 18938693
+- id: scale_136
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca414554
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 77646617468
+- id: scale_137
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8df9c33b
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 186944
+- id: scale_138
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3015b413
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1143082
+- id: scale_139
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f3261034
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_140
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 415095e4
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11
+- id: scale_141
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d5a4bc04
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 24692
+- id: scale_142
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e2a90919
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13794786
+- id: scale_143
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: cb623e31
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 60892
+- id: scale_144
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c45563bb
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9565151
+- id: scale_145
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 45c96da7
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1245336
+- id: scale_146
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: da8b2c73
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9711831379
+- id: scale_147
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e004d1bb
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1705009
+- id: scale_148
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c85933ab
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 20567
+- id: scale_149
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8f9e3d37
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8910
+- id: scale_150
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 05e0b169
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1360323800
+- id: scale_151
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 98bbd8b3
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2059977
+- id: scale_152
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a75372da
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2886675
+- id: scale_153
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: cb623e31
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 709105
+- id: scale_154
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2d5497c7
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 63092691
+- id: scale_155
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 51c5a185
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 89132
+- id: scale_156
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: bf64da9a
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 224
+- id: scale_157
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b9efd1c8
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5884963
+- id: scale_158
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c6ebe1df
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7549165
+- id: scale_159
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ab5d4a07
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 130442932
+- id: scale_160
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f595af20
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 115283980
+- id: scale_161
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c24f2b8b
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1802370764
+- id: scale_162
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: bd9c61a5
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 127537
+- id: scale_163
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 145378
+- id: scale_164
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca414554
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 108291310961
+- id: scale_165
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 79986e48
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 36222852
+- id: scale_166
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c831a4ae
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 440186
+- id: scale_167
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '51505574'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 29688397
+- id: scale_168
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: cddda64e
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 38082448
+- id: scale_169
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 03314fc9
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6951968
+- id: scale_170
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8ce6012a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 38
+- id: scale_171
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2c79da49
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 60614648
+- id: scale_172
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 17be1464
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 84804
+- id: scale_173
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0927c147
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3056510643
+- id: scale_174
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1acb7cf0
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1613
+- id: scale_175
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdced742
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 363871
+- id: scale_176
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d0b1c9d0
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 107808154
+- id: scale_177
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8bf73625
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 12318091961
+- id: scale_178
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c79dd2c8
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3927958
+- id: scale_179
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4ca22083
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 140436498
+- id: scale_180
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 816d5a21
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 28808107
+- id: scale_181
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 90b70311
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 44243491
+- id: scale_182
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 79d45af7
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 15358920
+- id: scale_183
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5bd80616
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11460602
+- id: scale_184
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 81459adc
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 27378
+- id: scale_185
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 558aeea6
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1526625
+- id: scale_186
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f18b727b
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9202049281
+- id: scale_187
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f2537c99
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 717716
+- id: scale_188
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 477eeffc
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 747613
+- id: scale_189
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 412228bb
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 121680445
+- id: scale_190
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f47692c0
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 396930
+- id: scale_191
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3b0c66ca
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 885081741
+- id: scale_192
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fe2784fe
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1
+- id: scale_193
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d359c10c
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 28
+- id: scale_194
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8d23c91f
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 22605471
+- id: scale_195
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8ce6012a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3461
+- id: scale_196
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f6e7a82e
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 340301
+- id: scale_197
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5b200926
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 52749
+- id: scale_198
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 13eeb3f8
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 30764058
+- id: scale_199
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f47692c0
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1667568
+- id: scale_200
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e4e1e81c
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1334883
+- id: scale_201
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 256b4310
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 56992293
+- id: scale_202
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6b306ccf
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 728512
+- id: scale_203
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6568968b
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 43289689
+- id: scale_204
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 98f276e4
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 432142
+- id: scale_205
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7c458e5e
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11847782
+- id: scale_206
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ce00e5d3
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 24
+- id: scale_207
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83b696ea
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 687170
+- id: scale_208
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ef1fb213
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16121683
+- id: scale_209
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5c8e2f43
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 151500369
+- id: scale_210
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f54f605a
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 344882
+- id: scale_211
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9aa26070
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 221798
+- id: scale_212
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3036719
+- id: scale_213
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: dc88c66f
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 299494
+- id: scale_214
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2576640
+- id: scale_215
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '90466562'
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16159297
+- id: scale_216
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3f1fe589
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 28697712
+- id: scale_217
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a852d6a8
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6930334
+- id: scale_218
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b34e9675
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3212
+- id: scale_219
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7c4df30d
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 12670688
+- id: scale_220
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: adcf8710
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 124927
+- id: scale_221
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1288928
+- id: scale_222
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e0a589ec
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 954317
+- id: scale_223
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1068
+- id: scale_224
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2f398433
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6
+- id: scale_225
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4177b3ee
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 502001560
+- id: scale_226
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 19fb093a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 931394
+- id: scale_227
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f6e7a82e
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1415641
+- id: scale_228
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1768
+- id: scale_229
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d911cd51
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 31857545
+- id: scale_230
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 32355d80
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3436506
+- id: scale_231
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d0280974
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 177680094
+- id: scale_232
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2024fbcc
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 115854
+- id: scale_233
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f4250983
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 109819837
+- id: scale_234
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b14fe12e
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 242786845
+- id: scale_235
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2f398433
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6578
+- id: scale_236
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 55eba0b8
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10068462
+- id: scale_237
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0141d1d6
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 12033433
+- id: scale_238
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9e001d7d
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 200542501
+- id: scale_239
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 97038acc
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 235420417
+- id: scale_240
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 070ba347
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 46899
+- id: scale_241
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 63b6288d
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_242
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4200194
+- id: scale_243
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1d77499d
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 36244344
+- id: scale_244
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 095a8921
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 763
+- id: scale_245
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 19fb093a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4169130
+- id: scale_246
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8506fb1c
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 25626
+- id: scale_247
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 262d415f
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1394915
+- id: scale_248
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ec5602b3
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 45071
+- id: scale_249
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 72fb5e18
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 43343044
+- id: scale_250
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca8be9cf
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 735
+- id: scale_251
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: aed87d7b
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2678174
+- id: scale_252
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 860fc083
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1334883
+- id: scale_253
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d8258c1e
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 144474509
+- id: scale_254
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '29329182'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8770614
+- id: scale_255
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca811674
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 149
+- id: scale_256
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 020d5043
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 436710
+- id: scale_257
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b9efd1c8
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 802140
+- id: scale_258
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 59ace9ca
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 26591968
+- id: scale_259
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fb01dec4
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2
+- id: scale_260
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4cc34003
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 943298
+- id: scale_261
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b3114270
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 176
+- id: scale_262
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 587e0a55
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1226219
+- id: scale_263
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5dbe9e07
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 829639
+- id: scale_264
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdcfefcf
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 24879
+- id: scale_265
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 15a75024
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6901212690
+- id: scale_266
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 999e8971
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 115968104
+- id: scale_267
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d6d7a5d3
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9094502
+- id: scale_268
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 41c70dfa
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 120
+- id: scale_269
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c1c2f2b1
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10216806
+- id: scale_270
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: bc6c7fe6
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 42
+- id: scale_271
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d1da5ce6
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 48515468
+- id: scale_272
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 69a3a28f
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1644741
+- id: scale_273
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e23bdff7
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 182347075
+- id: scale_274
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 25f499a2
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 211
+- id: scale_275
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a37bad46
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 782709780
+- id: scale_276
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2c536976
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 813698
+- id: scale_277
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 89fc547d
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 498621
+- id: scale_278
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1401902
+- id: scale_279
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1f998d60
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 16571
+- id: scale_280
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '77171727'
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1
+- id: scale_281
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 486554
+- id: scale_282
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 40a9c761
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 410328
+- id: scale_283
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6669aba7
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 27039480
+- id: scale_284
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f26b3523
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5500892
+- id: scale_285
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c5187fa7
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1866714
+- id: scale_286
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: edd27227
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 236669097
+- id: scale_287
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 597a6d64
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 14848189
+- id: scale_288
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a3b7522a
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 785208
+- id: scale_289
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c47013e2
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2675867885
+- id: scale_290
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 04b2b181
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7246866
+- id: scale_291
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 818cda19
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1835628
+- id: scale_292
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 47c16f15
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 260
+- id: scale_293
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 49264e90
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 23512458
+- id: scale_294
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8e6536a
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1298989
+- id: scale_295
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5667ddad
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1333985
+- id: scale_296
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3cd39d67
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 141280828
+- id: scale_297
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8bf773a8
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 41554
+- id: scale_298
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c86fdf49
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1962041614
+- id: scale_299
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a07cbd1c
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 378799
+- id: scale_300
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3af946cb
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5637455
+- id: scale_301
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 818cda19
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2055671
+- id: scale_302
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d60fa00b
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 34863638
+- id: scale_303
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2f7dffd3
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 347649
+- id: scale_304
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca0c0a43
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 29
+- id: scale_305
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: dc7a9b92
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1274246
+- id: scale_306
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a3488bfa
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 460185
+- id: scale_307
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e0aab740
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 259361
+- id: scale_308
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9635b65e
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10919218
+- id: scale_309
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3957660
+- id: scale_310
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 205cc225
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 30826466
+- id: scale_311
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d96044a3
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2591194
+- id: scale_312
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f47692c0
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 877826
+- id: scale_313
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 992
+- id: scale_314
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4160b77a
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 250045
+- id: scale_315
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c45563bb
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8786582
+- id: scale_316
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1f3f297e
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 102118
+- id: scale_317
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fe2784fe
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 127
+- id: scale_318
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a852d6a8
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6930334
+- id: scale_319
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83dcff11
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 140436
+- id: scale_320
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1ee9b9cb
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 159774
+- id: scale_321
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 02d6c871
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1749032
+- id: scale_322
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2c536976
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 387833
+- id: scale_323
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca1b0bbf
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8
+- id: scale_324
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 63c86397
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 41255053
+- id: scale_325
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f3261034
+  tables: 1
+  table_list:
+  - movie_info_idx
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 459925
+- id: scale_326
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b4de5c4a
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 103184347
+- id: scale_327
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 06ec3c81
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 21509570
+- id: scale_328
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7a350ab2
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 43462819
+- id: scale_329
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 55820b06
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13
+- id: scale_330
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 243
+- id: scale_331
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 54a242c6
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3350499434
+- id: scale_332
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 19392e45
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1365
+- id: scale_333
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 02d6c871
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2046723
+- id: scale_334
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1fe6d8ab
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 33733
+- id: scale_335
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 281050c2
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 687938
+- id: scale_336
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 98be6698
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 75723
+- id: scale_337
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 42ffc5da
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9631551
+- id: scale_338
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6d94bd14
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 109567
+- id: scale_339
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7f679467
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2404277796
+- id: scale_340
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1ba88adf
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7924201
+- id: scale_341
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0b6f37da
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 288892
+- id: scale_342
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a3488bfa
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 260
+- id: scale_343
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 32eacee2
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 30511650
+- id: scale_344
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e3fc7e7b
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1117547
+- id: scale_345
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 62d7cc16
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3363280
+- id: scale_346
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83a9a685
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1208
+- id: scale_347
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8c44320b
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1401902
+- id: scale_348
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a8c9ca94
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 968944
+- id: scale_349
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1d659852
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 23573656
+- id: scale_350
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e09d82bd
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4898
+- id: scale_351
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c001367e
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 40701900
+- id: scale_352
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f82aaf34
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 43130516885
+- id: scale_353
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e04fa510
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 48
+- id: scale_354
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8da8a7eb
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2255207
+- id: scale_355
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f705027a
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6815
+- id: scale_356
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 042a50be
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 41263407
+- id: scale_357
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e274bcfb
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7598041
+- id: scale_358
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d60baf8d
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4018376
+- id: scale_359
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 914807cb
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3440467108
+- id: scale_360
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3bd6d992
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6191108266
+- id: scale_361
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: cb375718
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 78673022863
+- id: scale_362
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4afe9aeb
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 12670688
+- id: scale_363
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 84bf1daa
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 80581
+- id: scale_364
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 107c493a
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1097116
+- id: scale_365
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 567537d8
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 580834
+- id: scale_366
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9911754
+- id: scale_367
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fa8db77a
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 49188
+- id: scale_368
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 38229c58
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 39749609
+- id: scale_369
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 349aac81
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 993826
+- id: scale_370
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1423
+- id: scale_371
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d14d4bdb
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 662825
+- id: scale_372
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1065990
+- id: scale_373
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '51505574'
+  tables: 1
+  table_list:
+  - cast_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 35385517
+- id: scale_374
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 596686fb
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1331546
+- id: scale_375
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c45563bb
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3624977
+- id: scale_376
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5fe19c3f
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2563380
+- id: scale_377
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70441e77
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 144096
+- id: scale_378
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1805cfb9
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6019495
+- id: scale_379
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ab700ddb
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 17797517
+- id: scale_380
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b1c64b95
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 41224
+- id: scale_381
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f21882e8
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 86419138
+- id: scale_382
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f4a67887
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7201953098
+- id: scale_383
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e863b8ed
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4716158263
+- id: scale_384
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ed1b4a12
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1537006
+- id: scale_385
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d8ee9e0d
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 90419130
+- id: scale_386
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: bac5e395
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 19521101
+- id: scale_387
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8c44320b
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1325361
+- id: scale_388
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: be556a7c
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 817994676
+- id: scale_389
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b3205a4f
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 761621040
+- id: scale_390
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0c7c5db5
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 446433
+- id: scale_391
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9b7e1ce2
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4230738
+- id: scale_392
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1235356
+- id: scale_393
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8c963e99
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 657708
+- id: scale_394
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '04757441'
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 78771931233
+- id: scale_395
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 81a87508
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 233863
+- id: scale_396
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f6f06812
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 57
+- id: scale_397
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 954afb5f
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 17212051539
+- id: scale_398
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4139177b
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 848
+- id: scale_399
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fabe1931
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 224384
+- id: scale_400
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a9ded6a1
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 53765709
+- id: scale_401
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 44c3d6ea
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4829607980
+- id: scale_402
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 837e761c
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 455
+- id: scale_403
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b58c0515
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1756832
+- id: scale_404
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 26c4b4eb
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1320062
+- id: scale_405
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 11cc1b80
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 65833
+- id: scale_406
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e8ca76b9
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 13613824
+- id: scale_407
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5bfc159e
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 174070516
+- id: scale_408
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6a119686
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1124770
+- id: scale_409
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca0c0a43
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 356
+- id: scale_410
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3bd77af1
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1312127
+- id: scale_411
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 97c7206d
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4681531
+- id: scale_412
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c59d4df2
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 198
+- id: scale_413
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fe8bb675
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 600741041
+- id: scale_414
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6e7b2f09
+  tables: 1
+  table_list:
+  - movie_companies
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 760775
+- id: scale_415
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83b696ea
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4304
+- id: scale_416
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83b696ea
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 378514
+- id: scale_417
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 83b5fee6
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5783682388
+- id: scale_418
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1825b69f
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3018509
+- id: scale_419
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c429da00
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3636397
+- id: scale_420
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5ad97737
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 266599
+- id: scale_421
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3d4eff77
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 899370
+- id: scale_422
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5a7ea145
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 98474517
+- id: scale_423
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: da50c807
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2457
+- id: scale_424
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10799
+- id: scale_425
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 579093b1
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 7983415300
+- id: scale_426
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1750725
+- id: scale_427
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 107
+- id: scale_428
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 244eb75f
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 15169699
+- id: scale_429
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b11aae41
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 44028
+- id: scale_430
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d59f6611
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 215111956
+- id: scale_431
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f8416b55
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2097160
+- id: scale_432
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c45563bb
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2091068
+- id: scale_433
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1934752
+- id: scale_434
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0b6f37da
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1
+- id: scale_435
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a38496fe
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1
+- id: scale_436
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9e179a97
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1668276
+- id: scale_437
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ff664444
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10183
+- id: scale_438
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: b60e7e4f
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3940515
+- id: scale_439
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2aa8d41a
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6232
+- id: scale_440
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 29
+- id: scale_441
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c83ede38
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 179
+- id: scale_442
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f3b57e96
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2877
+- id: scale_443
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e8cb57a1
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1203219
+- id: scale_444
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9537a740
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 17363029
+- id: scale_445
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9425200
+- id: scale_446
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1b9f9bfd
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11210743
+- id: scale_447
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9f124f5b
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 819332
+- id: scale_448
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: bfc2b0bf
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 67492
+- id: scale_449
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0f00fba8
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1086
+- id: scale_450
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 54e7e108
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 10424626
+- id: scale_451
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4923d7ee
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 866
+- id: scale_452
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 7b46385b
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 40911741
+- id: scale_453
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d0395a02
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4495017
+- id: scale_454
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: db8fcec5
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5605668
+- id: scale_455
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: af179895
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 100720
+- id: scale_456
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 410710e2
+  tables: 5
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2318881848
+- id: scale_457
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 453ba792
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 58068643
+- id: scale_458
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: '41976367'
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 20885030
+- id: scale_459
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ff546aba
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1276002238
+- id: scale_460
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 70482d2e
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 621177
+- id: scale_461
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 84d2c3c7
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 368413500
+- id: scale_462
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: e5fb3b03
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 567
+- id: scale_463
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 241f3988
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 263936
+- id: scale_464
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 5438cc85
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 11525
+- id: scale_465
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1589417
+- id: scale_466
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0c10828d
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6
+- id: scale_467
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1351
+- id: scale_468
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ff664444
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 51108
+- id: scale_469
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6b70525d
+  tables: 4
+  table_list:
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 854324
+- id: scale_470
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1989480
+- id: scale_471
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d95c6c4e
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 189828984
+- id: scale_472
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c45563bb
+  tables: 1
+  table_list:
+  - movie_info
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 802140
+- id: scale_473
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 3a9009f7
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_companies
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 3925741135
+- id: scale_474
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 281050c2
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4407679
+- id: scale_475
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 4a44092b
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 5912916
+- id: scale_476
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 8b39c73a
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1222807
+- id: scale_477
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ff77116f
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 628217
+- id: scale_478
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: aed87d7b
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4331869
+- id: scale_479
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca8be9cf
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 4
+- id: scale_480
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1f17b72f
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1039230
+- id: scale_481
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ed1b4a12
+  tables: 2
+  table_list:
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1770929
+- id: scale_482
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: c58b9325
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 8942
+- id: scale_483
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: be66b1ad
+  tables: 2
+  table_list:
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6223494
+- id: scale_484
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 309666ec
+  tables: 5
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2511511293
+- id: scale_485
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 6d94bd14
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 62556
+- id: scale_486
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: ca6078ea
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1341449
+- id: scale_487
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 337
+- id: scale_488
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 29025c5b
+  tables: 2
+  table_list:
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 260
+- id: scale_489
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9ba00fea
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1551727
+- id: scale_490
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 0f88365b
+  tables: 3
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 6348748
+- id: scale_491
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 1d659852
+  tables: 2
+  table_list:
+  - cast_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 9384703
+- id: scale_492
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: d362c68a
+  tables: 3
+  table_list:
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 885780
+- id: scale_493
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fdd57fbc
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1034
+- id: scale_494
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 2a2cf3f8
+  tables: 3
+  table_list:
+  - cast_info
+  - movie_companies
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 80274241
+- id: scale_495
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: f5b8cb00
+  tables: 1
+  table_list:
+  - movie_keyword
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 2924334
+- id: scale_496
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 9992155e
+  tables: 2
+  table_list:
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 107578
+- id: scale_497
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: a19b97ec
+  tables: 4
+  table_list:
+  - cast_info
+  - movie_info
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 1496571367
+- id: scale_498
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 79fd6f05
+  tables: 1
+  table_list:
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 298
+- id: scale_499
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: fd92c449
+  tables: 3
+  table_list:
+  - movie_companies
+  - movie_info
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 22199655
+- id: scale_500
+  suite: scale
+  db: imdb
+  index_config:
+  - pk
+  template: 344646e3
+  tables: 4
+  table_list:
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - title
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  true_cardinality: 47745

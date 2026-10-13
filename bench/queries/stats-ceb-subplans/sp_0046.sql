@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p, tags as t, users as u WHERE p.Id = t.ExcerptPostId AND v.UserId = u.Id AND p.OwnerUserId = u.Id AND p.CreationDate>=CAST('2010-07-20 02:01:05' AS TIMESTAMP)

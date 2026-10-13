@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, posts as p, users as u WHERE p.OwnerUserId = u.Id AND ph.UserId = u.Id AND ph.PostHistoryTypeId=2 AND ph.CreationDate>=CAST('2010-11-05 01:25:39' AS TIMESTAMP) AND ph.CreationDate<=CAST('2014-09-09 07:14:12' AS TIMESTAMP) AND p.ViewCount>=0 AND p.AnswerCount>=0 AND p.AnswerCount<=5

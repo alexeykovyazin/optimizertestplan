@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, users as u WHERE b.UserId = u.Id AND u.Reputation>=1 AND u.UpVotes>=0 AND u.UpVotes<=117

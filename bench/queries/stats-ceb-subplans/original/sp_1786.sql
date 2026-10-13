@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, users as u WHERE b.UserId = u.Id AND u.CreationDate>='2010-07-27 02:56:06'::timestamp AND u.CreationDate<='2014-09-10 10:44:00'::timestamp;

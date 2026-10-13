@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph WHERE u.Id = ph.UserId AND u.Views=5 AND u.DownVotes>=0 AND u.UpVotes>=0 AND u.UpVotes<=224 AND u.CreationDate<=CAST('2014-09-04 04:41:22' AS TIMESTAMP) AND ph.PostHistoryTypeId=2

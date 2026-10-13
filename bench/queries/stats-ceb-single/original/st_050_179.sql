@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Views>=0 AND u.Views<=75;

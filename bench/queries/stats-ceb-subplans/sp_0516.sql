@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, tags as t, posts as p, users as u WHERE p.Id = t.ExcerptPostId AND u.Id = p.OwnerUserId AND u.Id = b.UserId AND b."Date"<=CAST('2014-08-22 02:21:55' AS TIMESTAMP) AND p.CommentCount>=0 AND u.DownVotes<=0

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b WHERE b.Date>='2010-08-04 08:50:31'::timestamp AND b.Date<='2014-09-02 02:51:22'::timestamp;

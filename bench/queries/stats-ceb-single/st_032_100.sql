@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v WHERE v.BountyAmount>=0 AND v.CreationDate>=CAST('2010-07-26 00:00:00' AS TIMESTAMP) AND v.CreationDate<=CAST('2014-09-08 00:00:00' AS TIMESTAMP)

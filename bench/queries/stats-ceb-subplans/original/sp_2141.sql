@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, users as u, votes as v WHERE u.Id = b.UserId AND u.Id = v.UserId AND b.Date<='2014-09-06 17:33:22'::timestamp AND u.Reputation>=1;

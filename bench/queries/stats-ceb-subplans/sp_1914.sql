@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.PostId AND p.Score>=-1 AND p.ViewCount<=5896 AND p.AnswerCount>=0 AND p.CreationDate>=CAST('2010-07-29 15:57:21' AS TIMESTAMP)

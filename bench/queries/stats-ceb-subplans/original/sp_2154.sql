@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, postLinks as pl, posts as p WHERE p.Id = pl.RelatedPostId AND p.Id = v.PostId AND v.CreationDate>='2009-02-02 00:00:00'::timestamp AND pl.CreationDate<='2014-06-25 13:05:06'::timestamp;

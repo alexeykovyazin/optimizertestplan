@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, votes as v WHERE u.Id = v.UserId AND u.CreationDate>='2010-11-16 06:03:04'::timestamp AND v.CreationDate<='2014-09-06 00:00:00'::timestamp;

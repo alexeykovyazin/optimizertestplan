@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.PostId AND pl.CreationDate>='2011-11-03 05:09:35'::timestamp AND p.PostTypeId=1 AND p.Score=4 AND p.ViewCount<=4937;

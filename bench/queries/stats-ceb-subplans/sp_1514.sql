@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, votes as v WHERE u.Id = p.OwnerUserId AND u.Id = v.UserId AND u.Reputation<=306 AND u.UpVotes>=0 AND p.ViewCount>=0

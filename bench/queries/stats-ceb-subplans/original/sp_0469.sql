@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, postLinks as pl WHERE p.Id = pl.RelatedPostId AND p.ViewCount>=0;

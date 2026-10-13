@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Reputation<=270 AND u.Views>=0 AND u.Views<=51 AND u.DownVotes>=0

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE p.OwnerUserId = u.Id AND u.Views>=0 AND p.PostTypeId=2 AND p.CreationDate<='2014-08-26 22:40:26'::timestamp;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.RelatedPostId AND pl.CreationDate<='2014-06-25 13:05:06'::timestamp AND p.Score>=-1 AND p.Score<=14;

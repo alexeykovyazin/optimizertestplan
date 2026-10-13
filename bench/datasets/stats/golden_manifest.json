@@ -1,0 +1,73 @@
+{
+  "dataset": "stats_simplified (End-to-End CardEst Benchmark)",
+  "server": "FB 5.0.5 HQbird @ localhost:3055",
+  "builds": [
+    {
+      "config": "pk",
+      "golden": "E:\\Projects_Big\\optimizertestplan\\db\\golden\\stats_pk.fdb",
+      "golden_sha256": "e25ad29c7cbc56d1ad6687bd412a36987ad9bbbd55ade6d281183c1e5a6202f7",
+      "archive": "E:\\Projects_Big\\optimizertestplan\\db\\archives\\stats_pk.fbk",
+      "archive_sha256": "d5e9de9ae237c5779455a7ebebb19eac5000ca7a9b1953cd6181f71e024eb6d4",
+      "row_counts": {
+        "users": 40325,
+        "posts": 91976,
+        "postLinks": 11102,
+        "postHistory": 303187,
+        "comments": 174305,
+        "votes": 328064,
+        "badges": 79851,
+        "tags": 1032
+      },
+      "indexes_set_statistics": [
+        "RDB$PRIMARY1",
+        "RDB$PRIMARY2",
+        "RDB$PRIMARY3",
+        "RDB$PRIMARY4",
+        "RDB$PRIMARY5",
+        "RDB$PRIMARY6",
+        "RDB$PRIMARY7",
+        "RDB$PRIMARY8"
+      ],
+      "note": "SHA-256 снят после gfix -mode read_only (финальное состояние золотого файла)"
+    },
+    {
+      "config": "pk_fk",
+      "golden": "E:\\Projects_Big\\optimizertestplan\\db\\golden\\stats_pk_fk.fdb",
+      "golden_sha256": "694456d284990bd38878156b741a1e5f0cc941c17486064eed87dd3245ec5f89",
+      "archive": "E:\\Projects_Big\\optimizertestplan\\db\\archives\\stats_pk_fk.fbk",
+      "archive_sha256": "2629ea8a3c8d78a53adef7a0d516f5dc2c42c600499d63132f7ccf06f8ae85d7",
+      "row_counts": {
+        "users": 40325,
+        "posts": 91976,
+        "postLinks": 11102,
+        "postHistory": 303187,
+        "comments": 174305,
+        "votes": 328064,
+        "badges": 79851,
+        "tags": 1032
+      },
+      "indexes_set_statistics": [
+        "RDB$PRIMARY1",
+        "RDB$PRIMARY2",
+        "RDB$PRIMARY3",
+        "RDB$PRIMARY4",
+        "RDB$PRIMARY5",
+        "RDB$PRIMARY6",
+        "RDB$PRIMARY7",
+        "RDB$PRIMARY8",
+        "POSTS_OWNERUSERID_IX",
+        "POSTLINKS_POSTID_IX",
+        "POSTLINKS_RELATEDPOSTID_IX",
+        "POSTHISTORY_POSTID_IX",
+        "POSTHISTORY_USERID_IX",
+        "COMMENTS_POSTID_IX",
+        "COMMENTS_USERID_IX",
+        "VOTES_POSTID_IX",
+        "VOTES_USERID_IX",
+        "BADGES_USERID_IX",
+        "TAGS_EXCERPTPOSTID_IX"
+      ],
+      "note": "SHA-256 снят после gfix -mode read_only (финальное состояние золотого файла)"
+    }
+  ]
+}

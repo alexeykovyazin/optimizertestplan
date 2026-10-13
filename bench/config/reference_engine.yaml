@@ -1,0 +1,45 @@
+# Эталонный движок для валидации результатов и истинных кардинальностей (§4.5, §4.6)
+# PostgreSQL 17.5 на dellg15 (см. E:\pgdumps\README.txt на том хосте)
+
+reference_engine:
+  dsn_env: BENCH_PG_DSN
+  # реальный dsn собирается из BENCH_PG_DSN; пароль в репозитории не хранится
+  dsn: "postgresql://postgres:${BENCH_PG_PWD}@dellg15.local:5432/imdb"
+  purpose: "валидация портированных запросов и расчёт истинных кардинальностей"
+  deployed:
+    - database: imdb          # JOB, 21 таблица, 8.5 GB, cast_info 36 244 344 строк
+      source: "Harvard Dataverse doi:10.7910/DVN/2QYZBT (imdb_pg11.dump)"
+      loaded_at: "2026-10-08"
+      analyzed: true
+      collation: "C/C (libc) — бинарный порядок, совпадает с FB UCS_BASIC"
+  queries:
+    job: "third_party/JOB-queries/*.sql (113 запросов, gregrahn/join-order-benchmark)"
+    job-light: "third_party/learnedcardinalities/workloads/job-light.sql (70, Kipf et al.)"
+    scale: "third_party/learnedcardinalities/workloads/scale.sql (500, Kipf et al.)"
+    synthetic: "third_party/learnedcardinalities/workloads/synthetic.sql (5000, Kipf et al.)"
+    job-complex: "third_party/JOB-Complex/JOB-Complex.sql (30, Wehrstein et al. AIDB'25)"
+
+# Портированные на Firebird сюиты после JOB/STATS (план porting-plan-remaining-suites.md):
+# job-light / scale / synthetic / job-complex — на том же golden imdb_fb5.fdb,
+# манифесты bench/manifest/{job-light,scale,synthetic,job-complex}.yaml,
+# источники и лицензии — bench/manifest/query-sets-sources.yaml.
+# Конвейер S0–S8: S0/S5 локально (prepare-тест — results/prepare_test/<suite>/),
+# S6 (suite_pg_reference.py) → results/<suite>_pg_reference/,
+# S7 (job_validate.py --suite) → results/<suite>_validation/.
+
+# Перенос JOB на Firebird (4.5): база построена теми же данными (CSV из COPY
+# этого экземпляра PG), та же конфигурация индексов (PK + fkindexes.sql).
+firebird_port:
+  golden: "db/golden/imdb_fb5.fdb"         # read-only, SHA-256 в imdb_build_manifest.json
+  archive: "db/archives/imdb_fb5.fbk"
+  work_copies: "db/imdb/work/"
+  page_size: 16384
+  charset: UTF8
+  queries_fb: "bench/queries/job/*.sql (порт: port_job.py)"
+  manifest: "bench/manifest/job.yaml"
+  type_divergences:
+    - "movie_info.info, person_info.info -> BLOB SUB_TYPE TEXT"
+    - "MIN(blob.info) -> MIN(SUBSTRING(info FROM 1 FOR 8000)) — влияет только на вывод"
+    - 'role_type.role -> "role" (зарезервированное слово)'
+  reference_results: "results/job_pg_reference/ (строки CSV + EXPLAIN ANALYZE JSON)"
+  validation: "results/job_validation/ (job_validate.py)"

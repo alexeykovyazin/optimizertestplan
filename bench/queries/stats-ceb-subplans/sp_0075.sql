@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE pl.PostId = p.Id AND p.Score>=-3

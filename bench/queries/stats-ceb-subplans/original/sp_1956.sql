@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, comments as c, users as u WHERE c.UserId = u.Id AND ph.UserId = u.Id AND ph.CreationDate<='2014-09-02 07:58:47'::timestamp AND c.Score=2;

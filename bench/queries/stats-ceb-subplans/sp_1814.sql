@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, postHistory as ph, users as u WHERE p.OwnerUserId = u.Id AND ph.UserId = u.Id AND p.AnswerCount>=0 AND p.FavoriteCount>=0 AND p.CreationDate<=CAST('2014-09-03 03:32:35' AS TIMESTAMP)

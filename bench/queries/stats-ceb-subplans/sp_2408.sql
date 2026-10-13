@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c WHERE p.Id = c.PostId AND p.AnswerCount<=4 AND p.FavoriteCount>=0 AND c.CreationDate>=CAST('2010-08-01 19:11:47' AS TIMESTAMP) AND c.CreationDate<=CAST('2014-09-11 13:42:51' AS TIMESTAMP)

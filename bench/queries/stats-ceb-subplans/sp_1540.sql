@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, votes as v, users as u WHERE u.Id = p.OwnerUserId AND u.Id = v.UserId AND p.PostTypeId=1 AND p.CommentCount>=0 AND p.CommentCount<=15

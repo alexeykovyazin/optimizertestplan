@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM comments as c WHERE c.Score=1 AND c.CreationDate>='2010-08-27 14:12:07'::timestamp;

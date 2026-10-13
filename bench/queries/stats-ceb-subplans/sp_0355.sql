@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph, votes as v WHERE v.UserId = u.Id AND ph.UserId = u.Id AND u.UpVotes=0 AND ph.PostHistoryTypeId=12

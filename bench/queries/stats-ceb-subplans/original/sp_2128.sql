@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, tags as t WHERE p.Id = t.ExcerptPostId AND p.CommentCount>=0 AND p.CommentCount<=13;

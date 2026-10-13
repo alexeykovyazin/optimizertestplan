@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.AnswerCount>=0 AND p.AnswerCount<=4 AND p.CommentCount>=0 AND p.CommentCount<=11 AND p.CreationDate>='2010-07-26 09:46:48'::timestamp AND p.CreationDate<='2014-09-13 10:09:50'::timestamp;

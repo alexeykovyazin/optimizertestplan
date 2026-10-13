@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph, votes as v WHERE v.UserId = u.Id AND ph.UserId = u.Id AND u.Views<=433 AND u.DownVotes>=0 AND u.CreationDate<='2014-09-12 21:37:39'::timestamp;

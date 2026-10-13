@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph WHERE ph.UserId = u.Id AND u.Reputation<=705 AND u.CreationDate>=CAST('2010-07-28 23:56:00' AS TIMESTAMP) AND u.CreationDate<=CAST('2014-09-02 10:04:41' AS TIMESTAMP) AND ph.PostHistoryTypeId=2 AND ph.CreationDate>=CAST('2011-01-08 03:03:48' AS TIMESTAMP) AND ph.CreationDate<=CAST('2014-08-25 14:04:43' AS TIMESTAMP)

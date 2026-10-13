@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.Score>=0 AND p.Score<=13 AND p.FavoriteCount>=0

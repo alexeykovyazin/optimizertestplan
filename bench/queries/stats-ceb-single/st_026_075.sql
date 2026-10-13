@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.CreationDate>=CAST('2010-07-27 01:51:15' AS TIMESTAMP)

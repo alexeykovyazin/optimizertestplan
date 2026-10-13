@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, posts as p WHERE p.Id = ph.PostId AND ph.CreationDate>=CAST('2011-01-03 23:47:35' AS TIMESTAMP) AND ph.CreationDate<=CAST('2014-09-08 12:48:36' AS TIMESTAMP) AND p.PostTypeId=1 AND p.Score=2 AND p.FavoriteCount<=12

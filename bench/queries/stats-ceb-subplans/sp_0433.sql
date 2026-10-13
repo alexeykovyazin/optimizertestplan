@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, badges as b WHERE u.Id = p.OwnerUserId AND u.Id = b.UserId AND u.Views>=0 AND u.Views<=75 AND p.Score>=-2 AND p.ViewCount>=0 AND p.ViewCount<=18281 AND b."Date">=CAST('2010-10-20 08:33:44' AS TIMESTAMP)

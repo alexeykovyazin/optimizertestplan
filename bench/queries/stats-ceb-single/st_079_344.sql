@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Reputation>=1 AND u.CreationDate>=CAST('2010-08-03 19:42:40' AS TIMESTAMP) AND u.CreationDate<=CAST('2014-09-12 02:20:03' AS TIMESTAMP)

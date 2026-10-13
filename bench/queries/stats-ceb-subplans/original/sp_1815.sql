@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph WHERE ph.UserId = u.Id AND u.CreationDate<='2014-09-12 22:21:49'::timestamp;

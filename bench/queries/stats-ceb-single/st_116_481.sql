@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.ViewCount>=0 AND p.CommentCount>=0

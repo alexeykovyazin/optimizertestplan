@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, posts as p, postLinks as pl WHERE p.Id = pl.RelatedPostId AND p.Id = ph.PostId AND p.AnswerCount<=4 AND p.FavoriteCount>=0 AND pl.LinkTypeId=1

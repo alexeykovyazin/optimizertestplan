@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.DownVotes<=57 AND u.CreationDate>=CAST('2010-08-26 09:01:31' AS TIMESTAMP) AND u.CreationDate<=CAST('2014-08-10 11:01:39' AS TIMESTAMP)

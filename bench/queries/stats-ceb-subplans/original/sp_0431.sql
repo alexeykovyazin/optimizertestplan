@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postHistory as ph, users as u WHERE u.Id = p.OwnerUserId AND u.Id = b.UserId AND u.Id = ph.UserId AND b.Date>='2010-10-20 08:33:44'::timestamp AND p.Score>=-2 AND p.ViewCount>=0 AND p.ViewCount<=18281 AND ph.PostHistoryTypeId=2;

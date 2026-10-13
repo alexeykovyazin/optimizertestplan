@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postLinks as pl, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = b.UserId AND b."Date">=CAST('2010-08-04 08:50:31' AS TIMESTAMP) AND b."Date"<=CAST('2014-09-02 02:51:22' AS TIMESTAMP) AND p.Score>=-1 AND p.Score<=14 AND pl.CreationDate<=CAST('2014-06-25 13:05:06' AS TIMESTAMP)

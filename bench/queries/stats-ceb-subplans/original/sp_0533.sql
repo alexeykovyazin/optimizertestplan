@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, users as u, votes as v WHERE u.Id = b.UserId AND u.Id = v.UserId AND u.DownVotes>=0;

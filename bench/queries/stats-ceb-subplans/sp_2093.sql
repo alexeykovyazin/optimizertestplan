@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph WHERE u.Id = ph.UserId AND u.DownVotes<=0 AND u.UpVotes>=0 AND u.UpVotes<=123

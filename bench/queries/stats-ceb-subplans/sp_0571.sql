@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postLinks as pl, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = b.UserId AND b."Date"<=CAST('2014-09-09 10:24:35' AS TIMESTAMP) AND p.CommentCount>=0 AND p.CommentCount<=13

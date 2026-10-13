@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE p.OwnerUserId = u.Id AND u.CreationDate<='2014-09-12 22:21:49'::timestamp AND p.AnswerCount>=0 AND p.FavoriteCount>=0 AND p.CreationDate<='2014-09-03 03:32:35'::timestamp;

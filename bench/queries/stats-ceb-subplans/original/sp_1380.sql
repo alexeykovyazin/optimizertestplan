@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, votes as v WHERE u.Id = p.OwnerUserId AND p.Id = v.PostId AND u.Reputation<=240 AND p.Score<=21 AND p.AnswerCount<=3 AND p.FavoriteCount>=0 AND v.CreationDate>='2010-07-19 00:00:00'::timestamp;

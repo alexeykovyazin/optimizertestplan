@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, tags as t, posts as p, users as u WHERE p.Id = t.ExcerptPostId AND u.Id = p.OwnerUserId AND u.Id = v.UserId;

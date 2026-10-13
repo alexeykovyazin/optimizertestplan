@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p WHERE p.Id = v.PostId AND v.BountyAmount<=100 AND v.CreationDate>=CAST('2009-02-03 00:00:00' AS TIMESTAMP) AND v.CreationDate<=CAST('2014-09-11 00:00:00' AS TIMESTAMP) AND p.AnswerCount>=0 AND p.AnswerCount<=4 AND p.CreationDate<=CAST('2014-09-12 15:56:19' AS TIMESTAMP)

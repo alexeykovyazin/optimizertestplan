@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, posts as p, votes as v WHERE u.Id = p.OwnerUserId AND p.Id = c.PostId AND p.Id = v.PostId AND p.PostTypeId=1 AND p.CommentCount>=0 AND p.CommentCount<=12 AND p.FavoriteCount>=0 AND v.BountyAmount<=50;

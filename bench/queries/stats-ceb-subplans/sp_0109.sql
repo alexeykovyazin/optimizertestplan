@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, votes as v, posts as p, badges as b WHERE u.Id = p.OwnerUserId AND u.Id = b.UserId AND p.Id = v.PostId AND u.Reputation>=1 AND p.Score<=22

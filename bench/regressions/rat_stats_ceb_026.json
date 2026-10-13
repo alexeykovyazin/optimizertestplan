@@ -1,0 +1,11 @@
+{
+  "id": "rat_stats_ceb_026",
+  "query_id": "stats_ceb_026",
+  "suite": "stats-ceb",
+  "kind": "plan_required+counters_max",
+  "plan_hash": "1b9b18d067ba9de119709f710cb7ae3bbab40b7d",
+  "max_fetches": 180486,
+  "max_record_reads": 61137,
+  "added": "2026-10-08",
+  "reason": "bootstrap: эталонный план и границы счётщиков контрольного набора фазы 0"
+}

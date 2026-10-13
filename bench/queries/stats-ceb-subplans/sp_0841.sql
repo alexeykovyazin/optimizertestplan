@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, posts as p, postLinks as pl WHERE p.Id = pl.PostId AND p.Id = ph.PostId AND ph.PostHistoryTypeId=5 AND p.PostTypeId=1 AND p.FavoriteCount>=0 AND p.FavoriteCount<=2

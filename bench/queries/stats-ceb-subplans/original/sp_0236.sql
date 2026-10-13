@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, postLinks as pl WHERE p.Id = pl.RelatedPostId AND p.Score>=-1 AND p.Score<=10 AND p.AnswerCount<=5 AND p.CommentCount=2 AND p.FavoriteCount>=0 AND p.FavoriteCount<=6 AND pl.CreationDate<='2014-08-17 01:23:50'::timestamp;

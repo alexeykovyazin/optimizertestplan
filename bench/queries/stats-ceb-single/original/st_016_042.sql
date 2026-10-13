@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.CreationDate>='2010-07-20 02:01:05'::timestamp;

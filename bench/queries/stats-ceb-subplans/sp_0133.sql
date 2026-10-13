@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p WHERE u.Id = p.OwnerUserId AND u.CreationDate>=CAST('2010-11-16 06:03:04' AS TIMESTAMP) AND p.Score<=48 AND p.AnswerCount<=8

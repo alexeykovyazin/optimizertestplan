@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postLinks as pl, posts as p WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.CreationDate>=CAST('2011-02-08 18:11:37' AS TIMESTAMP) AND pl.LinkTypeId=1 AND pl.CreationDate>=CAST('2011-04-12 15:23:59' AS TIMESTAMP) AND p.Score=1 AND p.ViewCount>=0 AND p.FavoriteCount>=0

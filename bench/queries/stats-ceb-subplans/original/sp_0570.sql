@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p, postLinks as pl, users as u WHERE u.Id = p.OwnerUserId AND p.Id = pl.RelatedPostId AND u.Id = v.UserId AND v.CreationDate>='2010-07-19 00:00:00'::timestamp AND p.CommentCount>=0 AND p.CommentCount<=13;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, postLinks as pl, posts as p WHERE p.Id = v.PostId AND p.Id = pl.RelatedPostId AND p.Id = c.PostId AND v.BountyAmount<=100 AND v.CreationDate>='2009-02-03 00:00:00'::timestamp AND v.CreationDate<='2014-09-11 00:00:00'::timestamp AND c.Score=0 AND pl.LinkTypeId=1 AND pl.CreationDate>='2011-03-07 16:05:24'::timestamp;

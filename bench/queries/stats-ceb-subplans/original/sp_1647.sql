@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c, votes as v WHERE c.PostId = p.Id AND v.PostId = p.Id AND c.Score=0;

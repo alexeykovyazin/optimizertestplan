@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, postHistory as ph, posts as p WHERE v.PostId = p.Id AND ph.PostId = p.Id AND v.VoteTypeId=2 AND ph.CreationDate<='2014-09-05 06:39:25'::timestamp;

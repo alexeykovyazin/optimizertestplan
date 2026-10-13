@@ -1,0 +1,3704 @@
+- id: ceb_10a_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: ec2d21bf
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 08ebeb41
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 51ea6edd
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 8341c143
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 1fa3c253
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 3df7825b
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: eee86cb0
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: b3d17c12
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 1404721c
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: d4e8ad6f
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4c9433c0
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 97b2da21
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: de92bdc1
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_10a_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 29738b11
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII; unexpected constructs: NOT (проверить вручную)'
+  ceb_template: 10a
+- id: ceb_10a_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: ce329cd0
+  tables: 7
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 10a
+- id: ceb_11a_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9d1036a4
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4a98b3fe
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 3e79839a
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4a98b3fe
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4a98b3fe
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4a98b3fe
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: a2cf45e5
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e5e44071
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e5e44071
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 94b04c38
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 94b04c38
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 532710df
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 94b04c38
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 3e79839a
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11a_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e5e44071
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11a
+- id: ceb_11b_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 2639b4b0
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c2f20c2f
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 687e96db
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9315672d
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: d7b681f0
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: adac5bda
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 69adf4fc
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: a9e52b2c
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: a9e52b2c
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4be5ee07
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 1c860e34
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 6b37addc
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c2f20c2f
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: aef4e60c
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_11b_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9315672d
+  tables: 11
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - kind_type
+  - movie_companies
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (2x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 11b
+- id: ceb_3b_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 8e425191
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c6215113
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: '83906371'
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 5bdd12e5
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4db74328
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 6ec0ae75
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 86afc7ff
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: f602f9f6
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: bada724f
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: edf8c8cf
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 6532feef
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 18258a39
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e689f096
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 664fd222
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_3b_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 704254d3
+  tables: 10
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: GROUP BY expr -> позиционные ссылки; ILIKE -> UPPER/LIKE (3x) — PG в
+    коллации C (ASCII folding), эквивалентно FB UPPER на ASCII
+  ceb_template: 3b
+- id: ceb_7a_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 7da89bc4
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 01874380
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: a7cdb543
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 3d706371
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9dab822f
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c5ac16a4
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9b56eae1
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 05c1edfc
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 750cb3f7
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: ffb49194
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 5def9d73
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c5d2f105
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: ced17ded
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: eee8e018
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_7a_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 4ccbbdec
+  tables: 12
+  table_list:
+  - aka_name
+  - cast_info
+  - info_type
+  - keyword
+  - kind_type
+  - movie_info
+  - movie_info_idx
+  - movie_keyword
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'info ~ numeric-regex -> SIMILAR TO (4x; пустые строки в info отсутствуют
+    — семантика совпадает); ::тип -> CAST (4x; FB: ошибка конверсии на нечисловой
+    строке — как в PG); unexpected constructs: CAST,OR (проверить вручную)'
+  ceb_template: 7a
+- id: ceb_8a_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: eb099a85
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: b46d51c6
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_8a_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: baa281c2
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e751619f
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_8a_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: '83884203'
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_8a_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c88e2daf
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 80a1392b
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 5d5978bd
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 94e1b47f
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: ae23d09d
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_8a_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: b861473d
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_8a_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: '68424809'
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 8cb93d63
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9cefbe65
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_8a_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 6e0bdbcb
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+  ceb_template: 8a
+- id: ceb_8a_016
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e2758c93
+  tables: 12
+  table_list:
+  - cast_info
+  - company_name
+  - company_type
+  - info_type
+  - keyword
+  - kind_type
+  - movie_companies
+  - movie_info
+  - movie_keyword
+  - name
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - in_list
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'unexpected constructs: OR (проверить вручную)'
+  ceb_template: 8a
+- id: ceb_9a_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: e2492c34
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 355bc1da
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 8bd9e0b8
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 355bc1da
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 355bc1da
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c373b891
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 63c089c6
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 55db1313
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 52fdf211
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: b221e040
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 60a4ccc3
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 429a97ed
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: c373b891
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 20c745f2
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9a_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 95d583b9
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (2x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9a
+- id: ceb_9b_001
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: be607c93
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_002
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 9c7317de
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_003
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 771f6800
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_004
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 69c66abd
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_005
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 489e8d9b
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_006
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: aac20106
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII; unexpected constructs: UNION (проверить вручную)'
+  ceb_template: 9b
+- id: ceb_9b_007
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: ebcfe8f5
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_008
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: a06779f8
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_009
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: a0df513c
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_010
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 60aa76d4
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_011
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 3b6d89e1
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_012
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: f75ce35c
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_013
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 51841ee4
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_014
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: 42a83df0
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b
+- id: ceb_9b_015
+  suite: ceb-imdb-regen
+  db: imdb
+  index_config:
+  - pk
+  template: b0903a22
+  tables: 8
+  table_list:
+  - cast_info
+  - info_type
+  - kind_type
+  - movie_info
+  - name
+  - person_info
+  - role_type
+  - title
+  tags:
+  - aggregate
+  - group_by
+  - in_list
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'GROUP BY c blob-ключами -> скрытый HASH-ключ первым (FB 5.0.5: blob
+    ключуется в сортировке по blob-ID и расщепляет контентно-равные группы даже не
+    первым ключом; HASH по содержимому всех ключей восстанавливает смежность; сверено
+    с PG); ILIKE -> UPPER/LIKE (1x) — PG в коллации C (ASCII folding), эквивалентно
+    FB UPPER на ASCII'
+  ceb_template: 9b

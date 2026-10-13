@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.CreationDate>='2010-09-06 00:58:21'::timestamp AND p.CreationDate<='2014-09-12 10:02:21'::timestamp;

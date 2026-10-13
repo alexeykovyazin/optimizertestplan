@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postLinks as pl WHERE p.OwnerUserId = u.Id AND p.Id = pl.PostId AND u.CreationDate<='2014-09-12 07:12:16'::timestamp AND p.CommentCount<=17;

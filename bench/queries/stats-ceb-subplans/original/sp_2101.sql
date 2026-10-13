@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, posts as p, postHistory as ph, users as u WHERE u.Id = p.OwnerUserId AND u.Id = b.UserId AND u.Id = ph.UserId AND p.PostTypeId=1 AND p.ViewCount>=0 AND p.ViewCount<=25597 AND p.CommentCount>=0 AND p.CommentCount<=11 AND p.FavoriteCount>=0;

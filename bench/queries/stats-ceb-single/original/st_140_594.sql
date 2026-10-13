@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.Score<=40 AND p.CommentCount>=0 AND p.CreationDate>='2010-07-28 17:40:56'::timestamp AND p.CreationDate<='2014-09-11 04:22:44'::timestamp;

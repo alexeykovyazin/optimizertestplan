@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postLinks as pl, posts as p WHERE p.Id = pl.RelatedPostId AND pl.LinkTypeId=1 AND pl.CreationDate>=CAST('2011-03-11 18:50:29' AS TIMESTAMP) AND p.Score>=0 AND p.Score<=13 AND p.FavoriteCount>=0

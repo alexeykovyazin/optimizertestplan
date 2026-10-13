@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, postLinks as pl, posts as p WHERE pl.RelatedPostId = p.Id AND ph.PostId = p.Id AND ph.CreationDate>='2010-08-06 03:14:53'::timestamp AND pl.LinkTypeId=1;

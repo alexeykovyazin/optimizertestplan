@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, postLinks as pl, posts as p WHERE p.Id = pl.RelatedPostId AND p.Id = v.PostId;

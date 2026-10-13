@@ -1,0 +1,3302 @@
+- id: stats_ceb_001
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f1510f9e
+  tables: 2
+  table_list:
+  - badges
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 79851
+- id: stats_ceb_002
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f7ad51a2
+  tables: 2
+  table_list:
+  - badges
+  - comments
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 10220614
+- id: stats_ceb_003
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 0c80b5d8
+  tables: 2
+  table_list:
+  - comments
+  - postHistory
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 1458075
+- id: stats_ceb_004
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 11949ca6
+  tables: 2
+  table_list:
+  - comments
+  - postHistory
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1709781
+- id: stats_ceb_005
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 8feef86f
+  tables: 2
+  table_list:
+  - comments
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 7491903
+- id: stats_ceb_006
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f03ec514
+  tables: 2
+  table_list:
+  - badges
+  - posts
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 428612
+- id: stats_ceb_007
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: bcae3f5c
+  tables: 3
+  table_list:
+  - comments
+  - postLinks
+  - posts
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 699302
+- id: stats_ceb_008
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f98992e8
+  tables: 3
+  table_list:
+  - comments
+  - postLinks
+  - posts
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 481420
+- id: stats_ceb_009
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: c56f88b3
+  tables: 3
+  table_list:
+  - comments
+  - postHistory
+  - posts
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 698213
+- id: stats_ceb_010
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: eda0ff78
+  tables: 3
+  table_list:
+  - comments
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 780683
+- id: stats_ceb_011
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f9b4b2ba
+  tables: 3
+  table_list:
+  - comments
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 326559
+- id: stats_ceb_012
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 230d3c0e
+  tables: 3
+  table_list:
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1018612
+- id: stats_ceb_013
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 4549b044
+  tables: 3
+  table_list:
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 315516
+- id: stats_ceb_014
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: ef1c6357
+  tables: 3
+  table_list:
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 200
+- id: stats_ceb_015
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: cfcff0b7
+  tables: 3
+  table_list:
+  - badges
+  - comments
+  - users
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 10223864
+- id: stats_ceb_016
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 193db6af
+  tables: 3
+  table_list:
+  - badges
+  - comments
+  - users
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 245567
+- id: stats_ceb_017
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 270df1d3
+  tables: 3
+  table_list:
+  - posts
+  - tags
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 70752
+- id: stats_ceb_018
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 022be776
+  tables: 3
+  table_list:
+  - postHistory
+  - postLinks
+  - posts
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 63500
+- id: stats_ceb_019
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: adf114f9
+  tables: 3
+  table_list:
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 10895
+- id: stats_ceb_020
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: ee6ce386
+  tables: 3
+  table_list:
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 251068
+- id: stats_ceb_021
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 1d995e8f
+  tables: 3
+  table_list:
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 26836
+- id: stats_ceb_022
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: '10352323'
+  tables: 3
+  table_list:
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2488080
+- id: stats_ceb_023
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 7c8c47a8
+  tables: 3
+  table_list:
+  - badges
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 144017
+- id: stats_ceb_024
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 69dbd272
+  tables: 3
+  table_list:
+  - badges
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 4582
+- id: stats_ceb_025
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 63f90314
+  tables: 4
+  table_list:
+  - comments
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 176191
+- id: stats_ceb_026
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 82bf3207
+  tables: 4
+  table_list:
+  - comments
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 25033
+- id: stats_ceb_027
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: e143b5de
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 42036
+- id: stats_ceb_028
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 64c897ec
+  tables: 4
+  table_list:
+  - badges
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 16049150
+- id: stats_ceb_029
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 018665be
+  tables: 4
+  table_list:
+  - badges
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 595820
+- id: stats_ceb_030
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 4ca330b6
+  tables: 4
+  table_list:
+  - badges
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 232039659
+- id: stats_ceb_031
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 4804d4b6
+  tables: 4
+  table_list:
+  - badges
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 6672465
+- id: stats_ceb_032
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 1d97999b
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 19402569
+- id: stats_ceb_033
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f331f074
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 6299
+- id: stats_ceb_034
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 0d0cf024
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 593169291
+- id: stats_ceb_035
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 773c23a8
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 3169724
+- id: stats_ceb_036
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: be2c8615
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 52313
+- id: stats_ceb_037
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 6bf06259
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1633681
+- id: stats_ceb_038
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 58c4a170
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 105742741
+- id: stats_ceb_039
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: b3047b31
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2034610
+- id: stats_ceb_040
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 60ec64fd
+  tables: 4
+  table_list:
+  - badges
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 28565
+- id: stats_ceb_041
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 55b2a81b
+  tables: 4
+  table_list:
+  - badges
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 1717
+- id: stats_ceb_042
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 4f07f25f
+  tables: 4
+  table_list:
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 896180
+- id: stats_ceb_043
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: c434908c
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 7661811
+- id: stats_ceb_044
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: b619c0f2
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2101105
+- id: stats_ceb_045
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 786ae7d7
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 6272
+- id: stats_ceb_046
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d1eef3a3
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 454094
+- id: stats_ceb_047
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: bf8e4861
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 60601561
+- id: stats_ceb_048
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: c9b99790
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 224
+- id: stats_ceb_049
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 30758cea
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 18597973
+- id: stats_ceb_050
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 45a49458
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 9812
+- id: stats_ceb_051
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: cf99c93a
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 86914174
+- id: stats_ceb_052
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 32a3cfca
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 228748307
+- id: stats_ceb_053
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 9e5bd99b
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 913441
+- id: stats_ceb_054
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: c37acaf9
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 4801
+- id: stats_ceb_055
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 1ab0390b
+  tables: 5
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - tags
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 14413
+- id: stats_ceb_056
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d60e4d06
+  tables: 5
+  table_list:
+  - badges
+  - posts
+  - tags
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 15887370
+- id: stats_ceb_057
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f4c1f446
+  tables: 5
+  table_list:
+  - badges
+  - posts
+  - tags
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 5091
+- id: stats_ceb_058
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 2d6c6c8a
+  tables: 6
+  table_list:
+  - badges
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 17849233970
+- id: stats_ceb_059
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 9329dd01
+  tables: 6
+  table_list:
+  - badges
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 88962973
+- id: stats_ceb_060
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 1abcfeee
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 11947976
+- id: stats_ceb_061
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 8067cf42
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 868310
+- id: stats_ceb_062
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 91d99847
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 109961
+- id: stats_ceb_063
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d2e6e941
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 8893
+- id: stats_ceb_064
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 2f3d03e4
+  tables: 6
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 692609
+- id: stats_ceb_065
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: cce40384
+  tables: 6
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 33955
+- id: stats_ceb_066
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 7cb60b9d
+  tables: 6
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 82213
+- id: stats_ceb_067
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: c2c9f3f4
+  tables: 6
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 469
+- id: stats_ceb_068
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: af18da54
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1112747282
+- id: stats_ceb_069
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 14640bfa
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 107654752
+- id: stats_ceb_070
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 137b9e19
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 80052528
+- id: stats_ceb_071
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 0dbf9463
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 58623592
+- id: stats_ceb_072
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 257727ce
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 1582060
+- id: stats_ceb_073
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 02a8d5b5
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - fk_fk_join
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1639421
+- id: stats_ceb_074
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 87791d9b
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 38686327
+- id: stats_ceb_075
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 9d1a6c5e
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 3812589
+- id: stats_ceb_076
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 2e8acfc2
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 434967
+- id: stats_ceb_077
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: defe9e0f
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 5982882
+- id: stats_ceb_078
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 435dc253
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 426751
+- id: stats_ceb_079
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 937a49a1
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 2870375
+- id: stats_ceb_080
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 05904320
+  tables: 3
+  table_list:
+  - comments
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1459345
+- id: stats_ceb_081
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 298b2646
+  tables: 3
+  table_list:
+  - comments
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 657592
+- id: stats_ceb_082
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 68002fe1
+  tables: 3
+  table_list:
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1771584
+- id: stats_ceb_083
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 8a52fe00
+  tables: 3
+  table_list:
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2323452
+- id: stats_ceb_084
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d6e5cc4f
+  tables: 3
+  table_list:
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 10993951
+- id: stats_ceb_085
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 5463a7ae
+  tables: 3
+  table_list:
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 10862842
+- id: stats_ceb_086
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 2811ba83
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 209182
+- id: stats_ceb_087
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 3bd51d3f
+  tables: 3
+  table_list:
+  - badges
+  - comments
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 758411
+- id: stats_ceb_088
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 9928a494
+  tables: 3
+  table_list:
+  - badges
+  - comments
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 10223864
+- id: stats_ceb_089
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d678a8a8
+  tables: 3
+  table_list:
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 1356723
+- id: stats_ceb_090
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: cb7f6837
+  tables: 3
+  table_list:
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 582617
+- id: stats_ceb_091
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 13da0f67
+  tables: 3
+  table_list:
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 4197329
+- id: stats_ceb_092
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 5b6296d5
+  tables: 3
+  table_list:
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 155561
+- id: stats_ceb_093
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 262bdcde
+  tables: 3
+  table_list:
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2162683
+- id: stats_ceb_094
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 786edfc6
+  tables: 3
+  table_list:
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1100297
+- id: stats_ceb_095
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 27b5be96
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - posts
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 4254157
+- id: stats_ceb_096
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 63430f8d
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - posts
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2016238
+- id: stats_ceb_097
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 327a2cf5
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 56359398
+- id: stats_ceb_098
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 3d666ff2
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 40855663
+- id: stats_ceb_099
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 7c7562c0
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 1490297
+- id: stats_ceb_100
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: b1dee623
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 303210
+- id: stats_ceb_101
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 255821bb
+  tables: 4
+  table_list:
+  - comments
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 408599
+- id: stats_ceb_102
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 3835a515
+  tables: 4
+  table_list:
+  - badges
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 2809424
+- id: stats_ceb_103
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: b98c203d
+  tables: 4
+  table_list:
+  - badges
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 3778084
+- id: stats_ceb_104
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d94255fb
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 11075893
+- id: stats_ceb_105
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 5b3303c6
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 183537163
+- id: stats_ceb_106
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: ecd293b1
+  tables: 4
+  table_list:
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 569476
+- id: stats_ceb_107
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: '59857169'
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 537352263
+- id: stats_ceb_108
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: effbcca0
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - users
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 593169291
+- id: stats_ceb_109
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 070edb50
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 978405
+- id: stats_ceb_110
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 72f65f38
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1104151
+- id: stats_ceb_111
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 0797f849
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1957551
+- id: stats_ceb_112
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: aed72ab8
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1839326
+- id: stats_ceb_113
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 6624f655
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 18382871
+- id: stats_ceb_114
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 548cff9c
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 19424781
+- id: stats_ceb_115
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 074f6dde
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 43927632
+- id: stats_ceb_116
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 4703083c
+  tables: 4
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 986987
+- id: stats_ceb_117
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 83c14735
+  tables: 4
+  table_list:
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 354388
+- id: stats_ceb_118
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 663543bf
+  tables: 4
+  table_list:
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 554302
+- id: stats_ceb_119
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: a45267dc
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 1936953
+- id: stats_ceb_120
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 84ab13b2
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 11637523617
+- id: stats_ceb_121
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: e4ff6029
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 1116000
+- id: stats_ceb_122
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: d3ffcc3f
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 11206879551
+- id: stats_ceb_123
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: bc6c1b3c
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 154355934
+- id: stats_ceb_124
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 02bfc80b
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 6351775
+- id: stats_ceb_125
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: c6fe8a4d
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 56205
+- id: stats_ceb_126
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 03191c81
+  tables: 4
+  table_list:
+  - badges
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: null
+  truth_full_dump: 3136348028
+- id: stats_ceb_127
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 02e0f47b
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 490921
+- id: stats_ceb_128
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f31df4e7
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 454094
+- id: stats_ceb_129
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 451bd719
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 914210
+- id: stats_ceb_130
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: ab9d737d
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 35205
+- id: stats_ceb_131
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 2ff6b1af
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2863626
+- id: stats_ceb_132
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 9d651cf4
+  tables: 5
+  table_list:
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 96484
+- id: stats_ceb_133
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 05ce270c
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 13971410
+- id: stats_ceb_134
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: cdc8b2dc
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 16698
+- id: stats_ceb_135
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: f102ecdd
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 2263957167
+- id: stats_ceb_136
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 4d81e4ec
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 255355807
+- id: stats_ceb_137
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 98ec2a7c
+  tables: 5
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 233930
+- id: stats_ceb_138
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 94da4b0e
+  tables: 5
+  table_list:
+  - badges
+  - posts
+  - tags
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 15677331
+- id: stats_ceb_139
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 8df6d204
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 4231593
+- id: stats_ceb_140
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 47ea2d92
+  tables: 7
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 113925678
+- id: stats_ceb_141
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: e96670a6
+  tables: 7
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 312148706
+- id: stats_ceb_142
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 6e3350d1
+  tables: 7
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 299574955
+- id: stats_ceb_143
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 786e8e79
+  tables: 7
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 155696936
+- id: stats_ceb_144
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 38a338a8
+  tables: 6
+  table_list:
+  - badges
+  - comments
+  - postHistory
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP); Date -> "Date" (reserved
+    word in Firebird)'
+  truth_full_dump: 18762969
+- id: stats_ceb_145
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 0a51dcb4
+  tables: 6
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 436286
+- id: stats_ceb_146
+  suite: stats-ceb
+  db: stats
+  index_config:
+  - pk
+  - pk_fk
+  template: 54bb57c5
+  tables: 6
+  table_list:
+  - comments
+  - postHistory
+  - postLinks
+  - posts
+  - users
+  - votes
+  tags:
+  - aggregate
+  - range_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: inner_only
+  result: null
+  port_notes: '''...''::timestamp -> CAST(''...'' AS TIMESTAMP)'
+  truth_full_dump: 1570429

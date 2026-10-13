@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, posts as p, postHistory as ph, votes as v WHERE u.Id = p.OwnerUserId AND p.Id = v.PostId AND p.Id = ph.PostId AND u.Reputation<=312 AND u.DownVotes<=0 AND p.Score>=-4 AND p.ViewCount>=0 AND p.ViewCount<=5977 AND p.AnswerCount<=4 AND p.CommentCount>=0 AND p.CommentCount<=11 AND p.CreationDate>=CAST('2011-01-25 08:31:41' AS TIMESTAMP)

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, comments as c, users as u WHERE u.Id = c.UserId AND u.Id = v.UserId AND v.BountyAmount>=0 AND v.BountyAmount<=300 AND v.CreationDate>=CAST('2010-07-29 00:00:00' AS TIMESTAMP) AND c.Score=0

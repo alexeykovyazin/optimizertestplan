@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u WHERE u.Reputation>=1 AND u.Views>=0 AND u.CreationDate>='2010-08-19 06:26:34'::timestamp AND u.CreationDate<='2014-09-11 05:22:26'::timestamp;

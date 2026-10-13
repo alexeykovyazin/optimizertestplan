@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p WHERE p.AnswerCount<=5 AND p.CommentCount>=0 AND p.CommentCount<=11 AND p.FavoriteCount<=27;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, badges as b WHERE u.Id = b.UserId AND u.Views<=233 AND u.DownVotes<=2 AND u.CreationDate>='2010-09-16 16:00:55'::timestamp AND u.CreationDate<='2014-08-24 21:12:02'::timestamp AND b.Date>='2010-07-27 17:58:45'::timestamp AND b.Date<='2014-09-06 17:33:22'::timestamp;

@@ -1,0 +1,84 @@
+- set: job-light
+  source_url: https://github.com/andreaskipf/learnedcardinalities (workloads/)
+  license: MIT
+  paper: 'Kipf et al., Learned Cardinalities: Estimating Correlated Joins with Deep
+    Learning, 2018 (arXiv:1809.00677)'
+  files:
+    job-light.sql: 72e4c87c853508ff2b30ca3273abe8063edf0a72837ee16aaa96aa207cea24ec
+    job-light.csv: 1177dbb048477e0ff270b06d05935d26b76e0d7d7a7d3a70df371b5ee0a20ccf
+  queries: 70
+  downloaded_at: '2026-10-10'
+  db: imdb (golden imdb_fb5.fdb — существующий снимок, загрузка не требуется)
+- set: scale
+  source_url: https://github.com/andreaskipf/learnedcardinalities (workloads/)
+  license: MIT
+  paper: 'Kipf et al., Learned Cardinalities: Estimating Correlated Joins with Deep
+    Learning, 2018 (arXiv:1809.00677)'
+  files:
+    scale.sql: f2766017b37f3bcf23f3bf27a2b087441e8ab0cc8a9afa1ceafe39c61a4fa3fb
+    scale.csv: 81815f141b8f0aa409c78177950e57c9bec91e629fa496eeaf474caeff6b664e
+  queries: 500
+  downloaded_at: '2026-10-10'
+  db: imdb (golden imdb_fb5.fdb — существующий снимок, загрузка не требуется)
+- set: synthetic
+  source_url: https://github.com/andreaskipf/learnedcardinalities (workloads/)
+  license: MIT
+  paper: 'Kipf et al., Learned Cardinalities: Estimating Correlated Joins with Deep
+    Learning, 2018 (arXiv:1809.00677)'
+  files:
+    synthetic.sql: 1f98d0ddeaec3b566b6c278f493333ca4877311348f3c7eee36cd5fe7fe9151d
+    synthetic.csv: 2efe35cbd0b860e2d8a68aee3a4d08ae5a064ac2b331182889be4e4916108faf
+  queries: 5000
+  downloaded_at: '2026-10-10'
+  db: imdb (golden imdb_fb5.fdb — существующий снимок, загрузка не требуется)
+- set: job-complex
+  source_url: https://github.com/DataManagementLab/JOB-Complex (JOB-Complex.sql)
+  license: нет файла LICENSE в репозитории (зафиксировано; использование — исследовательское,
+    публиковать запросы с атрибуцией Wehrstein et al., AIDB 2025)
+  paper: 'Wehrstein et al., JOB-Complex: A Challenging Benchmark for Traditional &
+    Learned Query Optimizers, AIDB 2025'
+  files:
+    JOB-Complex.sql: a7e56fc636418585fe5437daf32f1f74284400192dad0b18913d2c7b700d3a32
+  queries: 30
+  downloaded_at: '2026-10-10'
+  db: imdb (golden imdb_fb5.fdb — существующий снимок, загрузка не требуется)
+  plans: ~6000 планов-эталонов в бенчмарке авторов — только истина для сравнения,
+    в FB не исполняются
+- set: tpch
+  source_url: https://github.com/electrum/tpch-dbgen (зеркало официального dbgen 2.14;
+    tpc.org требует регистрации)
+  license: TPC EULA (инструменты TPC-H; исследовательское использование; перед публикацией
+    сверить §13 плана)
+  paper: TPC-H benchmark specification (answers/ эталоны в зеркале)
+  files:
+    region.tbl: f03079aa338c83c784ca11957a1325f262d255ed6fb1e1775a9c2f1645265e9f
+    nation.tbl: 44c72856538ea7f4aee55c1b164cf14441e64c40081db53005b530a7358f029b
+    supplier.tbl: cd27f50384be5300307fe69e5fa239a86a6a1d7db76256fa6ab11a31b0e7151e
+    part.tbl: 0bed48da7c1560a0d991ab892aab5d62fec48c9f87be213ed6c89265a428e484
+    partsupp.tbl: 53e03bfd62b0340a14dc867bf2a5a0464fa8aeeced038b3c52a08f20570bccd2
+    customer.tbl: 8b244137e21a823c4cba52a58c02b153cc500f37fc4156adf6c8797c50f8b33a
+    orders.tbl: e369b185c564a8122c4290f49253c043d139aba18ca2279b683d21323887b09f
+    lineitem.tbl: 685fd14b69342ce76881c005be32e09063c88301c21e39b7f6d3981e606e048f
+  queries: 22
+  downloaded_at: '2026-10-10'
+  db: 'tpch_sf1: bench/datasets/tpch/sf1_csv (канонические счётчики dbgen) -> db/tpch/tpch_sf1_fb5.fdb
+    (функциональная копия); golden на dellg15 — шаг B3'
+  qgen_seed: 42
+- set: ceb-imdb-regen
+  source_url: https://github.com/learnedsystems/CEB (шаблоны + query_gen; данные-workload
+    недоступны — все Dropbox-ссылки 404, проверено 2026-10-11)
+  license: MIT
+  paper: Negi et al., Cardinality Estimation Benchmark (CEB); Flow Loss (SIGMOD 2022)
+    / Robust Cardinalities (VLDB 2024)
+  files:
+    repo_clone: third_party/CEB-repo (main, 2026-10-11)
+  queries: 121
+  downloaded_at: '2026-10-11'
+  db: imdb (golden imdb_fb5.fdb)
+  recovery: запросы регенерированы штатным query_gen из 8 выложенных toml-шаблонов
+    IMDb (3b 7a 8a 9a 9b 10a 11a 11b), seed 2112+i, значения по квантилям через PG-эталон;
+    НЕ побайтовая копия оригинального CEB-IMDb, истина подпланов оригинала недоступна
+  port_rules: 'ILIKE->UPPER/LIKE; info~numeric-regex->SIMILAR TO; ::float->CAST DOUBLE
+    PRECISION; at->"at"; BLOB в GROUP BY: сортировка ключует blob-ID — не-blob ключи
+    первыми, all-blob ключи -> скрытый HASH(SUBSTRING...||#||...) первым ключом; SELECT
+    с голым blob (вывод = PG байт-в-байт)'

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM posts as p, comments as c WHERE p.Id = c.PostId AND p.Score<=21 AND p.AnswerCount<=3 AND p.FavoriteCount>=0 AND c.Score=0

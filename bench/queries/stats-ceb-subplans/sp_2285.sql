@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, comments as c, badges as b WHERE c.UserId = u.Id AND b.UserId = u.Id

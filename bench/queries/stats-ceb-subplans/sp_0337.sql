@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, comments as c, users as u WHERE c.UserId = u.Id AND ph.UserId = u.Id AND ph.PostHistoryTypeId=12 AND c.CreationDate>=CAST('2010-07-20 21:37:31' AS TIMESTAMP)

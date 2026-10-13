@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM users as u, postHistory as ph, posts as p WHERE p.OwnerUserId = u.Id AND ph.UserId = u.Id AND u.CreationDate>='2010-07-27 02:56:06'::timestamp AND u.CreationDate<='2014-09-10 10:44:00'::timestamp AND ph.CreationDate>='2010-07-19 19:52:31'::timestamp AND p.Score>=0;

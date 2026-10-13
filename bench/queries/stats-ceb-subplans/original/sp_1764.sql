@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM votes as v, posts as p WHERE p.Id = v.PostId AND v.CreationDate>='2010-07-20 00:00:00'::timestamp AND v.CreationDate<='2014-09-03 00:00:00'::timestamp AND p.PostTypeId=1 AND p.AnswerCount>=0 AND p.AnswerCount<=4;

@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM badges as b, postHistory as ph, users as u WHERE u.Id = b.UserId AND u.Id = ph.UserId AND b."Date"<=CAST('2014-09-09 10:24:35' AS TIMESTAMP) AND ph.PostHistoryTypeId=5 AND ph.CreationDate<=CAST('2014-08-13 09:20:10' AS TIMESTAMP)

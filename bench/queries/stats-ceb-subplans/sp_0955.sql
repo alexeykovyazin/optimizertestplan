@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM postHistory as ph, comments as c, posts as p, postLinks as pl WHERE p.Id = pl.RelatedPostId AND p.Id = c.PostId AND p.Id = ph.PostId
