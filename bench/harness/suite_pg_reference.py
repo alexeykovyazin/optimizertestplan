@@ -30,6 +30,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 GEN = os.path.join(ROOT, "third_party", "imdb-port")
 REMOTE_BASE = "E:/pgdumps"
 TIMEOUT_S = 300
+PG_DB = os.environ.get("BENCH_PG_DB", "imdb")
 # пароль эталонного PG — только через окружение, в репозитории не хранится
 PG_PWD = os.environ.get("BENCH_PG_PWD", "")
 
@@ -45,6 +46,17 @@ def source_sql(suite: str, qid: str) -> str:
                                     if q.strip()]
         idx = int(qid.rsplit("_", 1)[1])
         return source_sql._jc_cache[idx - 1]
+    if suite == "tpch":
+        # исходник: qgen -s 1 -r 42 -> third_party/tpch-dbgen/queries_out/N.sql
+        # (тот же источник, что port_tpch.py; усечение до первого ';' —
+        # хвост qgen "where rownum <= n;" снимается). Точность поля интервала
+        # "day (3)" PG не принимает (qgen-диалект) — снимаем.
+        qnum = int(qid.rsplit("_", 1)[1])
+        raw = open(os.path.join(ROOT, "third_party", "tpch-dbgen",
+                                "queries_out", f"{qnum}.sql"),
+                   encoding="utf-8").read()
+        raw = re.sub(r"\b(day|year|month)\s*\(\d+\)", r"\1", raw)
+        return raw.split(";", 1)[0]
     return open(os.path.join(ROOT, "bench", "queries", suite,
                              f"{qid}.sql"), encoding="utf-8").read()
 
@@ -72,16 +84,31 @@ def gen(suites: list[str]):
         for qid in qids(suite):
             sql = source_sql(suite, qid).strip().rstrip(";").strip()
             one_line = " ".join(sql.split())
+            pre = post = ""
+            if suite == "tpch" and qid.endswith("_15"):
+                # qgen Q15: create view + select + drop view — эталон и план
+                # полным циклом; \copy оборачивает только итоговый select
+                raw = open(os.path.join(ROOT, "third_party", "tpch-dbgen",
+                                        "queries_out", "15.sql"),
+                           encoding="utf-8").read()
+                raw = raw.split("where rownum", 1)[0]
+                parts = [p.strip() for p in raw.split(";") if p.strip()]
+                pre = parts[0] + ";\n"
+                post = (parts[2] if len(parts) > 2
+                        else "drop view revenue0") + ";\n"
+                one_line = " ".join(parts[1].split())
             with open(os.path.join(gdir, f"q_{qid}.sql"), "w",
                       encoding="utf-8", newline="\n") as f:
                 f.write(f"SET statement_timeout = '{TIMEOUT_S}s';\n"
-                        f"\\timing on\n"
-                        f"\\copy ({one_line}) TO STDOUT WITH (FORMAT csv)\n")
+                        f"\\timing on\n{pre}"
+                        f"\\copy ({one_line}) TO STDOUT WITH (FORMAT csv)\n"
+                        f"{post}")
             with open(os.path.join(gdir, f"pe_{qid}.sql"), "w",
                       encoding="utf-8", newline="\n") as f:
                 f.write(f"SET statement_timeout = '{TIMEOUT_S}s';\n"
-                        f"\\timing on\n"
-                        f"EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF) {sql};\n")
+                        f"\\timing on\n{pre}"
+                        f"EXPLAIN (ANALYZE, FORMAT JSON, TIMING OFF) "
+                        f"{one_line};\n{post}")
         rdir = (REMOTE_BASE + "/" + f"{suite}ref").replace("/", "\\")
         with open(os.path.join(GEN, f"{suite}ref_run.cmd"), "w",
                   encoding="utf-8", newline="\r\n") as f:
@@ -90,8 +117,8 @@ set "PGPASSWORD={PG_PWD}"
 set "LC_MESSAGES=C"
 if not exist {rdir}\\out mkdir {rdir}\\out
 del /q {rdir}\\out\\* 2>nul
-for %%f in ({rdir}\\q_*.sql) do C:\\pgsql\\bin\\psql.exe -U postgres -d imdb -A -t -q -f "%%f" > "{rdir}\\out\\%%~nf.csv" 2> "{rdir}\\out\\%%~nf.err"
-for %%f in ({rdir}\\pe_*.sql) do C:\\pgsql\\bin\\psql.exe -U postgres -d imdb -A -t -q -f "%%f" > "{rdir}\\out\\%%~nf.json" 2> "{rdir}\\out\\%%~nf.err"
+for %%f in ({rdir}\\q_*.sql) do C:\\pgsql\\bin\\psql.exe -U postgres -d {PG_DB} -A -t -q -f "%%f" > "{rdir}\\out\\%%~nf.csv" 2> "{rdir}\\out\\%%~nf.err"
+for %%f in ({rdir}\\pe_*.sql) do C:\\pgsql\\bin\\psql.exe -U postgres -d {PG_DB} -A -t -q -f "%%f" > "{rdir}\\out\\%%~nf.json" 2> "{rdir}\\out\\%%~nf.err"
 echo PGREF_DONE_{suite.upper()}
 """)
         print(f"generated {len(qids(suite))} x (q_, pe_) -> {gdir}")
@@ -160,12 +187,13 @@ def parse(suites: list[str]):
             pf = os.path.join(out, f"pe_{qid}.json")
             if os.path.exists(pf):
                 txt = open(pf, encoding="utf-8",
-                           errors="replace").read().strip()
-                if "]" in txt:
-                    txt = txt[:txt.rfind("]") + 1]
-                if txt.startswith("["):
+                           errors="replace").read()
+                # план = первый [...] в выводе psql; перед ним могут быть
+                # статусы/тайминги других стэйтментов (tpch_15: view+select)
+                li = txt.find("[")
+                if li != -1:
                     try:
-                        plan = json.loads(txt)
+                        plan, _ = json.JSONDecoder().raw_decode(txt[li:])
                         entry["plan"] = plan
                         try:
                             entry["pg_execution_ms"] = \

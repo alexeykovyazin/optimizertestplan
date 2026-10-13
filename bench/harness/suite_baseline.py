@@ -30,10 +30,11 @@ REMOTE_HOST = os.environ.get("DELLG15_SSH", "dellg15")
 
 
 def remote_sha(path: str) -> str:
+    # русская шапка certutil идёт в cp866 — без errors разорвёт decode
     r = subprocess.run(
         ["ssh", REMOTE_HOST,
          f"certutil -hashfile {path.replace('/', chr(92))} SHA256"],
-        capture_output=True, text=True)
+        capture_output=True, text=True, errors="replace")
     for ln in r.stdout.splitlines():
         ln = ln.strip()
         if len(ln) == 64 and all(c in "0123456789abcdef" for c in ln.lower()):
@@ -63,7 +64,8 @@ def fb_version(host_port: str, db_path: str) -> str:
     conn = fbenv.connect_fb(db_path)
     try:
         cur = conn.cursor()
-        cur.execute("SELECT RDB$GET_CONTEXT('SYSTEM','ENGINE_VERSION')")
+        cur.execute("SELECT RDB$GET_CONTEXT('SYSTEM','ENGINE_VERSION') "
+                    "FROM RDB$DATABASE")  # FROM-less DSQL не парсится
         v = cur.fetchone()[0].strip()
         cur.close()
         return v

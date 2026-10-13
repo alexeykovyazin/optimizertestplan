@@ -1,0 +1,5 @@
+CONNECT "localhost/44830:E:/db/imdb/IMDB_FB5.FDB";
+SET PLANONLY;
+SELECT id FROM TITLE ORDER BY id;
+SELECT movie_id FROM TITLE WHERE kind_id = 1 ORDER BY id;
+EXIT;

@@ -274,16 +274,53 @@ TPC-H дополнительно (S1/S2 локально, функциональ
   SELECT с голым blob (вывод байт-в-байт). Детали — память
   [[fb5-blob-groupby-bug]]. Также: canon `''`→None (PG-CSV не различает
   NULL и пустую строку — job_validate.canon_cell).
-- **Дальше (окна)**: S8 job-light + scale + ceb-imdb-regen (тихая машина!;
-  `suite_baseline.py --suites job-light scale` — repeats=2), synthetic
-  S6-компиляция (ночной), TPC-H B3 (golden+PG-эталон на dellg15: dbgen+sf1_csv
-  перегенерировать на месте, сид 42 детерминирован), S8 tpch, добить
-  pe_ceb_8a_012 (1800 с).
-- **job_light_060**: q_ эталон есть, pe_060 и FB-ревалидация (>600 с) —
-  добить в тихом окне с бюджетом 1800 с.
-- **Watchdog pgref_watchdog (schtasks)**: после завершения ВСЕХ PG-окон
-  (включая CEB redo) удалить: `schtasks /Delete /TN pgref_watchdog /F`.
-- **Прямой доступ**: PG и FB с HONOR2025 — по IPv4 192.168.1.57
+- **Сессия 2026-10-13 (окно dellg15) — итоги**:
+  - **pe_ceb_8a_012 ЗАКРЫТ**: план снят за 207 c на тихой машине
+    (root actual rows 1 = count 3 551 853 ✓), слит в
+    `results/ceb-imdb-regen_pg_reference/ceb_8a_012.json`; устаревший err
+    отменённой попытки 300 c снят. CEB: 121/121 результатов, 121 план.
+  - **job_light_060**: прежний q_-эталон оказался ПОРЧЕН (строка
+    «Время: …» из psql-тайминга попала в CSV отменённого \copy). Пересчитан
+    на тихой машине: COUNT = 9 537 310 863 за 1251 c (бюджет 1800 c).
+    pe_060 НЕДОСТИЖИМ: параллельный EXPLAIN ANALYZE после statement_timeout
+    зависает в IPC/BgworkerShutdown, воркер игнорирует terminate >1 ч;
+    план отсутствует (69 планов из 70). FB-ревалидация при 1800 c —
+    exec_timeout (FB не исполняет ≥30 мин при PG 21 мин) — закрыто как
+    находка; job-light: 65 match + 5 exec_timeout, 0 mismatch.
+  - **TPC-H B3 ЗАКРЫТ**: golden `tpch_sf1_fb5.fdb` (SHA 4e403c30…) передан
+    на dellg15 бит-в-байт; dbgen 2.14 `-vf -s 1` перегенерирован на месте —
+    все 8 .tbl байт-в-байт с локальными; PG-база `tpch` (C-коллация,
+    dss.ddl + PK/FK, канонические счётчики, ANALYZE) за 2.5 мин.
+  - **TPC-H S6**: 22/22 результатов, 20 планов. Оригиналы — qgen
+    `-s 1 -r 42` (queries_out/N.sql); Q15 — полный цикл
+    create view/\copy select/drop view; фикс qgen-диалекта
+    `interval '91' day (3)` → `day` (PG не принимает точность поля).
+    **tpch_17/tpch_20 — pg_timeout**: оригинальный SQL даёт коррелированный
+    avg-SubPlan на каждую join-пару (O(N²)), >1800 c на тихом PG17 —
+    эталона нет (класс no_pg_reference).
+  - **TPC-H S7**: **15 match + 3 match_truncated + 2 exec_timeout +
+    2 no_pg_reference, 0 mismatch** (22) → `results/tpch_validation/report.json`.
+    match_truncated (01/08/14) — новая дивергенция: FB AVG/SUM(numeric)
+    сохраняют масштаб входа (25.52), PG avg(numeric) расширяет на 4
+    (25.522005…); `job_validate.prefix_compatible` дополнен числовым
+    усечением (FB-значение == округление PG до масштаба FB, ROUND_HALF_UP).
+  - **Инцидент PG**: зависший pe060-воркер (BgworkerShutdown, CPU без
+    wait_event >1 ч, pg_terminate_backend бесполезен) → перезапуск сервиса
+    postgresql-17; осиротевшие бэкенды держали Global-маппинг →
+    `could not create shared memory segment: error code 5` до их смерти.
+    Выученное: параллельные \copy/EXPLAIN на этом PG после cancel либо
+    разворачиваются ~15-20 мин (300 c), либо зависают навсегда — монстры
+    запускать через schtasks, застрявших терминировать парой
+    лидер+воркер, при отказе — рестарт сервиса.
+  - **S8 imdb (job-light/scale/ceb-imdb-regen) запущен** 2026-10-13
+    (baseline `8e23f5f87eea`, repeats=2, --host 192.168.1.57:3055,
+    работа по свежей копии golden). Ловушки обвязки S8: FROM-less
+    `SELECT RDB$GET_CONTEXT(...)` не парсится (нужен FROM RDB$DATABASE);
+    русская шапка certutil (cp866) рвёт utf-8-decode в subprocess —
+    errors="replace". После: S8 tpch, synthetic only-collect.
+  - **Watchdog pgref_watchdog (schtasks)**: PG-эталонные окна закрыты —
+    задача DISABLED; удалить `schtasks /Delete /TN pgref_watchdog /F`
+    после S8/synthetic.- **Прямой доступ**: PG и FB с HONOR2025 — по IPv4 192.168.1.57
   (dellg15.local резолвится mDNS в IPv6 link-local вне pg_hba.conf; ssh-алиас
   пока ходит по имени — при сбое резолва использовать
   `ssh -i ~/.ssh/id_ed25519_lab57 ak@192.168.1.57`).

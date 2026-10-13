@@ -30,6 +30,23 @@ OUTDIR = os.path.join(ROOT, "results", "job_validation")
 TRUNC = 8000
 
 
+NUM_DEC = re.compile(r"-?\d+\.\d+")
+
+
+def _canon_num(s: str):
+    """Числа с точкой — до 14 значащих цифр: PG считает TPC-H агрегаты
+    exact-numeric, FB часть выражений отдаёт DOUBLE — строка различается,
+    значение совпадает в пределах мантиссы double. Обе стороны проходят
+    один и тот же детерминированный канон."""
+    from decimal import Decimal
+    d = Decimal(s).normalize()
+    if d == 0:
+        return Decimal(0)
+    if len(d.as_tuple().digits) > 14:
+        d = d.quantize(Decimal(1).scaleb(d.adjusted() - 13)).normalize()
+    return d
+
+
 def canon_cell(v):
     if v is None:
         return None
@@ -42,6 +59,8 @@ def canon_cell(v):
         return None
     if re.fullmatch(r"-?\d+", s):
         return int(s)
+    if NUM_DEC.fullmatch(s):
+        return _canon_num(s)
     return s
 
 
@@ -57,8 +76,31 @@ def canon_rows(rows):
     return sorted(out)
 
 
+def _num_trunc_compatible(a, b) -> bool | None:
+    """FB-число == PG-число, округлённое до масштаба FB (ROUND_HALF_UP)?
+    Дивергенция порта: FB AVG/SUM(numeric) сохраняют масштаб входа,
+    PG avg(numeric) расширяет масштаб на 4. Возвращает None, если пара
+    нечисловая."""
+    from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+    try:
+        d_fb = Decimal(str("" if a is None else a).strip())
+        d_pg = Decimal(str("" if b is None else b).strip())
+    except InvalidOperation:
+        return None
+    fb_exp = d_fb.as_tuple().exponent
+    pg_exp = d_pg.as_tuple().exponent
+    if not isinstance(fb_exp, int) or not isinstance(pg_exp, int):
+        return None
+    if fb_exp >= pg_exp:
+        return None
+    return d_fb == d_pg.quantize(Decimal(1).scaleb(fb_exp),
+                                 rounding=ROUND_HALF_UP)
+
+
 def prefix_compatible(fb_rows, pg_rows) -> bool:
-    """Все значения FB — префиксы соответствующих значений PG (усечение)."""
+    """Строковый вариант: все значения FB — префиксы соответствующих значений
+    PG (усечение); числовой: FB-значение == округление PG до масштаба FB
+    (дивергенция numeric-масштаба AVG/SUM, tpch_01)."""
     if len(fb_rows) != len(pg_rows):
         return False
     for fr, pr in zip(sorted(fb_rows, key=repr), sorted(pg_rows, key=repr)):
@@ -67,8 +109,11 @@ def prefix_compatible(fb_rows, pg_rows) -> bool:
         for a, b in zip(fr, pr):
             sa = "" if a is None else str(a)
             sb = None if b is None else str(b)
-            if sb is None or not sb.startswith(sa):
+            if sb is None:
                 return False
+            if sb.startswith(sa) or _num_trunc_compatible(a, b):
+                continue
+            return False
     return True
 
 
