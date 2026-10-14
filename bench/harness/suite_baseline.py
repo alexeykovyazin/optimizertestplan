@@ -95,11 +95,27 @@ def main():
     from phase0_make_baseline import flatten_exec
 
     work = a.work_dir.rstrip("/") + "/" + a.work_name
+    # кэш SHA — ЛОКАЛЬНО: work-путь лежит на удалённой машине
+    sha_cache = os.path.join(pipeline.RESULTS_DIR, "baselines",
+                             "work_sha_cache.json")
+    try:
+        sha_map = json.load(open(sha_cache, encoding="utf-8"))
+    except (OSError, ValueError):
+        sha_map = {}
     if not a.skip_copy:
         sha = make_work_copy_remote(a.golden, work)
+        sha_map[work] = sha
+        with open(sha_cache, "w", encoding="utf-8") as f:
+            json.dump(sha_map, f)
         print(f"work copy: sha256={sha[:16]}...", flush=True)
+    elif work in sha_map:
+        sha = sha_map[work]
+        print(f"work copy exists (cached sha): {sha[:16]}...", flush=True)
     else:
         sha = remote_sha(work)
+        sha_map[work] = sha
+        with open(sha_cache, "w", encoding="utf-8") as f:
+            json.dump(sha_map, f)
         print(f"work copy exists: sha256={sha[:16]}...", flush=True)
 
     ver = fb_version(a.host, work)
@@ -120,10 +136,46 @@ def main():
               f"({time.perf_counter() - t0:.0f}s)", flush=True)
         if a.only_collect:
             continue
-        t0 = time.perf_counter()
-        rows = run_suite(work, suite, warmup=True, repeats=2,
-                         per_query_timeout_s=a.timeout_s, progress=True)
-        flat = flatten_exec(rows, {r["query_id"]: r for r in collected})
+        # crash-resume: результаты построчно в jsonl; после краша драйвера/
+        # сети рестарт досчитывает только недостающие запросы
+        sidecar = os.path.join(bdir, f"{suite}.executed.jsonl")
+        done: dict[str, dict] = {}
+        if os.path.exists(sidecar):
+            with open(sidecar, encoding="utf-8") as f:
+                for ln in f:
+                    ln = ln.strip()
+                    if not ln:
+                        continue
+                    try:
+                        r = json.loads(ln)
+                        done[r["query_id"]] = r
+                    except json.JSONDecodeError:
+                        pass  # оборванная последняя строка при краше
+        all_ids = [r["query_id"] for r in collected]
+        remaining = [q for q in all_ids if q not in done]
+        print(f"[{suite}] resume: {len(done)} done, {len(remaining)} left",
+              flush=True)
+        if remaining:
+            t0 = time.perf_counter()
+
+            def _persist(rec: dict) -> None:
+                with open(sidecar, "a", encoding="utf-8") as f:
+                    f.write(json.dumps(rec, ensure_ascii=False,
+                                       default=str) + "\n")
+
+            rows = run_suite(work, suite, only_ids=remaining, warmup=True,
+                             repeats=2, per_query_timeout_s=a.timeout_s,
+                             progress=True, on_result=_persist)
+            for r in rows:
+                done[r["query_id"]] = r
+            print(f"[{suite}] executed batch: {len(rows)} queries "
+                  f"({time.perf_counter() - t0:.0f}s)", flush=True)
+        if len(done) < len(all_ids):
+            print(f"[{suite}] INCOMPLETE {len(done)}/{len(all_ids)} — "
+                  f"рестарт продолжит", flush=True)
+            continue
+        flat = flatten_exec([done[q] for q in all_ids],
+                            {r["query_id"]: r for r in collected})
         pipeline.save_parquet(flat,
                               os.path.join(bdir, f"{suite}.executed.parquet"))
         ok = sum(1 for r in flat if r.get("median_ms"))
@@ -132,8 +184,7 @@ def main():
         heavy = sum(1 for r in flat if r.get("median_ms") and
                     r["median_ms"] > 15000)
         print(f"[{suite}] executed: {len(flat)} (ok={ok} timeout={to} "
-              f"error={err} heavy={heavy}) in {time.perf_counter() - t0:.0f}s",
-              flush=True)
+              f"error={err} heavy={heavy})", flush=True)
 
     if not a.only_collect:
         meta = {"kind": "suite_baseline", "key": key, "key_id": key_id,

@@ -108,7 +108,8 @@ def run_suite(db_path: str, suite: str, warmup: bool = True, repeats: int = 2,
               per_query_timeout_s: float = 120.0,
               fetch_rows_limit: int = 1000,
               adaptive_reps_over_ms: float = 15000.0,
-              progress: bool = True) -> list[dict]:
+              progress: bool = True,
+              on_result=None) -> list[dict]:
     """runs[0] — прогрев (раздел 10), отбрасывается при повторных прогонах;
     тяжёлый запрос (> adaptive_reps_over_ms) даёт единственный замер, он же
     медиана из 1. Бюджет одного исполнения — per_query_timeout_s; превышение
@@ -158,6 +159,13 @@ def run_suite(db_path: str, suite: str, warmup: bool = True, repeats: int = 2,
             except Exception as e:  # noqa: BLE001
                 rec["error"] = f"{type(e).__name__}: {str(e).strip()[:300]}"
             out.append(rec)
+            if on_result is not None:
+                # построчная персистентность: краш процесса не теряет
+                # результаты уже завершённых запросов
+                try:
+                    on_result(rec)
+                except Exception:  # noqa: BLE001
+                    pass
     finally:
         worker.close()
     return out
