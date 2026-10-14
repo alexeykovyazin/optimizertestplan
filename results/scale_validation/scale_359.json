@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_359",
+ "status": "exec_timeout",
+ "prepare_ms": 431.16869998630136,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN JOIN (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MI INDEX (MOVIE_ID_MOVIE_INFO))",
+ "error": null,
+ "wall_s": 645.5
+}

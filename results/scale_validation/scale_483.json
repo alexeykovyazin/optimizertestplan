@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_483",
+ "status": "match",
+ "prepare_ms": 537.6345000113361,
+ "exec_ms": 16562.485300004482,
+ "rows_count": 1,
+ "checksum": "sha1:739b66221a34557bdc9a8b3077bdeb8c40f09521",
+ "plan": "PLAN JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK))",
+ "error": null,
+ "wall_s": 17.4
+}

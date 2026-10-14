@@ -1,5 +1,10 @@
 db/
-results/
+# results/: тяжёлые эталоны (pg_reference со строками результатов) остаются
+# вне; в гит идут только отчёты валидаций и S8-бейслайны (лёгкие артефакты)
+results/*
+!results/*_validation
+!results/prepare_test
+!results/baselines
 third_party/
 .tmp/
 __pycache__/

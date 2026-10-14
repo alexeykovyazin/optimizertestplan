@@ -1,0 +1,252 @@
+{
+ "suite": "tpch",
+ "statuses": {
+  "match_truncated": 3,
+  "match": 15,
+  "exec_timeout": 2,
+  "no_pg_reference": 2
+ },
+ "total": 22,
+ "results": [
+  {
+   "query_id": "tpch_01",
+   "status": "match_truncated",
+   "prepare_ms": 682.884699999704,
+   "exec_ms": 16920.57410000416,
+   "rows_count": 4,
+   "checksum": "sha1:ab291ab1b216283c6c379e5d501453a5b186ff7e",
+   "plan": "PLAN SORT (LINEITEM NATURAL)",
+   "error": null,
+   "wall_s": 18.0
+  },
+  {
+   "query_id": "tpch_02",
+   "status": "match",
+   "prepare_ms": 179.45190001046285,
+   "exec_ms": 224.26760000234935,
+   "rows_count": 495,
+   "checksum": "sha1:58da4f1326ab9240b53c12342bd420a3591d5a0e",
+   "plan": "PLAN JOIN (PARTSUPP INDEX (PARTSUPP_PK), SUPPLIER INDEX (SUPPLIER_PK), NATION INDEX (NATION_PK), REGION INDEX (REGION_PK))\nPLAN SORT (HASH (HASH (HASH (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK)), SUPPLIER NATURAL), NATION NATURAL), REGION NATURAL))",
+   "error": null,
+   "wall_s": 0.6
+  },
+  {
+   "query_id": "tpch_03",
+   "status": "match",
+   "prepare_ms": 84.38800000294577,
+   "exec_ms": 2317.3225999926217,
+   "rows_count": 11626,
+   "checksum": "sha1:3d4f3420dcb3bc555984454b1426377a553bd16c",
+   "plan": "PLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+   "error": null,
+   "wall_s": 2.6
+  },
+  {
+   "query_id": "tpch_04",
+   "status": "match",
+   "prepare_ms": 59.93309999757912,
+   "exec_ms": 1690.736399992602,
+   "rows_count": 5,
+   "checksum": "sha1:9e31ffe1e7c63f083b291fce2ab79afa076eb7df",
+   "plan": "PLAN (LINEITEM INDEX (LINEITEM_PK))\nPLAN SORT (ORDERS NATURAL)",
+   "error": null,
+   "wall_s": 1.9
+  },
+  {
+   "query_id": "tpch_05",
+   "status": "match",
+   "prepare_ms": 83.57030000479426,
+   "exec_ms": 1614.895599996089,
+   "rows_count": 5,
+   "checksum": "sha1:0d149c9d10332460f58682103f7b0dabf2620f09",
+   "plan": "PLAN SORT (SORT (HASH (JOIN (HASH (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), REGION NATURAL), LINEITEM INDEX (LINEITEM_PK)), SUPPLIER NATURAL)))",
+   "error": null,
+   "wall_s": 2.0
+  },
+  {
+   "query_id": "tpch_06",
+   "status": "match",
+   "prepare_ms": 62.65300000086427,
+   "exec_ms": 3368.2007000024896,
+   "rows_count": 1,
+   "checksum": "sha1:7f6ee2f54c0a364ac66374467a77b7acdb424243",
+   "plan": "PLAN (LINEITEM NATURAL)",
+   "error": null,
+   "wall_s": 3.6
+  },
+  {
+   "query_id": "tpch_07",
+   "status": "match",
+   "prepare_ms": 66.48000000859611,
+   "exec_ms": 8773.700799996732,
+   "rows_count": 4,
+   "checksum": "sha1:90ee39e7a737748eec01069594383ad0088dda21",
+   "plan": "PLAN SORT (SORT (HASH (HASH (JOIN (HASH (HASH (SHIPPING LINEITEM NATURAL, SHIPPING SUPPLIER NATURAL), SHIPPING N1 NATURAL), SHIPPING ORDERS INDEX (ORDERS_PK)), SHIPPING CUSTOMER NATURAL), SHIPPING N2 NATURAL)))",
+   "error": null,
+   "wall_s": 9.1
+  },
+  {
+   "query_id": "tpch_08",
+   "status": "match_truncated",
+   "prepare_ms": 166.0173999989638,
+   "exec_ms": 2023.0577000038465,
+   "rows_count": 2,
+   "checksum": "sha1:c9ff4afaad5d2a6617533bc822d3313bb490fa1a",
+   "plan": "PLAN SORT (SORT (HASH (HASH (HASH (JOIN (HASH (HASH (HASH (ALL_NATIONS ORDERS NATURAL, ALL_NATIONS CUSTOMER NATURAL), ALL_NATIONS N1 NATURAL), ALL_NATIONS REGION NATURAL), ALL_NATIONS LINEITEM INDEX (LINEITEM_PK)), ALL_NATIONS SUPPLIER NATURAL), ALL_NATIONS N2 NATURAL), ALL_NATIONS PART NATURAL)))",
+   "error": null,
+   "wall_s": 2.4
+  },
+  {
+   "query_id": "tpch_09",
+   "status": "match",
+   "prepare_ms": 59.026500006439164,
+   "exec_ms": 9119.030899993959,
+   "rows_count": 175,
+   "checksum": "sha1:b9437ba2bd180b01d3fca025120e3e4e23ed4c27",
+   "plan": "PLAN SORT (SORT (HASH (HASH (HASH (HASH (JOIN (PROFIT ORDERS NATURAL, PROFIT LINEITEM INDEX (LINEITEM_PK)), PROFIT SUPPLIER NATURAL), PROFIT NATION NATURAL), PROFIT PART NATURAL), PROFIT PARTSUPP NATURAL)))",
+   "error": null,
+   "wall_s": 9.4
+  },
+  {
+   "query_id": "tpch_10",
+   "status": "match",
+   "prepare_ms": 61.509000006481074,
+   "exec_ms": 7971.230600000126,
+   "rows_count": 37633,
+   "checksum": "sha1:47efa54498e7ffabf481c81d3b424f92196e6e00",
+   "plan": "PLAN SORT (SORT (JOIN (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+   "error": null,
+   "wall_s": 9.0
+  },
+  {
+   "query_id": "tpch_11",
+   "status": "match",
+   "prepare_ms": 134.29899999755435,
+   "exec_ms": 973.7201999960234,
+   "rows_count": 839,
+   "checksum": "sha1:7687fd1dadc9e1c18365ba28f950beb8f4531bd4",
+   "plan": "PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)\nPLAN SORT (HASH (HASH (PARTSUPP ORDER PARTSUPP_PK, SUPPLIER NATURAL), NATION NATURAL))",
+   "error": null,
+   "wall_s": 1.3
+  },
+  {
+   "query_id": "tpch_12",
+   "status": "match",
+   "prepare_ms": 248.6295999988215,
+   "exec_ms": 3027.0841000019573,
+   "rows_count": 2,
+   "checksum": "sha1:03befedc981c342ec267fa280efd1c7d8cd861b5",
+   "plan": "PLAN SORT (JOIN (LINEITEM NATURAL, ORDERS INDEX (ORDERS_PK)))",
+   "error": null,
+   "wall_s": 3.8
+  },
+  {
+   "query_id": "tpch_13",
+   "status": "exec_timeout",
+   "prepare_ms": 59.96749999758322,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN SORT (SORT (JOIN (C_ORDERS CUSTOMER ORDER CUSTOMER_PK, C_ORDERS ORDERS NATURAL)))",
+   "error": null,
+   "wall_s": 1845.2
+  },
+  {
+   "query_id": "tpch_14",
+   "status": "match_truncated",
+   "prepare_ms": 63.88969998806715,
+   "exec_ms": 4084.082400004263,
+   "rows_count": 1,
+   "checksum": "sha1:d2bd95a91156336e094e9bfe8bd51b8f3c3343db",
+   "plan": "PLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+   "error": null,
+   "wall_s": 4.3
+  },
+  {
+   "query_id": "tpch_15",
+   "status": "match",
+   "prepare_ms": 101.16229999403004,
+   "exec_ms": 8161.979800002882,
+   "rows_count": 1,
+   "checksum": "sha1:44d113df3466adaf88416ab03c958c5fb72361ef",
+   "plan": "PLAN SORT (REVENUE0 LINEITEM NATURAL)\nPLAN SORT (JOIN (SORT (REVENUE0 LINEITEM NATURAL), SUPPLIER INDEX (SUPPLIER_PK)))",
+   "error": null,
+   "wall_s": 8.4
+  },
+  {
+   "query_id": "tpch_16",
+   "status": "match",
+   "prepare_ms": 87.76409999700263,
+   "exec_ms": 1839.3757000012556,
+   "rows_count": 18150,
+   "checksum": "sha1:168265621c9c4aa0b64334ca4441c49f729521f2",
+   "plan": "PLAN (SUPPLIER NATURAL)\nPLAN (SUPPLIER INDEX (SUPPLIER_PK, SUPPLIER_PK))\nPLAN SORT (SORT (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK))))",
+   "error": null,
+   "wall_s": 2.2
+  },
+  {
+   "query_id": "tpch_18",
+   "status": "match",
+   "prepare_ms": 53.89670000295155,
+   "exec_ms": 7994.891199996346,
+   "rows_count": 10,
+   "checksum": "sha1:81ea72811ccda0de0993f993993afb941e714545",
+   "plan": "PLAN (LINEITEM ORDER LINEITEM_PK)\nPLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+   "error": null,
+   "wall_s": 8.2
+  },
+  {
+   "query_id": "tpch_19",
+   "status": "match",
+   "prepare_ms": 57.584599999245256,
+   "exec_ms": 37171.28950000915,
+   "rows_count": 1,
+   "checksum": "sha1:fdbb69ef267966a7f2b1807c396649eda4c073b3",
+   "plan": "PLAN JOIN (LINEITEM NATURAL, PART INDEX (PART_PK, PART_PK, PART_PK))",
+   "error": null,
+   "wall_s": 37.6
+  },
+  {
+   "query_id": "tpch_21",
+   "status": "match",
+   "prepare_ms": 339.2331000068225,
+   "exec_ms": 9704.785900001298,
+   "rows_count": 399,
+   "checksum": "sha1:3592e73223c6da8fe8a98aeaed52003378e703cd",
+   "plan": "PLAN (L2 INDEX (LINEITEM_PK))\nPLAN (L3 INDEX (LINEITEM_PK))\nPLAN SORT (SORT (HASH (HASH (JOIN (ORDERS NATURAL, L1 INDEX (LINEITEM_PK)), SUPPLIER NATURAL), NATION NATURAL)))",
+   "error": null,
+   "wall_s": 10.4
+  },
+  {
+   "query_id": "tpch_22",
+   "status": "exec_timeout",
+   "prepare_ms": 83.12570000998676,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN (CUSTSALE CUSTOMER NATURAL)\nPLAN (CUSTSALE ORDERS NATURAL)\nPLAN SORT (SORT (CUSTSALE CUSTOMER NATURAL))",
+   "error": null,
+   "wall_s": 1845.1
+  },
+  {
+   "query_id": "tpch_17",
+   "status": "no_pg_reference",
+   "prepare_ms": null,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": null,
+   "error": "PG reference unavailable: original SQL >1800s on PG17 (correlated avg-SubPlan), see tpch_pg_reference"
+  },
+  {
+   "query_id": "tpch_20",
+   "status": "no_pg_reference",
+   "prepare_ms": null,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": null,
+   "error": "PG reference unavailable: original SQL >1800s on PG17 (correlated avg-SubPlan), see tpch_pg_reference"
+  }
+ ]
+}

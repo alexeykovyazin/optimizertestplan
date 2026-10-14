@@ -1,0 +1,11 @@
+{
+ "query_id": "10b",
+ "status": "match_truncated",
+ "prepare_ms": 44.08909997437149,
+ "exec_ms": 758.0958000035025,
+ "rows_count": 1,
+ "checksum": "sha1:971a2a31fa23a7c33e144ed8640bbf8055d90b8e",
+ "plan": "PLAN JOIN (HASH (JOIN (HASH (JOIN (CN NATURAL, MC INDEX (COMPANY_ID_MOVIE_COMPANIES)), CT NATURAL), T INDEX (TITLE_PK), CI INDEX (MOVIE_ID_CAST_INFO)), RT NATURAL), CHN INDEX (CHAR_NAME_PK))",
+ "error": null,
+ "wall_s": 0.8
+}

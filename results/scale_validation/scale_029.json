@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_029",
+ "status": "match",
+ "prepare_ms": 146.31290000397712,
+ "exec_ms": 14679.994199977955,
+ "rows_count": 1,
+ "checksum": "sha1:5ac105ef8ecc8c8b64a6ca7097f9d8d2cdbea138",
+ "plan": "PLAN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX))",
+ "error": null,
+ "wall_s": 15.6
+}

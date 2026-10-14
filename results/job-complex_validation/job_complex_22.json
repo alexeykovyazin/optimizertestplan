@@ -1,0 +1,11 @@
+{
+ "query_id": "job_complex_22",
+ "status": "match",
+ "prepare_ms": 258.43560000066645,
+ "exec_ms": 32256.567700009327,
+ "rows_count": 1,
+ "checksum": "sha1:c7020d159c4fba06cd74b42082ee5d9d084c48bd",
+ "plan": "PLAN MERGE (SORT (CN NATURAL), SORT (JOIN (K NATURAL, MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), CI INDEX (MOVIE_ID_CAST_INFO), N INDEX (NAME_PK))))",
+ "error": null,
+ "wall_s": 32.8
+}

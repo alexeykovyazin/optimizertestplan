@@ -1,0 +1,11 @@
+{
+ "query_id": "job_complex_29",
+ "status": "match",
+ "prepare_ms": 1605.4491999966558,
+ "exec_ms": 7693.722299998626,
+ "rows_count": 1,
+ "checksum": "sha1:1de191be085ddff1fdd2374fd2788c2f291a75e4",
+ "plan": "PLAN HASH (AK NATURAL, JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (HASH (CC NATURAL, CCT1 NATURAL), CCT2 NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX)), IT2 NATURAL), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), K NATURAL), CI INDEX (MOVIE_ID_CAST_INFO)), CHN NATURAL), N INDEX (NAME_PK)))",
+ "error": null,
+ "wall_s": 9.9
+}

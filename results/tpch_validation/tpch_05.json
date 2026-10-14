@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_05",
+ "status": "match",
+ "prepare_ms": 83.57030000479426,
+ "exec_ms": 1614.895599996089,
+ "rows_count": 5,
+ "checksum": "sha1:0d149c9d10332460f58682103f7b0dabf2620f09",
+ "plan": "PLAN SORT (SORT (HASH (JOIN (HASH (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), REGION NATURAL), LINEITEM INDEX (LINEITEM_PK)), SUPPLIER NATURAL)))",
+ "error": null,
+ "wall_s": 2.0
+}

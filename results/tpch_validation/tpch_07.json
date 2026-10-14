@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_07",
+ "status": "match",
+ "prepare_ms": 66.48000000859611,
+ "exec_ms": 8773.700799996732,
+ "rows_count": 4,
+ "checksum": "sha1:90ee39e7a737748eec01069594383ad0088dda21",
+ "plan": "PLAN SORT (SORT (HASH (HASH (JOIN (HASH (HASH (SHIPPING LINEITEM NATURAL, SHIPPING SUPPLIER NATURAL), SHIPPING N1 NATURAL), SHIPPING ORDERS INDEX (ORDERS_PK)), SHIPPING CUSTOMER NATURAL), SHIPPING N2 NATURAL)))",
+ "error": null,
+ "wall_s": 9.1
+}

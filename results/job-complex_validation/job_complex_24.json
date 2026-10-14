@@ -1,0 +1,11 @@
+{
+ "query_id": "job_complex_24",
+ "status": "exec_timeout",
+ "prepare_ms": 232.0573000179138,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN MERGE (SORT (AK NATURAL), SORT (CN2 NATURAL), SORT (JOIN (K NATURAL, MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CN INDEX (COMPANY_NAME_PK), CI INDEX (MOVIE_ID_CAST_INFO), N INDEX (NAME_PK))))",
+ "error": null,
+ "wall_s": 645.3
+}

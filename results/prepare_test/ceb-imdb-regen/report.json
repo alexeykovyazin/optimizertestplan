@@ -1,0 +1,737 @@
+{
+ "suite": "ceb-imdb-regen",
+ "fdb": "E:/Projects_Big/optimizertestplan/db/golden/imdb_fb5.fdb",
+ "total": 121,
+ "statuses": {
+  "ok": 121
+ },
+ "compile_budget_ms": 9706.4,
+ "results": [
+  {
+   "query_id": "ceb_10a_001",
+   "status": "ok",
+   "prepare_ms": 249.67,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_002",
+   "status": "ok",
+   "prepare_ms": 68.77,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_003",
+   "status": "ok",
+   "prepare_ms": 69.62,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_004",
+   "status": "ok",
+   "prepare_ms": 63.78,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_005",
+   "status": "ok",
+   "prepare_ms": 65.21,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_006",
+   "status": "ok",
+   "prepare_ms": 65.65,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_007",
+   "status": "ok",
+   "prepare_ms": 67.57,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_008",
+   "status": "ok",
+   "prepare_ms": 75.7,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_009",
+   "status": "ok",
+   "prepare_ms": 79.13,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_010",
+   "status": "ok",
+   "prepare_ms": 73.96,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_011",
+   "status": "ok",
+   "prepare_ms": 79.31,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_012",
+   "status": "ok",
+   "prepare_ms": 73.58,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_013",
+   "status": "ok",
+   "prepare_ms": 83.71,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_014",
+   "status": "ok",
+   "prepare_ms": 83.96,
+   "error": null
+  },
+  {
+   "query_id": "ceb_10a_015",
+   "status": "ok",
+   "prepare_ms": 76.31,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_001",
+   "status": "ok",
+   "prepare_ms": 80.13,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_002",
+   "status": "ok",
+   "prepare_ms": 64.68,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_003",
+   "status": "ok",
+   "prepare_ms": 69.04,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_004",
+   "status": "ok",
+   "prepare_ms": 70.23,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_005",
+   "status": "ok",
+   "prepare_ms": 67.01,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_006",
+   "status": "ok",
+   "prepare_ms": 70.38,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_007",
+   "status": "ok",
+   "prepare_ms": 71.76,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_008",
+   "status": "ok",
+   "prepare_ms": 70.12,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_009",
+   "status": "ok",
+   "prepare_ms": 71.78,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_010",
+   "status": "ok",
+   "prepare_ms": 69.34,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_011",
+   "status": "ok",
+   "prepare_ms": 69.07,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_012",
+   "status": "ok",
+   "prepare_ms": 67.96,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_013",
+   "status": "ok",
+   "prepare_ms": 70.81,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_014",
+   "status": "ok",
+   "prepare_ms": 71.81,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11a_015",
+   "status": "ok",
+   "prepare_ms": 77.07,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_001",
+   "status": "ok",
+   "prepare_ms": 80.52,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_002",
+   "status": "ok",
+   "prepare_ms": 83.72,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_003",
+   "status": "ok",
+   "prepare_ms": 77.9,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_004",
+   "status": "ok",
+   "prepare_ms": 78.94,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_005",
+   "status": "ok",
+   "prepare_ms": 75.85,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_006",
+   "status": "ok",
+   "prepare_ms": 81.61,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_007",
+   "status": "ok",
+   "prepare_ms": 78.27,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_008",
+   "status": "ok",
+   "prepare_ms": 76.73,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_009",
+   "status": "ok",
+   "prepare_ms": 82.33,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_010",
+   "status": "ok",
+   "prepare_ms": 67.91,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_011",
+   "status": "ok",
+   "prepare_ms": 82.3,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_012",
+   "status": "ok",
+   "prepare_ms": 79.51,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_013",
+   "status": "ok",
+   "prepare_ms": 81.73,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_014",
+   "status": "ok",
+   "prepare_ms": 81.13,
+   "error": null
+  },
+  {
+   "query_id": "ceb_11b_015",
+   "status": "ok",
+   "prepare_ms": 78.21,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_001",
+   "status": "ok",
+   "prepare_ms": 78.31,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_002",
+   "status": "ok",
+   "prepare_ms": 74.14,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_003",
+   "status": "ok",
+   "prepare_ms": 73.63,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_004",
+   "status": "ok",
+   "prepare_ms": 73.9,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_005",
+   "status": "ok",
+   "prepare_ms": 77.94,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_006",
+   "status": "ok",
+   "prepare_ms": 76.21,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_007",
+   "status": "ok",
+   "prepare_ms": 89.27,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_008",
+   "status": "ok",
+   "prepare_ms": 78.73,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_009",
+   "status": "ok",
+   "prepare_ms": 76.67,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_010",
+   "status": "ok",
+   "prepare_ms": 82.45,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_011",
+   "status": "ok",
+   "prepare_ms": 82.45,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_012",
+   "status": "ok",
+   "prepare_ms": 79.89,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_013",
+   "status": "ok",
+   "prepare_ms": 76.57,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_014",
+   "status": "ok",
+   "prepare_ms": 72.79,
+   "error": null
+  },
+  {
+   "query_id": "ceb_3b_015",
+   "status": "ok",
+   "prepare_ms": 81.36,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_001",
+   "status": "ok",
+   "prepare_ms": 92.73,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_002",
+   "status": "ok",
+   "prepare_ms": 94.12,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_003",
+   "status": "ok",
+   "prepare_ms": 89.37,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_004",
+   "status": "ok",
+   "prepare_ms": 86.67,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_005",
+   "status": "ok",
+   "prepare_ms": 94.04,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_006",
+   "status": "ok",
+   "prepare_ms": 95.83,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_007",
+   "status": "ok",
+   "prepare_ms": 90.46,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_008",
+   "status": "ok",
+   "prepare_ms": 92.02,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_009",
+   "status": "ok",
+   "prepare_ms": 98.76,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_010",
+   "status": "ok",
+   "prepare_ms": 97.56,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_011",
+   "status": "ok",
+   "prepare_ms": 93.04,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_012",
+   "status": "ok",
+   "prepare_ms": 89.48,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_013",
+   "status": "ok",
+   "prepare_ms": 88.89,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_014",
+   "status": "ok",
+   "prepare_ms": 92.96,
+   "error": null
+  },
+  {
+   "query_id": "ceb_7a_015",
+   "status": "ok",
+   "prepare_ms": 83.43,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_001",
+   "status": "ok",
+   "prepare_ms": 81.17,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_002",
+   "status": "ok",
+   "prepare_ms": 77.78,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_003",
+   "status": "ok",
+   "prepare_ms": 80.15,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_004",
+   "status": "ok",
+   "prepare_ms": 81.43,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_005",
+   "status": "ok",
+   "prepare_ms": 72.4,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_006",
+   "status": "ok",
+   "prepare_ms": 83.65,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_007",
+   "status": "ok",
+   "prepare_ms": 76.13,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_008",
+   "status": "ok",
+   "prepare_ms": 80.29,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_009",
+   "status": "ok",
+   "prepare_ms": 78.12,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_010",
+   "status": "ok",
+   "prepare_ms": 76.37,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_011",
+   "status": "ok",
+   "prepare_ms": 75.26,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_012",
+   "status": "ok",
+   "prepare_ms": 73.29,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_013",
+   "status": "ok",
+   "prepare_ms": 85.79,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_014",
+   "status": "ok",
+   "prepare_ms": 78.64,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_015",
+   "status": "ok",
+   "prepare_ms": 78.34,
+   "error": null
+  },
+  {
+   "query_id": "ceb_8a_016",
+   "status": "ok",
+   "prepare_ms": 77.28,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_001",
+   "status": "ok",
+   "prepare_ms": 82.23,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_002",
+   "status": "ok",
+   "prepare_ms": 72.2,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_003",
+   "status": "ok",
+   "prepare_ms": 69.04,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_004",
+   "status": "ok",
+   "prepare_ms": 70.21,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_005",
+   "status": "ok",
+   "prepare_ms": 70.44,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_006",
+   "status": "ok",
+   "prepare_ms": 70.49,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_007",
+   "status": "ok",
+   "prepare_ms": 74.61,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_008",
+   "status": "ok",
+   "prepare_ms": 77.51,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_009",
+   "status": "ok",
+   "prepare_ms": 79.96,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_010",
+   "status": "ok",
+   "prepare_ms": 75.39,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_011",
+   "status": "ok",
+   "prepare_ms": 75.7,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_012",
+   "status": "ok",
+   "prepare_ms": 76.25,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_013",
+   "status": "ok",
+   "prepare_ms": 77.86,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_014",
+   "status": "ok",
+   "prepare_ms": 88.01,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9a_015",
+   "status": "ok",
+   "prepare_ms": 86.45,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_001",
+   "status": "ok",
+   "prepare_ms": 76.68,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_002",
+   "status": "ok",
+   "prepare_ms": 78.96,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_003",
+   "status": "ok",
+   "prepare_ms": 85.56,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_004",
+   "status": "ok",
+   "prepare_ms": 85.85,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_005",
+   "status": "ok",
+   "prepare_ms": 94.73,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_006",
+   "status": "ok",
+   "prepare_ms": 91.37,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_007",
+   "status": "ok",
+   "prepare_ms": 79.37,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_008",
+   "status": "ok",
+   "prepare_ms": 74.43,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_009",
+   "status": "ok",
+   "prepare_ms": 72.17,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_010",
+   "status": "ok",
+   "prepare_ms": 74.17,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_011",
+   "status": "ok",
+   "prepare_ms": 80.28,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_012",
+   "status": "ok",
+   "prepare_ms": 90.82,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_013",
+   "status": "ok",
+   "prepare_ms": 78.0,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_014",
+   "status": "ok",
+   "prepare_ms": 80.02,
+   "error": null
+  },
+  {
+   "query_id": "ceb_9b_015",
+   "status": "ok",
+   "prepare_ms": 84.05,
+   "error": null
+  }
+ ]
+}

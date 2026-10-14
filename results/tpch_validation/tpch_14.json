@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_14",
+ "status": "match_truncated",
+ "prepare_ms": 63.88969998806715,
+ "exec_ms": 4084.082400004263,
+ "rows_count": 1,
+ "checksum": "sha1:d2bd95a91156336e094e9bfe8bd51b8f3c3343db",
+ "plan": "PLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+ "error": null,
+ "wall_s": 4.3
+}

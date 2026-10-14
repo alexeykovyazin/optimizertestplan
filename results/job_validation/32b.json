@@ -1,0 +1,11 @@
+{
+ "query_id": "32b",
+ "status": "match",
+ "prepare_ms": 42.02669998630881,
+ "exec_ms": 659.8523000138812,
+ "rows_count": 1,
+ "checksum": "sha1:8283b5a0c530984ab6c4068b6c5712bdc002f4f3",
+ "plan": "PLAN HASH (JOIN (HASH (ML NATURAL, LT NATURAL), T1 INDEX (TITLE_PK), T2 INDEX (TITLE_PK), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), K NATURAL)",
+ "error": null,
+ "wall_s": 0.7
+}

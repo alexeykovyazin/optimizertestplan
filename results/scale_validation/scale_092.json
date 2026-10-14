@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_092",
+ "status": "match",
+ "prepare_ms": 130.4594000102952,
+ "exec_ms": 1104.2315999802668,
+ "rows_count": 1,
+ "checksum": "sha1:78f3b110b9d77eb15d9e902866f2671deca5fb31",
+ "plan": "PLAN (CI INDEX (ROLE_ID_CAST_INFO))",
+ "error": null,
+ "wall_s": 1.6
+}

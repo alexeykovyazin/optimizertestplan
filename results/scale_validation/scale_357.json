@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_357",
+ "status": "match",
+ "prepare_ms": 406.8707000114955,
+ "exec_ms": 6176.655699993717,
+ "rows_count": 1,
+ "checksum": "sha1:9f98e2af382e2c1d4dfd9c84bd9eeed9e69ece81",
+ "plan": "PLAN JOIN (T NATURAL, MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX), MI INDEX (MOVIE_ID_MOVIE_INFO))",
+ "error": null,
+ "wall_s": 7.1
+}

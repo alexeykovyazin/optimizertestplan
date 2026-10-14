@@ -1,0 +1,11 @@
+{
+ "query_id": "job_complex_07",
+ "status": "match",
+ "prepare_ms": 858.7432999920566,
+ "exec_ms": 127.78489998891018,
+ "rows_count": 1,
+ "checksum": "sha1:de8caffbd2b664b08dc56c14d001f633a7daf6ef",
+ "plan": "PLAN HASH (JOIN (HASH (JOIN (LT NATURAL, ML INDEX (LINK_TYPE_ID_MOVIE_LINK), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CT NATURAL), CN INDEX (COMPANY_NAME_PK), MI INDEX (MOVIE_ID_MOVIE_INFO), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), K NATURAL)",
+ "error": null,
+ "wall_s": 1.5
+}

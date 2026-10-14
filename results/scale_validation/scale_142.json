@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_142",
+ "status": "match",
+ "prepare_ms": 458.01799997570924,
+ "exec_ms": 68592.6918000041,
+ "rows_count": 1,
+ "checksum": "sha1:8a8c6aab76ffd6dadc08322d7625f1449f9d5d26",
+ "plan": "PLAN JOIN (T NATURAL, MI INDEX (MOVIE_ID_MOVIE_INFO))",
+ "error": null,
+ "wall_s": 69.4
+}

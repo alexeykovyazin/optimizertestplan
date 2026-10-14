@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_243",
+ "status": "match",
+ "prepare_ms": 198.9115999895148,
+ "exec_ms": 426232.9812000098,
+ "rows_count": 1,
+ "checksum": "sha1:991e2a57ac7c1545e954a4f0769659ef644c6b56",
+ "plan": "PLAN JOIN (T NATURAL, CI INDEX (MOVIE_ID_CAST_INFO))",
+ "error": null,
+ "wall_s": 426.6
+}

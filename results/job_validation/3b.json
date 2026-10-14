@@ -1,0 +1,11 @@
+{
+ "query_id": "3b",
+ "status": "match",
+ "prepare_ms": 43.20959997130558,
+ "exec_ms": 279.41449999343604,
+ "rows_count": 1,
+ "checksum": "sha1:e46b5e350316c47c4d46a15912f1cab27bb9b701",
+ "plan": "PLAN JOIN (K NATURAL, MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), MI INDEX (MOVIE_ID_MOVIE_INFO))",
+ "error": null,
+ "wall_s": 0.3
+}

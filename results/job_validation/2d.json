@@ -1,0 +1,11 @@
+{
+ "query_id": "2d",
+ "status": "match",
+ "prepare_ms": 39.23009999562055,
+ "exec_ms": 1009.7269000252709,
+ "rows_count": 1,
+ "checksum": "sha1:d7b7d6947c61118bc2e80f57a2a0880b6b846393",
+ "plan": "PLAN HASH (JOIN (K NATURAL, MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CN NATURAL)",
+ "error": null,
+ "wall_s": 1.1
+}

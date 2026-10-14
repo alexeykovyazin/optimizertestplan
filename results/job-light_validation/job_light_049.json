@@ -1,0 +1,11 @@
+{
+ "query_id": "job_light_049",
+ "status": "exec_timeout",
+ "prepare_ms": 8081.73559998977,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CI INDEX (MOVIE_ID_CAST_INFO))",
+ "error": null,
+ "wall_s": 653.2
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_019",
+ "status": "match",
+ "prepare_ms": 404.913000005763,
+ "exec_ms": 7055.806499993196,
+ "rows_count": 1,
+ "checksum": "sha1:721a217527b5a04b17f4a4bedc18185f1d3b395b",
+ "plan": "PLAN JOIN (MI_IDX NATURAL, T INDEX (TITLE_PK))",
+ "error": null,
+ "wall_s": 7.6
+}

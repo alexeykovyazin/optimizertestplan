@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_475",
+ "status": "match",
+ "prepare_ms": 413.3628999989014,
+ "exec_ms": 30156.137500016484,
+ "rows_count": 1,
+ "checksum": "sha1:bfe45c9d89c6715a281fe7ba8e5bf3f81a5ce8af",
+ "plan": "PLAN JOIN (HASH (CI INDEX (PERSON_ID_CAST_INFO), T INDEX (KIND_ID_TITLE)), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX))",
+ "error": null,
+ "wall_s": 31.3
+}

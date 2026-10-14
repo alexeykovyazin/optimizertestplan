@@ -1,0 +1,11 @@
+{
+ "query_id": "17f",
+ "status": "match",
+ "prepare_ms": 36.85829997994006,
+ "exec_ms": 61486.00659996737,
+ "rows_count": 1,
+ "checksum": "sha1:6baf6c93fc431528cdbdf35c4c2172aaec1dae24",
+ "plan": "PLAN JOIN (HASH (JOIN (K NATURAL, MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CN NATURAL), CI INDEX (MOVIE_ID_CAST_INFO), N INDEX (NAME_PK))",
+ "error": null,
+ "wall_s": 61.5
+}

@@ -1,0 +1,454 @@
+work copy exists: sha256=7e14b08091c193c4...
+[scale] collect: 500 queries (52s)
+[scale] resume: 0 done, 500 left
+  [scale 1/500] scale_001
+  [scale 2/500] scale_002
+  [scale 3/500] scale_003
+  [scale 4/500] scale_004
+  [scale 5/500] scale_005
+  [scale 6/500] scale_006
+  [scale 7/500] scale_007
+  [scale 8/500] scale_008
+  [scale 9/500] scale_009
+  [scale 10/500] scale_010
+  [scale 11/500] scale_011
+  [scale 12/500] scale_012
+  [scale 13/500] scale_013
+  [scale 14/500] scale_014
+[job-light 12/70] job_light_012
+  [job-light 13/70] job_light_013
+  [job-light 14/70] job_light_014
+  [job-light 15/70] job_light_015
+  [job-light 16/70] job_light_016
+  [job-light 17/70] job_light_017
+  [job-light 18/70] job_light_018
+  [job-light 19/70] job_light_019
+  [job-light 20/70] job_light_020
+  [job-light 21/70] job_light_021
+  [job-light 22/70] job_light_022
+  [job-light 23/70] job_light_023
+  [job-light 24/70] job_light_024
+  [job-light 25/70] job_light_025
+work copy exists (cached sha): 7e14b08091c193c4...
+[job-light] collect: 70 queries (10s)
+[job-light] resume: 0 done, 70 left
+  [job-light 1/70] job_light_001
+  [job-light 2/70] job_light_002
+  [job-light 3/70] job_light_003
+  [job-light 4/70] job_light_004
+  [job-light 5/70] job_light_005
+  [job-light 6/70] job_light_006
+  [job-light 7/70] job_light_007
+  [job-light 8/70] job_light_008
+  [job-light 9/70] job_light_009
+  [job-light 10/70] job_light_010
+  [job-light 11/70] job_light_011
+  [job-light 12/70] job_light_012
+  [job-light 13/70] job_light_013
+  [job-light 14/70] job_light_014
+  [job-light 15/70] job_light_015
+  [job-light 16/70] job_light_016
+  [job-light 17/70] job_light_017
+  [job-light 18/70] job_light_018
+  [job-light 19/70] job_light_019
+  [job-light 20/70] job_light_020
+  [job-light 21/70] job_light_021
+  [job-light 22/70] job_light_022
+  [job-light 23/70] job_light_023
+  [job-light 24/70] job_light_024
+  [job-light 25/70] job_light_025
+  [job-light 26/70] job_light_026
+  [job-light 27/70] job_light_027
+  [job-light 28/70] job_light_028
+  [job-light 29/70] job_light_029
+  [job-light 30/70] job_light_030
+  [job-light 31/70] job_light_031
+  [job-light 32/70] job_light_032
+  [job-light 33/70] job_light_033
+  [job-light 34/70] job_light_034
+  [job-light 35/70] job_light_035
+  [job-light 36/70] job_light_036
+  [job-light 37/70] job_light_037
+  [job-light 38/70] job_light_038
+  [job-light 39/70] job_light_039
+  [job-light 40/70] job_light_040
+  [job-light 41/70] job_light_041
+  [job-light 42/70] job_light_042
+  [job-light 43/70] job_light_043
+  [job-light 44/70] job_light_044
+  [job-light 45/70] job_light_045
+  [job-light 46/70] job_light_046
+  [job-light 47/70] job_light_047
+  [job-light 48/70] job_light_048
+  [job-light 49/70] job_light_049
+  [job-light 50/70] job_light_050
+work copy exists (cached sha): 7e14b08091c193c4...
+[job-light] collect: 70 queries (15s)
+[job-light] resume: 49 done, 21 left
+  [job-light 1/21] job_light_050
+  [job-light 2/21] job_light_051
+  [job-light 3/21] job_light_052
+  [job-light 4/21] job_light_053
+  [job-light 5/21] job_light_054
+  [job-light 6/21] job_light_055
+  [job-light 7/21] job_light_056
+  [job-light 8/21] job_light_057
+  [job-light 9/21] job_light_058
+  [job-light 10/21] job_light_059
+Exception ignored in: <function Connection.__del__ at 0x0000025359D81DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [job-light 11/21] job_light_060
+  [job-light 12/21] job_light_061
+  [job-light 13/21] job_light_062
+  [job-light 14/21] job_light_063
+  [job-light 15/21] job_light_064
+  [job-light 16/21] job_light_065
+  [job-light 17/21] job_light_066
+  [job-light 18/21] job_light_067
+  [job-light 19/21] job_light_068
+  [job-light 20/21] job_light_069
+  [job-light 21/21] job_light_070
+[job-light] executed batch: 21 queries (1975s)
+[job-light] executed: 70 (ok=65 timeout=5 error=0 heavy=26)
+baseline key_id: 8e23f5f87eea -> E:\Projects_Big\optimizertestplan\results\baselines\8e23f5f87eea
+Exception ignored in: <function Connection.__del__ at 0x0000025359D81DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (65s)
+[scale] resume: 0 done, 500 left
+  [scale 1/500] scale_001
+  [scale 2/500] scale_002
+  [scale 3/500] scale_003
+  [scale 4/500] scale_004
+  [scale 5/500] scale_005
+  [scale 6/500] scale_006
+  [scale 7/500] scale_007
+  [scale 8/500] scale_008
+  [scale 9/500] scale_009
+  [scale 10/500] scale_010
+  [scale 11/500] scale_011
+  [scale 12/500] scale_012
+  [scale 13/500] scale_013
+  [scale 14/500] scale_014
+  [scale 15/500] scale_015
+  [scale 16/500] scale_016
+Exception ignored in: <function Connection.__del__ at 0x000002B399081DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x000002B399081DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 17/500] scale_017
+  [scale 18/500] scale_018
+  [scale 19/500] scale_019
+  [scale 20/500] scale_020
+  [scale 21/500] scale_021
+  [scale 22/500] scale_022
+  [scale 23/500] scale_023
+  [scale 24/500] scale_024
+  [scale 25/500] scale_025
+  [scale 26/500] scale_026
+  [scale 27/500] scale_027
+  [scale 28/500] scale_028
+  [scale 29/500] scale_029
+  [scale 30/500] scale_030
+  [scale 31/500] scale_031
+  [scale 32/500] scale_032
+  [scale 33/500] scale_033
+  [scale 34/500] scale_034
+  [scale 35/500] scale_035
+  [scale 36/500] scale_036
+  [scale 37/500] scale_037
+  [scale 38/500] scale_038
+  [scale 39/500] scale_039
+  [scale 40/500] scale_040
+  [scale 41/500] scale_041
+  [scale 42/500] scale_042
+  [scale 43/500] scale_043
+  [scale 44/500] scale_044
+  [scale 45/500] scale_045
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (66s)
+[scale] resume: 44 done, 456 left
+  [scale 1/456] scale_045
+  [scale 2/456] scale_046
+  [scale 3/456] scale_047
+  [scale 4/456] scale_048
+  [scale 5/456] scale_049
+  [scale 6/456] scale_050
+  [scale 7/456] scale_051
+  [scale 8/456] scale_052
+  [scale 9/456] scale_053
+  [scale 10/456] scale_054
+  [scale 11/456] scale_055
+  [scale 12/456] scale_056
+  [scale 13/456] scale_057
+  [scale 14/456] scale_058
+  [scale 15/456] scale_059
+  [scale 16/456] scale_060
+  [scale 17/456] scale_061
+  [scale 18/456] scale_062
+  [scale 19/456] scale_063
+  [scale 20/456] scale_064
+  [scale 21/456] scale_065
+  [scale 22/456] scale_066
+  [scale 23/456] scale_067
+  [scale 24/456] scale_068
+  [scale 25/456] scale_069
+  [scale 26/456] scale_070
+  [scale 27/456] scale_071
+  [scale 28/456] scale_072
+  [scale 29/456] scale_073
+  [scale 30/456] scale_074
+  [scale 31/456] scale_075
+  [scale 32/456] scale_076
+  [scale 33/456] scale_077
+  [scale 34/456] scale_078
+  [scale 35/456] scale_079
+  [scale 36/456] scale_080
+  [scale 37/456] scale_081
+  [scale 38/456] scale_082
+  [scale 39/456] scale_083
+  [scale 40/456] scale_084
+  [scale 41/456] scale_085
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (115s)
+[scale] resume: 84 done, 416 left
+  [scale 1/416] scale_085
+  [scale 2/416] scale_086
+  [scale 3/416] scale_087
+  [scale 4/416] scale_088
+  [scale 5/416] scale_089
+  [scale 6/416] scale_090
+  [scale 7/416] scale_091
+  [scale 8/416] scale_092
+  [scale 9/416] scale_093
+  [scale 10/416] scale_094
+Exception ignored in: <function Connection.__del__ at 0x000001E3E9AE1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 11/416] scale_095
+  [scale 12/416] scale_096
+  [scale 13/416] scale_097
+  [scale 14/416] scale_098
+  [scale 15/416] scale_099
+  [scale 16/416] scale_100
+  [scale 17/416] scale_101
+  [scale 18/416] scale_102
+  [scale 19/416] scale_103
+  [scale 20/416] scale_104
+  [scale 21/416] scale_105
+  [scale 22/416] scale_106
+  [scale 23/416] scale_107
+  [scale 24/416] scale_108
+  [scale 25/416] scale_109
+  [scale 26/416] scale_110
+  [scale 27/416] scale_111
+  [scale 28/416] scale_112
+  [scale 29/416] scale_113
+  [scale 30/416] scale_114
+  [scale 31/416] scale_115
+  [scale 32/416] scale_116
+  [scale 33/416] scale_117
+  [scale 34/416] scale_118
+  [scale 35/416] scale_119
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (38s)
+[scale] resume: 118 done, 382 left
+  [scale 1/382] scale_119
+  [scale 2/382] scale_120
+  [scale 3/382] scale_121
+  [scale 4/382] scale_122
+  [scale 5/382] scale_123
+  [scale 6/382] scale_124
+  [scale 7/382] scale_125
+  [scale 8/382] scale_126
+  [scale 9/382] scale_127
+  [scale 10/382] scale_128
+  [scale 11/382] scale_129
+  [scale 12/382] scale_130
+  [scale 13/382] scale_131
+  [scale 14/382] scale_132
+  [scale 15/382] scale_133
+  [scale 16/382] scale_134
+  [scale 17/382] scale_135
+  [scale 18/382] scale_136
+  [scale 19/382] scale_137
+  [scale 20/382] scale_138
+  [scale 21/382] scale_139
+  [scale 22/382] scale_140
+  [scale 23/382] scale_141
+  [scale 24/382] scale_142
+  [scale 25/382] scale_143
+  [scale 26/382] scale_144
+  [scale 27/382] scale_145
+  [scale 28/382] scale_146
+  [scale 29/382] scale_147
+  [scale 30/382] scale_148
+  [scale 31/382] scale_149
+  [scale 32/382] scale_150
+  [scale 33/382] scale_151
+  [scale 34/382] scale_152
+  [scale 35/382] scale_153
+  [scale 36/382] scale_154
+  [scale 37/382] scale_155
+  [scale 38/382] scale_156
+  [scale 39/382] scale_157
+  [scale 40/382] scale_158
+  [scale 41/382] scale_159
+  [scale 42/382] scale_160
+  [scale 43/382] scale_161
+  [scale 44/382] scale_162
+  [scale 45/382] scale_163
+  [scale 46/382] scale_164
+  [scale 47/382] scale_165
+  [scale 48/382] scale_166
+  [scale 49/382] scale_167
+  [scale 50/382] scale_168
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (40s)
+[scale] resume: 167 done, 333 left
+  [scale 1/333] scale_168
+  [scale 2/333] scale_169
+  [scale 3/333] scale_170
+  [scale 4/333] scale_171
+  [scale 5/333] scale_172
+  [scale 6/333] scale_173
+  [scale 7/333] scale_174
+  [scale 8/333] scale_175
+  [scale 9/333] scale_176
+  [scale 10/333] scale_177
+  [scale 11/333] scale_178
+  [scale 12/333] scale_179
+  [scale 13/333] scale_180
+  [scale 14/333] scale_181
+  [scale 15/333] scale_182
+  [scale 16/333] scale_183
+  [scale 17/333] scale_184
+  [scale 18/333] scale_185
+  [scale 19/333] scale_186
+  [scale 20/333] scale_187
+  [scale 21/333] scale_188
+  [scale 22/333] scale_189
+  [scale 23/333] scale_190
+  [scale 24/333] scale_191
+  [scale 25/333] scale_192
+  [scale 26/333] scale_193
+  [scale 27/333] scale_194
+  [scale 28/333] scale_195
+  [scale 29/333] scale_196
+  [scale 30/333] scale_197
+  [scale 31/333] scale_198
+  [scale 32/333] scale_199
+  [scale 33/333] scale_200
+Exception ignored in: <function Connection.__del__ at 0x0000026842F61DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x0000026842F61DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x0000026842F61DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x0000026842F61DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 34/333] scale_201
+  [scale 35/333] scale_202
+  [scale 36/333] scale_203
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (41s)
+[scale] resume: 202 done, 298 left
+  [scale 1/298] scale_203
+  [scale 2/298] scale_204
+  [scale 3/298] scale_205
+  [scale 4/298] scale_206
+  [scale 5/298] scale_207
+  [scale 6/298] scale_208
+  [scale 7/298] scale_209
+  [scale 8/298] scale_210
+  [scale 9/298] scale_211
+  [scale 10/298] scale_212
+  [scale 11/298] scale_213
+  [scale 12/298] scale_214
+  [scale 13/298] scale_215
+  [scale 14/298] scale_216
+  [scale 15/298] scale_217
+  [scale 16/298] scale_218
+  [scale 17/298] scale_219
+  [scale 18/298] scale_220
+  [scale 19/298] scale_221
+  [scale 20/298] scale_222
+  [scale 21/298] scale_223
+  [scale 22/298] scale_224
+  [scale 23/298] scale_225
+  [scale 24/298] scale_226
+  [scale 25/298] scale_227
+  [scale 26/298] scale_228
+  [scale 27/298] scale_229
+  [scale 28/298] scale_230
+  [scale 29/298] scale_231
+  [scale 30/298] scale_232
+  [scale 31/298] scale_233
+  [scale 32/298] scale_234
+  [scale 33/298] scale_235
+  [scale 34/298] scale_236
+  [scale 35/298] scale_237
+  [scale 36/298] scale_238
+  [scale 37/298] scale_239
+  [scale 38/298] scale_240
+  [scale 39/298] scale_241
+  [scale 40/298] scale_242
+  [scale 41/298] scale_243
+  [scale 42/298] scale_244
+  [scale 43/298] scale_245
+  [scale 44/298] scale_246
+  [scale 45/298] scale_247
+  [scale 46/298] scale_248
+  [scale 47/298] scale_249
+  [scale 48/298] scale_250
+  [scale 49/298] scale_251
+  [scale 50/298] scale_252
+  [scale 51/298] scale_253
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (44s)
+[scale] resume: 252 done, 248 left
+  [scale 1/248] scale_253

@@ -1,0 +1,11 @@
+{
+ "query_id": "ceb_9a_013",
+ "status": "match",
+ "prepare_ms": 197.99230000353418,
+ "exec_ms": 12443.860599974869,
+ "rows_count": 63,
+ "checksum": "sha1:261b793cdccbb05419789da964058f84640f3e95",
+ "plan": "PLAN SORT (HASH (HASH (HASH (JOIN (HASH (JOIN (IT2 INDEX (INFO_TYPE_PK), PI INDEX (INFO_TYPE_ID_PERSON_INFO), N INDEX (NAME_PK), CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI1 INDEX (INFO_TYPE_ID_MOVIE_INFO)), IT1 INDEX (INFO_TYPE_PK)))",
+ "error": null,
+ "wall_s": 12.9
+}

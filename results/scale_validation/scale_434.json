@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_434",
+ "status": "match",
+ "prepare_ms": 426.5748999896459,
+ "exec_ms": 136.56869999249466,
+ "rows_count": 1,
+ "checksum": "sha1:e744faf73c5747fdcb748c6b55d50a1212008015",
+ "plan": "PLAN (T INDEX (KIND_ID_TITLE))",
+ "error": null,
+ "wall_s": 0.8
+}

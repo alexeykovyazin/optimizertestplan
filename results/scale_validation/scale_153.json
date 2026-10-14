@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_153",
+ "status": "match",
+ "prepare_ms": 683.07180001284,
+ "exec_ms": 21300.85400000098,
+ "rows_count": 1,
+ "checksum": "sha1:47a465fd1c6822665a57bae9b3335f2ffb5eca9d",
+ "plan": "PLAN JOIN (MC INDEX (COMPANY_ID_MOVIE_COMPANIES), T INDEX (TITLE_PK))",
+ "error": null,
+ "wall_s": 22.5
+}

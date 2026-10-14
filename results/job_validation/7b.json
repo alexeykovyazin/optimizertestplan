@@ -1,0 +1,11 @@
+{
+ "query_id": "7b",
+ "status": "match",
+ "prepare_ms": 42.271100042853504,
+ "exec_ms": 716.4299000287428,
+ "rows_count": 1,
+ "checksum": "sha1:fcc9dfa02e618af8a585d2fa32f2e202cd3badee",
+ "plan": "PLAN HASH (JOIN (LT NATURAL, ML INDEX (LINK_TYPE_ID_MOVIE_LINK), T INDEX (TITLE_PK), CI INDEX (MOVIE_ID_CAST_INFO), N INDEX (NAME_PK), AN INDEX (PERSON_ID_AKA_NAME), PI INDEX (PERSON_ID_PERSON_INFO)), IT NATURAL)",
+ "error": null,
+ "wall_s": 0.8
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_13",
+ "status": "exec_timeout",
+ "prepare_ms": 59.96749999758322,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN SORT (SORT (JOIN (C_ORDERS CUSTOMER ORDER CUSTOMER_PK, C_ORDERS ORDERS NATURAL)))",
+ "error": null,
+ "wall_s": 1845.2
+}

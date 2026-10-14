@@ -1,0 +1,16 @@
+{
+  "kind": "suite_baseline",
+  "key": {
+    "build": "5.0.5",
+    "db_sha256": "7e14b08091c193c4a69dcd4eec59ac08b80ba1b44c82b9eed313988f69d21ae8",
+    "host_port": "192.168.1.57:3055",
+    "index_config": "pk",
+    "repeats_protocol": "warmup+1 (repeats=2, adaptive >15c)"
+  },
+  "key_id": "8e23f5f87eea",
+  "suites": [
+    "job-light"
+  ],
+  "golden": "E:/fbdata/golden/imdb_fb5.fdb",
+  "created": "2026-10-14 12:26"
+}

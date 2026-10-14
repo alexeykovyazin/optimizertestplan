@@ -1,0 +1,191 @@
+{
+ "suite": "job-complex",
+ "fdb": "E:/Projects_Big/optimizertestplan/db/golden/imdb_fb5.fdb",
+ "total": 30,
+ "statuses": {
+  "ok": 30
+ },
+ "compile_budget_ms": 2617.3,
+ "results": [
+  {
+   "query_id": "job_complex_01",
+   "status": "ok",
+   "prepare_ms": 266.8,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_02",
+   "status": "ok",
+   "prepare_ms": 79.42,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_03",
+   "status": "ok",
+   "prepare_ms": 75.35,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_04",
+   "status": "ok",
+   "prepare_ms": 71.31,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_05",
+   "status": "ok",
+   "prepare_ms": 92.04,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_06",
+   "status": "ok",
+   "prepare_ms": 86.54,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_07",
+   "status": "ok",
+   "prepare_ms": 72.9,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_08",
+   "status": "ok",
+   "prepare_ms": 100.17,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_09",
+   "status": "ok",
+   "prepare_ms": 73.94,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_10",
+   "status": "ok",
+   "prepare_ms": 82.37,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_11",
+   "status": "ok",
+   "prepare_ms": 81.53,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_12",
+   "status": "ok",
+   "prepare_ms": 81.1,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_13",
+   "status": "ok",
+   "prepare_ms": 82.37,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_14",
+   "status": "ok",
+   "prepare_ms": 76.53,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_15",
+   "status": "ok",
+   "prepare_ms": 75.25,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_16",
+   "status": "ok",
+   "prepare_ms": 83.75,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_17",
+   "status": "ok",
+   "prepare_ms": 82.27,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_18",
+   "status": "ok",
+   "prepare_ms": 78.79,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_19",
+   "status": "ok",
+   "prepare_ms": 85.27,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_20",
+   "status": "ok",
+   "prepare_ms": 83.51,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_21",
+   "status": "ok",
+   "prepare_ms": 80.23,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_22",
+   "status": "ok",
+   "prepare_ms": 80.47,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_23",
+   "status": "ok",
+   "prepare_ms": 77.35,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_24",
+   "status": "ok",
+   "prepare_ms": 80.83,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_25",
+   "status": "ok",
+   "prepare_ms": 82.09,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_26",
+   "status": "ok",
+   "prepare_ms": 82.62,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_27",
+   "status": "ok",
+   "prepare_ms": 81.7,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_28",
+   "status": "ok",
+   "prepare_ms": 81.87,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_29",
+   "status": "ok",
+   "prepare_ms": 84.04,
+   "error": null
+  },
+  {
+   "query_id": "job_complex_30",
+   "status": "ok",
+   "prepare_ms": 74.92,
+   "error": null
+  }
+ ]
+}

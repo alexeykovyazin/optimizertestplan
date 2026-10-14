@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_279",
+ "status": "match",
+ "prepare_ms": 509.64220002060756,
+ "exec_ms": 3025.482099998044,
+ "rows_count": 1,
+ "checksum": "sha1:631867ff86b8277ee6b7e11c578161b3063138a4",
+ "plan": "PLAN (T NATURAL)",
+ "error": null,
+ "wall_s": 4.0
+}

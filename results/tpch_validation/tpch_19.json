@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_19",
+ "status": "match",
+ "prepare_ms": 57.584599999245256,
+ "exec_ms": 37171.28950000915,
+ "rows_count": 1,
+ "checksum": "sha1:fdbb69ef267966a7f2b1807c396649eda4c073b3",
+ "plan": "PLAN JOIN (LINEITEM NATURAL, PART INDEX (PART_PK, PART_PK, PART_PK))",
+ "error": null,
+ "wall_s": 37.6
+}

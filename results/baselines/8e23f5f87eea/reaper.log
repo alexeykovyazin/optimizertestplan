@@ -1,0 +1,32 @@
+10:48:03 killed attachment 121 (active stmt > 350s), total 1
+11:48:04 killed attachment 109 (active stmt > 350s), total 1
+11:59:56 killed attachment 109 (active stmt > 350s), total 2
+12:09:17 killed attachment 141 (active stmt > 350s), total 3
+12:15:06 killed attachment 172 (active stmt > 350s), total 4
+12:20:54 killed attachment 196 (active stmt > 350s), total 5
+12:34:31 killed attachment 109 (active stmt > 350s), total 6
+12:44:23 killed attachment 149 (active stmt > 350s), total 7
+12:51:26 killed attachment 178 (active stmt > 350s), total 8
+12:58:01 killed attachment 208 (active stmt > 350s), total 9
+13:05:06 killed attachment 237 (active stmt > 350s), total 10
+13:23:01 killed attachment 109 (active stmt > 350s), total 11
+13:28:50 killed attachment 146 (active stmt > 350s), total 12
+13:35:09 killed attachment 173 (active stmt > 350s), total 13
+13:46:31 killed attachment 211 (active stmt > 350s), total 14
+14:12:04 killed attachment 109 (active stmt > 350s), total 15
+14:18:23 killed attachment 161 (active stmt > 350s), total 16
+14:28:44 killed attachment 200 (active stmt > 350s), total 17
+14:34:17 killed attachment 228 (active stmt > 350s), total 18
+14:40:36 killed attachment 254 (active stmt > 350s), total 19
+14:57:01 killed attachment 109 (active stmt > 350s), total 20
+15:05:21 killed attachment 165 (active stmt > 350s), total 21
+15:20:13 killed attachment 221 (active stmt > 350s), total 22
+15:26:01 killed attachment 259 (active stmt > 350s), total 23
+15:31:10 reaper error: DatabaseError: Unable to complete network request to host "192.168.1.57".
+-Failed to establish a connection.
+15:32:47 reaper error: DatabaseError: Unable to complete network request to host "192.168.1.57".
+-Failed to establish a connection.
+15:42:38 killed attachment 109 (active stmt > 350s), total 24
+15:50:12 killed attachment 150 (active stmt > 350s), total 25
+16:02:34 killed attachment 177 (active stmt > 350s), total 26
+16:09:08 killed attachment 229 (active stmt > 350s), total 27

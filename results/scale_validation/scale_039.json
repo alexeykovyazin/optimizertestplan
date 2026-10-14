@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_039",
+ "status": "match",
+ "prepare_ms": 83.52019998710603,
+ "exec_ms": 46.149899979354814,
+ "rows_count": 1,
+ "checksum": "sha1:5c869b9700b1f046ac24ced6d784a811d31d284f",
+ "plan": "PLAN JOIN (CI INDEX (PERSON_ID_CAST_INFO), T INDEX (TITLE_PK))",
+ "error": null,
+ "wall_s": 0.7
+}

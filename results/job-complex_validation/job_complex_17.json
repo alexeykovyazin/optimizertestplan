@@ -1,0 +1,11 @@
+{
+ "query_id": "job_complex_17",
+ "status": "exec_timeout",
+ "prepare_ms": 401.33170000626706,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN MERGE (SORT (HASH (N NATURAL, AK NATURAL, HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (CN NATURAL, MC INDEX (COMPANY_ID_MOVIE_COMPANIES)), CT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX)), IT2 NATURAL), MI INDEX (MOVIE_ID_MOVIE_INFO)), IT1 NATURAL), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), K NATURAL))), SORT (CH NATURAL))",
+ "error": null,
+ "wall_s": 645.4
+}

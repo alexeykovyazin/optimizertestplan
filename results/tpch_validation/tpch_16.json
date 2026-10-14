@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_16",
+ "status": "match",
+ "prepare_ms": 87.76409999700263,
+ "exec_ms": 1839.3757000012556,
+ "rows_count": 18150,
+ "checksum": "sha1:168265621c9c4aa0b64334ca4441c49f729521f2",
+ "plan": "PLAN (SUPPLIER NATURAL)\nPLAN (SUPPLIER INDEX (SUPPLIER_PK, SUPPLIER_PK))\nPLAN SORT (SORT (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK))))",
+ "error": null,
+ "wall_s": 2.2
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_427",
+ "status": "match",
+ "prepare_ms": 886.3453999802005,
+ "exec_ms": 114.66970000765286,
+ "rows_count": 1,
+ "checksum": "sha1:40f7de8a846129dff5f98e9ea57eb0c5ee5c9ad6",
+ "plan": "PLAN (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD))",
+ "error": null,
+ "wall_s": 2.5
+}

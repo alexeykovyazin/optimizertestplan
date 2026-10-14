@@ -1,0 +1,11 @@
+{
+ "query_id": "ceb_3b_004",
+ "status": "match",
+ "prepare_ms": 101.41209998982958,
+ "exec_ms": 23935.547499975655,
+ "rows_count": 9,
+ "checksum": "sha1:a00c3c1672a9b92d6dac385301fd1c876fb26df9",
+ "plan": "PLAN SORT (SORT (JOIN (HASH (JOIN (HASH (HASH (JOIN (HASH (JOIN (HASH (MK NATURAL, K NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CT NATURAL), CN NATURAL), CI INDEX (MOVIE_ID_CAST_INFO)), RT NATURAL), N INDEX (NAME_PK))))",
+ "error": null,
+ "wall_s": 24.3
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_11",
+ "status": "match",
+ "prepare_ms": 134.29899999755435,
+ "exec_ms": 973.7201999960234,
+ "rows_count": 839,
+ "checksum": "sha1:7687fd1dadc9e1c18365ba28f950beb8f4531bd4",
+ "plan": "PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)\nPLAN SORT (HASH (HASH (PARTSUPP ORDER PARTSUPP_PK, SUPPLIER NATURAL), NATION NATURAL))",
+ "error": null,
+ "wall_s": 1.3
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "ceb_11a_014",
+ "status": "match",
+ "prepare_ms": 159.64440000243485,
+ "exec_ms": 4250.22740001441,
+ "rows_count": 149,
+ "checksum": "sha1:0d5201167b3f88ed5563580c100f8a7b3c67df30",
+ "plan": "PLAN SORT (SORT (JOIN (HASH (JOIN (HASH (HASH (JOIN (HASH (JOIN (IT INDEX (INFO_TYPE_PK), MI1 INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK)), KT NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CT NATURAL), CN NATURAL), CI INDEX (MOVIE_ID_CAST_INFO)), RT NATURAL), N INDEX (NAME_PK))))",
+ "error": null,
+ "wall_s": 5.0
+}

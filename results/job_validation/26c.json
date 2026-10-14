@@ -1,0 +1,11 @@
+{
+ "query_id": "26c",
+ "status": "match",
+ "prepare_ms": 40.85819999454543,
+ "exec_ms": 10453.507199999876,
+ "rows_count": 1,
+ "checksum": "sha1:2fb586543605dd92cc359f875ee36ca57deab081",
+ "plan": "PLAN JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (HASH (CC NATURAL, CCT1 NATURAL), CCT2 NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX)), IT2 NATURAL), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), K NATURAL), CI INDEX (MOVIE_ID_CAST_INFO)), CHN NATURAL), N INDEX (NAME_PK))",
+ "error": null,
+ "wall_s": 10.5
+}

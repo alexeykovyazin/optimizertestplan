@@ -1,0 +1,143 @@
+{
+ "suite": "tpch",
+ "fdb": "E:/Projects_Big/optimizertestplan/db/tpch/tpch_sf1_fb5.fdb",
+ "total": 22,
+ "statuses": {
+  "ok": 22
+ },
+ "compile_budget_ms": 1852.8,
+ "results": [
+  {
+   "query_id": "tpch_01",
+   "status": "ok",
+   "prepare_ms": 266.11,
+   "error": null
+  },
+  {
+   "query_id": "tpch_02",
+   "status": "ok",
+   "prepare_ms": 75.9,
+   "error": null
+  },
+  {
+   "query_id": "tpch_03",
+   "status": "ok",
+   "prepare_ms": 72.47,
+   "error": null
+  },
+  {
+   "query_id": "tpch_04",
+   "status": "ok",
+   "prepare_ms": 75.42,
+   "error": null
+  },
+  {
+   "query_id": "tpch_05",
+   "status": "ok",
+   "prepare_ms": 78.95,
+   "error": null
+  },
+  {
+   "query_id": "tpch_06",
+   "status": "ok",
+   "prepare_ms": 72.27,
+   "error": null
+  },
+  {
+   "query_id": "tpch_07",
+   "status": "ok",
+   "prepare_ms": 74.76,
+   "error": null
+  },
+  {
+   "query_id": "tpch_08",
+   "status": "ok",
+   "prepare_ms": 76.65,
+   "error": null
+  },
+  {
+   "query_id": "tpch_09",
+   "status": "ok",
+   "prepare_ms": 76.35,
+   "error": null
+  },
+  {
+   "query_id": "tpch_10",
+   "status": "ok",
+   "prepare_ms": 75.4,
+   "error": null
+  },
+  {
+   "query_id": "tpch_11",
+   "status": "ok",
+   "prepare_ms": 77.69,
+   "error": null
+  },
+  {
+   "query_id": "tpch_12",
+   "status": "ok",
+   "prepare_ms": 73.05,
+   "error": null
+  },
+  {
+   "query_id": "tpch_13",
+   "status": "ok",
+   "prepare_ms": 77.58,
+   "error": null
+  },
+  {
+   "query_id": "tpch_14",
+   "status": "ok",
+   "prepare_ms": 75.05,
+   "error": null
+  },
+  {
+   "query_id": "tpch_15",
+   "status": "ok",
+   "prepare_ms": 76.68,
+   "error": null
+  },
+  {
+   "query_id": "tpch_16",
+   "status": "ok",
+   "prepare_ms": 78.79,
+   "error": null
+  },
+  {
+   "query_id": "tpch_17",
+   "status": "ok",
+   "prepare_ms": 75.18,
+   "error": null
+  },
+  {
+   "query_id": "tpch_18",
+   "status": "ok",
+   "prepare_ms": 79.24,
+   "error": null
+  },
+  {
+   "query_id": "tpch_19",
+   "status": "ok",
+   "prepare_ms": 76.4,
+   "error": null
+  },
+  {
+   "query_id": "tpch_20",
+   "status": "ok",
+   "prepare_ms": 72.37,
+   "error": null
+  },
+  {
+   "query_id": "tpch_21",
+   "status": "ok",
+   "prepare_ms": 69.81,
+   "error": null
+  },
+  {
+   "query_id": "tpch_22",
+   "status": "ok",
+   "prepare_ms": 76.65,
+   "error": null
+  }
+ ]
+}

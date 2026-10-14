@@ -1,0 +1,11 @@
+{
+ "query_id": "4b",
+ "status": "match",
+ "prepare_ms": 41.26920003909618,
+ "exec_ms": 685.1878999732435,
+ "rows_count": 1,
+ "checksum": "sha1:0c2f26bcde83895cf5bede6d58db1a418c177e1b",
+ "plan": "PLAN HASH (JOIN (HASH (MI_IDX NATURAL, IT NATURAL), T INDEX (TITLE_PK), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), K NATURAL)",
+ "error": null,
+ "wall_s": 0.7
+}

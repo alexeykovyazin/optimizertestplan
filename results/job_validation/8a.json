@@ -1,0 +1,11 @@
+{
+ "query_id": "8a",
+ "status": "match",
+ "prepare_ms": 55.06699997931719,
+ "exec_ms": 23203.761200013105,
+ "rows_count": 1,
+ "checksum": "sha1:d90c74304bf154f4b441da1c467adf19c477e2fe",
+ "plan": "PLAN JOIN (HASH (JOIN (CN NATURAL, MC INDEX (COMPANY_ID_MOVIE_COMPANIES), T INDEX (TITLE_PK), CI INDEX (MOVIE_ID_CAST_INFO)), RT NATURAL), N1 INDEX (NAME_PK), AN1 INDEX (PERSON_ID_AKA_NAME))",
+ "error": null,
+ "wall_s": 23.3
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_22",
+ "status": "exec_timeout",
+ "prepare_ms": 83.12570000998676,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN (CUSTSALE CUSTOMER NATURAL)\nPLAN (CUSTSALE ORDERS NATURAL)\nPLAN SORT (SORT (CUSTSALE CUSTOMER NATURAL))",
+ "error": null,
+ "wall_s": 1845.1
+}

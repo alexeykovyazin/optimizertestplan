@@ -1,0 +1,11 @@
+{
+ "query_id": "tpch_18",
+ "status": "match",
+ "prepare_ms": 53.89670000295155,
+ "exec_ms": 7994.891199996346,
+ "rows_count": 10,
+ "checksum": "sha1:81ea72811ccda0de0993f993993afb941e714545",
+ "plan": "PLAN (LINEITEM ORDER LINEITEM_PK)\nPLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+ "error": null,
+ "wall_s": 8.2
+}

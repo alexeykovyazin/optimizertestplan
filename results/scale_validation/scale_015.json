@@ -1,0 +1,11 @@
+{
+ "query_id": "scale_015",
+ "status": "match",
+ "prepare_ms": 447.8108999901451,
+ "exec_ms": 23822.01860001078,
+ "rows_count": 1,
+ "checksum": "sha1:5e6f7422d7375817e6ce3e9a49161efb6db4ae54",
+ "plan": "PLAN JOIN (MK NATURAL, T INDEX (TITLE_PK))",
+ "error": null,
+ "wall_s": 25.3
+}

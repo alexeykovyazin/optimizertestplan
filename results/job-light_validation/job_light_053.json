@@ -1,0 +1,11 @@
+{
+ "query_id": "job_light_053",
+ "status": "match",
+ "prepare_ms": 1180.2840999735054,
+ "exec_ms": 9341.952199989464,
+ "rows_count": 1,
+ "checksum": "sha1:3a47f44d343affb1a70b98fa0555f910c1a5e251",
+ "plan": "PLAN JOIN (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MI INDEX (MOVIE_ID_MOVIE_INFO))",
+ "error": null,
+ "wall_s": 14.7
+}

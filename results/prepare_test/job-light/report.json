@@ -1,0 +1,431 @@
+{
+ "suite": "job-light",
+ "fdb": "E:/Projects_Big/optimizertestplan/db/golden/imdb_fb5.fdb",
+ "total": 70,
+ "statuses": {
+  "ok": 70
+ },
+ "compile_budget_ms": 5438.1,
+ "results": [
+  {
+   "query_id": "job_light_001",
+   "status": "ok",
+   "prepare_ms": 270.2,
+   "error": null
+  },
+  {
+   "query_id": "job_light_002",
+   "status": "ok",
+   "prepare_ms": 70.71,
+   "error": null
+  },
+  {
+   "query_id": "job_light_003",
+   "status": "ok",
+   "prepare_ms": 63.01,
+   "error": null
+  },
+  {
+   "query_id": "job_light_004",
+   "status": "ok",
+   "prepare_ms": 70.72,
+   "error": null
+  },
+  {
+   "query_id": "job_light_005",
+   "status": "ok",
+   "prepare_ms": 76.41,
+   "error": null
+  },
+  {
+   "query_id": "job_light_006",
+   "status": "ok",
+   "prepare_ms": 91.61,
+   "error": null
+  },
+  {
+   "query_id": "job_light_007",
+   "status": "ok",
+   "prepare_ms": 64.02,
+   "error": null
+  },
+  {
+   "query_id": "job_light_008",
+   "status": "ok",
+   "prepare_ms": 66.14,
+   "error": null
+  },
+  {
+   "query_id": "job_light_009",
+   "status": "ok",
+   "prepare_ms": 69.16,
+   "error": null
+  },
+  {
+   "query_id": "job_light_010",
+   "status": "ok",
+   "prepare_ms": 68.77,
+   "error": null
+  },
+  {
+   "query_id": "job_light_011",
+   "status": "ok",
+   "prepare_ms": 73.0,
+   "error": null
+  },
+  {
+   "query_id": "job_light_012",
+   "status": "ok",
+   "prepare_ms": 74.07,
+   "error": null
+  },
+  {
+   "query_id": "job_light_013",
+   "status": "ok",
+   "prepare_ms": 75.87,
+   "error": null
+  },
+  {
+   "query_id": "job_light_014",
+   "status": "ok",
+   "prepare_ms": 83.14,
+   "error": null
+  },
+  {
+   "query_id": "job_light_015",
+   "status": "ok",
+   "prepare_ms": 112.61,
+   "error": null
+  },
+  {
+   "query_id": "job_light_016",
+   "status": "ok",
+   "prepare_ms": 74.6,
+   "error": null
+  },
+  {
+   "query_id": "job_light_017",
+   "status": "ok",
+   "prepare_ms": 76.68,
+   "error": null
+  },
+  {
+   "query_id": "job_light_018",
+   "status": "ok",
+   "prepare_ms": 79.42,
+   "error": null
+  },
+  {
+   "query_id": "job_light_019",
+   "status": "ok",
+   "prepare_ms": 74.38,
+   "error": null
+  },
+  {
+   "query_id": "job_light_020",
+   "status": "ok",
+   "prepare_ms": 68.13,
+   "error": null
+  },
+  {
+   "query_id": "job_light_021",
+   "status": "ok",
+   "prepare_ms": 75.82,
+   "error": null
+  },
+  {
+   "query_id": "job_light_022",
+   "status": "ok",
+   "prepare_ms": 83.35,
+   "error": null
+  },
+  {
+   "query_id": "job_light_023",
+   "status": "ok",
+   "prepare_ms": 77.88,
+   "error": null
+  },
+  {
+   "query_id": "job_light_024",
+   "status": "ok",
+   "prepare_ms": 76.57,
+   "error": null
+  },
+  {
+   "query_id": "job_light_025",
+   "status": "ok",
+   "prepare_ms": 73.39,
+   "error": null
+  },
+  {
+   "query_id": "job_light_026",
+   "status": "ok",
+   "prepare_ms": 78.22,
+   "error": null
+  },
+  {
+   "query_id": "job_light_027",
+   "status": "ok",
+   "prepare_ms": 78.65,
+   "error": null
+  },
+  {
+   "query_id": "job_light_028",
+   "status": "ok",
+   "prepare_ms": 78.62,
+   "error": null
+  },
+  {
+   "query_id": "job_light_029",
+   "status": "ok",
+   "prepare_ms": 71.29,
+   "error": null
+  },
+  {
+   "query_id": "job_light_030",
+   "status": "ok",
+   "prepare_ms": 82.39,
+   "error": null
+  },
+  {
+   "query_id": "job_light_031",
+   "status": "ok",
+   "prepare_ms": 73.23,
+   "error": null
+  },
+  {
+   "query_id": "job_light_032",
+   "status": "ok",
+   "prepare_ms": 84.82,
+   "error": null
+  },
+  {
+   "query_id": "job_light_033",
+   "status": "ok",
+   "prepare_ms": 76.84,
+   "error": null
+  },
+  {
+   "query_id": "job_light_034",
+   "status": "ok",
+   "prepare_ms": 76.05,
+   "error": null
+  },
+  {
+   "query_id": "job_light_035",
+   "status": "ok",
+   "prepare_ms": 74.16,
+   "error": null
+  },
+  {
+   "query_id": "job_light_036",
+   "status": "ok",
+   "prepare_ms": 67.53,
+   "error": null
+  },
+  {
+   "query_id": "job_light_037",
+   "status": "ok",
+   "prepare_ms": 73.74,
+   "error": null
+  },
+  {
+   "query_id": "job_light_038",
+   "status": "ok",
+   "prepare_ms": 75.49,
+   "error": null
+  },
+  {
+   "query_id": "job_light_039",
+   "status": "ok",
+   "prepare_ms": 75.41,
+   "error": null
+  },
+  {
+   "query_id": "job_light_040",
+   "status": "ok",
+   "prepare_ms": 70.32,
+   "error": null
+  },
+  {
+   "query_id": "job_light_041",
+   "status": "ok",
+   "prepare_ms": 67.15,
+   "error": null
+  },
+  {
+   "query_id": "job_light_042",
+   "status": "ok",
+   "prepare_ms": 73.16,
+   "error": null
+  },
+  {
+   "query_id": "job_light_043",
+   "status": "ok",
+   "prepare_ms": 75.58,
+   "error": null
+  },
+  {
+   "query_id": "job_light_044",
+   "status": "ok",
+   "prepare_ms": 73.62,
+   "error": null
+  },
+  {
+   "query_id": "job_light_045",
+   "status": "ok",
+   "prepare_ms": 72.31,
+   "error": null
+  },
+  {
+   "query_id": "job_light_046",
+   "status": "ok",
+   "prepare_ms": 76.79,
+   "error": null
+  },
+  {
+   "query_id": "job_light_047",
+   "status": "ok",
+   "prepare_ms": 73.17,
+   "error": null
+  },
+  {
+   "query_id": "job_light_048",
+   "status": "ok",
+   "prepare_ms": 72.68,
+   "error": null
+  },
+  {
+   "query_id": "job_light_049",
+   "status": "ok",
+   "prepare_ms": 80.9,
+   "error": null
+  },
+  {
+   "query_id": "job_light_050",
+   "status": "ok",
+   "prepare_ms": 73.45,
+   "error": null
+  },
+  {
+   "query_id": "job_light_051",
+   "status": "ok",
+   "prepare_ms": 74.85,
+   "error": null
+  },
+  {
+   "query_id": "job_light_052",
+   "status": "ok",
+   "prepare_ms": 70.01,
+   "error": null
+  },
+  {
+   "query_id": "job_light_053",
+   "status": "ok",
+   "prepare_ms": 68.37,
+   "error": null
+  },
+  {
+   "query_id": "job_light_054",
+   "status": "ok",
+   "prepare_ms": 73.86,
+   "error": null
+  },
+  {
+   "query_id": "job_light_055",
+   "status": "ok",
+   "prepare_ms": 75.39,
+   "error": null
+  },
+  {
+   "query_id": "job_light_056",
+   "status": "ok",
+   "prepare_ms": 73.8,
+   "error": null
+  },
+  {
+   "query_id": "job_light_057",
+   "status": "ok",
+   "prepare_ms": 72.19,
+   "error": null
+  },
+  {
+   "query_id": "job_light_058",
+   "status": "ok",
+   "prepare_ms": 76.9,
+   "error": null
+  },
+  {
+   "query_id": "job_light_059",
+   "status": "ok",
+   "prepare_ms": 75.12,
+   "error": null
+  },
+  {
+   "query_id": "job_light_060",
+   "status": "ok",
+   "prepare_ms": 76.46,
+   "error": null
+  },
+  {
+   "query_id": "job_light_061",
+   "status": "ok",
+   "prepare_ms": 70.29,
+   "error": null
+  },
+  {
+   "query_id": "job_light_062",
+   "status": "ok",
+   "prepare_ms": 69.88,
+   "error": null
+  },
+  {
+   "query_id": "job_light_063",
+   "status": "ok",
+   "prepare_ms": 75.69,
+   "error": null
+  },
+  {
+   "query_id": "job_light_064",
+   "status": "ok",
+   "prepare_ms": 74.01,
+   "error": null
+  },
+  {
+   "query_id": "job_light_065",
+   "status": "ok",
+   "prepare_ms": 76.27,
+   "error": null
+  },
+  {
+   "query_id": "job_light_066",
+   "status": "ok",
+   "prepare_ms": 75.1,
+   "error": null
+  },
+  {
+   "query_id": "job_light_067",
+   "status": "ok",
+   "prepare_ms": 76.08,
+   "error": null
+  },
+  {
+   "query_id": "job_light_068",
+   "status": "ok",
+   "prepare_ms": 68.22,
+   "error": null
+  },
+  {
+   "query_id": "job_light_069",
+   "status": "ok",
+   "prepare_ms": 70.69,
+   "error": null
+  },
+  {
+   "query_id": "job_light_070",
+   "status": "ok",
+   "prepare_ms": 79.67,
+   "error": null
+  }
+ ]
+}
