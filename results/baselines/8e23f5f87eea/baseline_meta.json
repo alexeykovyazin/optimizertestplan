@@ -9,8 +9,8 @@
   },
   "key_id": "8e23f5f87eea",
   "suites": [
-    "job-light"
+    "ceb-imdb-regen"
   ],
   "golden": "E:/fbdata/golden/imdb_fb5.fdb",
-  "created": "2026-10-14 12:26"
+  "created": "2026-10-14 22:21"
 }

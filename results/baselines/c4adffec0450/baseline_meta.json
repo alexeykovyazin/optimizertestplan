@@ -1,0 +1,16 @@
+{
+  "kind": "suite_baseline",
+  "key": {
+    "build": "5.0.5",
+    "db_sha256": "4e403c3042b3f14a741e01f9babb96b4cfdf683be1a8715502f6dd68bd5c07d8",
+    "host_port": "192.168.1.57:3055",
+    "index_config": "pk",
+    "repeats_protocol": "warmup+1 (repeats=2, adaptive >15c)"
+  },
+  "key_id": "c4adffec0450",
+  "suites": [
+    "tpch"
+  ],
+  "golden": "E:/fbdata/golden/tpch_sf1_fb5.fdb",
+  "created": "2026-10-14 22:18"
+}

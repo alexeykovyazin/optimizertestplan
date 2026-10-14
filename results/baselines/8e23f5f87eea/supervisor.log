@@ -452,3 +452,543 @@ work copy exists (cached sha): 7e14b08091c193c4...
 [scale] collect: 500 queries (44s)
 [scale] resume: 252 done, 248 left
   [scale 1/248] scale_253
+  [scale 2/248] scale_254
+  [scale 3/248] scale_255
+  [scale 4/248] scale_256
+  [scale 5/248] scale_257
+  [scale 6/248] scale_258
+  [scale 7/248] scale_259
+  [scale 8/248] scale_260
+  [scale 9/248] scale_261
+  [scale 10/248] scale_262
+  [scale 11/248] scale_263
+  [scale 12/248] scale_264
+  [scale 13/248] scale_265
+  [scale 14/248] scale_266
+  [scale 15/248] scale_267
+  [scale 16/248] scale_268
+  [scale 17/248] scale_269
+  [scale 18/248] scale_270
+  [scale 19/248] scale_271
+  [scale 20/248] scale_272
+  [scale 21/248] scale_273
+  [scale 22/248] scale_274
+  [scale 23/248] scale_275
+  [scale 24/248] scale_276
+  [scale 25/248] scale_277
+  [scale 26/248] scale_278
+  [scale 27/248] scale_279
+  [scale 28/248] scale_280
+  [scale 29/248] scale_281
+  [scale 30/248] scale_282
+  [scale 31/248] scale_283
+  [scale 32/248] scale_284
+  [scale 33/248] scale_285
+  [scale 34/248] scale_286
+  [scale 35/248] scale_287
+  [scale 36/248] scale_288
+  [scale 37/248] scale_289
+  [scale 38/248] scale_290
+Exception ignored in: <function Connection.__del__ at 0x0000024E065A1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x0000024E065A1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x0000024E065A1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 39/248] scale_291
+  [scale 40/248] scale_292
+  [scale 41/248] scale_293
+  [scale 42/248] scale_294
+  [scale 43/248] scale_295
+  [scale 44/248] scale_296
+  [scale 45/248] scale_297
+  [scale 46/248] scale_298
+  [scale 47/248] scale_299
+  [scale 48/248] scale_300
+  [scale 49/248] scale_301
+  [scale 50/248] scale_302
+  [scale 51/248] scale_303
+  [scale 52/248] scale_304
+  [scale 53/248] scale_305
+  [scale 54/248] scale_306
+  [scale 55/248] scale_307
+  [scale 56/248] scale_308
+  [scale 57/248] scale_309
+  [scale 58/248] scale_310
+  [scale 59/248] scale_311
+  [scale 60/248] scale_312
+  [scale 61/248] scale_313
+  [scale 62/248] scale_314
+  [scale 63/248] scale_315
+  [scale 64/248] scale_316
+  [scale 65/248] scale_317
+  [scale 66/248] scale_318
+  [scale 67/248] scale_319
+  [scale 68/248] scale_320
+  [scale 69/248] scale_321
+  [scale 70/248] scale_322
+  [scale 71/248] scale_323
+  [scale 72/248] scale_324
+  [scale 73/248] scale_325
+  [scale 74/248] scale_326
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (80s)
+[scale] resume: 325 done, 175 left
+  [scale 1/175] scale_326
+  [scale 2/175] scale_327
+  [scale 3/175] scale_328
+  [scale 4/175] scale_329
+  [scale 5/175] scale_330
+  [scale 6/175] scale_331
+  [scale 7/175] scale_332
+  [scale 8/175] scale_333
+  [scale 9/175] scale_334
+  [scale 10/175] scale_335
+  [scale 11/175] scale_336
+  [scale 12/175] scale_337
+  [scale 13/175] scale_338
+  [scale 14/175] scale_339
+  [scale 15/175] scale_340
+  [scale 16/175] scale_341
+  [scale 17/175] scale_342
+  [scale 18/175] scale_343
+  [scale 19/175] scale_344
+  [scale 20/175] scale_345
+Exception ignored in: <function Connection.__del__ at 0x000002104C9A1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x000002104C9A1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x000002104C9A1DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 21/175] scale_346
+  [scale 22/175] scale_347
+  [scale 23/175] scale_348
+  [scale 24/175] scale_349
+  [scale 25/175] scale_350
+  [scale 26/175] scale_351
+  [scale 27/175] scale_352
+  [scale 28/175] scale_353
+  [scale 29/175] scale_354
+  [scale 30/175] scale_355
+  [scale 31/175] scale_356
+  [scale 32/175] scale_357
+  [scale 33/175] scale_358
+  [scale 34/175] scale_359
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (64s)
+[scale] resume: 358 done, 142 left
+  [scale 1/142] scale_359
+  [scale 2/142] scale_360
+  [scale 3/142] scale_361
+  [scale 4/142] scale_362
+  [scale 5/142] scale_363
+  [scale 6/142] scale_364
+  [scale 7/142] scale_365
+  [scale 8/142] scale_366
+  [scale 9/142] scale_367
+  [scale 10/142] scale_368
+  [scale 11/142] scale_369
+  [scale 12/142] scale_370
+  [scale 13/142] scale_371
+  [scale 14/142] scale_372
+  [scale 15/142] scale_373
+  [scale 16/142] scale_374
+  [scale 17/142] scale_375
+  [scale 18/142] scale_376
+  [scale 19/142] scale_377
+  [scale 20/142] scale_378
+  [scale 21/142] scale_379
+  [scale 22/142] scale_380
+  [scale 23/142] scale_381
+  [scale 24/142] scale_382
+  [scale 25/142] scale_383
+Exception ignored in: <function Connection.__del__ at 0x000001FD0D731DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 26/142] scale_384
+  [scale 27/142] scale_385
+  [scale 28/142] scale_386
+  [scale 29/142] scale_387
+  [scale 30/142] scale_388
+  [scale 31/142] scale_389
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (64s)
+[scale] resume: 388 done, 112 left
+  [scale 1/112] scale_389
+  [scale 2/112] scale_390
+  [scale 3/112] scale_391
+  [scale 4/112] scale_392
+  [scale 5/112] scale_393
+  [scale 6/112] scale_394
+  [scale 7/112] scale_395
+  [scale 8/112] scale_396
+  [scale 9/112] scale_397
+  [scale 10/112] scale_398
+  [scale 11/112] scale_399
+  [scale 12/112] scale_400
+  [scale 13/112] scale_401
+  [scale 14/112] scale_402
+Exception ignored in: <function Connection.__del__ at 0x0000023F4EF61DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+Exception ignored in: <function Connection.__del__ at 0x0000023F4EF61DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [scale 15/112] scale_403
+  [scale 16/112] scale_404
+  [scale 17/112] scale_405
+  [scale 18/112] scale_406
+  [scale 19/112] scale_407
+  [scale 20/112] scale_408
+  [scale 21/112] scale_409
+  [scale 22/112] scale_410
+  [scale 23/112] scale_411
+  [scale 24/112] scale_412
+  [scale 25/112] scale_413
+  [scale 26/112] scale_414
+  [scale 27/112] scale_415
+  [scale 28/112] scale_416
+  [scale 29/112] scale_417
+  [scale 30/112] scale_418
+  [scale 31/112] scale_419
+  [scale 32/112] scale_420
+  [scale 33/112] scale_421
+  [scale 34/112] scale_422
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (49s)
+[scale] resume: 421 done, 79 left
+  [scale 1/79] scale_422
+  [scale 2/79] scale_423
+  [scale 3/79] scale_424
+  [scale 4/79] scale_425
+work copy exists (cached sha): 7e14b08091c193c4...
+[scale] collect: 500 queries (53s)
+[scale] resume: [scale] collect: 500 queries (51s)
+[scale] r  [scale 2/76] scale_426
+  [scale 3/76] scale_427
+  [scale 2/76] scale_426
+  [scale 5/76] scale_429
+  [scale 6/76] scale_430
+  [scale 7/76] scale_431
+  [scale 8/76] scale_432
+  [scale 9/76] scale_433
+  [scale 8/76] scale_432
+  [scale 9/76] scale_433
+  [scale 10/76] scale_434
+    [scale 13/76] scale_437
+  [scale 14/76] scale_438
+  [scale 15/76] scale_439
+  [scale 16/76] scale_440
+  [scale 17/76] scale_441
+  [scale 18/76] scale_442
+  [scale 19/76] scale_443
+  [scale 20/76] scale_444
+  [scale 21/76] scale_445
+  [scale 22/76] scale_446
+  [scale 23/76] scale_447
+  [scale 24/76] scale_448
+  [scale 25/76] scale_449
+  [scale 26/76] scale_450
+  [scale 27/76] scale_451
+  [scale 28/76] scale_452
+  [scale 29/76] scale_453
+Exception ignored in: <function Connection.__del__ a  [scale 30/76] scale_454
+Exception ignored in: <function Connection.__del__ at 0x0000017992E51DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation wri  [scale 32/76] scale_456
+  [scale 33/76] scale_457
+  [scale 34/76] scale_458
+  [scale 35/76] scale_459
+  [scale 36/76] scale_460
+  [scale 37/76] scale_461
+  [scale 38/76] scale_462
+  [scale 39/76] scale_463
+  [scale 40/76] scale_464
+  [scale 41/76] scale_465
+  [scale 42/76] scale_466
+  [scale 43/76] scale_467
+  [scale 44/76] scale_468
+  [scale 45/76] scale_469
+  [scale 46/76] scale_470
+  [scale 47/76] scale_471
+  [scale 48/76] scale_472
+  [scale 49/76] scale_473
+[scale 48/76] scale_472
+  [scale 49/76] scale_473
+work copy exists (cached sha): 7e14b08091c193c4...
+[ceb-imdb-regen] collect: 121 queries (17s)
+[ceb-im[scale] collect: 500 queries (33s)
+[scale] resume: 472 done, 28 left
+  [  [ceb-imdb-regen 2/121  [scale 2/28] scale_474
+  [scale 3/28] scale_475
+  [scale 4/28] scale_476
+  [scale 5/28] scale_477
+  [scale 6/28] scale_478
+  [scale 7/28] scale_479
+  [scale 8/28] scale_480
+  [scale 9/28] scale_481
+  [scale 10/28] scale_482
+  [scale 11/28] scale_483
+  [scale 12/28] sca  [ceb-i  [scale 13/28] scale_485
+Exce  [ceb-imdb-regen 11/121] ceb_10a_011
+  [ceb-imdb-regen 12/121] ceb_10a_012
+  [ceb-imdb-regen 13/121] ceb_10a_013
+  [ceb-imdb-regen 14/121] ceb_10a_014
+  [ceb-imdb-regen 15/121] ceb_10a_015
+  [ceb-imdb-regen 16/121] ceb_11a_001
+  [ceb-imdb-regen 17/121] ceb_11a_002
+Exception ignored in: <function Connection.__del__ at 0x000001E8FA081DA0>
+Traceback (most recent call last):
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\core.py", line 1803, in __del__
+    self._att.detach()
+  File "C:\Users\aleks\AppData\Roaming\Python\Python313\site-packages\firebird\driver\interfaces.py", line 1264, in detach
+    self.vtable.detach(self, self.status)
+OSError: exception: access violation writing 0x0000000000000024
+  [ceb-imdb-regen 18/121] ceb_11a_003
+  [ceb-imdb-regen 19/121] ceb_11a_004
+  [ceb-imdb-regen 20/121] ceb_11a_005
+  [ceb-imdb-regen 21/121] ceb_11a_006
+  [ceb-imdb-regen 22/121] ceb_11a_007
+  [ceb-imdb-regen 23/121] ceb_11a_008
+  [ceb-imdb-regen 24/121] ceb_11a_009
+  [ceb-imdb-regen 25/121] ceb_11a_010
+  [ceb-imdb-regen 26/121] ceb_11a_011
+  [ceb-imdb-regen 27/121] ceb_11a_012
+  [ceb-imdb-regen 28/121] ceb_11a_013
+  [ceb-imdb-regen 29/121] ceb_11a_014
+  [ceb-imdb-regen 30/121] ceb_11a_015
+  [ceb-imdb-regen 31/121] ceb_11b_001
+  [ceb-imdb-regen 32/121] ceb_11b_002
+  [ceb-imdb-regen 33/121] ceb_11b_003
+  [ceb-imdb-regen 34/121] ceb_11b_004
+  [ceb-imdb-regen 35/121] ceb_11b_005
+  [ceb-imdb-regen 36/121] ceb_11b_006
+  [ceb-imdb-regen 37/121] ceb_11b_007
+  [ceb-imdb-regen 38/121] ceb_11b_008
+  [ceb-imdb-regen 39/121] ceb_11b_009
+  [ceb-imdb-regen 40/121] ceb_11b_010
+  [ceb-imdb-regen 41/121] ceb_11b_011
+  [ceb-imdb-regen 42/121] ceb_11b_012
+  [ceb-imdb-regen 43/121] ceb_11b_013
+  [ceb-imdb-regen 44/121] ceb_11b_014
+  [ceb-imdb-regen 45/121] ceb_11b_015
+  [ceb-imdb-regen 46/121] ceb_3b_001
+  [ceb-imdb-regen 47/121] ceb_3b_002
+  [ceb-imdb-regen 48/121] ceb_3b_003
+  [ceb-imdb-regen 49/121] ceb_3b_004
+  [ceb-imdb-regen 50/121] ceb_3b_005
+g 0x0000000000000024
+work copy: sha256=4e403c3042b3f14a...
+[tpch] collect: 22 queries (3s)
+[tpch] resume: 0 done, 22 left
+  [tpch 1/22] tpch_01
+  [tpch 2/22] tpch_02
+  [tpch 3/22] tpch_03
+  [tpch 4/22] tpch_04
+  [tpch 5/22] tpch_05
+  [tpch 6/22] tpch_06
+  [tpch 7/22] tpch_07
+  [tpch 8/22] tpch_08
+  [tpch 9/22] tpch_09
+  [tpch 10/22] tpch_10
+  [tpch 11/22] tpch_11
+  [tpch 12/22] tpch_12
+  [tpch 13/22] tpch_13
+  [tpch 14/22] tpch_14
+  [tpch 15/22] tpch_15
+  [tpch 16/22] tpch_16
+  [tpch 17/22] tpch_17
+  [tpch 18/22] tpch_18
+  [tpch 19/22] tpch_19
+  [tpch 20/22] tpch_20
+  [tpch 21/22] tpch_21
+  [tpch 22/22] tpch_22
+[tpch] executed batch: 22 queries (1610s)
+[tpch] executed: 22 (ok=18 timeout=4 error=0 heavy=2)
+baseline key_id: c4adffec0450 -> E:\Projects_Big\optimizertestplan\results\baselines\c4adffec0450
+7
+  [ceb-imdb-regen 4/72] ceb_3b_008
+  [ceb-imdb-regen 5/72] ceb_3b_009
+  [ceb-imdb-regen 6/72] ceb_3b_010
+  [ceb-imdb-regen 7/72] ceb_3b_011
+  [ceb-imdb-regen 8/72] ceb_3b_012
+  [ceb-imdb-regen 9/72] ceb_3b_013
+  [ceb-imdb-regen 10/72] ceb_3b_014
+  [ceb-imdb-regen 11/72] ceb_3b_015
+  [ceb-imdb-regen 12/72] ceb_7a_001
+  [ceb-imdb-regen 13/72] ceb_7a_002
+  [ceb-imdb-regen 14/72] ceb_7a_003
+  [ceb-imdb-regen 15/72] ceb_7a_004
+  [ceb-imdb-regen 16/72] ceb_7a_005
+  [ceb-imdb-regen 17/72] ceb_7a_006
+  [ceb-imdb-regen 18/72] ceb_7a_007
+  [ceb-imdb-regen 19/72] ceb_7a_008
+  [ceb-imdb-regen 20/72] ceb_7a_009
+  [ceb-imdb-regen 21/72] ceb_7a_010
+  [ceb-imdb-regen 22/72] ceb_7a_011
+  [ceb-imdb-regen 23/72] ceb_7a_012
+  [ceb-imdb-regen 24/72] ceb_7a_013
+  [ceb-imdb-regen 25/72] ceb_7a_014
+  [ceb-imdb-regen 26/72] ceb_7a_015
+  [ceb-imdb-regen 27/72] ceb_8a_001
+  [ceb-imdb-regen 28/72] ceb_8a_002
+  [ceb-imdb-regen 29/72] ceb_8a_003
+  [ceb-imdb-regen 30/72] ceb_8a_004
+  [ceb-imdb-regen 31/72] ceb_8a_005
+  [ceb-imdb-regen 32/72] ceb_8a_006
+  [ceb-imdb-regen 33/72] ceb_8a_007
+  [ceb-imdb-regen 34/72] ceb_8a_008
+  [ceb-imdb-regen 35/72] ceb_8a_009
+  [ceb-imdb-regen 36/72] ceb_8a_010
+  [ceb-imdb-regen 37/72] ceb_8a_011
+  [ceb-imdb-regen 38/72] ceb_8a_012
+  [ceb-imdb-regen 39/72] ceb_8a_013
+  [ceb-imdb-regen 40/72] ceb_8a_014
+  [ceb-imdb-regen 41/72] ceb_8a_015
+  [ceb-imdb-regen 42/72] ceb_8a_016
+  [ceb-imdb-regen 43/72] ceb_9a_001
+  [ceb-imdb-regen 44/72] ceb_9a_002
+  [ceb-imdb-regen 45/72] ceb_9a_003
+  [ceb-imdb-regen 46/72] ceb_9a_004
+  [ceb-imdb-regen 47/72] ceb_9a_005
+  [ceb-imdb-regen 48/72] ceb_9a_006
+  [ceb-imdb-regen 49/72] ceb_9a_007
+  [ceb-imdb-regen 50/72] ceb_9a_008
+  [ceb-imdb-regen 51/72] ceb_9a_009
+  [ceb-imdb-regen 52/72] ceb_9a_010
+  [ceb-imdb-regen 53/72] ceb_9a_011
+  [ceb-imdb-regen 54/72] ceb_9a_012
+  [ceb-imdb-regen 55/72] ceb_9a_013
+  [ceb-imdb-regen 56/72] ceb_9a_014
+  [ceb-imdb-regen 57/72] ceb_9a_015
+  [ceb-imdb-regen 58/72] ceb_9b_001
+  [ceb-imdb-regen 59/72] ceb_9b_002
+  [ceb-imdb-regen 60/72] ceb_9b_003
+  [ceb-imdb-regen 61/72] ceb_9b_004
+  [ceb-imdb-regen 62/72] ceb_9b_005
+  [ceb-imdb-regen 63/72] ceb_9b_006
+  [ceb-imdb-regen 64/72] ceb_9b_007
+  [ceb-imdb-regen 65/72] ceb_9b_008
+  [ceb-imdb-regen 66/72] ceb_9b_009
+  [ceb-imdb-regen 67/72] ceb_9b_010
+  [ceb-imdb-regen 68/72] ceb_9b_011
+  [ceb-imdb-regen 69/72] ceb_9b_012
+  [ceb-imdb-regen 70/72] ceb_9b_013
+  [ceb-imdb-regen 71/72] ceb_9b_014
+  [ceb-imdb-regen 72/72] ceb_9b_015
+[ceb-imdb-regen] executed batch: 72 queries (2195s)
+[ceb-imdb-regen] executed: 121 (ok=119 timeout=2 error=0 heavy=53)
+baseline key_id: 8e23f5f87eea -> E:\Projects_Big\optimizertestplan\results\baselines\8e23f5f87eea
+h] collect: 22 queries (4s)
+[tpch] resume: 22 done, 0 left
+[tpch] executed: 22 (ok=18 timeout=4 error=0 heavy=2)
+baseline key_id: c4adffec0450 -> E:\Projects_Big\optimizertestplan\results\baselines\c4adffec0450
+work copy: sha256=4e403c3042b3f14a...
+[tpch] collect: 22 queries (2s)
+[tpch] resume: 22 done, 0 left
+[tpch] executed: 22 (ok=18 timeout=4 error=0 heavy=2)
+baseline key_id: c4adffec0450 -> E:\Projects_Big\optimizertestplan\results\baselines\c4adffec0450
+work copy: sha256=4e403c3042b3f14a...
+[tpch] collect: 22 queries (2s)
+[tpch] resume: 22 done, 0 left
+[tpch] executed: 22 (ok=18 timeout=4 error=0 heavy=2)
+baseline key_id: c4adffec0450 -> E:\Projects_Big\optimizertestplan\results\baselines\c4adffec0450
+work copy exists (cached sha): 7e14b08091c193c4...
+[ceb-imdb-regen] collect: 121 queries (11s)
+[ceb-imdb-regen] resume: 76 done, 45 left
+  [ceb-imdb-regen 1/45] ceb_8a_002
+  [ceb-imdb-regen 2/45] ceb_8a_003
+  [ceb-imdb-regen 3/45] ceb_8a_004
+  [ceb-imdb-regen 4/45] ceb_8a_005
+  [ceb-imdb-regen 5/45] ceb_8a_006
+  [ceb-imdb-regen 6/45] ceb_8a_007
+  [ceb-imdb-regen 7/45] ceb_8a_008
+  [ceb-imdb-regen 8/45] ceb_8a_009
+  [ceb-imdb-regen 9/45] ceb_8a_010
+  [ceb-imdb-regen 10/45] ceb_8a_011
+  [ceb-imdb-regen 11/45] ceb_8a_012
+  [ceb-imdb-regen 12/45] ceb_8a_013
+  [ceb-imdb-regen 13/45] ceb_8a_014
+  [ceb-imdb-regen 14/45] ceb_8a_015
+  [ceb-imdb-regen 15/45] ceb_8a_016
+  [ceb-imdb-regen 16/45] ceb_9a_001
+  [ceb-imdb-regen 17/45] ceb_9a_002
+  [ceb-imdb-regen 18/45] ceb_9a_003
+  [ceb-imdb-regen 19/45] ceb_9a_004
+  [ceb-imdb-regen 20/45] ceb_9a_005
+  [ceb-imdb-regen 21/45] ceb_9a_006
+  [ceb-imdb-regen 22/45] ceb_9a_007
+  [ceb-imdb-regen 23/45] ceb_9a_008
+  [ceb-imdb-regen 24/45] ceb_9a_009
+  [ceb-imdb-regen 25/45] ceb_9a_010
+  [ceb-imdb-regen 26/45] ceb_9a_011
+  [ceb-imdb-regen 27/45] ceb_9a_012
+  [ceb-imdb-regen 28/45] ceb_9a_013
+  [ceb-imdb-regen 29/45] ceb_9a_014
+  [ceb-imdb-regen 30/45] ceb_9a_015
+  [ceb-imdb-regen 31/45] ceb_9b_001
+  [ceb-imdb-regen 32/45] ceb_9b_002
+  [ceb-imdb-regen 33/45] ceb_9b_003
+  [ceb-imdb-regen 34/45] ceb_9b_004
+  [ceb-imdb-regen 35/45] ceb_9b_005
+work copy: sha256=4e403c3042b3f14a...
+[tpch] collect: 22 queries (3s)
+[t  [ceb-imdb-regen 38/45] ceb_9b_008
+  [ceb-imdb-regen 39/45] ceb_9b_009
+  [ceb-imdb-regen 40/45] ceb_9b_010
+  [ceb-imdb-regen 41/45] ceb_9b_011
+  [ceb-imdb-regen 42/45] ceb_9b_012
+  [ceb-imdb-regen 43/45] ceb_9b_013
+  [ceb-imdb-regen 44/45] ceb_9b_014
+  [ceb-imdb-regen 45/45] ceb_9b_015
+[ceb-imdb-regen] executed batch: 45 queries (1402s)
+[ceb-imdb-regen] executed: 121 (ok=119 timeout=2 error=0 heavy=53)
+baseline key_id: 8e23f5f87eea -> E:\Projects_Big\optimizertestplan\results\baselines\8e23f5f87eea
+work copy exists (cached sha): 7e14b08091c193c4...
+[synthetic] collect: 5000 queries (556s)
