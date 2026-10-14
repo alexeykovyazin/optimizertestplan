@@ -312,12 +312,25 @@ TPC-H дополнительно (S1/S2 локально, функциональ
     разворачиваются ~15-20 мин (300 c), либо зависают навсегда — монстры
     запускать через schtasks, застрявших терминировать парой
     лидер+воркер, при отказе — рестарт сервиса.
-  - **S8 imdb (job-light/scale/ceb-imdb-regen) запущен** 2026-10-13
-    (baseline `8e23f5f87eea`, repeats=2, --host 192.168.1.57:3055,
-    работа по свежей копии golden). Ловушки обвязки S8: FROM-less
-    `SELECT RDB$GET_CONTEXT(...)` не парсится (нужен FROM RDB$DATABASE);
-    русская шапка certutil (cp866) рвёт utf-8-decode в subprocess —
-    errors="replace". После: S8 tpch, synthetic only-collect.
+  - **S8 ЗАВЕРШЁН (2026-10-14, baseline `8e23f5f87eea` + tpch
+    `c4adffec0450`)**: repeats=2, timeout 300 c, FB 5.0.5 @192.168.1.57:3055.
+    job-light: 65 ok + 5 TO (те же монстры 049/050/058/060/061), мед. 8.2 c,
+    макс 189 c. scale: 450 ok + 50 TO, мед. 2.5 c, макс 320 c. tpch:
+    18 ok + 4 TO (13/22 — FB-монстры, 17/20 — ожидаемо, форма как у
+    pg_timeout), мед. 3.9 c, макс 45.8 c (Q19). ceb-imdb-regen: 119 ok + 2 TO,
+    мед. 9.4 c, макс 311 c. synthetic: только компиляция, 5000 за 556 c.
+    Инфраструктура живучести (после трёх режимов отказа драйвера — AV-краш,
+    зависание recv, зомби-вычисления после таймаутов): `runner.run_suite`
+    получил `on_result` (построчный jsonl + докатка), `suite_baseline`
+    резюмится с места смерти и кэширует SHA локально,
+    `bench/harness/attachment_reaper.py` добивает приложения с активным
+    стэйтментом >350 c (`DELETE FROM MON$ATTACHMENTS`; statement timeout FB
+    НЕ прерывает тяжёлые Hash/Sort — зомби жили часами и отравляли замеры),
+    `s8_supervisor.sh` крутит сюиты до parquet (timeout --foreground —
+    иначе msys timeout убивает группу Ctrl+Break, 0xC0000004). Первая
+    попытка S8 (`8e23f5f87eea_run1_contaminated`) забракована: 37 зомби
+    scale, ~5.5 ядер часами. Отчёты валидаций и бейслайны добавлены в git
+    (results/*_validation, results/prepare_test, results/baselines).
   - **Watchdog pgref_watchdog (schtasks)**: PG-эталонные окна закрыты —
     задача DISABLED; удалить `schtasks /Delete /TN pgref_watchdog /F`
     после S8/synthetic.- **Прямой доступ**: PG и FB с HONOR2025 — по IPv4 192.168.1.57
