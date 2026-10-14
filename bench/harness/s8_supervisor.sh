@@ -22,8 +22,11 @@ for suite in job-light scale ceb-imdb-regen; do
       break
     fi
     echo "=== $suite попытка $attempt старт $(date +%H:%M:%S) ==="
-    timeout 2700 python -u bench/harness/suite_baseline.py --suites "$suite" \
-        --host 192.168.1.57:3055 --skip-copy >> "$BDIR/supervisor.log" 2>&1
+    # --foreground: SIGTERM только ребёнку, иначе msys timeout посылает
+    # Ctrl+Break всей группе и убивает сам супервайзер (0xC0000004)
+    timeout --foreground 2700 python -u bench/harness/suite_baseline.py \
+        --suites "$suite" --host 192.168.1.57:3055 --skip-copy \
+        >> "$BDIR/supervisor.log" 2>&1
     echo "=== $suite попытка $attempt код=$? финиш $(date +%H:%M:%S) ==="
     sleep 15
   done
@@ -38,8 +41,9 @@ for attempt in 1 2 3 4; do
   skip=""
   [ "$attempt" -gt 1 ] && skip="--skip-copy"
   echo "=== tpch попытка $attempt старт $(date +%H:%M:%S) ==="
-  timeout 2700 python -u bench/harness/suite_baseline.py --suites tpch \
-      --host 192.168.1.57:3055 --golden E:/fbdata/golden/tpch_sf1_fb5.fdb \
+  timeout --foreground 2700 python -u bench/harness/suite_baseline.py \
+      --suites tpch --host 192.168.1.57:3055 \
+      --golden E:/fbdata/golden/tpch_sf1_fb5.fdb \
       --work-name tpch_work_suite.fdb $skip >> "$BDIR/supervisor.log" 2>&1
   echo "=== tpch попытка $attempt код=$? финиш $(date +%H:%M:%S) ==="
   sleep 15
@@ -52,8 +56,8 @@ for attempt in 1 2 3; do
     break
   fi
   echo "=== synthetic попытка $attempt старт $(date +%H:%M:%S) ==="
-  timeout 2700 python -u bench/harness/suite_baseline.py --suites synthetic \
-      --host 192.168.1.57:3055 --skip-copy --only-collect \
+  timeout --foreground 2700 python -u bench/harness/suite_baseline.py \
+      --suites synthetic --host 192.168.1.57:3055 --skip-copy --only-collect \
       >> "$BDIR/supervisor.log" 2>&1
   echo "=== synthetic попытка $attempt код=$? финиш $(date +%H:%M:%S) ==="
   sleep 15
