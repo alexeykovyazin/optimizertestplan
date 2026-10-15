@@ -352,3 +352,118 @@ TPC-H дополнительно (S1/S2 локально, функциональ
   таймаута соединение в GC даёт access violation в detach и убивает
   python (валидация job-light умерла на 058). Per-qid json спасает;
   монстры валидировать по процессу на запрос.
+
+---
+
+## 8. Сессия P2 (2026-10-15): JCC-H закрыт, DSB до S5
+
+Порядок P2 скорректирован фактами: **CEB-IMDb оригинальный закрыт как
+недоступный** — Dropbox-ссылки репозитория learnedsystems/CEB отдают
+«Dropbox - Error» (проверено 2026-10-15, HTTP 200 + HTML-заглушка;
+dl.dropboxusercontent тоже мёртв, зеркал HF/Zenodo нет, в самом репо
+только 4 example-pickle). Каноническим CEB-IMDb остаётся ceb-imdb-regen
+(121 запрос, S6-S8 пройдены ранее).
+
+### 8.1 JCC-H — ПОЛНЫЙ ЦИКЛ S0–S8 (0 mismatch)
+
+- **S0**: ldbc/dbgen.JCC-H (Boncz & Anadiotis, TPCTC 2017; «Park et al.»
+  в плане было неточно). Форк TPC-H dbgen **2.17.2** c `-k`
+  (join-crossing correlations + skew); `qgen` — normal-параметры,
+  `qgen -k` — skewed, 21/22 запросов получают другие константы (Q1 без
+  параметров — идентичен).
+- **Сборка (MSVC)**: `/DWIN32 /DORACLE /DTPCH /DRNG_TEST /DJCCH_SKEW`.
+  Три ловушки: (1) `-k` спрятан за компил-дефайном JCCH_SKEW, нужен
+  skew/phash.c в линковке; (2) WIN32-блок config.h в ветке `#else`
+  от `#ifdef DOS` — DOS определять НЕ надо; (3) **главный фикс —
+  64-битность phash**: `skew/phash.{c,h}` использовали `unsigned long`
+  (на Windows x64 = 32 бита) — умножение PRIME*i переполнялось,
+  `init_skew` падал («could not find inverse»), xorval (~7.9e14, 50 бит)
+  обрезался. Типы → `uint64_t`; после фикса данные генерируются
+  байт-в-байт одинаково на HONOR2025 и dellg15 (все 8 .tbl SHA совпали).
+- **Данные**: `dbgen -k -vf -s 1` → skew_csv; счётчики канонические
+  КРОМЕ lineitem = ровно 6 000 000 (TPC-H SF1: 6 001 215 — JCC-H
+  выравнивает). **20 пустых s_comment** (в каноническом TPC-H пустых
+  полей нет) → грузить `''` (как COPY text в PG), НЕ NULL — иначе
+  validation error на NOT NULL.
+- **Запросы**: qgen/qgen -k, seed 42, SF1 → queries_out_{norm,skew};
+  порт port_jcch.py = правила port_tpch + Q15 с датой окна из raw
+  (у JCC-H даты параметризованы). 44/44 prepare OK (~1 с/сюита).
+- **S3/S4**: golden jcch_sf1_fb5.fdb (1.6 ГБ) передан scp, SHA сверен;
+  PG `jcch` (C-коллация, dss.ddl + PK+FK как tpch, strip хвостового
+  pipe) за 40 с.
+- **S6**: обе сюиты 300 c + монстры 1800 c. norm: 20 ok + 2 TO (300 c),
+  из них Q17 добит на 1800 c (результат+план), Q20 — pg_timeout-класс;
+  skew: аналогично, Q17/Q20 оба pg_timeout. Итого: 22/22 результатов,
+  21 (norm) + 20 (skew) планов. Класс no_pg_reference — как tpch_17/20.
+- **S7**: **jcch-norm: 15 match + 2 match_truncated + 5 exec_timeout;
+  jcch-skew: 13 match + 3 match_truncated + 6 exec_timeout; 0 mismatch,
+  0 error**. match_truncated — та же numeric-дивергенция AVG/SUM-масштаба,
+  что tpch 01/08/14.
+- **S8** (бейслайн `1bb2761caa0a`): norm 17 ok + 5 TO (13/17/20/21/22),
+  мед. 2.7 c, макс 33.7 c; skew 16 ok + 6 TO (+Q2 — skew делает его
+  FB-монстром на 300 c), мед. 4.3 c, макс 34.7 c.
+
+Новые ловушки сессии:
+- `job_validate` канон чисел дополнен экспоненциальной формой: FB
+  DECIMAL отдаёт `0E-8` на нулевых объёмах (JCC-H Q8: mkt_share=0),
+  PG — `0.000...`; без этого — ложный mismatch.
+- **Двойной жнец**: nohup-жнец (age 350 с) пережил свою сессию и стрелял
+  раньше клиентского сторожа (645 с) — монстры получали статус
+  «Killed by DBA» вместо exec_timeout. Перед валидацией проверять,
+  что жив РОВНО один жнец и его age > timeout_s + 45.
+- `suite_pg_reference.parse`: пустой \copy при ошибке PG больше не даёт
+  checksum пустоты (таймаут раньше канонизовался как «валидный пустой
+  результат»).
+- qgen пишут `-- using N as a seed` в stdout — строки-комментарии
+  срезаются до \copy (иначе `--` съедает хвост строки).
+
+### 8.2 CEB-IMDb — закрыт (недоступен)
+
+Dropbox pickles мертвы (см. выше). Статус канона — за ceb-imdb-regen.
+
+### 8.3 DSB — S0–S5 готовы, S6 запущен
+
+- **S0**: microsoft/dsb (Ding et al., PVLDB 2021; MIT). Модифицированный
+  тулсет TPC-DS v2.11.0rc2. **Сборка msbuild dbgen2.sln
+  Release|Win32 /p:PlatformToolset=v142** (в решении нет x64; /m:1 —
+  параллельные проекты конфликтуют за vc142.pdb). Бинарники:
+  dsdgen/dsqgen/distcomp (+mkheader/checksum).
+- **Данные**: `dsdgen /scale 1` → 25 таблиц (24 TPC-DS + dbgen_version),
+  20.1M строк, счётчики канонического TPC-DS SF1 (store_sales 2 880 404,
+  inventory 11 745 000), генерация ~1 мин. **Пустые поля = NULL**
+  (customer: 100% строк, item: 9043, store_sales: 259 831) — PG COPY
+  с `NULL ''`, FB loader с ""→NULL.
+- **Схема**: scripts/create_tables.sql (PG-диалект, inline PRIMARY KEY
+  — конвенция DSB); FB: те же типы (integer/char/varchar/date/time/
+  decimal(7,2)); PK на nullable-колонках потребовал `ALTER COLUMN ...
+  SET NOT NULL` перед ADD PRIMARY KEY (PG ставит NOT NULL неявно).
+  Golden через **gbak → scp (1.29 ГБ) → restore через service_mgr**
+  (FDB 2.2 ГБ — за портом надёжности scp).
+- **Ворклоад**: distcomp (запечь гауссовы веса в tpcds.idx — ОБЯЗАТЕЛЬНО
+  до dsqgen, иначе PARAM_DIST normal виснет в IntegrateDist) +
+  dsqgen 52 PG-шаблона (15 agg + 20 multi_block + 17 spj) × дистрибуции
+  normal sigma=2/sigma=1 (center 0, rngseed 997) × 5 инстансов.
+  **dsqgen (Win32) флеймит heap-corruption 0xC0000374** — иногда крэш,
+  иногда пустой вывод; ретраи до 4, не преодолимые шаблоны исключаются
+  с записью. Итог: dsb-s1 = 51×5 = 255 (query058 не выдаётся), dsb-s2 =
+  52×5 = 260.
+- **Порт (port_dsb.py)**: limit→`SELECT FIRST N` (FIRST строго перед
+  DISTINCT — `SELECT DISTINCT FIRST` в FB невалиден; outer select =
+  первый select на глубине скобок 0); DAY-interval → DATEADD (левая
+  часть — литерал/колонка/cast(колонка), квалифицированные d1.d_date,
+  знак +/-, непаддированные даты '2002-6-01'); substring(a,n,m) →
+  FROM/FOR; `AS year` → `"year"` (резерв). PG-оригиналы сохраняются в
+  queries/dsb-*/orig/ (source_sql читает оттуда). q39 двухблочный →
+  парные запросы _1/_2. **30/сюиту исключено**: INTERSECT (FB5 нет —
+  query014/038), ROLLUP/GROUPING (FB5 нет — query018/027) —
+  manifest/dsb-*-excluded.yaml. **465/465 prepare OK** (~19 с/сюита).
+- **PG `dsb`**: C-коллация, create_tables.sql как есть, COPY из strip-
+  копий (хвостовой pipe), 1.5 мин. **Golden DSB_SF1_FB5.FDB** на
+  dellg15 через gbak-перенос, счётчики сверены.
+- **S6**: 465×(q_+pe_), schtask dsb_s6 (300 c, монстры вторым проходом).
+
+Ловушки DSB:
+- Git Bash превращает `/OPTION` в путь — запускать тулзы через
+  `cmd /c ... < NUL` или MSYS_NO_PATHCONV=1.
+- strip хвостового pipe обязателен и для .dat (COPY text).
+- .gitignore дополнен `bench/datasets/dsb/sf1_csv/*.dat`.
