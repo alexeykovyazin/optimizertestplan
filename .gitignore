@@ -13,3 +13,4 @@ __pycache__/
 *.fbk
 # регенерируемые данные dbgen (bench/datasets/tpch/build_tpch.py, seed 42)
 *.tbl
+bench/datasets/dsb/sf1_csv/*.dat

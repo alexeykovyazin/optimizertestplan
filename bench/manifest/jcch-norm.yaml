@@ -1,0 +1,404 @@
+- id: jcch_norm_01
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: d21b3027
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (1x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_02
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 61d81f2c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_03
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 4148ac6a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: jcch_norm_04
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 4bd37475
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_05
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: c3f9d024
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_06
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: a4c349d8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_07
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: f70cf14e
+  tables: 2
+  table_list:
+  - l_shipdate
+  - supplier
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: jcch_norm_08
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: c545e1d3
+  tables: 2
+  table_list:
+  - o_orderdate
+  - part
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: jcch_norm_09
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: b3537a2b
+  tables: 2
+  table_list:
+  - o_orderdate
+  - part
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_10
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: bfa109a6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x)
+- id: jcch_norm_11
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 70d92ea3
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: 1.0e-09
+  subplan_scope: null
+  result: null
+  port_notes: value -> "value" (VALUE reserved word in Firebird, 2x)
+- id: jcch_norm_12
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 241c71c5
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_13
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: b93cc4a1
+  tables: 2
+  table_list:
+  - customer
+  - orders
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_14
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: b73ad4a1
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - like_predicate
+  deterministic: true
+  float_tolerance: 1.0e-09
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_15
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: f40b218b
+  tables: 1
+  table_list:
+  - lineitem
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: create view + drop view -> одиночный запрос (окно с 1995-09-01; view
+    -> производная таблица, тело повторено)
+- id: jcch_norm_16
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 61089def
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - like_predicate
+  - not_in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_17
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: ea2bf0fb
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_18
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 1e0d5e14
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_19
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: a5b2f6bf
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_20
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 69f3edad
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - in_subquery
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: date '...' -> CAST AS DATE (2x); interval-арифметика -> DATEADD (1x)
+- id: jcch_norm_21
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: 25b22fee
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: jcch_norm_22
+  suite: jcch-norm
+  db: jcch-sf1
+  index_config:
+  - pk
+  template: c2276a80
+  tables: 2
+  table_list:
+  - '1'
+  - customer
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null

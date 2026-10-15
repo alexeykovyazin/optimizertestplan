@@ -30,7 +30,9 @@ OUTDIR = os.path.join(ROOT, "results", "job_validation")
 TRUNC = 8000
 
 
-NUM_DEC = re.compile(r"-?\d+\.\d+")
+# экспоненциальная форма: FB DECIMAL отдаёт '0E-8' на нулевых объёмах
+# (JCC-H Q8: mkt_share=0 на skew-данных), PG — '0.000...' — оба в Decimal
+NUM_DEC = re.compile(r"-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?")
 
 
 def _canon_num(s: str):

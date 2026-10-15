@@ -29,7 +29,7 @@ import sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 GEN = os.path.join(ROOT, "third_party", "imdb-port")
 REMOTE_BASE = "E:/pgdumps"
-TIMEOUT_S = 300
+TIMEOUT_S = int(float(os.environ.get("BENCH_PG_TIMEOUT", "300")))
 PG_DB = os.environ.get("BENCH_PG_DB", "imdb")
 # пароль эталонного PG — только через окружение, в репозитории не хранится
 PG_PWD = os.environ.get("BENCH_PG_PWD", "")
@@ -57,6 +57,39 @@ def source_sql(suite: str, qid: str) -> str:
                    encoding="utf-8").read()
         raw = re.sub(r"\b(day|year|month)\s*\(\d+\)", r"\1", raw)
         return raw.split(";", 1)[0]
+    if suite in ("jcch-norm", "jcch-skew"):
+        # исходник: JCC-H qgen (normal / -k skewed), seed 42 — тот же
+        # источник, что port_jcch.py; правила усечения как у tpch.
+        qnum = int(qid.rsplit("_", 1)[1])
+        sub = "norm" if suite == "jcch-norm" else "skew"
+        raw = open(os.path.join(ROOT, "third_party", "dbgen.JCC-H",
+                                f"queries_out_{sub}", f"{sub}_{qnum}.sql"),
+                   encoding="utf-8").read()
+        # seed-комментарий qgen внутрь \copy попасть не может
+        # (p-- съедает хвост строки); срезаем строки-комментарии
+        raw = re.sub(r"^--.*$", "", raw, flags=re.M)
+        raw = re.sub(r"\b(day|year|month)\s*\(\d+\)", r"\1", raw)
+        return raw.split(";", 1)[0]
+    if suite.startswith("dsb-"):
+        # исходник: dsqgen PG-диалект (port_dsb.py перезаписывает рабочие
+        # файлы, PG-оригиналы сохранены в orig/ до порта). 039 двухблочный:
+        # файлы dsb_039_01_1/_2 — N-й statement оригинала dsb_039_01
+        # (тот же сплит, что port_dsb.dsb_statements).
+        odir = os.path.join(ROOT, "bench", "queries", suite, "orig")
+        base = f"{qid}.sql"
+        m = None
+        if not os.path.exists(os.path.join(odir, base)):
+            m = re.search(r"_(\d+)$", qid)
+            if not m:
+                raise FileNotFoundError(base)
+            base = f"{qid[:m.start()]}.sql"
+        raw = open(os.path.join(odir, base), encoding="utf-8").read()
+        if m:
+            parts = [p.strip().rstrip(";").strip()
+                     for p in raw.split(";")]
+            parts = [p for p in parts if p]
+            return parts[int(m.group(1)) - 1]
+        return raw.strip().rstrip(";").strip()
     return open(os.path.join(ROOT, "bench", "queries", suite,
                              f"{qid}.sql"), encoding="utf-8").read()
 
@@ -85,12 +118,23 @@ def gen(suites: list[str]):
             sql = source_sql(suite, qid).strip().rstrip(";").strip()
             one_line = " ".join(sql.split())
             pre = post = ""
-            if suite == "tpch" and qid.endswith("_15"):
+            if suite in ("tpch", "jcch-norm", "jcch-skew") \
+                    and qid.endswith("_15"):
                 # qgen Q15: create view + select + drop view — эталон и план
                 # полным циклом; \copy оборачивает только итоговый select
-                raw = open(os.path.join(ROOT, "third_party", "tpch-dbgen",
-                                        "queries_out", "15.sql"),
-                           encoding="utf-8").read()
+                if suite == "tpch":
+                    raw = open(os.path.join(ROOT, "third_party",
+                                            "tpch-dbgen", "queries_out",
+                                            "15.sql"),
+                               encoding="utf-8").read()
+                else:
+                    sub = "norm" if suite == "jcch-norm" else "skew"
+                    raw = open(os.path.join(ROOT, "third_party",
+                                            "dbgen.JCC-H",
+                                            f"queries_out_{sub}",
+                                            f"{sub}_15.sql"),
+                               encoding="utf-8").read()
+                raw = re.sub(r"^--.*$", "", raw, flags=re.M)
                 raw = raw.split("where rownum", 1)[0]
                 parts = [p.strip() for p in raw.split(";") if p.strip()]
                 pre = parts[0] + ";\n"
@@ -184,6 +228,10 @@ def parse(suites: list[str]):
                             ln.split()[1].replace(",", ".")) / 1000.0
                     if "ERROR" in ln or "canceling statement" in ln:
                         entry["error"] = ln.strip()[:300]
+            if entry["error"]:
+                # таймаут/ошибка: пустой \copy — НЕ валидный пустой результат
+                entry["rows"] = None
+                entry["checksum"] = None
             pf = os.path.join(out, f"pe_{qid}.json")
             if os.path.exists(pf):
                 txt = open(pf, encoding="utf-8",

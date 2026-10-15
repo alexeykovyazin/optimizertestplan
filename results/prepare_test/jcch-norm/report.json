@@ -1,0 +1,143 @@
+{
+ "suite": "jcch-norm",
+ "fdb": "E:/Projects_Big/optimizertestplan/db/jcch/jcch_sf1_fb5.fdb",
+ "total": 22,
+ "statuses": {
+  "ok": 22
+ },
+ "compile_budget_ms": 995.4,
+ "results": [
+  {
+   "query_id": "jcch_norm_01",
+   "status": "ok",
+   "prepare_ms": 204.97,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_02",
+   "status": "ok",
+   "prepare_ms": 43.77,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_03",
+   "status": "ok",
+   "prepare_ms": 38.19,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_04",
+   "status": "ok",
+   "prepare_ms": 44.35,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_05",
+   "status": "ok",
+   "prepare_ms": 36.61,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_06",
+   "status": "ok",
+   "prepare_ms": 30.76,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_07",
+   "status": "ok",
+   "prepare_ms": 32.81,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_08",
+   "status": "ok",
+   "prepare_ms": 41.53,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_09",
+   "status": "ok",
+   "prepare_ms": 38.25,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_10",
+   "status": "ok",
+   "prepare_ms": 40.53,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_11",
+   "status": "ok",
+   "prepare_ms": 33.51,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_12",
+   "status": "ok",
+   "prepare_ms": 38.02,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_13",
+   "status": "ok",
+   "prepare_ms": 35.63,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_14",
+   "status": "ok",
+   "prepare_ms": 37.94,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_15",
+   "status": "ok",
+   "prepare_ms": 35.0,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_16",
+   "status": "ok",
+   "prepare_ms": 42.51,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_17",
+   "status": "ok",
+   "prepare_ms": 32.02,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_18",
+   "status": "ok",
+   "prepare_ms": 39.31,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_19",
+   "status": "ok",
+   "prepare_ms": 36.19,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_20",
+   "status": "ok",
+   "prepare_ms": 37.09,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_21",
+   "status": "ok",
+   "prepare_ms": 37.38,
+   "error": null
+  },
+  {
+   "query_id": "jcch_norm_22",
+   "status": "ok",
+   "prepare_ms": 39.02,
+   "error": null
+  }
+ ]
+}

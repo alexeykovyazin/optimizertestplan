@@ -1,0 +1,28 @@
+select FIRST 100  sum(cs_ext_discount_amt)  as "excess discount amount"
+from
+   catalog_sales
+   ,item
+   ,date_dim
+where
+(i_manufact_id in (304, 350, 756, 935, 975)
+or i_manager_id BETWEEN 68 and 97)
+and i_item_sk = cs_item_sk
+and d_date between '2002-01-29' and
+        DATEADD(90 DAY TO CAST('2002-01-29' AS DATE))
+and d_date_sk = cs_sold_date_sk
+and cs_ext_discount_amt
+     > (
+         select
+            1.3 * avg(cs_ext_discount_amt)
+         from
+            catalog_sales
+           ,date_dim
+         where
+              cs_item_sk = i_item_sk
+          and d_date between '2002-01-29' and
+                             DATEADD(90 DAY TO CAST('2002-01-29' AS DATE))
+          and d_date_sk = cs_sold_date_sk
+          and cs_list_price between 271 and 300
+          and cs_sales_price / cs_list_price BETWEEN 31 * 0.01 AND 51 * 0.01
+      )
+order by sum(cs_ext_discount_amt)

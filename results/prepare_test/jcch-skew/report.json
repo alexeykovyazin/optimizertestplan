@@ -1,0 +1,143 @@
+{
+ "suite": "jcch-skew",
+ "fdb": "E:/Projects_Big/optimizertestplan/db/jcch/jcch_sf1_fb5.fdb",
+ "total": 22,
+ "statuses": {
+  "ok": 22
+ },
+ "compile_budget_ms": 767.3,
+ "results": [
+  {
+   "query_id": "jcch_skew_01",
+   "status": "ok",
+   "prepare_ms": 35.64,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_02",
+   "status": "ok",
+   "prepare_ms": 38.75,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_03",
+   "status": "ok",
+   "prepare_ms": 32.22,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_04",
+   "status": "ok",
+   "prepare_ms": 32.85,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_05",
+   "status": "ok",
+   "prepare_ms": 31.97,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_06",
+   "status": "ok",
+   "prepare_ms": 32.1,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_07",
+   "status": "ok",
+   "prepare_ms": 39.99,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_08",
+   "status": "ok",
+   "prepare_ms": 40.61,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_09",
+   "status": "ok",
+   "prepare_ms": 31.63,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_10",
+   "status": "ok",
+   "prepare_ms": 34.53,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_11",
+   "status": "ok",
+   "prepare_ms": 34.64,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_12",
+   "status": "ok",
+   "prepare_ms": 29.35,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_13",
+   "status": "ok",
+   "prepare_ms": 32.33,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_14",
+   "status": "ok",
+   "prepare_ms": 35.42,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_15",
+   "status": "ok",
+   "prepare_ms": 31.99,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_16",
+   "status": "ok",
+   "prepare_ms": 41.34,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_17",
+   "status": "ok",
+   "prepare_ms": 33.92,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_18",
+   "status": "ok",
+   "prepare_ms": 31.41,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_19",
+   "status": "ok",
+   "prepare_ms": 39.61,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_20",
+   "status": "ok",
+   "prepare_ms": 35.82,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_21",
+   "status": "ok",
+   "prepare_ms": 33.77,
+   "error": null
+  },
+  {
+   "query_id": "jcch_skew_22",
+   "status": "ok",
+   "prepare_ms": 37.39,
+   "error": null
+  }
+ ]
+}

@@ -1,0 +1,4154 @@
+- id: dsb_001_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 6d079c55
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_001_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 37244f13
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_001_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: efde0dbf
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_001_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 64c3d29b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_001_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 64c3d29b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_010_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c89fb6f8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_010_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c89fb6f8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_010_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c89fb6f8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_010_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c89fb6f8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_010_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c89fb6f8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_013_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8641d9e6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8641d9e6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8641d9e6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8641d9e6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8641d9e6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4273c043
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4273c043
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4273c043
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4273c043
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_013_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4273c043
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_018_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fd4da84c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_018_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fd4da84c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_018_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fd4da84c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_018_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fd4da84c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_018_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fd4da84c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_019_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 0eaa6c2d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_019_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 0eaa6c2d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_019_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 0eaa6c2d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_019_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 0eaa6c2d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_019_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 0eaa6c2d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_019_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 88f05fa0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: substring(a,n,m) -> SUBSTRING FROM/FOR (2)
+- id: dsb_019_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 88f05fa0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: substring(a,n,m) -> SUBSTRING FROM/FOR (2)
+- id: dsb_019_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 88f05fa0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: substring(a,n,m) -> SUBSTRING FROM/FOR (2)
+- id: dsb_019_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 88f05fa0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: substring(a,n,m) -> SUBSTRING FROM/FOR (2)
+- id: dsb_019_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 88f05fa0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: substring(a,n,m) -> SUBSTRING FROM/FOR (2)
+- id: dsb_023_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b1cea192
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_023_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b1cea192
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_023_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b1cea192
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_023_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b1cea192
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_023_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b1cea192
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - in_subquery
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_025_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: a3efe775
+  tables: 0
+  table_list: []
+  tags:
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_025_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 5cbeb56a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_025_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bcd7b720
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_025_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bcd7b720
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_025_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fa042cfb
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_025_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3d93c15a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_025_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3d93c15a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_025_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3d93c15a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_025_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3d93c15a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_025_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3d93c15a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_027_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 5ed51393
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_027_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 5ed51393
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_027_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 5ed51393
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_027_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 5ed51393
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_027_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 5ed51393
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_030_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: d1eeb7aa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_030_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: d1eeb7aa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_030_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: d1eeb7aa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_030_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: d1eeb7aa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_030_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: d1eeb7aa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_031_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 90e49368
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_031_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5246520
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_031_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5246520
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_031_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b6e1f95a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_031_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b6e1f95a
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_032_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 9dbcfe38
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_032_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 9dbcfe38
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_032_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 9dbcfe38
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_032_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 9dbcfe38
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_032_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 9dbcfe38
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_039_01_1
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 35c76e68
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_01_2
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5d2a62d
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_02_1
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 35c76e68
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_02_2
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5d2a62d
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_03_1
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 35c76e68
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_03_2
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5d2a62d
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_04_1
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 35c76e68
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_04_2
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5d2a62d
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_05_1
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 35c76e68
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_039_05_2
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: c5d2a62d
+  tables: 1
+  table_list:
+  - inventory
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: multi-statement q39
+- id: dsb_040_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: a2addfcd
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_040_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: a2addfcd
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_040_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: a2addfcd
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_040_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: a2addfcd
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_040_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: a2addfcd
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_040_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: cf209f87
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (2+0)
+- id: dsb_040_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: cf209f87
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (2+0)
+- id: dsb_040_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: cf209f87
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (2+0)
+- id: dsb_040_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: cf209f87
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (2+0)
+- id: dsb_040_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: cf209f87
+  tables: 1
+  table_list:
+  - catalog_returns
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (2+0)
+- id: dsb_050_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f82322fa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_050_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f82322fa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_050_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f82322fa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_050_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f82322fa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_050_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f82322fa
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_050_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 99a8a0c6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_050_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 99a8a0c6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_050_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 99a8a0c6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_050_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 99a8a0c6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_050_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 99a8a0c6
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_054_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: da7e1e8b
+  tables: 2
+  table_list:
+  - catalog_sales
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_054_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: da7e1e8b
+  tables: 2
+  table_list:
+  - catalog_sales
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_054_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: da7e1e8b
+  tables: 2
+  table_list:
+  - catalog_sales
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_054_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: da7e1e8b
+  tables: 2
+  table_list:
+  - catalog_sales
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_054_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: da7e1e8b
+  tables: 2
+  table_list:
+  - catalog_sales
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_058_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4bd79c20
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_058_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4bd79c20
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_058_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4bd79c20
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_058_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4bd79c20
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_058_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4bd79c20
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_059_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 191318b5
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_059_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 191318b5
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_059_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 191318b5
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_059_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 191318b5
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_059_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 191318b5
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_064_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4c31dd7c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_064_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4c31dd7c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_064_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4c31dd7c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_064_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4c31dd7c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_064_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4c31dd7c
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - having
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_065_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 71b05c11
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_065_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 71b05c11
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_065_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 71b05c11
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_065_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 71b05c11
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_065_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 71b05c11
+  tables: 1
+  table_list:
+  - store_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_069_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1256a4ab
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_069_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1256a4ab
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_069_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1256a4ab
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_069_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1256a4ab
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_069_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1256a4ab
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_072_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 619abab8
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_072_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 619abab8
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_072_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 619abab8
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_072_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 619abab8
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_072_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 619abab8
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - case_expr
+  - date_arith
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (0+1)
+- id: dsb_072_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bf36e37e
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_072_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bf36e37e
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_072_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bf36e37e
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_072_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bf36e37e
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_072_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bf36e37e
+  tables: 8
+  table_list:
+  - catalog_returns
+  - customer_demographics
+  - date_dim
+  - household_demographics
+  - inventory
+  - item
+  - promotion
+  - warehouse
+  tags:
+  - aggregate
+  - date_arith
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_075_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 390b6525
+  tables: 4
+  table_list:
+  - catalog_returns
+  - catalog_sales
+  - date_dim
+  - item
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; AS year/month/day -> кавычки (1)
+- id: dsb_075_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 390b6525
+  tables: 4
+  table_list:
+  - catalog_returns
+  - catalog_sales
+  - date_dim
+  - item
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; AS year/month/day -> кавычки (1)
+- id: dsb_075_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 390b6525
+  tables: 4
+  table_list:
+  - catalog_returns
+  - catalog_sales
+  - date_dim
+  - item
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; AS year/month/day -> кавычки (1)
+- id: dsb_075_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 390b6525
+  tables: 4
+  table_list:
+  - catalog_returns
+  - catalog_sales
+  - date_dim
+  - item
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; AS year/month/day -> кавычки (1)
+- id: dsb_075_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 390b6525
+  tables: 4
+  table_list:
+  - catalog_returns
+  - catalog_sales
+  - date_dim
+  - item
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; AS year/month/day -> кавычки (1)
+- id: dsb_081_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fb84d754
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_081_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fb84d754
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_081_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fb84d754
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_081_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fb84d754
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_081_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: fb84d754
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_083_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1b5ad73b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_083_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1b5ad73b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_083_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1b5ad73b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_083_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1b5ad73b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_083_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 1b5ad73b
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - in_subquery
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_084_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3749924d
+  tables: 0
+  table_list: []
+  tags:
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_084_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3749924d
+  tables: 0
+  table_list: []
+  tags:
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_084_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3749924d
+  tables: 0
+  table_list: []
+  tags:
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_084_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3749924d
+  tables: 0
+  table_list: []
+  tags:
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_084_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 3749924d
+  tables: 0
+  table_list: []
+  tags:
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100
+- id: dsb_084_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f80bb8d0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_084_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f80bb8d0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_084_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f80bb8d0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_084_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f80bb8d0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_084_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: f80bb8d0
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_085_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 725e9b06
+  tables: 1
+  table_list:
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_085_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 725e9b06
+  tables: 1
+  table_list:
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_085_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 725e9b06
+  tables: 1
+  table_list:
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_085_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 725e9b06
+  tables: 1
+  table_list:
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_085_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 725e9b06
+  tables: 1
+  table_list:
+  - web_sales
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (2)
+- id: dsb_085_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '30468730'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_085_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '30468730'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_085_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '30468730'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_085_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '30468730'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_085_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '30468730'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ee7f73f2
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ee7f73f2
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ee7f73f2
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ee7f73f2
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ee7f73f2
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - like_predicate
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4f9f805d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4f9f805d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4f9f805d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4f9f805d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_091_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4f9f805d
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - like_predicate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_092_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 578042e8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_092_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 578042e8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_092_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 578042e8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_092_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 578042e8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_092_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 578042e8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (2+0)
+- id: dsb_094_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: be2840b8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (1+0)
+- id: dsb_094_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: be2840b8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (1+0)
+- id: dsb_094_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: be2840b8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (1+0)
+- id: dsb_094_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: be2840b8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (1+0)
+- id: dsb_094_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: be2840b8
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - order_by
+  - subquery_exists
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; interval -> DATEADD (1+0)
+- id: dsb_099_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ad23342b
+  tables: 1
+  table_list:
+  - catalog_sales
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (3)
+- id: dsb_099_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ad23342b
+  tables: 1
+  table_list:
+  - catalog_sales
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (3)
+- id: dsb_099_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ad23342b
+  tables: 1
+  table_list:
+  - catalog_sales
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (3)
+- id: dsb_099_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ad23342b
+  tables: 1
+  table_list:
+  - catalog_sales
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (3)
+- id: dsb_099_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: ad23342b
+  tables: 1
+  table_list:
+  - catalog_sales
+  tags:
+  - aggregate
+  - case_expr
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: limit 100 -> SELECT FIRST 100; substring(a,n,m) -> SUBSTRING FROM/FOR
+    (3)
+- id: dsb_099_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4aa83123
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_099_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4aa83123
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_099_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4aa83123
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_099_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4aa83123
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_099_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 4aa83123
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b0c85888
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b0c85888
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b0c85888
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b0c85888
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: b0c85888
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bd239a91
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bd239a91
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bd239a91
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bd239a91
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_100_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bd239a91
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: null
+- id: dsb_101_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '82908366'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '82908366'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '82908366'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '82908366'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: '82908366'
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bbd6a342
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bbd6a342
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bbd6a342
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bbd6a342
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_101_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: bbd6a342
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8601f850
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8601f850
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8601f850
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8601f850
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 8601f850
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  - group_by
+  - order_by
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_spj_01
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 2ebe0844
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_spj_02
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 2ebe0844
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_spj_03
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 2ebe0844
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_spj_04
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 2ebe0844
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
+- id: dsb_102_spj_05
+  suite: dsb-s2
+  db: dsb-sf1
+  index_config:
+  - pk
+  template: 2ebe0844
+  tables: 0
+  table_list: []
+  tags:
+  - aggregate
+  - date_arith
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: interval -> DATEADD (0+1)
