@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_14",
+ "status": "match_truncated",
+ "prepare_ms": 82.98230000946205,
+ "exec_ms": 4662.782100000186,
+ "rows_count": 1,
+ "checksum": "sha1:6676438e7433a4c1b93f1c5ef0661ee331784961",
+ "plan": "PLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+ "error": null,
+ "wall_s": 5.0
+}

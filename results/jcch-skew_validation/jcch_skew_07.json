@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_07",
+ "status": "match",
+ "prepare_ms": 88.85149999696296,
+ "exec_ms": 9515.92260000325,
+ "rows_count": 1,
+ "checksum": "sha1:6db63664625a7041faf163aed07810c222873f5b",
+ "plan": "PLAN SORT (SORT (HASH (HASH (JOIN (HASH (HASH (SHIPPING LINEITEM NATURAL, SHIPPING SUPPLIER NATURAL), SHIPPING N1 NATURAL), SHIPPING ORDERS INDEX (ORDERS_PK)), SHIPPING CUSTOMER NATURAL), SHIPPING N2 NATURAL)))",
+ "error": null,
+ "wall_s": 9.7
+}

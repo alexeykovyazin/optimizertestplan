@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_20",
+ "status": "exec_timeout",
+ "prepare_ms": 82.07910000055563,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN (PART INDEX (PART_PK))\nPLAN (LINEITEM NATURAL)\nPLAN (PARTSUPP NATURAL)\nPLAN SORT (HASH (SUPPLIER NATURAL, NATION NATURAL))",
+ "error": null,
+ "wall_s": 645.1
+}

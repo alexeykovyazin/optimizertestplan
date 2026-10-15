@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_22",
+ "status": "exec_timeout",
+ "prepare_ms": 71.3361999951303,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN (CUSTSALE CUSTOMER NATURAL)\nPLAN (CUSTSALE ORDERS NATURAL)\nPLAN SORT (SORT (CUSTSALE CUSTOMER NATURAL))",
+ "error": null,
+ "wall_s": 645.1
+}

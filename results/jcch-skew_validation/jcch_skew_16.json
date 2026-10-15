@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_16",
+ "status": "match",
+ "prepare_ms": 64.21279998903628,
+ "exec_ms": 2304.0188000013586,
+ "rows_count": 18115,
+ "checksum": "sha1:24fac1e7d911114fe02d23207341342e98c480c8",
+ "plan": "PLAN (SUPPLIER NATURAL)\nPLAN (SUPPLIER INDEX (SUPPLIER_PK, SUPPLIER_PK))\nPLAN SORT (SORT (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK))))",
+ "error": null,
+ "wall_s": 2.8
+}

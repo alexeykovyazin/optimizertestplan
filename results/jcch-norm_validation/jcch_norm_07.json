@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_07",
+ "status": "match",
+ "prepare_ms": 107.73819999303669,
+ "exec_ms": 7436.5319999997155,
+ "rows_count": 4,
+ "checksum": "sha1:aef7fdc4110e3aa660bceff71c351d5764fa940f",
+ "plan": "PLAN SORT (SORT (HASH (HASH (JOIN (HASH (HASH (SHIPPING LINEITEM NATURAL, SHIPPING SUPPLIER NATURAL), SHIPPING N1 NATURAL), SHIPPING ORDERS INDEX (ORDERS_PK)), SHIPPING CUSTOMER NATURAL), SHIPPING N2 NATURAL)))",
+ "error": null,
+ "wall_s": 7.8
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_17",
+ "status": "exec_timeout",
+ "prepare_ms": 633.2659000036074,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN (LINEITEM NATURAL)\nPLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+ "error": null,
+ "wall_s": 645.7
+}

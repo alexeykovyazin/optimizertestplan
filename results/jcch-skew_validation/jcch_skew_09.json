@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_09",
+ "status": "match",
+ "prepare_ms": 167.68089999823133,
+ "exec_ms": 17293.432600003143,
+ "rows_count": 25,
+ "checksum": "sha1:55031c635776c4b66fe66a08fc95d74868e44153",
+ "plan": "PLAN SORT (SORT (HASH (HASH (HASH (HASH (JOIN (PROFIT ORDERS NATURAL, PROFIT LINEITEM INDEX (LINEITEM_PK)), PROFIT SUPPLIER NATURAL), PROFIT NATION NATURAL), PROFIT PART NATURAL), PROFIT PARTSUPP NATURAL)))",
+ "error": null,
+ "wall_s": 17.8
+}

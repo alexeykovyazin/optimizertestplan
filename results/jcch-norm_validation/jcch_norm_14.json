@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_14",
+ "status": "match_truncated",
+ "prepare_ms": 102.36190000432543,
+ "exec_ms": 4127.164800003811,
+ "rows_count": 1,
+ "checksum": "sha1:809c3cacc8227bf76df91cc6ad925d26dec1eaa3",
+ "plan": "PLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+ "error": null,
+ "wall_s": 4.5
+}

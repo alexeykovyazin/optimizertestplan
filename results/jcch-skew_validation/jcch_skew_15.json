@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_15",
+ "status": "match",
+ "prepare_ms": 78.90100000076927,
+ "exec_ms": 8910.842199999024,
+ "rows_count": 1,
+ "checksum": "sha1:3b81331bfbf5d839e520d8124a84aeecca7adef2",
+ "plan": "PLAN SORT (REVENUE0 LINEITEM NATURAL)\nPLAN SORT (JOIN (SORT (REVENUE0 LINEITEM NATURAL), SUPPLIER INDEX (SUPPLIER_PK)))",
+ "error": null,
+ "wall_s": 9.1
+}

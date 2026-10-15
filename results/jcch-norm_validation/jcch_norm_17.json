@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_17",
+ "status": "exec_timeout",
+ "prepare_ms": 164.66049999871757,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN (LINEITEM NATURAL)\nPLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+ "error": null,
+ "wall_s": 645.2
+}

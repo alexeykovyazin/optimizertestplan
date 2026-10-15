@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_03",
+ "status": "match",
+ "prepare_ms": 107.73219999828143,
+ "exec_ms": 1732.294000001275,
+ "rows_count": 2817,
+ "checksum": "sha1:21d2b630c48412583121453f1fa3c7b7e216ac7c",
+ "plan": "PLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+ "error": null,
+ "wall_s": 2.2
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_11",
+ "status": "match",
+ "prepare_ms": 53.8414999973611,
+ "exec_ms": 1149.8548000017763,
+ "rows_count": 20,
+ "checksum": "sha1:124b953eda5437306b0042923a09f4870a4963d2",
+ "plan": "PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)\nPLAN SORT (HASH (HASH (PARTSUPP ORDER PARTSUPP_PK, SUPPLIER NATURAL), NATION NATURAL))",
+ "error": null,
+ "wall_s": 1.4
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_03",
+ "status": "match",
+ "prepare_ms": 114.76009999751113,
+ "exec_ms": 2401.4438999947743,
+ "rows_count": 27981,
+ "checksum": "sha1:79573bbe1533bb8d4bbc2c9d1df11f0143dea3f8",
+ "plan": "PLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+ "error": null,
+ "wall_s": 3.3
+}

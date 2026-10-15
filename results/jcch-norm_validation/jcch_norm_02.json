@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_02",
+ "status": "match",
+ "prepare_ms": 101.07330000028014,
+ "exec_ms": 217.43310000601923,
+ "rows_count": 337,
+ "checksum": "sha1:df57e2ebfbb0bd3a66baefae84a3fe79288fd5b4",
+ "plan": "PLAN JOIN (PARTSUPP INDEX (PARTSUPP_PK), SUPPLIER INDEX (SUPPLIER_PK), NATION INDEX (NATION_PK), REGION INDEX (REGION_PK))\nPLAN SORT (HASH (HASH (HASH (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK)), SUPPLIER NATURAL), NATION NATURAL), REGION NATURAL))",
+ "error": null,
+ "wall_s": 0.5
+}

@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_11",
+ "status": "match",
+ "prepare_ms": 210.72750000166707,
+ "exec_ms": 903.4281999993254,
+ "rows_count": 20,
+ "checksum": "sha1:8e7c604804cb3f485587453c00b14b1f8fe89f24",
+ "plan": "PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)\nPLAN SORT (HASH (HASH (PARTSUPP ORDER PARTSUPP_PK, SUPPLIER NATURAL), NATION NATURAL))",
+ "error": null,
+ "wall_s": 1.3
+}

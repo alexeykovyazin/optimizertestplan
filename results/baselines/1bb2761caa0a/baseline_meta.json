@@ -1,0 +1,17 @@
+{
+  "kind": "suite_baseline",
+  "key": {
+    "build": "5.0.5",
+    "db_sha256": "b747a97c1c8f5c6fd35755951443ac3deaad3d28dcd6c330906de5161fe062c0",
+    "host_port": "192.168.1.57:3055",
+    "index_config": "pk",
+    "repeats_protocol": "warmup+1 (repeats=2, adaptive >15c)"
+  },
+  "key_id": "1bb2761caa0a",
+  "suites": [
+    "jcch-norm",
+    "jcch-skew"
+  ],
+  "golden": "E:/fbdata/golden/jcch_sf1_fb5.fdb",
+  "created": "2026-10-15 07:06"
+}

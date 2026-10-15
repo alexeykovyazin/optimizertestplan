@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_02",
+ "status": "exec_timeout",
+ "prepare_ms": 60.88219999946887,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN JOIN (PARTSUPP INDEX (PARTSUPP_PK), SUPPLIER INDEX (SUPPLIER_PK), NATION INDEX (NATION_PK), REGION INDEX (REGION_PK))\nPLAN SORT (HASH (HASH (HASH (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK)), SUPPLIER NATURAL), NATION NATURAL), REGION NATURAL))",
+ "error": null,
+ "wall_s": 645.1
+}

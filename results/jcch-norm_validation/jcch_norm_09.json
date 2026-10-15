@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_09",
+ "status": "match",
+ "prepare_ms": 83.91169999958947,
+ "exec_ms": 7729.601400002139,
+ "rows_count": 175,
+ "checksum": "sha1:7b1dbc995246469f04021e91d680c9ff35b5fb8f",
+ "plan": "PLAN SORT (SORT (HASH (HASH (HASH (HASH (JOIN (PROFIT ORDERS NATURAL, PROFIT LINEITEM INDEX (LINEITEM_PK)), PROFIT SUPPLIER NATURAL), PROFIT NATION NATURAL), PROFIT PART NATURAL), PROFIT PARTSUPP NATURAL)))",
+ "error": null,
+ "wall_s": 8.0
+}

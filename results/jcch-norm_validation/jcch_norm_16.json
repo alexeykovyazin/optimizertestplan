@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_16",
+ "status": "match",
+ "prepare_ms": 83.35670000087703,
+ "exec_ms": 1483.7012000061804,
+ "rows_count": 18219,
+ "checksum": "sha1:365b89d50d656bb0e5a02f2b9cd20015ae39c83b",
+ "plan": "PLAN (SUPPLIER NATURAL)\nPLAN (SUPPLIER INDEX (SUPPLIER_PK, SUPPLIER_PK))\nPLAN SORT (SORT (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK))))",
+ "error": null,
+ "wall_s": 2.0
+}

@@ -1,0 +1,253 @@
+{
+ "suite": "jcch-norm",
+ "statuses": {
+  "match_truncated": 2,
+  "match": 15,
+  "exec_timeout": 5
+ },
+ "total": 22,
+ "results": [
+  {
+   "query_id": "jcch_norm_01",
+   "status": "match_truncated",
+   "prepare_ms": 379.83369999710703,
+   "exec_ms": 17032.853700002306,
+   "rows_count": 5,
+   "checksum": "sha1:8bcff5452529eaa1381c3ea3340a6f4c16bb620b",
+   "plan": "PLAN SORT (LINEITEM NATURAL)",
+   "error": null,
+   "wall_s": 17.7
+  },
+  {
+   "query_id": "jcch_norm_02",
+   "status": "match",
+   "prepare_ms": 101.07330000028014,
+   "exec_ms": 217.43310000601923,
+   "rows_count": 337,
+   "checksum": "sha1:df57e2ebfbb0bd3a66baefae84a3fe79288fd5b4",
+   "plan": "PLAN JOIN (PARTSUPP INDEX (PARTSUPP_PK), SUPPLIER INDEX (SUPPLIER_PK), NATION INDEX (NATION_PK), REGION INDEX (REGION_PK))\nPLAN SORT (HASH (HASH (HASH (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK)), SUPPLIER NATURAL), NATION NATURAL), REGION NATURAL))",
+   "error": null,
+   "wall_s": 0.5
+  },
+  {
+   "query_id": "jcch_norm_03",
+   "status": "match",
+   "prepare_ms": 107.73219999828143,
+   "exec_ms": 1732.294000001275,
+   "rows_count": 2817,
+   "checksum": "sha1:21d2b630c48412583121453f1fa3c7b7e216ac7c",
+   "plan": "PLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+   "error": null,
+   "wall_s": 2.2
+  },
+  {
+   "query_id": "jcch_norm_04",
+   "status": "match",
+   "prepare_ms": 62.90110000554705,
+   "exec_ms": 1159.9442000006093,
+   "rows_count": 5,
+   "checksum": "sha1:73307d0109aea55cb38adb2d7afb20a10a3b90bd",
+   "plan": "PLAN (LINEITEM INDEX (LINEITEM_PK))\nPLAN SORT (ORDERS NATURAL)",
+   "error": null,
+   "wall_s": 1.3
+  },
+  {
+   "query_id": "jcch_norm_05",
+   "status": "match",
+   "prepare_ms": 52.300800001830794,
+   "exec_ms": 1750.886800000444,
+   "rows_count": 5,
+   "checksum": "sha1:0a899d041829b159fb4bbbeefad26ebbcadb4d1d",
+   "plan": "PLAN SORT (SORT (HASH (JOIN (HASH (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), REGION NATURAL), LINEITEM INDEX (LINEITEM_PK)), SUPPLIER NATURAL)))",
+   "error": null,
+   "wall_s": 1.9
+  },
+  {
+   "query_id": "jcch_norm_06",
+   "status": "match",
+   "prepare_ms": 55.6159000043408,
+   "exec_ms": 3539.758699997037,
+   "rows_count": 1,
+   "checksum": "sha1:5bd9aeb280f8d8bab4b038037d1e76c2163737f6",
+   "plan": "PLAN (LINEITEM NATURAL)",
+   "error": null,
+   "wall_s": 3.7
+  },
+  {
+   "query_id": "jcch_norm_07",
+   "status": "match",
+   "prepare_ms": 107.73819999303669,
+   "exec_ms": 7436.5319999997155,
+   "rows_count": 4,
+   "checksum": "sha1:aef7fdc4110e3aa660bceff71c351d5764fa940f",
+   "plan": "PLAN SORT (SORT (HASH (HASH (JOIN (HASH (HASH (SHIPPING LINEITEM NATURAL, SHIPPING SUPPLIER NATURAL), SHIPPING N1 NATURAL), SHIPPING ORDERS INDEX (ORDERS_PK)), SHIPPING CUSTOMER NATURAL), SHIPPING N2 NATURAL)))",
+   "error": null,
+   "wall_s": 7.8
+  },
+  {
+   "query_id": "jcch_norm_08",
+   "status": "match",
+   "prepare_ms": 68.17450000380632,
+   "exec_ms": 1967.283599995426,
+   "rows_count": 2,
+   "checksum": "sha1:485c6679a57e5617d4e3e5de6c151c020394733e",
+   "plan": "PLAN SORT (SORT (HASH (HASH (HASH (JOIN (HASH (HASH (HASH (ALL_NATIONS ORDERS NATURAL, ALL_NATIONS CUSTOMER NATURAL), ALL_NATIONS N1 NATURAL), ALL_NATIONS REGION NATURAL), ALL_NATIONS LINEITEM INDEX (LINEITEM_PK)), ALL_NATIONS SUPPLIER NATURAL), ALL_NATIONS N2 NATURAL), ALL_NATIONS PART NATURAL)))",
+   "error": null,
+   "wall_s": 2.2
+  },
+  {
+   "query_id": "jcch_norm_09",
+   "status": "match",
+   "prepare_ms": 83.91169999958947,
+   "exec_ms": 7729.601400002139,
+   "rows_count": 175,
+   "checksum": "sha1:7b1dbc995246469f04021e91d680c9ff35b5fb8f",
+   "plan": "PLAN SORT (SORT (HASH (HASH (HASH (HASH (JOIN (PROFIT ORDERS NATURAL, PROFIT LINEITEM INDEX (LINEITEM_PK)), PROFIT SUPPLIER NATURAL), PROFIT NATION NATURAL), PROFIT PART NATURAL), PROFIT PARTSUPP NATURAL)))",
+   "error": null,
+   "wall_s": 8.0
+  },
+  {
+   "query_id": "jcch_norm_10",
+   "status": "match",
+   "prepare_ms": 85.30489999975543,
+   "exec_ms": 2281.4722999974038,
+   "rows_count": 8273,
+   "checksum": "sha1:fe85e01add1cdb303644cf3cf1b53cd6818f1dee",
+   "plan": "PLAN SORT (SORT (JOIN (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+   "error": null,
+   "wall_s": 2.9
+  },
+  {
+   "query_id": "jcch_norm_11",
+   "status": "match",
+   "prepare_ms": 210.72750000166707,
+   "exec_ms": 903.4281999993254,
+   "rows_count": 20,
+   "checksum": "sha1:8e7c604804cb3f485587453c00b14b1f8fe89f24",
+   "plan": "PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)\nPLAN SORT (HASH (HASH (PARTSUPP ORDER PARTSUPP_PK, SUPPLIER NATURAL), NATION NATURAL))",
+   "error": null,
+   "wall_s": 1.3
+  },
+  {
+   "query_id": "jcch_norm_12",
+   "status": "match",
+   "prepare_ms": 71.54330000048503,
+   "exec_ms": 2711.802700003318,
+   "rows_count": 2,
+   "checksum": "sha1:617c0b32026d2033427cf3e4df9916ffbd79aed8",
+   "plan": "PLAN SORT (JOIN (LINEITEM NATURAL, ORDERS INDEX (ORDERS_PK)))",
+   "error": null,
+   "wall_s": 2.9
+  },
+  {
+   "query_id": "jcch_norm_13",
+   "status": "exec_timeout",
+   "prepare_ms": 70.26659999974072,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN SORT (SORT (JOIN (C_ORDERS CUSTOMER ORDER CUSTOMER_PK, C_ORDERS ORDERS NATURAL)))",
+   "error": null,
+   "wall_s": 645.1
+  },
+  {
+   "query_id": "jcch_norm_14",
+   "status": "match_truncated",
+   "prepare_ms": 102.36190000432543,
+   "exec_ms": 4127.164800003811,
+   "rows_count": 1,
+   "checksum": "sha1:809c3cacc8227bf76df91cc6ad925d26dec1eaa3",
+   "plan": "PLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+   "error": null,
+   "wall_s": 4.5
+  },
+  {
+   "query_id": "jcch_norm_15",
+   "status": "match",
+   "prepare_ms": 101.33430000132648,
+   "exec_ms": 7824.204399999871,
+   "rows_count": 1,
+   "checksum": "sha1:80c1de5dc5d68d4be01d72abc0788ddc857eb9cd",
+   "plan": "PLAN SORT (REVENUE0 LINEITEM NATURAL)\nPLAN SORT (JOIN (SORT (REVENUE0 LINEITEM NATURAL), SUPPLIER INDEX (SUPPLIER_PK)))",
+   "error": null,
+   "wall_s": 8.1
+  },
+  {
+   "query_id": "jcch_norm_16",
+   "status": "match",
+   "prepare_ms": 83.35670000087703,
+   "exec_ms": 1483.7012000061804,
+   "rows_count": 18219,
+   "checksum": "sha1:365b89d50d656bb0e5a02f2b9cd20015ae39c83b",
+   "plan": "PLAN (SUPPLIER NATURAL)\nPLAN (SUPPLIER INDEX (SUPPLIER_PK, SUPPLIER_PK))\nPLAN SORT (SORT (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK))))",
+   "error": null,
+   "wall_s": 2.0
+  },
+  {
+   "query_id": "jcch_norm_17",
+   "status": "exec_timeout",
+   "prepare_ms": 164.66049999871757,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN (LINEITEM NATURAL)\nPLAN HASH (LINEITEM NATURAL, PART NATURAL)",
+   "error": null,
+   "wall_s": 645.2
+  },
+  {
+   "query_id": "jcch_norm_18",
+   "status": "match",
+   "prepare_ms": 129.35429999924963,
+   "exec_ms": 8878.80430000223,
+   "rows_count": 0,
+   "checksum": "sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709",
+   "plan": "PLAN (LINEITEM ORDER LINEITEM_PK)\nPLAN SORT (SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK))))",
+   "error": null,
+   "wall_s": 10.1
+  },
+  {
+   "query_id": "jcch_norm_19",
+   "status": "match",
+   "prepare_ms": 1066.6515999982948,
+   "exec_ms": 32689.867299995967,
+   "rows_count": 1,
+   "checksum": "sha1:6159f61696dd729bc2cdb2e2b5da20372f225e4b",
+   "plan": "PLAN JOIN (LINEITEM NATURAL, PART INDEX (PART_PK, PART_PK, PART_PK))",
+   "error": null,
+   "wall_s": 34.0
+  },
+  {
+   "query_id": "jcch_norm_20",
+   "status": "exec_timeout",
+   "prepare_ms": 74.77810000273166,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN (PART INDEX (PART_PK))\nPLAN (LINEITEM NATURAL)\nPLAN (PARTSUPP NATURAL)\nPLAN SORT (HASH (SUPPLIER NATURAL, NATION NATURAL))",
+   "error": null,
+   "wall_s": 645.1
+  },
+  {
+   "query_id": "jcch_norm_21",
+   "status": "exec_timeout",
+   "prepare_ms": 266.0653999992064,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN (L2 INDEX (LINEITEM_PK))\nPLAN (L3 INDEX (LINEITEM_PK))\nPLAN SORT (SORT (HASH (HASH (JOIN (ORDERS NATURAL, L1 INDEX (LINEITEM_PK)), SUPPLIER NATURAL), NATION NATURAL)))",
+   "error": null,
+   "wall_s": 645.4
+  },
+  {
+   "query_id": "jcch_norm_22",
+   "status": "exec_timeout",
+   "prepare_ms": 435.0401999981841,
+   "exec_ms": null,
+   "rows_count": null,
+   "checksum": null,
+   "plan": "PLAN (CUSTSALE CUSTOMER NATURAL)\nPLAN (CUSTSALE ORDERS NATURAL)\nPLAN SORT (SORT (CUSTSALE CUSTOMER NATURAL))",
+   "error": null,
+   "wall_s": 645.5
+  }
+ ]
+}

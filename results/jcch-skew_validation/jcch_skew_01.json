@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_skew_01",
+ "status": "match_truncated",
+ "prepare_ms": 334.58700000483077,
+ "exec_ms": 16792.86570000113,
+ "rows_count": 5,
+ "checksum": "sha1:8bcff5452529eaa1381c3ea3340a6f4c16bb620b",
+ "plan": "PLAN SORT (LINEITEM NATURAL)",
+ "error": null,
+ "wall_s": 17.4
+}

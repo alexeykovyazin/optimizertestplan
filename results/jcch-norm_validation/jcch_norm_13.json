@@ -1,0 +1,11 @@
+{
+ "query_id": "jcch_norm_13",
+ "status": "exec_timeout",
+ "prepare_ms": 70.26659999974072,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN SORT (SORT (JOIN (C_ORDERS CUSTOMER ORDER CUSTOMER_PK, C_ORDERS ORDERS NATURAL)))",
+ "error": null,
+ "wall_s": 645.1
+}
