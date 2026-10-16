@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_084_04",
  "status": "match",
- "prepare_ms": 54.68780000228435,
- "exec_ms": 248.8710000179708,
+ "prepare_ms": 73.31760000670329,
+ "exec_ms": 397.78800000203773,
  "rows_count": 9,
  "checksum": "sha1:19959c19f95368fe472a700c6777ddf38b38e852",
  "plan": "PLAN SORT (HASH (STORE_RETURNS NATURAL, JOIN (HASH (HASH (HASH (CUSTOMER NATURAL, HOUSEHOLD_DEMOGRAPHICS NATURAL), INCOME_BAND NATURAL), CUSTOMER_ADDRESS NATURAL), CUSTOMER_DEMOGRAPHICS INDEX (CUSTOMER_DEMOGRAPHICS_PK))))",
  "error": null,
- "wall_s": 0.5
+ "wall_s": 0.6
 }

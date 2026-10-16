@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_039_04_2",
  "status": "match",
- "prepare_ms": 97.90950000751764,
- "exec_ms": 3327.965899996343,
+ "prepare_ms": 73.8024000020232,
+ "exec_ms": 4651.535999990301,
  "rows_count": 0,
  "checksum": "sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709",
  "plan": "PLAN SORT (HASH (SORT (HASH (HASH (HASH (INV1 FOO INVENTORY NATURAL, INV1 FOO WAREHOUSE NATURAL), INV1 FOO ITEM NATURAL), INV1 FOO DATE_DIM NATURAL)), SORT (HASH (HASH (HASH (INV2 FOO INVENTORY NATURAL, INV2 FOO WAREHOUSE NATURAL), INV2 FOO ITEM NATURAL), INV2 FOO DATE_DIM NATURAL))))",
  "error": null,
- "wall_s": 3.7
+ "wall_s": 4.9
 }

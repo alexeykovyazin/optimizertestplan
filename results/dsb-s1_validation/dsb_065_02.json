@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_065_02",
  "status": "match",
- "prepare_ms": 82.78749999590218,
- "exec_ms": 2207.548599995789,
+ "prepare_ms": 285.3852999978699,
+ "exec_ms": 3332.6707999804057,
  "rows_count": 53,
  "checksum": "sha1:3740faa8ddacae47bdc2123a1c4a3bcbd4e289c4",
  "plan": "PLAN SORT (JOIN (HASH (SORT (HASH (SC STORE_SALES NATURAL, SC DATE_DIM NATURAL)), SORT (HASH (SB SA STORE_SALES NATURAL, SB SA DATE_DIM NATURAL))), STORE INDEX (STORE_PK), ITEM INDEX (ITEM_PK)))",
  "error": null,
- "wall_s": 2.5
+ "wall_s": 3.8
 }

@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_059_03",
  "status": "match",
- "prepare_ms": 107.00780000479426,
- "exec_ms": 3580.7199999981094,
+ "prepare_ms": 75.81260000006296,
+ "exec_ms": 4499.2201999993995,
  "rows_count": 0,
  "checksum": "sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709",
  "plan": "PLAN SORT (HASH (Y D NATURAL, HASH (X D NATURAL, JOIN (HASH (SORT (HASH (Y WSS STORE_SALES NATURAL, Y WSS DATE_DIM NATURAL)), SORT (HASH (X WSS STORE_SALES NATURAL, X WSS DATE_DIM NATURAL))), Y STORE INDEX (STORE_PK), X STORE INDEX (STORE_PK)))))",
  "error": null,
- "wall_s": 4.0
+ "wall_s": 4.9
 }

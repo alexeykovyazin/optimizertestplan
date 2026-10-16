@@ -235,13 +235,17 @@ def main():
         except Exception:
             pass  # AV драйвера на detach не должен терять отчёт
         from collections import Counter
-        # отчёт по ВСЕМ ids сюиты: готовые из done + свежие из summary
-        all_recs = {r["query_id"]: r for r in summary}
-        all_recs.update(done)
-        full_ids = sorted(set(all_recs) | set(
-            f[:-4] for f in os.listdir(qdir) if f.endswith(".sql")
-            and os.path.exists(os.path.join(
-                outdir, f[:-4] + ".json"))))
+        # отчёт по ВСЕМ пер-запросным json каталога (done + свежие)
+        all_recs = {}
+        for f in os.listdir(outdir):
+            if f.endswith(".json") and f != "report.json":
+                try:
+                    r = json.load(open(os.path.join(outdir, f),
+                                       encoding="utf-8"))
+                except (json.JSONDecodeError, OSError):
+                    continue
+                if r.get("status"):
+                    all_recs[r["query_id"]] = r
         results = [all_recs[q] for q in sorted(all_recs)]
         cnt = Counter(r["status"] for r in results)
         report = {"suite": a.suite, "statuses": dict(cnt),

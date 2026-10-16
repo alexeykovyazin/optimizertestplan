@@ -1,7 +1,7 @@
 {
  "query_id": "dsb_094_05",
  "status": "exec_timeout",
- "prepare_ms": 141.35070001066197,
+ "prepare_ms": 101.07450000941753,
  "exec_ms": null,
  "rows_count": null,
  "checksum": null,

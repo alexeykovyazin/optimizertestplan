@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_040_spj_04",
  "status": "match",
- "prepare_ms": 483.4069999924395,
- "exec_ms": 236.2254000036046,
+ "prepare_ms": 57.87930000224151,
+ "exec_ms": 132.34109999029897,
  "rows_count": 1,
  "checksum": "sha1:d3d4682306351ae2583a3d4f779233c0d9365eab",
  "plan": "PLAN JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK))",
  "error": null,
- "wall_s": 1.7
+ "wall_s": 0.3
 }

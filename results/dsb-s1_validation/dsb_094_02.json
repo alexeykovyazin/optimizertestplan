@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_094_02",
  "status": "exec_timeout",
- "prepare_ms": 143.7576999887824,
+ "prepare_ms": 176.49379998329096,
  "exec_ms": null,
  "rows_count": null,
  "checksum": null,
  "plan": "PLAN (WS2 NATURAL)\nPLAN (WR1 NATURAL)\nPLAN SORT (HASH (HASH (HASH (WS1 NATURAL, WEB_SITE NATURAL), CUSTOMER_ADDRESS NATURAL), DATE_DIM NATURAL))",
  "error": null,
- "wall_s": 645.3
+ "wall_s": 645.2
 }

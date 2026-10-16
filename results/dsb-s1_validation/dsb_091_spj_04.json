@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_091_spj_04",
  "status": "match",
- "prepare_ms": 64.46819999837317,
- "exec_ms": 205.4571000044234,
+ "prepare_ms": 72.4814000132028,
+ "exec_ms": 308.3640999975614,
  "rows_count": 1,
  "checksum": "sha1:092e03096a74effe1ae0323372a0d45e4e299bf3",
  "plan": "PLAN JOIN (HASH (HASH (HASH (HASH (HASH (CATALOG_RETURNS NATURAL, CALL_CENTER NATURAL), DATE_DIM NATURAL), CUSTOMER NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), CUSTOMER_ADDRESS NATURAL), CUSTOMER_DEMOGRAPHICS INDEX (CUSTOMER_DEMOGRAPHICS_PK))",
  "error": null,
- "wall_s": 0.4
+ "wall_s": 0.5
 }

@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_099_03",
  "status": "match",
- "prepare_ms": 673.96679999365,
- "exec_ms": 552.2063000098569,
+ "prepare_ms": 70.4427000018768,
+ "exec_ms": 752.8507999959402,
  "rows_count": 4,
  "checksum": "sha1:5890d55908366a3686754ccd6a6ef2393b7bf4b6",
  "plan": "PLAN SORT (SORT (HASH (HASH (HASH (HASH (CATALOG_SALES NATURAL, WAREHOUSE NATURAL), CALL_CENTER NATURAL), SHIP_MODE NATURAL), DATE_DIM NATURAL)))",
  "error": null,
- "wall_s": 1.5
+ "wall_s": 1.8
 }

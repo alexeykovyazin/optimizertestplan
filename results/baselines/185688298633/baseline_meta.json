@@ -1,0 +1,17 @@
+{
+  "kind": "suite_baseline",
+  "key": {
+    "build": "5.0.5",
+    "db_sha256": "e32fbdd27f31e5482e1b2af4aea7eeebfd0c8cc1c55557d21ff1ac820c3f6a16",
+    "host_port": "192.168.1.57:3055",
+    "index_config": "pk",
+    "repeats_protocol": "warmup+1 (repeats=2, adaptive >15c)"
+  },
+  "key_id": "185688298633",
+  "suites": [
+    "dsb-s1",
+    "dsb-s2"
+  ],
+  "golden": "E:/fbdata/golden/dsb_sf1_fb5.fdb",
+  "created": "2026-10-16 15:16"
+}

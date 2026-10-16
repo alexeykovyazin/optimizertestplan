@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_050_spj_03",
  "status": "match",
- "prepare_ms": 112.05379999591969,
- "exec_ms": 210.34599999256898,
+ "prepare_ms": 364.05419997754507,
+ "exec_ms": 320.37350002792664,
  "rows_count": 1,
  "checksum": "sha1:41808fde8eabf26065d7bf5cd3eacdb03c046140",
  "plan": "PLAN HASH (JOIN (HASH (HASH (STORE_RETURNS NATURAL, STORE NATURAL), D2 NATURAL), STORE_SALES INDEX (STORE_SALES_PK)), D1 NATURAL)",
  "error": null,
- "wall_s": 0.5
+ "wall_s": 1.2
 }

@@ -1,11 +1,11 @@
 {
  "query_id": "dsb_092_03",
  "status": "exec_timeout",
- "prepare_ms": 115.52740000479389,
+ "prepare_ms": 71.61409998661838,
  "exec_ms": null,
  "rows_count": null,
  "checksum": null,
  "plan": "PLAN JOIN (WEB_SALES INDEX (WEB_SALES_PK), DATE_DIM INDEX (DATE_DIM_PK))\nPLAN SORT (HASH (JOIN (ITEM NATURAL, WEB_SALES INDEX (WEB_SALES_PK)), DATE_DIM NATURAL))",
  "error": null,
- "wall_s": 645.2
+ "wall_s": 645.1
 }
