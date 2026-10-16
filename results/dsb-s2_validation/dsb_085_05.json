@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_085_05",
+ "status": "match_truncated",
+ "prepare_ms": 65.28750000870787,
+ "exec_ms": 551.3573000207543,
+ "rows_count": 5,
+ "checksum": "sha1:4cbdbc9bdc0888cf77006c2453f43ac3da53994a",
+ "plan": "PLAN SORT (SORT (JOIN (HASH (HASH (JOIN (HASH (HASH (WEB_RETURNS NATURAL, REASON NATURAL), CUSTOMER_ADDRESS NATURAL), WEB_SALES INDEX (WEB_SALES_PK)), WEB_PAGE NATURAL), DATE_DIM NATURAL), CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK))))",
+ "error": null,
+ "wall_s": 0.7
+}

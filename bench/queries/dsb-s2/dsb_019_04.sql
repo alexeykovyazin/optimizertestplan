@@ -9,7 +9,7 @@ select FIRST 100  i_brand_id brand_id, i_brand brand, i_manufact_id, i_manufact,
     AND i_category  = 'Books'
     and d_year=1998
     and d_moy = 5
-    and SUBSTRING(ca_zip FROM 1 FOR 5) <> SUBSTRING(s_zip FROM 1 FOR 5)
+    and TRIM(TRAILING FROM SUBSTRING(ca_zip FROM 1 FOR 5)) <> TRIM(TRAILING FROM SUBSTRING(s_zip FROM 1 FOR 5))
     and ca_state  = 'MN'
     and c_birth_month = 11
     and ss_wholesale_cost BETWEEN 54 AND 74

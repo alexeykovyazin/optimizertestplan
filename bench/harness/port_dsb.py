@@ -95,11 +95,14 @@ def port_sql(raw: str) -> tuple[str, list[str]]:
     if n1 or n2:
         notes.append(f"interval -> DATEADD ({n1}+{n2})")
 
-    # 3) substring(col, a, b) -> SUBSTRING(col FROM a FOR b)
+    # 3) substring(col, a, b) -> TRIM(SUBSTRING(col FROM a FOR b)):
+    #    над CHAR-колонкой FB сохраняет паддинг в результате, PG при
+    #    bpchar->text срезает хвостовые пробелы (dsb_085: 'Parts
+    #    missing<pad>' vs 'Parts missing')
     sql, n3 = re.subn(
         r"\bsubstring\s*\(\s*([a-z_][a-z_0-9]*)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)",
-        lambda m: f"SUBSTRING({m.group(1)} FROM {m.group(2)} "
-                  f"FOR {m.group(3)})", sql, flags=re.I)
+        lambda m: f"TRIM(TRAILING FROM SUBSTRING({m.group(1)} "
+                  f"FROM {m.group(2)} FOR {m.group(3)}))", sql, flags=re.I)
     if n3:
         notes.append(f"substring(a,n,m) -> SUBSTRING FROM/FOR ({n3})")
 
@@ -108,6 +111,15 @@ def port_sql(raw: str) -> tuple[str, list[str]]:
                       flags=re.I)
     if n4:
         notes.append(f"AS year/month/day -> кавычки ({n4})")
+
+    # 3c) coalesce(char_col,'') в конкатенации: FB оператор || сохраняет
+    #     CHAR-паддинг (SQL-семантика CHAR), PG при bpchar->text его
+    #     срезает (dsb_084/085: 'Walters<pad>, Roger' vs 'Walters, Roger')
+    sql, n5 = re.subn(
+        r"coalesce\s*\(\s*([a-z_][a-z_0-9]*(?:\.[a-z_][a-z_0-9]*)?)\s*,\s*''\s*\)",
+        r"coalesce(TRIM(TRAILING FROM \1),'')", sql, flags=re.I)
+    if n5:
+        notes.append(f"coalesce(col,'') -> TRIM TRAILING ({n5})")
 
     # 4) непереносимые в FB5 конструкции — исключение с записью
     #    (INTERSECT не реализован; ROLLUP/GROUPING отсутствуют)

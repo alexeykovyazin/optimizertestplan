@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_099_spj_02",
+ "status": "match",
+ "prepare_ms": 103.02020001108758,
+ "exec_ms": 550.9881000034511,
+ "rows_count": 1,
+ "checksum": "sha1:5064111aeebcfe71ba29d4a81a84bc8d0c1dd47e",
+ "plan": "PLAN HASH (HASH (HASH (HASH (CATALOG_SALES NATURAL, WAREHOUSE NATURAL), CALL_CENTER NATURAL), SHIP_MODE NATURAL), DATE_DIM NATURAL)",
+ "error": null,
+ "wall_s": 0.8
+}

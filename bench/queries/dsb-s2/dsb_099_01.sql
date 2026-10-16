@@ -1,5 +1,5 @@
 select FIRST 100 
-   SUBSTRING(w_warehouse_name FROM 1 FOR 20)
+   TRIM(TRAILING FROM SUBSTRING(w_warehouse_name FROM 1 FOR 20))
   ,sm_type
   ,cc_name
   ,sum(case when (cs_ship_date_sk - cs_sold_date_sk <= 30 ) then 1 else 0 end)  as "30 days"
@@ -27,9 +27,9 @@ and sm_type = 'LIBRARY'
 and cc_class = 'small'
 and w_gmt_offset = -5
 group by
-   SUBSTRING(w_warehouse_name FROM 1 FOR 20)
+   TRIM(TRAILING FROM SUBSTRING(w_warehouse_name FROM 1 FOR 20))
   ,sm_type
   ,cc_name
-order by SUBSTRING(w_warehouse_name FROM 1 FOR 20)
+order by TRIM(TRAILING FROM SUBSTRING(w_warehouse_name FROM 1 FOR 20))
         ,sm_type
         ,cc_name

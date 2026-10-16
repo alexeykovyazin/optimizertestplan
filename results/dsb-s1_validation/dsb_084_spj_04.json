@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_084_spj_04",
+ "status": "match",
+ "prepare_ms": 63.285799988079816,
+ "exec_ms": 253.072899999097,
+ "rows_count": 1,
+ "checksum": "sha1:bd502dca139bdccce0f8e7d60b74c69dca75a84b",
+ "plan": "PLAN HASH (STORE_RETURNS NATURAL, JOIN (HASH (HASH (HASH (CUSTOMER NATURAL, HOUSEHOLD_DEMOGRAPHICS NATURAL), INCOME_BAND NATURAL), CUSTOMER_ADDRESS NATURAL), CUSTOMER_DEMOGRAPHICS INDEX (CUSTOMER_DEMOGRAPHICS_PK)))",
+ "error": null,
+ "wall_s": 0.5
+}

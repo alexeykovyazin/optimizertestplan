@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_040_01",
+ "status": "match",
+ "prepare_ms": 77.63379998505116,
+ "exec_ms": 414.695399987977,
+ "rows_count": 0,
+ "checksum": "sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709",
+ "plan": "PLAN SORT (JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK)))",
+ "error": null,
+ "wall_s": 0.6
+}

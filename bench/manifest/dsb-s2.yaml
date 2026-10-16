@@ -403,7 +403,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 0eaa6c2d
+  template: aead38b1
   tables: 0
   table_list: []
   tags:
@@ -421,7 +421,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 0eaa6c2d
+  template: aead38b1
   tables: 0
   table_list: []
   tags:
@@ -439,7 +439,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 0eaa6c2d
+  template: aead38b1
   tables: 0
   table_list: []
   tags:
@@ -457,7 +457,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 0eaa6c2d
+  template: aead38b1
   tables: 0
   table_list: []
   tags:
@@ -475,7 +475,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 0eaa6c2d
+  template: aead38b1
   tables: 0
   table_list: []
   tags:
@@ -493,7 +493,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 88f05fa0
+  template: 5394a222
   tables: 0
   table_list: []
   tags:
@@ -508,7 +508,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 88f05fa0
+  template: 5394a222
   tables: 0
   table_list: []
   tags:
@@ -523,7 +523,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 88f05fa0
+  template: 5394a222
   tables: 0
   table_list: []
   tags:
@@ -538,7 +538,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 88f05fa0
+  template: 5394a222
   tables: 0
   table_list: []
   tags:
@@ -553,7 +553,7 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 88f05fa0
+  template: 5394a222
   tables: 0
   table_list: []
   tags:
@@ -568,9 +568,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: b1cea192
-  tables: 1
+  template: 47581de6
+  tables: 2
   table_list:
+  - '1'
   - store_sales
   tags:
   - aggregate
@@ -588,9 +589,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: b1cea192
-  tables: 1
+  template: 47581de6
+  tables: 2
   table_list:
+  - '1'
   - store_sales
   tags:
   - aggregate
@@ -608,9 +610,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: b1cea192
-  tables: 1
+  template: 47581de6
+  tables: 2
   table_list:
+  - '1'
   - store_sales
   tags:
   - aggregate
@@ -628,9 +631,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: b1cea192
-  tables: 1
+  template: 47581de6
+  tables: 2
   table_list:
+  - '1'
   - store_sales
   tags:
   - aggregate
@@ -648,9 +652,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: b1cea192
-  tables: 1
+  template: 47581de6
+  tables: 2
   table_list:
+  - '1'
   - store_sales
   tags:
   - aggregate
@@ -2817,76 +2822,86 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 3749924d
-  tables: 0
-  table_list: []
+  template: acdf9f46
+  tables: 2
+  table_list:
+  - c_first_name
+  - customer
   tags:
   - order_by
   deterministic: true
   float_tolerance: null
   subplan_scope: null
   result: null
-  port_notes: limit 100 -> SELECT FIRST 100
+  port_notes: limit 100 -> SELECT FIRST 100; coalesce(col,'') -> TRIM TRAILING (2)
 - id: dsb_084_02
   suite: dsb-s2
   db: dsb-sf1
   index_config:
   - pk
-  template: 3749924d
-  tables: 0
-  table_list: []
+  template: acdf9f46
+  tables: 2
+  table_list:
+  - c_first_name
+  - customer
   tags:
   - order_by
   deterministic: true
   float_tolerance: null
   subplan_scope: null
   result: null
-  port_notes: limit 100 -> SELECT FIRST 100
+  port_notes: limit 100 -> SELECT FIRST 100; coalesce(col,'') -> TRIM TRAILING (2)
 - id: dsb_084_03
   suite: dsb-s2
   db: dsb-sf1
   index_config:
   - pk
-  template: 3749924d
-  tables: 0
-  table_list: []
+  template: acdf9f46
+  tables: 2
+  table_list:
+  - c_first_name
+  - customer
   tags:
   - order_by
   deterministic: true
   float_tolerance: null
   subplan_scope: null
   result: null
-  port_notes: limit 100 -> SELECT FIRST 100
+  port_notes: limit 100 -> SELECT FIRST 100; coalesce(col,'') -> TRIM TRAILING (2)
 - id: dsb_084_04
   suite: dsb-s2
   db: dsb-sf1
   index_config:
   - pk
-  template: 3749924d
-  tables: 0
-  table_list: []
+  template: acdf9f46
+  tables: 2
+  table_list:
+  - c_first_name
+  - customer
   tags:
   - order_by
   deterministic: true
   float_tolerance: null
   subplan_scope: null
   result: null
-  port_notes: limit 100 -> SELECT FIRST 100
+  port_notes: limit 100 -> SELECT FIRST 100; coalesce(col,'') -> TRIM TRAILING (2)
 - id: dsb_084_05
   suite: dsb-s2
   db: dsb-sf1
   index_config:
   - pk
-  template: 3749924d
-  tables: 0
-  table_list: []
+  template: acdf9f46
+  tables: 2
+  table_list:
+  - c_first_name
+  - customer
   tags:
   - order_by
   deterministic: true
   float_tolerance: null
   subplan_scope: null
   result: null
-  port_notes: limit 100 -> SELECT FIRST 100
+  port_notes: limit 100 -> SELECT FIRST 100; coalesce(col,'') -> TRIM TRAILING (2)
 - id: dsb_084_spj_01
   suite: dsb-s2
   db: dsb-sf1
@@ -2967,9 +2982,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 725e9b06
-  tables: 1
+  template: 2137f092
+  tables: 2
   table_list:
+  - '1'
   - web_sales
   tags:
   - aggregate
@@ -2986,9 +3002,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 725e9b06
-  tables: 1
+  template: 2137f092
+  tables: 2
   table_list:
+  - '1'
   - web_sales
   tags:
   - aggregate
@@ -3005,9 +3022,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 725e9b06
-  tables: 1
+  template: 2137f092
+  tables: 2
   table_list:
+  - '1'
   - web_sales
   tags:
   - aggregate
@@ -3024,9 +3042,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 725e9b06
-  tables: 1
+  template: 2137f092
+  tables: 2
   table_list:
+  - '1'
   - web_sales
   tags:
   - aggregate
@@ -3043,9 +3062,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: 725e9b06
-  tables: 1
+  template: 2137f092
+  tables: 2
   table_list:
+  - '1'
   - web_sales
   tags:
   - aggregate
@@ -3482,9 +3502,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: ad23342b
-  tables: 1
+  template: 2b9e24d9
+  tables: 2
   table_list:
+  - '1'
   - catalog_sales
   tags:
   - aggregate
@@ -3502,9 +3523,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: ad23342b
-  tables: 1
+  template: 2b9e24d9
+  tables: 2
   table_list:
+  - '1'
   - catalog_sales
   tags:
   - aggregate
@@ -3522,9 +3544,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: ad23342b
-  tables: 1
+  template: 2b9e24d9
+  tables: 2
   table_list:
+  - '1'
   - catalog_sales
   tags:
   - aggregate
@@ -3542,9 +3565,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: ad23342b
-  tables: 1
+  template: 2b9e24d9
+  tables: 2
   table_list:
+  - '1'
   - catalog_sales
   tags:
   - aggregate
@@ -3562,9 +3586,10 @@
   db: dsb-sf1
   index_config:
   - pk
-  template: ad23342b
-  tables: 1
+  template: 2b9e24d9
+  tables: 2
   table_list:
+  - '1'
   - catalog_sales
   tags:
   - aggregate

@@ -9,7 +9,7 @@ select FIRST 100  i_brand_id brand_id, i_brand brand, i_manufact_id, i_manufact,
     AND i_category  = 'Home'
     and d_year=2000
     and d_moy = 3
-    and SUBSTRING(ca_zip FROM 1 FOR 5) <> SUBSTRING(s_zip FROM 1 FOR 5)
+    and TRIM(TRAILING FROM SUBSTRING(ca_zip FROM 1 FOR 5)) <> TRIM(TRAILING FROM SUBSTRING(s_zip FROM 1 FOR 5))
     and ca_state  = 'GA'
     and c_birth_month = 7
     and ss_wholesale_cost BETWEEN 40 AND 60

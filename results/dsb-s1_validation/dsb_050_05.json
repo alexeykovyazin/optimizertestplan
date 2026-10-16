@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_050_05",
+ "status": "match",
+ "prepare_ms": 310.78400000114925,
+ "exec_ms": 485.13140001159627,
+ "rows_count": 5,
+ "checksum": "sha1:b7117f0a1a771cbaa7fc2bf82e1a805b76880d35",
+ "plan": "PLAN SORT (HASH (HASH (JOIN (HASH (STORE_RETURNS NATURAL, D2 NATURAL), STORE_SALES INDEX (STORE_SALES_PK)), STORE NATURAL), D1 NATURAL))",
+ "error": null,
+ "wall_s": 1.1
+}

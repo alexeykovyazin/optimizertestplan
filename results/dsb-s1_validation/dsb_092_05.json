@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_092_05",
+ "status": "match",
+ "prepare_ms": 67.94459999946412,
+ "exec_ms": 529872.9852999968,
+ "rows_count": 1,
+ "checksum": "sha1:38a83801701071db1edf35f79ece07b9881fa392",
+ "plan": "PLAN JOIN (WEB_SALES INDEX (WEB_SALES_PK), DATE_DIM INDEX (DATE_DIM_PK))\nPLAN SORT (HASH (JOIN (ITEM NATURAL, WEB_SALES INDEX (WEB_SALES_PK)), DATE_DIM NATURAL))",
+ "error": null,
+ "wall_s": 530.3
+}

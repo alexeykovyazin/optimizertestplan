@@ -1,5 +1,5 @@
 select FIRST 100  c_customer_id as customer_id
-       , coalesce(c_last_name,'') || ', ' || coalesce(c_first_name,'') as customername
+       , coalesce(TRIM(TRAILING FROM c_last_name),'') || ', ' || coalesce(TRIM(TRAILING FROM c_first_name),'') as customername
  from customer
      ,customer_address
      ,customer_demographics

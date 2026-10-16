@@ -135,6 +135,8 @@ def main():
     ap.add_argument("--outdir", default=None,
                     help="каталог результата (по умолчанию "
                          "results/<suite>_validation)")
+    ap.add_argument("--resume", action="store_true",
+                    help="продолжить с места смерти по пер-запросным json")
     a = ap.parse_args()
 
     qdir = (QDIR if a.suite == "job"
@@ -147,6 +149,25 @@ def main():
     ids = sorted(f[:-4] for f in os.listdir(qdir) if f.endswith(".sql"))
     if a.only:
         ids = [i for i in ids if i in set(a.only)]
+
+    # --resume: продолжить с места смерти (пер-запросные json пишутся
+    # после каждого запроса); отчёт в конце собирается по ВСЕМ ids.
+    # Подходит после AV-краша драйвера — известный режим гибели процесса.
+    done = {}
+    if a.resume:
+        for qid in ids:
+            p = os.path.join(outdir, f"{qid}.json")
+            if os.path.exists(p):
+                try:
+                    r = json.load(open(p, encoding="utf-8"))
+                except (json.JSONDecodeError, OSError):
+                    continue
+                if r.get("status"):
+                    done[qid] = r
+        ids = [i for i in ids if i not in done]
+        if done:
+            print(f"resume: {len(done)} готовых, осталось {len(ids)}",
+                  flush=True)
 
     worker = _Worker(a.fdb)
     summary = []
@@ -209,15 +230,26 @@ def main():
                   f"exec={rec['exec_ms'] and round(rec['exec_ms'])}ms)",
                   flush=True)
     finally:
-        worker.close()
+        try:
+            worker.close()
+        except Exception:
+            pass  # AV драйвера на detach не должен терять отчёт
         from collections import Counter
-        cnt = Counter(r["status"] for r in summary)
-        report = {"suite": a.suite, "statuses": dict(cnt), "total": len(summary),
-                  "results": summary}
+        # отчёт по ВСЕМ ids сюиты: готовые из done + свежие из summary
+        all_recs = {r["query_id"]: r for r in summary}
+        all_recs.update(done)
+        full_ids = sorted(set(all_recs) | set(
+            f[:-4] for f in os.listdir(qdir) if f.endswith(".sql")
+            and os.path.exists(os.path.join(
+                outdir, f[:-4] + ".json"))))
+        results = [all_recs[q] for q in sorted(all_recs)]
+        cnt = Counter(r["status"] for r in results)
+        report = {"suite": a.suite, "statuses": dict(cnt),
+                  "total": len(results), "results": results}
         with open(os.path.join(outdir, "report.json"), "w",
                   encoding="utf-8") as f:
             json.dump(report, f, ensure_ascii=False, indent=1)
-        print("SUMMARY:", dict(cnt))
+        print(f"SUMMARY: {dict(cnt)} (total {len(results)})")
 
 
 if __name__ == "__main__":

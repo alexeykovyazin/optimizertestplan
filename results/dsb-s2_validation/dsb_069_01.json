@@ -1,0 +1,11 @@
+{
+ "query_id": "dsb_069_01",
+ "status": "exec_timeout",
+ "prepare_ms": 73.46559999859892,
+ "exec_ms": null,
+ "rows_count": null,
+ "checksum": null,
+ "plan": "PLAN JOIN (STORE_SALES NATURAL, DATE_DIM INDEX (DATE_DIM_PK))\nPLAN JOIN (WEB_SALES NATURAL, DATE_DIM INDEX (DATE_DIM_PK))\nPLAN JOIN (CATALOG_SALES NATURAL, DATE_DIM INDEX (DATE_DIM_PK))\nPLAN SORT (JOIN (C NATURAL, CA INDEX (CUSTOMER_ADDRESS_PK), CUSTOMER_DEMOGRAPHICS INDEX (CUSTOMER_DEMOGRAPHICS_PK)))",
+ "error": null,
+ "wall_s": 645.1
+}

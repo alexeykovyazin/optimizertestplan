@@ -1,5 +1,5 @@
 with frequent_ss_items as
- (select SUBSTRING(i_item_desc FROM 1 FOR 30) itemdesc,i_item_sk item_sk,d_date solddate,count(*) cnt
+ (select TRIM(TRAILING FROM SUBSTRING(i_item_desc FROM 1 FOR 30)) itemdesc,i_item_sk item_sk,d_date solddate,count(*) cnt
   from store_sales
       ,date_dim
       ,item
@@ -8,7 +8,7 @@ with frequent_ss_items as
     and d_year = 2001
     and i_manager_id BETWEEN 81 and 100
      AND i_category IN ('Books', 'Jewelry', 'Shoes')
-  group by SUBSTRING(i_item_desc FROM 1 FOR 30),i_item_sk,d_date
+  group by TRIM(TRAILING FROM SUBSTRING(i_item_desc FROM 1 FOR 30)),i_item_sk,d_date
   having count(*) >4),
  max_store_sales as
  (select max(csales) tpcds_cmax
