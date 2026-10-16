@@ -461,9 +461,42 @@ Dropbox pickles мертвы (см. выше). Статус канона — з�
   копий (хвостовой pipe), 1.5 мин. **Golden DSB_SF1_FB5.FDB** на
   dellg15 через gbak-перенос, счётчики сверены.
 - **S6**: 465×(q_+pe_), schtask dsb_s6 (300 c, монстры вторым проходом).
+  **Итог: 465/465 результатов + 465/465 планов, 0 pg_timeout** — единственный
+  монстр query32 (коррелированный avg) добит на 1800 c во всех 4 инстансах:
+  впервые эталон сюиты снят БЕЗ no_pg_reference.
+- **S7**: **dsb-s1: 183 match + 13 match_truncated + 34 exec_timeout;
+  dsb-s2: 184 + 13 + 38; 0 mismatch, 0 error.** Новая дивергенция №3 —
+  CHAR-паддинг: FB оператор `||` и substring над CHAR-колонками сохраняют
+  хвостовые пробелы, PG при bpchar→text срезает (084: «Walters<pad>,
+  Roger»; 085: «Parts missing<pad>»). Правила порта: `coalesce(col,'')` →
+  `coalesce(TRIM(TRAILING FROM col),'')`; `substring(col,a,b)` →
+  `TRIM(TRAILING FROM SUBSTRING(...))`. FB-находка: 6 шаблонов TPC-DS
+  (010/032/069/081/083/092/094) FB5 не исполняет за 645 c, хотя PG все
+  посчитал (макс 1800 c) — тяжёлые коррелированные формы на 2.9M-строчных
+  фактах.
+- **S8** (бейслайн `185688298633`): dsb-s1: 195 ok + 35 TO, мед. 1.74 c,
+  макс 183.5 c; dsb-s2: 196 ok + 39 TO, мед. 1.87 c, макс 338.2 c.
 
 Ловушки DSB:
 - Git Bash превращает `/OPTION` в путь — запускать тулзы через
   `cmd /c ... < NUL` или MSYS_NO_PATHCONV=1.
 - strip хвостового pipe обязателен и для .dat (COPY text).
 - .gitignore дополнен `bench/datasets/dsb/sf1_csv/*.dat`.
+- CertUtil sha на work-файле под живым жнецом = sharing violation — sha
+  преcиджится в `work_sha_cache.json` + `--skip-copy`; байт-равенство
+  work=golden недостижимо при живом жнеце (FB пишет страницы на
+  подключениях), контентная свежесть обеспечивается свежей копией.
+- Осиротевшие аттачменты убитых процессов держат FDB открытым —
+  одноразовая зачистка `DELETE FROM MON$ATTACHMENTS`.
+- AV в worker-потоке не всегда убивает процесс валидатора — он может
+  тихо продолжить и писать поверх свежих результатов параллельного
+  прохода; супервайз по факту жизни процесса недостаточен.
+- `job_validate --resume`: отчёт собирается из ВСЕХ пер-запросных json
+  каталога; `--only X --resume` = точечная ревалидация с пересборкой.
+
+**Итог P2 (2026-10-16): JCC-H — полный цикл (0 mismatch, baseline
+`1bb2761caa0a`); CEB-IMDb оригинальный — закрыт (Dropbox мёртв, канон —
+ceb-imdb-regen); DSB — полный цикл (0 mismatch, baseline
+`185688298633`). Корпус портированных сюит: job 113, stats-ceb 3381,
+job-light 70, scale 500, synthetic 5000, job-complex 30, tpch 22,
+ceb-imdb-regen 121, jcch-norm 22, jcch-skew 22, dsb-s1 230, dsb-s2 235.**
