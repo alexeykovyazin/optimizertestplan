@@ -1,0 +1,212 @@
+{
+ "ceb_10a_003": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_10a_004": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_10a_008": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_10a_014": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_002": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_003": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_004": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_007": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_008": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_009": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_010": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_011": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_012": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11a_013": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_001": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_002": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_005": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_006": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_007": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_008": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_11b_010": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_3b_005": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_3b_007": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_3b_015": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_9a_001": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_9a_003": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_9a_005": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_9a_006": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_9a_014": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "ceb_9b_011": {
+  "suite": "ceb-imdb-regen",
+  "vs_baseline": "MISMATCH",
+  "pg_arbitration": "match",
+  "rows": null,
+  "note": "результат на 3056 совпадает с PG-эталоном построчно (нормализация типов job_validate); арбитраж 20.10.2026, сырые строки arb_{qid}_3056.json вне репо"
+ }
+}

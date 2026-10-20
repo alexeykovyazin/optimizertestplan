@@ -5,6 +5,11 @@ results/*
 !results/*_validation
 !results/prepare_test
 !results/baselines
+# hash-корпус: отчёт прогона v5.0-impr-opt (REPORT/TABLE/CSV/сводки);
+# сырые строки арбитража и проб остаются вне гита
+!results/hash_corpus
+results/hash_corpus/arb_*_3056.json
+results/hash_corpus/probe_1008_*.json
 third_party/
 .tmp/
 __pycache__/
