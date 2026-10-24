@@ -108,7 +108,7 @@ def main():
         cur.execute("ALTER DATABASE ADD EXTENDED STATISTICS")
         db1.commit()
         db1.begin()
-        cur.execute("ALTER DATABASE REFRESH EXTENDED STATISTICS "
+        cur.execute("ALTER DATABASE REFRESH STATISTICS "
                     "FOR TABLE T_SMOKE")
         db1.commit()
         db1.begin()

@@ -2,7 +2,7 @@ r"""Заполнение тестовой БД + расширенная стат
 
 Шаги: свежая копия голдена IMDb -> gfix -mode read_write ->
 ALTER DATABASE ADD EXTENDED STATISTICS ->
-ALTER DATABASE REFRESH EXTENDED STATISTICS FULL -> отключение.
+ALTER DATABASE REFRESH STATISTICS FULL -> отключение.
 Хранилище STAT$ в свежей копии отсутствует (старое осталось только в
 предыдущей рабочей копии, которую перезаписываем).
 """
@@ -20,7 +20,7 @@ fbenv.HOST_PORT = "localhost:3056"
 fbenv.ensure_client()
 from firebird.driver import connect
 
-GOLDEN = r"E:\fbdata\golden\imdb_fb5.fdb"
+GOLDEN = r"E:\db\imdb\imdb_fb5.fdb"
 WORK = r"E:\fbdata\impropt_work\imdb_fb5.fdb"
 
 
@@ -68,7 +68,7 @@ print("storage created", flush=True)
 
 t0 = time.perf_counter()
 db.begin()
-cur.execute("ALTER DATABASE REFRESH EXTENDED STATISTICS FULL")
+cur.execute("ALTER DATABASE REFRESH STATISTICS FULL")
 db.commit()
 print(f"REFRESH FULL: {time.perf_counter() - t0:.0f}s", flush=True)
 cur.execute("select count(*) from STAT$TABLES")
