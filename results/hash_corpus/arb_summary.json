@@ -364,5 +364,160 @@
   "vs_baseline": "MISMATCH",
   "pg_arbitration": "match",
   "note": "результат построчно совпал с PG-эталоном (нормализация job_validate); сырые строки arb_{qid}_3056.json вне репо"
+ },
+ "run3_f54cbf8fac:ceb_10a_003": {
+  "pg_arbitration": "match",
+  "fb_rows": 3018,
+  "sha": "sha1:70f50522c5d561d"
+ },
+ "run3_f54cbf8fac:ceb_10a_004": {
+  "pg_arbitration": "match",
+  "fb_rows": 19697,
+  "sha": "sha1:b19e58dc755aefb"
+ },
+ "run3_f54cbf8fac:ceb_10a_008": {
+  "pg_arbitration": "match",
+  "fb_rows": 6416,
+  "sha": "sha1:1e9207112dc682b"
+ },
+ "run3_f54cbf8fac:ceb_10a_010": {
+  "pg_arbitration": "match",
+  "fb_rows": 6569,
+  "sha": "sha1:c1a3019532b34df"
+ },
+ "run3_f54cbf8fac:ceb_10a_014": {
+  "pg_arbitration": "match",
+  "fb_rows": 1617,
+  "sha": "sha1:ef03423fb00c020"
+ },
+ "run3_f54cbf8fac:ceb_11a_002": {
+  "pg_arbitration": "match",
+  "fb_rows": 2506,
+  "sha": "sha1:c8c2f63fb8d039c"
+ },
+ "run3_f54cbf8fac:ceb_11a_003": {
+  "pg_arbitration": "match",
+  "fb_rows": 0,
+  "sha": "sha1:da39a3ee5e6b4b0"
+ },
+ "run3_f54cbf8fac:ceb_11a_004": {
+  "pg_arbitration": "match",
+  "fb_rows": 0,
+  "sha": "sha1:da39a3ee5e6b4b0"
+ },
+ "run3_f54cbf8fac:ceb_11a_007": {
+  "pg_arbitration": "match",
+  "fb_rows": 0,
+  "sha": "sha1:da39a3ee5e6b4b0"
+ },
+ "run3_f54cbf8fac:ceb_11a_008": {
+  "pg_arbitration": "match",
+  "fb_rows": 9212,
+  "sha": "sha1:808a6d1002d27aa"
+ },
+ "run3_f54cbf8fac:ceb_11a_009": {
+  "pg_arbitration": "match",
+  "fb_rows": 1847,
+  "sha": "sha1:0c12933018604fa"
+ },
+ "run3_f54cbf8fac:ceb_11a_010": {
+  "pg_arbitration": "match",
+  "fb_rows": 2109,
+  "sha": "sha1:9b8da29a83292cb"
+ },
+ "run3_f54cbf8fac:ceb_11a_011": {
+  "pg_arbitration": "match",
+  "fb_rows": 1842,
+  "sha": "sha1:ccbddda09efff38"
+ },
+ "run3_f54cbf8fac:ceb_11a_012": {
+  "pg_arbitration": "match",
+  "fb_rows": 1358,
+  "sha": "sha1:fab8ea7ab35aff9"
+ },
+ "run3_f54cbf8fac:ceb_11a_013": {
+  "pg_arbitration": "match",
+  "fb_rows": 0,
+  "sha": "sha1:da39a3ee5e6b4b0"
+ },
+ "run3_f54cbf8fac:ceb_11b_001": {
+  "pg_arbitration": "match",
+  "fb_rows": 28007,
+  "sha": "sha1:dc4fd89d5514e8d"
+ },
+ "run3_f54cbf8fac:ceb_11b_002": {
+  "pg_arbitration": "match",
+  "fb_rows": 3634,
+  "sha": "sha1:1a9ffc1ce5b8ecf"
+ },
+ "run3_f54cbf8fac:ceb_11b_005": {
+  "pg_arbitration": "match",
+  "fb_rows": 21926,
+  "sha": "sha1:9a75b2340687d6a"
+ },
+ "run3_f54cbf8fac:ceb_11b_006": {
+  "pg_arbitration": "match",
+  "fb_rows": 152914,
+  "sha": "sha1:3f1fee63d730c1c"
+ },
+ "run3_f54cbf8fac:ceb_11b_007": {
+  "pg_arbitration": "match",
+  "fb_rows": 1551,
+  "sha": "sha1:2bf0798d6ce9b11"
+ },
+ "run3_f54cbf8fac:ceb_11b_008": {
+  "pg_arbitration": "match",
+  "fb_rows": 1437,
+  "sha": "sha1:dce1e4bd267abf2"
+ },
+ "run3_f54cbf8fac:ceb_11b_009": {
+  "pg_arbitration": "match",
+  "fb_rows": 22121,
+  "sha": "sha1:f19df4c49326d8a"
+ },
+ "run3_f54cbf8fac:ceb_11b_010": {
+  "pg_arbitration": "match",
+  "fb_rows": 1269,
+  "sha": "sha1:4fd9e854779aa7d"
+ },
+ "run3_f54cbf8fac:ceb_3b_007": {
+  "pg_arbitration": "match",
+  "fb_rows": 0,
+  "sha": "sha1:da39a3ee5e6b4b0"
+ },
+ "run3_f54cbf8fac:ceb_3b_015": {
+  "pg_arbitration": "match",
+  "fb_rows": 1152,
+  "sha": "sha1:7c1876dbd189847"
+ },
+ "run3_f54cbf8fac:ceb_9a_001": {
+  "pg_arbitration": "match",
+  "fb_rows": 10810,
+  "sha": "sha1:78eba216b403f83"
+ },
+ "run3_f54cbf8fac:ceb_9a_003": {
+  "pg_arbitration": "match",
+  "fb_rows": 1258,
+  "sha": "sha1:81b5b2cf18ce33c"
+ },
+ "run3_f54cbf8fac:ceb_9a_005": {
+  "pg_arbitration": "match",
+  "fb_rows": 1451,
+  "sha": "sha1:0d8812f2c5a21f2"
+ },
+ "run3_f54cbf8fac:ceb_9a_006": {
+  "pg_arbitration": "match",
+  "fb_rows": 16926,
+  "sha": "sha1:d79fcd2af61aa89"
+ },
+ "run3_f54cbf8fac:ceb_9a_014": {
+  "pg_arbitration": "match",
+  "fb_rows": 1022,
+  "sha": "sha1:2dbc466d3a1785d"
+ },
+ "run3_f54cbf8fac:ceb_9b_011": {
+  "pg_arbitration": "match",
+  "fb_rows": 0,
+  "sha": "sha1:da39a3ee5e6b4b0"
  }
 }

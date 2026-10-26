@@ -1,10 +1,13 @@
-r"""Заполнение тестовой БД + расширенная статистика (FULL) на FB_impropt 3056.
+r"""Заполнение тестовой БД + расширенная статистика на FB_impropt 3056.
 
 Шаги: свежая копия голдена IMDb -> gfix -mode read_write ->
 ALTER DATABASE ADD EXTENDED STATISTICS ->
-ALTER DATABASE REFRESH STATISTICS FULL -> отключение.
+6 именованных многоколоночных статистик по словарям (CREATE EXTENDED
+STATISTICS ... ON ...) -> ALTER DATABASE REFRESH STATISTICS (включает
+и именованные) -> отключение.
 Хранилище STAT$ в свежей копии отсутствует (старое осталось только в
 предыдущей рабочей копии, которую перезаписываем).
+Скрипт статистик — от разработчика ветки (2026-10-26), выполняется как есть.
 """
 import hashlib
 import os
@@ -66,15 +69,34 @@ cur.execute("ALTER DATABASE ADD EXTENDED STATISTICS")
 db.commit()
 print("storage created", flush=True)
 
+NAMED_STATS = [
+    "CREATE EXTENDED STATISTICS STAT_KIND_TYPE_NAME ON KIND_TYPE(ID, KIND)",
+    'CREATE EXTENDED STATISTICS STAT_ROLE_TYPE_NAME ON ROLE_TYPE(ID, "ROLE")',
+    "CREATE EXTENDED STATISTICS STAT_INFO_TYPE_INFO ON INFO_TYPE(ID, INFO)",
+    "CREATE EXTENDED STATISTICS STAT_LINK_TYPE_KIND ON LINK_TYPE(ID, LINK)",
+    "CREATE EXTENDED STATISTICS STAT_COMPANY_TYPE_KIND ON COMPANY_TYPE(ID, KIND)",
+    "CREATE EXTENDED STATISTICS STAT_COMP_CAST_TYPE_KIND "
+    "ON COMP_CAST_TYPE(ID, KIND)",
+]
+for ddl in NAMED_STATS:
+    db.begin()
+    cur.execute(ddl)
+    db.commit()
+    print("  " + ddl[:60], flush=True)
+
 t0 = time.perf_counter()
 db.begin()
-cur.execute("ALTER DATABASE REFRESH STATISTICS FULL")
+cur.execute("ALTER DATABASE REFRESH STATISTICS")
 db.commit()
-print(f"REFRESH FULL: {time.perf_counter() - t0:.0f}s", flush=True)
+print(f"REFRESH STATISTICS: {time.perf_counter() - t0:.0f}s", flush=True)
 cur.execute("select count(*) from STAT$TABLES")
 print("tables:", cur.fetchone()[0], flush=True)
 cur.execute("select count(*) from STAT$COLUMNS")
 print("columns:", cur.fetchone()[0], flush=True)
+cur.execute("select RDB$RELATION_NAME from RDB$RELATIONS "
+            "where RDB$RELATION_NAME starting with 'STAT$' "
+            "order by 1")
+print("STAT$ tables:", [r[0].strip() for r in cur.fetchall()], flush=True)
 cur.close()
 db.close()
 print("FILL+STATS DONE", flush=True)
