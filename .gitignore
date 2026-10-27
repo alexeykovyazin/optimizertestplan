@@ -19,3 +19,7 @@ __pycache__/
 # регенерируемые данные dbgen (bench/datasets/tpch/build_tpch.py, seed 42)
 *.tbl
 bench/datasets/dsb/sf1_csv/*.dat
+# JOB-light полный прогон 27.10 (f54c + 19 статструктур + новый кеш)
+!results/joblight_full_1027
+# кандидаты многоколоночных статистик JOB/job-light (анализ + DDL + проба)
+!results/ext_stats_job

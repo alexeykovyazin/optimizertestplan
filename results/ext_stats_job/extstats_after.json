@@ -1,0 +1,81 @@
+{
+ "job_light_038": {
+  "plan": "PLAN JOIN (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX), MI INDEX (MOVIE_ID_MOVIE_INFO), MK INDEX (MOVIE_ID_MOVIE_KEYWORD))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Nested Loop Join (inner) (rows=1079905.10) -> Filter (rows=113728.84) -> Table \"TITLE\" as \"T\" Access By ID (rows=711804.10) -> Bitmap -> Index \"KIND_ID_TITLE\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"MOVIE_INFO_IDX\" as \"MI_IDX\" Access By ID (rows=2.98) -> Bitmap -> Index \"MOVIE_ID_MOVIE_INFO_IDX\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"MOVIE_INFO\" as \"MI\" Access By ID (rows=5.99) -> Bitmap -> Index \"MOVIE_ID_MOVIE_INFO\" Range Scan (full match) -> Filter (rows=9.50) -> Table \"MOVIE_KEYWORD\" as \"MK\" Access By ID (rows=9.50) -> Bitmap -> Index \"MOVIE_ID_MOVIE_KEYWORD\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": 2448.0,
+    "rows": 1
+   },
+   {
+    "ms": 2392.5,
+    "rows": 1
+   },
+   {
+    "ms": 2184.7,
+    "rows": 1
+   }
+  ],
+  "min_ms": 2184.7
+ },
+ "job_light_001": {
+  "plan": "PLAN JOIN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Nested Loop Join (inner) (rows=1.16) -> Filter (rows=1.00) -> Table \"MOVIE_INFO_IDX\" as \"MI_IDX\" Access By ID (rows=1.00) -> Bitmap -> Index \"INFO_TYPE_ID_MOVIE_INFO_IDX\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"TITLE\" as \"T\" Access By ID (rows=1.00) -> Bitmap -> Index \"TITLE_PK\" Unique Scan -> Filter (rows=1.16) -> Table \"MOVIE_COMPANIES\" as \"MC\" Access By ID (rows=2.40) -> Bitmap -> Index \"MOVIE_ID_MOVIE_COMPANIES\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": 95.3,
+    "rows": 1
+   },
+   {
+    "ms": 91.4,
+    "rows": 1
+   },
+   {
+    "ms": 102.2,
+    "rows": 1
+   }
+  ],
+  "min_ms": 91.4
+ },
+ "job_light_041": {
+  "plan": "PLAN HASH (HASH (HASH (MK NATURAL, T NATURAL), MC NATURAL), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Filter (rows=3590204.68) -> Hash Join (inner) (rows=3590204.68) -> Hash Join (inner) (rows=2556810.57) -> Hash Join (inner) (rows=2477614.11) -> Table \"MOVIE_KEYWORD\" as \"MK\" Full Scan (rows=4523930.00) -> Record Buffer (record length: 33) (rows=1384676.93) -> Filter (rows=1384676.93) -> Table \"TITLE\" as \"T\" Full Scan (rows=2528312.00) -> Record Buffer (record length: 25) (rows=2609129.00) -> Table \"MOVIE_COMPANIES\" as \"MC\" Full Scan (rows=2609129.00) -> Record Buffer (record length: 33) (rows=3550187.76) -> Filter (rows=3550187.76) -> Table \"MOVIE_INFO\" as \"MI\" Access By ID (rows=3550187.76) -> Bitmap -> Index \"INFO_TYPE_ID_MOVIE_INFO\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": null,
+    "rows": null,
+    "err": "watchdog 180s"
+   },
+   {
+    "ms": null,
+    "rows": null,
+    "err": "watchdog 180s"
+   },
+   {
+    "ms": null,
+    "rows": null,
+    "err": "watchdog 180s"
+   }
+  ],
+  "min_ms": null
+ },
+ "job_light_027": {
+  "plan": "PLAN JOIN (T NATURAL, MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CI INDEX (MOVIE_ID_CAST_INFO))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Nested Loop Join (inner) (rows=2379171.21) -> Filter (rows=689645.77) -> Table \"TITLE\" as \"T\" Full Scan (rows=2528312.00) -> Filter (rows=1.12) -> Table \"MOVIE_COMPANIES\" as \"MC\" Access By ID (rows=1.12) -> Bitmap -> Index \"MOVIE_ID_MOVIE_COMPANIES\" Range Scan (full match) -> Filter (rows=3.09) -> Table \"CAST_INFO\" as \"CI\" Access By ID (rows=15.51) -> Bitmap -> Index \"MOVIE_ID_CAST_INFO\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": 33212.0,
+    "rows": 1
+   },
+   {
+    "ms": 32767.7,
+    "rows": 1
+   },
+   {
+    "ms": 33809.9,
+    "rows": 1
+   }
+  ],
+  "min_ms": 32767.7
+ }
+}

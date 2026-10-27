@@ -64,8 +64,8 @@ print("== firebird.conf ==")
 conf = os.path.join(ROOT, "firebird.conf")
 lines = open(conf, encoding="utf-8", errors="replace").read().splitlines()
 for want in ("RemoteServicePort = 3056", "ServerMode = Super",
-             "DefaultDbCachePages = 2048", "LockMemSize = 20M",
-             "LockHashSlots = 40099", "TempCacheLimit = 256M",
+             "DefaultDbCachePages = 50000", "LockMemSize = 20M",
+             "LockHashSlots = 40099", "TempCacheLimit = 2000M",
              "InlineSortThreshold = 16384"):
     key = want.split(" = ")[0]
     if not any(re.match(rf"^\s*{key}\s*=", ln, re.I) for ln in lines):

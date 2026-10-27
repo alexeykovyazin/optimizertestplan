@@ -1,0 +1,81 @@
+{
+ "job_light_038": {
+  "plan": "PLAN JOIN (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX), MI INDEX (MOVIE_ID_MOVIE_INFO), MK INDEX (MOVIE_ID_MOVIE_KEYWORD))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Nested Loop Join (inner) (rows=1052137.99) -> Filter (rows=110804.58) -> Table \"TITLE\" as \"T\" Access By ID (rows=702955.04) -> Bitmap -> Index \"KIND_ID_TITLE\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"MOVIE_INFO_IDX\" as \"MI_IDX\" Access By ID (rows=2.98) -> Bitmap -> Index \"MOVIE_ID_MOVIE_INFO_IDX\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"MOVIE_INFO\" as \"MI\" Access By ID (rows=5.99) -> Bitmap -> Index \"MOVIE_ID_MOVIE_INFO\" Range Scan (full match) -> Filter (rows=9.50) -> Table \"MOVIE_KEYWORD\" as \"MK\" Access By ID (rows=9.50) -> Bitmap -> Index \"MOVIE_ID_MOVIE_KEYWORD\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": 2247.2,
+    "rows": 1
+   },
+   {
+    "ms": 1997.0,
+    "rows": 1
+   },
+   {
+    "ms": 1941.4,
+    "rows": 1
+   }
+  ],
+  "min_ms": 1941.4
+ },
+ "job_light_001": {
+  "plan": "PLAN JOIN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Nested Loop Join (inner) (rows=1.15) -> Filter (rows=1.00) -> Table \"MOVIE_INFO_IDX\" as \"MI_IDX\" Access By ID (rows=1.00) -> Bitmap -> Index \"INFO_TYPE_ID_MOVIE_INFO_IDX\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"TITLE\" as \"T\" Access By ID (rows=1.00) -> Bitmap -> Index \"TITLE_PK\" Unique Scan -> Filter (rows=1.15) -> Table \"MOVIE_COMPANIES\" as \"MC\" Access By ID (rows=2.40) -> Bitmap -> Index \"MOVIE_ID_MOVIE_COMPANIES\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": 4.4,
+    "rows": 1
+   },
+   {
+    "ms": 3.6,
+    "rows": 1
+   },
+   {
+    "ms": 3.3,
+    "rows": 1
+   }
+  ],
+  "min_ms": 3.3
+ },
+ "job_light_041": {
+  "plan": "PLAN HASH (HASH (HASH (MK NATURAL, T NATURAL), MC NATURAL), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Filter (rows=3841581.97) -> Hash Join (inner) (rows=3841581.97) -> Hash Join (inner) (rows=2563369.70) -> Hash Join (inner) (rows=2483970.08) -> Table \"MOVIE_KEYWORD\" as \"MK\" Full Scan (rows=4523930.00) -> Record Buffer (record length: 33) (rows=1388229.12) -> Filter (rows=1388229.12) -> Table \"TITLE\" as \"T\" Full Scan (rows=2528312.00) -> Record Buffer (record length: 25) (rows=2609129.00) -> Table \"MOVIE_COMPANIES\" as \"MC\" Full Scan (rows=2609129.00) -> Record Buffer (record length: 33) (rows=3789042.92) -> Filter (rows=3789042.92) -> Table \"MOVIE_INFO\" as \"MI\" Access By ID (rows=3789042.92) -> Bitmap -> Index \"INFO_TYPE_ID_MOVIE_INFO\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": null,
+    "rows": null,
+    "err": "watchdog 180s"
+   },
+   {
+    "ms": null,
+    "rows": null,
+    "err": "watchdog 180s"
+   },
+   {
+    "ms": null,
+    "rows": null,
+    "err": "watchdog 180s"
+   }
+  ],
+  "min_ms": null
+ },
+ "job_light_027": {
+  "plan": "PLAN HASH (JOIN (T NATURAL, MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CI INDEX (ROLE_ID_CAST_INFO))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Filter (rows=4371753.52) -> Batch Hash Join (inner) (batches: 2) (rows=4371753.52) -> Record Buffer (record length: 50) (rows=1653808.26) -> Nested Loop Join (inner) (rows=1653808.26) -> Filter (rows=689705.98) -> Table \"TITLE\" as \"T\" Full Scan (rows=2528312.00) -> Filter (rows=2.40) -> Table \"MOVIE_COMPANIES\" as \"MC\" Access By ID (rows=2.40) -> Bitmap -> Index \"MOVIE_ID_MOVIE_COMPANIES\" Range Scan (full match) -> Record Buffer (record length: 33) (rows=6683457.29) -> Filter (rows=6683457.29) -> Table \"CAST_INFO\" as \"CI\" Access By ID (rows=6683457.29) -> Bitmap -> Index \"ROLE_ID_CAST_INFO\" Range Scan (full match)",
+  "reps": [
+   {
+    "ms": 79889.0,
+    "rows": 1
+   },
+   {
+    "ms": 11359.1,
+    "rows": 1
+   },
+   {
+    "ms": 6245.4,
+    "rows": 1
+   }
+  ],
+  "min_ms": 6245.4
+ }
+}

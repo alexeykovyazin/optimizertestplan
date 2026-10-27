@@ -1,0 +1,702 @@
+{
+ "job_light_001": {
+  "suite": "job-light",
+  "checksum": "sha1:ea82a0e3a7f7ef24c12cdc9caa6b1b405853d17d",
+  "rows": 1,
+  "median_ms": 18.685799999957453,
+  "timed_out": false,
+  "plan_hash": "9e83a5a722e338967f0ec4b5d8231968d1a62269",
+  "fetches": 11115.0,
+  "record_reads": 8809.0
+ },
+ "job_light_002": {
+  "suite": "job-light",
+  "checksum": "sha1:5c869b9700b1f046ac24ced6d784a811d31d284f",
+  "rows": 1,
+  "median_ms": 12.705299999993258,
+  "timed_out": false,
+  "plan_hash": "9e83a5a722e338967f0ec4b5d8231968d1a62269",
+  "fetches": 131.0,
+  "record_reads": 89.0
+ },
+ "job_light_003": {
+  "suite": "job-light",
+  "checksum": "sha1:62b72275f92fde49ef972ed4a0963f64d52ee62e",
+  "rows": 1,
+  "median_ms": 38.38169999994534,
+  "timed_out": false,
+  "plan_hash": "9e83a5a722e338967f0ec4b5d8231968d1a62269",
+  "fetches": 1917.0,
+  "record_reads": 879.0
+ },
+ "job_light_004": {
+  "suite": "job-light",
+  "checksum": "sha1:ee86726b3e7de39665856dc286e9951cb45643ae",
+  "rows": 1,
+  "median_ms": 35.308699999973214,
+  "timed_out": false,
+  "plan_hash": "9e83a5a722e338967f0ec4b5d8231968d1a62269",
+  "fetches": 164.0,
+  "record_reads": 113.0
+ },
+ "job_light_005": {
+  "suite": "job-light",
+  "checksum": "sha1:04bda6a7d4ca126408c47d2246eb76e2cfde915e",
+  "rows": 1,
+  "median_ms": 506.79279999997107,
+  "timed_out": false,
+  "plan_hash": "ef3095cf5168c0fd56a8a6507ec81e009f791459",
+  "fetches": 543156.0,
+  "record_reads": 232232.0
+ },
+ "job_light_006": {
+  "suite": "job-light",
+  "checksum": "sha1:a6d8ec19f5c874d0f59f61a9aa5bcd8e1ab68e6f",
+  "rows": 1,
+  "median_ms": 32621.81039999996,
+  "timed_out": false,
+  "plan_hash": "5b5e94584c1445f509634203644cc8ed04853340",
+  "fetches": 90991492.0,
+  "record_reads": 71730199.0
+ },
+ "job_light_007": {
+  "suite": "job-light",
+  "checksum": "sha1:4288ed6f474a37f8ee7d409f647d5da2dc49314c",
+  "rows": 1,
+  "median_ms": 12523.055200000044,
+  "timed_out": false,
+  "plan_hash": "5b5e94584c1445f509634203644cc8ed04853340",
+  "fetches": 36406175.0,
+  "record_reads": 21038438.0
+ },
+ "job_light_008": {
+  "suite": "job-light",
+  "checksum": "sha1:9bea59d6ee14ca2a2e7e10e4260635c91ab9ed2e",
+  "rows": 1,
+  "median_ms": 54268.77209999998,
+  "timed_out": false,
+  "plan_hash": "5b5e94584c1445f509634203644cc8ed04853340",
+  "fetches": 191446977.0,
+  "record_reads": 166089505.0
+ },
+ "job_light_009": {
+  "suite": "job-light",
+  "checksum": "sha1:8b9352a0b110ed31ccb39c1e34ca789a7796c3a8",
+  "rows": 1,
+  "median_ms": 1762.8697000000102,
+  "timed_out": false,
+  "plan_hash": "5c258d97677d556ad1fe3cacbe3ea125e3049adc",
+  "fetches": 4036143.0,
+  "record_reads": 1770527.0
+ },
+ "job_light_010": {
+  "suite": "job-light",
+  "checksum": "sha1:3c90e714eab8123a037fe460da5bce1d516d7d30",
+  "rows": 1,
+  "median_ms": 1352.309699999978,
+  "timed_out": false,
+  "plan_hash": "5c258d97677d556ad1fe3cacbe3ea125e3049adc",
+  "fetches": 3058241.0,
+  "record_reads": 1099466.0
+ },
+ "job_light_011": {
+  "suite": "job-light",
+  "checksum": "sha1:f0c2dd792df65c4cb5fade6a9ff7d9a8f8c28830",
+  "rows": 1,
+  "median_ms": 2212.4493999999686,
+  "timed_out": false,
+  "plan_hash": "5c258d97677d556ad1fe3cacbe3ea125e3049adc",
+  "fetches": 5699527.0,
+  "record_reads": 2951516.0
+ },
+ "job_light_012": {
+  "suite": "job-light",
+  "checksum": "sha1:13ec8404f078ad84b1b3da9825508ed5b6b6804a",
+  "rows": 1,
+  "median_ms": 6770.535699999982,
+  "timed_out": false,
+  "plan_hash": "5f63d8967e7ebc6b687ce9e633472cb9f6aae2d2",
+  "fetches": 15869696.0,
+  "record_reads": 9003502.0
+ },
+ "job_light_013": {
+  "suite": "job-light",
+  "checksum": "sha1:27f241544dcd44670c5fed745a8c931a0fb33960",
+  "rows": 1,
+  "median_ms": 4494.1817999999785,
+  "timed_out": false,
+  "plan_hash": "5f63d8967e7ebc6b687ce9e633472cb9f6aae2d2",
+  "fetches": 10304662.0,
+  "record_reads": 4601394.0
+ },
+ "job_light_014": {
+  "suite": "job-light",
+  "checksum": "sha1:e52fcc3142f06edee57893cccde0245691b4d260",
+  "rows": 1,
+  "median_ms": 9438.557500000003,
+  "timed_out": false,
+  "plan_hash": "5f63d8967e7ebc6b687ce9e633472cb9f6aae2d2",
+  "fetches": 23705075.0,
+  "record_reads": 15408286.0
+ },
+ "job_light_015": {
+  "suite": "job-light",
+  "checksum": "sha1:c0448f7b83c22385ca718fa13e42c670fc24bfb4",
+  "rows": 1,
+  "median_ms": 16.344699999990553,
+  "timed_out": false,
+  "plan_hash": "15ddaae35d74c703b6ef6e7c6097930a3718128a",
+  "fetches": 2471.0,
+  "record_reads": 1252.0
+ },
+ "job_light_016": {
+  "suite": "job-light",
+  "checksum": "sha1:1fc014e4315768de48be341b3d7452ff273f37b5",
+  "rows": 1,
+  "median_ms": 8180.308199999899,
+  "timed_out": false,
+  "plan_hash": "60fdd5561713ff2d7edcefda0b098b94d15a6432",
+  "fetches": 23162306.0,
+  "record_reads": 9061081.0
+ },
+ "job_light_017": {
+  "suite": "job-light",
+  "checksum": "sha1:a026b1be74e2b750ac069c27007360f5b6fb66c4",
+  "rows": 1,
+  "median_ms": 16.111399999999776,
+  "timed_out": false,
+  "plan_hash": "15ddaae35d74c703b6ef6e7c6097930a3718128a",
+  "fetches": 114.0,
+  "record_reads": 61.0
+ },
+ "job_light_018": {
+  "suite": "job-light",
+  "checksum": "sha1:c0448f7b83c22385ca718fa13e42c670fc24bfb4",
+  "rows": 1,
+  "median_ms": 21.21199999999135,
+  "timed_out": false,
+  "plan_hash": "15ddaae35d74c703b6ef6e7c6097930a3718128a",
+  "fetches": 2471.0,
+  "record_reads": 1252.0
+ },
+ "job_light_019": {
+  "suite": "job-light",
+  "checksum": "sha1:0bef0774a902dfb8b67e5194f4614b0b13f3ecbd",
+  "rows": 1,
+  "median_ms": 113245.50650000003,
+  "timed_out": false,
+  "plan_hash": "60fdd5561713ff2d7edcefda0b098b94d15a6432",
+  "fetches": 224627104.0,
+  "record_reads": 123230509.0
+ },
+ "job_light_020": {
+  "suite": "job-light",
+  "checksum": "sha1:bd285ea9c0f58a2685526feb62f8d1e783fab52f",
+  "rows": 1,
+  "median_ms": 36050.02730000001,
+  "timed_out": false,
+  "plan_hash": "4333150fc8e5769f39f5462f2b7af6e34f5641bc",
+  "fetches": 12701013.0,
+  "record_reads": 7061699.0
+ },
+ "job_light_021": {
+  "suite": "job-light",
+  "checksum": "sha1:77ce4f1ff0cb28c936d99668948435101f547659",
+  "rows": 1,
+  "median_ms": 5397.7401999998165,
+  "timed_out": false,
+  "plan_hash": "4333150fc8e5769f39f5462f2b7af6e34f5641bc",
+  "fetches": 4158770.0,
+  "record_reads": 3224013.0
+ },
+ "job_light_022": {
+  "suite": "job-light",
+  "checksum": "sha1:8e0eeb0305e4af0b7f1fa6dca8df9b98d1e44924",
+  "rows": 1,
+  "median_ms": 188927.20369999984,
+  "timed_out": false,
+  "plan_hash": "4333150fc8e5769f39f5462f2b7af6e34f5641bc",
+  "fetches": 50567193.0,
+  "record_reads": 23982482.0
+ },
+ "job_light_023": {
+  "suite": "job-light",
+  "checksum": "sha1:88980fcf3c1873f5cdff3c93997a0862bfd94ecf",
+  "rows": 1,
+  "median_ms": 152454.4165,
+  "timed_out": false,
+  "plan_hash": "f37b34f02c1e403e774d3e2431e86e245a9a880a",
+  "fetches": 84720599.0,
+  "record_reads": 28259785.0
+ },
+ "job_light_024": {
+  "suite": "job-light",
+  "checksum": "sha1:b0830d1fe9d0c47486b7f502b6278414be796a5c",
+  "rows": 1,
+  "median_ms": 50094.12399999997,
+  "timed_out": false,
+  "plan_hash": "f37b34f02c1e403e774d3e2431e86e245a9a880a",
+  "fetches": 30230071.0,
+  "record_reads": 9908750.0
+ },
+ "job_light_025": {
+  "suite": "job-light",
+  "checksum": "sha1:ce03c175e4841603e79ce985ec154d1a4176fed0",
+  "rows": 1,
+  "median_ms": 5833.305999999993,
+  "timed_out": false,
+  "plan_hash": "f37b34f02c1e403e774d3e2431e86e245a9a880a",
+  "fetches": 3473409.0,
+  "record_reads": 1347397.0
+ },
+ "job_light_026": {
+  "suite": "job-light",
+  "checksum": "sha1:d5e7993cb345c2d3281c478ff250cc797223859b",
+  "rows": 1,
+  "median_ms": 25841.174599999933,
+  "timed_out": false,
+  "plan_hash": "95847f8599f47500ccdd3be61d9baae87237736d",
+  "fetches": 26087176.0,
+  "record_reads": 14873734.0
+ },
+ "job_light_027": {
+  "suite": "job-light",
+  "checksum": "sha1:281d9af5208b9b73254cbb2b4d39ecd49ccfacb7",
+  "rows": 1,
+  "median_ms": 9020.244999999932,
+  "timed_out": false,
+  "plan_hash": "95847f8599f47500ccdd3be61d9baae87237736d",
+  "fetches": 14540995.0,
+  "record_reads": 11361573.0
+ },
+ "job_light_028": {
+  "suite": "job-light",
+  "checksum": "sha1:4af0e67e4e0463cae6b28e63884ce4d29719b73e",
+  "rows": 1,
+  "median_ms": 180937.42190000013,
+  "timed_out": false,
+  "plan_hash": "f37b34f02c1e403e774d3e2431e86e245a9a880a",
+  "fetches": 101341189.0,
+  "record_reads": 34061410.0
+ },
+ "job_light_029": {
+  "suite": "job-light",
+  "checksum": "sha1:3f70b79025ed21bbdc655359fd5562c1b15c3176",
+  "rows": 1,
+  "median_ms": 150578.48489999992,
+  "timed_out": false,
+  "plan_hash": "f37b34f02c1e403e774d3e2431e86e245a9a880a",
+  "fetches": 84563069.0,
+  "record_reads": 28214601.0
+ },
+ "job_light_030": {
+  "suite": "job-light",
+  "checksum": "sha1:40d644394fb928449feb56f2f4ad2730155d51d1",
+  "rows": 1,
+  "median_ms": 162296.3073999997,
+  "timed_out": false,
+  "plan_hash": "43c6972080b78c73cbcd470274fadeab35c02df0",
+  "fetches": 117349467.0,
+  "record_reads": 62183668.0
+ },
+ "job_light_031": {
+  "suite": "job-light",
+  "checksum": "sha1:434b4a64ccd7108583b2f34c0e8ead751ffd7886",
+  "rows": 1,
+  "median_ms": 199.761700000181,
+  "timed_out": false,
+  "plan_hash": "ef3095cf5168c0fd56a8a6507ec81e009f791459",
+  "fetches": 112388.0,
+  "record_reads": 46196.0
+ },
+ "job_light_032": {
+  "suite": "job-light",
+  "checksum": "sha1:9d6be67b379c99116b1052b8d4e9351cdc36aef2",
+  "rows": 1,
+  "median_ms": 193.6879999998382,
+  "timed_out": false,
+  "plan_hash": "ef3095cf5168c0fd56a8a6507ec81e009f791459",
+  "fetches": 154273.0,
+  "record_reads": 69911.0
+ },
+ "job_light_033": {
+  "suite": "job-light",
+  "checksum": "sha1:16ec88c9531668171099a99bb14b6004b5c88593",
+  "rows": 1,
+  "median_ms": 15125.579700000344,
+  "timed_out": false,
+  "plan_hash": "def61c7980c9a0998a5185cf4016bc45d0e94b1b",
+  "fetches": 52752586.0,
+  "record_reads": 36557395.0
+ },
+ "job_light_034": {
+  "suite": "job-light",
+  "checksum": "sha1:8c135d114df9c3e4a4d1b21a4e03a27b8a8fe8da",
+  "rows": 1,
+  "median_ms": 3912.0512999998027,
+  "timed_out": false,
+  "plan_hash": "d2c2aef13646b2ad8a92404381bd42c776246ab2",
+  "fetches": 9563369.0,
+  "record_reads": 3785055.0
+ },
+ "job_light_035": {
+  "suite": "job-light",
+  "checksum": "sha1:9a195fa80bdc9b5ec8a3ea0c0a8e1c430f92f8dc",
+  "rows": 1,
+  "median_ms": 3364.943399999902,
+  "timed_out": false,
+  "plan_hash": "d2c2aef13646b2ad8a92404381bd42c776246ab2",
+  "fetches": 1620651.0,
+  "record_reads": 604091.0
+ },
+ "job_light_036": {
+  "suite": "job-light",
+  "checksum": "sha1:6c90b5c7f31d8c23a862daf68abc7d6c6312e5a8",
+  "rows": 1,
+  "median_ms": 4810.350300000209,
+  "timed_out": false,
+  "plan_hash": "d2c2aef13646b2ad8a92404381bd42c776246ab2",
+  "fetches": 11319170.0,
+  "record_reads": 4555884.0
+ },
+ "job_light_037": {
+  "suite": "job-light",
+  "checksum": "sha1:27fc5ae7c7ab8f94e902fed8e362bc671378cbbe",
+  "rows": 1,
+  "median_ms": 11079.421000000366,
+  "timed_out": false,
+  "plan_hash": "d2c2aef13646b2ad8a92404381bd42c776246ab2",
+  "fetches": 29713699.0,
+  "record_reads": 15232682.0
+ },
+ "job_light_038": {
+  "suite": "job-light",
+  "checksum": "sha1:5eaf6a85b76fa419a8bf7785071fa99997f38522",
+  "rows": 1,
+  "median_ms": 1046.9143999998778,
+  "timed_out": false,
+  "plan_hash": "dc7cd6618915ebb8ec57620a4301082fc8b28f1f",
+  "fetches": 2687907.0,
+  "record_reads": 2598891.0
+ },
+ "job_light_039": {
+  "suite": "job-light",
+  "checksum": "sha1:2f42ca65eae2a2a4b10af70a91fc19055be9d08a",
+  "rows": 1,
+  "median_ms": 4938.485899999705,
+  "timed_out": false,
+  "plan_hash": "10461727533c9c90b0b90caf5c8d7712acf3dd42",
+  "fetches": 12262141.0,
+  "record_reads": 6353894.0
+ },
+ "job_light_040": {
+  "suite": "job-light",
+  "checksum": "sha1:29959f3a830c73bd423497235ac2ea9c25e09142",
+  "rows": 1,
+  "median_ms": 4115.655399999923,
+  "timed_out": false,
+  "plan_hash": "10461727533c9c90b0b90caf5c8d7712acf3dd42",
+  "fetches": 9723678.0,
+  "record_reads": 4154410.0
+ },
+ "job_light_041": {
+  "suite": "job-light",
+  "checksum": "sha1:89a285a0a98e3a7a057cde12561d99bc93130111",
+  "rows": 1,
+  "median_ms": 137939.70089999994,
+  "timed_out": false,
+  "plan_hash": "e9cb83f78eb221d432804aa3bd5adcfe620cef07",
+  "fetches": 561959749.0,
+  "record_reads": 525270735.0
+ },
+ "job_light_042": {
+  "suite": "job-light",
+  "checksum": "sha1:38b08474346fc05bb22d8ea6b5fbd2b2e35dd534",
+  "rows": 1,
+  "median_ms": 58439.57930000033,
+  "timed_out": false,
+  "plan_hash": "e9cb83f78eb221d432804aa3bd5adcfe620cef07",
+  "fetches": 236413101.0,
+  "record_reads": 215409942.0
+ },
+ "job_light_043": {
+  "suite": "job-light",
+  "checksum": "sha1:241c3d64f894d4ae3ebb4d6150ba3a36cd72b7ed",
+  "rows": 1,
+  "median_ms": 164646.6627,
+  "timed_out": false,
+  "plan_hash": "e9cb83f78eb221d432804aa3bd5adcfe620cef07",
+  "fetches": 682286370.0,
+  "record_reads": 639570054.0
+ },
+ "job_light_044": {
+  "suite": "job-light",
+  "checksum": "sha1:9b89ac858e71f61584ac87c2fb2900e301ec2089",
+  "rows": 1,
+  "median_ms": 11952.479099999891,
+  "timed_out": false,
+  "plan_hash": "77968ca0ceb187e6449aca831cbf1c1f3e0d95ed",
+  "fetches": 14340193.0,
+  "record_reads": 8029158.0
+ },
+ "job_light_045": {
+  "suite": "job-light",
+  "checksum": "sha1:5834036ccd99a0f1c811110359046c2db49178cc",
+  "rows": 1,
+  "median_ms": 18161.84790000034,
+  "timed_out": false,
+  "plan_hash": "62c038a1e93c1d8c39f5a18701dd2e7eabdb8bc2",
+  "fetches": 4980351.0,
+  "record_reads": 2534772.0
+ },
+ "job_light_046": {
+  "suite": "job-light",
+  "checksum": "sha1:e135fd40016914061b995ed39fd9cd231f216b9f",
+  "rows": 1,
+  "median_ms": 19020.096000000194,
+  "timed_out": false,
+  "plan_hash": "62c038a1e93c1d8c39f5a18701dd2e7eabdb8bc2",
+  "fetches": 14291170.0,
+  "record_reads": 6463849.0
+ },
+ "job_light_047": {
+  "suite": "job-light",
+  "checksum": "sha1:3bced5ca9c0a387bf4824322ccbeb08070fb83a4",
+  "rows": 1,
+  "median_ms": 83841.62500000003,
+  "timed_out": false,
+  "plan_hash": "62c038a1e93c1d8c39f5a18701dd2e7eabdb8bc2",
+  "fetches": 38664536.0,
+  "record_reads": 19989664.0
+ },
+ "job_light_048": {
+  "suite": "job-light",
+  "checksum": "sha1:332ec8824e3bb560c2b5be46eab3f50ab02f5cb2",
+  "rows": 1,
+  "median_ms": 113951.1977000002,
+  "timed_out": false,
+  "plan_hash": "fb8c1150a6785aabecb51bf8dbac57c66541f8f3",
+  "fetches": 367709066.0,
+  "record_reads": 192469169.0
+ },
+ "job_light_049": {
+  "suite": "job-light",
+  "checksum": null,
+  "rows": null,
+  "median_ms": null,
+  "timed_out": true,
+  "plan_hash": "fb8c1150a6785aabecb51bf8dbac57c66541f8f3",
+  "fetches": null,
+  "record_reads": 0.0
+ },
+ "job_light_050": {
+  "suite": "job-light",
+  "checksum": null,
+  "rows": null,
+  "median_ms": null,
+  "timed_out": true,
+  "plan_hash": "fb8c1150a6785aabecb51bf8dbac57c66541f8f3",
+  "fetches": null,
+  "record_reads": 0.0
+ },
+ "job_light_051": {
+  "suite": "job-light",
+  "checksum": "sha1:1d8a1af2bd235fa859442ab824c96a782d54d377",
+  "rows": 1,
+  "median_ms": 119876.7542999999,
+  "timed_out": false,
+  "plan_hash": "0a220b15f556d750f1cf096935ba2fb21d9ca65f",
+  "fetches": 316399055.0,
+  "record_reads": 154185900.0
+ },
+ "job_light_052": {
+  "suite": "job-light",
+  "checksum": "sha1:1a0dfaa735186c5306747efcd022a2553381f6aa",
+  "rows": 1,
+  "median_ms": 62980.57410000001,
+  "timed_out": false,
+  "plan_hash": "0a220b15f556d750f1cf096935ba2fb21d9ca65f",
+  "fetches": 158077973.0,
+  "record_reads": 85933158.0
+ },
+ "job_light_053": {
+  "suite": "job-light",
+  "checksum": "sha1:3a47f44d343affb1a70b98fa0555f910c1a5e251",
+  "rows": 1,
+  "median_ms": 461.9394999999713,
+  "timed_out": false,
+  "plan_hash": "c1176e0ebadd2627c75acfb20d87a0944bcded6e",
+  "fetches": 497594.0,
+  "record_reads": 379670.0
+ },
+ "job_light_054": {
+  "suite": "job-light",
+  "checksum": "sha1:68f1d09e12b3589ec17633f952d7b9f7862a8a19",
+  "rows": 1,
+  "median_ms": 342.45919999966645,
+  "timed_out": false,
+  "plan_hash": "c1176e0ebadd2627c75acfb20d87a0944bcded6e",
+  "fetches": 422693.0,
+  "record_reads": 340846.0
+ },
+ "job_light_055": {
+  "suite": "job-light",
+  "checksum": "sha1:31b67ab35c272d5ad75ff8b4ac7703662e724be8",
+  "rows": 1,
+  "median_ms": 689.9162999998225,
+  "timed_out": false,
+  "plan_hash": "c1176e0ebadd2627c75acfb20d87a0944bcded6e",
+  "fetches": 867941.0,
+  "record_reads": 718434.0
+ },
+ "job_light_056": {
+  "suite": "job-light",
+  "checksum": "sha1:ccd1118ededacc491780d85cbac6a31bd0191ada",
+  "rows": 1,
+  "median_ms": 7368.280499999855,
+  "timed_out": false,
+  "plan_hash": "781efdf9d2ec8e78b7236b01ad349f4157e8d24c",
+  "fetches": 18838439.0,
+  "record_reads": 11880059.0
+ },
+ "job_light_057": {
+  "suite": "job-light",
+  "checksum": "sha1:2f0eeda2f725a9ede7aa9179719366367ae1c587",
+  "rows": 1,
+  "median_ms": 6110.266599999704,
+  "timed_out": false,
+  "plan_hash": "781efdf9d2ec8e78b7236b01ad349f4157e8d24c",
+  "fetches": 15069881.0,
+  "record_reads": 8545770.0
+ },
+ "job_light_058": {
+  "suite": "job-light",
+  "checksum": null,
+  "rows": null,
+  "median_ms": null,
+  "timed_out": true,
+  "plan_hash": "78ea04778f3c8b24bdeeaff20405ec636a6187bf",
+  "fetches": null,
+  "record_reads": 0.0
+ },
+ "job_light_059": {
+  "suite": "job-light",
+  "checksum": "sha1:b61505fd4a076fef444406f48eaceb68e0d84ad4",
+  "rows": 1,
+  "median_ms": 1944.0009999998438,
+  "timed_out": false,
+  "plan_hash": "b5f87d14e7257f81ee915375a5888308af15e7f6",
+  "fetches": 6016829.0,
+  "record_reads": 3098315.0
+ },
+ "job_light_060": {
+  "suite": "job-light",
+  "checksum": null,
+  "rows": null,
+  "median_ms": null,
+  "timed_out": true,
+  "plan_hash": "78ea04778f3c8b24bdeeaff20405ec636a6187bf",
+  "fetches": null,
+  "record_reads": 0.0
+ },
+ "job_light_061": {
+  "suite": "job-light",
+  "checksum": null,
+  "rows": null,
+  "median_ms": null,
+  "timed_out": true,
+  "plan_hash": "5e99e059643ccfcf8eb463284658127a9245335d",
+  "fetches": null,
+  "record_reads": 0.0
+ },
+ "job_light_062": {
+  "suite": "job-light",
+  "checksum": "sha1:b74a85a013e3188b61caa935dd39238e2dbed905",
+  "rows": 1,
+  "median_ms": 29454.994599999736,
+  "timed_out": false,
+  "plan_hash": "5e99e059643ccfcf8eb463284658127a9245335d",
+  "fetches": 101387097.0,
+  "record_reads": 36190103.0
+ },
+ "job_light_063": {
+  "suite": "job-light",
+  "checksum": "sha1:d991d89de602efb01aa603c438911f0f6ce25f61",
+  "rows": 1,
+  "median_ms": 60074.19730000038,
+  "timed_out": false,
+  "plan_hash": "cf01ea84ae5bcb601b1aa2e463019f7e27a839bc",
+  "fetches": 153603677.0,
+  "record_reads": 83515226.0
+ },
+ "job_light_064": {
+  "suite": "job-light",
+  "checksum": "sha1:77d15cccaf43df7ebff9edbc2d0a5d29d8f0de65",
+  "rows": 1,
+  "median_ms": 38707.57370000047,
+  "timed_out": false,
+  "plan_hash": "cf01ea84ae5bcb601b1aa2e463019f7e27a839bc",
+  "fetches": 97260137.0,
+  "record_reads": 52952969.0
+ },
+ "job_light_065": {
+  "suite": "job-light",
+  "checksum": "sha1:0d2d8207f3d2e7643ed8009c8772d9d5ee7ffffe",
+  "rows": 1,
+  "median_ms": 182.41409999973257,
+  "timed_out": false,
+  "plan_hash": "c1176e0ebadd2627c75acfb20d87a0944bcded6e",
+  "fetches": 92559.0,
+  "record_reads": 41303.0
+ },
+ "job_light_066": {
+  "suite": "job-light",
+  "checksum": "sha1:a60cc27117a3ee36f260c1457e738e2898d5683b",
+  "rows": 1,
+  "median_ms": 15339.238999999907,
+  "timed_out": false,
+  "plan_hash": "781efdf9d2ec8e78b7236b01ad349f4157e8d24c",
+  "fetches": 40517322.0,
+  "record_reads": 31024375.0
+ },
+ "job_light_067": {
+  "suite": "job-light",
+  "checksum": "sha1:bb3b087be6e1663f3ab06fd0e12acfce3d02cb47",
+  "rows": 1,
+  "median_ms": 10805.931800000508,
+  "timed_out": false,
+  "plan_hash": "781efdf9d2ec8e78b7236b01ad349f4157e8d24c",
+  "fetches": 27839433.0,
+  "record_reads": 19737955.0
+ },
+ "job_light_068": {
+  "suite": "job-light",
+  "checksum": "sha1:3139aac7e1f9787854a534d583414bcf57f4b223",
+  "rows": 1,
+  "median_ms": 6887.261999999282,
+  "timed_out": false,
+  "plan_hash": "63c6f7f9a1e3b3dcc48d1822bb8e16a084bff494",
+  "fetches": 27416329.0,
+  "record_reads": 14298819.0
+ },
+ "job_light_069": {
+  "suite": "job-light",
+  "checksum": "sha1:1e5ee34bfb7f62826a15340c14e727fbc869539c",
+  "rows": 1,
+  "median_ms": 1953.548999999839,
+  "timed_out": false,
+  "plan_hash": "63c6f7f9a1e3b3dcc48d1822bb8e16a084bff494",
+  "fetches": 7582274.0,
+  "record_reads": 3963765.0
+ },
+ "job_light_070": {
+  "suite": "job-light",
+  "checksum": "sha1:f0cccf8a4e43c5edc297f4c76304469101d1953e",
+  "rows": 1,
+  "median_ms": 184602.66070000036,
+  "timed_out": false,
+  "plan_hash": "5e99e059643ccfcf8eb463284658127a9245335d",
+  "fetches": 489192496.0,
+  "record_reads": 264825288.0
+ }
+}

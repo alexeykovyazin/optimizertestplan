@@ -3,8 +3,9 @@
 # (2) если есть python-процесс hash_supervisor/hash_imdb_ab — всё здорово;
 # (3) иначе запустить супервизор заново (он сам резюмится по CSV).
 $Log = 'E:\results\hash_watchdog2.log'
-$Csv = 'E:\results\hash_imdb_ab3.csv'
-$Expected = 239
+$Csv = 'E:\results\joblight_full_1027.csv'
+$Exp = 'E:\fbdata\expected_joblight70.json'
+$Expected = 70
 $Py = 'C:\Users\ak\AppData\Local\Programs\Python\Python313\python.exe'
 
 function Log($m) {
@@ -39,7 +40,8 @@ if ($procs.Count -gt 0) {
 Log "RESTART: процесс раннера не найден, done=$done/$Expected - стартую супервизор"
 $env:FB_CLIENT_DIR = 'C:\HQbird\Firebird50'
 $p = Start-Process -FilePath $Py `
-    -ArgumentList '-u', 'E:\fbdata\hash_supervisor.py', '--out', $Csv `
+    -ArgumentList '-u', 'E:\fbdata\hash_supervisor.py', '--out', $Csv, `
+        '--expected', $Exp `
     -WorkingDirectory 'E:\fbdata' -WindowStyle Hidden `
     -RedirectStandardOutput 'E:\results\hash_run_watchdog.log' `
     -RedirectStandardError 'E:\results\hash_run_watchdog.err.log' `
