@@ -1,9 +1,25 @@
 # JOB-light: детальный разбор ключевых запросов (прогон 27.10.2026)
 
 Сравнение: бейслин 8e23f5f87eea (HQbird 5.0.5 @3055, кеш 2048 стр./256M temp)
-vs прогон 27.10 (v5.0-impr-opt f54cbf8fac @3056, 19 многоколоночных статистик,
+vs прогон 27.10 (v5.0-impr-opt f54cbf8fac @3056, флаги корреляции/статистик = true,
 кеш 50000 стр./2000M temp). Протокол обоих: warmup+1 замер.
-Планы: детальные (prepare-фаза). Чексуммы COUNT(*) стабильны.
+Чексуммы COUNT(*) стабильны.
+
+## Все созданные многоколоночные статистики (19, хранилище STAT$MULTI_COLUMNS)
+
+**26.10 — скрипт разработчика (CEB-словари):** KIND_TYPE(ID, KIND), ROLE_TYPE(ID, ROLE),
+INFO_TYPE(ID, INFO), LINK_TYPE(ID, LINK), COMPANY_TYPE(ID, KIND), COMP_CAST_TYPE(ID, KIND).
+
+**27.10 — по рекомендациям анализа JOB/job-light:** TITLE(ID, PRODUCTION_YEAR),
+TITLE(KIND_ID, PRODUCTION_YEAR), TITLE(ID, KIND_ID), KEYWORD(ID, KEYWORD),
+COMPANY_NAME(ID, COUNTRY_CODE), NAME(ID, GENDER), NAME(ID, NAME_PCODE_CF),
+CHAR_NAME(ID, NAME), MOVIE_INFO(MOVIE_ID, INFO_TYPE_ID), MOVIE_INFO_IDX(MOVIE_ID, INFO_TYPE_ID),
+MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID), CAST_INFO(MOVIE_ID, ROLE_ID),
+MOVIE_KEYWORD(MOVIE_ID, KEYWORD_ID).
+Движок хранит пары в своём порядке (часто обратном записи); почти-уникальные пары
+(COMPANY_NAME ID×COUNTRY_CODE, KEYWORD ID×KEYWORD) собрались с entries=0 —
+ценообразование через гистограмму без MCV. Для запросов ниже значимы пары
+типа (MOVIE_ID, *_ID): join по MOVIE_ID + равенство по типовой колонке.
 
 ## job_light_049
 
@@ -15,8 +31,15 @@ SELECT COUNT(*) FROM title t,movie_info mi,movie_companies mc,cast_info ci WHERE
 |---|---|---|
 | время | таймаут >300 с | 89.9 с |
 | отношение к бейслину | — | — |
-| строк/чексумма | — | 1 / sha1:0b9afddbea205d3… (FINISHED-WAS-TIMEOUT) |
-| fetches/reads | — | — |
+| строк/чексумма | — (таймаут) | 1 / sha1:0b9afddbea205d3… (FINISHED-WAS-TIMEOUT) |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_INFO(MOVIE_ID, INFO_TYPE_ID) [27.10, P3] — **задета фильтром запроса (INFO_TYPE_ID)**
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3] — **задета фильтром запроса (ROLE_ID)**
 
 **План бейслина (плоский):** `PLAN JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CI INDEX (MOVIE_ID_CAST_INFO))`
 
@@ -69,6 +92,8 @@ Select Expression
                                 -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** таймаут NL по индексам → Batch Hash Join + 2×Hash Join (BHJ) — 89.9 с, верный результат
+
 ---
 
 ## job_light_050
@@ -81,8 +106,15 @@ SELECT COUNT(*) FROM title t,movie_info mi,movie_companies mc,cast_info ci WHERE
 |---|---|---|
 | время | таймаут >300 с | 56.32 с |
 | отношение к бейслину | — | — |
-| строк/чексумма | — | 1 / sha1:e8d329a2a979398… (FINISHED-WAS-TIMEOUT) |
-| fetches/reads | — | — |
+| строк/чексумма | — (таймаут) | 1 / sha1:e8d329a2a979398… (FINISHED-WAS-TIMEOUT) |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_INFO(MOVIE_ID, INFO_TYPE_ID) [27.10, P3] — **задета фильтром запроса (INFO_TYPE_ID)**
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3] — **задета фильтром запроса (ROLE_ID)**
 
 **План бейслина (плоский):** `PLAN JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CI INDEX (MOVIE_ID_CAST_INFO))`
 
@@ -138,6 +170,8 @@ Select Expression
                                 -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** таймаут NL → BHJ + Hash Join + NL — завершён, верный результат
+
 ---
 
 ## job_light_041
@@ -151,7 +185,14 @@ SELECT COUNT(*) FROM title t,movie_info mi,movie_companies mc,movie_keyword mk W
 | время | 137.9 с | 239.0 с |
 | отношение к бейслину | — | 1.73 |
 | строк/чексумма | 1 / sha1:89a285a0a98e3a7… | 1 / sha1:89a285a0a98e3a7… (match) |
-| fetches/reads | 561 959 749 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_INFO(MOVIE_ID, INFO_TYPE_ID) [27.10, P3] — **задета фильтром запроса (INFO_TYPE_ID)**
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- MOVIE_KEYWORD(MOVIE_ID, KEYWORD_ID) [27.10, P3]
 
 **План бейслина (плоский):** `PLAN JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MK INDEX (MOVIE_ID_MOVIE_KEYWORD))`
 
@@ -201,6 +242,8 @@ Select Expression
                                 -> Index "INFO_TYPE_ID_MOVIE_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** индексный NL → 3×Hash Join с фулсканами — медленнее бейслина в 1.73 раза (регресс плана; «монстр» только в пробе 26.10 из-за холодного кеша и сторожа 180 с)
+
 ---
 
 ## job_light_035
@@ -214,7 +257,14 @@ SELECT COUNT(*) FROM title t,movie_info mi,movie_info_idx mi_idx,movie_companies
 | время | 3.36 с | 0.10 с |
 | отношение к бейслину | — | 0.03 |
 | строк/чексумма | 1 / sha1:9a195fa80bdc9b5… | 1 / sha1:9a195fa80bdc9b5… (match) |
-| fetches/reads | 1 620 651 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_INFO(MOVIE_ID, INFO_TYPE_ID) [27.10, P3] — **задета фильтром запроса (INFO_TYPE_ID)**
+- MOVIE_INFO_IDX(MOVIE_ID, INFO_TYPE_ID) [27.10, P3] — **задета фильтром запроса (INFO_TYPE_ID)**
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
 
 **План бейслина (плоский):** `PLAN HASH (JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX))`
 
@@ -269,6 +319,8 @@ Select Expression
                         -> Index "MOVIE_ID_MOVIE_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** Hash Join+NL → чистый NL — ×0.03 (3.36 с → 0.10 с)
+
 ---
 
 ## job_light_023
@@ -282,7 +334,13 @@ SELECT COUNT(*) FROM cast_info ci,title t,movie_companies mc WHERE t.id=ci.movie
 | время | 152.5 с | 12.49 с |
 | отношение к бейслину | — | 0.08 |
 | строк/чексумма | 1 / sha1:88980fcf3c1873f… | 1 / sha1:88980fcf3c1873f… (match) |
-| fetches/reads | 84 720 599 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3] — **задета фильтром запроса (ROLE_ID)**
 
 **План бейслина (плоский):** `PLAN JOIN (CI INDEX (ROLE_ID_CAST_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES))`
 
@@ -325,6 +383,8 @@ Select Expression
                                 -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** NL → BHJ + Hash Join — ×0.08
+
 ---
 
 ## job_light_016
@@ -338,7 +398,13 @@ SELECT COUNT(*) FROM movie_keyword mk,title t,cast_info ci WHERE t.id=mk.movie_i
 | время | 8.18 с | 0.87 с |
 | отношение к бейслину | — | 0.11 |
 | строк/чексумма | 1 / sha1:1fc014e4315768d… | 1 / sha1:1fc014e4315768d… (match) |
-| fetches/reads | 23 162 306 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(ID, KIND_ID) [27.10, P1]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3]
+- MOVIE_KEYWORD(MOVIE_ID, KEYWORD_ID) [27.10, P3]
 
 **План бейслина (плоский):** `PLAN JOIN (MK NATURAL, T INDEX (TITLE_PK), CI INDEX (MOVIE_ID_CAST_INFO))`
 
@@ -377,6 +443,8 @@ Select Expression
                         -> Index "MOVIE_ID_CAST_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** NL → NL (план того же класса) — ×0.11, выигрыш от среды/исполнения
+
 ---
 
 ## job_light_024
@@ -390,7 +458,13 @@ SELECT COUNT(*) FROM cast_info ci,title t,movie_companies mc WHERE t.id=ci.movie
 | время | 50.09 с | 5.84 с |
 | отношение к бейслину | — | 0.12 |
 | строк/чексумма | 1 / sha1:b0830d1fe9d0c47… | 1 / sha1:b0830d1fe9d0c47… (match) |
-| fetches/reads | 30 230 071 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1]
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3] — **задета фильтром запроса (ROLE_ID)**
 
 **План бейслина (плоский):** `PLAN JOIN (CI INDEX (ROLE_ID_CAST_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES))`
 
@@ -432,6 +506,8 @@ Select Expression
                                 -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** NL → 2×Hash Join — ×0.12
+
 ---
 
 ## job_light_029
@@ -445,7 +521,13 @@ SELECT COUNT(*) FROM title t,cast_info ci,movie_companies mc WHERE t.id=mc.movie
 | время | 150.6 с | 18.62 с |
 | отношение к бейслину | — | 0.12 |
 | строк/чексумма | 1 / sha1:3f70b79025ed21b… | 1 / sha1:3f70b79025ed21b… (match) |
-| fetches/reads | 84 563 069 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3] — **задета фильтром запроса (ROLE_ID)**
 
 **План бейслина (плоский):** `PLAN JOIN (CI INDEX (ROLE_ID_CAST_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES))`
 
@@ -487,6 +569,8 @@ Select Expression
                         -> Index "MOVIE_ID_CAST_INFO" Range Scan (full match)
 ```
 
+**Комментарий:** NL → NL — ×0.12
+
 ---
 
 ## job_light_048
@@ -500,7 +584,14 @@ SELECT COUNT(*) FROM title t,movie_info mi,movie_companies mc,cast_info ci WHERE
 | время | 114.0 с | 18.59 с |
 | отношение к бейслину | — | 0.16 |
 | строк/чексумма | 1 / sha1:332ec8824e3bb56… | 1 / sha1:332ec8824e3bb56… (match) |
-| fetches/reads | 367 709 066 | — |
+
+**Многоколоночные статистики для таблиц запроса:**
+- TITLE(ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(KIND_ID, PRODUCTION_YEAR) [27.10, P1] — **задета фильтром запроса (PRODUCTION_YEAR)**
+- TITLE(ID, KIND_ID) [27.10, P1]
+- MOVIE_INFO(MOVIE_ID, INFO_TYPE_ID) [27.10, P3] — **задета фильтром запроса (INFO_TYPE_ID)**
+- MOVIE_COMPANIES(MOVIE_ID, COMPANY_TYPE_ID) [27.10, P3]
+- CAST_INFO(MOVIE_ID, ROLE_ID) [27.10, P3] — **задета фильтром запроса (ROLE_ID)**
 
 **План бейслина (плоский):** `PLAN JOIN (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (TITLE_PK), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CI INDEX (MOVIE_ID_CAST_INFO))`
 
@@ -553,6 +644,8 @@ Select Expression
                             -> Bitmap
                                 -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
 ```
+
+**Комментарий:** NL → BHJ + NL — ×0.16
 
 ---
 
