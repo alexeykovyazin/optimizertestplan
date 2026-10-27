@@ -23,3 +23,5 @@ bench/datasets/dsb/sf1_csv/*.dat
 !results/joblight_full_1027
 # кандидаты многоколоночных статистик JOB/job-light (анализ + DDL + проба)
 !results/ext_stats_job
+# ceb-imdb-regen прогон 4 (27.10, 23 структуры + новый кеш)
+!results/ceb_full_1027
