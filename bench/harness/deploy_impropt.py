@@ -66,7 +66,9 @@ lines = open(conf, encoding="utf-8", errors="replace").read().splitlines()
 for want in ("RemoteServicePort = 3056", "ServerMode = Super",
              "DefaultDbCachePages = 50000", "LockMemSize = 20M",
              "LockHashSlots = 40099", "TempCacheLimit = 2000M",
-             "InlineSortThreshold = 16384"):
+             "InlineSortThreshold = 16384",
+             "ShowExplainCardinality = true", "PredicateCorrelation = true",
+             "ExtendedStatistics = true", "SubQueryConversion = true"):
     key = want.split(" = ")[0]
     if not any(re.match(rf"^\s*{key}\s*=", ln, re.I) for ln in lines):
         lines.append(want)

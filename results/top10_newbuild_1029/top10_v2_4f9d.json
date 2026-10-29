@@ -1,0 +1,14 @@
+{
+ "ceb_9a_010": {
+  "suite": "ceb-imdb-regen",
+  "plan": "PLAN SORT (HASH (JOIN (HASH (JOIN (HASH (JOIN (IT2 INDEX (INFO_TYPE_PK), PI INDEX (INFO_TYPE_ID_PERSON_INFO), N INDEX (NAME_PK), CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI1 INDEX (MOVIE_ID_MOVIE_INFO)), IT1 INDEX (INFO_TYPE_PK)))",
+  "dplan": "Select Expression -> Aggregate (rows=1.00) -> Sort (record length: 460, key length: 36) (rows=566.00) -> Filter (rows=566.00) -> Hash Join (inner) (rows=566.00) -> Nested Loop Join (inner) (rows=63958.49) -> Hash Join (inner) (rows=118154.35) -> Nested Loop Join (inner) (rows=137846.74) -> Hash Join (inner) (rows=137846.74) -> Nested Loop Join (inner) (rows=330832.18) -> Filter (rows=1.00) -> Table \"INFO_TYPE\" as \"IT2\" Access By ID (rows=1.00) -> Bitmap -> Index \"INFO_TYPE_PK\" Unique Scan -> Filter (rows=36947.01) -> Table \"PERSON_INFO\" as \"PI\" Access By ID (rows=73894.02) -> Bitmap -> Index \"INFO_TYPE_ID_PERSON_INFO\" Range Scan (full match) -> Filter (rows=1.00) -> Table \"NAME\" as \"N\" Access By ID (rows=1.00) -> Bitmap -> Index \"NAME_PK\" Unique Scan -> Filter (rows=8.95) -> Table \"CAST_INFO\" as \"CI\" Access By ID (rows=8.95) -> Bitmap -> Index \"PERSON_ID_CAST_INFO\" Range Scan (full match) -> Record Buffer (record length: 161) (rows=5.00) -> Filter (rows=5.00) -> Table \"ROLE_TYPE\" as \"RT\" Full Scan (rows=12.00) -> Filter (rows=1.00) -> Table \"TITLE\" as \"T\" Access By ID (rows=1.00) -> Bitmap -> Index \"TITLE_PK\" Unique Scan -> Record Buffer (record length: 89) (rows=6.00) -> Filter (rows=6.00) -> Table \"KIND_TYPE\" as \"KT\" Full Scan (rows=7.00) -> Filter (rows=0.54) -> Table \"MOVIE_INFO\" as \"MI1\" Access By ID (rows=5.99) -> Bitmap -> Index \"MOVIE_ID_MOVIE_INFO\" Range Scan (full match) -> Record Buffer (record length: 25) (rows=1.00) -> Filter (rows=1.00) -> Table \"INFO_TYPE\" as \"IT1\" Access By ID (rows=1.00) -> Bitmap -> Index \"INFO_TYPE_PK\" Unique Scan",
+  "reps": [
+   {
+    "ms": 240790.6,
+    "rows": 19031
+   }
+  ],
+  "ms": 240790.6
+ }
+}

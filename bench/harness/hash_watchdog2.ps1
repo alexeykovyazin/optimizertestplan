@@ -3,9 +3,9 @@
 # (2) если есть python-процесс hash_supervisor/hash_imdb_ab — всё здорово;
 # (3) иначе запустить супервизор заново (он сам резюмится по CSV).
 $Log = 'E:\results\hash_watchdog2.log'
-$Csv = 'E:\results\joblight_full_1027.csv'
-$Exp = 'E:\fbdata\expected_joblight70.json'
-$Expected = 70
+$Csv = 'E:\results\ceb_full_1027.csv'
+$Exp = 'E:\fbdata\expected_ceb121.json'
+$Expected = 121
 $Py = 'C:\Users\ak\AppData\Local\Programs\Python\Python313\python.exe'
 
 function Log($m) {

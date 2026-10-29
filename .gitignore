@@ -25,3 +25,5 @@ bench/datasets/dsb/sf1_csv/*.dat
 !results/ext_stats_job
 # ceb-imdb-regen прогон 4 (27.10, 23 структуры + новый кеш)
 !results/ceb_full_1027
+# топ-10 Hash Join на сборке 4f9d7abdd6 (29.10, ценовая модель)
+!results/top10_newbuild_1029
