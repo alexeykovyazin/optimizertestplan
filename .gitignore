@@ -27,3 +27,5 @@ bench/datasets/dsb/sf1_csv/*.dat
 !results/ceb_full_1027
 # топ-10 Hash Join на сборке 4f9d7abdd6 (29.10, ценовая модель)
 !results/top10_newbuild_1029
+# прогон 5 ceb-imdb-regen на da654eb492 (02.11, калибровка цен страниц/хэша)
+!results/ceb_full_1102
