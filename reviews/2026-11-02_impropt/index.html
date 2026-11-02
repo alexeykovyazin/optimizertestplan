@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ревью оптимизатора impr-opt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@600&display=swap">
+<style>
+/* Layout: one reading column; summary and numbers first, then findings as hairline-separated rows, then the staged plan */
+:root {
+  --bg: #F2F5F6;
+  --surface: #FFFFFF;
+  --fg: #172126;
+  --muted: #55646D;
+  --line: #D5DDE1;
+  --accent: #0B6A87;
+  --accent-soft: #E0EDF2;
+  --crit: #B3261E;  --crit-bg: #FBE8E6;
+  --high: #B4511A;  --high-bg: #FCEEE3;
+  --med: #86690A;   --med-bg: #F7F0D6;
+  --low: #4D6876;   --low-bg: #E7EDF0;
+  --ok: #1D7347;    --ok-bg: #E2F2E9;
+  --f-display: "Unbounded", "Golos Text", system-ui, sans-serif;
+  --f-body: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1518; --surface: #161E22; --fg: #E1E8EB; --muted: #93A3AC; --line: #29353B;
+    --accent: #5DB7D5; --accent-soft: #15303A;
+    --crit: #F2786E; --crit-bg: #3A1A18;
+    --high: #F09B60; --high-bg: #3A2415;
+    --med: #DCBD5B;  --med-bg: #332B10;
+    --low: #9CB2BE;  --low-bg: #1E2A30;
+    --ok: #63C793;   --ok-bg: #15301F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1518; --surface: #161E22; --fg: #E1E8EB; --muted: #93A3AC; --line: #29353B;
+  --accent: #5DB7D5; --accent-soft: #15303A;
+  --crit: #F2786E; --crit-bg: #3A1A18;
+  --high: #F09B60; --high-bg: #3A2415;
+  --med: #DCBD5B;  --med-bg: #332B10;
+  --low: #9CB2BE;  --low-bg: #1E2A30;
+  --ok: #63C793;   --ok-bg: #15301F;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--f-body); }
+.page {
+  max-width: 960px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+  display: flex; flex-direction: column; gap: 48px;
+}
+h1, h2, h3, h4 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+code, .mono { font-family: var(--f-mono); font-size: 0.86em; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* header */
+header.top { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(26px, 4.4vw, 40px); line-height: 1.15; letter-spacing: -0.01em; }
+.lead { font-size: 18px; max-width: 65ch; color: var(--fg); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+.meta b { color: var(--fg); font-weight: 600; }
+
+/* sections */
+section { display: flex; flex-direction: column; gap: 18px; }
+h2 { font-size: 24px; font-weight: 700; line-height: 1.25; display: flex; gap: 12px; align-items: baseline; }
+h2 .num { font-family: var(--f-mono); font-size: 14px; font-weight: 500; color: var(--accent); }
+h3 { font-size: 18px; font-weight: 600; margin-top: 8px; }
+.note { font-size: 14px; color: var(--muted); max-width: 72ch; }
+
+/* key points */
+.keypoints { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 72ch; }
+.keypoints li { padding-left: 18px; position: relative; }
+.keypoints li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.keypoints li.bad::before { background: var(--crit); }
+
+/* numbers */
+.numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel h3 { margin: 0; font-size: 15px; }
+.bars { display: flex; flex-direction: column; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: minmax(96px, 150px) 1fr 44px; gap: 10px; align-items: center; font-size: 14px; }
+.bar-row .lbl { color: var(--fg); line-height: 1.25; }
+.bar-row .lbl small { display: block; color: var(--muted); font-family: var(--f-mono); font-size: 11px; }
+.track { position: relative; height: 14px; background: var(--accent-soft); border-radius: 3px; }
+.fill { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--v) / var(--max) * 100%); background: var(--accent); border-radius: 3px; }
+.fill.worse { background: var(--high); }
+.ref { position: absolute; top: -4px; bottom: -4px; left: calc(1 / var(--max) * 100%); width: 2px; background: var(--fg); opacity: 0.7; }
+.val { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; font-size: 13px; }
+.axis-note { font-size: 12px; color: var(--muted); }
+
+table.grid { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.grid th, table.grid td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.grid th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+table.grid td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+table.grid td.n.worse { color: var(--high); font-weight: 500; }
+table.grid td.barcell { width: 40%; min-width: 90px; }
+.scroll { overflow-x: auto; }
+
+/* filter */
+.filter { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); }
+.filter span.lab { font-size: 13px; color: var(--muted); margin-right: 4px; }
+.filter button { font: 500 14px var(--f-body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.filter button .c { font-family: var(--f-mono); font-size: 12px; opacity: 0.8; margin-left: 4px; }
+
+/* findings */
+.findings { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.f { display: grid; grid-template-columns: 148px 1fr; gap: 6px 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.f-tags { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
+.f-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.f h4 { font-size: 16px; font-weight: 600; line-height: 1.35; }
+.f .loc { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+.f p { color: var(--fg); max-width: 72ch; }
+.f p code { overflow-wrap: anywhere; }
+.id { font-family: var(--f-mono); font-size: 12px; font-weight: 500; color: var(--muted); padding: 1px 0; min-width: 28px; }
+.chip { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+.sev-crit { color: var(--crit); background: var(--crit-bg); }
+.sev-high { color: var(--high); background: var(--high-bg); }
+.sev-med  { color: var(--med);  background: var(--med-bg); }
+.sev-low  { color: var(--low);  background: var(--low-bg); }
+.st { font-weight: 500; color: var(--muted); border: 1px solid var(--line); background: transparent; }
+.st-test { color: var(--ok); border-color: var(--ok); background: var(--ok-bg); }
+.empty { font-size: 14px; color: var(--muted); padding: 12px 0; }
+.mini { margin-top: 6px; max-width: 420px; }
+
+.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+
+/* plan */
+.stages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: stage -1; }
+.stage { display: grid; grid-template-columns: 52px 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; counter-increment: stage; }
+.stage::before { content: counter(stage); font-family: var(--f-display); font-weight: 600; font-size: 28px; line-height: 1; color: var(--accent); }
+.stage-body { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.stage-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.stage-head h3 { margin: 0; }
+.stage-head .dur { font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+.stage ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.stage .goal { font-size: 14px; color: var(--muted); }
+
+footer { font-size: 14px; color: var(--muted); display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 640px) {
+  .f { grid-template-columns: 1fr; }
+  .stage { grid-template-columns: 1fr; gap: 8px; }
+  .lead { font-size: 17px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .filter button { transition: background-color .15s, color .15s; }
+}
+</style>
+
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <div class="eyebrow">Ревью кода · HQbird v5.0-impr-opt · da654eb492 · 02.11.2026</div>
+  <h1>Ревью оптимизатора v5.0-impr-opt</h1>
+  <p class="lead">Изменения оптимизатора за 06.10–02.11.2026: ошибки, причины регрессов на IMDb CEB и план, как дойти до уровня PostgreSQL.</p>
+  <div class="meta">
+    <span><b>80</b> файлов</span>
+    <span><b>+20 096 / −817</b> строк</span>
+    <span><b>91</b> коммит</span>
+    <span>база сравнения <code>e605bad332</code></span>
+    <span>данные: <code>results/ceb_full_1102</code></span>
+  </div>
+</header>
+
+<section id="summary">
+  <h2><span class="num">1</span>Главное</h2>
+  <ul class="keypoints">
+    <li><b>Прогресс есть.</b> На CEB (121 запрос) среднее геометрическое FB / PostgreSQL 17.5 упало с 4.22 (стоковый HQbird) до 2.77 (прогон 5). До уровня PG остаётся примерно ×2.8.</li>
+    <li class="bad"><b>Отчёт прогона 5 не показывает регрессы.</b> Он сравнивает только с прогоном 4. Против стокового HQbird группа 8a медленнее в ×2.36 (3 таймаута при 272/138/61 с в бейслайне), 7a — в ×2.20, 11a — в ×1.18.</li>
+    <li class="bad"><b>Простой SQL роняет процесс.</b> <code>select count(*) from t having count(*) &gt; 0</code> падает на сборке от 02.11 при конфиге по умолчанию (S1). В SuperServer падает весь сервер.</li>
+    <li class="bad"><b><code>ExtendedStatistics=false</code> не возвращает старое поведение.</b> Новые константы стоимости, полы кардинальности, BHJ и тест спила работают всегда. Все пользователи релиза получат новую модель стоимости, даже без статистики.</li>
+    <li><b>Главные причины регрессов:</b> цена hash join не учитывает ширину записи (C2), <code>leafCount</code> индекса неверный (C1), оценки падают до 0.00 из-за двойного учёта фильтров (C4, C5), оценка CONTAINING почти не зависит от длины подстроки (E1), FK fanout берётся как среднее (E2).</li>
+  </ul>
+</section>
+
+<section id="numbers">
+  <h2><span class="num">2</span>Где мы относительно PostgreSQL</h2>
+  <div class="numbers">
+    <div class="panel">
+      <h3>FB / PG, среднее геометрическое по прогонам</h3>
+      <div class="bars" style="--max: 5">
+        <div class="bar-row"><div class="lbl">Бейслайн<small>HQbird 3055 · 119 запр.</small></div><div class="track"><div class="fill" style="--v: 4.22"></div><div class="ref"></div></div><div class="val">4.22</div></div>
+        <div class="bar-row"><div class="lbl">Прогон 4<small>f54cbf8fac · 117</small></div><div class="track"><div class="fill" style="--v: 4.45"></div><div class="ref"></div></div><div class="val">4.45</div></div>
+        <div class="bar-row"><div class="lbl">Прогон 5<small>da654eb492 · 118</small></div><div class="track"><div class="fill" style="--v: 2.77"></div><div class="ref"></div></div><div class="val">2.77</div></div>
+      </div>
+      <p class="axis-note">Шкала 0–5. Чёрная черта — уровень PG (1.0). Время PG — EXPLAIN ANALYZE (TIMING OFF). Таймауты FB исключены.</p>
+    </div>
+    <div class="panel">
+      <h3>Прогон 5 по группам шаблонов</h3>
+      <div class="scroll">
+        <table class="grid">
+          <thead><tr><th>Группа</th><th>п5 / бейслайн</th><th>п5 / PG</th><th class="barcell"><span class="sr">шкала 0–7</span></th></tr></thead>
+          <tbody style="--max: 7">
+            <tr><td>10a</td><td class="n">0.14</td><td class="n">1.1</td><td class="barcell"><div class="track"><div class="fill" style="--v: 1.1"></div><div class="ref"></div></div></td></tr>
+            <tr><td>7a</td><td class="n worse">2.20</td><td class="n">1.5</td><td class="barcell"><div class="track"><div class="fill" style="--v: 1.5"></div><div class="ref"></div></div></td></tr>
+            <tr><td>9b</td><td class="n">0.69</td><td class="n">1.5</td><td class="barcell"><div class="track"><div class="fill" style="--v: 1.5"></div><div class="ref"></div></div></td></tr>
+            <tr><td>9a</td><td class="n">0.35</td><td class="n">3.2</td><td class="barcell"><div class="track"><div class="fill" style="--v: 3.2"></div><div class="ref"></div></div></td></tr>
+            <tr><td>8a</td><td class="n worse">2.36</td><td class="n">3.4</td><td class="barcell"><div class="track"><div class="fill worse" style="--v: 3.4"></div><div class="ref"></div></div></td></tr>
+            <tr><td>11b</td><td class="n">0.81</td><td class="n">3.9</td><td class="barcell"><div class="track"><div class="fill" style="--v: 3.9"></div><div class="ref"></div></div></td></tr>
+            <tr><td>3b</td><td class="n">0.22</td><td class="n">5.4</td><td class="barcell"><div class="track"><div class="fill" style="--v: 5.4"></div><div class="ref"></div></div></td></tr>
+            <tr><td>11a</td><td class="n worse">1.18</td><td class="n">6.3</td><td class="barcell"><div class="track"><div class="fill worse" style="--v: 6.3"></div><div class="ref"></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="axis-note">Меньше 1 — быстрее. Оранжевым — группы медленнее стокового HQbird. Бейслайн мерился с кешем 2048/256M, прогоны — с 50000/2000M: среда несимметрична.</p>
+    </div>
+  </div>
+</section>
+
+<div class="filter" role="group" aria-label="Фильтр находок">
+  <span class="lab">Находки:</span>
+  <button type="button" id="flt-all" data-filter="all" aria-pressed="true">Все<span class="c" data-count="all"></span></button>
+  <button type="button" id="flt-severe" data-filter="severe" aria-pressed="false">Критично и высоко<span class="c" data-count="severe"></span></button>
+  <button type="button" id="flt-test" data-filter="test" aria-pressed="false">Проверено тестом<span class="c" data-count="test"></span></button>
+</div>
+
+<section id="correctness">
+  <h2><span class="num">3</span>Ошибки корректности и стабильности</h2>
+  <p class="note">Метки: <b>тест</b> — воспроизведено на локальной сборке <code>output_x64_release</code> от 02.11 (embedded isql); <b>код</b> — путь выполнения прослежен по коду; <b>подозрение</b> — нужен тест. Номера строк — на HEAD <code>da654eb492</code>.</p>
+
+  <h3>Критические и высокие — исправить до любого релиза</h3>
+  <ul class="findings">
+    <li class="f" data-sev="crit" data-status="test">
+      <div class="f-tags"><span class="id">S1</span><span class="chip sev-crit">критично</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Падение процесса на агрегате без GROUP BY</h4><span class="loc">RecordSourceNodes.cpp:1895 · AggregateSourceNode::getGroupCountCap</span>
+      <p><code>group-&gt;expressions</code> читается без проверки <code>group != NULL</code>. Запросы <code>select count(*) from t having count(*) &gt; 0</code> и <code>select * from (select max(x) m from t) where m &gt; 0</code> убивают процесс (rc=3). С <code>GROUP BY</code> всё работает. Вызов идёт из <code>Optimizer.cpp:3094, 4398</code> без проверки <code>ExtendedStatistics</code>.</p></div>
+    </li>
+    <li class="f" data-sev="crit" data-status="code">
+      <div class="f-tags"><span class="id">S2</span><span class="chip sev-crit">критично</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Разыменование NULL при диапазоне по колонке без статистики</h4><span class="loc">extstat/StatisticsCache.cpp:465</span>
+      <p><code>column-&gt;dtype</code> читается до проверки <code>!column</code> (строка 468). Диапазонный предикат по колонке, которой нет в STAT$COLUMNS (например, добавлена после REFRESH), роняет сервер при prepare. Нужен <code>ExtendedStatistics=true</code>.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S3</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>BINS стал зарезервированным словом</h4><span class="loc">dsql/parse.y · common/ParserTokens.h</span>
+      <p>BINS нет в <code>non_reserved_word</code>, в ParserTokens.h у него флаг <code>false</code>. <code>create table t (bins int)</code>, а также старые базы и приложения с колонкой BINS перестают компилироваться.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S4</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>REFRESH … SAMPLE выполняет полный SCAN</h4><span class="loc">dsql/parse.y:4676</span>
+      <p>У ветки <code>SAMPLE</code> нет action, режим остаётся 1 (SCAN) из конструктора. Дешёвого режима для больших баз нет, весь код <code>!exactCounts</code> мёртвый и не тестировался. После правки оживут E6 и ошибки оценки ND по выборке.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S5</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Масштаб NUMERIC/DECIMAL не хранится</h4><span class="loc">extstat/StatisticsCache.cpp:1113–1127 · extstat/ext_stats.cpp:271</span>
+      <p>В STAT$COLUMNS нет scale, <code>CachedColumn.scale</code> всегда 0. Для <code>NUMERIC(9,2)</code> условие <code>price = 12.34</code> ищется в MCV как raw 12, а там лежит 1234. Диапазоны ошибаются в 10<sup>scale</sup> раз. В IMDb таких колонок нет, поэтому CEB этого не видит.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S6</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Нет existence lock при выборочном сканировании</h4><span class="loc">recsrc/SamplingScan.cpp:62</span>
+      <p><code>CMP_post_resource</code> вызывается без <code>MET_post_existence</code>. Параллельный <code>DROP TABLE</code> освобождает страницы во время сбора. При commit счётчик использования уменьшается у чужого владельца.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S7</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Старые форматы записи читаются без конвертации</h4><span class="loc">extstat/Collector.cpp:113–147, 1951</span>
+      <p>Значение берётся из формата версии записи, а дескриптор — из текущего формата. После <code>ALTER COLUMN TYPE</code> (INTEGER→BIGINT, INTEGER→VARCHAR) 4 байта читаются как int64 или как varying с мусорной длиной: чтение за границей, мусор в MCV и гистограмме.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S8</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Batch Hash Join ломает ORDER BY через навигацию по индексу</h4><span class="loc">recsrc/BatchHashJoin.cpp:250–313 · optimizer/InnerJoin.cpp:707, 719, 819</span>
+      <p>BHJ отдаёт строки в порядке батчей, а Sort сверху не добавляется. Режим ALL ROWS, <code>ORDER BY a.id</code> по индексу, хэшируемая сторона больше 4 млн строк — результат не отсортирован. Plain HashJoin порядок лидера сохраняет.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S9</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>HLL занимает 256 КБ на колонку до конца REFRESH</h4><span class="loc">extstat/Collector.cpp:932 · extstat/DistinctCounter.h</span>
+      <p>В документации 64 КБ. REFRESH всей базы держит 256 КБ на каждую собранную колонку: 30 тыс. колонок — около 7.5 ГБ памяти сервера.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S10</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Страница 0 не учитывается в выборке</h4><span class="loc">recsrc/SamplingScan.cpp:51, 75</span>
+      <p>Диапазон 0 добавляется, но не считается. Кардинальность без строк страницы 0 пишется с <code>CARD_EXACT=TRUE</code>, null fraction у NOT NULL колонок отрицательная, строки последнего диапазона не выбираются никогда.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S11</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>REFRESH падает на базах с кодировкой NONE</h4><span class="loc">extstat/Collector.cpp:158–191 · valueToText</span>
+      <p>Debug JSON переводит значения в UTF8. Национальный текст в NONE даёт <code>isc_malformed_string</code>, и весь REFRESH откатывается из-за отладочной колонки.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">S12</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>REFRESH и таблицы STAT$ обходят права на таблицы</h4><span class="loc">dsql/DdlNodes.epp ~14174 · AlterDatabaseNode</span>
+      <p>Проверяется только право ALTER DATABASE, права SELECT на собираемые таблицы не проверяются. Текст MCV и гистограмм в <code>STAT$*_TEXT</code> показывает значения любых таблиц всем, кто может читать STAT$.</p></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Средние</h3>
+  <ul class="findings">
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">M1</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Hash outer join не выбирается даже в простом случае</h4><span class="loc">optimizer/OuterJoin.cpp ~236–345 · порт ec3910caed</span>
+      <p>Таблицы A и B по 20k строк, без индексов. <code>a JOIN b ON a.x = b.x</code> даёт <code>Hash Join (inner)</code>. <code>a LEFT JOIN b ON a.x = b.x</code> даёт <code>Nested Loop Join (outer)</code> с полным сканом B на каждую строку A: 400 млн строк, больше 200 с.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="suspect">
+      <div class="f-tags"><span class="id">M2</span><span class="chip sev-med">средне</span><span class="chip st">подозрение</span></div>
+      <div class="f-body"><h4>Не-equi условия ON могут теряться в хэш-ветке outer join</h4><span class="loc">optimizer/OuterJoin.cpp:296, 375</span>
+      <p>Residual-фильтр оборачивает <code>innerRsb</code>, который потом выбрасывается, а конъюнкты уже помечены USED. <code>a LEFT JOIN b ON a.x = b.x AND b.y &gt; a.z</code> может вернуть совпадения с <code>b.y &lt;= a.z</code>. Проверить после исправления M1.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">M3</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Чтение за началом массива ключей сортировки</h4><span class="loc">optimizer/Optimizer.cpp:2906 (и 2682)</span>
+      <p><code>setSkdOffset(&amp;sort_key[-1])</code> для первого ключа при <code>ignoreNulls</code> (merge join со строгим равенством): смещение берётся из байтов заголовка пула.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">M4</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Стороны пары с разными типами декодируются одним дескриптором</h4><span class="loc">extstat/StatisticsCache.cpp:1708, 1846</span>
+      <p>MCV внутренней стороны читаются дескриптором внешней. SMALLINT FK ⋈ INTEGER PK: 4 байта читаются из 2-байтового значения. Разные кодировки — ошибка <code>MOV_compare</code> при prepare. После смены типа без REFRESH старый blob читается неверно.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="suspect">
+      <div class="f-tags"><span class="id">M5</span><span class="chip sev-med">средне</span><span class="chip st">подозрение</span></div>
+      <div class="f-body"><h4>Фолд LIKE(UPPER) → CONTAINING не строго эквивалентен</h4><span class="loc">dsql/BoolNodes.cpp ~365–435</span>
+      <p>CONTAINING использует upcase коллации, а не LOWER. UPPER литерала выполняется в кодировке литерала, а не колонки. Греческая конечная сигма, турецкая i, знак Кельвина, кодировка NONE — результат может отличаться от исходного запроса.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">M6</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Неполная инвалидация кэша статистики</h4><span class="loc">dsql/DsqlStatementCache.cpp:212 · DdlNodes.epp ~14066</span>
+      <p>Кэш чистится только через AST кэша операторов. При <code>MaxStatementCacheSize=0</code> или пустом кэше старая статистика живёт до отключения. DROP EXTENDED STATISTICS чистит кэш до commit, и другие соединения загружают старые строки снова.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">M7</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>План зависит от текущей загрузки temp-кэша</h4><span class="loc">optimizer/Optimizer.cpp:2224–2231 · tempSpillExpected</span>
+      <p>Функция читает <code>getTempCacheFree()</code> без блокировки. Два запуска одного запроса получают разные планы, и в кэш попадает случайный.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">M8</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>В firebird.conf нет ключа ExtendedStatistics</h4><span class="loc">builds/install/misc/firebird.conf:559</span>
+      <p>Описание ExtendedStatistics стоит над строкой <code>#ExtStatisticsConstraints = false</code>, а у настоящего блока ExtStatisticsConstraints ключа нет. DBA включит не тот параметр.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">M9</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Сбор статистики: коллации, длинные значения, откат всего прогона</h4><span class="loc">extstat/Collector.cpp:1920, 1970, 1552–1582, 1773–1787, 2386–2419</span>
+      <p>ND в режиме SCAN считается по сырым байтам без коллации (CI/AI, хвостовые пробелы). Длинные значения попадают в границы гистограммы. Одно длинное значение убивает всю многоколоночную структуру. Больше 16 имён в STAT$FIELDS переполняют стековый массив. DROP TABLE во время REFRESH всей базы откатывает весь прогон.</p></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Низкие</h3>
+  <p class="note">TempSpace: <code>blockIndex.add()</code> после связывания блока (путь OOM). <code>Array::swap</code> не учитывает inline storage (пока латентно). Счётчики HashJoin/BHJ — ULONG (больше 2<sup>32</sup> строк). Лишний <code>addStructure(segs, 4, false)</code> в <code>Collector.cpp:2174</code>. Мёртвые <code>capped</code>, <code>AUTO_MULTI_MAX_ROWS</code>, <code>MAX_MCV_ENTRIES</code>. Список имён в STAT$FIELDS через запятую ломается на имени с запятой. Расхождения документации и кода: top-100 против BINS, три таблицы против четырёх, бюджет 32 МБ.</p>
+</section>
+
+<section id="costs">
+  <h2><span class="num">4</span>Модель стоимости и оценки: причины регрессов CEB</h2>
+
+  <h3>Ошибки модели стоимости</h3>
+  <ul class="findings">
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">C1</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4><code>leafCount</code> — узлы одной страницы, а не все листья индекса</h4><span class="loc">jrd/btr.cpp:1220 · BTR_get_cost_factors</span>
+      <p>Берётся число узлов одной страницы уровня 1. Для индекса глубины 3 и больше полный и диапазонный проход дешевле реального в сотни раз (например, 300 листьев вместо 100 тыс.).</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">C2</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Цена hash join не зависит от ширины записи</h4><span class="loc">optimizer/Optimizer.h:702–734 · getHashJoinCost, getBatchHashJoinCost</span>
+      <p>Параметр <code>bufferWidth</code> не используется. У BHJ нет цены записи ведущей стороны и прохода партиционирования. Лидер шириной 4798 байт стоит как запись в 50 байт — так появились регрессы 7a в ×10–40.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">C3</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>BHJ выбирается по порогу кардинальности, без сравнения с NL</h4><span class="loc">optimizer/Optimizer.cpp ~4056 · generateEquiJoin · InnerJoin.cpp:266</span>
+      <p>BHJ создаётся, если сырая кардинальность больше <code>maxCapacity</code> (около 4 млн). Оценка всегда считает новый поток хэшируемым. MOVIE_INFO (14.8 млн строк, BLOB IN) уходит в BHJ даже при пустом лидере: 7a_006 — 1.5 → 60 с.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">C4</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4><code>makeInversion</code> теряет <code>scratch</code></h4><span class="loc">optimizer/Retrieval.cpp:2765–2775, 2961–2973, 517–527, 582</span>
+      <p>Цена уникальной пробы всегда <code>DEFAULT_INDEX_COST</code> (17.2, раньше 4), измеренная глубина не используется. Проверка <code>joinDriven</code> мёртвая, пол оценки применяется всегда, и оценка прыгает в 1/residual раз.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="code">
+      <div class="f-tags"><span class="id">C5</span><span class="chip sev-high">высоко</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Локальные фильтры учитываются дважды</h4><span class="loc">optimizer/Optimizer.cpp:4498, 4613 · recsrc/FilteredStream.cpp:51–66</span>
+      <p>FilteredStream внутри соединения умножает на полную селективность, хотя BitmapTableScan уже применил локальные фильтры. Отсюда <code>rows=0.4</code> в планах. Планов с оценкой соединения меньше 0.1 строки: прогон 4 — 14, прогон 5 — 39.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">C6</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Кардинальность соединения не ограничена снизу единицей</h4><span class="loc">optimizer/InnerJoin.cpp:463 · NestedLoopJoin.cpp:86</span>
+      <p>При <code>floorLimited</code> итоговая оценка может быть меньше 1. Цены NL глубже по дереву умножаются на число меньше 1, и глубокие потоки выглядят бесплатными.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">C7</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>LEFT JOIN без пола «не меньше внешней стороны»</h4><span class="loc">optimizer/OuterJoin.cpp ~252–331 · recsrc/HashJoin.cpp ~452–507</span>
+      <p>LEFT JOIN оценивается в 0.3 от строк внешней стороны. Матч-селективность HJ учитывает локальные фильтры дважды. <code>getHashJoinCost</code> вызывается без ширины и спила.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">C8</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Цена случайной страницы не зависит от кэша</h4><span class="loc">optimizer/Optimizer.h ~66–126 · COST_RANDOM_PAGE</span>
+      <p>Константа 3.8 одинакова для таблицы в кэше и для CAST_INFO на 36 млн строк. Миллионы NL-проб оцениваются как попадания в кэш — причина 8a и 3b_005. Нет стартовой цены HJ/BHJ.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">C9</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Стоимость выборки не монотонна</h4><span class="loc">optimizer/Retrieval.cpp:540–543 · fetchPrice</span>
+      <p>Формула меняется на 100 записях. Два диапазона около 100 строк сравниваются в неверном порядке, выбор индекса переключается.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">C10</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>У диапазонного сканирования индекса нет цены за ключ</h4><span class="loc">optimizer/Retrieval.cpp ~2365–2455</span>
+      <p>Цена — только глубина плюс листья, поэтому большие диапазоны дешевле примерно в 500 раз. <code>maximumCost</code> в старых единицах смешивается с новыми. Навигация платит 2.0 за запись — меньше, чем bitmap (3.0) и случайная выборка (5.8).</p></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Оценки кардинальности</h3>
+  <ul class="findings">
+    <li class="f" data-sev="high" data-status="plans">
+      <div class="f-tags"><span class="id">E1</span><span class="chip sev-high">высоко</span><span class="chip st">планы</span></div>
+      <div class="f-body"><h4>Оценка CONTAINING почти не зависит от подстроки</h4><span class="loc">оценка CONTAINING · фолд LIKE(UPPER) da654eb492</span>
+      <p>COMPANY_NAME: 1 169–1 819 строк из 235k, NAME: около 0.5% — при любой длине подстроки. Короткие подстроки занижены в 6–72 раза (<code>'%m%'</code>: 1 819 против 130 540), длинные завышены. Участвует в 8 из 13 регрессов больше 1.5× (11a_003/004, 11b_002, 3b_005, 9b_*) и одновременно даёт выигрыши 10a/3b.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="plans">
+      <div class="f-tags"><span class="id">E2</span><span class="chip sev-high">высоко</span><span class="chip st">планы</span></div>
+      <div class="f-body"><h4>FK fanout — среднее значение, без перекоса</h4><span class="loc">join FK → PK · MC/company 11.08, MI/movie 5.99, CI/movie 15.51, MK 9.5</span>
+      <p>Отфильтрованные компании (ABC, CBS, NBC…) имеют от 1k до 21k строк в MOVIE_COMPANIES, а оценка берёт 11.08. CN ⋈ MC занижено в 8–2600 раз. Планов, которые начинают с CN: прогон 4 — 19, прогон 5 — 46.</p>
+      <div class="scroll mini"><table class="grid">
+        <thead><tr><th>Запрос 8a</th><th>Оценка CN ⋈ MC</th><th>Факт (PG)</th></tr></thead>
+        <tbody>
+          <tr><td>8a_013</td><td class="n">69</td><td class="n">181 636</td></tr>
+          <tr><td>8a_015</td><td class="n">81</td><td class="n">208 360</td></tr>
+          <tr><td>8a_002</td><td class="n">245</td><td class="n">191 458</td></tr>
+          <tr><td>8a_004, 8a_010</td><td class="n">399</td><td class="n">89 596</td></tr>
+          <tr><td>8a_011</td><td class="n">544</td><td class="n">115 924</td></tr>
+          <tr><td>8a_003</td><td class="n">211</td><td class="n">45 996</td></tr>
+          <tr><td>8a_012</td><td class="n">200</td><td class="n">19 552</td></tr>
+        </tbody>
+      </table></div></div>
+    </li>
+    <li class="f" data-sev="high" data-status="plans">
+      <div class="f-tags"><span class="id">E3</span><span class="chip sev-high">высоко</span><span class="chip st">планы</span></div>
+      <div class="f-body"><h4>Жадный порядок соединений по цене одной пробы</h4><span class="loc">optimizer/InnerJoin.cpp · findBestOrder, cheaperThan</span>
+      <p>Кардинальность учитывается только как tie-break в пределах 2%. Во всех 16 запросах 8a нефильтрованный MOVIE_KEYWORD идёт до селективного MOVIE_INFO. Прогон 3 соединял MI1 раньше и был в 2–4 раза быстрее.</p></div>
+    </li>
+    <li class="f" data-sev="high" data-status="plans">
+      <div class="f-tags"><span class="id">E4</span><span class="chip sev-high">высоко</span><span class="chip st">планы</span></div>
+      <div class="f-body"><h4>Предикаты по BLOB оцениваются грубо, чтение BLOB не оценивается</h4><span class="loc">mi.info, pi.info</span>
+      <p>IN по BLOB — 10% на значение, максимум 50%. CONTAINING по BLOB непоследователен: 0.3–2.7% на пробу у MOVIE_INFO и 100% у PERSON_INFO. Чтение BLOB в фильтре не стоит ничего, а на деле доминирует в 7a, 8a, 11a_011, 11b_002. PG держит MCV и гистограмму для <code>movie_info.info</code>.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="plans">
+      <div class="f-tags"><span class="id">E5</span><span class="chip sev-med">средне</span><span class="chip st">планы</span></div>
+      <div class="f-body"><h4>Полный скан + хэш вытесняет PK-пробы</h4><span class="loc">новые цены страниц · b34f7dbb47</span>
+      <p>Скан NAME (4.17 млн строк) с CONTAINING на каждую строку стал дешевле 55–121k проб по NAME_PK. NAME full scan в 13 из 15 планов 9b (было 2 из 15). Быстрые запросы потеряли в 2.4–4.4 раза, медленные выиграли.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">E6</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Парные структуры игнорируют долю выборки</h4><span class="loc">extstat/StatisticsCache.cpp:1574–1579, 2389–2392</span>
+      <p><code>share = baseRows / card</code>, а <code>baseRows</code> посчитан по выборке. При SAMPLE 5% на обеих сторонах селективность соединения занижена в 400 раз. Сейчас скрыто ошибкой S4.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">E7</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>Неполная формула eqjoinsel и двойной учёт NULL</h4><span class="loc">extstat/StatisticsCache.cpp:1438–1465, 1643–1645, 1757, 1816–1818</span>
+      <p>Нет членов PG «MCV одной стороны × хвост другой»: при разных частых значениях сторон соединение занижено. Доля NULL вычитается из долей MCV и затем ещё раз умножается на (1 − null): при 40% NULL хвост распределения теряется.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">E8</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>В текстовой гистограмме перепутаны границы частичных бинов</h4><span class="loc">extstat/StatisticsCache.cpp:551–554</span>
+      <p><code>reachesLo</code> использует <code>cmpHi</code>, а <code>reachesHi</code> — <code>cmpLo</code>. Для <code>name &gt;= 'X'</code> около верха получается около 25% вместо 5%.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="code">
+      <div class="f-tags"><span class="id">E9</span><span class="chip sev-med">средне</span><span class="chip st">код</span></div>
+      <div class="f-body"><h4>STARTING/LIKE/CONTAINING с полем справа</h4><span class="loc">optimizer/Optimizer.cpp ~1775–2100</span>
+      <p>Операнды переставляются, а операция несимметрична. <code>'ABCDEF' STARTING WITH code</code> оценивается как <code>code STARTING WITH 'ABCDEF'</code>.</p></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Исполнение Batch Hash Join (7a)</h3>
+  <ul class="plain">
+    <li>Батчи делят только 8-байтовые массивы <code>{position, hash}</code>, а не записи. Каждый из 8 батчей читает весь буфер лидера вразброс — ввод-вывод растёт в 8 раз.</li>
+    <li><code>partition()</code> сначала сканирует хэшируемую сторону, даже когда лидер пуст. Plain HashJoin строит хэш только на первой строке лидера.</li>
+    <li>Слоты BufferedStream фиксированной ширины: VARCHAR хранится по максимальной длине плюс все поля всех потоков — 4798 байт на строку. Режима refetch (ключи + DBKEY) нет.</li>
+    <li>Запись лидера восстанавливается (<code>locate</code> + <code>getRecord</code>) до проверки точного хэша (<code>BatchHashJoin.cpp:265–271</code>).</li>
+    <li>TempCacheLimit 1 ГБ вмещает около 200k строк по 4798 байт, дальше идут чтения из файла.</li>
+    <li><code>equiMatches</code> объявлен вне цикла по потокам (<code>InnerJoin.cpp:703</code>): каждое соединение получает условия всех предыдущих, O(k²) проверок, и каждая выполняется дважды.</li>
+    <li>Число батчей фиксируется по оценке и не подстраивается под реальный объём.</li>
+  </ul>
+</section>
+
+<section id="method">
+  <h2><span class="num">5</span>Методология и процесс</h2>
+  <ol class="plain">
+    <li><b>Сравнивать каждый прогон с бейслайном и с PG</b>, а не только с прошлым прогоном. PG-эталон с истинными кардинальностями (121 JSON) сейчас есть только локально, его нужно положить в репозиторий.</li>
+    <li><b>Перемерить бейслайн в той же среде.</b> Сейчас кеш 2048/256M против 50000/2000M.</li>
+    <li><b>Считать q-error по узлам плана.</b> В ветке уже есть <code>rows=</code> в EXPLAIN, PG-JSON даёт истинные размеры подпланов. Это прямая мера качества оценок без шума времени исполнения.</li>
+    <li><b>Прогонять не только CEB.</b> JOB, JOB-light, TPC-H, DSB, JCC-H уже портированы. Калибровка под один корпус даёт «качели»: 121 из 121 плана меняются за прогон.</li>
+    <li><b>Добавить функциональные регрессионные тесты.</b> Падение S1 прошло незамеченным. Минимум: агрегаты без GROUP BY, LEFT JOIN с не-equi ON, ORDER BY над большим JOIN, NUMERIC со scale, DDL статистики, кодировка NONE.</li>
+    <li><b>Вынести константы стоимости в конфиг</b> (<code>Optimizer.h:66–126</code>) и калибровать их на нескольких машинах, а не на одной.</li>
+    <li><b>Описать модель стоимости и BHJ</b> в <code>README.optimizer-improvement.md</code>: коммиты 7e52b410a5, f4bd6be7fa, b34f7dbb47, be3c956409 там не отражены.</li>
+    <li><b>Писать коммиты с коротким заголовком.</b> Сейчас сообщения по 1–2 КБ одной строкой, есть коммит «correction» и пары коммит/revert. Это мешает ревью и bisect.</li>
+  </ol>
+</section>
+
+<section id="plan">
+  <h2><span class="num">6</span>План действий</h2>
+  <ol class="stages">
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Стабильность</h3><span class="dur">1–2 дня · до любых замеров</span></div>
+      <ol>
+        <li>Исправить падения S1 и S2.</li>
+        <li>BINS — в <code>non_reserved_word</code> и флаг <code>true</code> в ParserTokens.h (S3).</li>
+        <li>Action для SAMPLE в <code>parse.y:4676</code> (S4).</li>
+        <li>Хранить и загружать scale (S5).</li>
+        <li>Existence lock в SamplingScan, конвертация старых форматов, проверка прав SELECT (S6, S7, S12).</li>
+        <li>Ключ ExtendedStatistics в firebird.conf (M8).</li>
+        <li>Запретить BHJ при <code>sortUtilized</code> или ставить Sort над ним (S8).</li>
+        <li>Выяснить, почему не выбирается hash outer join, затем проверить M2.</li>
+        <li>Тесты на каждый пункт.</li>
+      </ol>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Корректность модели стоимости</h3><span class="dur">около 1 недели</span></div>
+      <ol>
+        <li>Главный переключатель: новая модель только при <code>ExtendedStatistics=true</code> или отдельный параметр <code>OptimizerCostModel = legacy | new</code>.</li>
+        <li><code>leafCount</code> = все листья индекса (C1).</li>
+        <li>Ширина записи в цене HJ/BHJ; у BHJ — запись и чтение лидера и проход партиционирования (C2).</li>
+        <li>BHJ — внутри перебора порядков с честной ценой и альтернативой NL, не по порогу <code>maxCapacity</code> (C3).</li>
+        <li>Детерминированный тест спила по <code>TempCacheLimit</code>, а не по текущей занятости (M7).</li>
+        <li>Копировать <code>scratch</code>, убрать двойной учёт, пол соединения ≥ 1 и LEFT JOIN ≥ внешней стороны (C4–C7).</li>
+        <li>Цена случайной страницы с учётом кэша — аналог <code>effective_cache_size</code> (C8).</li>
+      </ol>
+      <p class="goal">Проверка: CEB + JOB + TPC-H + DSB, сравнение с бейслайном и PG, q-error. Цель — 7a и 8a не хуже стокового HQbird.</p>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Оценки до уровня PostgreSQL</h3><span class="dur">2–3 недели</span></div>
+      <ol>
+        <li>LIKE/CONTAINING как в PG: применять шаблон к значениям MCV и к выборке границ гистограммы (<code>histogram_selectivity</code>), а не константу (E1).</li>
+        <li>Полная формула <code>eqjoinsel</code>, один учёт NULL, доля выборки, границы бинов, перестановка операндов (E6–E9).</li>
+        <li>FK fanout с перекосом: при фильтре словаря брать частоты FK-колонки из MCV, расширить условную оценку 4.13 на LIKE/CONTAINING (E2).</li>
+        <li>Динамическое программирование для порядка соединений до 10–12 потоков, как PG до <code>geqo_threshold</code>; жадный поиск — только выше (E3).</li>
+        <li>Цена чтения BLOB в фильтрах и статистика по префиксу текста BLOB (E4).</li>
+      </ol>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Исполнение Batch Hash Join</h3><span class="dur">1–2 недели · параллельно этапу 2</span></div>
+      <ol>
+        <li>Физическое разбиение записей по батчам (grace hash join): каждый батч пишется и читается последовательно.</li>
+        <li>Режим refetch: в буфере только ключи и DBKEY; узкие слоты для VARCHAR.</li>
+        <li>Проверка точного хэша до восстановления записи; не строить хэш при пустом лидере.</li>
+        <li>Адаптивное число батчей; обработка перекоса ключей (раздел 5.8 документации).</li>
+        <li>Убрать накопление <code>equiMatches</code> между потоками.</li>
+      </ol>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Процесс</h3><span class="dur">постоянно</span></div>
+      <ol>
+        <li>PG-эталон и истинные кардинальности — в репозиторий.</li>
+        <li>В каждом отчёте: п(N) / п(N−1), п(N) / бейслайн, п(N) / PG, q-error.</li>
+        <li>Симметричный бейслайн.</li>
+        <li>Гейт стабильности планов (<code>fast_contour.py</code>) перед полным прогоном.</li>
+      </ol>
+    </div></li>
+  </ol>
+</section>
+
+<footer>
+  <p>Источники: <code>git diff e605bad332..da654eb492</code> ветки v5.0-impr-opt; <code>results/ceb_full_1102</code> (прогон 5), <code>results/ceb_full_1027</code> (прогон 4), <code>results/hash_corpus</code> (бейслайн и прогон 3); локальный PG-эталон <code>results/ceb-imdb-regen_pg_reference</code>. Находки «код» и «планы» собраны пятью параллельными проходами ревью (сбор статистики, использование статистики, ядро оптимизатора, исполнение hash join, анализ планов) и выборочно перепроверены.</p>
+  <p>Markdown-версия в репозитории: <a href="https://github.com/alexeykovyazin/optimizertestplan/blob/main/reviews/2026-11-02_impropt/REVIEW.md">reviews/2026-11-02_impropt/REVIEW.md</a></p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.f'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  function match(li, mode) {
+    if (mode === 'severe') return li.dataset.sev === 'crit' || li.dataset.sev === 'high';
+    if (mode === 'test') return li.dataset.status === 'test';
+    return true;
+  }
+  ['all', 'severe', 'test'].forEach(function (mode) {
+    var n = items.filter(function (li) { return match(li, mode); }).length;
+    var el = document.querySelector('[data-count="' + mode + '"]');
+    if (el) el.textContent = n;
+  });
+  function apply(mode) {
+    items.forEach(function (li) { li.hidden = !match(li, mode); });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === mode)); });
+    document.querySelectorAll('.findings').forEach(function (list) {
+      var any = Array.prototype.some.call(list.children, function (li) { return !li.hidden; });
+      var note = list.nextElementSibling;
+      if (note && note.classList.contains('empty')) note.hidden = any;
+    });
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.dataset.filter); });
+  });
+})();
+</script>
+
+</body>
+</html>
