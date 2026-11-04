@@ -1,0 +1,23 @@
+control attachment: 7031
+[ceb_7a_006] prepared
+[ceb_7a_006] warmup1: {'ms': 98757.5, 'rows': 1}
+    reap(post-warmup): ok
+[ceb_7a_006] rep1: {'ms': 91926.8, 'rows': 1}
+    reap(post-rep): ok
+[ceb_7a_006] rep2: {'ms': 92153.4, 'rows': 1}
+    reap(post-rep): ok
+[ceb_7a_005] prepared
+[ceb_7a_005] warmup1: {'ms': 60294.2, 'rows': 1}
+    reap(post-warmup): ok
+[ceb_7a_005] rep1: {'ms': 60239.0, 'rows': 1}
+    reap(post-rep): ok
+[ceb_7a_005] rep2: {'ms': 60326.4, 'rows': 1}
+    reap(post-rep): ok
+[ceb_7a_008] prepared
+[ceb_7a_008] warmup1: {'ms': 81850.9, 'rows': 1}
+    reap(post-warmup): ok
+[ceb_7a_008] rep1: {'ms': 80336.4, 'rows': 1}
+    reap(post-rep): ok
+[ceb_7a_008] rep2: {'ms': 79179.7, 'rows': 1}
+    reap(post-rep): ok
+RUN DONE -> E:\results\regress3_1104.json

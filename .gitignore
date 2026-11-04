@@ -29,3 +29,5 @@ bench/datasets/dsb/sf1_csv/*.dat
 !results/top10_newbuild_1029
 # прогон 5 ceb-imdb-regen на da654eb492 (02.11, калибровка цен страниц/хэша)
 !results/ceb_full_1102
+# проба топ-3 регрессов 7a на 1ab610f152 (04.11, миграция STAT$ хранилища)
+!results/regress3_1104
