@@ -1,0 +1,10 @@
+connect 'tst2' user SYSDBA;
+set blob all;
+set list on;
+select STAT$FIELD_NAME, STAT$MCV_ROWS, STAT$HIST_ROWS, substring(STAT$MCV_TEXT from 1 for 300) mcv, substring(STAT$HISTOGRAM_TEXT from 1 for 400) h1, substring(STAT$HISTOGRAM_TEXT from char_length(STAT$HISTOGRAM_TEXT) - 300) h2 from STAT$COLUMNS where STAT$RELATION_NAME = 'TZ';
+set list off;
+set planonly on;
+set explain on;
+select count(*) from tz where x >= 0;
+select count(*) from tz where x >= 99990;
+select count(*) from tz where x > 50000 and x < 99999;

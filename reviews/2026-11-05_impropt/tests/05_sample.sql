@@ -1,0 +1,10 @@
+connect 'tst2' user SYSDBA;
+alter database refresh statistics sample for table t;
+commit;
+select STAT$RELATION_NAME, STAT$CARDINALITY, STAT$CARD_EXACT from STAT$TABLES;
+select STAT$FIELD_NAME, STAT$NDISTINCT, STAT$NULL_FRACTION, STAT$SAMPLE_SIZE, STAT$SAMPLE_FRACTION, STAT$ND_EXACT from STAT$COLUMNS where STAT$RELATION_NAME = 'T';
+set planonly on;
+set explain on;
+select count(*) from t where n = 12.34;
+select count(*) from t where s = 'v7';
+select count(*) from t where x between 1000 and 1999;

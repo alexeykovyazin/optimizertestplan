@@ -1,0 +1,12 @@
+create database 'tstnone' user SYSDBA;
+create table q(x int);
+insert into q values(1);
+commit;
+alter database add extended statistics;
+commit;
+alter table STAT$COLUMNS drop STAT$SCALE;
+commit;
+select 'before' from rdb$database;
+select count(*) from q where x = 1;
+select 'after' from rdb$database;
+alter database refresh statistics;

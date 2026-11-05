@@ -1,0 +1,12 @@
+connect 'tst2' user SYSDBA;
+set planonly on;
+set explain on;
+select count(*) from tz where x > 49999;
+select count(*) from tz where x >= 50000;
+select count(*) from tz where x >= 99000;
+select count(*) from tz where 50000 <= x;
+select count(*) from tz where x < 50000;
+select count(*) from tz where y >= 10000;
+select count(*) from t where n >= 50;
+select count(*) from t where s >= 'v5';
+select count(*) from t where s > 'v5';

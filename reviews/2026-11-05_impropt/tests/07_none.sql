@@ -1,0 +1,10 @@
+create database 'tstnone' user SYSDBA default character set NONE;
+create table tn(s varchar(20));
+insert into tn values('café');
+insert into tn values('naïve');
+commit;
+alter database add extended statistics;
+commit;
+alter database refresh statistics;
+commit;
+select STAT$FIELD_NAME, STAT$NDISTINCT from STAT$COLUMNS;
