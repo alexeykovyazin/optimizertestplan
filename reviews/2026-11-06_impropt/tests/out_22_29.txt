@@ -1,0 +1,353 @@
+##### 25_new.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1433.41)
+            -> Table "TZI" Access By ID (rows=1433.41)
+                -> Bitmap
+                    -> Index "TZI_Y" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=999.14)
+            -> Table "TZI" Access By ID (rows=999.14)
+                -> Bitmap
+                    -> Index "TZI_X" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=12821.33)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=459.68)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=912.48)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99837.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1433.41)
+            -> Table "TZI" Access By ID (rows=1433.41)
+                -> Bitmap
+                    -> Index "TZI_Y" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+                COUNT 
+===================== 
+                 1000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=12821.33)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                25000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=459.68)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                  505 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+                COUNT 
+===================== 
+                  600 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+                COUNT 
+===================== 
+                  400 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+                COUNT 
+===================== 
+                  200 
+
+##### rc=0
+##### 22_bhj.sql
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4)
+                -> Table "A" Full Scan
+                -> Table "B" Full Scan
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              2100000                                 4410002100000 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Hash Join (inner) (keys: 1, total key length: 4)
+                -> Table "B" Full Scan
+                -> Record Buffer (record length: 33)
+                    -> Filter
+                        -> Table "A" Full Scan
+
+                COUNT 
+===================== 
+                    0 
+
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table "A" Full Scan
+            -> Filter
+                -> Table "B" Full Scan
+##### rc=124
+##### 23_bhj_low.sql
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4)
+                -> Table "A" Full Scan
+                -> Table "B" Full Scan
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              2100000                                 4410002100000 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Hash Join (inner) (keys: 1, total key length: 4)
+                -> Table "B" Full Scan
+                -> Record Buffer (record length: 33)
+                    -> Filter
+                        -> Table "A" Full Scan
+
+                COUNT 
+===================== 
+                    0 
+
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table "A" Full Scan
+            -> Filter
+                -> Table "B" Full Scan
+##### rc=124
+##### 24_win.sql
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              4200000                                       4199999 
+
+Rolling back work.
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              4200000                                       4199999 
+
+
+                COUNT                 COUNT 
+===================== ===================== 
+              1000000               1000000 
+
+##### rc=0
+##### 26_eqjoin.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5892711.54)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5892711.54)
+                -> Table "JA" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=100000.00)
+                    -> Table "JB" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5892711.54)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5892711.54)
+                -> Table "JA" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=100000.00)
+                    -> Table "JB" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                25000 
+
+##### rc=0
+##### 27_reverse.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1466.47)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51606.59)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1075.41)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1466.47)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51606.59)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                    0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                    0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1075.41)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                  300 
+
+##### rc=0
+##### 28_unique.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4975.70)
+            -> Table "TD" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100.00)
+            -> Table "TD" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "TD" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=25000.00)
+            -> Table "TD" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4975.70)
+            -> Table "TD" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100.00)
+            -> Table "TD" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                 1001 
+
+##### rc=0

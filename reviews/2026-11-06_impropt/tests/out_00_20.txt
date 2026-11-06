@@ -1,0 +1,718 @@
+##### 00_setup.sql
+
+        BINS 
+============ 
+           7 
+
+##### rc=0
+##### 01_s1.sql
+
+                COUNT 
+===================== 
+               100000 
+
+
+           M 
+============ 
+       99999 
+
+
+                    C                    SX 
+===================== ===================== 
+               100000            4999950000 
+
+
+                    C 
+===================== 
+               100000 
+
+
+CONSTANT 
+======== 
+S1 ok    
+
+##### rc=0
+##### 02_refresh_scan.sql
+
+STAT$RELATION_NAME                                                   STAT$CARDINALITY STAT$CARD_EXACT 
+=============================================================== ===================== =============== 
+T                                                                              100000 <true>          
+TB                                                                                  1 <true>          
+
+
+STAT$FIELD_NAME                                                 STAT$TYPE STAT$SCALE        STAT$NDISTINCT      STAT$NULL_FRACTION      STAT$SAMPLE_SIZE    STAT$SAMPLE_FRACTION STAT$ND_EXACT 
+=============================================================== ========= ========== ===================== ======================= ===================== ======================= ============= 
+X                                                                       9          0                 99837       0.000000000000000                 30000       1.000000000000000 <true>        
+N                                                                       9         -2                   100       0.000000000000000                 30000       1.000000000000000 <true>        
+S                                                                       3          0                   501       0.000000000000000                 30000       1.000000000000000 <true>        
+G                                                                       9          0                    10       0.000000000000000                 30000       1.000000000000000 <true>        
+P                                                                       3          0                 99667       0.000000000000000                 30000       1.000000000000000 <true>        
+
+##### rc=0
+##### 03_est.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1070.00)
+            -> Table "T" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10633.33)
+            -> Table "T" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=199.60)
+            -> Table "T" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9963.33)
+            -> Table "T" Full Scan (rows=100000.00)
+##### rc=0
+##### 04_s2.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=25459.98)
+            -> Table "T" Full Scan (rows=101839.93)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50919.96)
+            -> Table "T" Full Scan (rows=101839.93)
+
+Select Expression
+    -> Table "RDB$DATABASE" Full Scan (rows=1.00)
+
+CONSTANT 
+======== 
+S2 ok    
+
+##### rc=0
+##### 05_sample.sql
+
+STAT$RELATION_NAME                                                   STAT$CARDINALITY STAT$CARD_EXACT 
+=============================================================== ===================== =============== 
+T                                                                               99991 <false>         
+TB                                                                                  1 <true>          
+
+
+STAT$FIELD_NAME                                                        STAT$NDISTINCT      STAT$NULL_FRACTION      STAT$SAMPLE_SIZE    STAT$SAMPLE_FRACTION STAT$ND_EXACT 
+=============================================================== ===================== ======================= ===================== ======================= ============= 
+X                                                                               99828       0.000000000000000                 30000      0.3001379944802208 <true>        
+N                                                                                 100       0.000000000000000                 30000      0.3001379944802208 <true>        
+S                                                                                 501       0.000000000000000                 30000      0.3001379944802208 <true>        
+G                                                                                  10       0.000000000000000                 30000      0.3001379944802208 <true>        
+P                                                                               99658       0.000000000000000                 30000      0.3001379944802208 <true>        
+Y                                                                               99991       0.000000000000000                 30000      0.3001379944802208 <false>       
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1033.24)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=199.58)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=997.29)
+            -> Table "T" Full Scan (rows=99991.00)
+##### rc=0
+##### 06_s7.sql
+
+STAT$FIELD_NAME                                                 STAT$TYPE        STAT$NDISTINCT      STAT$NULL_FRACTION      STAT$SAMPLE_SIZE 
+=============================================================== ========= ===================== ======================= ===================== 
+A                                                                      19                    51       0.000000000000000                 20001 
+B                                                                       3                 20001       0.000000000000000                 20001 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=400.00)
+            -> Table "T7" Full Scan (rows=20001.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "T7" Full Scan (rows=20001.00)
+##### rc=0
+##### 07_none.sql
+
+STAT$FIELD_NAME                                                        STAT$NDISTINCT 
+=============================================================== ===================== 
+S                                                                                   2 
+
+##### rc=0
+##### 08_oj.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=432374.11)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=432374.11)
+                -> Table "OB" Full Scan (rows=21523.43)
+                -> Record Buffer (record length: 25) (rows=20088.53)
+                    -> Table "OA" Full Scan (rows=20088.53)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=43237411.23)
+            -> Table "OA" Full Scan (rows=20088.53)
+            -> Filter (rows=2152.34)
+                -> Table "OB" Full Scan (rows=21523.43)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=21618705.62)
+            -> Table "OA" Full Scan (rows=20088.53)
+            -> Filter (rows=1076.17)
+                -> Table "OB" Full Scan (rows=21523.43)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                  9000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=21618705.62)
+            -> Nested Loop Join (outer) (rows=43237411.23)
+                -> Table "OA" Full Scan (rows=20088.53)
+                -> Filter (rows=2152.34)
+                    -> Table "OB" Full Scan (rows=21523.43)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                 9000                  9000 
+
+##### rc=0
+##### 09_oj_stats.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=20000.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=20000.00)
+                -> Table "OA" Full Scan (rows=20000.00)
+                -> Record Buffer (record length: 25) (rows=20000.00)
+                    -> Table "OB" Full Scan (rows=20000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=20000.00)
+            -> Table "OA" Full Scan (rows=20000.00)
+            -> Filter (rows=1.00)
+                -> Table "OB" Full Scan (rows=20000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=20000.00)
+            -> Table "OA" Full Scan (rows=20000.00)
+            -> Filter (rows=1.00)
+                -> Table "OB" Full Scan (rows=20000.00)
+##### rc=0
+##### 10_nd.sql
+
+STAT$FIELD_NAME                                                        STAT$NDISTINCT      STAT$SAMPLE_SIZE    STAT$SAMPLE_FRACTION STAT$ND_EXACT 
+=============================================================== ===================== ===================== ======================= ============= 
+X                                                                              100000                 30000      0.3000000000000000 <false>       
+Y                                                                               20042                 30000      0.3000000000000000 <false>       
+P                                                                              100000                 30000      0.3000000000000000 <false>       
+
+
+STAT$FIELD_NAME                                                        STAT$NDISTINCT      STAT$SAMPLE_SIZE    STAT$SAMPLE_FRACTION STAT$ND_EXACT 
+=============================================================== ===================== ===================== ======================= ============= 
+X                                                                               99837                 30000       1.000000000000000 <true>        
+Y                                                                               20122                 30000       1.000000000000000 <true>        
+P                                                                               99667                 30000       1.000000000000000 <true>        
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=999.38)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50018.04)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10192.42)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51202.06)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10335.74)
+            -> Table "T" Full Scan (rows=99991.00)
+##### rc=0
+##### 11_range.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=999.38)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=999.38)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49817.96)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51018.42)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+##### rc=0
+##### 12_geq.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49817.96)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49817.96)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=799.30)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49817.96)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50018.04)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51068.03)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=48788.94)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+##### rc=0
+##### 13_hist.sql
+
+STAT$FIELD_NAME                 X
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  30000
+MCV                             <null>
+H1                              0:4
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 30000,
+  "sample_rows": 30000,
+  "boundaries": [
+    "00000000",
+    "D7850100"
+  ]
+}
+H2                              0:2
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 30000,
+  "sample_rows": 30000,
+  "boundaries": [
+    "00000000",
+    "D7850100"
+  ]
+}
+
+STAT$FIELD_NAME                 Y
+STAT$MCV_ROWS                   400
+STAT$HIST_ROWS                  29600
+MCV                             0:d
+{
+  "format": 2,
+  "entry_count": 100,
+  "mcv_rows": 400,
+  "sample_rows": 30000,
+  "mcv": [
+    { "value": "AA050000", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "AB050000", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "AC050000", "frequency": 0.0001333333333, "count":
+H1                              0:b
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 100,
+  "boundary_count": 101,
+  "hist_rows": 29600,
+  "sample_rows": 30000,
+  "boundaries": [
+    "00000000",
+    "E7000000",
+    "04020000",
+    "AF020000",
+    "5A030000",
+    "13040000",
+    "D5040000",
+    "69050000",
+    "7A060000",
+    "79070000",
+    "9C080000",
+    "98090000",
+    "670A0000",
+    "220B0000",
+    "010C0000",
+    "C7
+H2                              0:9
+400000",
+    "27410000",
+    "F6410000",
+    "94420000",
+    "AD430000",
+    "72440000",
+    "04450000",
+    "E1450000",
+    "C8460000",
+    "A8470000",
+    "2F480000",
+    "0C490000",
+    "A1490000",
+    "144A0000",
+    "EC4A0000",
+    "CD4B0000",
+    "C44C0000",
+    "4D4D0000",
+    "1F4E0000"
+  ]
+}
+
+STAT$FIELD_NAME                 P
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  30000
+MCV                             <null>
+H1                              0:15
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 30000,
+  "sample_rows": 30000,
+  "boundaries": [
+    "64006162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A61626364653130303030",
+    "64006162636465666768696A6162636465
+H2                              0:13
+6A6162636465666768696A6162636465666768696A6162636465666768696A61626364653130303030",
+    "64006162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A6162636465666768696A61626364656667686939"
+  ]
+}
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99837.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49816.96)
+            -> Table "TZ" Full Scan (rows=100000.00)
+##### rc=0
+##### 14_text.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=11945.83)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=88445.83)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=22441.67)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=199.60)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "T" Full Scan (rows=99991.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=11945.83)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                11000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=22441.67)
+            -> Table "TU" Full Scan (rows=100000.00)
+
+                COUNT 
+===================== 
+                22400 
+
+##### rc=0
+##### 15_param.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=25000.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=25000.00)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1000000000.00)
+            -> Table "OA" Full Scan (rows=20000.00)
+            -> Filter (rows=50000.00)
+                -> Table "TZ" Full Scan (rows=100000.00)
+##### rc=0
+##### 16_between.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=912.48)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=912.48)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51068.03)
+            -> Table "TZ" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50831.11)
+            -> Table "TZ" Full Scan (rows=100000.00)
+##### rc=0
+##### 17_m2.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20000.00)
+            -> Table "OA" Full Scan (rows=20000.00)
+            -> Record Buffer (record length: 33) (rows=20000.00)
+                -> Table "OB" Full Scan (rows=20000.00)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=20000000.00)
+            -> Table "OA" Full Scan (rows=20000.00)
+            -> Filter (rows=1000.00)
+                -> Table "OB" Full Scan (rows=20000.00)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                  9000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20000.00)
+            -> Table "OA" Full Scan (rows=20000.00)
+            -> Record Buffer (record length: 33) (rows=20000.00)
+                -> Table "OB" Full Scan (rows=20000.00)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+##### rc=0
+##### 18_m2def.sql
+
+PLAN (RDB$DATABASE NATURAL)
+
+RDB$GET_CONTEXT                                                                                                                                                                                                                                                 
+=============================================================================================================================================================================================================================================================== 
+C:\USERS\ALEKS\APPDATA\LOCAL\TEMP\CLAUDE\E--PROJECTS-BIG-HQBIRD\58624A2E-45D9-4769-AE51-5E8B14B87350\SCRATCHPAD\FBTEST3\T2DEF.FDB                                                                                                                               
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                  9000 
+
+##### rc=0
+##### 19_s8.sql
+
+Select Expression
+    -> Sort (record length: 60, key length: 8)
+        -> Filter
+            -> Hash Join (inner) (keys: 1, total key length: 4)
+                -> Table "BIG" as "B" Full Scan
+                -> Record Buffer (record length: 33)
+                    -> Table "SA" as "A" Full Scan
+
+Select Expression
+    -> Sort (record length: 60, key length: 8)
+        -> Filter
+            -> Hash Join (inner) (keys: 1, total key length: 4)
+                -> Table "BIG" as "B" Full Scan
+                -> Record Buffer (record length: 33)
+                    -> Filter
+                        -> Table "SA" as "A" Access By ID
+                            -> Bitmap
+                                -> Index "RDB$PRIMARY6" Range Scan (upper bound: 1/1)
+
+PLAN SORT (SORT (HASH (A B NATURAL, A A INDEX (RDB$PRIMARY6))))
+
+                COUNT 
+===================== 
+                46000 
+
+
+PLAN SORT (HASH (A B NATURAL, A A INDEX (RDB$PRIMARY6)))
+
+                  MIN 
+===================== 
+                    0 
+
+##### rc=0
+##### 20_n1.sql
+
+CONSTANT 
+======== 
+before   
+
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$SCALE
+-At line 1, column 100
+At line 10 in file <dir>/20_n1.sql
+
+CONSTANT 
+======== 
+after    
+
+Statement failed, SQLSTATE = 42S22
+unsuccessful metadata update
+-ALTER DATABASE failed
+-Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$SCALE
+-At line 1, column 149
+After line 11 in file <dir>/20_n1.sql
+##### rc=1
