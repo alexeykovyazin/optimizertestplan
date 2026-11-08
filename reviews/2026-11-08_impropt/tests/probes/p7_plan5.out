@@ -1,0 +1,24 @@
+
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=2667352.33)
+        -> Filter (rows=2667352.33)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2667352.33)
+                -> Filter (rows=4409400.00)
+                    -> Table "L" Full Scan (rows=4500000.00)
+                -> Record Buffer (record length: 33) (rows=2724883.33)
+                    -> Filter (rows=2724883.33)
+                        -> Table "H" Full Scan (rows=5500000.00)
+
+Select Expression
+    -> Sort (record length: 60, key length: 8) (rows=2722158.45)
+        -> Filter (rows=2722158.45)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2722158.45)
+                -> Table "L" Full Scan (rows=4500000.00)
+                -> Record Buffer (record length: 33) (rows=2724883.33)
+                    -> Filter (rows=2724883.33)
+                        -> Table "H" Full Scan (rows=5500000.00)
+
+Select Expression
+    -> Filter (rows=4409400.00)
+        -> Table "L" Access By ID (rows=4500000.00)
+            -> Index "PK_L" Full Scan

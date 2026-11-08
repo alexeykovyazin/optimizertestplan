@@ -1,0 +1,46 @@
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Nested Loop Join (inner) (rows=5993999.92)
+                -> Table "L" Full Scan (rows=4500000.00)
+                -> Filter (rows=1.33)
+                    -> Table "H" Access By ID (rows=2.66)
+                        -> Bitmap
+                            -> Index "H_K" Range Scan (full match)
+Select Expression
+    -> Union (rows=2.00)
+        -> Table "RDB$DATABASE" as "R RDB$DATABASE" Full Scan (rows=1.00)
+        -> Table "RDB$DATABASE" as "R RDB$DATABASE" Full Scan (rows=1.00)
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Nested Loop Join (inner) (rows=5993999.92)
+                -> Table "L" Full Scan (rows=4500000.00)
+                -> Filter (rows=1.33)
+                    -> Table "H" Access By ID (rows=2.66)
+                        -> Bitmap
+                            -> Index "H_K" Range Scan (full match)
+Select Expression
+    -> Union (rows=2.00)
+        -> Table "RDB$DATABASE" as "R RDB$DATABASE" Full Scan (rows=1.00)
+        -> Table "RDB$DATABASE" as "R RDB$DATABASE" Full Scan (rows=1.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=5993999.92)
+            -> Table "L" Full Scan (rows=4500000.00)
+            -> Filter (rows=1.33)
+                -> Table "H" Access By ID (rows=2.66)
+                    -> Bitmap
+                        -> Index "H_K" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=5993999.92)
+            -> Table "L" Full Scan (rows=4500000.00)
+            -> Filter (rows=1.33)
+                -> Table "H" Access By ID (rows=2.66)
+                    -> Bitmap
+                        -> Index "H_K" Range Scan (full match)

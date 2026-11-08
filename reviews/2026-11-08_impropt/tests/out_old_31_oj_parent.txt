@@ -1,0 +1,80 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=949264901.29)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=949264901.29)
+                -> Nested Loop Join (outer) (rows=45875346.41)
+                    -> Table "OA" Full Scan (rows=20692.27)
+                    -> Filter (rows=2217.03)
+                        -> Table "OB" Full Scan (rows=22170.29)
+                -> Record Buffer (record length: 25) (rows=20692.27)
+                    -> Table "OC" Full Scan (rows=20692.27)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=474632450.65)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=474632450.65)
+                -> Nested Loop Join (outer) (rows=22937673.20)
+                    -> Table "OA" Full Scan (rows=20692.27)
+                    -> Filter (rows=1108.51)
+                        -> Table "OB" Full Scan (rows=22170.29)
+                -> Record Buffer (record length: 25) (rows=20692.27)
+                    -> Table "OC" Full Scan (rows=20692.27)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                  9000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=949264901.29)
+            -> Filter (rows=428169.90)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=428169.90)
+                    -> Table "OC" Full Scan (rows=20692.27)
+                    -> Record Buffer (record length: 25) (rows=20692.27)
+                        -> Table "OA" Full Scan (rows=20692.27)
+            -> Filter (rows=2217.03)
+                -> Table "OB" Full Scan (rows=22170.29)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+PLAN JOIN (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B1_EXPECT_0 
+===================== 
+                    0 
+
+
+PLAN JOIN (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B2_EXPECT_1 
+===================== 
+                    1 
+
+
+PLAN JOIN (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B3_EXPECT_1 
+===================== 
+                    1 
+
+
+PLAN JOIN (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B4_EXPECT_0 
+===================== 
+                    0 
+

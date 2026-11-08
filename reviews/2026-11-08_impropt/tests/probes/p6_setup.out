@@ -1,0 +1,133 @@
+
+STAT$FIELD_NAME                 ID
+STAT$NDISTINCT                  200000
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  30000
+STAT$LEN_COUNT                  <null>
+STAT$LEN_SUM                    <null>
+STAT$LEN_MIN                    <null>
+STAT$LEN_MAX                    <null>
+STAT$LEN_BOUNDS_TEXT            <null>
+
+STAT$FIELD_NAME                 NB
+STAT$NDISTINCT                  <null>
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  <null>
+STAT$LEN_COUNT                  <null>
+STAT$LEN_SUM                    <null>
+STAT$LEN_MIN                    <null>
+STAT$LEN_MAX                    <null>
+STAT$LEN_BOUNDS_TEXT            <null>
+
+STAT$FIELD_NAME                 NC
+STAT$NDISTINCT                  3773
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   6386
+STAT$HIST_ROWS                  23614
+STAT$LEN_COUNT                  30000
+STAT$LEN_SUM                    9600000
+STAT$LEN_MIN                    320
+STAT$LEN_MAX                    320
+STAT$LEN_BOUNDS_TEXT            85:788
+{
+  "format": 1,
+  "count": 30000,
+  "sum": 9600000,
+  "min": 320,
+  "max": 320,
+  "avg": 320,
+  "bounds": [ ]
+}
+
+STAT$FIELD_NAME                 NM
+STAT$NDISTINCT                  3807
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   6386
+STAT$HIST_ROWS                  23614
+STAT$LEN_COUNT                  30000
+STAT$LEN_SUM                    412963
+STAT$LEN_MIN                    5
+STAT$LEN_MAX                    42
+STAT$LEN_BOUNDS_TEXT            85:5a2
+{
+  "format": 1,
+  "count": 30000,
+  "sum": 412963,
+  "min": 5,
+  "max": 42,
+  "avg": 13.76543333,
+  "bounds": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+}
+
+STAT$FIELD_NAME                 NN
+STAT$NDISTINCT                  3807
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   6386
+STAT$HIST_ROWS                  23614
+STAT$LEN_COUNT                  30000
+STAT$LEN_SUM                    412963
+STAT$LEN_MIN                    5
+STAT$LEN_MAX                    42
+STAT$LEN_BOUNDS_TEXT            85:782
+{
+  "format": 1,
+  "count": 30000,
+  "sum": 412963,
+  "min": 5,
+  "max": 42,
+  "avg": 13.76543333,
+  "bounds": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+}
+
+
+
+           L                 COUNT 
+============ ===================== 
+           5                  3635 
+           6                  4183 
+           7                  4363 
+           8                 13850 
+           9                 13521 
+          10                 13183 
+          11                 13250 
+          12                 18187 
+          13                 16463 
+          14                 16064 
+          15                 16858 
+          16                 13440 
+          17                 15938 
+          18                  8656 
+          19                  7097 
+          20                  5556 
+          21                  4057 
+          22                  3494 
+          23                  2067 
+          24                  1611 
+
+           L                 COUNT 
+============ ===================== 
+          25                   794 
+          26                  1230 
+          27                   970 
+          28                   352 
+          29                   345 
+          30                   212 
+          31                   308 
+          32                   129 
+          33                    42 
+          34                    43 
+          35                    42 
+          36                    18 
+          37                    12 
+          38                     6 
+          39                     6 
+          41                    12 
+          42                     6 
+
+
+                COUNT                   AVG 
+===================== ===================== 
+                 3799                    13 
+

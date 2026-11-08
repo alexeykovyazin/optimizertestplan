@@ -1,0 +1,280 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=67437.10)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=58630.43)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=55203.77)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=16616.94)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=7576.94)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2686.59)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=6393.26)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1559.92)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2381.21)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1841.21)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=240.03)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1246.70)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=61870.43)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=61317.10)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=12656.94)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2686.59)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2381.21)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=240.03)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=3119.84)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=111059.33)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2439.92)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=7156.94)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=53372.83)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49939.50)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=43188.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=16829.33)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=14700.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=197618.79)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=67437.10)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2686.59)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2381.21)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=240.03)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2381.21)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=61870.43)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=171000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=45466.80)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=3312.22)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=241.41)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=3312.22)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=130812.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5239.98)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2436.78)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=240.11)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=53982.00)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2547.15)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2379.13)
+            -> Table "PN" Full Scan (rows=200000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=240.03)
+            -> Table "PN" Full Scan (rows=200000.00)

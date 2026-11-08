@@ -1,0 +1,246 @@
+
+STAT$FIELD_NAME                 B
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  20000
+MCV                             <null>
+H1                              0:1
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 20000,
+  "sample_rows": 20000,
+  "boundaries": [
+    "0",
+    "19999000000000"
+  ]
+}
+
+STAT$FIELD_NAME                 BO
+STAT$MCV_ROWS                   20000
+STAT$HIST_ROWS                  0
+MCV                             0:6
+{
+  "format": 2,
+  "entry_count": 2,
+  "mcv_rows": 20000,
+  "sample_rows": 20000,
+  "mcv": [
+    { "value": "FALSE", "frequency": 0.66665, "count": 13333 },
+    { "value": "TRUE", "frequency": 0.33335, "count": 6667 }
+  ]
+}
+H1                              0:4
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 0,
+  "sample_rows": 20000,
+  "boundaries": [
+    "FALSE",
+    "TRUE"
+  ]
+}
+
+STAT$FIELD_NAME                 CN
+STAT$MCV_ROWS                   20000
+STAT$HIST_ROWS                  0
+MCV                             0:c
+{
+  "format": 2,
+  "entry_count": 20,
+  "mcv_rows": 20000,
+  "sample_rows": 20000,
+  "mcv": [
+    { "value": "633020202020", "frequency": 0.05, "count": 1000 },
+    { "value": "633120202020", "frequency": 0.05, "count": 1000 },
+    { "value": "633130202020", "
+H1                              0:a
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 0,
+  "sample_rows": 20000,
+  "boundaries": [
+    "633020202020",
+    "633920202020"
+  ]
+}
+
+STAT$FIELD_NAME                 D
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  20000
+MCV                             <null>
+H1                              0:10
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 100,
+  "boundary_count": 101,
+  "hist_rows": 20000,
+  "sample_rows": 20000,
+  "boundaries": [
+    "2020-01-01",
+    "2020-01-04",
+    "2020-01-08",
+    "2020-01-12",
+    "2020-01-16",
+    "2020-01-20",
+    "2020-01-24",
+    "2020-01-28",
+   
+
+STAT$FIELD_NAME                 DB
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  20000
+MCV                             <null>
+H1                              0:13
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 20000,
+  "sample_rows": 20000,
+  "boundaries": [
+    "0.000000000000000",
+    "2857.000000000000"
+  ]
+}
+
+STAT$FIELD_NAME                 NM
+STAT$MCV_ROWS                   20000
+STAT$HIST_ROWS                  0
+MCV                             0:18
+{
+  "format": 2,
+  "entry_count": 50,
+  "mcv_rows": 20000,
+  "sample_rows": 20000,
+  "mcv": [
+    { "value": "0.25", "frequency": 0.02, "count": 400 },
+    { "value": "1.25", "frequency": 0.02, "count": 400 },
+    { "value": "2.25", "frequency": 0.02, "count":
+H1                              0:16
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 0,
+  "sample_rows": 20000,
+  "boundaries": [
+    "0.25",
+    "49.25"
+  ]
+}
+
+STAT$FIELD_NAME                 TM
+STAT$MCV_ROWS                   600
+STAT$HIST_ROWS                  19400
+MCV                             0:1e
+{
+  "format": 2,
+  "entry_count": 100,
+  "mcv_rows": 600,
+  "sample_rows": 20000,
+  "mcv": [
+    { "value": "08:00:00.0000", "frequency": 0.0003, "count": 6 },
+    { "value": "08:00:01.0000", "frequency": 0.0003, "count": 6 },
+    { "value": "08:00:02.0000", "
+H1                              0:1c
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 100,
+  "boundary_count": 101,
+  "hist_rows": 19400,
+  "sample_rows": 20000,
+  "boundaries": [
+    "08:01:40.0000",
+    "08:02:12.0000",
+    "08:02:44.0000",
+    "08:03:16.0000",
+    "08:03:49.0000",
+    "08:04:21.0000",
+    "08:04:53.0000",
+
+
+STAT$FIELD_NAME                 TS
+STAT$MCV_ROWS                   <null>
+STAT$HIST_ROWS                  20000
+MCV                             <null>
+H1                              0:22
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 20000,
+  "sample_rows": 20000,
+  "boundaries": [
+    "06-MAY-2021 10:00:00.0000",
+    "06-MAY-2021 15:33:19.0000"
+  ]
+}
+
+STAT$FIELD_NAME                 VN
+STAT$MCV_ROWS                   20000
+STAT$HIST_ROWS                  0
+MCV                             0:27
+{
+  "format": 2,
+  "entry_count": 30,
+  "mcv_rows": 20000,
+  "sample_rows": 20000,
+  "mcv": [
+    { "value": "02006B30", "frequency": 0.03335, "count": 667 },
+    { "value": "02006B31", "frequency": 0.03335, "count": 667 },
+    { "value": "03006B3130", "freque
+H1                              0:25
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 0,
+  "sample_rows": 20000,
+  "boundaries": [
+    "02006B30",
+    "02006B39"
+  ]
+}
+
+STAT$FIELD_NAME                 VO
+STAT$MCV_ROWS                   20000
+STAT$HIST_ROWS                  0
+MCV                             0:2d
+{
+  "format": 2,
+  "entry_count": 25,
+  "mcv_rows": 20000,
+  "sample_rows": 20000,
+  "mcv": [
+    { "value": "02006F30", "frequency": 0.04, "count": 800 },
+    { "value": "02006F31", "frequency": 0.04, "count": 800 },
+    { "value": "03006F3130", "frequency": 
+H1                              0:2b
+{
+  "format": 2,
+  "bins_requested": 100,
+  "bins_actual": 1,
+  "boundary_count": 2,
+  "hist_rows": 0,
+  "sample_rows": 20000,
+  "boundaries": [
+    "02006F30",
+    "02006F39"
+  ]
+}
+
+

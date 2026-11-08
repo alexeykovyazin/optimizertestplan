@@ -1,0 +1,39 @@
+
+STAT$FIELD_NAME                 NL
+STAT$NDISTINCT                  3799
+STAT$MCV_ROWS                   6360
+STAT$LEN_MIN                    21
+STAT$LEN_MAX                    132
+STAT$LEN_BOUNDS_TEXT            85:1a42
+{
+  "format": 1,
+  "count": 30000,
+  "sum": 1419744,
+  "min": 21,
+  "max": 132,
+  "avg": 47.3248,
+  "bounds": [ 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ]
+}
+
+STAT$FIELD_NAME                 NQ
+STAT$NDISTINCT                  3798
+STAT$MCV_ROWS                   6360
+STAT$LEN_MIN                    1
+STAT$LEN_MAX                    132
+STAT$LEN_BOUNDS_TEXT            85:3c2
+{
+  "format": 1,
+  "count": 30000,
+  "sum": 1418290,
+  "min": 1,
+  "max": 132,
+  "avg": 47.27633333,
+  "bounds": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
+}
+
+
+
+         MIN                   AVG          MAX 
+============ ===================== ============ 
+          21                    47          132 
+

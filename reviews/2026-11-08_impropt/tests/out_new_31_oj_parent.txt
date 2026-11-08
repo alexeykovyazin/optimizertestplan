@@ -1,0 +1,77 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=428169899.80)
+            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20692.27)
+                -> Table "OA" Full Scan (rows=20692.27)
+                -> Record Buffer (record length: 25) (rows=22170.29)
+                    -> Table "OB" Full Scan (rows=22170.29)
+            -> Table "OC" Full Scan (rows=20692.27)
+
+                COUNT                 COUNT 
+===================== ===================== 
+Statement failed, SQLSTATE = 22000
+no current record for fetch operation
+After line 22 in file E:\Projects_Big\optimizertestplan\reviews\2026-11-08_impropt\tests\31_oj_parent.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=428169899.80)
+            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20692.27)
+                -> Table "OA" Full Scan (rows=20692.27)
+                -> Record Buffer (record length: 33) (rows=22170.29)
+                    -> Table "OB" Full Scan (rows=22170.29)
+            -> Table "OC" Full Scan (rows=20692.27)
+
+                COUNT                 COUNT 
+===================== ===================== 
+            400000000                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=428169.90)
+            -> Filter (rows=428169.90)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=428169.90)
+                    -> Table "OC" Full Scan (rows=20692.27)
+                    -> Record Buffer (record length: 25) (rows=20692.27)
+                        -> Table "OA" Full Scan (rows=20692.27)
+            -> Record Buffer (record length: 25) (rows=22170.29)
+                -> Table "OB" Full Scan (rows=22170.29)
+
+                COUNT                 COUNT 
+===================== ===================== 
+                20000                 20000 
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B1_EXPECT_0 
+===================== 
+                    1 
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B2_EXPECT_1 
+===================== 
+                    1 
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B3_EXPECT_1 
+===================== 
+                    1 
+
+
+PLAN HASH (OA NATURAL, OB NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+          B4_EXPECT_0 
+===================== 
+                    1 
+

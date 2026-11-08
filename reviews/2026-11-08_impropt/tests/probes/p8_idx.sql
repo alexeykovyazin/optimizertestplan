@@ -1,0 +1,1 @@
+connect 'probe8' user SYSDBA; select rdb$relation_name, rdb$index_name from rdb$indices where rdb$relation_name in ('O','L','L2','PS','PB'); select rdb$relation_name from rdb$relations where rdb$relation_name starting 'STAT$';

@@ -1,0 +1,55 @@
+
+               REF_F0 
+===================== 
+                 1427 
+
+Current memory = 36189504
+Delta memory = 266032
+Max memory = 36276512
+Elapsed time = 1.749 sec
+Buffers = 2048
+Reads = 44017
+Writes = 2
+Fetches = 12176484
+
+              REF_F01 
+===================== 
+                 2856 
+
+Current memory = 36203984
+Delta memory = 14480
+Max memory = 36276512
+Elapsed time = 1.755 sec
+Buffers = 2048
+Reads = 43972
+Writes = 0
+Fetches = 12175843
+
+           X                     C 
+============ ===================== 
+           1                  1427 
+           2                  2856 
+
+Current memory = 36246256
+Delta memory = 42272
+Max memory = 126189456
+Elapsed time = 8.731 sec
+Buffers = 2048
+Reads = 123165
+Writes = 2
+Fetches = 33492448
+
+           P                     C 
+============ ===================== 
+          -1                     0 
+           1                  1427 
+
+Current memory = 36282048
+Delta memory = 35792
+Max memory = 126225184
+Elapsed time = 5.176 sec
+Buffers = 2048
+Reads = 105529
+Writes = 0
+Fetches = 28922010
+rc=0 secs=18

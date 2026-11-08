@@ -1,0 +1,26 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1000.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1000.00)
+                -> Table "PF" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=1000.00)
+                    -> Table "PD" Full Scan (rows=1000.00)
+
+                COUNT 
+===================== 
+                 1000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=500500.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=500500.00)
+                -> Table "PF2" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=1000.00)
+                    -> Table "PD2" Full Scan (rows=1000.00)
+
+                COUNT 
+===================== 
+               500500 
+

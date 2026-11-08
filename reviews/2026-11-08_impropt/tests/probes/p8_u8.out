@@ -1,0 +1,58 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=100000.00)
+            -> Table "O" Full Scan (rows=100000.00)
+            -> Nested Loop Join (inner) (rows=1.00)
+                -> Filter (rows=0.024000)
+                    -> Table "L" as "X L" Access By ID (rows=20.00)
+                        -> Bitmap
+                            -> Index "L_O" Range Scan (full match)
+                -> Filter (rows=1.00)
+                    -> Table "PS" as "X PS" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "RDB$PRIMARY7" Unique Scan
+
+                COUNT 
+===================== 
+                 2007 
+
+Current memory = 19492400
+Delta memory = 361296
+Max memory = 19625856
+Elapsed time = 0.683 sec
+Buffers = 2048
+Reads = 19921
+Writes = 2
+Fetches = 2531788
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=100000.00)
+            -> Table "O" Full Scan (rows=100000.00)
+            -> Nested Loop Join (inner) (rows=1.00)
+                -> Filter (rows=0.024000)
+                    -> Table "L" as "X L" Access By ID (rows=20.00)
+                        -> Bitmap
+                            -> Index "L_O" Range Scan (full match)
+                -> Filter (rows=1.00)
+                    -> Table "PS" as "X PS" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "RDB$PRIMARY7" Unique Scan
+            -> Filter (rows=1.00)
+                -> Table "PB" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY8" Unique Scan
+
+                COUNT 
+===================== 
+                 2007 
+
+Current memory = 19525088
+Delta memory = 32688
+Max memory = 19625856
+Elapsed time = 0.658 sec
+Buffers = 2048
+Reads = 21719
+Writes = 2
+Fetches = 2540477

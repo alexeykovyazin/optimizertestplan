@@ -1,0 +1,35 @@
+
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=4846478.67)
+        -> Filter (rows=4846478.67)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=4846478.67)
+                -> Filter (rows=4950000.00)
+                    -> Table "H" Full Scan (rows=5000000.00)
+                -> Filter (rows=4214286.67)
+                    -> Table "L" Full Scan (rows=4300000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4846478.67)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=4846478.67)
+                -> Filter (rows=4950000.00)
+                    -> Table "H" Full Scan (rows=5000000.00)
+                -> Filter (rows=4214286.67)
+                    -> Table "L" Full Scan (rows=4300000.00)
+
+Select Expression
+    -> Sort (record length: 60, key length: 8) (rows=4851329.93)
+        -> Nested Loop Join (inner) (rows=4851329.93)
+            -> Filter (rows=4950000.00)
+                -> Table "H" Full Scan (rows=5000000.00)
+            -> Filter (rows=0.98)
+                -> Table "L" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "PK_L" Unique Scan
+
+Select Expression
+    -> Sort (record length: 60, key length: 8) (rows=4995000.00)
+        -> Filter (rows=4995000.00)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=4995000.00)
+                -> Table "H" Full Scan (rows=5000000.00)
+                -> Table "L" Full Scan (rows=4300000.00)

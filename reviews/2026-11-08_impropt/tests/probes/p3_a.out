@@ -1,0 +1,33 @@
+
+STAT$RELATION_NAME              JA
+STAT$FIELD_NAME                 K
+STAT$NULL_FRACTION              0.000000000000000
+STAT$NDISTINCT                  250
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   22863
+STAT$HIST_ROWS                  7137
+
+STAT$RELATION_NAME              JB
+STAT$FIELD_NAME                 K
+STAT$NULL_FRACTION              0.000000000000000
+STAT$NDISTINCT                  50292
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   14840
+STAT$HIST_ROWS                  15160
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100680.06)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=100680.06)
+                -> Table "JA" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=100000.00)
+                    -> Table "JB" Full Scan (rows=100000.00)
+
+PLAN HASH (JA NATURAL, JB NATURAL)
+
+                COUNT 
+===================== 
+                25000 
+

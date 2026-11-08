@@ -1,0 +1,44 @@
+
+             CORRECT2 
+===================== 
+                 2571 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Window (rows=3357499.66)
+            -> Window Partition (rows=1.00)
+                -> Window Buffer (rows=0.000000)
+                    -> Record Buffer (record length: 58) (rows=3357499.66)
+                        -> Filter (rows=3357499.66)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3357499.66)
+                                -> Filter (rows=4411350.00)
+                                    -> Table "L" as "Y X L" Access By ID (rows=4500000.00)
+                                        -> Index "PK_L" Full Scan
+                                -> Record Buffer (record length: 33) (rows=3428400.00)
+                                    -> Filter (rows=3428400.00)
+                                        -> Table "H" as "Y X H" Full Scan (rows=12000000.00)
+
+                COUNT                    G0                    F2                 MIN_D 
+===================== ===================== ===================== ===================== 
+                 2571                     0                     0                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Window (rows=11987999.84)
+            -> Window Partition (rows=1.00)
+                -> Window Buffer (rows=0.000000)
+                    -> Record Buffer (record length: 50) (rows=11987999.84)
+                        -> Nested Loop Join (inner) (rows=11987999.84)
+                            -> Table "L" as "Y X L" Access By ID (rows=4500000.00)
+                                -> Index "PK_L" Full Scan
+                            -> Filter (rows=2.66)
+                                -> Table "H" as "Y X H" Access By ID (rows=2.66)
+                                    -> Bitmap
+                                        -> Index "H_K" Range Scan (full match)
+
+                COUNT                 MIN_D 
+===================== ===================== 
+                10000                     0 
+

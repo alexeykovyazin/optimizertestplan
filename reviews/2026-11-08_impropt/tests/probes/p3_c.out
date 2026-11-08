@@ -1,0 +1,41 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=998.00)
+            -> Filter (rows=10.00)
+                -> Table "PAR" as "P" Full Scan (rows=1000.00)
+            -> Filter (rows=99.80)
+                -> Table "CHI" as "C" Access By ID (rows=99.80)
+                    -> Bitmap
+                        -> Index "CHI_PID" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10000.00)
+            -> Table "TBL" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=30000.00)
+            -> Table "TBL" Full Scan (rows=100000.00)
+
+PLAN JOIN (P NATURAL, C INDEX (CHI_PID))
+
+                COUNT 
+===================== 
+                50000 
+
+
+PLAN (TBL NATURAL)
+
+                COUNT 
+===================== 
+                  100 
+
+
+PLAN (TBL NATURAL)
+
+                COUNT 
+===================== 
+                  300 
+

@@ -1,0 +1,163 @@
+
+RDB$FIELD_NAME                  STAT$RELATION_NAME                                                                                                                                                                                                                                          
+
+RDB$FIELD_NAME                  STAT$FIELD_NAME                                                                                                                                                                                                                                             
+
+RDB$FIELD_NAME                  STAT$NULL_FRACTION                                                                                                                                                                                                                                          
+
+RDB$FIELD_NAME                  STAT$NDISTINCT                                                                                                                                                                                                                                              
+
+RDB$FIELD_NAME                  STAT$TYPE                                                                                                                                                                                                                                                   
+
+RDB$FIELD_NAME                  STAT$CHARSET                                                                                                                                                                                                                                                
+
+RDB$FIELD_NAME                  STAT$COLLATE                                                                                                                                                                                                                                                
+
+RDB$FIELD_NAME                  STAT$SCALE                                                                                                                                                                                                                                                  
+
+RDB$FIELD_NAME                  STAT$MCV                                                                                                                                                                                                                                                    
+
+RDB$FIELD_NAME                  STAT$MCV_ROWS                                                                                                                                                                                                                                               
+
+RDB$FIELD_NAME                  STAT$HISTOGRAM                                                                                                                                                                                                                                              
+
+RDB$FIELD_NAME                  STAT$HIST_ROWS                                                                                                                                                                                                                                              
+
+RDB$FIELD_NAME                  STAT$MCV_TEXT                                                                                                                                                                                                                                               
+
+RDB$FIELD_NAME                  STAT$HISTOGRAM_TEXT                                                                                                                                                                                                                                         
+
+RDB$FIELD_NAME                  STAT$LEN_COUNT                                                                                                                                                                                                                                              
+
+RDB$FIELD_NAME                  STAT$LEN_SUM                                                                                                                                                                                                                                                
+
+RDB$FIELD_NAME                  STAT$LEN_MIN                                                                                                                                                                                                                                                
+
+RDB$FIELD_NAME                  STAT$LEN_MAX                                                                                                                                                                                                                                                
+
+RDB$FIELD_NAME                  STAT$LEN_BOUNDS                                                                                                                                                                                                                                             
+
+RDB$FIELD_NAME                  STAT$LEN_BOUNDS_TEXT                                                                                                                                                                                                                                        
+
+RDB$FIELD_NAME                  STAT$SAMPLE_SIZE                                                                                                                                                                                                                                            
+
+RDB$FIELD_NAME                  STAT$SAMPLE_FRACTION                                                                                                                                                                                                                                        
+
+RDB$FIELD_NAME                  STAT$ND_EXACT                                                                                                                                                                                                                                               
+
+RDB$FIELD_NAME                  STAT$UPDATED                                                                                                                                                                                                                                                
+
+
+
+STAT$FIELD_NAME                 Y
+STAT$MCV_TEXT                   84:2d1
+{
+  "format": 2,
+  "entry_count": 100,
+  "mcv_rows": 444,
+  "sample_rows": 30000,
+  "mcv": [
+    { "value": "6596", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6597", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6598", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6599", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6600", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6601", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6602", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6603", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6604", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6605", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6606", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6607", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6608", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6609", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6610", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6611", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6612", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6613", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6614", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6615", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6616", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6617", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6618", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6619", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6620", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6621", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6622", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6623", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6624", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6625", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6626", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6627", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6628", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6629", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6630", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6631", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6632", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6633", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6634", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6635", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6636", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6637", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6638", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "6639", "frequency": 0.0001666666667, "count": 5 },
+    { "value": "1020", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1021", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1022", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1023", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1024", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1025", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1026", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1027", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1028", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1029", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1030", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1031", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1032", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1033", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1034", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1035", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1036", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1037", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1038", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1039", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1040", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1041", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1042", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1043", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1044", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1045", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1046", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1047", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1048", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1049", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1050", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1051", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1052", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1053", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1054", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1055", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1056", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1057", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1058", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1059", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1060", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1061", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1062", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1063", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1064", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1065", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1066", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1067", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1068", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1069", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1070", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1071", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1192", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1193", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1194", "frequency": 0.0001333333333, "count": 4 },
+    { "value": "1195", "frequency": 0.0001333333333, "count": 4 }
+  ]
+}
+
+

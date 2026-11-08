@@ -1,0 +1,38 @@
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=5994000.00)
+                -> Filter (rows=11988000.00)
+                    -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=11988000.00)
+                        -> Table "H" Full Scan (rows=12000000.00)
+                        -> Table "L" Full Scan (rows=4500000.00)
+Select Expression
+    -> Union (rows=2.00)
+        -> Table "RDB$DATABASE" as "R RDB$DATABASE" Full Scan (rows=1.00)
+        -> Table "RDB$DATABASE" as "R RDB$DATABASE" Full Scan (rows=1.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5994000.00)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=5994000.00)
+                -> Filter (rows=6000000.00)
+                    -> Table "H" Full Scan (rows=12000000.00)
+                -> Table "L" Full Scan (rows=4500000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5994000.00)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=5994000.00)
+                -> Filter (rows=6000000.00)
+                    -> Table "H" Full Scan (rows=12000000.00)
+                -> Table "L" Full Scan (rows=4500000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5994000.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5994000.00)
+                -> Table "H" Full Scan (rows=12000000.00)
+                -> Record Buffer (record length: 33) (rows=2250000.00)
+                    -> Filter (rows=2250000.00)
+                        -> Table "L" Full Scan (rows=4500000.00)

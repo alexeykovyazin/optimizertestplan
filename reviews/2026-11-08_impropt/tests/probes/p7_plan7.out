@@ -1,0 +1,16 @@
+
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=11988000.00)
+        -> Filter (rows=11988000.00)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=11988000.00)
+                -> Table "H" Full Scan (rows=12000000.00)
+                -> Table "L" Full Scan (rows=4500000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10072890.71)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=10072890.71)
+                -> Filter (rows=10285600.00)
+                    -> Table "H" Full Scan (rows=12000000.00)
+                -> Filter (rows=4411350.00)
+                    -> Table "L" Full Scan (rows=4500000.00)

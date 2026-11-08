@@ -1,0 +1,58 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=24.76)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=24.76)
+                -> Nested Loop Join (inner) (rows=24.76)
+                    -> Filter (rows=2000.00)
+                        -> Table "O" Access By ID (rows=2000.00)
+                            -> Bitmap
+                                -> Index "O_GRP" Range Scan (upper bound: 1/1)
+                    -> Filter (rows=0.012380)
+                        -> Table "LA2" Access By ID (rows=1.20)
+                            -> Bitmap
+                                -> Index "LA2_O" Range Scan (full match)
+                -> Record Buffer (record length: 25) (rows=4000.00)
+                    -> Table "PT" Full Scan (rows=4000.00)
+
+                COUNT 
+===================== 
+                   25 
+
+Current memory = 20670032
+Delta memory = 227840
+Max memory = 25285680
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 1699
+Writes = 9
+Fetches = 16647
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=20.62)
+            -> Filter (rows=2000.00)
+                -> Table "O" Access By ID (rows=2000.00)
+                    -> Bitmap
+                        -> Index "O_GRP" Range Scan (upper bound: 1/1)
+            -> Filter (rows=0.010312)
+                -> Table "LB2" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "LB2_O" Range Scan (full match)
+            -> Filter (rows=1.00)
+                -> Table "PT" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY9" Unique Scan
+
+                COUNT 
+===================== 
+                   17 
+
+Current memory = 20736720
+Delta memory = 66688
+Max memory = 25285680
+Elapsed time = 0.007 sec
+Buffers = 2048
+Reads = 814
+Writes = 0
+Fetches = 11215

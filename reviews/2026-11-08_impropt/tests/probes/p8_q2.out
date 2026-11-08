@@ -1,0 +1,77 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1000.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1000.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1000.00)
+                    -> Table "O" Full Scan (rows=100000.00)
+                    -> Record Buffer (record length: 33) (rows=100000.00)
+                        -> Table "L2" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=10000.00)
+                    -> Table "PS" Full Scan (rows=10000.00)
+
+                COUNT 
+===================== 
+                 1000 
+
+Current memory = 19409728
+Delta memory = 287856
+Max memory = 24911456
+Elapsed time = 0.047 sec
+Buffers = 2048
+Reads = 1639
+Writes = 0
+Fetches = 217166
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1000.00)
+            -> Table "O" Full Scan (rows=100000.00)
+            -> Filter (rows=0.010000)
+                -> Table "L2" Access By ID (rows=0.010000)
+                    -> Bitmap
+                        -> Index "L2_O" Range Scan (full match)
+            -> Filter (rows=1.00)
+                -> Table "PS" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY7" Unique Scan
+
+                COUNT 
+===================== 
+                 1000 
+
+Current memory = 19442096
+Delta memory = 32368
+Max memory = 24911456
+Elapsed time = 0.082 sec
+Buffers = 2048
+Reads = 8
+Writes = 0
+Fetches = 409363
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9962.91)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=9962.91)
+                -> Nested Loop Join (inner) (rows=9962.91)
+                    -> Filter (rows=5000.00)
+                        -> Table "O" Full Scan (rows=100000.00)
+                    -> Filter (rows=1.99)
+                        -> Table "L" Access By ID (rows=20.03)
+                            -> Bitmap
+                                -> Index "L_O" Range Scan (full match)
+                -> Record Buffer (record length: 25) (rows=10000.00)
+                    -> Table "PS" Full Scan (rows=10000.00)
+
+                COUNT 
+===================== 
+                19980 
+
+Current memory = 19548960
+Delta memory = 106864
+Max memory = 24911456
+Elapsed time = 0.158 sec
+Buffers = 2048
+Reads = 19489
+Writes = 2
+Fetches = 251178

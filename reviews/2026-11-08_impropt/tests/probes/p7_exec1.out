@@ -1,0 +1,87 @@
+
+              CORRECT 
+===================== 
+                 7715 
+
+Current memory = 36222352
+Delta memory = 298880
+Max memory = 36277216
+Elapsed time = 0.017 sec
+Buffers = 2048
+Reads = 1088
+Writes = 0
+Fetches = 10687
+
+        H_FILTER_LOST 
+===================== 
+                 9000 
+
+Current memory = 36268880
+Delta memory = 46528
+Max memory = 36277216
+Elapsed time = 0.002 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 10048
+
+        L_FILTER_LOST 
+===================== 
+                 8572 
+
+Current memory = 36316000
+Delta memory = 47120
+Max memory = 36320800
+Elapsed time = 0.003 sec
+Buffers = 2048
+Reads = 1
+Writes = 0
+Fetches = 11049
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10072890.71)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=10072890.71)
+                -> Filter (rows=10285600.00)
+                    -> Table "H" Full Scan (rows=12000000.00)
+                -> Filter (rows=4411350.00)
+                    -> Table "L" Full Scan (rows=4500000.00)
+
+                COUNT 
+===================== 
+                 7715 
+
+Current memory = 36347952
+Delta memory = 31952
+Max memory = 126198624
+Elapsed time = 4.788 sec
+Buffers = 2048
+Reads = 61537
+Writes = 2
+Fetches = 16746263
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Window (rows=11988000.00)
+            -> Window Partition (rows=1.00)
+                -> Window Buffer (rows=0.000000)
+                    -> Record Buffer (record length: 58) (rows=11988000.00)
+                        -> Sort (record length: 68, key length: 8) (rows=11988000.00)
+                            -> Filter (rows=11988000.00)
+                                -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=11988000.00)
+                                    -> Table "H" as "Y X H" Full Scan (rows=12000000.00)
+                                    -> Table "L" as "Y X L" Full Scan (rows=4500000.00)
+
+                COUNT                    G0                    F6                 MIN_D 
+===================== ===================== ===================== ===================== 
+                10000                  1000                  1428                     0 
+
+Current memory = 36383360
+Delta memory = 35408
+Max memory = 126326144
+Elapsed time = 4.623 sec
+Buffers = 2048
+Reads = 61567
+Writes = 0
+Fetches = 16746177
+rc=0 secs=9

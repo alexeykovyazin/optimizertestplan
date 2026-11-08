@@ -1,0 +1,14 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=4500000.00)
+            -> Sort (record length: 68, key length: 8) (rows=11988000.00)
+                -> Filter (rows=11988000.00)
+                    -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=11988000.00)
+                        -> Table "H" as "X H" Full Scan (rows=12000000.00)
+                        -> Table "L" as "X L" Full Scan (rows=4500000.00)
+
+                  GRP                                         TOTAL 
+===================== ============================================= 
+                   10                                         10000 
+

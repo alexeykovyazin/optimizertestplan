@@ -1,0 +1,118 @@
+
+TAG                             C-old-store
+
+
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_COUNT
+-At line 1, column 156
+At line 18 in file n1_c.sql
+
+TAG                             C-migrated-before-refresh
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "Q" Full Scan (rows=3000.00)
+
+CNT_X                           1
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=15.00)
+            -> Table "Q" Full Scan (rows=3000.00)
+
+CNT_T1                          377
+
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                             C-after-refresh
+
+
+
+PLAN (STAT$COLUMNS ORDER RDB$PRIMARY3)
+
+STAT$FIELD_NAME                 S
+STAT$LEN_COUNT                  3000
+STAT$LEN_SUM                    17998
+STAT$LEN_MIN                    3
+STAT$LEN_MAX                    9
+HAS_BOUNDS                      <true>
+BOUNDS_TEXT                     0:1
+{
+  "format": 1,
+  "count": 3000,
+  "sum": 17998,
+  "min": 3,
+  "max": 9,
+  "avg": 5.999333333,
+  "bounds": [ 4, 5, 6, 7, 8, 9 ]
+}
+
+STAT$FIELD_NAME                 T
+STAT$LEN_COUNT                  3000
+STAT$LEN_SUM                    20585
+STAT$LEN_MIN                    4
+STAT$LEN_MAX                    8
+HAS_BOUNDS                      <true>
+BOUNDS_TEXT                     0:4
+{
+  "format": 1,
+  "count": 3000,
+  "sum": 20585,
+  "min": 4,
+  "max": 8,
+  "avg": 6.861666667,
+  "bounds": [ 5, 6, 7, 8 ]
+}
+
+STAT$FIELD_NAME                 X
+STAT$LEN_COUNT                  <null>
+STAT$LEN_SUM                    <null>
+STAT$LEN_MIN                    <null>
+STAT$LEN_MAX                    <null>
+HAS_BOUNDS                      <false>
+BOUNDS_TEXT                     <null>
+
+
+
+PLAN (STAT$MULTI_COLUMNS NATURAL)
+
+NAMED_STRUCTS                   1
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "Q" Full Scan (rows=3000.00)
+
+CNT_X                           1
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=45.38)
+            -> Table "Q" Full Scan (rows=3000.00)
+
+CNT_T2                          377
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=45.38)
+            -> Table "Q" Full Scan (rows=3000.00)
+
+CNT_T3                          300
+
+

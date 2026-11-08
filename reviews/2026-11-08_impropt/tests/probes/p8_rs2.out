@@ -1,0 +1,57 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> First N Records (rows=35766032.37)
+            -> Nested Loop Join (inner) (rows=35766032.37)
+                -> Filter (rows=597165.01)
+                    -> Table "RC" Access By ID (rows=597165.01)
+                        -> Index "RC_X" Range Scan (upper bound: 1/1)
+                -> Filter (rows=59.89)
+                    -> Table "RB" Access By ID (rows=59.89)
+                        -> Bitmap
+                            -> Index "RB_G" Range Scan (full match)
+
+                COUNT          MIN          MAX 
+===================== ============ ============ 
+                36000         1000       600000 
+
+Current memory = 20645120
+Delta memory = 398768
+Max memory = 51609312
+Elapsed time = 0.677 sec
+Buffers = 2048
+Reads = 41809
+Writes = 5
+Fetches = 3677343
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=3135849.47)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3135849.47)
+                -> Table "RB" Full Scan (rows=4200000.00)
+                -> Record Buffer (record length: 33) (rows=597165.01)
+                    -> Filter (rows=597165.01)
+                        -> Table "RC" Access By ID (rows=597165.01)
+                            -> Bitmap
+                                -> Index "RC_X" Range Scan (upper bound: 1/1)
+
+                COUNT          MIN          MAX 
+===================== ============ ============ 
+                36000         1000       600000 
+
+Current memory = 20893104
+Delta memory = 247984
+Max memory = 56055664
+Elapsed time = 0.948 sec
+Buffers = 2048
+Reads = 36012
+Writes = 0
+Fetches = 4928682
+
+Select Expression
+    -> Sort (record length: 60, key length: 8) (rows=4200982.18)
+        -> Filter (rows=4200982.18)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=4200982.18)
+                -> Table "RB" Full Scan (rows=4200000.00)
+                -> Record Buffer (record length: 33) (rows=800000.00)
+                    -> Table "RC" Full Scan (rows=800000.00)

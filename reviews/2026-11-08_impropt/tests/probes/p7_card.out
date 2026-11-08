@@ -1,0 +1,20 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "T" Full Scan (rows=400000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "T" Full Scan (rows=499863.57)
+
+PLAN (STAT$TABLES NATURAL)
+
+STAT$RELATION_NAME                                                   STAT$CARDINALITY STAT$CARD_EXACT 
+=============================================================== ===================== =============== 
+T                                                                              500000 <true>          
+
+Rolling back work.
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "T" Full Scan (rows=500000.00)

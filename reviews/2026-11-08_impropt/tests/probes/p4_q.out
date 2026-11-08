@@ -1,0 +1,252 @@
+
+TAG                             R01 50000
+REAL_CNT                        50000
+
+
+
+TAG                             R02 0
+REAL_CNT                        0
+
+
+
+TAG                             R03 50000
+REAL_CNT                        50000
+
+
+
+TAG                             R04 collate
+REAL_CNT                        50000
+
+
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 103
+-collate
+At line 7 in file p4_q.sql
+
+TAG                             R06 50000
+REAL_CNT                        50000
+
+
+
+TAG                             R07 0
+REAL_CNT                        0
+
+
+
+TAG                             R08
+REAL_CNT                        50000
+
+
+
+TAG                             R09
+REAL_CNT                        50000
+
+
+
+TAG                             R10
+REAL_CNT                        0
+
+
+
+TAG                             R11
+REAL_CNT                        300
+
+
+
+TAG                             R12
+REAL_CNT                        300
+
+
+
+TAG                             R13
+REAL_CNT                        50000
+
+
+
+TAG                             R14
+REAL_CNT                        50000
+
+
+
+TAG                             R15
+REAL_CNT                        50000
+
+
+
+TAG                             F01
+REAL_CNT                        50000
+
+
+
+TAG                             F02
+REAL_CNT                        50000
+
+
+
+TAG                             F03
+REAL_CNT                        50000
+
+
+
+TAG                             F04
+REAL_CNT                        11100
+
+
+
+TAG                             F05
+REAL_CNT                        11100
+
+
+
+TAG                             F06
+REAL_CNT                        50000
+
+
+
+TAG                             F07
+REAL_CNT                        50000
+
+
+
+TAG                             F08
+REAL_CNT                        50000
+
+
+
+TAG                             F09
+REAL_CNT                        11100
+
+
+
+TAG                             F10
+REAL_CNT                        50000
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51400.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=700.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50600.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=700.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 79
+-collate
+At line 34 in file p4_q.sql
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=52900.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=700.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51300.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1200.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1200.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1100.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=500.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=51400.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1200.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10750.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10750.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=302.50)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "TC" Full Scan (rows=100000.00)

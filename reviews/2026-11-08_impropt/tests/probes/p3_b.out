@@ -1,0 +1,106 @@
+
+STAT$RELATION_NAME              PF
+STAT$FIELD_NAME                 K
+STAT$NULL_FRACTION              0.000000000000000
+STAT$NDISTINCT                  50258
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   15216
+STAT$HIST_ROWS                  14784
+
+STAT$RELATION_NAME              PD
+STAT$FIELD_NAME                 K
+STAT$NULL_FRACTION              0.000000000000000
+STAT$NDISTINCT                  10
+STAT$SAMPLE_SIZE                1000
+STAT$MCV_ROWS                   1000
+STAT$HIST_ROWS                  0
+
+STAT$RELATION_NAME              PF2
+STAT$FIELD_NAME                 K
+STAT$NULL_FRACTION              0.000000000000000
+STAT$NDISTINCT                  50260
+STAT$SAMPLE_SIZE                30000
+STAT$MCV_ROWS                   14447
+STAT$HIST_ROWS                  15553
+
+STAT$RELATION_NAME              PD2
+STAT$FIELD_NAME                 K
+STAT$NULL_FRACTION              0.000000000000000
+STAT$NDISTINCT                  10
+STAT$SAMPLE_SIZE                1000
+STAT$MCV_ROWS                   1000
+STAT$HIST_ROWS                  0
+
+
+
+STAT$RELATION_NAME              PF
+SUBSTRING                       0:1
+{
+  "format": 2,
+  "entry_count": 50,
+  "mcv_rows": 15216,
+  "sample_rows": 30000,
+  "mcv": [
+    { "value": "100034", "
+
+STAT$RELATION_NAME              PD
+SUBSTRING                       0:4
+{
+  "format": 2,
+  "entry_count": 10,
+  "mcv_rows": 1000,
+  "sample_rows": 1000,
+  "mcv": [
+    { "value": "1", "frequen
+
+STAT$RELATION_NAME              PF2
+SUBSTRING                       0:7
+{
+  "format": 2,
+  "entry_count": 50,
+  "mcv_rows": 14447,
+  "sample_rows": 30000,
+  "mcv": [
+    { "value": "100014", "
+
+STAT$RELATION_NAME              PD2
+SUBSTRING                       0:a
+{
+  "format": 2,
+  "entry_count": 10,
+  "mcv_rows": 1000,
+  "sample_rows": 1000,
+  "mcv": [
+    { "value": "1", "frequen
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+                -> Table "PF" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=1000.00)
+                    -> Table "PD" Full Scan (rows=1000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=479000.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=479000.00)
+                -> Table "PF2" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 25) (rows=1000.00)
+                    -> Table "PD2" Full Scan (rows=1000.00)
+
+PLAN HASH (PF NATURAL, PD NATURAL)
+
+                COUNT 
+===================== 
+                 1000 
+
+
+PLAN HASH (PF2 NATURAL, PD2 NATURAL)
+
+                COUNT 
+===================== 
+               500500 
+

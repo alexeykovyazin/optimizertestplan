@@ -1,0 +1,35 @@
+
+TAG                             B-before
+
+
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_COUNT
+-At line 1, column 156
+At line 14 in file n1_b.sql
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_COUNT
+-At line 1, column 156
+At line 15 in file n1_b.sql
+
+TAG                             B-after
+
+
+Statement failed, SQLSTATE = 42S22
+unsuccessful metadata update
+-ALTER DATABASE failed
+-Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_COUNT
+-At line 1, column 254
+After line 16 in file n1_b.sql
+
+TAG                             B-end
+
+

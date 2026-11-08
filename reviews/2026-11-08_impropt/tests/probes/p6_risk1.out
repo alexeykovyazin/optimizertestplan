@@ -1,0 +1,3 @@
+
+Select Expression
+    -> Table "RDB$DATABASE" Full Scan (rows=1.00)

@@ -1,0 +1,30 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Sort (record length: 60, key length: 8) (rows=47349489.47)
+            -> Filter (rows=47349489.47)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=47349489.47)
+                    -> Table "RB" Full Scan (rows=4200000.00)
+                    -> Record Buffer (record length: 33) (rows=800000.00)
+                        -> Table "RC" Full Scan (rows=800000.00)
+
+                COUNT          MAX 
+===================== ============ 
+             48000000       800000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=35727319.27)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=35727319.27)
+                -> Table "RB" Full Scan (rows=4200000.00)
+                -> Record Buffer (record length: 33) (rows=603635.98)
+                    -> Filter (rows=603635.98)
+                        -> Table "RC" Access By ID (rows=603635.98)
+                            -> Bitmap
+                                -> Index "RC_X" Range Scan (upper bound: 1/1)
+
+                COUNT          MAX 
+===================== ============ 
+             36000000       600000 
+

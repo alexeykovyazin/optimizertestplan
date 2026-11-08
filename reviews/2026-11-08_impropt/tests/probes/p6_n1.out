@@ -1,0 +1,19 @@
+
+CONSTANT 
+======== 
+before   
+
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_COUNT
+-At line 1, column 156
+At line 5 in file p6_n1.sql
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_COUNT
+-At line 1, column 156
+At line 6 in file p6_n1.sql

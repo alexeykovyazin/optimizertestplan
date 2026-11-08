@@ -1,0 +1,199 @@
+
+STAT$FIELD_NAME                 CH
+STAT$NDISTINCT                  501
+STAT$MCV_ROWS                   50000
+STAT$HIST_ROWS                  50000
+STAT$LEN_MIN                    10
+STAT$LEN_MAX                    10
+MCV                             0:1
+{
+  "format": 2,
+  "entry_count": 1,
+  "mcv_rows": 50000,
+  "sample_rows": 100000,
+  "mcv": [
+    { "value": "41424320202020202020", "frequency": 0.5, "count": 50000 }
+  ]
+}
+
+STAT$FIELD_NAME                 CHCI
+STAT$NDISTINCT                  501
+STAT$MCV_ROWS                   50000
+STAT$HIST_ROWS                  50000
+STAT$LEN_MIN                    40
+STAT$LEN_MAX                    40
+MCV                             0:4
+{
+  "format": 2,
+  "entry_count": 1,
+  "mcv_rows": 50000,
+  "sample_rows": 100000,
+  "mcv": [
+    { "value": "abc                                     ", "frequency": 0.5, "count": 50000 }
+  ]
+}
+
+STAT$FIELD_NAME                 CHU
+STAT$NDISTINCT                  501
+STAT$MCV_ROWS                   50000
+STAT$HIST_ROWS                  50000
+STAT$LEN_MIN                    40
+STAT$LEN_MAX                    40
+MCV                             0:7
+{
+  "format": 2,
+  "entry_count": 1,
+  "mcv_rows": 50000,
+  "sample_rows": 100000,
+  "mcv": [
+    { "value": "abc                                     ", "frequency": 0.5, "count": 50000 }
+  ]
+}
+
+STAT$FIELD_NAME                 CI
+STAT$NDISTINCT                  501
+STAT$MCV_ROWS                   50000
+STAT$HIST_ROWS                  50000
+STAT$LEN_MIN                    2
+STAT$LEN_MAX                    4
+MCV                             0:a
+{
+  "format": 2,
+  "entry_count": 1,
+  "mcv_rows": 50000,
+  "sample_rows": 100000,
+  "mcv": [
+    { "value": "abc", "frequency": 0.5, "count": 50000 }
+  ]
+}
+
+STAT$FIELD_NAME                 S
+STAT$NDISTINCT                  501
+STAT$MCV_ROWS                   50000
+STAT$HIST_ROWS                  50000
+STAT$LEN_MIN                    2
+STAT$LEN_MAX                    4
+MCV                             0:d
+{
+  "format": 2,
+  "entry_count": 1,
+  "mcv_rows": 50000,
+  "sample_rows": 100000,
+  "mcv": [
+    { "value": "abc", "frequency": 0.5, "count": 50000 }
+  ]
+}
+
+STAT$FIELD_NAME                 VN
+STAT$NDISTINCT                  501
+STAT$MCV_ROWS                   50000
+STAT$HIST_ROWS                  50000
+STAT$LEN_MIN                    2
+STAT$LEN_MAX                    4
+MCV                             0:10
+{
+  "format": 2,
+  "entry_count": 1,
+  "mcv_rows": 50000,
+  "sample_rows": 100000,
+  "mcv": [
+    { "value": "0300616263", "frequency": 0.5, "count": 50000 }
+  ]
+}
+
+
+
+TAG                             C1
+REAL_CNT                        11100
+
+
+
+TAG                             C2
+REAL_CNT                        11100
+
+
+
+TAG                             C3
+REAL_CNT                        11100
+
+
+
+TAG                             C4
+REAL_CNT                        11100
+
+
+
+TAG                             C5
+REAL_CNT                        11100
+
+
+
+TAG                             C6
+REAL_CNT                        50000
+
+
+
+TAG                             C7
+REAL_CNT                        50000
+
+
+
+TAG                             C8
+REAL_CNT                        50000
+
+
+
+TAG                             C9
+REAL_CNT                        50000
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=302.50)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=302.50)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=302.50)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=302.50)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1361.25)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=53900.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=53900.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=54100.00)
+            -> Table "TC" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=54100.00)
+            -> Table "TC" Full Scan (rows=100000.00)

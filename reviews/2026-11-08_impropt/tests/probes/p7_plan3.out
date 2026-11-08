@@ -1,0 +1,32 @@
+
+Select Expression
+    -> Filter (rows=23630282.15)
+        -> Table "L" Access By ID (rows=24114173.23)
+            -> Index "PK_L" Full Scan
+
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=10528145.19)
+        -> Filter (rows=10528145.19)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=10528145.19)
+                -> Filter (rows=23630282.15)
+                    -> Table "L" Full Scan (rows=24114173.23)
+                -> Record Buffer (record length: 33) (rows=2497500.00)
+                    -> Filter (rows=2497500.00)
+                        -> Table "H" Full Scan (rows=5000000.00)
+
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=16905454.09)
+        -> Filter (rows=16905454.09)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=16905454.09)
+                -> Filter (rows=23630282.15)
+                    -> Table "L" Full Scan (rows=24114173.23)
+                -> Filter (rows=4010333.33)
+                    -> Table "H" Full Scan (rows=5000000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "L" Full Scan (rows=24114173.23)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "H" Full Scan (rows=5000000.00)

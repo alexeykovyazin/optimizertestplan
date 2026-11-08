@@ -1,0 +1,47 @@
+
+TAG                             BASE
+STAT$FIELD_NAME                 S
+STAT$LEN_COUNT                  3000
+STAT$LEN_SUM                    17998
+STAT$LEN_MIN                    3
+STAT$LEN_MAX                    9
+HAS_BOUNDS                      <true>
+
+TAG                             BASE
+STAT$FIELD_NAME                 X
+STAT$LEN_COUNT                  <null>
+STAT$LEN_SUM                    <null>
+STAT$LEN_MIN                    <null>
+STAT$LEN_MAX                    <null>
+HAS_BOUNDS                      <false>
+
+
+
+TAG                             A-before
+
+
+
+CNT_X                           1
+
+
+
+CNT_S                           60
+
+
+
+TAG                             A-after
+
+
+Statement failed, SQLSTATE = 42S22
+unsuccessful metadata update
+-ALTER DATABASE failed
+-Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$LEN_BOUNDS_TEXT
+-At line 1, column 329
+After line 17 in file n1_a.sql
+
+TAG                             A-end
+
+

@@ -1,0 +1,10 @@
+
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=10078516.78)
+        -> Nested Loop Join (inner) (rows=10078516.78)
+            -> Filter (rows=10285600.00)
+                -> Table "H" Full Scan (rows=12000000.00)
+            -> Filter (rows=0.98)
+                -> Table "L" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "L_ID2" Range Scan (full match)

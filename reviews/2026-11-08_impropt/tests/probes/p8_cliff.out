@@ -1,0 +1,54 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=61.90)
+            -> Filter (rows=1238.00)
+                -> Table "LA" Full Scan (rows=120000.00)
+            -> Filter (rows=1.00)
+                -> Table "PS" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY7" Unique Scan
+            -> Filter (rows=0.050000)
+                -> Table "O" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+                COUNT 
+===================== 
+                   62 
+
+Current memory = 20441232
+Delta memory = 181584
+Max memory = 25056896
+Elapsed time = 0.028 sec
+Buffers = 2048
+Reads = 1976
+Writes = 3
+Fetches = 136441
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=41.25)
+            -> Filter (rows=825.00)
+                -> Table "LB" Full Scan (rows=80000.00)
+            -> Filter (rows=1.00)
+                -> Table "PS" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY7" Unique Scan
+            -> Filter (rows=0.050000)
+                -> Table "O" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+                COUNT 
+===================== 
+                   41 
+
+Current memory = 20476832
+Delta memory = 35600
+Max memory = 25056896
+Elapsed time = 0.016 sec
+Buffers = 2048
+Reads = 752
+Writes = 0
+Fetches = 90818

@@ -1,0 +1,73 @@
+
+                                       REF_EQ 
+============================================= 
+                                         8568 
+
+Current memory = 36982624
+Delta memory = 199200
+Max memory = 38469456
+Elapsed time = 2.439 sec
+Buffers = 2048
+Reads = 60453
+Writes = 12
+Fetches = 16742043
+
+               H_NULL               L2_NULL 
+===================== ===================== 
+                 3428                    45 
+
+Current memory = 37006560
+Delta memory = 23936
+Max memory = 38469456
+Elapsed time = 1.978 sec
+Buffers = 2048
+Reads = 60475
+Writes = 0
+Fetches = 16741806
+
+Select Expression (line 2, column 3)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=17743282.14)
+                -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=17743282.14)
+                    -> Filter (rows=6000000.00)
+                        -> Table "H" Full Scan (rows=12000000.00)
+                    -> Table "L2" Full Scan (rows=4500000.00)
+Select Expression (line 3, column 3)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=17743282.14)
+                -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=17743282.14)
+                    -> Filter (rows=6000000.00)
+                        -> Table "H" Full Scan (rows=12000000.00)
+                    -> Table "L2" Full Scan (rows=4500000.00)
+
+                   C1                    C2 
+===================== ===================== 
+                 8568                162828 
+
+Current memory = 37040752
+Delta memory = 34192
+Max memory = 126984064
+Elapsed time = 8.721 sec
+Buffers = 2048
+Reads = 120924
+Writes = 0
+Fetches = 33483572
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=17743282.14)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=17743282.14)
+                -> Filter (rows=6000000.00)
+                    -> Table "H" Full Scan (rows=12000000.00)
+                -> Table "L2" Full Scan (rows=4500000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=17743282.14)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=17743282.14)
+                -> Filter (rows=6000000.00)
+                    -> Table "H" Full Scan (rows=12000000.00)
+                -> Table "L2" Full Scan (rows=4500000.00)
+rc=0 secs=20
