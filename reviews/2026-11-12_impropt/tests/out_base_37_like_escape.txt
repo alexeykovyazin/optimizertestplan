@@ -1,0 +1,64 @@
+
+TAG                             A1 a\% noidx                                    
+CNT                             250
+TRUTH                           250
+
+
+
+TAG                             A2 a\_b noidx                                       
+CNT                             250
+TRUTH                           250
+
+
+
+TAG                             A3 a!_b esc ! noidx                                                         
+CNT                             250
+TRUTH                           250
+
+
+
+TAG                             A4 abc|%% esc | noidx                                                               
+CNT                             250
+TRUTH                           250
+
+
+
+TAG                             A5 a\% plan natural                                                         
+CNT                             250
+
+
+
+TAG                             A6 abc% no escape (control)                                                                                 
+CNT                             250
+TRUTH                           250
+
+
+
+TAG                             B1 a\% idx                              
+CNT                             250
+
+
+
+TAG                             B2 a\_b idx                                 
+CNT                             250
+
+
+
+TAG                             B3 a!_b esc ! idx                                                   
+CNT                             250
+
+
+
+TAG                             B4 abc|%% esc | idx                                                         
+CNT                             250
+
+
+
+TAG                             B5 a\% idx natural                                                      
+CNT                             250
+
+
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))

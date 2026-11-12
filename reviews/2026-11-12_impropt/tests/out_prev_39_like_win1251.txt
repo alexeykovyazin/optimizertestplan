@@ -1,0 +1,68 @@
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C1                      2500 
+
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C2                      2500 
+
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C3                       555 
+
+
+PLAN (T NATURAL)
+
+TAG                    COUNT 
+====== ===================== 
+C4                      2500 
+
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C5                         5 
+
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C6                         0 
+
+
+PLAN (T NATURAL)
+
+TAG                    COUNT 
+====== ===================== 
+C7                      2500 
+
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+
+PLAN (T NATURAL)
+
+PLAN (T NATURAL)
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+-- rc=0, 0 s

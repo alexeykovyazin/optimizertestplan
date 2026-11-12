@@ -1,0 +1,568 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99991.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=49995.50)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=25.50)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=25.50)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=24995.50)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=24995.50)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=24997.75)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=24997.75)
+            -> Table "R" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=24999.75)
+            -> Filter (rows=24999.75)
+                -> Table "R" Full Scan (rows=100000.00)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=24999.75)
+            -> Filter (rows=24999.75)
+                -> Table "R" Full Scan (rows=100000.00)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99991.00)
+            -> Table "R" Access By ID (rows=99991.00)
+                -> Bitmap
+                    -> Index "R_XI" Range Scan (lower bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B1                     99990 
+
+Current memory = 19548480
+Delta memory = 60944
+Max memory = 19553904
+Elapsed time = 0.018 sec
+Buffers = 2048
+Reads = 948
+Writes = 0
+Fetches = 100947
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5000.95)
+            -> Table "R" Access By ID (rows=5000.95)
+                -> Bitmap
+                    -> Index "R_XD" Range Scan (upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B1d                    99990 
+
+Current memory = 19607840
+Delta memory = 59360
+Max memory = 19607920
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 65
+Writes = 0
+Fetches = 100949
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=79999.80)
+            -> Table "R" Access By ID (rows=79999.80)
+                -> Bitmap
+                    -> Index "R_XI" Range Scan (upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B2                     80000 
+
+Current memory = 19658640
+Delta memory = 50800
+Max memory = 19658720
+Elapsed time = 0.010 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 80768
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5000.95)
+            -> Table "R" Access By ID (rows=5000.95)
+                -> Bitmap
+                    -> Index "R_XD" Range Scan (lower bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B2d                    80000 
+
+Current memory = 19709440
+Delta memory = 50800
+Max memory = 19709520
+Elapsed time = 0.010 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 80770
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99.00)
+            -> Table "R" Access By ID (rows=99.00)
+                -> Bitmap
+                    -> Index "R_XI" Range Scan (upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B3                        99 
+
+Current memory = 19724432
+Delta memory = 14992
+Max memory = 19749968
+Elapsed time = 0.001 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 111
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5000.95)
+            -> Table "R" Access By ID (rows=5000.95)
+                -> Bitmap
+                    -> Index "R_XD" Range Scan (lower bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B3d                       99 
+
+Current memory = 19739424
+Delta memory = 14992
+Max memory = 19764960
+Elapsed time = 0.000 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 110
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=11.00)
+            -> Table "R" Access By ID (rows=11.00)
+                -> Bitmap
+                    -> Index "R_XI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B4                        11 
+
+Current memory = 19754960
+Delta memory = 15536
+Max memory = 19790320
+Elapsed time = 0.000 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 22
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=251.00)
+            -> Table "R" Access By ID (rows=251.00)
+                -> Bitmap
+                    -> Index "R_XD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B4d                       11 
+
+Current memory = 19770496
+Delta memory = 15536
+Max memory = 19805856
+Elapsed time = 0.000 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 22
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=89996.90)
+            -> Table "R" Access By ID (rows=89996.90)
+                -> Bitmap
+                    -> Index "R_XI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B5                     89994 
+
+Current memory = 19826000
+Delta memory = 55504
+Max memory = 19826080
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 90856
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=251.00)
+            -> Table "R" Access By ID (rows=251.00)
+                -> Bitmap
+                    -> Index "R_XD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B5d                    89994 
+
+Current memory = 19881504
+Delta memory = 55504
+Max memory = 19881584
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 90859
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99991.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=99991.00)
+                -> Table "S" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 33) (rows=99991.00)
+                    -> Filter (rows=99991.00)
+                        -> Table "R" Access By ID (rows=99991.00)
+                            -> Bitmap
+                                -> Index "R_XI" Range Scan (lower bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B6                     99990 
+
+Current memory = 19945536
+Delta memory = 64032
+Max memory = 26245568
+Elapsed time = 0.054 sec
+Buffers = 2048
+Reads = 782
+Writes = 0
+Fetches = 204080
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=5000.95)
+            -> Filter (rows=5000.95)
+                -> Table "R" Access By ID (rows=5000.95)
+                    -> Bitmap
+                        -> Index "R_XD" Range Scan (upper bound: 1/1)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Q                      COUNT 
+====== ===================== 
+B6d                    99990 
+
+Current memory = 20007680
+Delta memory = 62144
+Max memory = 26245568
+Elapsed time = 0.102 sec
+Buffers = 2048
+Reads = 31
+Writes = 0
+Fetches = 501759
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99991.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=99991.00)
+                -> Table "S" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 33) (rows=99991.00)
+                    -> Filter (rows=99991.00)
+                        -> Table "R" Access By ID (rows=99991.00)
+                            -> Bitmap
+                                -> Index "R_XI" Range Scan (lower bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B6                     99990 
+
+Current memory = 20007872
+Delta memory = 192
+Max memory = 26308192
+Elapsed time = 0.046 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 204067
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=5000.95)
+            -> Filter (rows=5000.95)
+                -> Table "R" Access By ID (rows=5000.95)
+                    -> Bitmap
+                        -> Index "R_XD" Range Scan (upper bound: 1/1)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Q                      COUNT 
+====== ===================== 
+B6d                    99990 
+
+Current memory = 20008064
+Delta memory = 192
+Max memory = 26308192
+Elapsed time = 0.101 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 501744
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=3207.48)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3207.48)
+                -> Filter (rows=35640.36)
+                    -> Table "R" Access By ID (rows=99000.99)
+                        -> Bitmap
+                            -> Index "R_XI" Range Scan (lower bound: 1/1)
+                -> Record Buffer (record length: 25) (rows=8999.58)
+                    -> Filter (rows=8999.58)
+                        -> Table "S" Full Scan (rows=100000.00)
+
+Q                      COUNT 
+====== ===================== 
+B7                     58998 
+
+Current memory = 20073008
+Delta memory = 64944
+Max memory = 26308192
+Elapsed time = 0.036 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 203078
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=162.02)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=162.02)
+                -> Filter (rows=8999.58)
+                    -> Table "S" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 33) (rows=1800.34)
+                    -> Filter (rows=1800.34)
+                        -> Table "R" Access By ID (rows=5000.95)
+                            -> Bitmap
+                                -> Index "R_XD" Range Scan (upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B7d                    58998 
+
+Current memory = 20138000
+Delta memory = 64992
+Max memory = 26308192
+Elapsed time = 0.039 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 203081
+Rolling back work.
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=89996.90)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=89996.90)
+                -> Table "S" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 33) (rows=89996.90)
+                    -> Filter (rows=89996.90)
+                        -> Table "R" Access By ID (rows=89996.90)
+                            -> Bitmap
+                                -> Index "R_XI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B8                     89994 
+
+Current memory = 19365632
+Delta memory = 315280
+Max memory = 24537040
+Elapsed time = 0.058 sec
+Buffers = 2048
+Reads = 1676
+Writes = 0
+Fetches = 194747
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=251.00)
+            -> Filter (rows=251.00)
+                -> Table "R" Access By ID (rows=251.00)
+                    -> Bitmap
+                        -> Index "R_XD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Q                      COUNT 
+====== ===================== 
+B8d                    89994 
+
+Current memory = 19424576
+Delta memory = 58944
+Max memory = 24537040
+Elapsed time = 0.094 sec
+Buffers = 2048
+Reads = 90
+Writes = 0
+Fetches = 451600
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=89996.90)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=89996.90)
+                -> Table "S" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 33) (rows=89996.90)
+                    -> Filter (rows=89996.90)
+                        -> Table "R" Access By ID (rows=89996.90)
+                            -> Bitmap
+                                -> Index "R_XI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+Q                      COUNT 
+====== ===================== 
+B8                     89994 
+
+Current memory = 19424784
+Delta memory = 208
+Max memory = 24596480
+Elapsed time = 0.044 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 193978
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=251.00)
+            -> Filter (rows=251.00)
+                -> Table "R" Access By ID (rows=251.00)
+                    -> Bitmap
+                        -> Index "R_XD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Q                      COUNT 
+====== ===================== 
+B8d                    89994 
+
+Current memory = 19424992
+Delta memory = 208
+Max memory = 24596480
+Elapsed time = 0.091 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 451585
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=2000.02)
+            -> Filter (rows=2000.02)
+                -> Table "R" Access By ID (rows=2000.02)
+                    -> Bitmap
+                        -> Index "R_XI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Q                      COUNT 
+====== ===================== 
+B9                      2000 
+
+Current memory = 19447344
+Delta memory = 22352
+Max memory = 24596480
+Elapsed time = 0.002 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 10056
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=251.00)
+            -> Filter (rows=251.00)
+                -> Table "R" Access By ID (rows=251.00)
+                    -> Bitmap
+                        -> Index "R_XD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Filter (rows=1.00)
+                -> Table "S" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+
+Q                      COUNT 
+====== ===================== 
+B9d                     2000 
+
+Current memory = 19469696
+Delta memory = 22352
+Max memory = 24596480
+Elapsed time = 0.002 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 10021
+-- rc=0, 2 s

@@ -1,0 +1,34 @@
+
+               A_ROWS                B_ROWS            INNER_ROWS 
+===================== ===================== ===================== 
+                10000                  2000                    15 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=30000000.00)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=30000000.00)
+                -> First N Records (rows=6000000.00)
+                    -> Nested Loop Join (inner) (rows=12707852.19)
+                        -> Table "A" as "L A" Full Scan (rows=10890.67)
+                        -> Filter (rows=1166.86)
+                            -> Table "B" as "L B" Access By ID (rows=1166.86)
+                                -> Bitmap
+                                    -> Index "B_K" Range Scan (full match)
+                -> First N Records (rows=5000000.00)
+                    -> Nested Loop Join (inner) (rows=12707852.19)
+                        -> Table "A" as "D A2" Full Scan (rows=10890.67)
+                        -> Filter (rows=1166.86)
+                            -> Table "B" as "D B2" Access By ID (rows=1166.86)
+                                -> Bitmap
+                                    -> Index "B_K" Range Scan (full match)
+
+PLAN (RDB$DATABASE NATURAL)
+
+                                                TS_BEFORE 
+========================================================= 
+2026-11-12 16:31:51.9430 Europe/Belgrade                  
+
+
+PLAN HASH (JOIN (L A NATURAL, L B INDEX (B_K)), JOIN (D A2 NATURAL, D B2 INDEX (B_K)))
+-- rc=3, 1 s

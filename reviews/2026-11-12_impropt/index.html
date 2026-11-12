@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Пятое ревью impr-opt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@600&display=swap">
+<style>
+/* Layout: one reading column; summary and status numbers first, then new findings as hairline rows, then status tables of old findings, 7a table, staged plan */
+:root {
+  --bg: #F2F5F6;
+  --surface: #FFFFFF;
+  --fg: #172126;
+  --muted: #55646D;
+  --line: #D5DDE1;
+  --accent: #0B6A87;
+  --accent-soft: #E0EDF2;
+  --crit: #B3261E;  --crit-bg: #FBE8E6;
+  --high: #B4511A;  --high-bg: #FCEEE3;
+  --med: #86690A;   --med-bg: #F7F0D6;
+  --low: #4D6876;   --low-bg: #E7EDF0;
+  --ok: #1D7347;    --ok-bg: #E2F2E9;
+  --f-display: "Unbounded", "Golos Text", system-ui, sans-serif;
+  --f-body: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1518; --surface: #161E22; --fg: #E1E8EB; --muted: #93A3AC; --line: #29353B;
+    --accent: #5DB7D5; --accent-soft: #15303A;
+    --crit: #F2786E; --crit-bg: #3A1A18;
+    --high: #F09B60; --high-bg: #3A2415;
+    --med: #DCBD5B;  --med-bg: #332B10;
+    --low: #9CB2BE;  --low-bg: #1E2A30;
+    --ok: #63C793;   --ok-bg: #15301F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1518; --surface: #161E22; --fg: #E1E8EB; --muted: #93A3AC; --line: #29353B;
+  --accent: #5DB7D5; --accent-soft: #15303A;
+  --crit: #F2786E; --crit-bg: #3A1A18;
+  --high: #F09B60; --high-bg: #3A2415;
+  --med: #DCBD5B;  --med-bg: #332B10;
+  --low: #9CB2BE;  --low-bg: #1E2A30;
+  --ok: #63C793;   --ok-bg: #15301F;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--f-body); }
+.page {
+  max-width: 960px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+  display: flex; flex-direction: column; gap: 48px;
+}
+h1, h2, h3, h4 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+code, .mono { font-family: var(--f-mono); font-size: 0.86em; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(26px, 4.4vw, 40px); line-height: 1.15; letter-spacing: -0.01em; }
+.lead { font-size: 18px; max-width: 65ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+.meta b { color: var(--fg); font-weight: 600; }
+
+section { display: flex; flex-direction: column; gap: 18px; }
+h2 { font-size: 24px; font-weight: 700; line-height: 1.25; display: flex; gap: 12px; align-items: baseline; }
+h2 .num { font-family: var(--f-mono); font-size: 14px; font-weight: 500; color: var(--accent); }
+h3 { font-size: 18px; font-weight: 600; margin-top: 8px; }
+.note { font-size: 14px; color: var(--muted); max-width: 72ch; }
+
+.keypoints { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 72ch; }
+.keypoints li { padding-left: 18px; position: relative; }
+.keypoints li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.keypoints li.bad::before { background: var(--crit); }
+.keypoints li.good::before { background: var(--ok); }
+
+.numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel h3 { margin: 0; font-size: 15px; }
+.axis-note { font-size: 12px; color: var(--muted); }
+
+/* stacked status bar */
+.stack { display: flex; height: 22px; border-radius: 4px; overflow: hidden; background: var(--accent-soft); }
+.stack span { display: block; flex: var(--n) 0 0; min-width: 0; }
+.stack .s-fixed { background: var(--ok); }
+.stack .s-part { background: var(--med); }
+.stack .s-open { background: var(--high); }
+.stack .s-na { background: var(--low); }
+.legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; font-size: 14px; }
+.legend li { display: flex; gap: 8px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.legend b { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 500; margin-left: auto; }
+.i-fixed { background: var(--ok); } .i-part { background: var(--med); } .i-open { background: var(--high); } .i-na { background: var(--low); }
+.stack-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+table.grid { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.grid th, table.grid td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grid th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; vertical-align: bottom; }
+table.grid td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+table.grid td.n.worse { color: var(--high); font-weight: 500; }
+table.grid td.id { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+table.grid td.c { color: var(--muted); font-size: 13px; }
+table.grid td.c code { overflow-wrap: anywhere; }
+table.grid td.barcell { width: 30%; min-width: 90px; vertical-align: middle; }
+.scroll { overflow-x: auto; }
+.status-table { min-width: 640px; }
+.track { position: relative; height: 14px; background: var(--accent-soft); border-radius: 3px; }
+.fill { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--v) / var(--max) * 100%); background: var(--high); border-radius: 3px; }
+.tick { position: absolute; top: -4px; bottom: -4px; left: calc(var(--r) / var(--max) * 100%); width: 2px; background: var(--fg); opacity: 0.7; }
+
+.filter { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.filter span.lab { font-size: 13px; color: var(--muted); margin-right: 4px; }
+.filter button { font: 500 14px var(--f-body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.filter button .c { font-family: var(--f-mono); font-size: 12px; opacity: 0.8; margin-left: 4px; }
+
+.findings { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.f { display: grid; grid-template-columns: 148px 1fr; gap: 6px 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.f-tags { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
+.f-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.f h4 { font-size: 16px; font-weight: 600; line-height: 1.35; }
+.f .loc { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+.f p { max-width: 72ch; }
+.f p code { overflow-wrap: anywhere; }
+.f .test-ref { font-size: 13px; color: var(--muted); }
+.id { font-family: var(--f-mono); font-size: 12px; font-weight: 500; color: var(--muted); padding: 1px 0; min-width: 28px; }
+.chip { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; padding: 2px 8px; border-radius: 4px; white-space: nowrap; display: inline-block; }
+.sev-crit { color: var(--crit); background: var(--crit-bg); }
+.sev-high { color: var(--high); background: var(--high-bg); }
+.sev-med  { color: var(--med);  background: var(--med-bg); }
+.sev-low  { color: var(--low);  background: var(--low-bg); }
+.st { font-weight: 500; color: var(--muted); border: 1px solid var(--line); background: transparent; }
+.st-test { color: var(--ok); border-color: var(--ok); background: var(--ok-bg); }
+.ch-fixed { color: var(--ok); background: var(--ok-bg); }
+.ch-part { color: var(--med); background: var(--med-bg); }
+.ch-open { color: var(--high); background: var(--high-bg); }
+.ch-worse { color: var(--crit); background: var(--crit-bg); }
+.ch-na { color: var(--low); background: var(--low-bg); }
+.empty { font-size: 14px; color: var(--muted); padding: 12px 0; }
+
+.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+
+.stages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: stage -1; }
+.stage { display: grid; grid-template-columns: 52px 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; counter-increment: stage; }
+.stage::before { content: counter(stage); font-family: var(--f-display); font-weight: 600; font-size: 28px; line-height: 1; color: var(--accent); }
+.stage-body { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.stage-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.stage-head h3 { margin: 0; }
+.stage-head .dur { font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+.stage ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+
+footer { font-size: 14px; color: var(--muted); display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 640px) {
+  .f { grid-template-columns: 1fr; }
+  .stage { grid-template-columns: 1fr; gap: 8px; }
+  .lead { font-size: 17px; }
+  .legend { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .filter button { transition: background-color .15s, color .15s; }
+}
+</style>
+
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <div class="eyebrow">Пятое ревью · HQbird v5.0-impr-opt · 06041718cc · 12.11.2026</div>
+  <h1>Пятое ревью оптимизатора v5.0-impr-opt</h1>
+  <p class="lead">Исправления ревью 08.11 работают: V1–V5 и V8–V12 закрыты тестами. Но 36 новых коммитов добавили три ошибки уровня critical: outer hash join теряет условие ON, BHJ останавливает сервер, LIKE с ESCAPE даёт 0 строк.</p>
+  <div class="meta">
+    <span><b>36</b> коммитов</span>
+    <span>база сравнения <code>a3cfa97218</code></span>
+    <span>сборка Windows x64 от 12.11, embedded isql; CEB — не замерен</span>
+    <span>новые находки <b>W1–W20</b>, вне ветки <b>X1–X3</b></span>
+  </div>
+</header>
+
+<section id="summary">
+  <h2><span class="num">1</span>Главное</h2>
+  <ul class="keypoints">
+    <li class="good"><b>Исправления 08.11 работают.</b> Тесты 31–34 дают верные числа (V1, V2, V4, V5). <code>LIKE '%_%'</code> больше не останавливает сервер (V3). Закрыты V8–V12, U3, U9, R1 для текста, диапазоны NONE, три низкие находки BHJ. Цена BLOB на примере из документации: <b>0.19 с против 2.32 с</b>.</li>
+    <li class="bad"><b>W1: Hash Join (outer) теряет условие ON с подзапросом</b> или ссылкой на внешний запрос: <b>10 000 строк вместо 5 400</b>, anti-join — 0 вместо 4 600. Есть на конфиге по умолчанию, HJ outer выбирается уже на 10 × 10 строк.</li>
+    <li class="bad"><b>W2: BHJ останавливает сервер</b>, если запись хэшируемой реки длиннее 64 КБ. Хватает 10 000 + 2 000 строк и конфига по умолчанию.</li>
+    <li class="bad"><b>W3: <code>LIKE 'a\%' ESCAPE '\'</code> даёт 0 строк вместо 250.</b> Ошибка ветки с 14.10, есть и на a3cfa97218; штатный HQbird 5.0 даёт 250.</li>
+    <li class="bad"><b>W4: хранилище STAT$ от 08.11 ломает все SELECT</b> — <code>Column unknown STAT$BLOB_LEVELS</code>. Миграция — 7 колонок, раздел 5.</li>
+    <li class="bad"><b>W5: U1 вернулся.</b> eqjoinsel складывает два направления: 27_eqjoin — <b>7 003 578 при 25 000</b> (на 08.11 — 94 258). W6: PREPARE у клиента WIN1251 падает на <code>LIKE 'Мо%а'</code>.</li>
+    <li><b>CEB не замерен:</b> стенд dellg15 не отвечает. Тестов в коммитах нет; все три critical найдены isql-скриптами на 10 000 строк.</li>
+  </ul>
+</section>
+
+<section id="numbers">
+  <h2><span class="num">2</span>Статус находок и регрессионный прогон</h2>
+  <div class="numbers">
+    <div class="panel">
+      <h3>Находки прошлых ревью</h3>
+      <div class="stack" role="img" aria-label="Исправлено 22, частично 10, осталось 22, хуже 3">
+        <span class="s-fixed" style="--n: 22"></span><span class="s-part" style="--n: 10"></span><span class="s-open" style="--n: 22"></span><span class="s-na" style="--n: 3; background: var(--crit)"></span>
+      </div>
+      <ul class="legend">
+        <li><i class="i-fixed"></i>Исправлено<b>22</b></li>
+        <li><i class="i-part"></i>Частично<b>10</b></li>
+        <li><i class="i-open"></i>Осталось<b>22</b></li>
+        <li><i style="background: var(--crit)"></i>Хуже (M2, U1, N1)<b>3</b></li>
+      </ul>
+      <p class="axis-note">«Исправлено» включает 6 низких находок 08.11. Новые находки этого ревью — W1–W20, из них 3 критичные и 5 высоких.</p>
+    </div>
+    <div class="panel">
+      <h3>Тесты 00–34 на 06041718cc против a3cfa97218</h3>
+      <div class="scroll">
+        <table class="grid">
+          <thead><tr><th>Итог</th><th>Тестов</th><th class="barcell"><span hidden>Шкала 0–20</span></th></tr></thead>
+          <tbody style="--max: 20">
+            <tr><td>Без изменений</td><td class="n">18</td><td class="barcell"><div class="track"><div class="fill" style="--v: 18; background: var(--low)"></div></div></td></tr>
+            <tr><td>Шум выборки</td><td class="n">6</td><td class="barcell"><div class="track"><div class="fill" style="--v: 6; background: var(--low)"></div></div></td></tr>
+            <tr><td>Лучше</td><td class="n">9</td><td class="barcell"><div class="track"><div class="fill" style="--v: 9; background: var(--ok)"></div></div></td></tr>
+            <tr><td><b>Хуже</b> (26, 27 — W5)</td><td class="n">2</td><td class="barcell"><div class="track"><div class="fill" style="--v: 2"></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="axis-note">Лучше: 12, 14, 25, 28, 29, 31–34. Падений сервера в 00–34 нет. 22_bhj и 23_bhj_low — по-прежнему таймаут (M1); 20_n1 — <code>Column unknown STAT$SCALE</code> (N1).</p>
+    </div>
+  </div>
+</section>
+
+<div class="filter" role="group" aria-label="Фильтр находок">
+  <span class="lab">Новые находки:</span>
+  <button type="button" data-filter="all" aria-pressed="true">Все<span class="c" data-count="all"></span></button>
+  <button type="button" data-filter="severe" aria-pressed="false">Критично и высоко<span class="c" data-count="severe"></span></button>
+  <button type="button" data-filter="test" aria-pressed="false">Тест на двух сборках<span class="c" data-count="test"></span></button>
+</div>
+
+<section id="new">
+  <h2><span class="num">3</span>Новые находки</h2>
+  <p class="note">Метки: <b>тест</b> — воспроизведено на 06041718cc и a3cfa97218 (скрипты 35–41 — в папке <code>tests/</code>, остальное — скрипты агентов ревью); <b>код</b> — путь прослежен по коду. Каждую находку уровня medium и выше перепроверил второй, независимый агент; ни одна не опровергнута. Номера строк — на HEAD <code>06041718cc</code>.</p>
+
+  <h3>Критичные: неверный результат и остановка сервера</h3>
+  <ul class="findings">
+    <li class="f" data-sev="crit" data-status="test">
+      <div class="f-tags"><span class="id">W1</span><span class="chip sev-crit">критично</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Hash Join (outer) теряет конъюнкт ON с подзапросом или ссылкой на внешний запрос</h4><span class="loc">optimizer/OuterJoin.cpp:408–424, 473–477 · 41d70f3868</span>
+      <p>Новый цикл <code>joinLocal</code> пропускает конъюнкт, если в нём есть поток вне {inner, outer}. <code>generateResidualBoolean</code> вешает его на <code>innerRsb</code> (строка 473), но возвращается <code>joinRsb</code> (477). Фильтр теряется, в EXPLAIN его нет.</p>
+      <p><code>oa left join ob on oa.x = ob.x and ob.y &gt; (select …)</code> → <b>10 000 при 5 400</b>; с <code>where ob.id is null</code> → <b>0 при 4 600</b>. Так же EXISTS, NOT EXISTS, OR EXISTS, <code>&gt; ANY</code>, RIGHT JOIN, индекс на ob.x; ссылка на внешний запрос — 10 000 при 4 000. Конфиг по умолчанию — то же. a3cfa97218 — верно. Исправление: базовые конъюнкты ON — в фильтр поверх <code>joinRsb</code>, или NL, если такой конъюнкт остался.</p>
+      <span class="test-ref">tests/35_oj_on_subq.sql</span></div>
+    </li>
+    <li class="f" data-sev="crit" data-status="test">
+      <div class="f-tags"><span class="id">W2</span><span class="chip sev-crit">критично</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>BHJ останавливает сервер на записи реки больше 64 КБ</h4><span class="loc">optimizer/BatchHashJoin.cpp:423–460, 859–875 · f8bd5b4cf0</span>
+      <p><code>SlotCache</code> работает блоками по 64 КБ. Запись на границе блока TempSpace 1 МБ копируется в новый блок 64 КБ на полную длину. Проверка длины — только <code>fb_assert</code>, в release её нет: memcpy пишет за конец буфера.</p>
+      <p>Хэшируемая сторона — производная таблица с FIRST над join двух таблиц, запись ~70 КБ. A — 10 000 строк, B — 2 000, 15 строк с ключом → <b>Access violation, сервер остановлен</b>, 3 из 3. Конфиг по умолчанию — то же. a3cfa97218: 225, верно. Исправление: блок <code>MAX(length, BLOCK_SIZE)</code> или режим позиций; настоящая проверка вместо <code>fb_assert</code>.</p>
+      <span class="test-ref">tests/36_bhj_slot_crash.sql</span></div>
+    </li>
+    <li class="f" data-sev="crit" data-status="test">
+      <div class="f-tags"><span class="id">W3</span><span class="chip sev-crit">критично</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4><code>LIKE … ESCAPE</code>: двойник копирует символ escape, 0 строк вместо 250</h4><span class="loc">optimizer/Optimizer.cpp:5436–5479 · 24da50c73f (14.10), 381231c716</span>
+      <p>Двойник LIKE (<code>=</code> или STARTING WITH) строится из шаблона вместе с символом escape. Штатный код 776d6400cc копировал только экранированный символ.</p>
+      <p><code>s like 'a\%' escape '\'</code> → <b>0 при 250</b>; так же <code>'a\_b'</code>, <code>'a!_b' escape '!'</code>, <code>'abc|%%' escape '|'</code>, с индексом и без, с PLAN NATURAL, без расширенной статистики. a3cfa97218 — 0; штатный HQbird 5.0 — 250.</p>
+      <span class="test-ref">tests/37_like_escape.sql (три сборки)</span></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Высокие</h3>
+  <ul class="findings">
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">W4</span><span class="chip sev-high">высоко</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Хранилище STAT$ от 08.11 ломает все SELECT и REFRESH</h4><span class="loc">extstat/StatisticsCache.cpp:1966–1973, 2300–2313 · 3ce9dec9ae, 6871e7a3ea, c54fa05743</span>
+      <p>V6/N1 стал шире. Загрузчик читает 7 новых колонок STAT$COLUMNS без проверки; catch ловит только <code>isc_dsql_relation_err</code>. Каждый SELECT, PREPARE и REFRESH → <code>Column unknown STAT$BLOB_LEVELS</code>, подсказки нет. ALTER ADD семи колонок чинит и сохраняет именованные структуры; путь DROP + ADD из документации их теряет (3 → 0).</p>
+      <span class="test-ref">tests/38a_stat_prev_create.sql, 38b_stat_new_open.sql</span></div>
+    </li>
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">W5</span><span class="chip sev-high">высоко</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>eqjoinsel складывает два направления: U1 вернулся</h4><span class="loc">extstat/StatisticsCache.cpp:2454–2470 · 8a981b22b8</span>
+      <p>Исправление V5 убрало <code>min()</code>. 27_eqjoin: <b>7 003 578 / 6 592 974 при 25 000</b> (a3cfa97218: 94 258 / 102 008); 26_eqjoin: 6 350 000 (100 000). Хэш по 3 млн строк: 1.7 с против 0.9 с, память 129.5 МБ против 27.4 МБ; LEFT JOIN после него — HJ 0.99 с против NL 0.09 с. Исправление: PG <code>eqjoinsel_inner</code> в каждом направлении, затем MIN.</p>
+      <span class="test-ref">06.11 tests/26_eqjoin.sql, 27_eqjoin.sql</span></div>
+    </li>
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">W6</span><span class="chip sev-high">высоко</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>PREPARE падает у клиента WIN1251 на LIKE с кириллическим префиксом</h4><span class="loc">optimizer/Optimizer.cpp:2167–2180; extstat/ext_stats.cpp:991–1004 · 6eb286744f, 969c21dfc3</span>
+      <p>Двойник-префикс передаёт литерал без перевода в кодировку колонки; <code>charSet-&gt;length</code> вызывается вне try. <code>set names win1251</code>, UTF8-колонка: <code>s like 'Мо%а'</code> → <b>Cannot transliterate character between character sets</b>. Так же <code>'Ив_нов'</code>, CI, ESCAPE, с индексом. a3cfa97218 — 2 500 строк.</p>
+      <span class="test-ref">tests/39_like_win1251.sql (файл в WIN1251)</span></div>
+    </li>
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">W7</span><span class="chip sev-high">высоко</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>pairFiltered без пола: NL читает 2,5 млн страниц вместо 114 тыс.</h4><span class="loc">optimizer/InnerJoin.cpp:260–266, 504–505 · 90da978a89</span>
+      <p>У floorLimited есть нижняя граница, у pairFiltered — нет. <code>a join b join e</code>, у b два коррелированных фильтра: выход позиции <b>0.49 при 49</b>, NL в e по неселективному индексу — <b>2 498 500 fetches</b>. a3cfa97218: HJ, 114 029. Исправление: пол <code>1 / cardinality</code>.</p>
+      <span class="test-ref">tests/40_pairfiltered.sql</span></div>
+    </li>
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">W8</span><span class="chip sev-high">высоко</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Диапазон по убывающему индексу — константа</h4><span class="loc">optimizer/Retrieval.cpp:1987–1999 · старая</span>
+      <p>Гистограмма не используется. <code>xd &gt; 5 and xd &lt; 90000</code> → <b>251 при 89 994</b>; <code>xd &gt; 10</code> → 5 000.95 при 99 990. В join — NL: 451 600 fetches против 194 796 у возрастающего индекса. a3cfa97218 — так же.</p>
+      <span class="test-ref">tests/41_range_param_desc.sql — B</span></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Средние</h3>
+  <ul class="findings">
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W9</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Параметр первым в группе диапазонов теряет селективность</h4><span class="loc">optimizer/Optimizer.cpp:2493, 2556–2577 · 82eccd50a7</span>
+      <p><code>x &gt; ? and x &gt; 10</code> → 99 991; <code>x &gt; 10 and x &gt; ?</code> → 49 995.5. Две колонки: 99 982 против 24 995.5. План зависит от порядка условий.</p>
+      <span class="test-ref">tests/41_range_param_desc.sql — A</span></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W10</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Страница BLOB при навигации по индексу — всегда случайное чтение</h4><span class="loc">optimizer/Retrieval.cpp:581, 721 · c54fa05743</span>
+      <p>K = 38: HJ, Reads 40 811, 0.93 с; NL на той же сборке — Reads 20 610, 0.41 с. a3cfa97218 выбирает NL.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W11</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Цена содержимого BLOB в 120–400 раз ниже реальной</h4><span class="loc">optimizer/Retrieval.cpp · c54fa05743</span>
+      <p>5.1 единицы на BLOB 32 КБ при ~90 мкс на LIKE. 15 000 проб: HJ 0.86–1.30 с против NL 0.18–0.25 с. Не регресс. Исправление — цена по байтам (STAT$BLOB_AVG_LEN).</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W12</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>REFRESH на таблицах с BLOB медленнее</h4><span class="loc">extstat/Collector.cpp · 3ce9dec9ae, 6995f70e5a</span>
+      <p>Каждый непустой BLOB открывается: 2 лишних fetch. BLOB по 3 КБ: Reads 17.8K против 0.55K; 1 млн BLOB по 41 Б: 0.61–1.10 с против 0.20–0.24 с. Комментарий «no extra page reads» неверен.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W13</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Обратный CONTAINING по CHAR без пола</h4><span class="loc">optimizer/Optimizer.cpp:2246–2251 · 841e1ec924</span>
+      <p><code>'xABCx' containing chci</code> → <b>100 000 при 0</b> (a3cfa97218: 1 071).</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W14</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Длина литерала без хвостовых пробелов</h4><span class="loc">extstat/ext_stats.cpp:1118 · 841e1ec924</span>
+      <p><code>'abc       ' starting with chu</code> → <b>1 при 50 000</b> (a3cfa97218: 286).</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W15</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Потолок равенства по длине ломает коллации и MCV</h4><span class="loc">6c06c4ea9b</span>
+      <p>NFC-литерал при данных NFD → 1 при 10 000; UNICODE_CI_AI <code>'strasse'</code> → 2 083 при 10 000; CHAR(10) OCTETS → 1 при 1 000; значение из MCV → 1 013 при 5 000.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W16</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>LIKE с <code>_</code> без <code>%</code></h4><span class="loc">extstat/StatisticsCache.cpp:1597–1641 · 1d4bba5ba7, c97b91f5af, 6eb286744f</span>
+      <p><code>'P1___'</code> → 292 при 33 000 (a3cfa97218: 32 361); <code>'v1__'</code> → 61 при 10 000.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W17</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Фрагменты из 4 символов: оценка не монотонна</h4><span class="loc">63eb965cda</span>
+      <p><code>'kowa'</code> 622 &lt; <code>'kowal'</code> 1 125, реально 9 400 у обоих.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W18</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>Шаблон с <code>%</code> в конце игнорирует внутренние фрагменты</h4><span class="loc">optimizer/Optimizer.cpp:1981–1984 · старая, остаток V7</span>
+      <p><code>'Mar%Kow%'</code> → 21 723 при 200.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W19</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4><code>LIKE '%'</code> не учитывает пустые строки в MCV</h4><span class="loc">extstat/StatisticsCache.cpp:1413 · старая</span>
+      <p>Колонка из одних <code>''</code> → 1 при 20 000; 90% <code>''</code> → 2 000 при 20 000.</p></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">W20</span><span class="chip sev-med">средне</span><span class="chip st st-test">тест</span></div>
+      <div class="f-body"><h4>ND = 0 от REFRESH пустой таблицы переходит в SAMPLE</h4><span class="loc">extstat/Collector.cpp:1191, 1750 · старая, вариант N3</span>
+      <p>После загрузки 300 000 строк: <code>y = 5</code> → 30 029 при 300. Второй REFRESH SCAN — верно.</p></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Под этот фильтр в разделе ничего нет.</p>
+
+  <h3>Низкие</h3>
+  <ul class="plain">
+    <li>Документация EN отстала от RU (b1f628ec67, e124f13e95). «Без лишних чтений страниц» и «уровень 0 не платит за страницы» неточны (W12). Раздел 3.x противоречит 4.21. Doc 4.19: ведущая запись BHJ читается на каждой пробе, не только при попадании.</li>
+    <li>Сборщик профиля BLOB глотает все исключения; <code>decodeBlobLevels</code> не закрывает BLOB при неверной длине.</li>
+    <li>Снимок дескриптора: текстовый BLOB теряет collation; NUMERIC/DECIMAL пишут sub type в STAT$CHARSET; у OCTETS STAT$SUB_TYPE = 1 при 0 в документации.</li>
+    <li>REFRESH на a3cfa97218 по хранилищу новой сборки оставляет устаревший профиль BLOB. REFRESH падает без отладочной колонки STAT$BLOB_LEVELS_TEXT.</li>
+    <li><code>ch like 'ABC'</code> по CHAR → 50 000 при 0; <code>'qwertyui'</code> 736 при 0; <code>c &gt;= 'k02000000'</code> 20 000 при 0; <code>x &gt; 100 and x &lt; 50</code> → 25 000.</li>
+    <li>Цена BLOB: нет цены у OR, IN, IS DISTINCT FROM; отрицательный <code>avg_pages</code> даёт отрицательную цену; комментарий «без профиля — по константам» неверен.</li>
+  </ul>
+</section>
+
+<section id="upstream">
+  <h2><span class="num">4</span>Вне ветки (штатный Firebird 5)</h2>
+  <p class="note">Есть на 06041718cc, a3cfa97218 и штатном HQbird 5.0 (776d6400cc). Стоит проверить на чистом Firebird 5.0.x и отправить в трекер.</p>
+  <div class="scroll">
+    <table class="grid status-table">
+      <thead><tr><th>#</th><th>Ошибка</th><th>Сценарий</th></tr></thead>
+      <tbody>
+        <tr><td class="id">X1</td><td>ALL над подзапросом с LEFT JOIN: OUTER становится INNER (RecordSourceNodes.cpp:3081, 3197–3210)</td><td class="c"><code>5 &gt; all (select … from oa left join ob …)</code> с NULL → <b>1</b>, верно 0</td></tr>
+        <tr><td class="id">X2</td><td>Колонка NONE и UTF8-литерал с не-ASCII префиксом</td><td class="c"><code>nn like 'é%'</code> → <b>0 при 1 000</b>; <code>'ё%'</code> → 0 при 2 000</td></tr>
+        <tr><td class="id">X3</td><td>Индекс по CHAR(1)/VARCHAR(1) UTF8, UNICODE или UNICODE_CI_AI</td><td class="c"><code>c = 'Æ'</code> → <b>0 при 100</b>; NATURAL — 100; CHAR(2) — верно</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="status">
+  <h2><span class="num">5</span>Статус находок прошлых ревью</h2>
+
+  <h3>Исправлено в этом цикле</h3>
+  <div class="scroll">
+    <table class="grid status-table">
+      <thead><tr><th>#</th><th>Было</th><th>Статус</th><th>Чем / проверка</th></tr></thead>
+      <tbody>
+        <tr><td class="id">V1, V2</td><td>Чужие конъюнкты в outer HJ</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">41d70f3868: 31 A1/A2, B1–B4 верны [тест]. Но — W1</td></tr>
+        <tr><td class="id">V3</td><td><code>LIKE '%_%'</code> останавливает сервер</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">1e4732d50d: rc=0; <code>'____'</code>, <code>'%  '</code> тоже [тест]</td></tr>
+        <tr><td class="id">V4, S8</td><td>formRiver теряет фильтры</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">ba650f7c73: 33 C1 — 36 млн / 600 000; ORDER BY, GROUP BY, DISTINCT, FIRST-SKIP верны [тест]</td></tr>
+        <tr><td class="id">V5</td><td>eqjoinsel → 1 строка</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">8a981b22b8: 34 D1 1 000, D2 500 500 [тест]. Но — W5</td></tr>
+        <tr><td class="id">V8–V10</td><td>Модель длин</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c"><code>'kowalski'</code> 1 002 (было 247, реально 5 939); CHAR: <code>'son'</code> 2 980 (45 488, реально 17 128) [тест]</td></tr>
+        <tr><td class="id">V11, V12, U3</td><td>Обратный STARTING: коллация, CHAR</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">fbf96ba76e, 841e1ec924: 50 600 / 50 000 (700); 50 000 / 50 000 (1 200) [тест]</td></tr>
+        <tr><td class="id">V14, U2</td><td>Пол join-позиции</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">90da978a89: 0.0124 строки на пробу, NL по PK [тест]. Но — W7</td></tr>
+        <tr><td class="id">U9</td><td>Два односторонних диапазона</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">82eccd50a7: 12 824 → 27 045 (25 000) [тест]. Но — W9</td></tr>
+        <tr><td class="id">R1</td><td>Диапазон по уникальному тексту</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c">69598616ae: 100 000 → 51 250 (50 000); BETWEEN 25 000 → 500 (1 000) [тест]</td></tr>
+        <tr><td class="id">Низкие</td><td>NONE-диапазоны, hex, буферы BHJ, PHASE_DONE, formRiver</td><td><span class="chip ch-fixed">исправлено</span></td><td class="c"><code>sn &gt;= 'v5'</code> 50 000 → 11 705 (11 000); lowmem 32.9 МБ против 35.3 МБ [тест]</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Исправления прошлых циклов держатся: R3, R4, N2, E8, S1, S2, S5, S7, S11, U5 [тест].</p>
+
+  <h3>Частично и хуже</h3>
+  <div class="scroll">
+    <table class="grid status-table">
+      <thead><tr><th>#</th><th>Было</th><th>Статус</th><th>Что осталось</th></tr></thead>
+      <tbody>
+        <tr><td class="id">N1, V6</td><td>Формат STAT$</td><td><span class="chip ch-worse">хуже</span></td><td class="c">Новый разрыв: 7 колонок — W4 [тест]</td></tr>
+        <tr><td class="id">U1</td><td>eqjoinsel ×236</td><td><span class="chip ch-worse">хуже</span></td><td class="c">94 258 → 7 003 578 при 25 000 — W5 [тест]</td></tr>
+        <tr><td class="id">M2</td><td>Неверный LEFT JOIN</td><td><span class="chip ch-worse">хуже</span></td><td class="c">Сценарии 05.11 верны; ON с подзапросом теряется — W1 [тест]</td></tr>
+        <tr><td class="id">V7</td><td>LIKE с несколькими фрагментами</td><td><span class="chip ch-part">частично</span></td><td class="c"><code>'%Mar%Kow%'</code> 1 640 (3 121, реально 290); с <code>%</code> в конце — W18 [тест]</td></tr>
+        <tr><td class="id">E1</td><td>Подстроки</td><td><span class="chip ch-part">частично</span></td><td class="c"><code>'an'</code> 17 156 (58 853); UPPER(...) — ×9.7 [тест]</td></tr>
+        <tr><td class="id">LIKE</td><td><code>'%'</code>, якорь, escape</td><td><span class="chip ch-part">частично</span></td><td class="c"><code>'%'</code> 200 000 (было 43 135); <code>'J%n'</code> 4 634 (2 218); <code>'%son'</code> хуже, ×8.6 [тест]</td></tr>
+        <tr><td class="id">E4</td><td>BLOB</td><td><span class="chip ch-part">частично</span></td><td class="c">Цена чтения есть; селективность прежняя: <code>b = 'v1'</code> 10 000 при 100 [тест]</td></tr>
+        <tr><td class="id">C7, R5</td><td>Оценка outer и inner join</td><td><span class="chip ch-part">частично</span></td><td class="c">HJ outer 20 692 (20 000); NL outer 2 174; inner 428 170 при 20 000 [тест]</td></tr>
+        <tr><td class="id">B3, P2, N5</td><td>BHJ, буферы, границы</td><td><span class="chip ch-part">частично</span></td><td class="c">Проба читает каждую ведущую запись; 2 буфера на батч вместо 3; границы после смены типа не пересортированы [код]</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Не исправлено</h3>
+  <ul class="plain">
+    <li><b>Высоко:</b> C3 — BHJ по сырой кардинальности; E2 — fanout FK, 1 000 при 50 000; M1 — NL outer на 4.2 млн (22_bhj, 23_bhj_low — таймаут).</li>
+    <li><b>Средне:</b> V13 — <code>'v1'</code> 350 при 11 100; V15 — шум MCV; U4 — 1 100 при 300; E3, E6, E9; N3, N4, N6; B1, B4, B5, P1; максимум выборки в уникальном пути.</li>
+    <li><b>Низко:</b> TempCachePlanPercent вне границ → 80; комментарий <code>tempSpillExpected</code>; <code>Window Buffer (rows=0.000000)</code>; локальное равенство в ON — ключ хэша.</li>
+  </ul>
+</section>
+
+<section id="migrate">
+  <h2><span class="num">6</span>Миграция хранилища STAT$ (W4)</h2>
+  <p class="note">Проверено на хранилище от a3cfa97218: после ALTER работают SELECT и REFRESH, именованные структуры сохраняются. Хранилищу старше 08.11 нужны ещё шесть колонок STAT$LEN_* (ревью 08.11, раздел 6) и <code>STAT$SCALE SMALLINT</code>. База CEB на dellg15 — в формате 08.11, ей нужен этот ALTER.</p>
+  <div class="scroll"><pre class="panel mono" style="margin:0; white-space:pre; font-size:13px">ALTER TABLE STAT$COLUMNS
+  ADD STAT$BLOB_LEVELS BLOB SUB_TYPE BINARY,
+  ADD STAT$BLOB_LEVELS_TEXT BLOB SUB_TYPE TEXT CHARACTER SET UTF8,
+  ADD STAT$BLOB_AVG_PAGES DOUBLE PRECISION,
+  ADD STAT$BLOB_MAX_PAGES INTEGER,
+  ADD STAT$BLOB_AVG_LEN DOUBLE PRECISION,
+  ADD STAT$BLOB_MAX_LEN BIGINT,
+  ADD STAT$SUB_TYPE SMALLINT;
+COMMIT;
+ALTER DATABASE REFRESH STATISTICS;</pre></div>
+</section>
+
+<section id="plan">
+  <h2><span class="num">7</span>План действий</h2>
+  <ol class="stages">
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Корректность</h3><span class="dur">1–2 дня</span></div>
+      <ol>
+        <li><b>W2</b> — остановка сервера: блок <code>MAX(length, BLOCK_SIZE)</code> и настоящая проверка. Тест 36.</li>
+        <li><b>W1</b> — конъюнкты ON с подзапросом: фильтр поверх HJ или NL. Тест 35.</li>
+        <li><b>W3</b> — escape в двойнике LIKE, как в штатном коде. Тест 37.</li>
+        <li><b>W4</b> — при <code>Column unknown</code> отключать расширенную статистику с записью в firebird.log; при ADD/REFRESH добавлять колонки. Тест 38.</li>
+        <li><b>W6</b> — литерал двойника через <code>prepareLiteral</code>, <code>charSet-&gt;length</code> в try. Тест 39.</li>
+      </ol>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Оценки</h3><span class="dur">около 1 недели</span></div>
+      <ol>
+        <li><b>W5</b> — PG <code>eqjoinsel_inner</code> в каждом направлении, затем MIN: около 1 000 на 34, около 124 000 на 27.</li>
+        <li><b>W7</b> — пол <code>1 / cardinality</code> в pairFiltered. Тест 40. <b>W8, W9</b> — тест 41.</li>
+        <li><b>W13–W19</b> — текстовые оценки. <b>W10–W12</b> — цена и сбор профиля BLOB.</li>
+      </ol>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>CEB</h3><span class="dur">после правок</span></div>
+      <ol>
+        <li>Включить dellg15, миграция STAT$ (раздел 6), 34 запроса прошлого замера и полный CEB.</li>
+        <li><b>C3, M1</b> — 7a_005, 7a_008.</li>
+      </ol>
+    </div></li>
+    <li class="stage"><div class="stage-body">
+      <div class="stage-head"><h3>Процесс</h3><span class="dur">постоянно</span></div>
+      <ol>
+        <li><b>Каждое исправление — с тестом.</b> W1–W3 видны на 10 000 строк за секунды.</li>
+        <li>Добавить тесты 31–41 в набор «horses». EN-документацию держать вровень с RU.</li>
+        <li>X1–X3 проверить на чистом Firebird 5.0.x и отправить в трекер.</li>
+      </ol>
+    </div></li>
+  </ol>
+</section>
+
+<footer>
+  <p>Источники: <code>git diff a3cfa97218..06041718cc</code> ветки v5.0-impr-opt; локальная сборка 12.11; тесты 00–41 на двух сборках; 8 параллельных направлений ревью кода и 6 независимых проверяющих. CEB не замерен.</p>
+  <p>Markdown-версия: <a href="https://github.com/alexeykovyazin/optimizertestplan/blob/main/reviews/2026-11-12_impropt/REVIEW.md">reviews/2026-11-12_impropt/REVIEW.md</a> · тесты: <a href="https://github.com/alexeykovyazin/optimizertestplan/tree/main/reviews/2026-11-12_impropt/tests">tests</a> · прошлое ревью 08.11: <a href="https://raw.githack.com/alexeykovyazin/optimizertestplan/main/reviews/2026-11-08_impropt/index.html">веб-страница</a></p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.f'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  function match(li, mode) {
+    if (mode === 'severe') return li.dataset.sev === 'crit' || li.dataset.sev === 'high';
+    if (mode === 'test') return li.dataset.status === 'test';
+    return true;
+  }
+  ['all', 'severe', 'test'].forEach(function (mode) {
+    var n = items.filter(function (li) { return match(li, mode); }).length;
+    var el = document.querySelector('[data-count="' + mode + '"]');
+    if (el) el.textContent = n;
+  });
+  function apply(mode) {
+    items.forEach(function (li) { li.hidden = !match(li, mode); });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === mode)); });
+    document.querySelectorAll('.findings').forEach(function (list) {
+      var any = Array.prototype.some.call(list.children, function (li) { return !li.hidden; });
+      var note = list.nextElementSibling;
+      if (note && note.classList.contains('empty')) note.hidden = any;
+    });
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.dataset.filter); });
+  });
+})();
+</script>
+
+</body>
+</html>

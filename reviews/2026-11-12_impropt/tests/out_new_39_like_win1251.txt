@@ -1,0 +1,66 @@
+Statement failed, SQLSTATE = 22018
+arithmetic exception, numeric overflow, or string truncation
+-Cannot transliterate character between character sets
+After line 25 in file E:\Projects_Big\optimizertestplan\reviews\2026-11-12_impropt\tests\39_like_win1251.sql
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C2                      2500 
+
+Statement failed, SQLSTATE = 22018
+arithmetic exception, numeric overflow, or string truncation
+-Cannot transliterate character between character sets
+After line 27 in file E:\Projects_Big\optimizertestplan\reviews\2026-11-12_impropt\tests\39_like_win1251.sql
+
+PLAN (T NATURAL)
+
+TAG                    COUNT 
+====== ===================== 
+C4                      2500 
+
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C5                         5 
+
+
+PLAN (T INDEX (T_S))
+
+TAG                    COUNT 
+====== ===================== 
+C6                         0 
+
+
+PLAN (T NATURAL)
+
+TAG                    COUNT 
+====== ===================== 
+C7                      2500 
+
+Statement failed, SQLSTATE = 22018
+arithmetic exception, numeric overflow, or string truncation
+-Cannot transliterate character between character sets
+After line 33 in file E:\Projects_Big\optimizertestplan\reviews\2026-11-12_impropt\tests\39_like_win1251.sql
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+
+PLAN (T NATURAL)
+
+PLAN (T NATURAL)
+Statement failed, SQLSTATE = 22018
+arithmetic exception, numeric overflow, or string truncation
+-Cannot transliterate character between character sets
+After line 40 in file E:\Projects_Big\optimizertestplan\reviews\2026-11-12_impropt\tests\39_like_win1251.sql
+
+PLAN (T INDEX (T_S))
+
+PLAN (T INDEX (T_S))
+-- rc=1, 1 s

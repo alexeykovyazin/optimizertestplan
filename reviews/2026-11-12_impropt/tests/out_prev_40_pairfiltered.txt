@@ -1,0 +1,193 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1.00)
+            -> Filter (rows=1.00)
+                -> Table "A" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY6" Unique Scan
+            -> Filter (rows=0.011100)
+                -> Table "B" Access By ID (rows=111.00)
+                    -> Bitmap
+                        -> Index "B_A" Range Scan (full match)
+
+Q                      COUNT 
+====== ===================== 
+Q1                         1 
+
+Current memory = 19352640
+Delta memory = 300496
+Max memory = 19433872
+Elapsed time = 0.004 sec
+Buffers = 2048
+Reads = 145
+Writes = 0
+Fetches = 969
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=50.00)
+                -> Nested Loop Join (inner) (rows=1.00)
+                    -> Filter (rows=49.05)
+                        -> Table "A" Full Scan (rows=1000.00)
+                    -> Filter (rows=0.010000)
+                        -> Table "B" Access By ID (rows=100.00)
+                            -> Bitmap
+                                -> Index "B_A" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=100.00)
+                    -> Filter (rows=100.00)
+                        -> Table "E" Full Scan (rows=100000.00)
+
+Q                      COUNT 
+====== ===================== 
+Q2                      2500 
+
+Current memory = 19388240
+Delta memory = 35600
+Max memory = 19468848
+Elapsed time = 0.020 sec
+Buffers = 2048
+Reads = 793
+Writes = 0
+Fetches = 114029
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=50.00)
+                -> Nested Loop Join (inner) (rows=1.00)
+                    -> Filter (rows=49.05)
+                        -> Table "A" Full Scan (rows=1000.00)
+                    -> Filter (rows=0.010000)
+                        -> Table "B" Access By ID (rows=100.00)
+                            -> Bitmap
+                                -> Index "B_A" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=100.00)
+                    -> Filter (rows=100.00)
+                        -> Table "E" Full Scan (rows=100000.00)
+
+Q                      COUNT 
+====== ===================== 
+Q2                      2500 
+
+Current memory = 19388496
+Delta memory = 256
+Max memory = 19468848
+Elapsed time = 0.014 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 113926
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+                -> Filter (rows=100.00)
+                    -> Table "E" Full Scan (rows=100000.00)
+                -> Record Buffer (record length: 66) (rows=1.00)
+                    -> Nested Loop Join (inner) (rows=1.00)
+                        -> Filter (rows=49.05)
+                            -> Table "A" Full Scan (rows=1000.00)
+                        -> Filter (rows=0.010000)
+                            -> Table "B" Access By ID (rows=100.00)
+                                -> Bitmap
+                                    -> Index "B_A" Range Scan (full match)
+
+Q                      COUNT 
+====== ===================== 
+Q2h                     2500 
+
+Current memory = 19430496
+Delta memory = 42000
+Max memory = 19469744
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 1
+Writes = 0
+Fetches = 113942
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=24.52)
+            -> Filter (rows=49.05)
+                -> Table "A" Full Scan (rows=1000.00)
+            -> Filter (rows=0.010000)
+                -> Table "B" Access By ID (rows=100.00)
+                    -> Bitmap
+                        -> Index "B_A" Range Scan (full match)
+            -> Filter (rows=50.00)
+                -> Table "E" Access By ID (rows=50000.00)
+                    -> Bitmap
+                        -> Index "E_K" Range Scan (full match)
+
+Q                      COUNT 
+====== ===================== 
+Q2n                     2500 
+
+Current memory = 19503296
+Delta memory = 72800
+Max memory = 19503376
+Elapsed time = 0.363 sec
+Buffers = 2048
+Reads = 49
+Writes = 0
+Fetches = 2498415
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2452.45)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2452.45)
+                -> Nested Loop Join (inner) (rows=49.05)
+                    -> Filter (rows=49.05)
+                        -> Table "A" Full Scan (rows=1000.00)
+                    -> Filter (rows=1.00)
+                        -> Table "B" Access By ID (rows=100.00)
+                            -> Bitmap
+                                -> Index "B_A" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=100.00)
+                    -> Filter (rows=100.00)
+                        -> Table "E" Full Scan (rows=100000.00)
+
+Q                      COUNT 
+====== ===================== 
+Q3                      2500 
+
+Current memory = 19529920
+Delta memory = 26624
+Max memory = 19565600
+Elapsed time = 0.015 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 113941
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=50.00)
+                -> Nested Loop Join (inner) (rows=1.00)
+                    -> Filter (rows=5.01)
+                        -> Table "A" Full Scan (rows=1000.00)
+                    -> Filter (rows=0.010000)
+                        -> Table "B" Access By ID (rows=100.00)
+                            -> Bitmap
+                                -> Index "B_A" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=100.00)
+                    -> Filter (rows=100.00)
+                        -> Table "E" Full Scan (rows=100000.00)
+
+Q                      COUNT 
+====== ===================== 
+Q4                       300 
+
+Current memory = 19557072
+Delta memory = 27152
+Max memory = 19593648
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 105007
+-- rc=0, 2 s

@@ -1,0 +1,211 @@
+
+TAG                                            EXPECTED_MATCH 
+======================================= ===================== 
+R1 scalar/exists/notexists/any expected                  5400 
+
+
+TAG                                    EXPECTED_MATCH 
+=============================== ===================== 
+R5 parent-ref expected (p.v=50)                  4000 
+
+
+TAG                             EXPECTED_MATCH 
+======================== ===================== 
+R7 uncorrelated expected                  4900 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=10.00)
+                -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=5000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Filter (rows=0.50)
+                -> Table "OBI" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "OBI_X" Range Scan (full match)
+
+TAG                        CNT_ALL             CNT_MATCH 
+============ ===================== ===================== 
+N1 NL scalar                 10000                  5400 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=10.00)
+                -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                              CNT_ALL             CNT_MATCH 
+================== ===================== ===================== 
+Q1 scalar subquery                 10000                 10000 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=10.00)
+                -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+                -> Table "OA" Full Scan (rows=10000.00)
+                -> Record Buffer (record length: 33) (rows=10000.00)
+                    -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                                                         CNT 
+========================================= ===================== 
+Q1b anti (ob.id is null), expect 10000-R1                     0 
+
+
+Sub-query
+    -> Filter (rows=5.00)
+        -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                     CNT_ALL             CNT_MATCH 
+========= ===================== ===================== 
+Q2 exists                 10000                 10000 
+
+
+Sub-query
+    -> Filter (rows=5.00)
+        -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                         CNT_ALL             CNT_MATCH 
+============= ===================== ===================== 
+Q3 not exists                 10000                 10000 
+
+
+Sub-query
+    -> Filter (rows=5.00)
+        -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                        CNT_ALL             CNT_MATCH 
+============ ===================== ===================== 
+Q4 or exists                 10000                 10000 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+                -> Table "OA" Full Scan (rows=10000.00)
+                -> Record Buffer (record length: 33) (rows=10000.00)
+                    -> Table "OB" Full Scan (rows=10000.00)
+Select Expression
+    -> Filter (rows=1.00)
+        -> Table "OT" as "P" Full Scan (rows=10.00)
+
+TAG                            K             CNT_MATCH 
+=================== ============ ===================== 
+Q5 parent-query ref            5                 10000 
+
+
+Sub-query
+    -> Filter (rows=5.00)
+        -> Filter (rows=10.00)
+            -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                    CNT_ALL             CNT_MATCH 
+======== ===================== ===================== 
+Q6 > any                 10000                 10000 
+
+
+Sub-query (invariant)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=1.00)
+                -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=5000.00)
+                -> Filter (rows=5000.00)
+                    -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                                        CNT_ALL             CNT_MATCH 
+============================ ===================== ===================== 
+Q7 control uncorrelated subq                 10000                  4900 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                                     CNT_ALL             CNT_MATCH 
+========================= ===================== ===================== 
+Q8 control plain non-equi                 10000                  5400 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=10.00)
+                -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OBI" Full Scan (rows=10000.00)
+
+TAG                                 CNT_ALL             CNT_MATCH 
+===================== ===================== ===================== 
+I1 scalar, index on x                 10000                 10000 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=10.00)
+                -> Table "OT" Full Scan (rows=10.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=10000.00)
+            -> Table "OA" Full Scan (rows=10000.00)
+            -> Record Buffer (record length: 33) (rows=10000.00)
+                -> Table "OB" Full Scan (rows=10000.00)
+
+TAG                                 CNT_ALL             CNT_MATCH 
+===================== ===================== ===================== 
+RJ1 right join scalar                 10000                 10000 
+
+-- rc=0, 1 s
