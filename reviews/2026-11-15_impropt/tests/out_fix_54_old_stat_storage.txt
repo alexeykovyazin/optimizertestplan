@@ -1,0 +1,80 @@
+
+TAG                               
+================================= 
+A: no storage (baseline estimate) 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1729.69)
+            -> Table "T" Full Scan (rows=17296.94)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                              
+================================================================ 
+B: old storage, expected count 100 and the estimate of section A 
+
+
+PLAN (T NATURAL)
+
+                COUNT 
+===================== 
+                  100 
+
+
+PLAN (T NATURAL)
+
+                COUNT 
+===================== 
+                10000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1069.05)
+            -> Table "T" Full Scan (rows=10690.47)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                                
+================================================================== 
+C: REFRESH on old storage, expected error with the old format hint 
+
+Statement failed, SQLSTATE = 42S22
+unsuccessful metadata update
+-ALTER DATABASE failed
+-Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$BLOB_LEVELS
+-At line 1, column 351
+-The extended statistics storage has an old format: add the missing columns to the STAT$ tables (the definitions are those of ALTER DATABASE ADD EXTENDED STATISTICS) or re-create the storage with ALTER DATABASE DROP EXTENDED STATISTICS and ALTER DATABASE ADD EXTENDED STATISTICS
+After line 44 in file 54_old_stat_storage.sql
+
+PLAN (T NATURAL)
+
+                COUNT 
+===================== 
+                  100 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                          
+============================================================ 
+D: columns added back, expected rows=100 from the statistics 
+
+
+PLAN (T NATURAL)
+
+                COUNT 
+===================== 
+                  100 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100.00)
+            -> Table "T" Full Scan (rows=10000.00)
+-- rc=1, 1 s

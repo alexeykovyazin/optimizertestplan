@@ -1,0 +1,64 @@
+
+TAG                             E1 Мо\_а esc \ (expected 10)
+CNT                             10
+TRUTH                           10
+
+
+
+TAG                             E2 Мо\%а esc \ (expected 5)
+CNT                             5
+TRUTH                           5
+
+
+
+TAG                             E3 Мо!_а esc ! (expected 10)
+CNT                             10
+TRUTH                           10
+
+
+
+TAG                             E4 Мо0а no mask (expected 20)
+CNT                             20
+TRUTH                           20
+
+
+
+TAG                             E5 Мо_а mask (expected 35)
+CNT                             35
+TRUTH                           35
+
+
+
+TAG                             E6 Мо\_% esc \ (expected 10)
+CNT                             10
+TRUTH                           10
+
+
+
+TAG                             E7 empty pattern (expected 0)
+CNT                             0
+TRUTH                           0
+
+
+
+TAG                             E8 М one char (expected 0)
+CNT                             0
+TRUTH                           0
+
+
+
+TAG                             I1 Мо\_а esc \ idx (expected 10)
+CNT                             10
+
+
+
+TAG                             I2 Мо0а idx (expected 20)
+CNT                             20
+
+
+
+TAG                             I3 Мо\%а esc \ idx (expected 5)
+CNT                             5
+
+
+-- rc=0, 0 s

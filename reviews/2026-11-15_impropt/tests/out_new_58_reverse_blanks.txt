@@ -1,0 +1,91 @@
+
+TAG                                                         REAL_CNT 
+============================================== ===================== 
+A1 'abc     ' starting with tr (expected 5000)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=30003.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                       REAL_CNT 
+============================================ ===================== 
+A2 'Kowalski   ' containing nm2 (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                          REAL_CNT 
+=============================================== ===================== 
+A3 'abc      ' starting with tb (expected 5000)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=35003.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                          REAL_CNT 
+=============================================== ===================== 
+A4 'Bob Smith' starting with bs (expected 5000)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10008.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                    REAL_CNT 
+========================================= ===================== 
+C1 'abc' starting with tr (expected 5000)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5003.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                    REAL_CNT 
+========================================= ===================== 
+C2 'Kowalski' containing nm2 (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=360.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                                 REAL_CNT 
+====================================================== ===================== 
+C3 W14 'abc       ' starting with chu (expected 50000)                 50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50000.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                              REAL_CNT 
+=================================================== ===================== 
+C4 'xxabc       yy' containing chu (expected 50000)                 50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50004.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                    REAL_CNT 
+========================================= ===================== 
+C5 tr starting with 'abc' (expected 5000)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5000.00)
+            -> Table "R" Full Scan (rows=100000.00)
+-- rc=0, 2 s

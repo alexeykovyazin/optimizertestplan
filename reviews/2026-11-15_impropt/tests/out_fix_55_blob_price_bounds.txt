@@ -1,0 +1,60 @@
+
+TAG                   
+===================== 
+P1: AVG_PAGES = 1e300 
+
+
+PLAN JOIN (PR NATURAL, E INDEX (RDB$PRIMARY1))
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                   
+===================== 
+P1: AVG_PAGES = 1e308 
+
+
+PLAN (STAT$COLUMNS INDEX (RDB$PRIMARY5))
+
+PLAN JOIN (PR NATURAL, E INDEX (RDB$PRIMARY1))
+
+PLAN JOIN (PR NATURAL, E INDEX (RDB$PRIMARY1))
+
+                COUNT 
+===================== 
+                 1100 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                               
+================================= 
+P1: AVG_PAGES = 2097152 (the cap) 
+
+
+PLAN (STAT$COLUMNS INDEX (RDB$PRIMARY5))
+
+PLAN JOIN (PR NATURAL, E INDEX (RDB$PRIMARY1))
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                           
+============================================================= 
+P2: real AVG_PAGES, IN-list (regression: same plan and count) 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1500.00)
+            -> Table "PR" Full Scan (rows=5000.00)
+            -> Filter (rows=0.30)
+                -> Table "E" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY1" Unique Scan
+
+PLAN JOIN (PR NATURAL, E INDEX (RDB$PRIMARY1))
+
+                COUNT 
+===================== 
+                  300 
+
+-- rc=0, 0 s

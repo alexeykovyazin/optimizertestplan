@@ -1,0 +1,359 @@
+
+TAG                     REAL_CNT 
+========== ===================== 
+k in 1 MCV                   400 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=400.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+k not in 1 MCV                 19600 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=19600.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                     REAL_CNT 
+========== ===================== 
+k in 2 MCV                   800 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=800.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+k not in 2 MCV                 19200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=800.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                      REAL_CNT 
+=========== ===================== 
+k in 10 MCV                  4000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4000.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                          REAL_CNT 
+=============== ===================== 
+k not in 10 MCV                 16000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4000.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                        REAL_CNT 
+============= ===================== 
+k in 2 absent                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                            REAL_CNT 
+================= ===================== 
+k not in 2 absent                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                           REAL_CNT 
+================ ===================== 
+not (k in 3 MCV)                 18800 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1200.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                                 REAL_CNT 
+====================== ===================== 
+kn in 2 MCV (10% NULL)                  1000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1000.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                                     REAL_CNT 
+========================== ===================== 
+kn not in 2 MCV (10% NULL)                 17000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1000.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                             REAL_CNT 
+================== ===================== 
+k not in (1, null)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=400.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                     REAL_CNT 
+========== ===================== 
+u in 1 MCV                  2500 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2500.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+u not in 1 MCV                 17500 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=17500.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                     REAL_CNT 
+========== ===================== 
+u in 2 MCV                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5000.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+u not in 2 MCV                 15000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5000.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+u in 2 non-MCV                     2 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                             REAL_CNT 
+================== ===================== 
+u not in 2 non-MCV                 19998 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                          REAL_CNT 
+=============== ===================== 
+u in 10 non-MCV                    10 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                              REAL_CNT 
+=================== ===================== 
+u not in 10 non-MCV                 19990 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                                 REAL_CNT 
+====================== ===================== 
+u not in MCV + non-MCV                 17499 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2501.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                     REAL_CNT 
+========== ===================== 
+d in 1 MCV                   667 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=667.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+d not in 1 MCV                 19333 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=19333.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                     REAL_CNT 
+========== ===================== 
+d in 2 MCV                  1334 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1334.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                         REAL_CNT 
+============== ===================== 
+d not in 2 MCV                 18666 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1334.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                      REAL_CNT 
+=========== ===================== 
+d in 10 MCV                  6670 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=6670.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                          REAL_CNT 
+=============== ===================== 
+d not in 10 MCV                 13330 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=6670.00)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                          REAL_CNT 
+=============== ===================== 
+dd in 2 non-MCV                     2 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2.02)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                              REAL_CNT 
+=================== ===================== 
+dd not in 2 non-MCV                 19998 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2.02)
+            -> Table "T" Full Scan (rows=20000.00)
+
+PLAN (T NATURAL)
+
+TAG                                      REAL_CNT 
+=========================== ===================== 
+dd not in 1 MCV + 1 non-MCV                 15999 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4001.01)
+            -> Table "T" Full Scan (rows=20000.00)
+-- rc=0, 1 s

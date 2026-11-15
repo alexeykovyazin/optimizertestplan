@@ -1,0 +1,195 @@
+
+TAG                                                       CNT 
+======================================= ===================== 
+R1 rows with col = x in s (expected 10)                    10 
+
+
+                COUNT 
+===================== 
+               400000 
+
+
+                COUNT 
+===================== 
+                20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                              CNT                SUM_ID 
+============== ===================== ===================== 
+C1 plain table                   200              40199800 
+
+Current memory = 19431264
+Delta memory = 20224
+Max memory = 19512896
+Elapsed time = 0.010 sec
+Buffers = 2048
+Reads = 113
+Writes = 0
+Fetches = 475
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" as "V1 S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                          CNT                SUM_ID 
+========== ===================== ===================== 
+Q1 view v1                   200              40199800 
+
+Current memory = 19490528
+Delta memory = 59264
+Max memory = 19572432
+Elapsed time = 0.002 sec
+Buffers = 2048
+Reads = 23
+Writes = 0
+Fetches = 541
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" as "D S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                CNT                SUM_ID 
+================ ===================== ===================== 
+Q2 derived table                   200              40199800 
+
+Current memory = 19510896
+Delta memory = 20368
+Max memory = 19572432
+Elapsed time = 0.000 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 462
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" as "C S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                      CNT                SUM_ID 
+====== ===================== ===================== 
+Q3 CTE                   200              40199800 
+
+Current memory = 19531264
+Delta memory = 20368
+Max memory = 19572432
+Elapsed time = 0.000 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 462
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" as "V2 S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=1.00)
+                -> Table "K" as "V2 K" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY1" Unique Scan
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                        CNT                SUM_ID 
+======================== ===================== ===================== 
+Q4 view v2 (join inside)                   200              40199800 
+
+Current memory = 19623632
+Delta memory = 92368
+Max memory = 19704016
+Elapsed time = 0.002 sec
+Buffers = 2048
+Reads = 20
+Writes = 0
+Fetches = 632
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" as "V1 S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                      CNT                SUM_ID 
+====================== ===================== ===================== 
+W1 view v1, inner join                   200              40199800 
+
+Current memory = 19661088
+Delta memory = 37456
+Max memory = 19704016
+Elapsed time = 0.000 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 462
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=793.17)
+            -> Filter (rows=39.90)
+                -> Table "S" as "D S" Access By ID (rows=39.90)
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter (rows=19.88)
+                -> Table "BIG" as "B" Access By ID (rows=19.88)
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                      CNT                SUM_ID 
+====================== ===================== ===================== 
+W2 derived, inner join                   200              40199800 
+
+Current memory = 19682096
+Delta memory = 21008
+Max memory = 19718624
+Elapsed time = 0.001 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 462
+-- rc=0

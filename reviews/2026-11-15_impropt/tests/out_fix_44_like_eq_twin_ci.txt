@@ -1,0 +1,46 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=4.50)
+            -> Table "T" Full Scan (rows=18.00)
+
+TAG                                             CNT_LIKE              EXPECTED 
+================================== ===================== ===================== 
+Q1 ai(UNICODE_CI_AI) like 'сергеи'                     3                     3 
+
+
+TAG                                           CNT_LIKE              EXPECTED 
+================================ ===================== ===================== 
+Q2 ai(UNICODE_CI_AI) like 'маия'                     2                     2 
+
+
+TAG                                     CNT_LIKE              EXPECTED 
+========================== ===================== ===================== 
+Q3 ci(UNICODE_CI) like 'i'                     3                     3 
+
+
+TAG                                           CNT_LIKE              EXPECTED 
+================================ ===================== ===================== 
+Q4 es(ES_ES_CI_AI) like 'Straße'                     2                     2 
+
+
+TAG                                                       CNT_LIKE              EXPECTED 
+============================================ ===================== ===================== 
+Q5 ci(UNICODE_CI) like x'736D697468' (smith)                     3                     3 
+
+
+TAG                                          CNT_LIKE              EXPECTED 
+=============================== ===================== ===================== 
+C1 ci(UNICODE_CI) like 'иванов'                     3                     3 
+
+
+TAG                                         CNT_LIKE              EXPECTED 
+============================== ===================== ===================== 
+C2 ci(UNICODE_CI) like 'smith'                     3                     3 
+
+
+TAG                                                                   CNT_LIKE              EXPECTED 
+======================================================== ===================== ===================== 
+C3 ai(UNICODE_CI_AI) like 'сергеи%' (with mask, no twin)                     3                     3 
+
+-- rc=0, 0 s

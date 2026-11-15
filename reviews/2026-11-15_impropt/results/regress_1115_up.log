@@ -1,0 +1,168 @@
+control attachment: 9419
+[ceb_7a_001] prepared
+[ceb_7a_001] warmup1: {'ms': 22707.1, 'rows': 1, 'val': '(17512,)'}
+    reap(post-warmup): ok
+[ceb_7a_001] rep1: {'ms': 12979.7, 'rows': 1, 'val': '(17512,)'}
+    reap(post-rep): ok
+[ceb_7a_001] rep2: {'ms': 11494.4, 'rows': 1, 'val': '(17512,)'}
+    reap(post-rep): ok
+[ceb_7a_002] prepared
+[ceb_7a_002] warmup1: {'ms': 62574.2, 'rows': 1, 'val': '(7986,)'}
+    reap(post-warmup): ok
+[ceb_7a_002] rep1: {'ms': 52896.9, 'rows': 1, 'val': '(7986,)'}
+    reap(post-rep): ok
+[ceb_7a_002] rep2: {'ms': 41042.2, 'rows': 1, 'val': '(7986,)'}
+    reap(post-rep): ok
+[ceb_7a_003] prepared
+[ceb_7a_003] warmup1: {'ms': 9894.3, 'rows': 1, 'val': '(0,)'}
+    reap(post-warmup): ok
+[ceb_7a_003] rep1: {'ms': 1448.3, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_003] rep2: {'ms': 1629.6, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_004] prepared
+[ceb_7a_004] warmup1: {'ms': 60232.0, 'rows': 1, 'val': '(190432,)'}
+    reap(post-warmup): ok
+[ceb_7a_004] rep1: {'ms': 34275.6, 'rows': 1, 'val': '(190432,)'}
+    reap(post-rep): ok
+[ceb_7a_004] rep2: {'ms': 32987.1, 'rows': 1, 'val': '(190432,)'}
+    reap(post-rep): ok
+[ceb_7a_005] prepared
+[ceb_7a_005] warmup1: {'ms': 2670.0, 'rows': 1, 'val': '(39061,)'}
+    reap(post-warmup): ok
+[ceb_7a_005] rep1: {'ms': 1921.0, 'rows': 1, 'val': '(39061,)'}
+    reap(post-rep): ok
+[ceb_7a_005] rep2: {'ms': 1813.9, 'rows': 1, 'val': '(39061,)'}
+    reap(post-rep): ok
+[ceb_7a_006] prepared
+[ceb_7a_006] warmup1: {'ms': 584.7, 'rows': 1, 'val': '(0,)'}
+    reap(post-warmup): ok
+[ceb_7a_006] rep1: {'ms': 540.8, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_006] rep2: {'ms': 576.6, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_007] prepared
+[ceb_7a_007] warmup1: {'ms': 1999.0, 'rows': 1, 'val': '(26451,)'}
+    reap(post-warmup): ok
+[ceb_7a_007] rep1: {'ms': 1813.8, 'rows': 1, 'val': '(26451,)'}
+    reap(post-rep): ok
+[ceb_7a_007] rep2: {'ms': 2900.3, 'rows': 1, 'val': '(26451,)'}
+    reap(post-rep): ok
+[ceb_7a_008] prepared
+[ceb_7a_008] warmup1: {'ms': 6058.7, 'rows': 1, 'val': '(17302,)'}
+    reap(post-warmup): ok
+[ceb_7a_008] rep1: {'ms': 2282.9, 'rows': 1, 'val': '(17302,)'}
+    reap(post-rep): ok
+[ceb_7a_008] rep2: {'ms': 2507.5, 'rows': 1, 'val': '(17302,)'}
+    reap(post-rep): ok
+[ceb_7a_009] prepared
+[ceb_7a_009] warmup1: {'ms': 3846.1, 'rows': 1, 'val': '(1752,)'}
+    reap(post-warmup): ok
+[ceb_7a_009] rep1: {'ms': 2836.5, 'rows': 1, 'val': '(1752,)'}
+    reap(post-rep): ok
+[ceb_7a_009] rep2: {'ms': 3009.2, 'rows': 1, 'val': '(1752,)'}
+    reap(post-rep): ok
+[ceb_7a_010] prepared
+[ceb_7a_010] warmup1: {'ms': 4714.8, 'rows': 1, 'val': '(1108,)'}
+    reap(post-warmup): ok
+[ceb_7a_010] rep1: {'ms': 5356.3, 'rows': 1, 'val': '(1108,)'}
+    reap(post-rep): ok
+[ceb_7a_010] rep2: {'ms': 5372.9, 'rows': 1, 'val': '(1108,)'}
+    reap(post-rep): ok
+[ceb_7a_011] prepared
+[ceb_7a_011] warmup1: {'ms': 734.8, 'rows': 1, 'val': '(0,)'}
+    reap(post-warmup): ok
+[ceb_7a_011] rep1: {'ms': 531.6, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_011] rep2: {'ms': 401.6, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_012] prepared
+[ceb_7a_012] warmup1: {'ms': 5803.0, 'rows': 1, 'val': '(0,)'}
+    reap(post-warmup): ok
+[ceb_7a_012] rep1: {'ms': 1896.0, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_012] rep2: {'ms': 2009.2, 'rows': 1, 'val': '(0,)'}
+    reap(post-rep): ok
+[ceb_7a_013] prepared
+[ceb_7a_013] warmup1: {'ms': 12277.0, 'rows': 1, 'val': '(17153,)'}
+    reap(post-warmup): ok
+[ceb_7a_013] rep1: {'ms': 11559.3, 'rows': 1, 'val': '(17153,)'}
+    reap(post-rep): ok
+[ceb_7a_013] rep2: {'ms': 11713.4, 'rows': 1, 'val': '(17153,)'}
+    reap(post-rep): ok
+[ceb_7a_014] prepared
+[ceb_7a_014] warmup1: {'ms': 7222.5, 'rows': 1, 'val': '(12991,)'}
+    reap(post-warmup): ok
+[ceb_7a_014] rep1: {'ms': 6699.0, 'rows': 1, 'val': '(12991,)'}
+    reap(post-rep): ok
+[ceb_7a_014] rep2: {'ms': 6036.5, 'rows': 1, 'val': '(12991,)'}
+    reap(post-rep): ok
+[ceb_7a_015] prepared
+[ceb_7a_015] warmup1: {'ms': 1462.1, 'rows': 1, 'val': '(375,)'}
+    reap(post-warmup): ok
+[ceb_7a_015] rep1: {'ms': 1209.0, 'rows': 1, 'val': '(375,)'}
+    reap(post-rep): ok
+[ceb_7a_015] rep2: {'ms': 1203.5, 'rows': 1, 'val': '(375,)'}
+    reap(post-rep): ok
+[ceb_11a_003] prepared
+[ceb_11a_003] warmup1: {'ms': 3640.5, 'rows': 0, 'val': None}
+    reap(post-warmup): ok
+[ceb_11a_003] rep1: {'ms': 1149.7, 'rows': 0, 'val': None}
+    reap(post-rep): ok
+[ceb_11a_003] rep2: {'ms': 1159.2, 'rows': 0, 'val': None}
+    reap(post-rep): ok
+[ceb_11a_004] prepared
+[ceb_11a_004] warmup1: {'ms': 15151.6, 'rows': 0, 'val': None}
+    reap(post-warmup): ok
+[ceb_11a_004] rep1: {'ms': 10993.1, 'rows': 0, 'val': None}
+    reap(post-rep): ok
+[ceb_11a_004] rep2: {'ms': 11334.1, 'rows': 0, 'val': None}
+    reap(post-rep): ok
+[ceb_11a_011] prepared
+[ceb_11a_011] warmup1: {'ms': 24383.8, 'rows': 1842, 'val': "(None, 'miscellaneous crew', 'Sony Pictures Home Entertainment', 6134)"}
+    reap(post-warmup): ok
+[ceb_11a_011] rep1: {'ms': 19699.3, 'rows': 1842, 'val': "(None, 'miscellaneous crew', 'Sony Pictures Home Entertainment', 6134)"}
+    reap(post-rep): ok
+[ceb_11a_011] rep2: {'ms': 24258.1, 'rows': 1842, 'val': "(None, 'miscellaneous crew', 'Sony Pictures Home Entertainment', 6134)"}
+    reap(post-rep): ok
+[ceb_11b_002] prepared
+[ceb_11b_002] warmup1: {'ms': 21832.9, 'rows': 3634, 'val': "('f', 'actress', 'Metro-Goldwyn-Mayer (MGM)', 2926)"}
+    reap(post-warmup): ok
+[ceb_11b_002] rep1: {'ms': 18832.7, 'rows': 3634, 'val': "('f', 'actress', 'Metro-Goldwyn-Mayer (MGM)', 2926)"}
+    reap(post-rep): ok
+[ceb_11b_002] rep2: {'ms': 20524.5, 'rows': 3634, 'val': "('f', 'actress', 'Metro-Goldwyn-Mayer (MGM)', 2926)"}
+    reap(post-rep): ok
+[ceb_11b_005] prepared
+[ceb_11b_005] warmup1: {'ms': 11630.8, 'rows': 21926, 'val': "('m', 'actor', 'Warner Home Video', 12044)"}
+    reap(post-warmup): ok
+[ceb_11b_005] rep1: {'ms': 6048.2, 'rows': 21926, 'val': "('m', 'actor', 'Warner Home Video', 12044)"}
+    reap(post-rep): ok
+[ceb_11b_005] rep2: {'ms': 5828.3, 'rows': 21926, 'val': "('m', 'actor', 'Warner Home Video', 12044)"}
+    reap(post-rep): ok
+[ceb_11b_006] prepared
+[ceb_11b_006] warmup1: {'ms': 132832.1, 'rows': 152914, 'val': "('m', 'actor', 'Warner Home Video', 377268)"}
+    reap(post-warmup): ok
+[ceb_11b_006] rep1: {'ms': 134651.2, 'rows': 152914, 'val': "('m', 'actor', 'Warner Home Video', 377268)"}
+    reap(post-rep): ok
+[ceb_11b_006] rep2: {'ms': 139537.9, 'rows': 152914, 'val': "('m', 'actor', 'Warner Home Video', 377268)"}
+    reap(post-rep): ok
+[ceb_11b_010] prepared
+    reap(after watchdog): ok
+[ceb_11b_010] warmup1: {'ms': None, 'rows': None, 'err': 'watchdog 300s'}
+    reap(post-warmup): ok
+    reap(after watchdog): ok
+[ceb_11b_010] rep1: {'ms': None, 'rows': None, 'err': 'watchdog 300s'}
+    reap(post-rep): ok
+    reap(after watchdog): ok
+[ceb_11b_010] rep2: {'ms': None, 'rows': None, 'err': 'watchdog 300s'}
+    reap(post-rep): ok
+    main()
+    ~~~~^^
+    rec["ms"] = min(t["ms"] for t in times if t["ms"] is not None)
+                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: min() iterable argument is empty
+    self.close()
+    self._clear()
+    self._result.close()
+    self._check()
+    raise self.__report(DatabaseError, self.status.get_errors())

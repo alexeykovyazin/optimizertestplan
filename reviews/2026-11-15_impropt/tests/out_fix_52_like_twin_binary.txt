@@ -1,0 +1,67 @@
+
+TAG                             B1 s like abc (expected 1)                                                                              
+CNT                             1
+TRUTH                           1
+
+
+
+TAG                             B2 s like abc_space (expected 1)                                                                                                
+CNT                             1
+TRUTH                           1
+
+
+
+TAG                             B3 c char(10) like abc (cnt = truth, as BASE)                                                                                                                                       
+CNT                             0
+TRUTH                           0
+
+
+
+TAG                             B4 c char(10) like abc+7 spaces (cnt = truth, as BASE)                                                                                                                                                                  
+CNT                             2
+TRUTH                           2
+
+
+
+TAG                             B5 s like Cyrillic (expected 1)                                                                                             
+CNT                             1
+TRUTH                           1
+
+
+
+TAG                             B6 w win1251 col, utf8 literal (expected 1)                                                                                                                                 
+CNT                             1
+TRUTH                           1
+
+
+
+TAG                             B7 ci unicode_ci like smith (expected 3)                                                                                                                        
+CNT                             3
+TRUTH                           3
+
+
+
+TAG                             I1 s like abc idx (expected 1)                                                                                          
+CNT                             1
+
+
+
+TAG                             I2 ci like smith idx (expected 3)                                                                                                   
+CNT                             3
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "B" Access By ID (rows=1.25)
+                -> Bitmap
+                    -> Index "B_S" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "B" Access By ID (rows=1.04)
+                -> Bitmap
+                    -> Index "B_CI" Range Scan (full match)
+-- rc=0, 0 s

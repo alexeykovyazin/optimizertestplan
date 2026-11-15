@@ -1,0 +1,188 @@
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 20
+-extended
+At line 31 in file 60_corr_subq_outer_eq.sql
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 16
+-refresh
+At line 32 in file 60_corr_subq_outer_eq.sql
+
+TAG                                                                    REAL_CNT 
+========================================================= ===================== 
+F1 not exists, bound = invariant subquery (expected 1667)                  1667 
+
+
+Sub-query (invariant)
+    -> Singularity Check
+        -> Aggregate
+            -> Filter
+                -> Table "EMPT" as "E" Full Scan
+Sub-query
+    -> Filter
+        -> Table "ITEM" as "I" Access By ID
+            -> Bitmap
+                -> Index "ITEM_OID" Range Scan (full match)
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+
+TAG                    REAL_CNT 
+========= ===================== 
+F1 timing                  1667 
+
+Current memory = 4392605808
+Delta memory = 24896
+Max memory = 4392639872
+Elapsed time = 0.004 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 23510
+
+TAG                                             REAL_CNT 
+================================== ===================== 
+F2 exists, bound = outer field d.k                  2239 
+
+
+Sub-query
+    -> Filter
+        -> Table "ITEM" as "I" Access By ID
+            -> Bitmap
+                -> Index "ITEM_OID" Range Scan (full match)
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+
+TAG                    REAL_CNT 
+========= ===================== 
+F2 timing                  2239 
+
+Current memory = 4392660432
+Delta memory = 18688
+Max memory = 4392690176
+Elapsed time = 0.004 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 23506
+
+Sub-query
+    -> Filter
+        -> Table "ITEM" as "I" Access By ID
+            -> Bitmap
+                -> Index "ITEM_OID" Range Scan (full match)
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+
+Sub-query
+    -> Filter
+        -> Table "ITEM" as "I" Access By ID
+            -> Bitmap
+                -> Index "ITEM_OID" Range Scan (full match)
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+
+Sub-query (invariant)
+    -> Singularity Check
+        -> Table "RDB$DATABASE" Full Scan
+Sub-query
+    -> Filter
+        -> Table "ITEM" as "I" Access By ID
+            -> Bitmap
+                -> Index "ITEM_OID" Range Scan (full match)
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+
+Sub-query (invariant)
+    -> Singularity Check
+        -> Aggregate
+            -> Filter
+                -> Table "EMPT" as "E" Full Scan
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "ITEM" as "I" Access By ID
+                -> Bitmap And
+                    -> Bitmap
+                        -> Index "ITEM_PID" Range Scan (lower bound: 1/1)
+                    -> Bitmap
+                        -> Index "ITEM_OID" Range Scan (full match)
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "ITEM" as "I" Access By ID
+                -> Bitmap
+                    -> Index "ITEM_OID" Range Scan (full match)
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "ITEM" as "I" Access By ID
+                -> Bitmap
+                    -> Index "ITEM_OID" Range Scan (full match)
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Table "DUP" as "D" Full Scan
+            -> Filter
+                -> Table "ITEM" as "I" Access By ID
+                    -> Bitmap
+                        -> Index "ITEM_OID" Range Scan (full match)
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Table "DUP" as "D" Full Scan
+            -> Filter
+                -> Table "ITEM" as "I" Access By ID
+                    -> Bitmap
+                        -> Index "ITEM_OID" Range Scan (full match)
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Table "DUP" as "D" Full Scan
+            -> Filter
+                -> Table "ITEM" as "I" Access By ID
+                    -> Bitmap
+                        -> Index "ITEM_OID" Range Scan (full match)
+
+Sub-query
+    -> Nested Loop Join (inner)
+        -> Filter
+            -> Table "ITEM" as "I" Access By ID
+                -> Bitmap
+                    -> Index "ITEM_PID" Range Scan (lower bound: 1/1)
+        -> Filter
+            -> Table "DUP" as "D2" Access By ID
+                -> Bitmap
+                    -> Index "RDB$PRIMARY2" Unique Scan
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+
+Sub-query
+    -> Filter
+        -> Table "ITEM" as "I" Access By ID
+            -> Bitmap
+                -> Index "ITEM_OID" Range Scan (full match)
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Table "DUP" as "D" Full Scan
+-- rc=1, 1 s

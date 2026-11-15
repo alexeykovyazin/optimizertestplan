@@ -1,0 +1,199 @@
+# tag | expected Hash Join (outer) nodes | expected outer join nodes | title   ('-' = any)
+A01 | 1 | - | LEFT, key =
+A02 | 1 | - | LEFT, composite key = =
+A03 | 1 | - | LEFT, key IS NOT DISTINCT FROM (NULL matches NULL)
+A04 | 1 | - | LEFT, composite key = and INDF
+A05 | 1 | - | LEFT, composite key INDF and INDF
+A06 | 1 | - | LEFT, expression keys
+A07 | 1 | - | LEFT, key operands swapped
+A08 | 1 | - | RIGHT, key =
+A09 | 1 | - | RIGHT, composite key INDF and =
+A10 | 2 | - | FULL, key =
+A11 | 2 | - | FULL, key INDF
+A12 | 2 | - | FULL, composite key
+A13 | 1 | - | LEFT, key int = bigint
+A14 | 1 | - | LEFT, key int = numeric(9,2)
+A15 | 1 | - | LEFT, key varchar = char (padding)
+A16 | 1 | - | LEFT, key with a case-insensitive collation
+A17 | 1 | - | LEFT, key date = timestamp
+A18 | - | - | LEFT, the inner table is empty
+A19 | - | - | LEFT, the outer table is empty
+A20 | 1 | - | LEFT, unique inner key, no index
+A21 | 1 | - | LEFT, self join
+A22 | 1 | - | LEFT, COALESCE keys (NULLs made equal)
+A23 | 1 | - | LEFT, two keys from one outer column
+A24 | 1 | - | LEFT, INDF on a low-cardinality key
+A25 | 1 | - | LEFT, the outer key is a sub-query
+A26 | 1 | - | LEFT, text expression keys
+A27 | - | - | LEFT, inner table with a primary key (free choice)
+A28 | - | - | LEFT, inner table with an index on the key (free choice)
+A29 | 1 | - | LEFT, small outer, big inner
+A30 | 1 | - | LEFT, key and an inner-only equality
+A31 | 1 | - | LEFT, the inner table is a global temporary table
+A32 | - | - | LEFT, the inner table is a system table (free choice)
+A33 | - | - | LEFT, the inner table is a monitoring table
+A34 | 1 | - | LEFT, boolean keys
+A35 | 1 | - | LEFT, key decfloat(16) = decfloat(34)
+A36 | 1 | - | LEFT, key int128 = bigint
+A37 | 1 | - | LEFT, key double precision = int
+A38 | 1 | - | LEFT, key float = numeric(9,2)
+A39 | 1 | - | LEFT, keys 0e0 and -0e0 are equal
+A40 | 1 | - | LEFT, text key with trailing spaces
+A41 | 1 | - | LEFT, binary string keys
+A42 | 1 | - | LEFT, keys with different time zones, one instant
+A43 | 1 | - | LEFT, long text keys
+A44 | 1 | - | LEFT, a blob column of the inner table is read after the join
+A45 | 1 | - | LEFT, the db_key of the inner table is read after the join
+A46 | - | - | LEFT, explicit PLAN JOIN with natural scans
+A48 | 1 | - | LEFT, the inner record is longer than 64 KB
+A49 | 1 | - | LEFT, five keys of different types
+A47 | 0 | - | LEFT, explicit PLAN with an index of the inner table (nested loop)
+B01 | 1 | - | ON: inequality between the sides
+B02 | 1 | - | ON: inner-only condition
+B03 | 1 | - | ON: outer-only condition
+B04 | 1 | - | ON: outer-only sub-query
+B05 | 1 | - | ON: scalar sub-query correlated with the outer side (W1)
+B06 | 1 | - | ON: scalar sub-query correlated with the inner side
+B07 | 1 | - | ON: scalar sub-query correlated with both sides
+B08 | 1 | - | ON: EXISTS (W1)
+B09 | 1 | - | ON: NOT EXISTS (W1)
+B10 | 1 | - | ON: OR EXISTS (W1)
+B11 | 1 | - | ON: > ANY (W1)
+B12 | 1 | - | ON: > ALL
+B13 | 1 | - | ON: IN (sub-query)
+B14 | 1 | - | ON: NOT IN (sub-query)
+B15 | 1 | - | ON: NOT IN (sub-query with NULLs)
+B16 | 1 | - | ON: OR across the sides
+B17 | 1 | - | ON: CASE
+B18 | 1 | - | ON: uncorrelated sub-query
+B19 | - | - | ON: constant FALSE
+B20 | 1 | - | ON: constant TRUE
+B21 | 1 | - | ON: inner IS NULL
+B22 | 1 | - | ON: COALESCE over both sides
+B23 | 1 | - | ON: outer IS NULL
+B24 | 1 | - | ON: BETWEEN and NOT (=)
+B25 | 1 | - | ON: STARTING WITH between the sides
+B26 | 1 | - | ON: INDF key and a scalar sub-query
+B27 | 1 | - | RIGHT, ON: NOT EXISTS
+B28 | 2 | - | FULL, ON: inequality
+B29 | 2 | - | FULL, ON: EXISTS
+B30 | 1 | - | ON: composite key, OR, NOT EXISTS
+B31 | 1 | - | ON: IN list
+B32 | 2 | - | ON: sub-query with its own outer join
+B33 | 1 | - | ON: two equalities, one over an expression
+B34 | 1 | - | ON: key and a mixed equality (not hashable)
+B35 | 1 | - | ON: key and equality with a sub-query over the inner side
+B36 | 1 | - | ON: inner IS NOT NULL
+B37 | 0 | - | ON: no equality at all (nested loop)
+B38 | 0 | - | ON: OR of equalities (nested loop)
+B39 | 0 | - | ON: only a mixed equality (nested loop)
+B41 | 1 | - | ON: blob predicate over both sides
+B42 | 1 | - | ON: outer-only EXISTS
+B43 | 1 | - | ON: inner-only EXISTS
+B44 | 1 | - | ON: sub-query equality over both sides
+B40 | 1 | - | ON: several sub-queries of different kinds
+C01 | 1 | - | parent reference in ON (lateral derived table)
+C02 | 1 | - | parent reference in ON (scalar sub-query, W1)
+C03 | 1 | - | parent reference as a second hash key
+C04 | 1 | - | parent reference as an outer-side condition
+C05 | - | - | EXISTS with an anti-join and a parent reference
+C06 | 1 | - | parent reference in ON, anti-join in WHERE
+C07 | 1 | - | parent reference inside a sub-query of ON
+C08 | 1 | - | parent reference with INDF in ON
+C09 | 1 | - | lateral: ON refers to the parent table, the parent has an index for the join back (X1)
+C10 | 1 | - | lateral: a sub-query of ON refers to the parent table (X1)
+C11 | 1 | - | lateral: an outer-only ON condition refers to the parent table
+D01 | 1 | 1 | anti-join: WHERE inner IS NULL
+D02 | 1 | 1 | anti-join with a sub-query in ON (W1)
+D03 | 1 | 1 | anti-join, INDF key
+D04 | - | - | WHERE inner IS NOT NULL (the conversion does not recognise it)
+D21 | 0 | 0 | conversion: WHERE inner id > 0
+D05 | 0 | 0 | conversion: WHERE inner comparison
+D06 | 1 | 1 | no conversion: WHERE COALESCE(inner)
+D07 | 1 | 1 | WHERE over the outer side only
+D08 | 1 | 1 | no conversion: WHERE inner IS NULL OR comparison
+D09 | 0 | 0 | conversion: WHERE equality between the sides
+D10 | 1 | 1 | RIGHT anti-join
+D11 | 1 | 1 | FULL to LEFT: WHERE rejects the NULLs of the left side
+D12 | 1 | 1 | FULL to LEFT (swapped): WHERE rejects the NULLs of the right side
+D13 | 0 | 0 | FULL to INNER: WHERE rejects the NULLs of both sides
+D14 | - | - | FULL, WHERE left side IS NULL
+D15 | - | - | FULL, WHERE right side IS NULL
+D16 | 0 | 0 | conversion: WHERE inner > sub-query
+D17 | - | - | WHERE EXISTS over the inner side
+D18 | 1 | 1 | WHERE mixes the outer side and a NULL test
+D19 | 1 | 1 | anti-join and an outer-only ON condition
+D20 | 1 | 1 | anti-join, composite key, NOT EXISTS in ON
+E01 | 0 | 1 | table LEFT JOIN derived table: nested loop
+E02 | 0 | 1 | table LEFT JOIN view: nested loop
+E03 | 0 | 1 | table LEFT JOIN CTE: nested loop
+E04 | 0 | 1 | table LEFT JOIN (inner join): nested loop
+E05 | - | 2 | table LEFT JOIN (outer join): nested loop on top
+E06 | 0 | 1 | table LEFT JOIN aggregate: nested loop
+E07 | 0 | 1 | table LEFT JOIN union: nested loop
+E08 | 0 | 1 | table LEFT JOIN procedure: nested loop
+E09 | 1 | 1 | derived table LEFT JOIN table: hash join allowed
+E10 | 1 | 1 | view LEFT JOIN table: hash join allowed
+E11 | 1 | 1 | CTE LEFT JOIN table: hash join allowed
+E12 | 1 | 1 | (inner join) LEFT JOIN table: hash join allowed
+E13 | 2 | 2 | (outer join) LEFT JOIN table: hash join allowed
+E14 | - | 1 | aggregate LEFT JOIN table: hash join allowed
+E15 | 1 | 1 | union LEFT JOIN table: hash join allowed
+E16 | 1 | 1 | procedure LEFT JOIN table: hash join allowed
+E17 | 0 | 1 | derived table LEFT JOIN derived table: nested loop
+E18 | 0 | 1 | view LEFT JOIN view: nested loop
+E19 | 0 | 1 | table LEFT JOIN view, sub-query in ON: nested loop
+E20 | 0 | 1 | derived table RIGHT JOIN table (derived is optional): nested loop
+E21 | 1 | 1 | table RIGHT JOIN derived table (table is optional): hash join allowed
+E22 | - | - | table FULL JOIN derived table
+E29 | 1 | 1 | derived table with a computed key column LEFT JOIN table
+E30 | - | 1 | aggregate LEFT JOIN table, the key is the aggregate value
+E23 | 0 | - | derived table FULL JOIN derived table: nested loops
+E24 | - | - | view with an outer join LEFT JOIN table
+E25 | - | - | table LEFT JOIN view with an outer join: nested loop on top
+E26 | 0 | 1 | table LEFT JOIN LATERAL derived table: nested loop
+E27 | 0 | 1 | table LEFT JOIN derived table with FIRST/ORDER BY: nested loop
+E28 | 0 | 1 | table LEFT JOIN recursive CTE: nested loop
+H01 | 0 | 1 | derived inner, WHERE rejects NULLs: stays outer, nested loop
+H02 | 0 | 1 | view inner, WHERE rejects NULLs: stays outer, nested loop
+H03 | 0 | 1 | CTE inner, WHERE equality: stays outer, nested loop
+H04 | 0 | 1 | nested inner join as the inner side, WHERE rejects NULLs: stays outer
+H05 | 0 | 0 | derived outer, table inner, WHERE rejects NULLs: converted to inner
+H06 | 0 | 0 | view outer, table inner, WHERE rejects NULLs: converted to inner
+H07 | - | 1 | FULL, derived right side must exist: LEFT with the table as inner
+H08 | 0 | 1 | FULL, table left side must exist: LEFT with the derived table as inner
+H09 | 0 | 1 | FULL, both must exist, derived inner: stays LEFT, nested loop
+H10 | 0 | 0 | FULL, both must exist, table inner: converted to inner
+H11 | 0 | 1 | procedure inner, WHERE rejects NULLs: stays outer, nested loop
+H12 | - | - | nested outer join as the inner side, WHERE rejects NULLs of its outer table
+H13 | - | - | chain, derived inner at the end, WHERE rejects its NULLs: stays outer
+H14 | - | - | chain of tables, WHERE rejects the NULLs of the last one
+F01 | 2 | 2 | chain, the second key is a null-extended column
+F02 | 2 | 2 | chain, INDF key over a null-extended column
+F03 | 2 | 2 | chain, ON references both previous tables
+F04 | - | - | outer join, then inner join over the outer table (V1)
+F05 | - | - | outer join, then inner join over the inner table (conversion)
+F06 | 2 | 2 | chain, non-equi ON of the parent over the inner table (V2)
+F07 | - | - | RIGHT chain
+F08 | - | - | FULL chain
+F09 | 3 | 3 | three outer joins in a chain
+F10 | 2 | 2 | chain, COALESCE key over two previous tables
+F11 | - | - | derived table with an outer join, joined inner
+F12 | 2 | 2 | two outer joins to the same table
+F13 | 1 | 1 | inner join, then outer join with ON over the inner join partner
+F14 | - | 2 | chain with an anti-join in the middle
+F15 | - | - | chain, anti-join at the end, conversion in the middle
+F16 | 2 | 2 | chain, INDF key and a sub-query over three tables
+F17 | - | - | outer join whose outer side is an anti-join result
+F18 | - | 2 | table LEFT JOIN (outer join), ON references both inner tables
+G01 | 1 | - | FIRST with ORDER BY over the joined rows
+G02 | 1 | - | GROUP BY above the join
+G03 | 1 | - | DISTINCT above the join
+G04 | 2 | - | UNION ALL of two outer joins
+G05 | 1 | - | window function above the join
+G06 | - | - | GROUP BY on an indexed outer column (index navigation of the outer table)
+G07 | - | - | outer join inside a correlated scalar sub-query of WHERE
+G08 | - | - | view with an outer join, WHERE over the view columns
+G09 | - | - | recursive CTE, outer join in the recursive member
+G10 | - | - | IN (sub-query with an outer join)
+G11 | 1 | - | PSQL: the join is executed ten times with a different variable

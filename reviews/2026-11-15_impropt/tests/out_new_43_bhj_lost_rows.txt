@@ -1,0 +1,35 @@
+
+TAG                                         EXPECTED_CNT                                  EXPECTED_SUM 
+================================== ===================== ============================================= 
+R1 fk expected (20000 | 200010000)                 20000                                     200010000 
+
+
+TAG                              EXPECTED_CNT                                  EXPECTED_SUM 
+======================= ===================== ============================================= 
+R2 k8 expected (8 | 36)                     8                                            36 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=18863656.97)
+            -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=18863656.97)
+                -> Record Buffer (batches: 8, record length: 25) (rows=4495608.86)
+                    -> Table "A" Full Scan (rows=4495608.86)
+                -> Record Buffer (batches: 8, record length: 25) (rows=4196018.29)
+                    -> Table "H" Full Scan (rows=4196018.29)
+
+TAG                                 CNT                                        SUM_ID 
+================= ===================== ============================================= 
+Q1 a join h on fk                  2500                                      25018746 
+
+
+TAG                                 CNT                                        SUM_ID 
+================= ===================== ============================================= 
+Q2 a join h on k8                     4                                            17 
+
+
+TAG                                      CNT          CNT_DISTINCT 
+====================== ===================== ===================== 
+Q3 duplicates check fk                  2500                  2500 
+
+-- rc=0

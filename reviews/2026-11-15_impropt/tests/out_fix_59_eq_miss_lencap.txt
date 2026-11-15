@@ -1,0 +1,81 @@
+
+TAG                                               REAL_CNT 
+==================================== ===================== 
+M1 ai = 'strasse0377' (expected 200)                   200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                                 REAL_CNT 
+====================================== ===================== 
+M2 nfd = NFC 'café0377' (expected 200)                   200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                                         REAL_CNT 
+============================================== ===================== 
+M3 oc = 'k0377' CHAR(12) OCTETS (expected 200)                   200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                                                  REAL_CNT 
+======================================================= ===================== 
+C1 ai = 'straße0377' same length as data (expected 200)                   200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                                     REAL_CNT 
+========================================== ===================== 
+C2 bv = 'b0377' binary miss (expected 200)                   200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                                           REAL_CNT 
+================================================ ===================== 
+C3 bv = 'b03777' binary, length cap (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                                        REAL_CNT 
+============================================= ===================== 
+C4 cn = 'c0377' CHAR NONE miss (expected 200)                   200 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+
+TAG                                              REAL_CNT 
+=================================== ===================== 
+X1 ai = 'strasse0377x' (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=200.00)
+            -> Table "Q2" Full Scan (rows=100000.00)
+-- rc=0, 2 s

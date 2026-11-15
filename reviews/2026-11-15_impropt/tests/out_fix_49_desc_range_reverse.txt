@@ -1,0 +1,209 @@
+
+TAG                                      REAL_CNT 
+=========================== ===================== 
+Y9a-asc xi < 1 (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "T" Access By ID (rows=1.00)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (upper bound: 1/1)
+
+TAG                                       REAL_CNT 
+============================ ===================== 
+Y9a-desc xd < 1 (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "T" Access By ID (rows=1.00)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (lower bound: 1/1)
+
+TAG                                          REAL_CNT 
+=============================== ===================== 
+Y9b-asc xi > 1 (expected 50000)                 50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50449.97)
+            -> Table "T" Access By ID (rows=50449.97)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (lower bound: 1/1)
+
+TAG                                           REAL_CNT 
+================================ ===================== 
+Y9b-desc xd > 1 (expected 50000)                 50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=50449.97)
+            -> Table "T" Access By ID (rows=50449.97)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (upper bound: 1/1)
+
+TAG                                                         REAL_CNT 
+============================================== ===================== 
+Y9c-asc xi >= 1 and xi < 1000 (expected 40000)                 40000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=40149.97)
+            -> Table "T" Access By ID (rows=40149.97)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+TAG                                                          REAL_CNT 
+=============================================== ===================== 
+Y9c-desc xd >= 1 and xd < 1000 (expected 40000)                 40000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=40149.97)
+            -> Table "T" Access By ID (rows=40149.97)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+TAG                                                         REAL_CNT 
+============================================== ===================== 
+Y9d-asc xi > 1 and xi <= 1000 (expected 20000)                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=20149.97)
+            -> Table "T" Access By ID (rows=20149.97)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+TAG                                                          REAL_CNT 
+=============================================== ===================== 
+Y9d-desc xd > 1 and xd <= 1000 (expected 20000)                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=20149.97)
+            -> Table "T" Access By ID (rows=20149.97)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (lower bound: 1/1, upper bound: 1/1)
+
+TAG                                            REAL_CNT 
+================================= ===================== 
+Y9e-desc xd <= 1 (expected 40000)                 40000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=40000.00)
+            -> Table "T" Access By ID (rows=40000.00)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (lower bound: 1/1)
+
+TAG                                              REAL_CNT 
+=================================== ===================== 
+W9-real xi < 60000 (expected 63000)                 63000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.30)
+            -> Table "T" Access By ID (rows=63000.30)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (upper bound: 1/1)
+
+TAG                       
+========================= 
+W9a xi < ? and xi < 60000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.30)
+            -> Table "T" Access By ID (rows=63000.30)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (upper bound: 1/1)
+
+TAG                       
+========================= 
+W9b xi < 60000 and xi < ? 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.30)
+            -> Table "T" Access By ID (rows=63000.30)
+                -> Bitmap
+                    -> Index "IXI" Range Scan (upper bound: 1/1)
+
+TAG                       
+========================= 
+W9c xd < ? and xd < 60000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.30)
+            -> Table "T" Access By ID (rows=63000.30)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (lower bound: 1/1)
+
+TAG                       
+========================= 
+W9d xd < 60000 and xd < ? 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=63000.30)
+            -> Table "T" Access By ID (rows=63000.30)
+                -> Bitmap
+                    -> Index "IXD" Range Scan (lower bound: 1/1)
+
+TAG                                                           REAL_CNT 
+================================================ ===================== 
+Y12a 'abc     ' starting with tr (expected 5000)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5003.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                               REAL_CNT 
+==================================================== ===================== 
+Y12b 'abc' starting with tr (expected 5000, control)                  5000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=5003.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                         REAL_CNT 
+============================================== ===================== 
+Y12c 'Kowalski   ' containing nm2 (expected 0)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=360.00)
+            -> Table "R" Full Scan (rows=100000.00)
+
+TAG                                                               REAL_CNT 
+==================================================== ===================== 
+Y12d 'Kowalski' containing nm2 (expected 0, control)                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=360.00)
+            -> Table "R" Full Scan (rows=100000.00)
+-- rc=0, 2 s

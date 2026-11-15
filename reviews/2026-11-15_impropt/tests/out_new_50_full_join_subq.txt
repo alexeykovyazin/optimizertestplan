@@ -1,0 +1,193 @@
+
+TAG                             R1 reference for Q1, Q6
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+
+TAG                             Q1 full, not in (sub-query on a), expected 20800 / 269510335
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+Current memory = 19474192
+Delta memory = 41392
+Max memory = 20998880
+Elapsed time = 9.457 sec
+Buffers = 2048
+Reads = 8
+Writes = 0
+Fetches = 72177634
+
+TAG                             Q2 full, not in (sub-query on b), expected 22000 / 270423600
+CNT                             22000
+SUM_ID                                                              270423600
+
+
+Current memory = 19515472
+Delta memory = 41280
+Max memory = 21040704
+Elapsed time = 3.459 sec
+Buffers = 2048
+Reads = 1
+Writes = 0
+Fetches = 30357089
+
+TAG                             Q3 full, exists, expected 27143 / 232014000
+CNT                             27143
+SUM_ID                                                              232014000
+
+
+Current memory = 19546080
+Delta memory = 30608
+Max memory = 21070768
+Elapsed time = 7.746 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 72177626
+
+TAG                             Q4 full, in, expected 27143 / 232014000
+CNT                             27143
+SUM_ID                                                              232014000
+
+
+Current memory = 19577008
+Delta memory = 30928
+Max memory = 21101696
+Elapsed time = 7.682 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 72177626
+
+TAG                             Q5 full, scalar sub-query, expected 20800 / 269510335
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+Current memory = 19608176
+Delta memory = 31168
+Max memory = 21132864
+Elapsed time = 9.739 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 74433746
+
+TAG                             Q6 full, nested loop (no equality), expected 20800 / 269510335
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+Current memory = 19650608
+Delta memory = 42432
+Max memory = 21132864
+Elapsed time = 9.441 sec
+Buffers = 2048
+Reads = 4
+Writes = 0
+Fetches = 72262958
+
+TAG                             C1 full, plain <>, expected 21828 / 267003815
+CNT                             21828
+SUM_ID                                                              267003815
+
+
+Current memory = 19673552
+Delta memory = 22944
+Max memory = 21199056
+Elapsed time = 0.016 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 57738
+
+TAG                             C2 left, not in, expected 20000 / 266313535
+CNT                             20000
+SUM_ID                                                              266313535
+
+
+Current memory = 19705616
+Delta memory = 32064
+Max memory = 21199056
+Elapsed time = 0.043 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 100884
+
+TAG                             C3 right, not in, expected 17943 / 240939799
+CNT                             17943
+SUM_ID                                                              240939799
+
+
+Current memory = 19737760
+Delta memory = 32144
+Max memory = 21262592
+Elapsed time = 0.028 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 100884
+
+Sub-query
+    -> Filter (rows=4000.00)
+        -> Table "P" Access By ID (rows=4000.00)
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter (rows=2000.00)
+        -> Table "P" Access By ID (rows=4000.00)
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter (rows=1.00)
+        -> Table "P" Full Scan (rows=4000.00)
+Sub-query
+    -> Filter (rows=1.00)
+        -> Table "P" Full Scan (rows=4000.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Full Outer Join
+            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=18000.00)
+                -> Table "B" Full Scan (rows=8000.00)
+                -> Record Buffer (record length: 33) (rows=20000.00)
+                    -> Table "A" Full Scan (rows=20000.00)
+            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20000.00)
+                -> Table "A" Full Scan (rows=20000.00)
+                -> Record Buffer (record length: 41) (rows=8000.00)
+                    -> Table "B" Full Scan (rows=8000.00)
+
+Sub-query
+    -> Filter (rows=4000.00)
+        -> Table "P" Access By ID (rows=4000.00)
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter (rows=2000.00)
+        -> Table "P" Access By ID (rows=4000.00)
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter (rows=1.00)
+        -> Table "P" Full Scan (rows=4000.00)
+Sub-query
+    -> Filter (rows=1.00)
+        -> Table "P" Full Scan (rows=4000.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Full Outer Join
+            -> Nested Loop Join (outer) (rows=203990.00)
+                -> Table "B" Full Scan (rows=8000.00)
+                -> Filter (rows=25.50)
+                    -> Table "A" Access By ID (rows=51.00)
+                        -> Bitmap
+                            -> Index "RDB$FOREIGN3" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Nested Loop Join (outer) (rows=209975.00)
+                -> Table "A" Full Scan (rows=20000.00)
+                -> Filter (rows=10.50)
+                    -> Table "B" Access By ID (rows=21.00)
+                        -> Bitmap
+                            -> Index "RDB$PRIMARY1" Range Scan (lower bound: 1/1, upper bound: 1/1)
+-- rc=0

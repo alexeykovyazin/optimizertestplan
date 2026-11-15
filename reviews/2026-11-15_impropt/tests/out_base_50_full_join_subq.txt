@@ -1,0 +1,217 @@
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 20
+-extended
+At line 29 in file 50_full_join_subq.sql
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 16
+-refresh
+At line 30 in file 50_full_join_subq.sql
+
+TAG                             R1 reference for Q1, Q6
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+
+TAG                             Q1 full, not in (sub-query on a), expected 20800 / 269510335
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+Current memory = 4392610512
+Delta memory = 42912
+Max memory = 4392668272
+Elapsed time = 0.078 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 287086
+
+TAG                             Q2 full, not in (sub-query on b), expected 22000 / 270423600
+CNT                             22000
+SUM_ID                                                              270423600
+
+
+Current memory = 4392653360
+Delta memory = 42848
+Max memory = 4392711120
+Elapsed time = 0.062 sec
+Buffers = 512000
+Reads = 9
+Writes = 0
+Fetches = 228269
+
+TAG                             Q3 full, exists, expected 27143 / 232014000
+CNT                             27143
+SUM_ID                                                              232014000
+
+
+Current memory = 4392684720
+Delta memory = 31360
+Max memory = 4392740736
+Elapsed time = 0.082 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 287070
+
+TAG                             Q4 full, in, expected 27143 / 232014000
+CNT                             27143
+SUM_ID                                                              232014000
+
+
+Current memory = 4392716672
+Delta memory = 31952
+Max memory = 4392774016
+Elapsed time = 0.077 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 287070
+
+TAG                             Q5 full, scalar sub-query, expected 20800 / 269510335
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+Current memory = 4392748848
+Delta memory = 32176
+Max memory = 4392804272
+Elapsed time = 0.067 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 287070
+
+TAG                             Q6 full, nested loop (no equality), expected 20800 / 269510335
+CNT                             20800
+SUM_ID                                                              269510335
+
+
+Current memory = 4392793024
+Delta memory = 44176
+Max memory = 4392850720
+Elapsed time = 0.067 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 287082
+
+TAG                             C1 full, plain <>, expected 21828 / 267003815
+CNT                             21828
+SUM_ID                                                              267003815
+
+
+Current memory = 4392815696
+Delta memory = 22672
+Max memory = 4392864400
+Elapsed time = 0.036 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 137055
+
+TAG                             C2 left, not in, expected 20000 / 266313535
+CNT                             20000
+SUM_ID                                                              266313535
+
+
+Current memory = 4392847296
+Delta memory = 31600
+Max memory = 4392888016
+Elapsed time = 0.049 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 164661
+
+TAG                             C3 right, not in, expected 17943 / 240939799
+CNT                             17943
+SUM_ID                                                              240939799
+
+
+Current memory = 4392879360
+Delta memory = 32064
+Max memory = 4392920224
+Elapsed time = 0.043 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 122426
+
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Select Expression
+    -> Aggregate
+        -> Full Outer Join
+            -> Nested Loop Join (outer)
+                -> Table "B" Full Scan
+                -> Filter
+                    -> Table "A" Access By ID
+                        -> Bitmap
+                            -> Index "RDB$FOREIGN3" Range Scan (full match)
+            -> Nested Loop Join (outer)
+                -> Table "A" Full Scan
+                -> Filter
+                    -> Table "B" Access By ID
+                        -> Bitmap
+                            -> Index "RDB$PRIMARY1" Unique Scan
+
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Sub-query
+    -> Filter
+        -> Table "P" Access By ID
+            -> Bitmap
+                -> Index "RDB$PRIMARY4" Unique Scan
+Select Expression
+    -> Aggregate
+        -> Full Outer Join
+            -> Nested Loop Join (outer)
+                -> Table "B" Full Scan
+                -> Filter
+                    -> Table "A" Access By ID
+                        -> Bitmap
+                            -> Index "RDB$FOREIGN3" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Nested Loop Join (outer)
+                -> Table "A" Full Scan
+                -> Filter
+                    -> Table "B" Access By ID
+                        -> Bitmap
+                            -> Index "RDB$PRIMARY1" Range Scan (lower bound: 1/1, upper bound: 1/1)
+-- rc=1

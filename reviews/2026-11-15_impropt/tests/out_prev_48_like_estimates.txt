@@ -1,0 +1,171 @@
+
+TAG                                                           REAL_CNT 
+================================================ ===================== 
+Y6a t1: nm like 'Name%Surname%' (expected 80000)                 80000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=80250.00)
+            -> Table "T1" Access By ID (rows=80250.00)
+                -> Bitmap
+                    -> Index "T1_NM" Range Scan (full match)
+
+TAG                                                 REAL_CNT 
+====================================== ===================== 
+Y6b t1: s like 'ab_%' (expected 99000)                 99000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=99250.00)
+            -> Table "T1" Access By ID (rows=99250.00)
+                -> Bitmap
+                    -> Index "T1_S" Range Scan (full match)
+
+TAG                                                    REAL_CNT 
+========================================= ===================== 
+Y6c t1: code like 'P1%%' (expected 33333)                 33333 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=33327.00)
+            -> Table "T1" Access By ID (rows=33327.00)
+                -> Bitmap
+                    -> Index "T1_CODE" Range Scan (full match)
+
+TAG                                                             REAL_CNT 
+================================================== ===================== 
+Y6d t1: code like 'P1%' (expected 33333 (control))                 33333 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=33327.00)
+            -> Table "T1" Access By ID (rows=33327.00)
+                -> Bitmap
+                    -> Index "T1_CODE" Range Scan (full match)
+
+TAG                                                     REAL_CNT 
+========================================== ===================== 
+W16 t1: code like 'P1___' (expected 33333)                 33333 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=292.22)
+            -> Table "T1" Access By ID (rows=33327.00)
+                -> Bitmap
+                    -> Index "T1_CODE" Range Scan (full match)
+
+TAG                                                             REAL_CNT 
+================================================== ===================== 
+Y10 t2: not (v like 'ACTIVATION') (expected 10000)                 10000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9966.67)
+            -> Table "T2" Full Scan (rows=1000000.00)
+
+TAG                                                                REAL_CNT 
+===================================================== ===================== 
+Y10c t2: v <> 'ACTIVATION' (expected 10000 (control))                 10000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=54687.50)
+            -> Table "T2" Full Scan (rows=1000000.00)
+
+TAG                                                       REAL_CNT 
+============================================ ===================== 
+Y11 t1: c like 'abc       ' (expected 50000)                 50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=48437.50)
+            -> Table "T1" Full Scan (rows=100000.00)
+
+TAG                                                        REAL_CNT 
+============================================= ===================== 
+Y11c t1: c = 'abc' (expected 50000 (control))                 50000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=48437.50)
+            -> Table "T1" Full Scan (rows=100000.00)
+
+TAG                                                        REAL_CNT 
+============================================= ===================== 
+Y13 d4: u13 like '___0000000001' (expected 1)                     1 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=500.00)
+            -> Table "D4" Full Scan (rows=100000.00)
+
+TAG                                                                      REAL_CNT 
+=========================================================== ===================== 
+Y13c d4: u13 like 'A____________' (expected 3847 (control))                  3847 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2600.00)
+            -> Table "D4" Full Scan (rows=100000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=994120.46)
+            -> Filter (rows=99250.00)
+                -> Table "T1" Access By ID (rows=99250.00)
+                    -> Bitmap
+                        -> Index "T1_S" Range Scan (full match)
+            -> Filter (rows=10.02)
+                -> Table "Z" Access By ID (rows=10.02)
+                    -> Bitmap
+                        -> Index "Z_K" Range Scan (full match)
+
+TAG                                              CNT MX                                                           
+============================== ===================== ============================================================ 
+J1 t1 join z, t1.s like 'ab_%'                990000 zpad999999                                                   
+
+Current memory = 20175456
+Delta memory = 111456
+Max memory = 20207472
+Elapsed time = 11.400 sec
+Buffers = 2048
+Reads = 936690
+Writes = 2
+Fetches = 2378120
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=994120.46)
+            -> Filter (rows=99250.00)
+                -> Table "T1" Access By ID (rows=99250.00)
+                    -> Bitmap
+                        -> Index "T1_S" Range Scan (full match)
+            -> Filter (rows=10.02)
+                -> Table "Z" Access By ID (rows=10.02)
+                    -> Bitmap
+                        -> Index "Z_K" Range Scan (full match)
+
+TAG                                             CNT MX                                                           
+============================= ===================== ============================================================ 
+J2 t1 join z, t1.s like 'ab%'                990000 zpad999999                                                   
+
+Current memory = 20251296
+Delta memory = 75840
+Max memory = 20251376
+Elapsed time = 9.780 sec
+Buffers = 2048
+Reads = 936580
+Writes = 0
+Fetches = 2378027
+-- rc=0

@@ -1,0 +1,81 @@
+
+TAG                               
+================================= 
+A: no storage (baseline estimate) 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1729.69)
+            -> Table "T" Full Scan (rows=17296.94)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                              
+================================================================ 
+B: old storage, expected count 100 and the estimate of section A 
+
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$BLOB_LEVELS
+-At line 1, column 231
+At line 36 in file 54_old_stat_storage.sql
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$BLOB_LEVELS
+-At line 1, column 231
+At line 37 in file 54_old_stat_storage.sql
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$BLOB_LEVELS
+-At line 1, column 231
+At line 40 in file 54_old_stat_storage.sql
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                                
+================================================================== 
+C: REFRESH on old storage, expected error with the old format hint 
+
+Statement failed, SQLSTATE = 42S22
+unsuccessful metadata update
+-ALTER DATABASE failed
+-Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$BLOB_LEVELS
+-At line 1, column 351
+After line 44 in file 54_old_stat_storage.sql
+Statement failed, SQLSTATE = 42S22
+Dynamic SQL Error
+-SQL error code = -206
+-Column unknown
+-STAT$BLOB_LEVELS
+-At line 1, column 231
+At line 46 in file 54_old_stat_storage.sql
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                          
+============================================================ 
+D: columns added back, expected rows=100 from the statistics 
+
+
+PLAN (T NATURAL)
+
+                COUNT 
+===================== 
+                  100 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100.00)
+            -> Table "T" Full Scan (rows=10000.00)
+-- rc=1, 0 s

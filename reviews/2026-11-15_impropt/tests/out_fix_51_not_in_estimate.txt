@@ -1,0 +1,155 @@
+
+TAG                             R1 k not in (1, 2): 9600
+CNT                             9600
+
+
+
+TAG                             R2 k not in (-5, -7): 10000
+CNT                             10000
+
+
+
+TAG                             R3 kn not in (1, 2): 8500
+CNT                             8500
+
+
+
+TAG                             R4 not (k in (1, 2, 3)): 9400
+CNT                             9400
+
+
+
+TAG                             R5 d not in (2 dates): 9332
+CNT                             9332
+
+
+
+TAG                             R6 s not in (3 names): 9200
+CNT                             9200
+
+
+
+TAG                             R7 k not in (10 values): 8000
+CNT                             8000
+
+
+
+TAG                             R8 k not in (1, null): 0
+CNT                             0
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9600.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9604.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9800.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9999.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=8500.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9400.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9332.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9200.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=8000.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9600.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "T" Full Scan (rows=10000.00)
+
+PLAN (BIG INDEX (BIG_PAD))
+
+                COUNT 
+===================== 
+                 2000 
+
+
+PLAN JOIN (BIG INDEX (BIG_PAD), T INDEX (RDB$PRIMARY1))
+
+TAG                             J1 not in (1, 2)
+CNT                             2000
+SUM_ID                          499764000
+
+
+Current memory = 19762160
+Delta memory = 60816
+Max memory = 19762240
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 2012
+Writes = 2
+Fetches = 12056
+
+PLAN JOIN (BIG INDEX (BIG_PAD), T INDEX (RDB$PRIMARY1))
+
+TAG                             J2 <> and <> (control)
+CNT                             2000
+SUM_ID                          499764000
+
+
+Current memory = 19822688
+Delta memory = 60528
+Max memory = 19822768
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 2010
+Writes = 0
+Fetches = 12024
+
+PLAN JOIN (BIG INDEX (BIG_PAD), T INDEX (RDB$PRIMARY1))
+
+TAG                             J3 not in (-5, -7)
+CNT                             2000
+SUM_ID                          499764000
+
+
+Current memory = 19883312
+Delta memory = 60624
+Max memory = 19883392
+Elapsed time = 0.013 sec
+Buffers = 2048
+Reads = 2010
+Writes = 0
+Fetches = 12024
+
+PLAN JOIN (BIG INDEX (BIG_PAD), T INDEX (RDB$PRIMARY1))
+
+PLAN JOIN (BIG INDEX (BIG_PAD), T INDEX (RDB$PRIMARY1))
+-- rc=0, 3 s

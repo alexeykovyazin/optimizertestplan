@@ -1,0 +1,207 @@
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 20
+-extended
+At line 31 in file 47_oj_conversion_view.sql
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 16
+-refresh
+At line 32 in file 47_oj_conversion_view.sql
+
+TAG                                                       CNT 
+======================================= ===================== 
+R1 rows with col = x in s (expected 10)                    10 
+
+
+                COUNT 
+===================== 
+               400000 
+
+
+                COUNT 
+===================== 
+                20000 
+
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                              CNT                SUM_ID 
+============== ===================== ===================== 
+C1 plain table                   200              40199800 
+
+Current memory = 4392570864
+Delta memory = 20224
+Max memory = 4392652496
+Elapsed time = 0.002 sec
+Buffers = 512000
+Reads = 12
+Writes = 0
+Fetches = 470
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" as "V1 S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                          CNT                SUM_ID 
+========== ===================== ===================== 
+Q1 view v1                   200              40199800 
+
+Current memory = 4392630368
+Delta memory = 59504
+Max memory = 4392712272
+Elapsed time = 0.001 sec
+Buffers = 512000
+Reads = 1
+Writes = 0
+Fetches = 536
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" as "D S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                CNT                SUM_ID 
+================ ===================== ===================== 
+Q2 derived table                   200              40199800 
+
+Current memory = 4392650736
+Delta memory = 20368
+Max memory = 4392712272
+Elapsed time = 0.001 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 457
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" as "C S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                      CNT                SUM_ID 
+====== ===================== ===================== 
+Q3 CTE                   200              40199800 
+
+Current memory = 4392671104
+Delta memory = 20368
+Max memory = 4392712272
+Elapsed time = 0.000 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 457
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" as "V2 S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "K" as "V2 K" Access By ID
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY1" Unique Scan
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                        CNT                SUM_ID 
+======================== ===================== ===================== 
+Q4 view v2 (join inside)                   200              40199800 
+
+Current memory = 4392740496
+Delta memory = 69392
+Max memory = 4392820880
+Elapsed time = 0.002 sec
+Buffers = 512000
+Reads = 4
+Writes = 0
+Fetches = 599
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" as "V1 S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                      CNT                SUM_ID 
+====================== ===================== ===================== 
+W1 view v1, inner join                   200              40199800 
+
+Current memory = 4392777952
+Delta memory = 37456
+Max memory = 4392820880
+Elapsed time = 0.000 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 457
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Filter
+                -> Table "S" as "D S" Access By ID
+                    -> Bitmap
+                        -> Index "S_COL" Range Scan (full match)
+            -> Filter
+                -> Table "BIG" as "B" Access By ID
+                    -> Bitmap
+                        -> Index "BIG_REF" Range Scan (full match)
+
+TAG                                      CNT                SUM_ID 
+====================== ===================== ===================== 
+W2 derived, inner join                   200              40199800 
+
+Current memory = 4392798336
+Delta memory = 20384
+Max memory = 4392834864
+Elapsed time = 0.001 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 457
+-- rc=1
