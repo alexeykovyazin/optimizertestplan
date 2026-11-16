@@ -1,0 +1,371 @@
+@@@ supervisor iter 0: done 0/121, 11:13:22
+=== hash_imdb_ab db=E:/fbdata/impropt_work/imdb_fb5.fdb warmup=1 reps=1 watchdog=300s корпус=121
+[ceb_10a_001] prepare: ok 351.2ms
+[ceb_10a_001] warmup: ok 23752.0ms
+[ceb_10a_001] rep1: ok 19400.2ms rows=15 match
+[ceb_10a_002] prepare: ok 46.4ms
+[ceb_10a_002] warmup: ok 6838.9ms
+[ceb_10a_002] rep1: ok 6368.8ms rows=51 match
+[ceb_10a_003] prepare: ok 61.2ms
+[ceb_10a_003] warmup: ok 12103.7ms
+[ceb_10a_003] rep1: ok 6392.8ms rows=3018 MISMATCH
+[ceb_10a_004] prepare: ok 44.2ms
+[ceb_10a_004] warmup: ok 19349.2ms
+[ceb_10a_004] rep1: ok 15282.3ms rows=19697 MISMATCH
+[ceb_10a_005] prepare: ok 43.1ms
+[ceb_10a_005] warmup: ok 3373.3ms
+[ceb_10a_005] rep1: ok 2786.8ms rows=197 match
+[ceb_10a_006] prepare: ok 44.4ms
+[ceb_10a_006] warmup: ok 3062.1ms
+[ceb_10a_006] rep1: ok 2777.1ms rows=35 match
+[ceb_10a_007] prepare: ok 56.5ms
+[ceb_10a_007] warmup: ok 22030.2ms
+[ceb_10a_007] rep1: ok 17075.2ms rows=523 match
+[ceb_10a_008] prepare: ok 66.4ms
+[ceb_10a_008] warmup: ok 16772.1ms
+[ceb_10a_008] rep1: ok 14151.5ms rows=6416 MISMATCH
+[ceb_10a_009] prepare: ok 57.4ms
+[ceb_10a_009] rep1: ok 6695.0ms rows=10210 FINISHED-WAS-TIMEOUT
+[ceb_10a_010] prepare: ok 44.1ms
+[ceb_10a_010] warmup: ok 10193.4ms
+[ceb_10a_010] rep1: ok 10044.0ms rows=6569 MISMATCH
+[ceb_10a_011] prepare: ok 67.8ms
+[ceb_10a_011] warmup: ok 3283.4ms
+[ceb_10a_011] rep1: ok 3097.1ms rows=795 match
+[ceb_10a_012] prepare: ok 44.5ms
+[ceb_10a_012] warmup: ok 2465.6ms
+[ceb_10a_012] rep1: ok 2585.8ms rows=48 match
+[ceb_10a_013] prepare: ok 47.3ms
+[ceb_10a_013] warmup: ok 3465.1ms
+[ceb_10a_013] rep1: ok 3112.1ms rows=640 match
+[ceb_10a_014] prepare: ok 50.9ms
+[ceb_10a_014] warmup: ok 35718.7ms
+[ceb_10a_014] rep1: ok 35243.5ms rows=1617 MISMATCH
+[ceb_10a_015] prepare: ok 62.4ms
+[ceb_10a_015] rep1: ok 8599.9ms rows=7429 FINISHED-WAS-TIMEOUT
+[ceb_11a_001] prepare: ok 53.4ms
+[ceb_11a_001] warmup: ok 7835.9ms
+[ceb_11a_001] rep1: ok 4512.4ms rows=874 match
+[ceb_11a_002] prepare: ok 46.5ms
+[ceb_11a_002] warmup: ok 18453.7ms
+[ceb_11a_002] rep1: ok 14798.1ms rows=2506 MISMATCH
+[ceb_11a_003] prepare: ok 65.6ms
+[ceb_11a_003] warmup: ok 1675.1ms
+[ceb_11a_003] rep1: ok 1625.4ms rows=0 MISMATCH
+[ceb_11a_004] prepare: ok 62.7ms
+[ceb_11a_004] warmup: ok 11465.4ms
+[ceb_11a_004] rep1: ok 11007.7ms rows=0 MISMATCH
+[ceb_11a_005] prepare: ok 48.2ms
+[ceb_11a_005] warmup: ok 13750.5ms
+[ceb_11a_005] rep1: ok 10976.3ms rows=237 match
+[ceb_11a_006] prepare: ok 62.3ms
+[ceb_11a_006] warmup: ok 13701.1ms
+[ceb_11a_006] rep1: ok 43306.6ms rows=988 match
+[ceb_11a_007] prepare: ok 47.6ms
+[ceb_11a_007] warmup: ok 720.7ms
+[ceb_11a_007] rep1: ok 720.3ms rows=0 MISMATCH
+[ceb_11a_008] prepare: ok 47.8ms
+[ceb_11a_008] warmup: ok 24581.5ms
+[ceb_11a_008] rep1: ok 22986.4ms rows=9212 MISMATCH
+[ceb_11a_009] prepare: ok 52.3ms
+[ceb_11a_009] warmup: ok 8895.7ms
+[ceb_11a_009] rep1: ok 6360.3ms rows=1847 MISMATCH
+[ceb_11a_010] prepare: ok 64.2ms
+[ceb_11a_010] warmup: ok 6115.4ms
+[ceb_11a_010] rep1: ok 3965.6ms rows=2109 MISMATCH
+[ceb_11a_011] prepare: ok 61.7ms
+[ceb_11a_011] warmup: ok 20623.6ms
+[ceb_11a_011] rep1: ok 20102.3ms rows=1842 MISMATCH
+[ceb_11a_012] prepare: ok 61.9ms
+[ceb_11a_012] warmup: ok 3289.8ms
+[ceb_11a_012] rep1: ok 2611.5ms rows=1358 MISMATCH
+[ceb_11a_013] prepare: ok 59.8ms
+[ceb_11a_013] warmup: ok 727.8ms
+[ceb_11a_013] rep1: ok 730.8ms rows=0 MISMATCH
+[ceb_11a_014] prepare: ok 52.8ms
+[ceb_11a_014] warmup: ok 806.6ms
+[ceb_11a_014] rep1: ok 708.5ms rows=149 match
+[ceb_11a_015] prepare: ok 48.1ms
+[ceb_11a_015] warmup: ok 10163.7ms
+[ceb_11a_015] rep1: ok 4529.1ms rows=542 match
+[ceb_11b_001] prepare: ok 74.0ms
+[ceb_11b_001] warmup: ok 61544.6ms
+[ceb_11b_001] rep1: ok 68548.2ms rows=28007 MISMATCH
+[ceb_11b_002] prepare: ok 81.2ms
+[ceb_11b_002] warmup: ok 36660.7ms
+[ceb_11b_002] rep1: ok 18826.5ms rows=3634 MISMATCH
+[ceb_11b_003] prepare: ok 53.9ms
+[ceb_11b_003] warmup: ok 6547.9ms
+[ceb_11b_003] rep1: ok 4337.9ms rows=8 match
+[ceb_11b_004] prepare: ok 48.4ms
+[ceb_11b_004] warmup: ok 20808.2ms
+[ceb_11b_004] rep1: ok 15987.7ms rows=3 match
+[ceb_11b_005] prepare: ok 70.7ms
+[ceb_11b_005] warmup: ok 12463.6ms
+[ceb_11b_005] rep1: ok 5927.5ms rows=21926 MISMATCH
+[ceb_11b_006] prepare: ok 51.3ms
+[ceb_11b_006] warmup: ok 121943.5ms
+[ceb_11b_006] rep1: ok 131481.6ms rows=152914 MISMATCH
+[ceb_11b_007] prepare: ok 88.1ms
+[ceb_11b_007] warmup: ok 11666.0ms
+[ceb_11b_007] rep1: ok 2460.2ms rows=1551 MISMATCH
+[ceb_11b_008] prepare: ok 71.3ms
+[ceb_11b_008] warmup: ok 26177.0ms
+[ceb_11b_008] rep1: ok 10835.0ms rows=1437 MISMATCH
+[ceb_11b_009] prepare: ok 72.4ms
+[ceb_11b_009] warmup: ok 154864.2ms
+[ceb_11b_009] rep1: ok 148972.7ms rows=22121 MISMATCH
+[ceb_11b_010] prepare: ok 70.0ms
+[ceb_11b_010] warmup: timeout Nonems
+[reaper] killed [13288]
+[ceb_11b_010] rep1: timeout Nonems rows=None n/a
+[ceb_11b_011] prepare: ok 53.6ms
+[ceb_11b_011] warmup: ok 4721.0ms
+[ceb_11b_011] rep1: ok 2615.7ms rows=80 match
+[ceb_11b_012] prepare: ok 45.9ms
+[ceb_11b_012] warmup: ok 9640.1ms
+[ceb_11b_012] rep1: ok 4892.2ms rows=739 match
+[ceb_11b_013] prepare: ok 55.8ms
+[ceb_11b_013] warmup: ok 3767.0ms
+[ceb_11b_013] rep1: ok 3478.3ms rows=28 match
+[ceb_11b_014] prepare: ok 36.5ms
+[ceb_11b_014] warmup: ok 3001.8ms
+[ceb_11b_014] rep1: ok 2406.8ms rows=193 match
+[ceb_11b_015] prepare: ok 46.9ms
+[ceb_11b_015] warmup: ok 1817.1ms
+[ceb_11b_015] rep1: ok 1096.0ms rows=74 match
+[ceb_3b_001] prepare: ok 42.7ms
+[reaper] killed [13311]
+[ceb_3b_001] warmup: ok 4974.5ms
+[ceb_3b_001] rep1: ok 2383.6ms rows=38 match
+[ceb_3b_002] prepare: ok 57.8ms
+[ceb_3b_002] warmup: ok 2196.1ms
+[ceb_3b_002] rep1: ok 2065.7ms rows=62 match
+[ceb_3b_003] prepare: ok 63.7ms
+[ceb_3b_003] warmup: ok 844.8ms
+[ceb_3b_003] rep1: ok 567.2ms rows=18 match
+[ceb_3b_004] prepare: ok 46.3ms
+[ceb_3b_004] warmup: ok 2054.8ms
+[ceb_3b_004] rep1: ok 1946.8ms rows=9 match
+[ceb_3b_005] prepare: ok 53.6ms
+[ceb_3b_005] warmup: ok 3181.2ms
+[ceb_3b_005] rep1: ok 3097.8ms rows=1098 MISMATCH
+[ceb_3b_006] prepare: ok 60.5ms
+[ceb_3b_006] warmup: ok 1457.9ms
+[ceb_3b_006] rep1: ok 856.3ms rows=365 match
+[ceb_3b_007] prepare: ok 54.4ms
+[ceb_3b_007] warmup: ok 1483.2ms
+[ceb_3b_007] rep1: ok 1561.4ms rows=0 MISMATCH
+[ceb_3b_008] prepare: ok 46.5ms
+[ceb_3b_008] warmup: ok 2795.2ms
+[ceb_3b_008] rep1: ok 2611.4ms rows=528 match
+[ceb_3b_009] prepare: ok 69.9ms
+[ceb_3b_009] warmup: ok 1877.4ms
+[ceb_3b_009] rep1: ok 1933.0ms rows=8 match
+[ceb_3b_010] prepare: ok 59.8ms
+[ceb_3b_010] warmup: ok 3789.1ms
+[ceb_3b_010] rep1: ok 2698.6ms rows=27 match
+[ceb_3b_011] prepare: ok 46.6ms
+[ceb_3b_011] warmup: ok 10527.6ms
+[ceb_3b_011] rep1: ok 6008.8ms rows=552 match
+[ceb_3b_012] prepare: ok 47.8ms
+[ceb_3b_012] warmup: ok 1405.5ms
+[ceb_3b_012] rep1: ok 990.2ms rows=6 match
+[ceb_3b_013] prepare: ok 57.1ms
+[ceb_3b_013] warmup: ok 2957.8ms
+[ceb_3b_013] rep1: ok 2350.0ms rows=53 match
+[ceb_3b_014] prepare: ok 65.2ms
+[ceb_3b_014] warmup: ok 6933.2ms
+[ceb_3b_014] rep1: ok 7628.2ms rows=9 match
+[ceb_3b_015] prepare: ok 60.0ms
+[ceb_3b_015] warmup: ok 5255.4ms
+[ceb_3b_015] rep1: ok 5324.1ms rows=1152 MISMATCH
+[ceb_7a_001] prepare: ok 103.6ms
+[ceb_7a_001] warmup: ok 16672.7ms
+[ceb_7a_001] rep1: ok 10015.8ms rows=1 match
+[ceb_7a_002] prepare: ok 76.2ms
+[ceb_7a_002] warmup: ok 52865.2ms
+[ceb_7a_002] rep1: ok 45047.1ms rows=1 match
+[ceb_7a_003] prepare: ok 100.1ms
+[ceb_7a_003] warmup: ok 3441.0ms
+[ceb_7a_003] rep1: ok 1691.8ms rows=1 match
+[ceb_7a_004] prepare: ok 73.2ms
+[ceb_7a_004] warmup: ok 42755.6ms
+[ceb_7a_004] rep1: ok 32435.6ms rows=1 match
+[ceb_7a_005] prepare: ok 75.6ms
+[ceb_7a_005] warmup: ok 2064.5ms
+[ceb_7a_005] rep1: ok 2048.0ms rows=1 match
+[ceb_7a_006] prepare: ok 72.0ms
+[ceb_7a_006] warmup: ok 639.6ms
+[ceb_7a_006] rep1: ok 659.8ms rows=1 match
+[ceb_7a_007] prepare: ok 77.1ms
+[ceb_7a_007] warmup: ok 1965.2ms
+[ceb_7a_007] rep1: ok 2083.2ms rows=1 match
+[ceb_7a_008] prepare: ok 74.5ms
+[ceb_7a_008] warmup: ok 2710.8ms
+[ceb_7a_008] rep1: ok 2299.2ms rows=1 match
+[ceb_7a_009] prepare: ok 74.0ms
+[ceb_7a_009] warmup: ok 2622.0ms
+[ceb_7a_009] rep1: ok 3068.2ms rows=1 match
+[ceb_7a_010] prepare: ok 65.8ms
+[ceb_7a_010] warmup: ok 3201.3ms
+[ceb_7a_010] rep1: ok 3168.1ms rows=1 match
+[ceb_7a_011] prepare: ok 68.5ms
+[ceb_7a_011] warmup: ok 809.7ms
+[ceb_7a_011] rep1: ok 746.4ms rows=1 match
+[ceb_7a_012] prepare: ok 83.3ms
+[ceb_7a_012] warmup: ok 2503.2ms
+[ceb_7a_012] rep1: ok 1987.2ms rows=1 match
+[ceb_7a_013] prepare: ok 70.1ms
+[ceb_7a_013] warmup: ok 10857.1ms
+[ceb_7a_013] rep1: ok 10760.0ms rows=1 match
+[ceb_7a_014] prepare: ok 70.9ms
+[ceb_7a_014] warmup: ok 6176.4ms
+[ceb_7a_014] rep1: ok 5492.3ms rows=1 match
+[ceb_7a_015] prepare: ok 95.7ms
+[ceb_7a_015] warmup: ok 1712.8ms
+[ceb_7a_015] rep1: ok 1325.0ms rows=1 match
+[ceb_8a_001] prepare: ok 53.1ms
+[ceb_8a_001] warmup: ok 5067.4ms
+[ceb_8a_001] rep1: ok 1506.7ms rows=1 match
+[ceb_8a_002] prepare: ok 65.1ms
+[ceb_8a_002] warmup: timeout Nonems
+[reaper] killed [13653]
+[ceb_8a_002] rep1: timeout Nonems rows=None n/a
+[ceb_8a_003] prepare: ok 47.0ms
+[reaper] killed [13675]
+[ceb_8a_003] warmup: ok 236156.6ms
+[ceb_8a_003] rep1: ok 215382.8ms rows=1 match
+[ceb_8a_004] prepare: ok 55.8ms
+[ceb_8a_004] warmup: ok 240350.9ms
+[ceb_8a_004] rep1: ok 232619.2ms rows=1 match
+[ceb_8a_005] prepare: ok 60.2ms
+[ceb_8a_005] warmup: ok 28093.2ms
+[ceb_8a_005] rep1: ok 23988.9ms rows=1 match
+[ceb_8a_006] prepare: ok 74.8ms
+[ceb_8a_006] warmup: ok 10757.5ms
+[ceb_8a_006] rep1: ok 9932.9ms rows=1 match
+[ceb_8a_007] prepare: ok 50.0ms
+[ceb_8a_007] warmup: ok 47175.1ms
+[ceb_8a_007] rep1: ok 43753.9ms rows=1 match
+[ceb_8a_008] prepare: ok 48.4ms
+[ceb_8a_008] warmup: ok 9960.6ms
+[ceb_8a_008] rep1: ok 8033.2ms rows=1 match
+[ceb_8a_009] prepare: ok 50.2ms
+[ceb_8a_009] warmup: ok 80369.5ms
+[ceb_8a_009] rep1: ok 80540.2ms rows=1 match
+[ceb_8a_010] prepare: ok 61.8ms
+[ceb_8a_010] warmup: ok 166509.4ms
+[ceb_8a_010] rep1: ok 165443.4ms rows=1 match
+[ceb_8a_011] prepare: ok 74.2ms
+[ceb_8a_011] warmup: ok 39818.0ms
+[ceb_8a_011] rep1: ok 38136.3ms rows=1 match
+[ceb_8a_012] prepare: ok 48.7ms
+[ceb_8a_012] warmup: timeout Nonems
+[reaper] killed [13888]
+[ceb_8a_012] rep1: timeout Nonems rows=None n/a
+[ceb_8a_013] prepare: ok 44.8ms
+[ceb_8a_013] warmup: ok 14782.5ms
+[ceb_8a_013] rep1: ok 13556.8ms rows=1 match
+[ceb_8a_014] prepare: ok 42.9ms
+[reaper] killed [13911]
+[ceb_8a_014] warmup: ok 12134.7ms
+[ceb_8a_014] rep1: ok 8160.3ms rows=1 match
+[ceb_8a_015] prepare: ok 55.4ms
+[ceb_8a_015] warmup: ok 123833.8ms
+[ceb_8a_015] rep1: ok 117190.4ms rows=1 match
+[ceb_8a_016] prepare: ok 70.6ms
+[ceb_8a_016] warmup: ok 722.3ms
+[ceb_8a_016] rep1: ok 688.9ms rows=1 match
+[ceb_9a_001] prepare: ok 55.5ms
+[ceb_9a_001] warmup: ok 27604.5ms
+[ceb_9a_001] rep1: ok 19524.1ms rows=10810 MISMATCH
+[ceb_9a_002] prepare: ok 49.8ms
+[ceb_9a_002] warmup: ok 10790.6ms
+[ceb_9a_002] rep1: ok 2897.5ms rows=28 match
+[ceb_9a_003] prepare: ok 47.0ms
+[ceb_9a_003] warmup: ok 6167.3ms
+[ceb_9a_003] rep1: ok 5193.0ms rows=1258 MISMATCH
+[ceb_9a_004] prepare: ok 58.2ms
+[ceb_9a_004] warmup: ok 4478.6ms
+[ceb_9a_004] rep1: ok 3403.7ms rows=116 match
+[ceb_9a_005] prepare: ok 63.7ms
+[ceb_9a_005] warmup: ok 13316.3ms
+[ceb_9a_005] rep1: ok 6601.4ms rows=1451 MISMATCH
+[ceb_9a_006] prepare: ok 67.4ms
+[ceb_9a_006] warmup: ok 13444.9ms
+[ceb_9a_006] rep1: ok 5950.8ms rows=16926 MISMATCH
+[ceb_9a_007] prepare: ok 44.5ms
+[ceb_9a_007] warmup: ok 1076.3ms
+[ceb_9a_007] rep1: ok 848.4ms rows=675 match
+[ceb_9a_008] prepare: ok 52.1ms
+[ceb_9a_008] warmup: ok 11506.1ms
+[ceb_9a_008] rep1: ok 8280.8ms rows=6 match
+[ceb_9a_009] prepare: ok 64.1ms
+[ceb_9a_009] warmup: ok 10973.1ms
+[ceb_9a_009] rep1: ok 6573.9ms rows=371 match
+[ceb_9a_010] prepare: ok 64.9ms
+[ceb_9a_010] warmup: ok 99472.2ms
+[ceb_9a_010] rep1: ok 83131.8ms rows=19031 MISMATCH
+[ceb_9a_011] prepare: ok 52.8ms
+[ceb_9a_011] warmup: ok 3988.6ms
+[ceb_9a_011] rep1: ok 1258.2ms rows=11 match
+[ceb_9a_012] prepare: ok 63.6ms
+[ceb_9a_012] warmup: ok 8470.5ms
+[ceb_9a_012] rep1: ok 2211.7ms rows=2 match
+[ceb_9a_013] prepare: ok 51.4ms
+[ceb_9a_013] warmup: ok 973.4ms
+[ceb_9a_013] rep1: ok 792.8ms rows=63 match
+[ceb_9a_014] prepare: ok 45.9ms
+[ceb_9a_014] warmup: ok 16647.7ms
+[ceb_9a_014] rep1: ok 4817.8ms rows=1022 MISMATCH
+[ceb_9a_015] prepare: ok 48.4ms
+[ceb_9a_015] warmup: ok 2060.7ms
+[ceb_9a_015] rep1: ok 1425.0ms rows=280 match
+[ceb_9b_001] prepare: ok 50.8ms
+[ceb_9b_001] warmup: ok 1902.8ms
+[ceb_9b_001] rep1: ok 1128.2ms rows=6 match
+[ceb_9b_002] prepare: ok 65.4ms
+[ceb_9b_002] warmup: ok 1098.1ms
+[ceb_9b_002] rep1: ok 934.2ms rows=2 match
+[ceb_9b_003] prepare: ok 47.2ms
+[ceb_9b_003] warmup: ok 1078.0ms
+[ceb_9b_003] rep1: ok 932.3ms rows=1 match
+[ceb_9b_004] prepare: ok 59.8ms
+[ceb_9b_004] warmup: ok 609.7ms
+[ceb_9b_004] rep1: ok 487.4ms rows=2 match
+[ceb_9b_005] prepare: ok 50.6ms
+[ceb_9b_005] warmup: ok 5083.2ms
+[ceb_9b_005] rep1: ok 4384.9ms rows=236 match
+[ceb_9b_006] prepare: ok 51.2ms
+[ceb_9b_006] warmup: ok 488.5ms
+[ceb_9b_006] rep1: ok 466.1ms rows=1 match
+[ceb_9b_007] prepare: ok 46.2ms
+[ceb_9b_007] warmup: ok 1183.9ms
+[ceb_9b_007] rep1: ok 1056.5ms rows=96 match
+[ceb_9b_008] prepare: ok 54.8ms
+[ceb_9b_008] warmup: ok 1291.5ms
+[ceb_9b_008] rep1: ok 1109.3ms rows=13 match
+[ceb_9b_009] prepare: ok 45.7ms
+[ceb_9b_009] warmup: ok 3405.3ms
+[ceb_9b_009] rep1: ok 2939.5ms rows=3 match
+[ceb_9b_010] prepare: ok 61.4ms
+[ceb_9b_010] warmup: ok 1086.0ms
+[ceb_9b_010] rep1: ok 997.5ms rows=22 match
+[ceb_9b_011] prepare: ok 69.1ms
+[ceb_9b_011] warmup: ok 2342.1ms
+[ceb_9b_011] rep1: ok 2332.6ms rows=0 MISMATCH
+[ceb_9b_012] prepare: ok 58.3ms
+[ceb_9b_012] warmup: ok 20362.8ms
+[ceb_9b_012] rep1: ok 11750.2ms rows=133 match
+[ceb_9b_013] prepare: ok 47.4ms
+[ceb_9b_013] warmup: ok 7819.6ms
+[ceb_9b_013] rep1: ok 6616.7ms rows=697 match
+[ceb_9b_014] prepare: ok 44.4ms
+[ceb_9b_014] warmup: ok 661.0ms
+[ceb_9b_014] rep1: ok 622.1ms rows=83 match
+[ceb_9b_015] prepare: ok 61.7ms
+[ceb_9b_015] warmup: ok 1612.0ms
+[ceb_9b_015] rep1: ok 1233.2ms rows=9 match
+=== done
+SUPERVISOR DONE: 121/121

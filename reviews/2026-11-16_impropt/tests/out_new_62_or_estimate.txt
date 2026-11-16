@@ -1,0 +1,123 @@
+
+TAG                
+================== 
+O1: default config 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=77596.00)
+            -> Table "T" Access By ID (rows=77596.00)
+                -> Bitmap Or
+                    -> Bitmap
+                        -> Index "T_A" Range Scan (full match)
+                    -> Bitmap
+                        -> Index "T_B" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=77596.00)
+            -> Table "T" Access By ID (rows=77596.00)
+                -> Bitmap Or
+                    -> Bitmap
+                        -> Index "T_A" Range Scan (full match)
+                    -> Bitmap
+                        -> Index "T_A" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=77596.26)
+            -> Table "T" Access By ID (rows=77596.26)
+                -> Bitmap Or
+                    -> Bitmap Or
+                        -> Bitmap
+                            -> Index "T_A" Range Scan (full match)
+                        -> Bitmap
+                            -> Index "T_B" Range Scan (full match)
+                    -> Bitmap
+                        -> Index "T_X" Range Scan (full match)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                
+================== 
+O2: correlation on 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=75000.00)
+            -> Table "T" Access By ID (rows=75000.00)
+                -> Bitmap Or
+                    -> Bitmap
+                        -> Index "T_A" Range Scan (full match)
+                    -> Bitmap
+                        -> Index "T_B" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=100000.00)
+            -> Table "T" Access By ID (rows=100000.00)
+                -> Bitmap Or
+                    -> Bitmap
+                        -> Index "T_A" Range Scan (full match)
+                    -> Bitmap
+                        -> Index "T_A" Range Scan (full match)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=79241.28)
+            -> Table "T" Access By ID (rows=79241.28)
+                -> Bitmap Or
+                    -> Bitmap Or
+                        -> Bitmap Or
+                            -> Bitmap Or
+                                -> Bitmap Or
+                                    -> Bitmap Or
+                                        -> Bitmap Or
+                                            -> Bitmap Or
+                                                -> Bitmap Or
+                                                    -> Bitmap
+                                                        -> Index "T_X" Range Scan (upper bound: 1/1)
+                                                    -> Bitmap
+                                                        -> Index "T_X" Range Scan (upper bound: 1/1)
+                                                -> Bitmap
+                                                    -> Index "T_X" Range Scan (upper bound: 1/1)
+                                            -> Bitmap
+                                                -> Index "T_X" Range Scan (upper bound: 1/1)
+                                        -> Bitmap
+                                            -> Index "T_X" Range Scan (upper bound: 1/1)
+                                    -> Bitmap
+                                        -> Index "T_X" Range Scan (upper bound: 1/1)
+                                -> Bitmap
+                                    -> Index "T_X" Range Scan (upper bound: 1/1)
+                            -> Bitmap
+                                -> Index "T_X" Range Scan (upper bound: 1/1)
+                        -> Bitmap
+                            -> Index "T_X" Range Scan (upper bound: 1/1)
+                    -> Bitmap
+                        -> Index "T_X" Range Scan (upper bound: 1/1)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=27100.25)
+            -> Table "T" Access By ID (rows=27100.25)
+                -> Bitmap Or
+                    -> Bitmap
+                        -> Index "T_X" Range Scan (upper bound: 1/1)
+                    -> Bitmap
+                        -> Index "T_X" Range Scan (upper bound: 1/1)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2970.13)
+            -> Table "T" Access By ID (rows=2970.13)
+                -> Bitmap Or
+                    -> Bitmap Or
+                        -> Bitmap
+                            -> Index "T_X" Range Scan (lower bound: 1/1, upper bound: 1/1)
+                        -> Bitmap
+                            -> Index "T_X" Range Scan (lower bound: 1/1, upper bound: 1/1)
+                    -> Bitmap
+                        -> Index "T_X" Range Scan (lower bound: 1/1, upper bound: 1/1)
+-- rc=0, 2 s

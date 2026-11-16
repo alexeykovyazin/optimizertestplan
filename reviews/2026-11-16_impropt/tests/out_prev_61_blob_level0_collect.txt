@@ -1,0 +1,160 @@
+
+TAG                             Z2: FULL
+
+
+
+STAT$FIELD_NAME                 B
+STAT$TYPE                       17
+STAT$SUB_TYPE                   1
+STAT$CHARSET                    4
+STAT$COLLATE                    0
+STAT$NULL_FRACTION              0.000000000000000
+STAT$SAMPLE_SIZE                20000
+STAT$NDISTINCT                  <null>
+MCV                             <null>
+LV                              {
+  "format": 1,
+  "count": 20000,
+  "avg_pages": 0,
+  "max_pages": 0,
+  "avg_len": 1800.5,
+  "max_l
+
+STAT$FIELD_NAME                 B
+STAT$TYPE                       17
+STAT$SUB_TYPE                   1
+STAT$CHARSET                    4
+STAT$COLLATE                    0
+STAT$NULL_FRACTION              0.000000000000000
+STAT$SAMPLE_SIZE                100
+STAT$NDISTINCT                  <null>
+MCV                             <null>
+LV                              {
+  "format": 1,
+  "count": 100,
+  "avg_pages": 0,
+  "max_pages": 0,
+  "avg_len": 3,
+  "max_len": 3,
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2000.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                 2000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10000.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                 2000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10000.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                18000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10000.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                18000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                    0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=10.00)
+            -> Table "TC" Full Scan (rows=100.00)
+
+                COUNT 
+===================== 
+                  100 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                             Z1: SAMPLE
+
+
+
+PLAN (STAT$COLUMNS INDEX (RDB$PRIMARY3))
+
+STAT$NULL_FRACTION              0.000000000000000
+STAT$SAMPLE_SIZE                20000
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                    0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=20000.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                20000 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                             Z3: COLUMN B
+
+
+
+PLAN (STAT$COLUMNS INDEX (RDB$PRIMARY3))
+
+STAT$TYPE                       17
+STAT$CHARSET                    0
+STAT$COLLATE                    0
+STAT$SAMPLE_SIZE                20000
+STAT$NULL_FRACTION              0.000000000000000
+
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2000.00)
+            -> Table "TB" Full Scan (rows=20000.00)
+
+                COUNT 
+===================== 
+                 2000 
+
+-- rc=0, 2 s

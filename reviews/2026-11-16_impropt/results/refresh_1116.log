@@ -1,0 +1,982 @@
+
+T_BEFORE                        2026-11-16 13:04:21.2200 Europe/Budapest
+
+
+
+T_AFTER                         2026-11-16 13:05:11.5540 Europe/Budapest
+
+
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  901198
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 PERSON_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  587295
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 NAME
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  806426
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 IMDB_INDEX
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                1
+STAT$NDISTINCT                  5
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 NAME_PCODE_CF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29997
+STAT$NDISTINCT                  21968
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 NAME_PCODE_NF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                26320
+STAT$NDISTINCT                  21162
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 SURNAME_PCODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                20803
+STAT$NDISTINCT                  4301
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_NAME
+STAT$FIELD_NAME                 MD5SUM
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  810701
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  360288
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  208236
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 TITLE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  313490
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 IMDB_INDEX
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                250
+STAT$NDISTINCT                  12
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 KIND_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  6
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 PRODUCTION_YEAR
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29696
+STAT$NDISTINCT                  128
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 PHONETIC_CODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29549
+STAT$NDISTINCT                  20005
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 EPISODE_OF_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                293
+STAT$NDISTINCT                  750
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 SEASON_NR
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                256
+STAT$NDISTINCT                  40
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 EPISODE_NR
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                255
+STAT$NDISTINCT                  162
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 NOTE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                27702
+STAT$NDISTINCT                  3365
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              AKA_TITLE
+STAT$FIELD_NAME                 MD5SUM
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  349716
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  35993815
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 PERSON_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  4050675
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2337166
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 PERSON_ROLE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                13336
+STAT$NDISTINCT                  3139757
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 NOTE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                11332
+STAT$NDISTINCT                  716752
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 NR_ORDER
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                8185
+STAT$NDISTINCT                  1099
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CAST_INFO
+STAT$FIELD_NAME                 ROLE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  11
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  3139757
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 NAME
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  3140339
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 IMDB_INDEX
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                0
+STAT$NDISTINCT                  6
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 IMDB_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                0
+STAT$NDISTINCT                  0
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 NAME_PCODE_NF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29996
+STAT$NDISTINCT                  23043
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 SURNAME_PCODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                25390
+STAT$NDISTINCT                  17174
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              CHAR_NAME
+STAT$FIELD_NAME                 MD5SUM
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  3140339
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                234997
+STAT$NDISTINCT                  234997
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 NAME
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                234997
+STAT$NDISTINCT                  224385
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 COUNTRY_CODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                211073
+STAT$NDISTINCT                  215
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 IMDB_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                0
+STAT$NDISTINCT                  0
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 NAME_PCODE_NF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                234961
+STAT$NDISTINCT                  18486
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 NAME_PCODE_SF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                211073
+STAT$NDISTINCT                  17446
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_NAME
+STAT$FIELD_NAME                 MD5SUM
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                234997
+STAT$NDISTINCT                  234997
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_TYPE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                4
+STAT$NDISTINCT                  4
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPANY_TYPE
+STAT$FIELD_NAME                 KIND
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                4
+STAT$NDISTINCT                  4
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPLETE_CAST
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                135086
+STAT$NDISTINCT                  135086
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPLETE_CAST
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                135086
+STAT$NDISTINCT                  93514
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPLETE_CAST
+STAT$FIELD_NAME                 SUBJECT_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                135086
+STAT$NDISTINCT                  2
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMPLETE_CAST
+STAT$FIELD_NAME                 STATUS_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                135086
+STAT$NDISTINCT                  2
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMP_CAST_TYPE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                4
+STAT$NDISTINCT                  4
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              COMP_CAST_TYPE
+STAT$FIELD_NAME                 KIND
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                4
+STAT$NDISTINCT                  4
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              INFO_TYPE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                113
+STAT$NDISTINCT                  113
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              INFO_TYPE
+STAT$FIELD_NAME                 INFO
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                113
+STAT$NDISTINCT                  113
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              KEYWORD
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                134170
+STAT$NDISTINCT                  134170
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              KEYWORD
+STAT$FIELD_NAME                 KEYWORD
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                134170
+STAT$NDISTINCT                  134170
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              KEYWORD
+STAT$FIELD_NAME                 PHONETIC_CODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                134132
+STAT$NDISTINCT                  15481
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              KIND_TYPE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                7
+STAT$NDISTINCT                  7
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              KIND_TYPE
+STAT$FIELD_NAME                 KIND
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                7
+STAT$NDISTINCT                  7
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              LINK_TYPE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                18
+STAT$NDISTINCT                  18
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              LINK_TYPE
+STAT$FIELD_NAME                 LINK
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                18
+STAT$NDISTINCT                  18
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_COMPANIES
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2609129
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_COMPANIES
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  1088114
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_COMPANIES
+STAT$FIELD_NAME                 COMPANY_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  235570
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_COMPANIES
+STAT$FIELD_NAME                 COMPANY_TYPE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_COMPANIES
+STAT$FIELD_NAME                 NOTE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                17188
+STAT$NDISTINCT                  66537
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  14835720
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2474988
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO
+STAT$FIELD_NAME                 INFO_TYPE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  71
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO
+STAT$FIELD_NAME                 INFO
+STAT$TYPE                       3
+STAT$SUB_TYPE                   1
+STAT$SAMPLE_SIZE                29935
+STAT$NDISTINCT                  <null>
+STAT$BLOB_AVG_LEN               39.12600000000000
+STAT$BLOB_AVG_PAGES             0.000000000000000
+
+STAT$RELATION_NAME              MOVIE_INFO
+STAT$FIELD_NAME                 NOTE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                2939
+STAT$NDISTINCT                  133667
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO_IDX
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  1380035
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO_IDX
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  462333
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO_IDX
+STAT$FIELD_NAME                 INFO_TYPE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  5
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO_IDX
+STAT$FIELD_NAME                 INFO
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  146922
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_INFO_IDX
+STAT$FIELD_NAME                 NOTE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                0
+STAT$NDISTINCT                  0
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_KEYWORD
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  4523930
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_KEYWORD
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  476432
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_KEYWORD
+STAT$FIELD_NAME                 KEYWORD_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  133937
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_LINK
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29997
+STAT$NDISTINCT                  29997
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_LINK
+STAT$FIELD_NAME                 MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29997
+STAT$NDISTINCT                  6411
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_LINK
+STAT$FIELD_NAME                 LINKED_MOVIE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29997
+STAT$NDISTINCT                  16169
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              MOVIE_LINK
+STAT$FIELD_NAME                 LINK_TYPE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29997
+STAT$NDISTINCT                  16
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  4164464
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 NAME
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  3584090
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 IMDB_INDEX
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                6524
+STAT$NDISTINCT                  178
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 IMDB_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                0
+STAT$NDISTINCT                  0
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 GENDER
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                19219
+STAT$NDISTINCT                  2
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 NAME_PCODE_CF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29999
+STAT$NDISTINCT                  23577
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 NAME_PCODE_NF
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29350
+STAT$NDISTINCT                  23257
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 SURNAME_PCODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                22860
+STAT$NDISTINCT                  4659
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              NAME
+STAT$FIELD_NAME                 MD5SUM
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  4167491
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              PERSON_INFO
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2959204
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              PERSON_INFO
+STAT$FIELD_NAME                 PERSON_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  553308
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              PERSON_INFO
+STAT$FIELD_NAME                 INFO_TYPE_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  22
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              PERSON_INFO
+STAT$FIELD_NAME                 INFO
+STAT$TYPE                       3
+STAT$SUB_TYPE                   1
+STAT$SAMPLE_SIZE                29467
+STAT$NDISTINCT                  <null>
+STAT$BLOB_AVG_LEN               114.0107666666667
+STAT$BLOB_AVG_PAGES             0.0001000000000000000
+
+STAT$RELATION_NAME              PERSON_INFO
+STAT$FIELD_NAME                 NOTE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                904
+STAT$NDISTINCT                  49974
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              ROLE_TYPE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                12
+STAT$NDISTINCT                  12
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              ROLE_TYPE
+STAT$FIELD_NAME                 ROLE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                12
+STAT$NDISTINCT                  12
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2528312
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 TITLE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  1481651
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 IMDB_INDEX
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                338
+STAT$NDISTINCT                  24
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 KIND_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  6
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 PRODUCTION_YEAR
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                29183
+STAT$NDISTINCT                  132
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 IMDB_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                0
+STAT$NDISTINCT                  0
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 PHONETIC_CODE
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                21806
+STAT$NDISTINCT                  23240
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 EPISODE_OF_ID
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                17574
+STAT$NDISTINCT                  51574
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 SEASON_NR
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                12498
+STAT$NDISTINCT                  95
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 EPISODE_NR
+STAT$TYPE                       9
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                12486
+STAT$NDISTINCT                  14990
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 SERIES_YEARS
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                1031
+STAT$NDISTINCT                  1410
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+STAT$RELATION_NAME              TITLE
+STAT$FIELD_NAME                 MD5SUM
+STAT$TYPE                       3
+STAT$SUB_TYPE                   0
+STAT$SAMPLE_SIZE                30000
+STAT$NDISTINCT                  2528312
+STAT$BLOB_AVG_LEN               <null>
+STAT$BLOB_AVG_PAGES             <null>
+
+

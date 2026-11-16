@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Седьмое ревью impr-opt</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@600&display=swap">
+<style>
+/* Layout: one reading column; summary and status numbers first, then new findings as hairline rows, then status tables of old findings, 7a table, staged plan */
+:root {
+  --bg: #F2F5F6;
+  --surface: #FFFFFF;
+  --fg: #172126;
+  --muted: #55646D;
+  --line: #D5DDE1;
+  --accent: #0B6A87;
+  --accent-soft: #E0EDF2;
+  --crit: #B3261E;  --crit-bg: #FBE8E6;
+  --high: #B4511A;  --high-bg: #FCEEE3;
+  --med: #86690A;   --med-bg: #F7F0D6;
+  --low: #4D6876;   --low-bg: #E7EDF0;
+  --ok: #1D7347;    --ok-bg: #E2F2E9;
+  --f-display: "Unbounded", "Golos Text", system-ui, sans-serif;
+  --f-body: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1518; --surface: #161E22; --fg: #E1E8EB; --muted: #93A3AC; --line: #29353B;
+    --accent: #5DB7D5; --accent-soft: #15303A;
+    --crit: #F2786E; --crit-bg: #3A1A18;
+    --high: #F09B60; --high-bg: #3A2415;
+    --med: #DCBD5B;  --med-bg: #332B10;
+    --low: #9CB2BE;  --low-bg: #1E2A30;
+    --ok: #63C793;   --ok-bg: #15301F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1518; --surface: #161E22; --fg: #E1E8EB; --muted: #93A3AC; --line: #29353B;
+  --accent: #5DB7D5; --accent-soft: #15303A;
+  --crit: #F2786E; --crit-bg: #3A1A18;
+  --high: #F09B60; --high-bg: #3A2415;
+  --med: #DCBD5B;  --med-bg: #332B10;
+  --low: #9CB2BE;  --low-bg: #1E2A30;
+  --ok: #63C793;   --ok-bg: #15301F;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--f-body); }
+.page {
+  max-width: 960px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+  display: flex; flex-direction: column; gap: 48px;
+}
+h1, h2, h3, h4 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+code, .mono { font-family: var(--f-mono); font-size: 0.86em; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(26px, 4.4vw, 40px); line-height: 1.15; letter-spacing: -0.01em; }
+.lead { font-size: 18px; max-width: 65ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+.meta b { color: var(--fg); font-weight: 600; }
+
+section { display: flex; flex-direction: column; gap: 18px; }
+h2 { font-size: 24px; font-weight: 700; line-height: 1.25; display: flex; gap: 12px; align-items: baseline; }
+h2 .num { font-family: var(--f-mono); font-size: 14px; font-weight: 500; color: var(--accent); }
+h3 { font-size: 18px; font-weight: 600; margin-top: 8px; }
+.note { font-size: 14px; color: var(--muted); max-width: 72ch; }
+
+.keypoints { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 72ch; }
+.keypoints li { padding-left: 18px; position: relative; }
+.keypoints li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.keypoints li.bad::before { background: var(--crit); }
+.keypoints li.good::before { background: var(--ok); }
+
+.numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel h3 { margin: 0; font-size: 15px; }
+.axis-note { font-size: 12px; color: var(--muted); }
+
+/* stacked status bar */
+.stack { display: flex; height: 22px; border-radius: 4px; overflow: hidden; background: var(--accent-soft); }
+.stack span { display: block; flex: var(--n) 0 0; min-width: 0; }
+.stack .s-fixed { background: var(--ok); }
+.stack .s-part { background: var(--med); }
+.stack .s-open { background: var(--high); }
+.stack .s-na { background: var(--low); }
+.legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; font-size: 14px; }
+.legend li { display: flex; gap: 8px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.legend b { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 500; margin-left: auto; }
+.i-fixed { background: var(--ok); } .i-part { background: var(--med); } .i-open { background: var(--high); } .i-na { background: var(--low); }
+.stack-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+table.grid { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.grid th, table.grid td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grid th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; vertical-align: bottom; }
+table.grid td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+table.grid td.n.worse { color: var(--high); font-weight: 500; }
+table.grid td.id { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+table.grid td.c { color: var(--muted); font-size: 13px; }
+table.grid td.c code { overflow-wrap: anywhere; }
+table.grid td.barcell { width: 30%; min-width: 90px; vertical-align: middle; }
+.scroll { overflow-x: auto; }
+.status-table { min-width: 640px; }
+.track { position: relative; height: 14px; background: var(--accent-soft); border-radius: 3px; }
+.fill { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--v) / var(--max) * 100%); background: var(--high); border-radius: 3px; }
+.tick { position: absolute; top: -4px; bottom: -4px; left: calc(var(--r) / var(--max) * 100%); width: 2px; background: var(--fg); opacity: 0.7; }
+
+.filter { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.filter span.lab { font-size: 13px; color: var(--muted); margin-right: 4px; }
+.filter button { font: 500 14px var(--f-body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.filter button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.filter button .c { font-family: var(--f-mono); font-size: 12px; opacity: 0.8; margin-left: 4px; }
+
+.findings { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.f { display: grid; grid-template-columns: 148px 1fr; gap: 6px 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.f-tags { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; }
+.f-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.f h4 { font-size: 16px; font-weight: 600; line-height: 1.35; }
+.f .loc { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+.f p { max-width: 72ch; }
+.f p code { overflow-wrap: anywhere; }
+.f .test-ref { font-size: 13px; color: var(--muted); }
+.id { font-family: var(--f-mono); font-size: 12px; font-weight: 500; color: var(--muted); padding: 1px 0; min-width: 28px; }
+.chip { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; padding: 2px 8px; border-radius: 4px; white-space: nowrap; display: inline-block; }
+.sev-crit { color: var(--crit); background: var(--crit-bg); }
+.sev-high { color: var(--high); background: var(--high-bg); }
+.sev-med  { color: var(--med);  background: var(--med-bg); }
+.sev-low  { color: var(--low);  background: var(--low-bg); }
+.st { font-weight: 500; color: var(--muted); border: 1px solid var(--line); background: transparent; }
+.st-test { color: var(--ok); border-color: var(--ok); background: var(--ok-bg); }
+.ch-fixed { color: var(--ok); background: var(--ok-bg); }
+.ch-part { color: var(--med); background: var(--med-bg); }
+.ch-open { color: var(--high); background: var(--high-bg); }
+.ch-worse { color: var(--crit); background: var(--crit-bg); }
+.ch-na { color: var(--low); background: var(--low-bg); }
+.empty { font-size: 14px; color: var(--muted); padding: 12px 0; }
+
+.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 72ch; }
+
+.stages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: stage -1; }
+.stage { display: grid; grid-template-columns: 52px 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; counter-increment: stage; }
+.stage::before { content: counter(stage); font-family: var(--f-display); font-weight: 600; font-size: 28px; line-height: 1; color: var(--accent); }
+.stage-body { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.stage-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.stage-head h3 { margin: 0; }
+.stage-head .dur { font-family: var(--f-mono); font-size: 13px; color: var(--muted); }
+.stage ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+
+footer { font-size: 14px; color: var(--muted); display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 640px) {
+  .f { grid-template-columns: 1fr; }
+  .stage { grid-template-columns: 1fr; gap: 8px; }
+  .lead { font-size: 17px; }
+  .legend { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .filter button { transition: background-color .15s, color .15s; }
+}
+</style>
+
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <div class="eyebrow">Седьмое ревью · HQbird v5.0-impr-opt · b2800ecb7d · 16.11.2026</div>
+  <h1>Седьмое ревью оптимизатора v5.0-impr-opt</h1>
+  <p class="lead">Ошибок результата нет. Два новых коммита — формула OR и распределения текстовых BLOB — дали восемь ошибок оценки. Все восемь исправлены в PR #30, он принят. После обновления сборки нужен REFRESH STATISTICS: без него запросы с фильтром по BLOB на CEB медленнее до 14 раз.</p>
+  <div class="meta">
+    <span><b>2</b> новых коммита + слияние PR #28</span>
+    <span>база сравнения <code>b69da49179</code></span>
+    <span>сборка Windows x64 от 16.11, embedded isql; CEB — dellg15</span>
+    <span>новые находки <b>Z1–Z12</b></span>
+    <span>исправления: <a href="https://github.com/IBSurgeon/hqbird/pull/30">PR #30</a> (принят, 6df82603c4)</span>
+  </div>
+</header>
+
+<section id="summary">
+  <h2><span class="num">1</span>Главное</h2>
+  <ul class="keypoints">
+    <li class="good"><b>Ошибок результата нет.</b> Тесты 00–60: новых ошибок нет, матрица 42 — 198 из 198. 1 200 случайных запросов совпали со штатным HQbird 5.0. Четыре полных прогона CEB дали одинаковые контрольные суммы.</li>
+    <li class="bad"><b>PR #28 принят вместе с Y7.</b> Коммит включил цену BLOB по байтам. На CEB MOVIE_INFO уходит в конец порядка соединения: 11a_009 — 107.7 с вместо 7.7 с, 11a_011 — таймаут 300 с.</li>
+    <li class="bad"><b>b2800ecb7d исправляет это только после <code>ALTER DATABASE REFRESH STATISTICS</code>.</b> Без REFRESH 11a_009 — 121 с и 146.9 млн fetches; после него — 4.6 млн fetches.</li>
+    <li class="bad"><b>Z1: новая формула OR изменила режим по умолчанию.</b> <code>a = 0 or a = 1</code> — 77 596 строк при 100 000. Документация обещает, что без <code>PredicateCorrelation</code> оценки не меняются.</li>
+    <li class="bad"><b>Z4, Z5: статистика текстовых BLOB.</b> При SAMPLE длинные значения считаются NULL: <code>b is null</code> — 18 000 строк при 0. Доля распределения завышена: <code>b = 'short'</code> — 20 000 при 2 000.</li>
+    <li class="good"><b>CEB быстрее.</b> Сборка PR #30: 118 из 121, геом. среднее времени <b>×0.83</b> к b69da49179 и ×0.99 к b2800ecb7d.</li>
+    <li><b>Пять запросов CEB медленнее b69da49179 в 3–10 раз:</b> 11b_005, 11b_012, 9a_014, 9a_015, 9a_004. Они появились в b2800ecb7d; причина не разобрана.</li>
+    <li class="good"><b>Исправления приняты:</b> <a href="https://github.com/IBSurgeon/hqbird/pull/30">PR IBSurgeon/hqbird#30</a>, 9 коммитов, одна проблема — один коммит.</li>
+  </ul>
+</section>
+
+<section id="numbers">
+  <h2><span class="num">2</span>Полный CEB</h2>
+  <div class="scroll">
+    <table class="grid">
+      <thead><tr><th>Сборка</th><th>Завершились</th><th>Геом. среднее к b69</th><th>Таймаут</th></tr></thead>
+      <tbody>
+        <tr><td>b69da49179 (15.11)</td><td class="n">117</td><td class="n">—</td><td>8a_002, 8a_004, 8a_012, 11b_010</td></tr>
+        <tr><td>PR #28 с Y7 (upstream 4802c30d39)</td><td class="n">117</td><td class="n worse">11a хуже в 2–14 раз</td><td>8a_002, 8a_012, 11b_010, 11a_011</td></tr>
+        <tr><td>PR #28 без Y7</td><td class="n">118</td><td class="n">×0.84</td><td>8a_002, 8a_012, 11b_010</td></tr>
+        <tr><td>b2800ecb7d после REFRESH</td><td class="n">117</td><td class="n">×0.84</td><td>8a_002, 8a_012, 11b_010, 11b_001</td></tr>
+        <tr><td><b>6df82603c4 (PR #30) после REFRESH</b></td><td class="n"><b>118</b></td><td class="n"><b>×0.83</b></td><td>8a_002, 8a_012, 11b_010</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="axis-note">dellg15, 121 запрос, 1 прогрев + 1 замер, таймаут 300 с. Контрольные суммы совпали во всех парах сборок 16.11.</p>
+
+  <h3>Цена Y7 без распределений BLOB, секунды</h3>
+  <div class="scroll">
+    <table class="grid">
+      <thead><tr><th>Запрос</th><th>b69</th><th>PR #28 с Y7</th><th class="barcell"><span hidden>PR #28 с Y7 на шкале 0–300 с</span></th></tr></thead>
+      <tbody style="--max: 300">
+        <tr><td>11a_009</td><td class="n">7.7</td><td class="n worse">107.7</td><td class="barcell"><div class="track"><div class="fill" style="--v: 107.7"></div><div class="tick" style="--r: 7.7"></div></div></td></tr>
+        <tr><td>11a_015</td><td class="n">7.5</td><td class="n worse">66.2</td><td class="barcell"><div class="track"><div class="fill" style="--v: 66.2"></div><div class="tick" style="--r: 7.5"></div></div></td></tr>
+        <tr><td>11a_006</td><td class="n">23.7</td><td class="n worse">53.5</td><td class="barcell"><div class="track"><div class="fill" style="--v: 53.5"></div><div class="tick" style="--r: 23.7"></div></div></td></tr>
+        <tr><td>11a_005</td><td class="n">14.3</td><td class="n worse">40.6</td><td class="barcell"><div class="track"><div class="fill" style="--v: 40.6"></div><div class="tick" style="--r: 14.3"></div></div></td></tr>
+        <tr><td>11a_011</td><td class="n">23.6</td><td class="n worse">таймаут</td><td class="barcell"><div class="track"><div class="fill" style="--v: 300"></div><div class="tick" style="--r: 23.6"></div></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="axis-note">Отметка на шкале — время b69da49179. <code>UPPER(mi.info) LIKE '%…%'</code> по BLOB получает цену чтения содержимого, и MOVIE_INFO уходит в конец порядка соединения. После REFRESH на b2800ecb7d 11a_009 снова читает 4.6 млн страниц.</p>
+
+  <h3>Сборка PR #30 против b69da49179, секунды</h3>
+  <div class="scroll">
+    <table class="grid">
+      <thead><tr><th>Запрос</th><th>b69</th><th>PR #30</th><th class="barcell"><span hidden>PR #30 на шкале 0–60 с</span></th></tr></thead>
+      <tbody style="--max: 60">
+        <tr><td>11a_004</td><td class="n">11.8</td><td class="n">0.7</td><td class="barcell"><div class="track"><div class="fill" style="--v: 0.7; background: var(--accent)"></div><div class="tick" style="--r: 11.8"></div></div></td></tr>
+        <tr><td>11b_004</td><td class="n">24.6</td><td class="n">3.2</td><td class="barcell"><div class="track"><div class="fill" style="--v: 3.2; background: var(--accent)"></div><div class="tick" style="--r: 24.6"></div></div></td></tr>
+        <tr><td>7a_002</td><td class="n">51.2</td><td class="n">13.6</td><td class="barcell"><div class="track"><div class="fill" style="--v: 13.6; background: var(--accent)"></div><div class="tick" style="--r: 51.2"></div></div></td></tr>
+        <tr><td>11a_001</td><td class="n">20.6</td><td class="n">4.6</td><td class="barcell"><div class="track"><div class="fill" style="--v: 4.6; background: var(--accent)"></div><div class="tick" style="--r: 20.6"></div></div></td></tr>
+        <tr><td>7a_004</td><td class="n">40.2</td><td class="n">19.7</td><td class="barcell"><div class="track"><div class="fill" style="--v: 19.7; background: var(--accent)"></div><div class="tick" style="--r: 40.2"></div></div></td></tr>
+        <tr><td>11b_005</td><td class="n">8.6</td><td class="n worse">57.4</td><td class="barcell"><div class="track"><div class="fill" style="--v: 57.4"></div><div class="tick" style="--r: 8.6"></div></div></td></tr>
+        <tr><td>11b_012</td><td class="n">6.2</td><td class="n worse">49.2</td><td class="barcell"><div class="track"><div class="fill" style="--v: 49.2"></div><div class="tick" style="--r: 6.2"></div></div></td></tr>
+        <tr><td>9a_014</td><td class="n">5.0</td><td class="n worse">19.6</td><td class="barcell"><div class="track"><div class="fill" style="--v: 19.6"></div><div class="tick" style="--r: 5"></div></div></td></tr>
+        <tr><td>9a_015</td><td class="n">1.4</td><td class="n worse">7.8</td><td class="barcell"><div class="track"><div class="fill" style="--v: 7.8"></div><div class="tick" style="--r: 1.4"></div></div></td></tr>
+        <tr><td>9a_004</td><td class="n">3.1</td><td class="n worse">8.5</td><td class="barcell"><div class="track"><div class="fill" style="--v: 8.5"></div><div class="tick" style="--r: 3.1"></div></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="axis-note">Отметка на шкале — время b69da49179. PR #30 против b2800ecb7d: план изменился у 12 запросов, 10a_004 — 11.8 с (было 45.6), 11b_008 — 3.5 с (14.8), 11b_001 — 78.5 с (был таймаут); замедлений в 2 раза нет.</p>
+</section>
+
+<div class="filter" role="group" aria-label="Фильтр находок">
+  <span class="lab">Новые находки:</span>
+  <button type="button" data-filter="all" aria-pressed="true">Все<span class="c" data-count="all"></span></button>
+  <button type="button" data-filter="severe" aria-pressed="false">Высокие<span class="c" data-count="severe"></span></button>
+  <button type="button" data-filter="test" aria-pressed="false">Исправлено в PR #30<span class="c" data-count="test"></span></button>
+</div>
+
+<section id="new">
+  <h2><span class="num">3</span>Новые находки</h2>
+  <p class="note">Каждая находка воспроизведена на b2800ecb7d. Метка <b>исправлено</b> — в PR #30 есть коммит, сборка с ним прошла тест. Числа: оценка оптимизатора; в скобках — реальное число строк.</p>
+
+  <h3>Высокие</h3>
+  <ul class="findings">
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">Z1</span><span class="chip sev-high">высоко</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4>Новая формула OR действует в режиме по умолчанию</h4><span class="loc">optimizer/Retrieval.cpp matchOnIndexes · 283ef14eaf</span>
+      <p>Из <code>combineDisjunctSelectivity</code> убран флаг режима. Bitmap OR при <code>PredicateCorrelation = false</code> раньше давал сумму, теперь <code>s1 + s2 - s1*s2</code>.</p>
+      <p>100 000 строк, <code>a = mod(i, 2)</code>: <code>a = 0 or a = 1</code> — <b>77 596</b> (100 000); до коммита 103 461. После исправления — 103 461.</p>
+      <span class="test-ref">tests/62_or_estimate.sql</span></div>
+    </li>
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">Z4</span><span class="chip sev-high">высоко</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4>SAMPLE считает длинные BLOB как NULL</h4><span class="loc">Collector.cpp collectColumnStats · b2800ecb7d</span>
+      <p><code>STAT$SAMPLE_SIZE</code> теперь равен числу собранных значений. Доля NULL в ветке SAMPLE считается от него.</p>
+      <p>20 000 строк без NULL, 90% — текст 2 000 байт: <code>STAT$NULL_FRACTION</code> = <b>0.9</b>; <code>b is null</code> — 18 000 (0). После исправления — 0 и 1 строка.</p>
+      <span class="test-ref">tests/61_blob_level0_collect.sql</span></div>
+    </li>
+    <li class="f" data-sev="high" data-status="test">
+      <div class="f-tags"><span class="id">Z5</span><span class="chip sev-high">высоко</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4>Доля распределения BLOB не учитывает пропущенные значения</h4><span class="loc">ext_stats.h getBlobLevel0Share · b2800ecb7d</span>
+      <p>Доля берётся как «уровень 0 / все». Значения уровня 0 длиннее 1 024 байт в распределение не входят, но в долю входят.</p>
+      <p><code>b = 'short'</code> — <b>20 000</b> (2 000); <code>b starting with 'sh'</code> — 20 000 (2 000). После исправления — 2 000 и 2 090.</p>
+      <span class="test-ref">tests/61_blob_level0_collect.sql</span></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Нет находок для этого фильтра.</p>
+
+  <h3>Средние</h3>
+  <ul class="findings">
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">Z2</span><span class="chip sev-med">средне</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4>Сумма исключающих равенств больше 1</h4><span class="loc">optimizer/Optimizer.cpp getSelectivity, Retrieval.cpp</span>
+      <p><code>X = ? OR X = ? OR X = ?</code> по колонке с двумя значениями даёт 1.5. С таким операндом внешний <code>s1 + s2 - s1*s2</code> убывает. После исправления сумма ограничена 1.</p>
+      <span class="test-ref">tests/62_or_estimate.sql</span></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">Z3</span><span class="chip sev-med">средне</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4>OR границ одной колонки оценивается как независимые условия</h4><span class="loc">optimizer/Optimizer.h combineRangeDisjunct</span>
+      <p><code>x &lt; 10000 or x &lt; 19000</code> — 27 100 (19 000); 10 границ — <b>79 241</b> (19 000). После исправления — 19 000 в обоих случаях; <code>x &lt; 10000 or x &gt; 90000</code> — 19 999 (19 999).</p>
+      <p>Правило: границы с одной стороны — <code>max(s1, s2)</code>, с разных сторон — <code>min(s1 + s2, 1)</code>. Только при <code>PredicateCorrelation = true</code>.</p>
+      <span class="test-ref">tests/62_or_estimate.sql</span></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">Z6</span><span class="chip sev-med">средне</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4><code>REFRESH … COLUMN</code> не читает кодировку текстового BLOB</h4><span class="loc">Collector.cpp getColumnInfo</span>
+      <p>Значения сортируются как NONE, пишется <code>STAT$CHARSET = 0</code>, кэш потом отбрасывает распределение. После исправления — 4 (UTF8).</p>
+      <span class="test-ref">tests/61_blob_level0_collect.sql</span></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">Z7</span><span class="chip sev-med">средне</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4><code>COLLATE</code> колонки домена не читается</h4><span class="loc">Collector.cpp · RDB$RELATION_FIELDS.RDB$COLLATION_ID</span>
+      <p>Домен + <code>COLLATE UNICODE_CI</code>, <code>b = 'abc'</code>: 50 (100). После исправления и REFRESH — 100.</p>
+      <span class="test-ref">tests/61_blob_level0_collect.sql</span></div>
+    </li>
+    <li class="f" data-sev="med" data-status="test">
+      <div class="f-tags"><span class="id">Z8</span><span class="chip sev-med">средне</span><span class="chip st st-test">исправлено</span></div>
+      <div class="f-body"><h4>Статистика удалённой VARCHAR-колонки применяется к BLOB с тем же именем</h4><span class="loc">StatisticsCache.cpp</span>
+      <p>Проверка устаревания сравнивает сохранённый тип varying с описателем BLOB и пропускает старое распределение. После исправления оно отбрасывается до следующего REFRESH.</p>
+      <span class="test-ref">tests/61_blob_level0_collect.sql</span></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Нет находок для этого фильтра.</p>
+
+  <h3>Низкие</h3>
+  <ul class="findings">
+    <li class="f" data-sev="low" data-status="open">
+      <div class="f-tags"><span class="id">Z9</span><span class="chip sev-low">низко</span></div>
+      <div class="f-body"><h4>Литерал длиннее 1 024 байт в равенстве по BLOB</h4><p>Оценка — 1 строка: такие значения в распределение не входят.</p></div>
+    </li>
+    <li class="f" data-sev="low" data-status="open">
+      <div class="f-tags"><span class="id">Z10</span><span class="chip sev-low">низко</span></div>
+      <div class="f-body"><h4>Редкие значения BLOB при SAMPLE</h4><p>Знаменатель оценки — число собранных строк выборки.</p></div>
+    </li>
+    <li class="f" data-sev="low" data-status="open">
+      <div class="f-tags"><span class="id">Z11</span><span class="chip sev-low">низко</span></div>
+      <div class="f-body"><h4>Оценка цепочки OR зависит от порядка членов</h4><p>Смешанные деревья и <code>BETWEEN</code> остаются на <code>s1 + s2 - s1*s2</code>.</p></div>
+    </li>
+    <li class="f" data-sev="low" data-status="open">
+      <div class="f-tags"><span class="id">Z12</span><span class="chip sev-low">низко</span></div>
+      <div class="f-body"><h4><code>b like '%x%'</code>: константа для длинных значений</h4><p>Длинные значения оцениваются константой 0.005: 90 строк (18 000). В README неточно: «описатель BLOB не несёт коллацию».</p><span class="test-ref">tests/61_blob_level0_collect.sql</span></div>
+    </li>
+  </ul>
+  <p class="empty" hidden>Нет находок для этого фильтра.</p>
+</section>
+
+<section id="fixes">
+  <h2><span class="num">4</span>Исправления — PR #30</h2>
+  <p class="note">Ветка <code>v5.0-impr-opt-review7</code> от b2800ecb7d, 9 коммитов. Принят 16.11, HEAD ветки — 6df82603c4. Вывод: <code>tests/out_new_*</code> — b2800ecb7d, <code>tests/out_fix_*</code> — PR #30.</p>
+  <div class="scroll">
+    <table class="grid status-table">
+      <thead><tr><th>#</th><th>Коммит</th><th>Было → стало (реально)</th></tr></thead>
+      <tbody>
+        <tr><td class="id">Z1</td><td class="c">ae65cff8f4</td><td>77 596 → 103 461 (100 000)</td></tr>
+        <tr><td class="id">Z2</td><td class="c">8a989c9a3c</td><td>сумма 1.5 → 1</td></tr>
+        <tr><td class="id">Z3</td><td class="c">237f2feda0</td><td>79 241 → 19 000 (19 000)</td></tr>
+        <tr><td class="id">Z4</td><td class="c">2fd1f2d23a</td><td>NULL_FRACTION 0.9 → 0; 18 000 → 1 (0)</td></tr>
+        <tr><td class="id">Z5</td><td class="c">c9354e3b0f</td><td>20 000 → 2 000 (2 000)</td></tr>
+        <tr><td class="id">Z6</td><td class="c">92e6e08b25</td><td>STAT$CHARSET 0 → 4</td></tr>
+        <tr><td class="id">Z7</td><td class="c">6a8c887c72</td><td>50 → 100 (100)</td></tr>
+        <tr><td class="id">Z8</td><td class="c">1c35cdef03</td><td>старое распределение отбрасывается</td></tr>
+        <tr><td class="id">docs</td><td class="c">5e5ea1578c</td><td>таблица раздела о корреляции; свойства OR</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="plain">
+    <li><b>Проверка ветки целиком:</b> тесты 00–42 — те же коды завершения, тест 42 — 198 из 198; тесты 43–60 совпадают; 1 200 случайных запросов — 1 200 одинаковых результатов.</li>
+    <li><b>CEB:</b> 118 из 121, контрольные суммы совпали с b2800ecb7d в 117 из 117.</li>
+  </ul>
+</section>
+
+<section id="status">
+  <h2><span class="num">5</span>Статус прошлых находок</h2>
+  <ul class="plain">
+    <li><b>Закрыто слиянием PR #28:</b> Y1–Y13, Y18–Y20, W4 (запросы не падают), W9, W15.</li>
+    <li><b>9a_002 (7 строк вместо 28):</b> не повторился ни в одном из четырёх полных прогонов 16.11. Причина не найдена.</li>
+    <li><b>8a_004:</b> завершается во всех прогонах 16.11 (15.11 — таймаут).</li>
+    <li><b>Не исправлено:</b> Y14–Y17, W10, N3, M1, E2, C3; остаток Y6 (<code>'Name%Surname%'</code>); автоматическое обновление таблиц STAT$.</li>
+  </ul>
+</section>
+
+<section id="plan">
+  <h2><span class="num">6</span>План действий</h2>
+  <ol class="plain">
+    <li><b>Инструкция обновления:</b> после установки сборки выполнить <code>ALTER DATABASE REFRESH STATISTICS</code>.</li>
+    <li><b>CEB:</b> разобрать 11b_005, 11b_012, 9a_014, 9a_015, 9a_004 и таймаут 11b_010.</li>
+    <li><b>Цена BLOB без распределения:</b> не менять порядок соединения, если селективность фильтра по BLOB неизвестна (нет статистики, бинарный BLOB).</li>
+    <li><b>Z9–Z12</b> и константа <code>CONTAINS_REMAINDER_SELECTIVITY</code> для длинных значений.</li>
+    <li><b>Процесс:</b> PR с изменением цены принимать после полного CEB. PR #28 был слит до конца прогона, и регресс Y7 попал в ветку.</li>
+    <li>Тесты 61 и 62 добавить в набор «horses».</li>
+  </ol>
+</section>
+
+<footer>
+  <p>Источники: <code>git diff b69da49179..b2800ecb7d</code> ветки v5.0-impr-opt; локальные сборки 16.11; тесты 00–62; четыре полных прогона CEB на dellg15.</p>
+  <p>Markdown-версия: <a href="https://github.com/alexeykovyazin/optimizertestplan/blob/main/reviews/2026-11-16_impropt/REVIEW.md">reviews/2026-11-16_impropt/REVIEW.md</a> · тесты: <a href="https://github.com/alexeykovyazin/optimizertestplan/tree/main/reviews/2026-11-16_impropt/tests">tests/</a> · CEB: <a href="https://github.com/alexeykovyazin/optimizertestplan/tree/main/reviews/2026-11-16_impropt/results">results/</a> · прошлое ревью: <a href="../2026-11-15_impropt/index.html">15.11</a></p>
+</footer>
+
+</div>
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.f'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  function match(li, mode) {
+    if (mode === 'severe') return li.dataset.sev === 'crit' || li.dataset.sev === 'high';
+    if (mode === 'test') return li.dataset.status === 'test';
+    return true;
+  }
+  ['all', 'severe', 'test'].forEach(function (mode) {
+    var n = items.filter(function (li) { return match(li, mode); }).length;
+    var el = document.querySelector('[data-count="' + mode + '"]');
+    if (el) el.textContent = n;
+  });
+  function apply(mode) {
+    items.forEach(function (li) { li.hidden = !match(li, mode); });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === mode)); });
+    document.querySelectorAll('.findings').forEach(function (list) {
+      var any = Array.prototype.some.call(list.children, function (li) { return !li.hidden; });
+      var note = list.nextElementSibling;
+      if (note && note.classList.contains('empty')) note.hidden = any;
+    });
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.dataset.filter); });
+  });
+})();
+</script>
+
+</body>
+</html>

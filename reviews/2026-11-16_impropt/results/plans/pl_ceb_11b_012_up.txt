@@ -1,0 +1,61 @@
+
+Select Expression
+    -> Sort (record length: 948, key length: 12) (rows=1.86)
+        -> Aggregate (rows=1.86)
+            -> Sort (record length: 1322, key length: 924) (rows=1.86)
+                -> Filter (rows=1.86)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.86)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=210.51)
+                            -> Nested Loop Join (inner) (rows=1960.22)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1958.79)
+                                    -> Nested Loop Join (inner) (rows=5876.38)
+                                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=378.93)
+                                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=42819.14)
+                                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=168608.00)
+                                                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=168608.00)
+                                                        -> Nested Loop Join (inner) (rows=168608.00)
+                                                            -> Filter (rows=4.00)
+                                                                -> Table "KIND_TYPE" as "KT" Full Scan (rows=7.00)
+                                                            -> Filter (rows=38153.66)
+                                                                -> Table "TITLE" as "T" Access By ID (rows=54084.81)
+                                                                    -> Bitmap
+                                                                        -> Index "KIND_ID_TITLE" Range Scan (full match)
+                                                            -> Filter (rows=1.10)
+                                                                -> Table "MOVIE_COMPANIES" as "MC" Access By ID (rows=1.10)
+                                                                    -> Bitmap
+                                                                        -> Index "MOVIE_ID_MOVIE_COMPANIES" Range Scan (full match)
+                                                        -> Record Buffer (record length: 25) (rows=4.00)
+                                                            -> Table "COMPANY_TYPE" as "CT" Full Scan (rows=4.00)
+                                                    -> Record Buffer (record length: 801) (rows=234997.00)
+                                                        -> Table "COMPANY_NAME" as "CN" Full Scan (rows=234997.00)
+                                                -> Record Buffer (record length: 41) (rows=628539.98)
+                                                    -> Filter (rows=628539.98)
+                                                        -> Table "MOVIE_INFO" as "MI1" Access By ID (rows=1257079.95)
+                                                            -> Bitmap
+                                                                -> Index "INFO_TYPE_ID_MOVIE_INFO" Range Scan (full match)
+                                            -> Record Buffer (record length: 25) (rows=1.00)
+                                                -> Filter (rows=1.00)
+                                                    -> Table "INFO_TYPE" as "IT1" Access By ID (rows=1.00)
+                                                        -> Bitmap
+                                                            -> Index "INFO_TYPE_PK" Unique Scan
+                                        -> Filter (rows=15.51)
+                                            -> Table "CAST_INFO" as "CI" Access By ID (rows=15.51)
+                                                -> Bitmap
+                                                    -> Index "MOVIE_ID_CAST_INFO" Range Scan (full match)
+                                    -> Record Buffer (record length: 161) (rows=4.00)
+                                        -> Filter (rows=4.00)
+                                            -> Table "ROLE_TYPE" as "RT" Full Scan (rows=12.00)
+                                -> Filter (rows=1.00)
+                                    -> Table "NAME" as "N" Access By ID (rows=1.00)
+                                        -> Bitmap
+                                            -> Index "NAME_PK" Unique Scan
+                            -> Record Buffer (record length: 41) (rows=59421.46)
+                                -> Filter (rows=59421.46)
+                                    -> Table "PERSON_INFO" as "PI" Access By ID (rows=118842.93)
+                                        -> Bitmap
+                                            -> Index "INFO_TYPE_ID_PERSON_INFO" Range Scan (full match)
+                        -> Record Buffer (record length: 25) (rows=1.00)
+                            -> Filter (rows=1.00)
+                                -> Table "INFO_TYPE" as "IT2" Access By ID (rows=1.00)
+                                    -> Bitmap
+                                        -> Index "INFO_TYPE_PK" Unique Scan
