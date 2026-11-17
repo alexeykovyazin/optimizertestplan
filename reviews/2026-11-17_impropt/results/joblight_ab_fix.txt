@@ -1,0 +1,572 @@
+
+CONSTANT 
+======== 
+Q006-1   
+
+Current memory = 840015136
+Delta memory = 10560
+Max memory = 840101104
+Elapsed time = 0.002 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 20
+
+                COUNT 
+===================== 
+             62682311 
+
+Current memory = 840792064
+Delta memory = 776928
+Max memory = 1518455200
+Elapsed time = 25.436 sec
+Buffers = 50000
+Reads = 110554
+Writes = 2
+Fetches = 22330568
+
+CONSTANT 
+======== 
+Q007-1   
+
+Current memory = 840802064
+Delta memory = 10000
+Max memory = 1518455200
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             11990578 
+
+Current memory = 840826336
+Delta memory = 24272
+Max memory = 1518455200
+Elapsed time = 5.961 sec
+Buffers = 50000
+Reads = 93721
+Writes = 0
+Fetches = 20470367
+
+CONSTANT 
+======== 
+Q009-1   
+
+Current memory = 840836336
+Delta memory = 10000
+Max memory = 1518455200
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+               850677 
+
+Current memory = 841535312
+Delta memory = 698976
+Max memory = 1518455200
+Elapsed time = 2.885 sec
+Buffers = 50000
+Reads = 43940
+Writes = 0
+Fetches = 4036340
+
+CONSTANT 
+======== 
+Q010-1   
+
+Current memory = 841545312
+Delta memory = 10000
+Max memory = 1518455200
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+               179616 
+
+Current memory = 842093760
+Delta memory = 548448
+Max memory = 1518455200
+Elapsed time = 0.814 sec
+Buffers = 50000
+Reads = 22
+Writes = 0
+Fetches = 3400736
+
+CONSTANT 
+======== 
+Q011-1   
+
+Current memory = 842103760
+Delta memory = 10000
+Max memory = 1518455200
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+              2031666 
+
+Current memory = 842652368
+Delta memory = 548608
+Max memory = 1518455200
+Elapsed time = 1.958 sec
+Buffers = 50000
+Reads = 2129
+Writes = 0
+Fetches = 5699554
+
+CONSTANT 
+======== 
+Q012-1   
+
+Current memory = 842662368
+Delta memory = 10000
+Max memory = 1518455200
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+              6333736 
+
+Current memory = 843314384
+Delta memory = 652016
+Max memory = 1518455200
+Elapsed time = 6.014 sec
+Buffers = 50000
+Reads = 75383
+Writes = 2
+Fetches = 12248342
+
+CONSTANT 
+======== 
+Q013-1   
+
+Current memory = 842617008
+Delta memory = -697376
+Max memory = 1518455200
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+              1931628 
+
+Current memory = 842643088
+Delta memory = 26080
+Max memory = 1518455200
+Elapsed time = 4.720 sec
+Buffers = 50000
+Reads = 98980
+Writes = 0
+Fetches = 7511420
+
+CONSTANT 
+======== 
+Q014-1   
+
+Current memory = 842653088
+Delta memory = 10000
+Max memory = 1518455200
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             12738520 
+
+Current memory = 843185792
+Delta memory = 532704
+Max memory = 1525018848
+Elapsed time = 8.769 sec
+Buffers = 50000
+Reads = 90751
+Writes = 0
+Fetches = 19076077
+
+CONSTANT 
+======== 
+Q016-1   
+
+Current memory = 842637344
+Delta memory = -548448
+Max memory = 1525018848
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+                13221 
+
+Current memory = 842810448
+Delta memory = 173104
+Max memory = 1525018848
+Elapsed time = 0.839 sec
+Buffers = 50000
+Reads = 23918
+Writes = 0
+Fetches = 2637538
+
+CONSTANT 
+======== 
+Q019-1   
+
+Current memory = 842820448
+Delta memory = 10000
+Max memory = 1525018848
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+            114182642 
+
+Current memory = 842847376
+Delta memory = 26928
+Max memory = 2412579824
+Elapsed time = 34.012 sec
+Buffers = 50000
+Reads = 204288
+Writes = 2
+Fetches = 44202162
+
+CONSTANT 
+======== 
+Q022-1   
+
+Current memory = 842857376
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             21454165 
+
+Current memory = 842880704
+Delta memory = 23328
+Max memory = 2412579824
+Elapsed time = 92.379 sec
+Buffers = 50000
+Reads = 6519044
+Writes = 0
+Fetches = 50543842
+
+CONSTANT 
+======== 
+Q006-2   
+
+Current memory = 842890704
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             62682311 
+
+Current memory = 842915712
+Delta memory = 25008
+Max memory = 2412579824
+Elapsed time = 20.679 sec
+Buffers = 50000
+Reads = 110400
+Writes = 0
+Fetches = 22329616
+
+CONSTANT 
+======== 
+Q007-2   
+
+Current memory = 842925712
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             11990578 
+
+Current memory = 842949776
+Delta memory = 24064
+Max memory = 2412579824
+Elapsed time = 6.034 sec
+Buffers = 50000
+Reads = 93721
+Writes = 0
+Fetches = 20470367
+
+CONSTANT 
+======== 
+Q009-2   
+
+Current memory = 842959776
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+               850677 
+
+Current memory = 843507760
+Delta memory = 547984
+Max memory = 2412579824
+Elapsed time = 2.952 sec
+Buffers = 50000
+Reads = 43885
+Writes = 0
+Fetches = 4036228
+
+CONSTANT 
+======== 
+Q010-2   
+
+Current memory = 842959776
+Delta memory = -547984
+Max memory = 2412579824
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+               179616 
+
+Current memory = 843508224
+Delta memory = 548448
+Max memory = 2412579824
+Elapsed time = 0.934 sec
+Buffers = 50000
+Reads = 22
+Writes = 0
+Fetches = 3400736
+
+CONSTANT 
+======== 
+Q011-2   
+
+Current memory = 842976672
+Delta memory = -531552
+Max memory = 2412579824
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+              2031666 
+
+Current memory = 843524656
+Delta memory = 547984
+Max memory = 2412579824
+Elapsed time = 2.031 sec
+Buffers = 50000
+Reads = 2129
+Writes = 0
+Fetches = 5699554
+
+CONSTANT 
+======== 
+Q012-2   
+
+Current memory = 842956080
+Delta memory = -568576
+Max memory = 2412579824
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+              6333736 
+
+Current memory = 843487632
+Delta memory = 531552
+Max memory = 2412579824
+Elapsed time = 5.800 sec
+Buffers = 50000
+Reads = 75371
+Writes = 0
+Fetches = 12248227
+
+CONSTANT 
+======== 
+Q013-2   
+
+Current memory = 842687136
+Delta memory = -800496
+Max memory = 2412579824
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+              1931628 
+
+Current memory = 842713008
+Delta memory = 25872
+Max memory = 2412579824
+Elapsed time = 4.769 sec
+Buffers = 50000
+Reads = 98980
+Writes = 0
+Fetches = 7511426
+
+CONSTANT 
+======== 
+Q014-2   
+
+Current memory = 842723008
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             12738520 
+
+Current memory = 843255712
+Delta memory = 532704
+Max memory = 2412579824
+Elapsed time = 9.381 sec
+Buffers = 50000
+Reads = 90751
+Writes = 0
+Fetches = 19076077
+
+CONSTANT 
+======== 
+Q016-2   
+
+Current memory = 842707264
+Delta memory = -548448
+Max memory = 2412579824
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+                13221 
+
+Current memory = 842733296
+Delta memory = 26032
+Max memory = 2412579824
+Elapsed time = 0.770 sec
+Buffers = 50000
+Reads = 23873
+Writes = 0
+Fetches = 2637350
+
+CONSTANT 
+======== 
+Q019-2   
+
+Current memory = 842743296
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.000 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+            114182642 
+
+Current memory = 842770224
+Delta memory = 26928
+Max memory = 2412579824
+Elapsed time = 30.583 sec
+Buffers = 50000
+Reads = 204288
+Writes = 0
+Fetches = 44202162
+
+CONSTANT 
+======== 
+Q022-2   
+
+Current memory = 842780224
+Delta memory = 10000
+Max memory = 2412579824
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+                COUNT 
+===================== 
+             21454165 
+
+Current memory = 842803552
+Delta memory = 23328
+Max memory = 2412579824
+Elapsed time = 93.104 sec
+Buffers = 50000
+Reads = 6519044
+Writes = 0
+Fetches = 50543842

@@ -1,0 +1,56 @@
+
+TAG          
+============ 
+B1: the plan 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=18993561.34)
+            -> Record Buffer (batches: 16, record length: 50) (rows=237999.91)
+                -> Nested Loop Join (inner) (rows=237999.91)
+                    -> Table "P" Full Scan (rows=22170.29)
+                    -> Filter (rows=10.74)
+                        -> Table "L" Access By ID (rows=10.74)
+                            -> Bitmap
+                                -> Index "L_PID" Range Scan (full match)
+            -> Record Buffer (batches: 16, record length: 25) (rows=7980491.13)
+                -> Table "G" Full Scan (rows=7980491.13)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG             
+=============== 
+B2: the results 
+
+
+PLAN HASH (JOIN (P NATURAL, L INDEX (L_PID)), G NATURAL)
+
+                COUNT                                           SUM                                           SUM 
+===================== ============================================= ============================================= 
+             16000000                                63999768000000                                 7359992000000 
+
+Current memory = 20522080
+Delta memory = 25648
+Max memory = 126144608
+Elapsed time = 13.499 sec
+Buffers = 2048
+Reads = 91694
+Writes = 1
+Fetches = 8641824
+
+PLAN JOIN (P NATURAL, L INDEX (L_PID), G INDEX (G_PID))
+
+                COUNT                                           SUM MAX                                      MIN                                      
+===================== ============================================= ======================================== ======================================== 
+              1600000                                 6400008800000 pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad 0            
+
+Current memory = 20551376
+Delta memory = 29296
+Max memory = 126144608
+Elapsed time = 7.998 sec
+Buffers = 2048
+Reads = 162103
+Writes = 0
+Fetches = 3329146
+-- rc=0, 54 s
