@@ -1,0 +1,228 @@
+
+TAG      
+======== 
+S: plans 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=31802860.52)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=31802860.52)
+                -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T1" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 25) (rows=63302.00)
+                    -> Table "T3" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=7950715.13)
+            -> Hash Join (inner) (keys: 2, total key length: 8) (rows=250822.69)
+                -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T1" Full Scan (rows=63302.00)
+            -> Record Buffer (record length: 25) (rows=63302.00)
+                -> Table "T3" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=7950715.13)
+            -> Hash Join (inner) (keys: 2, total key length: 8) (rows=501645.38)
+                -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=63302.00)
+                    -> Table "T3" Full Scan (rows=63302.00)
+            -> Record Buffer (record length: 33) (rows=31651.00)
+                -> Filter (rows=31651.00)
+                    -> Table "T1" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1987678.78)
+            -> Hash Join (inner) (keys: 2, total key length: 8) (rows=1987678.78)
+                -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T1" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=63302.00)
+                    -> Table "T3" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 2, total key length: 8) (rows=31802860.52)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1003290.75)
+                -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T1" Full Scan (rows=63302.00)
+            -> Record Buffer (record length: 25) (rows=63302.00)
+                -> Table "T3" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=7950715.13)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=7950715.13)
+                -> Filter (rows=31651.00)
+                    -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T1" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T3" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1008104512.49)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1008104512.49)
+                -> Table "T2" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T1" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 25) (rows=63302.00)
+                    -> Table "T3" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 25) (rows=63302.00)
+                    -> Table "T4" Full Scan (rows=63302.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=143798911885.41)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=143798911885.41)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=31802860.52)
+                    -> Table "T2" Full Scan (rows=63302.00)
+                    -> Record Buffer (record length: 33) (rows=31651.00)
+                        -> Filter (rows=31651.00)
+                            -> Table "T1" Full Scan (rows=63302.00)
+                    -> Record Buffer (record length: 25) (rows=63302.00)
+                        -> Table "T3" Full Scan (rows=63302.00)
+                -> Record Buffer (record length: 33) (rows=31651.00)
+                    -> Filter (rows=31651.00)
+                        -> Table "T4" Full Scan (rows=63302.00)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG        
+========== 
+S: results 
+
+
+PLAN HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S1                     2694600                                   80386205400 
+
+
+PLAN HASH (HASH (T2 NATURAL, T1 NATURAL), T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S2                      896220                                   26736423780 
+
+
+PLAN HASH (HASH (T2 NATURAL, T3 NATURAL), T1 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S3                      896305                                   26739149495 
+
+
+PLAN HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S4                      298518                                    8507149482 
+
+
+PLAN HASH (HASH (T2 NATURAL, T1 NATURAL), T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S5                     2694600                                   80386205400 
+
+
+PLAN HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S6                        5535                                      12862665 
+
+
+PLAN HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL, T4 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S7                     8100000                                  236110950000 
+
+
+PLAN HASH (HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL), T4 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S8                    11572200                                   17351741700 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                     
+======================================= 
+N: the same queries by the nested loops 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S1                     2694600                                   80386205400 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S2                      896220                                   26736423780 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S3                      896305                                   26739149495 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S4                      298518                                    8507149482 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S5                     2694600                                   80386205400 
+
+
+PLAN HASH (T1 NATURAL, T2 NATURAL, T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S6                        5535                                      12862665 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X), T4 INDEX (T4_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S7                     8100000                                  236110950000 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X), T4 INDEX (T4_Z))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+S8                    11572200                                   17351741700 
+
+-- rc=0, 153 s

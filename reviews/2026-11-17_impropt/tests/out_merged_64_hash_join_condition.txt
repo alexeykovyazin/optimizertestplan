@@ -1,0 +1,283 @@
+
+TAG                             
+=============================== 
+H1: star join on one key, plans 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=23339678.76)
+            -> Record Buffer (batches: 8, record length: 50) (rows=492261.51)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=492261.51)
+                    -> Table "B" Full Scan (rows=443651.37)
+                    -> Record Buffer (record length: 25) (rows=22170.29)
+                        -> Table "P" Full Scan (rows=22170.29)
+            -> Record Buffer (batches: 8, record length: 25) (rows=4736623.20)
+                -> Table "G" Full Scan (rows=4736623.20)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=23339678.76)
+            -> Record Buffer (batches: 8, record length: 50) (rows=492261.51)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=492261.51)
+                    -> Table "B" Full Scan (rows=443651.37)
+                    -> Record Buffer (record length: 25) (rows=22170.29)
+                        -> Table "P" Full Scan (rows=22170.29)
+            -> Record Buffer (batches: 8, record length: 25) (rows=4736623.20)
+                -> Table "G" Full Scan (rows=4736623.20)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                               
+================================= 
+H1: star join on one key, results 
+
+
+PLAN HASH (HASH (B NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM                                           SUM                                           SUM 
+===================== ============================================= ============================================= ============================================= 
+             17964000                                40418751240000                                 3592789560000                                     887760000 
+
+
+PLAN HASH (HASH (B NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM                                           SUM                                           SUM 
+===================== ============================================= ============================================= ============================================= 
+             17964000                                40418751240000                                 3592789560000                                     887760000 
+
+
+PLAN HASH (B NATURAL, P NATURAL, G NATURAL)
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              7984000                                 7983889440000 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                          
+============================================ 
+H2: IS NOT DISTINCT FROM keeps the NULL keys 
+
+
+PLAN JOIN (P NATURAL, B INDEX (B_PID))
+
+                COUNT 
+===================== 
+                 8800 
+
+
+PLAN HASH (B NATURAL, P NATURAL, G NATURAL)
+
+                COUNT 
+===================== 
+                  200 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                                     
+======================================================================= 
+H3: mixed types in one class (int, bigint, varchar): nothing is dropped 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 8) (rows=23339678.76)
+            -> Record Buffer (batches: 16, record length: 58) (rows=492261.51)
+                -> Hash Join (inner) (keys: 1, total key length: 8) (rows=492261.51)
+                    -> Table "B" Full Scan (rows=443651.37)
+                    -> Record Buffer (record length: 25) (rows=22170.29)
+                        -> Table "P" Full Scan (rows=22170.29)
+            -> Record Buffer (batches: 16, record length: 33) (rows=4736623.20)
+                -> Table "G" Full Scan (rows=4736623.20)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1165817.04)
+            -> Hash Join (inner) (keys: 1, total key length: 10) (rows=11658170.36)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=491769.28)
+                    -> Table "B" Full Scan (rows=443651.37)
+                    -> Record Buffer (record length: 25) (rows=22170.29)
+                        -> Table "P" Full Scan (rows=22170.29)
+                -> Record Buffer (record length: 41) (rows=2368311.60)
+                    -> Filter (rows=2368311.60)
+                        -> Table "G" Full Scan (rows=4736623.20)
+
+PLAN HASH (HASH (B NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM 
+===================== ============================================= 
+             17964000                                40418751240000 
+
+
+PLAN HASH (HASH (B NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              7984000                                 7983889440000 
+
+
+PLAN HASH (HASH (B NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              3992000                                 1995944720000 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                        
+========================================================== 
+H4: mixed collations in one class (unicode_ci, utf8, utf8) 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=319299.67)
+            -> Hash Join (inner) (keys: 1, total key length: 40) (rows=3192996.71)
+                -> Nested Loop Join (inner) (rows=312732.30)
+                    -> Table "C1" Full Scan (rows=30630.00)
+                    -> Filter (rows=10.21)
+                        -> Table "C2" Access By ID (rows=10.21)
+                            -> Bitmap
+                                -> Index "C2_S" Range Scan (full match)
+                -> Record Buffer (record length: 65) (rows=30630.00)
+                    -> Table "C3" Full Scan (rows=30630.00)
+
+PLAN HASH (JOIN (C1 NATURAL, C2 INDEX (C2_S)), C3 NATURAL)
+
+                COUNT                   SUM                   SUM 
+===================== ===================== ===================== 
+               500000            7498500000            7498500000 
+
+
+PLAN HASH (JOIN (C1 NATURAL, C2 INDEX (C2_S)), C3 NATURAL)
+
+                COUNT                   SUM                   SUM 
+===================== ===================== ===================== 
+               500000            7498500000            7498500000 
+
+
+PLAN HASH (JOIN (C1 NATURAL, C2 INDEX (C2_S)), C3 NATURAL)
+
+                COUNT                   SUM                   SUM 
+===================== ===================== ===================== 
+               500000            7498500000            7498500000 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                           
+============================= 
+H5: two classes on one stream 
+
+
+PLAN JOIN (HASH (B NATURAL, P NATURAL), G INDEX (G_PID, G_PID8))
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              7984000                                 7983889440000 
+
+
+PLAN HASH (HASH (B NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM 
+===================== ============================================= 
+                39600                                   39531620400 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                                                                
+================================================================================== 
+H6: star of small hashed tables (the fused multi-river hash join keeps its filter) 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=2627837.03)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2627837.03)
+                -> Table "H" Full Scan (rows=106664.47)
+                -> Record Buffer (record length: 25) (rows=22170.29)
+                    -> Table "P" Full Scan (rows=22170.29)
+                -> Record Buffer (record length: 25) (rows=443651.37)
+                    -> Table "B" Full Scan (rows=443651.37)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=62234749.38)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=62234749.38)
+                -> Table "H" Full Scan (rows=106664.47)
+                -> Record Buffer (record length: 25) (rows=22170.29)
+                    -> Table "P" Full Scan (rows=22170.29)
+                -> Record Buffer (record length: 25) (rows=443651.37)
+                    -> Table "B" Full Scan (rows=443651.37)
+                -> Record Buffer (record length: 33) (rows=2368311.60)
+                    -> Filter (rows=2368311.60)
+                        -> Table "G" Full Scan (rows=4736623.20)
+
+PLAN HASH (H NATURAL, P NATURAL, B NATURAL)
+
+                COUNT                                           SUM                                           SUM 
+===================== ============================================= ============================================= 
+              1996000                                  399197028000                                   99797156000 
+
+
+PLAN HASH (HASH (H NATURAL, P NATURAL), B NATURAL)
+
+                COUNT                                           SUM                                           SUM 
+===================== ============================================= ============================================= 
+              1996000                                  399197028000                                   99797156000 
+
+
+PLAN HASH (H NATURAL, P NATURAL, B NATURAL, G NATURAL)
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              9970000                                 2492365070000 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                     
+======================================= 
+N: the same results by the nested loops 
+
+
+PLAN JOIN (P NATURAL, B INDEX (B_PID), G INDEX (G_PID))
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              7984000                                 7983889440000 
+
+
+PLAN JOIN (P NATURAL, B INDEX (B_PID), G INDEX (G_PID8))
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              7984000                                 7983889440000 
+
+
+PLAN JOIN (C1 NATURAL, C2 INDEX (C2_S), C3 INDEX (C3_S))
+
+                COUNT                   SUM                   SUM 
+===================== ===================== ===================== 
+               500000            7498500000            7498500000 
+
+
+PLAN JOIN (P NATURAL, B INDEX (B_PID), H INDEX (H_PID))
+
+                COUNT                                           SUM                                           SUM 
+===================== ============================================= ============================================= 
+              1996000                                  399197028000                                   99797156000 
+
+
+PLAN JOIN (P NATURAL, B INDEX (B_PID), H INDEX (H_PID), G INDEX (G_PID))
+
+                COUNT                                           SUM 
+===================== ============================================= 
+              9970000                                 2492365070000 
+
+-- rc=0, 656 s

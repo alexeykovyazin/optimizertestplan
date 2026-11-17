@@ -1,0 +1,48 @@
+diff --git a/src/jrd/optimizer/InnerJoin.cpp b/src/jrd/optimizer/InnerJoin.cpp
+index 9f71f2d1fa..efb6d81c46 100644
+--- a/src/jrd/optimizer/InnerJoin.cpp
++++ b/src/jrd/optimizer/InnerJoin.cpp
+@@ -1005,28 +1005,34 @@ River* InnerJoin::formRiver()
+ 						ignoreNulls = false;
+ 				}
+ 
+-				// The fused node absorbs the stream when its join keys belong
+-				// to the same equivalence class (every prior-side key must
+-				// already be a key of the node) and the capacity holds: the
+-				// new river under the single-table limit, the sum of the
+-				// hashed rivers under twice that. The leader is streamed and
+-				// is not counted
++				// The fused node absorbs the stream when its key list has the
++				// shape of the leader one and the capacity holds: the new river
++				// under the single-table limit, the sum of the hashed rivers
++				// under twice that. The leader is streamed and is not counted.
++				// Every hashed river is matched by the single hash of the leader
++				// keys, so the key list of the river must hash to the same
++				// bytes: the same number of the keys, and the key of every
++				// position must pair with a key the node already has at this
++				// position (the same equivalence class in the same order). A
++				// river joined by a part of the keys, by more keys or by the
++				// keys in another order would never match the leader hash
+ 
+ 				const FB_UINT64 newRows = (FB_UINT64) rsb->getCardinality();
+ 
+ 				bool absorb = fusedLeader && fusedRsb &&
+ 					rsbs.getCount() == 1 && rsbs[0] == fusedRsb &&
+ 					newRows < HashJoin::maxCapacity() &&
+-					fusedHashedRows + newRows < (FB_UINT64) HashJoin::maxCapacity() * 2;
++					fusedHashedRows + newRows < (FB_UINT64) HashJoin::maxCapacity() * 2 &&
++					keys[0]->getCount() == fusedKeys[0]->getCount();
+ 
+ 				for (FB_SIZE_T k = 0; absorb && k < keys[0]->getCount(); k++)
+ 				{
+ 					const auto field = (*keys[0])[k];
+ 					bool found = false;
+ 
+-					for (FB_SIZE_T j = 0; j < fusedKeyFields.getCount(); j++)
++					for (FB_SIZE_T j = 0; j < fusedKeys.getCount(); j++)
+ 					{
+-						if (field->sameAs(fusedKeyFields[j], false))
++						if (field->sameAs((*fusedKeys[j])[k], false))
+ 						{
+ 							found = true;
+ 							break;
