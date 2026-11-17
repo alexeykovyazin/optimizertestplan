@@ -1,0 +1,367 @@
+
+TAG          
+============ 
+P: the plans 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=639133920.34)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=639133920.34)
+                -> Table "D" Full Scan (rows=1063882.00)
+                -> Record Buffer (record length: 25) (rows=600756.40)
+                    -> Table "W" Full Scan (rows=600756.40)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=107936316.29)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=107936316.29)
+                -> Table "D" Full Scan (rows=1063882.00)
+                -> Record Buffer (record length: 25) (rows=101455.16)
+                    -> Table "S" Full Scan (rows=101455.16)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=639133920.34)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=639133920.34)
+                -> Table "D" Full Scan (rows=1063882.00)
+                -> Record Buffer (record length: 25) (rows=600756.40)
+                    -> Table "W" Full Scan (rows=600756.40)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=323808948.87)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=323808948.87)
+                -> Table "D" Full Scan (rows=1063882.00)
+                -> Record Buffer (record length: 25) (rows=304365.47)
+                    -> Table "Z" Full Scan (rows=304365.47)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=531941.00)
+            -> Filter (rows=531941.00)
+                -> Table "D" Full Scan (rows=1063882.00)
+            -> Record Buffer (record length: 33) (rows=600756.40)
+                -> Table "W" Full Scan (rows=600756.40)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=531941.00)
+            -> Hash Join (semi) (keys: 1, total key length: 4) (rows=531941.00)
+                -> Table "D" Full Scan (rows=1063882.00)
+                -> Record Buffer (record length: 25) (rows=600756.40)
+                    -> Table "W" Full Scan (rows=600756.40)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=32421716402.23)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=32421716402.23)
+                -> Table "W" Full Scan (rows=600756.40)
+                -> Record Buffer (record length: 25) (rows=101455.16)
+                    -> Table "S" Full Scan (rows=101455.16)
+                -> Record Buffer (record length: 33) (rows=531941.00)
+                    -> Filter (rows=531941.00)
+                        -> Table "D" Full Scan (rows=1063882.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=97265149206.70)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=97265149206.70)
+                -> Table "W" Full Scan (rows=600756.40)
+                -> Record Buffer (record length: 25) (rows=304365.47)
+                    -> Table "Z" Full Scan (rows=304365.47)
+                -> Record Buffer (record length: 33) (rows=531941.00)
+                    -> Filter (rows=531941.00)
+                        -> Table "D" Full Scan (rows=1063882.00)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG            
+============== 
+T: the results 
+
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T1                     3000000                                  899998500000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20359888
+Delta memory = 25648
+Max memory = 80612720
+Elapsed time = 1.933 sec
+Buffers = 2048
+Reads = 20111
+Writes = 1
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, S NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T2                      500000                                   24999750000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20382624
+Delta memory = 22736
+Max memory = 80612720
+Elapsed time = 0.423 sec
+Buffers = 2048
+Reads = 10231
+Writes = 0
+Fetches = 1140898
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T3                      600000                                  179999700000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20405088
+Delta memory = 22464
+Max memory = 80612720
+Elapsed time = 0.665 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+T4a                    2940000                                  881997060000 
+
+Current memory = 20424064
+Delta memory = 18976
+Max memory = 80612720
+Elapsed time = 1.193 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+T4b                    3180000                                  954002820000 
+
+Current memory = 20443072
+Delta memory = 19008
+Max memory = 80612720
+Elapsed time = 1.238 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, Z NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T5                     1500000                                  224999250000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20466576
+Delta memory = 23504
+Max memory = 80612720
+Elapsed time = 1.600 sec
+Buffers = 2048
+Reads = 14009
+Writes = 0
+Fetches = 1355996
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                 COUNT                                           SUM 
+======== ===================== ===================== ============================================= 
+T6                     1460000               1200000                                  359999400000 
+
+Current memory = 20486768
+Delta memory = 20192
+Max memory = 80612720
+Elapsed time = 0.718 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT 
+======== ===================== 
+T7                      100000 
+
+Current memory = 20507104
+Delta memory = 20336
+Max memory = 80612720
+Elapsed time = 0.382 sec
+Buffers = 2048
+Reads = 20116
+Writes = 0
+Fetches = 1680417
+
+PLAN HASH (W NATURAL, S NATURAL, D NATURAL)
+
+CONSTANT                 COUNT                                           SUM                                           SUM 
+======== ===================== ============================================= ============================================= 
+T8                     3000000                                  899998500000                                  149998500000 
+
+Current memory = 20531888
+Delta memory = 24784
+Max memory = 80612720
+Elapsed time = 1.226 sec
+Buffers = 2048
+Reads = 22007
+Writes = 0
+Fetches = 1787969
+
+PLAN HASH (W NATURAL, Z NATURAL, D NATURAL)
+
+CONSTANT                 COUNT                                           SUM                                           SUM 
+======== ===================== ============================================= ============================================= 
+T9                     9000000                                 2671885350000                                 1349995500000 
+
+Current memory = 20556672
+Delta memory = 24784
+Max memory = 80612720
+Elapsed time = 3.317 sec
+Buffers = 2048
+Reads = 25785
+Writes = 0
+Fetches = 2003067
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                            
+============================== 
+K: HashJoinBatchMemory = 65536 
+
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T1                     3000000                                  899998500000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20181600
+Delta memory = 26432
+Max memory = 58323920
+Elapsed time = 7.375 sec
+Buffers = 2048
+Reads = 20116
+Writes = 1
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T3                      600000                                  179999700000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20204064
+Delta memory = 22464
+Max memory = 58323920
+Elapsed time = 0.716 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+T4a                    2940000                                  881997060000 
+
+Current memory = 20223040
+Delta memory = 18976
+Max memory = 58365424
+Elapsed time = 4.797 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+T4b                    3180000                                  954002820000 
+
+Current memory = 20242048
+Delta memory = 19008
+Max memory = 58384432
+Elapsed time = 4.759 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                 COUNT                                           SUM 
+======== ===================== ===================== ============================================= 
+T6                     1460000               1200000                                  359999400000 
+
+Current memory = 20262240
+Delta memory = 20192
+Max memory = 58404624
+Elapsed time = 2.196 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                        
+========================== 
+Z: HashJoinBatchMemory = 0 
+
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T1                     3000000                                  899998500000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20181104
+Delta memory = 26432
+Max memory = 44135856
+Elapsed time = 13.372 sec
+Buffers = 2048
+Reads = 20116
+Writes = 1
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM MAX                                                                                                  MIN                                                                                                  
+======== ===================== ============================================= ==================================================================================================== ==================================================================================================== 
+T3                      600000                                  179999700000 pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad 0            
+
+Current memory = 20203568
+Delta memory = 22464
+Max memory = 44158544
+Elapsed time = 1.409 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+
+PLAN HASH (D NATURAL, W NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+T4b                    3180000                                  954002820000 
+
+Current memory = 20222576
+Delta memory = 19008
+Max memory = 44177584
+Elapsed time = 12.177 sec
+Buffers = 2048
+Reads = 20117
+Writes = 0
+Fetches = 1680416
+-- rc=0, 65 s

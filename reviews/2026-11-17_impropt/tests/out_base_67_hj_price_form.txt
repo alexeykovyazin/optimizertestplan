@@ -1,0 +1,68 @@
+
+TAG          
+============ 
+P: the plans 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1498828.00)
+            -> Table "LEAD" Full Scan (rows=2997656.00)
+            -> Filter (rows=0.50)
+                -> Table "BIG" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY1" Unique Scan
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=299765.60)
+            -> Table "LEAD" Full Scan (rows=2997656.00)
+            -> Record Buffer (record length: 33) (rows=536287.54)
+                -> Filter (rows=536287.54)
+                    -> Table "BIG" Full Scan (rows=5362875.43)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=16076055705.71)
+            -> Hash Join (inner) (keys: 1, total key length: 8) (rows=16076055705.71)
+                -> Table "BIG" Full Scan (rows=5362875.43)
+                -> Record Buffer (record length: 25) (rows=2997656.00)
+                    -> Table "LEAD" Full Scan (rows=2997656.00)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG            
+============== 
+R: the results 
+
+
+PLAN JOIN (LEAD NATURAL, BIG INDEX (RDB$PRIMARY1))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+R1                      150000                                  224992800000 
+
+Current memory = 20508784
+Delta memory = 20304
+Max memory = 23686912
+Elapsed time = 13.508 sec
+Buffers = 2048
+Reads = 44846
+Writes = 1
+Fetches = 18106489
+
+PLAN HASH (LEAD NATURAL, BIG NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+R2                       30000                                   44998650000 
+
+Current memory = 20527424
+Delta memory = 18640
+Max memory = 23686912
+Elapsed time = 4.530 sec
+Buffers = 2048
+Reads = 57354
+Writes = 0
+Fetches = 8229298
+-- rc=0, 67 s
