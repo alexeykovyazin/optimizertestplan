@@ -1,0 +1,15 @@
+
+PLAN JOIN (T NATURAL, CI INDEX (MOVIE_ID_CAST_INFO))
+
+                COUNT 
+===================== 
+             21454165 
+
+Current memory = 840679568
+Delta memory = 691408
+Max memory = 841244304
+Elapsed time = 90.048 sec
+Buffers = 50000
+Reads = 6525281
+Writes = 2
+Fetches = 50544729

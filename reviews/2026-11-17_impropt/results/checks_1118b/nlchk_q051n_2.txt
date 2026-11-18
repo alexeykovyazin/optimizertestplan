@@ -1,0 +1,15 @@
+
+PLAN JOIN (HASH (MK NATURAL, T INDEX (KIND_ID_TITLE)), CI INDEX (MOVIE_ID_CAST_INFO))
+
+                COUNT 
+===================== 
+            151179813 
+
+Current memory = 841211072
+Delta memory = 1222912
+Max memory = 867143360
+Elapsed time = 108.267 sec
+Buffers = 50000
+Reads = 2557383
+Writes = 2
+Fetches = 270616218

@@ -1,0 +1,30 @@
+
+PLAN JOIN (HASH (A MOVIE_INFO ORDER MOVIE_ID_MOVIE_INFO INDEX (INFO_TYPE_ID_MOVIE_INFO), B MOVIE_COMPANIES ORDER MOVIE_ID_MOVIE_COMPANIES, C CAST_INFO ORDER MOVIE_ID_CAST_INFO INDEX (ROLE_ID_CAST_INFO), D MOVIE_KEYWORD ORDER MOVIE_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK))
+
+                                          SUM 
+============================================= 
+                                   1352809555 
+
+Current memory = 852830912
+Delta memory = 12842752
+Max memory = 1006380656
+Elapsed time = 26.603 sec
+Buffers = 50000
+Reads = 129092
+Writes = 2
+Fetches = 40476610
+
+PLAN JOIN (HASH (A MOVIE_INFO ORDER MOVIE_ID_MOVIE_INFO INDEX (INFO_TYPE_ID_MOVIE_INFO), B MOVIE_COMPANIES ORDER MOVIE_ID_MOVIE_COMPANIES, C CAST_INFO ORDER MOVIE_ID_CAST_INFO INDEX (ROLE_ID_CAST_INFO), D MOVIE_KEYWORD ORDER MOVIE_ID_MOVIE_KEYWORD), T INDEX (TITLE_PK))
+
+                                          SUM 
+============================================= 
+                                   1352809555 
+
+Current memory = 852830912
+Delta memory = 12842752
+Max memory = 1006380656
+Elapsed time = 25.029 sec
+Buffers = 50000
+Reads = 129092
+Writes = 2
+Fetches = 40476610

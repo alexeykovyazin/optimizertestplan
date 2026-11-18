@@ -1,0 +1,15 @@
+
+PLAN HASH (CI NATURAL, T NATURAL)
+
+                COUNT 
+===================== 
+             21454165 
+
+Current memory = 840698400
+Delta memory = 693808
+Max memory = 908763216
+Elapsed time = 30.200 sec
+Buffers = 50000
+Reads = 208868
+Writes = 2
+Fetches = 39608417

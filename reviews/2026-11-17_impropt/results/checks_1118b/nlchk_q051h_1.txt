@@ -1,0 +1,15 @@
+
+PLAN MERGE (SORT (T INDEX (KIND_ID_TITLE)), SORT (MK NATURAL), SORT (CI NATURAL))
+
+                COUNT 
+===================== 
+            151179813 
+
+Current memory = 841224880
+Delta memory = 1236720
+Max memory = 2266458480
+Elapsed time = 44.832 sec
+Buffers = 50000
+Reads = 212972
+Writes = 2
+Fetches = 42258222
