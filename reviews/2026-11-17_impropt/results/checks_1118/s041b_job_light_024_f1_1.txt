@@ -1,0 +1,25 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3339455.08)
+            -> Table "MOVIE_COMPANIES" as "MC" Full Scan (rows=2609129.00)
+            -> Record Buffer (record length: 25) (rows=2528312.00)
+                -> Table "TITLE" as "T" Full Scan (rows=2528312.00)
+            -> Record Buffer (record length: 33) (rows=2991366.39)
+                -> Filter (rows=2991366.39)
+                    -> Table "CAST_INFO" as "CI" Access By ID (rows=2991366.39)
+                        -> Bitmap
+                            -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
+
+                COUNT 
+===================== 
+              4450853 
+
+Current memory = 841890512
+Delta memory = 1902352
+Max memory = 1075156912
+Elapsed time = 5.231 sec
+Buffers = 50000
+Reads = 51029
+Writes = 2
+Fetches = 8023910

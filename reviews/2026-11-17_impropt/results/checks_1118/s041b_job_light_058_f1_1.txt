@@ -1,0 +1,35 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=6625391.21)
+            -> Record Buffer (batches: 16, record length: 100) (rows=2524497.36)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2524497.36)
+                    -> Table "MOVIE_KEYWORD" as "MK" Full Scan (rows=4523930.00)
+                    -> Record Buffer (record length: 33) (rows=399347.64)
+                        -> Filter (rows=399347.64)
+                            -> Table "TITLE" as "T" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=2609129.00)
+                        -> Table "MOVIE_COMPANIES" as "MC" Full Scan (rows=2609129.00)
+                    -> Record Buffer (record length: 33) (rows=3646620.03)
+                        -> Filter (rows=3646620.03)
+                            -> Table "MOVIE_INFO" as "MI" Access By ID (rows=3646620.03)
+                                -> Bitmap
+                                    -> Index "INFO_TYPE_ID_MOVIE_INFO" Range Scan (full match)
+            -> Record Buffer (batches: 16, record length: 33) (rows=6133751.28)
+                -> Filter (rows=6133751.28)
+                    -> Table "CAST_INFO" as "CI" Access By ID (rows=6133751.28)
+                        -> Bitmap
+                            -> Index "ROLE_ID_CAST_INFO" Range Scan (full match)
+
+                COUNT 
+===================== 
+           1352809555 
+
+Current memory = 845113712
+Delta memory = 5125552
+Max memory = 3065780240
+Elapsed time = 168.635 sec
+Buffers = 50000
+Reads = 108111
+Writes = 2
+Fetches = 20417875

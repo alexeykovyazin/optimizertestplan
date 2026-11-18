@@ -1,0 +1,171 @@
+diff --git a/src/jrd/optimizer/InnerJoin.cpp b/src/jrd/optimizer/InnerJoin.cpp
+index 0bf63097e6..e05e2f8627 100644
+--- a/src/jrd/optimizer/InnerJoin.cpp
++++ b/src/jrd/optimizer/InnerJoin.cpp
+@@ -903,6 +903,7 @@ River* InnerJoin::formRiver()
+ 
+ 		HalfStaticArray<BoolExprNode*, OPT_STATIC_ITEMS> filterMatches;
+ 		HalfStaticArray<BoolExprNode*, OPT_STATIC_ITEMS> fusedSeedMatches;
++		HalfStaticArray<BoolExprNode*, OPT_STATIC_ITEMS> fusedConditions;
+ 
+ 		sortPtr = (sortWithheld || bestCount != innerStreams.getCount()) ?
+ 			nullptr : orgSortPtr;
+@@ -1067,13 +1068,13 @@ River* InnerJoin::formRiver()
+ 					// verified by the filter above the river (the same way
+ 					// the compiled-plan stars are joined)
+ 
+-					for (const auto match : fusedSeedMatches)
+-						filterMatches.add(match);
+-
+ 					fusedSeedMatches.clear();
+ 
+-					for (const auto match : verifiedMatches)
+-						filterMatches.add(match);
++					// PROTOTYPE: the matches of the absorbed river are verified by
++					// the node when the record of this river is fetched
++
++					fusedConditions.add(verifiedMatches.hasData() ?
++						Optimizer::composeConjuncts(getPool(), verifiedMatches) : nullptr);
+ 
+ 					fusedHashed.add(rsb);
+ 					fusedKeys.add(keys[1]);
+@@ -1089,9 +1090,9 @@ River* InnerJoin::formRiver()
+ 						args.add(hashed);
+ 
+ 					fusedRsb = FB_NEW_POOL(getPool())
+-						HashJoin(tdbb, csb, INNER_JOIN, fusedIgnoreNulls, nullptr,
++						HashJoin(tdbb, csb, INNER_JOIN, fusedIgnoreNulls,
+ 							args.getCount(), args.begin(), fusedKeys.begin(),
+-							fusedSelectivity);
++							fusedSelectivity, nullptr, fusedConditions.begin());
+ 
+ 					rsb = fusedRsb;
+ 				}
+@@ -1171,6 +1172,8 @@ River* InnerJoin::formRiver()
+ 							fusedLeader = hashJoinRsbs[0];
+ 							fusedRsb = rsb;
+ 							fusedSeedMatches.assign(verifiedMatches);
++							fusedConditions.clear();
++							fusedConditions.add(condition);
+ 							fusedHashed.clear();
+ 							fusedHashed.add(hashJoinRsbs[1]);
+ 							fusedKeys.clear();
+diff --git a/src/jrd/recsrc/HashJoin.cpp b/src/jrd/recsrc/HashJoin.cpp
+index b75e3c46f7..a14bbed474 100644
+--- a/src/jrd/recsrc/HashJoin.cpp
++++ b/src/jrd/recsrc/HashJoin.cpp
+@@ -412,7 +412,8 @@ unsigned HashJoin::maxCapacity()
+ 
+ HashJoin::HashJoin(thread_db* tdbb, CompilerScratch* csb, JoinType joinType, bool ignoreNulls,
+ 				   FB_SIZE_T count, RecordSource* const* args, NestValueArray* const* keys,
+-				   double selectivity, BoolExprNode* condition)
++				   double selectivity, BoolExprNode* condition,
++				   BoolExprNode* const* conditions)
+ 	: RecordSource(csb),
+ 	  m_joinType(joinType),
+ 	  m_condition(condition),
+@@ -421,7 +422,7 @@ HashJoin::HashJoin(thread_db* tdbb, CompilerScratch* csb, JoinType joinType, boo
+ {
+ 	fb_assert(count >= 2);
+ 
+-	init(tdbb, csb, count, args, keys, selectivity);
++	init(tdbb, csb, count, args, keys, selectivity, conditions);
+ }
+ 
+ HashJoin::HashJoin(thread_db* tdbb, CompilerScratch* csb, JoinType joinType, bool ignoreNulls,
+@@ -455,7 +456,7 @@ HashJoin::HashJoin(thread_db* tdbb, CompilerScratch* csb, BoolExprNode* boolean,
+ 
+ void HashJoin::init(thread_db* tdbb, CompilerScratch* csb, FB_SIZE_T count,
+ 					RecordSource* const* args, NestValueArray* const* keys,
+-					double selectivity)
++					double selectivity, BoolExprNode* const* conditions)
+ {
+ 	m_impure = csb->allocImpure<Impure>();
+ 
+@@ -491,6 +492,7 @@ void HashJoin::init(thread_db* tdbb, CompilerScratch* csb, FB_SIZE_T count,
+ 		SubStream sub;
+ 		sub.buffer = FB_NEW_POOL(csb->csb_pool) BufferedStream(csb, sub_rsb);
+ 		sub.keys = keys[i];
++		sub.condition = conditions ? conditions[i - 1] : nullptr;
+ 		const FB_SIZE_T subKeyCount = sub.keys->getCount();
+ 		sub.keyLengths = FB_NEW_POOL(csb->csb_pool) ULONG[subKeyCount];
+ 		sub.totalKeyLength = 0;
+@@ -859,6 +861,12 @@ bool HashJoin::isDependent(const StreamList& streams) const
+ 	// the filter above its inner stream, the hash join must do it itself:
+ 	// otherwise the optimizer places the stream this join depends on after it
+ 
++	for (FB_SIZE_T i = 0; i < m_args.getCount(); i++)
++	{
++		if (m_args[i].condition && m_args[i].condition->containsAnyStream(streams))
++			return true;
++	}
++
+ 	return (m_boolean && m_boolean->containsAnyStream(streams)) ||
+ 		(m_condition && m_condition->containsAnyStream(streams));
+ }
+@@ -1164,6 +1172,12 @@ bool HashJoin::fetchRecord(thread_db* tdbb, Impure* impure, FB_SIZE_T stream) co
+ 
+ 	const BufferedStream* const arg = m_args[stream].buffer;
+ 
++	// The conjuncts of this hashed stream (a fused join). They reference the
++	// leader, the prior hashed streams and this one: all of them are current
++	// here, the streams after this one are not and are never referenced
++
++	const BoolExprNode* const streamCondition = m_args[stream].condition;
++
+ 	ULONG position;
+ 	while (hashTable->iterate(stream, impure->irsb_leader_hash, position))
+ 	{
+@@ -1179,6 +1193,9 @@ bool HashJoin::fetchRecord(thread_db* tdbb, Impure* impure, FB_SIZE_T stream) co
+ 			if (m_condition && !m_condition->execute(tdbb, request))
+ 				continue;
+ 
++			if (streamCondition && !streamCondition->execute(tdbb, request))
++				continue;
++
+ 			if (isSpecialJoin && m_boolean && !m_boolean->execute(tdbb, request))
+ 				continue;
+ 
+@@ -1202,6 +1219,9 @@ bool HashJoin::fetchRecord(thread_db* tdbb, Impure* impure, FB_SIZE_T stream) co
+ 				if (m_condition && !m_condition->execute(tdbb, request))
+ 					continue;
+ 
++				if (streamCondition && !streamCondition->execute(tdbb, request))
++					continue;
++
+ 				if (isSpecialJoin && m_boolean && !m_boolean->execute(tdbb, request))
+ 					continue;
+ 
+diff --git a/src/jrd/recsrc/RecordSource.h b/src/jrd/recsrc/RecordSource.h
+index 4c3f926c14..9d8c25ed7c 100644
+--- a/src/jrd/recsrc/RecordSource.h
++++ b/src/jrd/recsrc/RecordSource.h
+@@ -1244,6 +1244,9 @@ namespace Jrd
+ 			NestValueArray* keys;
+ 			ULONG* keyLengths;
+ 			ULONG totalKeyLength;
++			const BoolExprNode* condition;	// the conjuncts of this hashed stream, verified
++											// when its record is fetched (the leader and
++											// the prior hashed streams are current)
+ 		};
+ 
+ 		struct Impure : public RecordSource::Impure
+@@ -1258,7 +1261,8 @@ namespace Jrd
+ 	public:
+ 		HashJoin(thread_db* tdbb, CompilerScratch* csb, JoinType joinType, bool ignoreNulls,
+ 				 FB_SIZE_T count, RecordSource* const* args, NestValueArray* const* keys,
+-				 double selectivity = 0, BoolExprNode* condition = nullptr);
++				 double selectivity = 0, BoolExprNode* condition = nullptr,
++				 BoolExprNode* const* conditions = nullptr);
+ 		HashJoin(thread_db* tdbb, CompilerScratch* csb, JoinType joinType, bool ignoreNulls,
+ 				 BoolExprNode* boolean, FB_SIZE_T count, RecordSource* const* args,
+ 				 NestValueArray* const* keys,
+@@ -1293,7 +1297,7 @@ namespace Jrd
+ 	private:
+ 		void init(thread_db* tdbb, CompilerScratch* csb, FB_SIZE_T count,
+ 				  RecordSource* const* args, NestValueArray* const* keys,
+-				  double selectivity);
++				  double selectivity, BoolExprNode* const* conditions = nullptr);
+ 		std::optional<ULONG> computeHash(thread_db* tdbb, Request* request,
+ 						  const SubStream& sub, UCHAR* buffer) const;
+ 		bool fetchRecord(thread_db* tdbb, Impure* impure, FB_SIZE_T stream) const;
