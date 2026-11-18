@@ -1,0 +1,112 @@
+
+TAG      
+======== 
+P: plans 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=69961809.50)
+            -> Table "T1" Full Scan (rows=65344.00)
+            -> Record Buffer (record length: 25) (rows=65344.00)
+                -> Table "T2" Full Scan (rows=65344.00)
+            -> Record Buffer (record length: 25) (rows=65344.00)
+                -> Table "T3" Full Scan (rows=65344.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=34980904.75)
+            -> Table "T2" Full Scan (rows=65344.00)
+            -> Record Buffer (record length: 33) (rows=32672.00)
+                -> Filter (rows=32672.00)
+                    -> Table "T1" Full Scan (rows=65344.00)
+            -> Record Buffer (record length: 25) (rows=65344.00)
+                -> Table "T3" Full Scan (rows=65344.00)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=78798609443.50)
+            -> Record Buffer (batches: 8, record length: 75) (rows=34980904.75)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=34980904.75)
+                    -> Table "T2" Full Scan (rows=65344.00)
+                    -> Record Buffer (record length: 33) (rows=32672.00)
+                        -> Filter (rows=32672.00)
+                            -> Table "T1" Full Scan (rows=65344.00)
+                    -> Record Buffer (record length: 25) (rows=65344.00)
+                        -> Table "T3" Full Scan (rows=65344.00)
+            -> Record Buffer (batches: 8, record length: 25) (rows=4505235.43)
+                -> Table "B" Full Scan (rows=4505235.43)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 2, total key length: 8) (rows=2115365.73)
+            -> Table "K1" Full Scan (rows=2128036.27)
+            -> Record Buffer (record length: 33) (rows=1995034.00)
+                -> Table "K2" Full Scan (rows=1995034.00)
+            -> Record Buffer (record length: 33) (rows=1995034.00)
+                -> Table "K3" Full Scan (rows=1995034.00)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG        
+========== 
+F: results 
+
+
+PLAN HASH (T1 NATURAL, T2 NATURAL, T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+F1                    53892000                                 1616706108000 
+
+Current memory = 20489936
+Delta memory = 24896
+Max memory = 72827984
+Elapsed time = 8.517 sec
+Buffers = 2048
+Reads = 1323
+Writes = 0
+Fetches = 185325
+
+PLAN HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+F2                     2694600                                   80386205400 
+
+
+PLAN HASH (HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL), B NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+F4                    18900000                                39671185050000 
+
+
+PLAN HASH (K3 NATURAL, K2 NATURAL, K1 NATURAL)
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+F5                      500000                                  874999750000 
+
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG                                     
+======================================= 
+N: the same queries by the nested loops 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+F2                     2694600                                   80386205400 
+
+
+PLAN JOIN (T1 NATURAL, T2 INDEX (T2_X), T3 INDEX (T3_X), B INDEX (B_X))
+
+CONSTANT                 COUNT                                           SUM 
+======== ===================== ============================================= 
+F4                    18900000                                39671185050000 
+
+-- rc=0, 182 s
