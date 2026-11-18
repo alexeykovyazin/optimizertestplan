@@ -1,0 +1,18 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=9116797.13)
+            -> Nested Loop Join (inner) (rows=9116797.13)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=587883.95)
+                    -> Table "TITLE" as "T" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table "MOVIE_INFO_IDX" as "MI_IDX" Full Scan (rows=1380035.00)
+                    -> Record Buffer (record length: 33) (rows=1054325.22)
+                        -> Filter (rows=1054325.22)
+                            -> Table "MOVIE_INFO" as "MI" Access By ID (rows=1054325.22)
+                                -> Bitmap
+                                    -> Index "INFO_TYPE_ID_MOVIE_INFO" Range Scan (full match)
+                -> Filter (rows=15.51)
+                    -> Table "CAST_INFO" as "CI" Access By ID (rows=15.51)
+                        -> Bitmap
+                            -> Index "MOVIE_ID_CAST_INFO" Range Scan (full match)

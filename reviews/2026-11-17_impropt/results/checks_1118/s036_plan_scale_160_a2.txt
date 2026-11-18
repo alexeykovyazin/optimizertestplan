@@ -1,0 +1,20 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=46.55)
+            -> Filter (rows=1.00)
+                -> Table "CAST_INFO" as "CI" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "ROLE_ID_CAST_INFO" Range Scan (lower bound: 1/1)
+            -> Filter (rows=0.82)
+                -> Table "TITLE" as "T" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "TITLE_PK" Unique Scan
+            -> Filter (rows=9.50)
+                -> Table "MOVIE_KEYWORD" as "MK" Access By ID (rows=9.50)
+                    -> Bitmap
+                        -> Index "MOVIE_ID_MOVIE_KEYWORD" Range Scan (full match)
+            -> Filter (rows=5.99)
+                -> Table "MOVIE_INFO" as "MI" Access By ID (rows=5.99)
+                    -> Bitmap
+                        -> Index "MOVIE_ID_MOVIE_INFO" Range Scan (full match)

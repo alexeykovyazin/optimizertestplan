@@ -1,0 +1,13 @@
+
+                COUNT 
+===================== 
+             14824459 
+
+Current memory = 841737136
+Delta memory = 1748992
+Max memory = 841769952
+Elapsed time = 119.052 sec
+Buffers = 50000
+Reads = 8344456
+Writes = 2
+Fetches = 34208870
