@@ -1,0 +1,71 @@
+
+ALIAS      
+========== 
+tst20dpoff 
+
+
+PLAN HASH (HASH (HASH (JOIN (HASH (JOIN (HASH (HASH (JOIN (N NATURAL, CI INDEX (CI_N)), T NATURAL), KT NATURAL), MC INDEX (MC_MOVIE)), CN NATURAL), MI INDEX (MI_MOVIE)), IT NATURAL), MK NATURAL), K NATURAL)
+
+Q                      COUNT 
+====== ===================== 
+D1                      8580 
+
+
+PLAN JOIN (JOIN (P NATURAL, Q INDEX (Q_P)), JOIN (K NATURAL, MK INDEX (MK_K)))
+
+Q                      COUNT 
+====== ===================== 
+D2                    200000 
+
+
+PLAN JOIN (HASH (JOIN (IT NATURAL, MI INDEX (MI_IT)), T NATURAL), HASH (Q NATURAL, P NATURAL))
+
+Q                      COUNT 
+====== ===================== 
+D3                   1200000 
+
+
+ALIAS     
+========= 
+tst20dp12 
+
+
+PLAN HASH (JOIN (N NATURAL, CI INDEX (CI_N)), HASH (JOIN (HASH (JOIN (HASH (HASH (HASH (HASH (JOIN (KT NATURAL, T INDEX (T_KIND)), MC NATURAL), CN NATURAL), T NATURAL), KT NATURAL), MI INDEX (MI_MOVIE)), IT NATURAL), MK INDEX (MK_MOVIE)), K NATURAL))
+
+Q                      COUNT 
+====== ===================== 
+D1                      8580 
+
+Statement failed, SQLSTATE = HY000
+request size limit exceeded
+After line 146 in file 70_join_order_dp.sql
+
+PLAN JOIN (HASH (JOIN (IT NATURAL, MI INDEX (MI_IT)), T NATURAL), HASH (Q NATURAL, P NATURAL))
+
+Q                      COUNT 
+====== ===================== 
+D3                   1200000 
+
+
+ALIAS      
+========== 
+tst20dp100 
+
+
+PLAN HASH (HASH (HASH (JOIN (N NATURAL, CI INDEX (CI_N)), MK NATURAL), K NATURAL), HASH (JOIN (HASH (HASH (HASH (HASH (HASH (JOIN (KT NATURAL, T INDEX (T_KIND), MI INDEX (MI_MOVIE)), IT NATURAL), MC NATURAL), CN NATURAL), T NATURAL), KT NATURAL), MI INDEX (MI_MOVIE)), IT NATURAL))
+
+Q                      COUNT 
+====== ===================== 
+D1                     25740 
+
+Statement failed, SQLSTATE = HY000
+request size limit exceeded
+After line 216 in file 70_join_order_dp.sql
+
+PLAN JOIN (HASH (JOIN (IT NATURAL, MI INDEX (MI_IT)), T NATURAL), HASH (Q NATURAL, P NATURAL))
+
+Q                      COUNT 
+====== ===================== 
+D3                   1200000 
+
+-- rc=1, 24 s
