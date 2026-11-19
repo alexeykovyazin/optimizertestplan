@@ -1,0 +1,1555 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+ceb_10a_013,ceb-imdb-regen,prepare,ok,,,n/a,,371.2,md5:a919a0b5edef738f3073966cce36feb0,"PLAN SORT (HASH (HASH (HASH (JOIN (HASH (JOIN (N NATURAL, CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI1 INDEX (INFO_TYPE_ID_MOVIE_INFO)), IT1 INDEX (INFO_TYPE_PK)))","Select Expression
+    -> Aggregate (rows=14.24)
+        -> Sort (record length: 930, key length: 544) (rows=14.24)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=14.24)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1609.42)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=74371.20)
+                        -> Nested Loop Join (inner) (rows=173532.78)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=173532.78)
+                                -> Nested Loop Join (inner) (rows=416478.67)
+                                    -> Filter (rows=46545.74)
+                                        -> Table ""NAME"" as ""N"" Full Scan (rows=4167491.00)
+                                    -> Filter (rows=8.95)
+                                        -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=8.95)
+                                            -> Bitmap
+                                                -> Index ""PERSON_ID_CAST_INFO"" Range Scan (full match)
+                                -> Record Buffer (record length: 161) (rows=5.00)
+                                    -> Filter (rows=5.00)
+                                        -> Table ""ROLE_TYPE"" as ""RT"" Full Scan (rows=12.00)
+                            -> Filter (rows=1.00)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                    -> Bitmap
+                                        -> Index ""TITLE_PK"" Unique Scan
+                        -> Record Buffer (record length: 89) (rows=3.00)
+                            -> Filter (rows=3.00)
+                                -> Table ""KIND_TYPE"" as ""KT"" Full Scan (rows=7.00)
+                    -> Record Buffer (record length: 41) (rows=53559.72)
+                        -> Filter (rows=53559.72)
+                            -> Table ""MOVIE_INFO"" as ""MI1"" Access By ID (rows=1054325.22)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+                -> Record Buffer (record length: 25) (rows=1.00)
+                    -> Filter (rows=1.00)
+                        -> Table ""INFO_TYPE"" as ""IT1"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_PK"" Unique Scan",
+ceb_10a_013,ceb-imdb-regen,measured,ok,8499.8,640,match,sha1:58e93e49f168c87479710c743e1378776b25af9b,,md5:a919a0b5edef738f3073966cce36feb0,,,
+ceb_11b_015,ceb-imdb-regen,prepare,ok,,,n/a,,51.1,md5:0072e2edb29603907071f436f6aec175,"PLAN SORT (SORT (HASH (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (IT2 INDEX (INFO_TYPE_PK), PI INDEX (INFO_TYPE_ID_PERSON_INFO), N INDEX (NAME_PK), CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CT NATURAL), CN INDEX (COMPANY_NAME_PK)), MI1 INDEX (INFO_TYPE_ID_MOVIE_INFO)), IT1 INDEX (INFO_TYPE_PK))))","Select Expression
+    -> Sort (record length: 948, key length: 12) (rows=11.90)
+        -> Aggregate (rows=11.90)
+            -> Sort (record length: 1322, key length: 924) (rows=11.90)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=11.90)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1344.21)
+                        -> Nested Loop Join (inner) (rows=31658.22)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=31658.22)
+                                -> Nested Loop Join (inner) (rows=31658.22)
+                                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=13202.78)
+                                        -> Nested Loop Join (inner) (rows=23104.86)
+                                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=23783.03)
+                                                -> Nested Loop Join (inner) (rows=95132.11)
+                                                    -> Filter (rows=1.00)
+                                                        -> Table ""INFO_TYPE"" as ""IT2"" Access By ID (rows=1.00)
+                                                            -> Bitmap
+                                                                -> Index ""INFO_TYPE_PK"" Unique Scan
+                                                    -> Filter (rows=10624.26)
+                                                        -> Table ""PERSON_INFO"" as ""PI"" Access By ID (rows=55321.73)
+                                                            -> Bitmap
+                                                                -> Index ""INFO_TYPE_ID_PERSON_INFO"" Range Scan (full match)
+                                                    -> Filter (rows=1.00)
+                                                        -> Table ""NAME"" as ""N"" Access By ID (rows=1.00)
+                                                            -> Bitmap
+                                                                -> Index ""NAME_PK"" Unique Scan
+                                                    -> Filter (rows=8.95)
+                                                        -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=8.95)
+                                                            -> Bitmap
+                                                                -> Index ""PERSON_ID_CAST_INFO"" Range Scan (full match)
+                                                -> Record Buffer (record length: 161) (rows=3.00)
+                                                    -> Filter (rows=3.00)
+                                                        -> Table ""ROLE_TYPE"" as ""RT"" Full Scan (rows=12.00)
+                                            -> Filter (rows=0.97)
+                                                -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                                    -> Bitmap
+                                                        -> Index ""TITLE_PK"" Unique Scan
+                                        -> Record Buffer (record length: 89) (rows=4.00)
+                                            -> Filter (rows=4.00)
+                                                -> Table ""KIND_TYPE"" as ""KT"" Full Scan (rows=7.00)
+                                    -> Filter (rows=2.40)
+                                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                                            -> Bitmap
+                                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                                -> Record Buffer (record length: 25) (rows=4.00)
+                                    -> Table ""COMPANY_TYPE"" as ""CT"" Full Scan (rows=4.00)
+                            -> Filter (rows=1.00)
+                                -> Table ""COMPANY_NAME"" as ""CN"" Access By ID (rows=1.00)
+                                    -> Bitmap
+                                        -> Index ""COMPANY_NAME_PK"" Unique Scan
+                        -> Record Buffer (record length: 41) (rows=105088.01)
+                            -> Filter (rows=105088.01)
+                                -> Table ""MOVIE_INFO"" as ""MI1"" Access By ID (rows=1699184.49)
+                                    -> Bitmap
+                                        -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+                    -> Record Buffer (record length: 25) (rows=1.00)
+                        -> Filter (rows=1.00)
+                            -> Table ""INFO_TYPE"" as ""IT1"" Access By ID (rows=1.00)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_PK"" Unique Scan",
+ceb_11b_015,ceb-imdb-regen,measured,ok,2155.8,74,match,sha1:50db6c079d5bc38853b45cfaab2eaec14c608ba8,,md5:0072e2edb29603907071f436f6aec175,,,
+ceb_3b_014,ceb-imdb-regen,prepare,ok,,,n/a,,47.9,md5:ab16e15aa84b722311178c7bdd87b6df,"PLAN SORT (SORT (JOIN (HASH (JOIN (HASH (JOIN (HASH (JOIN (N NATURAL, CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CT NATURAL), CN INDEX (COMPANY_NAME_PK), MK INDEX (MOVIE_ID_MOVIE_KEYWORD), K INDEX (KEYWORD_PK))))","Select Expression
+    -> Sort (record length: 2860, key length: 12) (rows=1739.93)
+        -> Aggregate (rows=1739.93)
+            -> Sort (record length: 3322, key length: 2840) (rows=1739.93)
+                -> Nested Loop Join (inner) (rows=1739.93)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2890.26)
+                        -> Nested Loop Join (inner) (rows=2890.26)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1205.36)
+                                -> Nested Loop Join (inner) (rows=2109.37)
+                                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=148700.03)
+                                        -> Nested Loop Join (inner) (rows=356880.07)
+                                            -> Filter (rows=39884.98)
+                                                -> Table ""NAME"" as ""N"" Full Scan (rows=4167491.00)
+                                            -> Filter (rows=8.95)
+                                                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=8.95)
+                                                    -> Bitmap
+                                                        -> Index ""PERSON_ID_CAST_INFO"" Range Scan (full match)
+                                        -> Record Buffer (record length: 161) (rows=5.00)
+                                            -> Filter (rows=5.00)
+                                                -> Table ""ROLE_TYPE"" as ""RT"" Full Scan (rows=12.00)
+                                    -> Filter (rows=0.014185)
+                                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                            -> Bitmap
+                                                -> Index ""TITLE_PK"" Unique Scan
+                                -> Record Buffer (record length: 89) (rows=4.00)
+                                    -> Filter (rows=4.00)
+                                        -> Table ""KIND_TYPE"" as ""KT"" Full Scan (rows=7.00)
+                            -> Filter (rows=2.40)
+                                -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                                    -> Bitmap
+                                        -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                        -> Record Buffer (record length: 25) (rows=4.00)
+                            -> Table ""COMPANY_TYPE"" as ""CT"" Full Scan (rows=4.00)
+                    -> Filter (rows=0.063399)
+                        -> Table ""COMPANY_NAME"" as ""CN"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""COMPANY_NAME_PK"" Unique Scan
+                    -> Filter (rows=9.50)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=9.50)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+                    -> Filter (rows=1.00)
+                        -> Table ""KEYWORD"" as ""K"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""KEYWORD_PK"" Unique Scan",
+ceb_3b_014,ceb-imdb-regen,measured,ok,2120.7,9,match,sha1:374cc541baadd5c12575dcd3cbb96f4f324c8bd4,,md5:ab16e15aa84b722311178c7bdd87b6df,,,
+ceb_9a_004,ceb-imdb-regen,prepare,ok,,,n/a,,74.0,md5:a2387456014a906b455dff6d7e0fd7c5,"PLAN SORT (HASH (HASH (HASH (JOIN (HASH (JOIN (IT2 INDEX (INFO_TYPE_PK), PI INDEX (INFO_TYPE_ID_PERSON_INFO), N INDEX (NAME_PK), CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI1 INDEX (INFO_TYPE_ID_MOVIE_INFO)), IT1 INDEX (INFO_TYPE_PK)))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Sort (record length: 460, key length: 36) (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=71.87)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=19492.20)
+                        -> Nested Loop Join (inner) (rows=27289.07)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=27289.07)
+                                -> Nested Loop Join (inner) (rows=40933.61)
+                                    -> Filter (rows=1.00)
+                                        -> Table ""INFO_TYPE"" as ""IT2"" Access By ID (rows=1.00)
+                                            -> Bitmap
+                                                -> Index ""INFO_TYPE_PK"" Unique Scan
+                                    -> Filter (rows=4571.42)
+                                        -> Table ""PERSON_INFO"" as ""PI"" Access By ID (rows=328373.97)
+                                            -> Bitmap
+                                                -> Index ""INFO_TYPE_ID_PERSON_INFO"" Range Scan (full match)
+                                    -> Filter (rows=1.00)
+                                        -> Table ""NAME"" as ""N"" Access By ID (rows=1.00)
+                                            -> Bitmap
+                                                -> Index ""NAME_PK"" Unique Scan
+                                    -> Filter (rows=8.95)
+                                        -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=8.95)
+                                            -> Bitmap
+                                                -> Index ""PERSON_ID_CAST_INFO"" Range Scan (full match)
+                                -> Record Buffer (record length: 161) (rows=8.00)
+                                    -> Filter (rows=8.00)
+                                        -> Table ""ROLE_TYPE"" as ""RT"" Full Scan (rows=12.00)
+                            -> Filter (rows=1.00)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                    -> Bitmap
+                                        -> Index ""TITLE_PK"" Unique Scan
+                        -> Record Buffer (record length: 89) (rows=5.00)
+                            -> Filter (rows=5.00)
+                                -> Table ""KIND_TYPE"" as ""KT"" Full Scan (rows=7.00)
+                    -> Record Buffer (record length: 41) (rows=9125.29)
+                        -> Filter (rows=9125.29)
+                            -> Table ""MOVIE_INFO"" as ""MI1"" Access By ID (rows=413422.07)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+                -> Record Buffer (record length: 25) (rows=1.00)
+                    -> Filter (rows=1.00)
+                        -> Table ""INFO_TYPE"" as ""IT1"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_PK"" Unique Scan",
+ceb_9a_004,ceb-imdb-regen,measured,ok,2650.9,116,match,sha1:a2b6e56117071055f877e092adf5972582fd904c,,md5:a2387456014a906b455dff6d7e0fd7c5,,,
+ceb_9a_010,ceb-imdb-regen,prepare,ok,,,n/a,,46.5,md5:e6a4cdad4d739b07c95efb72203a80aa,"PLAN SORT (HASH (JOIN (HASH (JOIN (HASH (JOIN (HASH (PI INDEX (INFO_TYPE_ID_PERSON_INFO), IT2 INDEX (INFO_TYPE_PK)), N INDEX (NAME_PK), CI INDEX (PERSON_ID_CAST_INFO)), RT NATURAL), T INDEX (TITLE_PK)), KT NATURAL), MI1 INDEX (MOVIE_ID_MOVIE_INFO)), IT1 INDEX (INFO_TYPE_PK)))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Sort (record length: 460, key length: 36) (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+                -> Nested Loop Join (inner) (rows=52.95)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=425.40)
+                        -> Nested Loop Join (inner) (rows=496.30)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=496.30)
+                                -> Nested Loop Join (inner) (rows=1191.12)
+                                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=133.02)
+                                        -> Filter (rows=15031.66)
+                                            -> Table ""PERSON_INFO"" as ""PI"" Access By ID (rows=78339.52)
+                                                -> Bitmap
+                                                    -> Index ""INFO_TYPE_ID_PERSON_INFO"" Range Scan (full match)
+                                        -> Record Buffer (record length: 25) (rows=1.00)
+                                            -> Filter (rows=1.00)
+                                                -> Table ""INFO_TYPE"" as ""IT2"" Access By ID (rows=1.00)
+                                                    -> Bitmap
+                                                        -> Index ""INFO_TYPE_PK"" Unique Scan
+                                    -> Filter (rows=1.00)
+                                        -> Table ""NAME"" as ""N"" Access By ID (rows=1.00)
+                                            -> Bitmap
+                                                -> Index ""NAME_PK"" Unique Scan
+                                    -> Filter (rows=8.95)
+                                        -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=8.95)
+                                            -> Bitmap
+                                                -> Index ""PERSON_ID_CAST_INFO"" Range Scan (full match)
+                                -> Record Buffer (record length: 161) (rows=5.00)
+                                    -> Filter (rows=5.00)
+                                        -> Table ""ROLE_TYPE"" as ""RT"" Full Scan (rows=12.00)
+                            -> Filter (rows=1.00)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                    -> Bitmap
+                                        -> Index ""TITLE_PK"" Unique Scan
+                        -> Record Buffer (record length: 89) (rows=6.00)
+                            -> Filter (rows=6.00)
+                                -> Table ""KIND_TYPE"" as ""KT"" Full Scan (rows=7.00)
+                    -> Filter (rows=0.12)
+                        -> Table ""MOVIE_INFO"" as ""MI1"" Access By ID (rows=5.99)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_INFO"" Range Scan (full match)
+                -> Record Buffer (record length: 25) (rows=1.00)
+                    -> Filter (rows=1.00)
+                        -> Table ""INFO_TYPE"" as ""IT1"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_PK"" Unique Scan",
+ceb_9a_010,ceb-imdb-regen,measured,ok,79585.2,19031,MISMATCH,sha1:2a5c8e6f3c3cd26f9e14475c12d64c50b68a9d73,,md5:e6a4cdad4d739b07c95efb72203a80aa,,,
+job_light_007,job-light,prepare,ok,,,n/a,,58.5,md5:83d4a8b583fc149f1ac7872d1570a1e2,"PLAN HASH (JOIN (T NATURAL, MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=4283705.24)
+            -> Record Buffer (batches: 32, record length: 50) (rows=714634.61)
+                -> Nested Loop Join (inner) (rows=714634.61)
+                    -> Filter (rows=399347.64)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=1.79)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=1.79)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+job_light_007,job-light,measured,ok,7657.2,1,match,sha1:4288ed6f474a37f8ee7d409f647d5da2dc49314c,,md5:83d4a8b583fc149f1ac7872d1570a1e2,,,
+job_light_012,job-light,prepare,ok,,,n/a,,53.6,md5:e4084088b0b65e66fab1c2598d99e8b9,"PLAN HASH (HASH (MC INDEX (COMPANY_TYPE_ID_MOVIE_COMPANIES), T NATURAL), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=6557845.55)
+            -> Record Buffer (batches: 32, record length: 58) (rows=546264.56)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=546264.56)
+                    -> Filter (rows=1368053.37)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1368053.37)
+                            -> Bitmap
+                                -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=1009556.55)
+                        -> Filter (rows=1009556.55)
+                            -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+job_light_012,job-light,measured,ok,9094.0,1,match,sha1:13ec8404f078ad84b1b3da9825508ed5b6b6804a,,md5:e4084088b0b65e66fab1c2598d99e8b9,,,
+job_light_013,job-light,prepare,ok,,,n/a,,44.3,md5:d3c37246be7dfd7246623a26a4193d36,"PLAN HASH (JOIN (T NATURAL, MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2588043.85)
+            -> Record Buffer (batches: 32, record length: 58) (rows=215582.48)
+                -> Nested Loop Join (inner) (rows=215582.48)
+                    -> Filter (rows=399347.64)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=0.54)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1.03)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+job_light_013,job-light,measured,ok,6937.2,1,match,sha1:27f241544dcd44670c5fed745a8c931a0fb33960,,md5:d3c37246be7dfd7246623a26a4193d36,,,
+job_light_020,job-light,prepare,ok,,,n/a,,52.8,md5:24a14dd4857fb891459b46101bc4fdda,"PLAN HASH (CI NATURAL, T NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3650965.43)
+            -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)
+            -> Record Buffer (record length: 33) (rows=254681.94)
+                -> Filter (rows=254681.94)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)",
+job_light_020,job-light,measured,ok,12491.3,1,match,sha1:bd285ea9c0f58a2685526feb62f8d1e783fab52f,,md5:24a14dd4857fb891459b46101bc4fdda,,,
+job_light_022,job-light,prepare,ok,,,n/a,,61.5,md5:24a14dd4857fb891459b46101bc4fdda,"PLAN HASH (CI NATURAL, T NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=19361528.82)
+            -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)
+            -> Record Buffer (record length: 33) (rows=1350610.34)
+                -> Filter (rows=1350610.34)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)",
+job_light_022,job-light,measured,ok,19643.2,1,match,sha1:8e0eeb0305e4af0b7f1fa6dca8df9b98d1e44924,,md5:24a14dd4857fb891459b46101bc4fdda,,,
+job_light_027,job-light,prepare,ok,,,n/a,,53.0,md5:7ab12bbc97e70b86d8cf88a4710759d8,"PLAN HASH (JOIN (T NATURAL, MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CI INDEX (ROLE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=664790.10)
+            -> Record Buffer (batches: 16, record length: 50) (rows=253307.43)
+                -> Nested Loop Join (inner) (rows=253307.43)
+                    -> Filter (rows=246607.22)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=1.03)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1.03)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Record Buffer (batches: 16, record length: 33) (rows=6133751.28)
+                -> Filter (rows=6133751.28)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=6133751.28)
+                        -> Bitmap
+                            -> Index ""ROLE_ID_CAST_INFO"" Range Scan (full match)",
+job_light_027,job-light,measured,ok,4886.4,1,match,sha1:281d9af5208b9b73254cbb2b4d39ecd49ccfacb7,,md5:7ab12bbc97e70b86d8cf88a4710759d8,,,
+job_light_029,job-light,prepare,ok,,,n/a,,50.9,md5:7ab12bbc97e70b86d8cf88a4710759d8,"PLAN HASH (JOIN (T NATURAL, MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), CI INDEX (ROLE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2531108.32)
+            -> Record Buffer (batches: 32, record length: 50) (rows=411155.41)
+                -> Nested Loop Join (inner) (rows=411155.41)
+                    -> Filter (rows=399347.64)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=1.03)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1.03)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 33) (rows=14387796.40)
+                -> Filter (rows=14387796.40)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=14387796.40)
+                        -> Bitmap
+                            -> Index ""ROLE_ID_CAST_INFO"" Range Scan (full match)",
+job_light_029,job-light,measured,ok,7809.2,1,match,sha1:3f70b79025ed21bbdc655359fd5562c1b15c3176,,md5:7ab12bbc97e70b86d8cf88a4710759d8,,,
+job_light_034,job-light,prepare,ok,,,n/a,,47.5,md5:b792b7c77c5af823472c984d4e37a11a,"PLAN HASH (JOIN (HASH (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=70603.40)
+            -> Nested Loop Join (inner) (rows=51349.42)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=40842.00)
+                    -> Filter (rows=460103.68)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=224430.51)
+                        -> Filter (rows=224430.51)
+                            -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                -> Filter (rows=1.26)
+                    -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                        -> Bitmap
+                            -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Record Buffer (record length: 33) (rows=1699184.49)
+                -> Filter (rows=1699184.49)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1699184.49)
+                        -> Bitmap
+                            -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)",
+job_light_034,job-light,measured,ok,1955.9,1,match,sha1:8c135d114df9c3e4a4d1b21a4e03a27b8a8fe8da,,md5:b792b7c77c5af823472c984d4e37a11a,,,
+job_light_037,job-light,prepare,ok,,,n/a,,55.1,md5:5629159aab9c7457959ea66196537af0,"PLAN HASH (JOIN (HASH (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX)), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=229074.73)
+            -> Nested Loop Join (inner) (rows=155474.71)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=123660.54)
+                    -> Filter (rows=679526.00)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=460103.68)
+                        -> Filter (rows=460103.68)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                -> Filter (rows=1.26)
+                    -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                        -> Bitmap
+                            -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Record Buffer (record length: 33) (rows=3646620.03)
+                -> Filter (rows=3646620.03)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=3646620.03)
+                        -> Bitmap
+                            -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)",
+job_light_037,job-light,measured,ok,3044.9,1,match,sha1:27fc5ae7c7ab8f94e902fed8e362bc671378cbbe,,md5:5629159aab9c7457959ea66196537af0,,,
+job_light_039,job-light,prepare,ok,,,n/a,,41.3,md5:381ffa775beca258e74c9028d8876eb5,"PLAN JOIN (HASH (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), MK INDEX (MOVIE_ID_MOVIE_KEYWORD))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=603436.16)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=63550.12)
+                -> Filter (rows=679526.00)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=460103.68)
+                    -> Filter (rows=460103.68)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=1271915.70)
+                    -> Filter (rows=1271915.70)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1271915.70)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Filter (rows=9.50)
+                -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=9.50)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)",
+job_light_039,job-light,measured,ok,2824.2,1,match,sha1:2f42ca65eae2a2a4b10af70a91fc19055be9d08a,,md5:381ffa775beca258e74c9028d8876eb5,,,
+job_light_046,job-light,prepare,ok,,,n/a,,42.4,md5:eee1b83cd7077f1a68c4f96011d68adb,"PLAN JOIN (HASH (T NATURAL, MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1261933.56)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=81374.03)
+                -> Filter (rows=651318.35)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                -> Record Buffer (record length: 33) (rows=460103.68)
+                    -> Filter (rows=460103.68)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                -> Record Buffer (record length: 33) (rows=1699184.49)
+                    -> Filter (rows=1699184.49)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1699184.49)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Filter (rows=15.51)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.51)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+job_light_046,job-light,measured,ok,11833.2,1,match,sha1:e135fd40016914061b995ed39fd9cd231f216b9f,,md5:eee1b83cd7077f1a68c4f96011d68adb,,,
+job_light_047,job-light,prepare,ok,,,n/a,,43.0,md5:4170e67508d319f1aae725a8f7938f3f,"PLAN HASH (HASH (JOIN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (TITLE_PK)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=4896171.86)
+            -> Record Buffer (batches: 64, record length: 75) (rows=315722.81)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=315722.81)
+                    -> Nested Loop Join (inner) (rows=459873.65)
+                        -> Filter (rows=459873.65)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=459873.65)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                        -> Filter (rows=1.00)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                -> Bitmap
+                                    -> Index ""TITLE_PK"" Unique Scan
+                    -> Record Buffer (record length: 33) (rows=1699184.49)
+                        -> Filter (rows=1699184.49)
+                            -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1699184.49)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+job_light_047,job-light,measured,ok,17488.4,1,match,sha1:3bced5ca9c0a387bf4824322ccbeb08070fb83a4,,md5:4170e67508d319f1aae725a8f7938f3f,,,
+job_light_051,job-light,prepare,ok,,,n/a,,42.9,md5:2cf7b6f74e1f8cbf3be0f8a87be02873,"PLAN HASH (HASH (MK NATURAL, T INDEX (KIND_ID_TITLE)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=16404168.72)
+            -> Record Buffer (batches: 64, record length: 58) (rows=1057799.94)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1057799.94)
+                    -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+                    -> Record Buffer (record length: 33) (rows=591178.09)
+                        -> Filter (rows=591178.09)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+job_light_051,job-light,measured,ok,26723.3,1,match,sha1:1d8a1af2bd235fa859442ab824c96a782d54d377,,md5:2cf7b6f74e1f8cbf3be0f8a87be02873,,,
+job_light_052,job-light,prepare,ok,,,n/a,,56.4,md5:2cf7b6f74e1f8cbf3be0f8a87be02873,"PLAN HASH (HASH (MK NATURAL, T INDEX (KIND_ID_TITLE)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=10253699.07)
+            -> Record Buffer (batches: 64, record length: 58) (rows=661195.49)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=661195.49)
+                    -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+                    -> Record Buffer (record length: 33) (rows=369525.72)
+                        -> Filter (rows=369525.72)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+job_light_052,job-light,measured,ok,21472.6,1,match,sha1:1a0dfaa735186c5306747efcd022a2553381f6aa,,md5:2cf7b6f74e1f8cbf3be0f8a87be02873,,,
+scale_006,scale,prepare,ok,,,n/a,,61.7,md5:340c5a88f968422d45c2c20432ff8f4b,"PLAN HASH (HASH (JOIN (HASH (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (KIND_ID_TITLE)), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=8410094.93)
+            -> Record Buffer (batches: 64, record length: 108) (rows=542313.24)
+                -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=542313.24)
+                    -> Record Buffer (batches: 32, record length: 83) (rows=90472.10)
+                        -> Nested Loop Join (inner) (rows=90472.10)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=71959.15)
+                                -> Filter (rows=459873.65)
+                                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=459873.65)
+                                        -> Bitmap
+                                            -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                                -> Record Buffer (record length: 33) (rows=395619.95)
+                                    -> Filter (rows=395619.95)
+                                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                                            -> Bitmap
+                                                -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+                            -> Filter (rows=1.26)
+                                -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                                    -> Bitmap
+                                        -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_006,scale,measured,ok,67550.5,1,match,sha1:9b6b49525565a20e6def40412ee6adcc51c7ad6e,,md5:340c5a88f968422d45c2c20432ff8f4b,,,
+scale_014,scale,prepare,ok,,,n/a,,68.2,md5:0c26656a875ef914044b1bc585e82388,"PLAN HASH (HASH (JOIN (HASH (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX)), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=1635183.86)
+            -> Record Buffer (batches: 64, record length: 108) (rows=105442.55)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=105442.55)
+                    -> Nested Loop Join (inner) (rows=144937.56)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=108850.06)
+                            -> Filter (rows=598141.05)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                    -> Bitmap
+                                        -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                            -> Record Buffer (record length: 33) (rows=460103.68)
+                                -> Filter (rows=460103.68)
+                                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                                        -> Bitmap
+                                            -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                        -> Filter (rows=1.33)
+                            -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                                -> Bitmap
+                                    -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=1800561.86)
+                        -> Filter (rows=1800561.86)
+                            -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1800561.86)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_014,scale,measured,ok,104905.0,1,match,sha1:3d1486af1bdcec0d8aa884265c702fb563a21f64,,md5:0c26656a875ef914044b1bc585e82388,,,
+scale_023,scale,prepare,ok,,,n/a,,69.2,md5:d9d416c36782937390056686f0182f99,"PLAN HASH (JOIN (HASH (MI_IDX NATURAL, T INDEX (KIND_ID_TITLE)), MK INDEX (MOVIE_ID_MOVIE_KEYWORD), MI INDEX (MOVIE_ID_MOVIE_INFO)), CI INDEX (PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=3834308.54)
+            -> Record Buffer (batches: 64, record length: 100) (rows=457907.52)
+                -> Nested Loop Join (inner) (rows=457907.52)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=8045.02)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                        -> Record Buffer (record length: 33) (rows=14738.99)
+                            -> Filter (rows=14738.99)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                                    -> Bitmap
+                                        -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Filter (rows=9.50)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=9.50)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+                    -> Filter (rows=5.99)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=5.99)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 33) (rows=19570360.85)
+                -> Filter (rows=19570360.85)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=19570360.85)
+                        -> Bitmap
+                            -> Index ""PERSON_ID_CAST_INFO"" Range Scan (upper bound: 1/1)",
+scale_023,scale,measured,ok,9917.9,1,match,sha1:ae3393434068ec40588bbcaf6aa328ff64d310e0,,md5:d9d416c36782937390056686f0182f99,,,
+scale_027,scale,prepare,ok,,,n/a,,43.6,md5:431eaaf2fdab3ffe49942268c13320a8,"PLAN HASH (HASH (MI_IDX NATURAL, T NATURAL), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2686065.28)
+            -> Record Buffer (batches: 32, record length: 50) (rows=602023.66)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=602023.66)
+                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                    -> Record Buffer (record length: 33) (rows=1102945.69)
+                        -> Filter (rows=1102945.69)
+                            -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Record Buffer (batches: 32, record length: 33) (rows=11042720.82)
+                -> Filter (rows=11042720.82)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=11042720.82)
+                        -> Bitmap
+                            -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)",
+scale_027,scale,measured,ok,6729.2,1,match,sha1:802df118473b35662c733fcacc764b24edd69e63,,md5:431eaaf2fdab3ffe49942268c13320a8,,,
+scale_035,scale,prepare,ok,,,n/a,,40.6,md5:a7511782a00039aa95f9374a948b8b5f,"PLAN HASH (HASH (MI NATURAL, T INDEX (KIND_ID_TITLE)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=79519735.89)
+            -> Record Buffer (batches: 64, record length: 50) (rows=5127719.28)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5127719.28)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+                    -> Record Buffer (record length: 33) (rows=873868.89)
+                        -> Filter (rows=873868.89)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=873868.89)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_035,scale,measured,ok,78704.9,1,match,sha1:5331e0663a34aa2ec8259092b42800aa54ebb528,,md5:a7511782a00039aa95f9374a948b8b5f,,,
+scale_036,scale,prepare,ok,,,n/a,,54.8,md5:c9a8dc8c2b4763a4161ce5d1734749a6,"PLAN HASH (CI NATURAL, T INDEX (KIND_ID_TITLE))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=14473574.51)
+            -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)
+            -> Record Buffer (record length: 33) (rows=1009639.25)
+                -> Filter (rows=1009639.25)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)",
+scale_036,scale,measured,ok,15584.8,1,match,sha1:f8f504e5d9b142279cf520060075f127816d244e,,md5:c9a8dc8c2b4763a4161ce5d1734749a6,,,
+scale_048,scale,prepare,ok,,,n/a,,66.8,md5:81747eeae572797cef59b058b5940755,"PLAN HASH (HASH (HASH (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (KIND_ID_TITLE)), MI NATURAL), CI INDEX (ROLE_ID_CAST_INFO, PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=4048092.34)
+            -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2923368.24)
+                -> Record Buffer (batches: 32, record length: 58) (rows=107027.29)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=107027.29)
+                        -> Filter (rows=522204.41)
+                            -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=522204.41)
+                                -> Bitmap
+                                    -> Index ""KEYWORD_ID_MOVIE_KEYWORD"" Range Scan (upper bound: 1/1)
+                        -> Record Buffer (record length: 33) (rows=518184.80)
+                            -> Filter (rows=518184.80)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                    -> Bitmap
+                                        -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+                -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (record length: 33) (rows=3240722.37)
+                -> Filter (rows=3240722.37)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=3240722.37)
+                        -> Bitmap And
+                            -> Bitmap
+                                -> Index ""ROLE_ID_CAST_INFO"" Range Scan (lower bound: 1/1)
+                            -> Bitmap
+                                -> Index ""PERSON_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_048,scale,measured,ok,80885.2,1,match,sha1:89a50d8b6b8811c42e87d231b699b5b2b2ea2179,,md5:81747eeae572797cef59b058b5940755,,,
+scale_060,scale,prepare,ok,,,n/a,,43.2,md5:d7dbdc092348376aac9b6bc44ae395cb,"PLAN HASH (HASH (HASH (T NATURAL, MI_IDX NATURAL), MI NATURAL), CI INDEX (PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=27016986.82)
+            -> Record Buffer (batches: 16, record length: 67) (rows=8272287.82)
+                -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=8272287.82)
+                    -> Record Buffer (batches: 32, record length: 50) (rows=1380035.00)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1380035.00)
+                            -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                            -> Record Buffer (record length: 25) (rows=1380035.00)
+                                -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                    -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (batches: 16, record length: 33) (rows=7633097.86)
+                -> Filter (rows=7633097.86)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=7633097.86)
+                        -> Bitmap
+                            -> Index ""PERSON_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_060,scale,measured,ok,47018.4,1,match,sha1:67198665dcba173b2235c323698236b917c89a13,,md5:d7dbdc092348376aac9b6bc44ae395cb,,,
+scale_061,scale,prepare,ok,,,n/a,,40.0,md5:51d8d78ca6ef946c096752e1bd931cb6,"PLAN HASH (HASH (T NATURAL, MI_IDX NATURAL), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=5502566.86)
+            -> Record Buffer (batches: 32, record length: 50) (rows=917972.76)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=917972.76)
+                    -> Filter (rows=1681784.55)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_061,scale,measured,ok,8475.1,1,match,sha1:9ac3ac3fc0aab9c00564022cd3fe75dae4077f65,,md5:51d8d78ca6ef946c096752e1bd931cb6,,,
+scale_075,scale,prepare,ok,,,n/a,,51.3,md5:d6efa02f9f060cf51baaad6d1128c1a1,"PLAN HASH (HASH (HASH (T NATURAL, MI_IDX NATURAL), MI NATURAL), MK INDEX (KEYWORD_ID_MOVIE_KEYWORD))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=25024483.98)
+            -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=8272287.82)
+                -> Record Buffer (batches: 32, record length: 50) (rows=1380035.00)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1380035.00)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                        -> Record Buffer (record length: 25) (rows=1380035.00)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (record length: 33) (rows=1441253.58)
+                -> Filter (rows=1441253.58)
+                    -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=1441253.58)
+                        -> Bitmap
+                            -> Index ""KEYWORD_ID_MOVIE_KEYWORD"" Range Scan (upper bound: 1/1)",
+scale_075,scale,measured,ok,30866.8,1,match,sha1:9be19d9dfc19e2eadfa9ac289c220e05d0aed9f1,,md5:d6efa02f9f060cf51baaad6d1128c1a1,,,
+scale_077,scale,prepare,ok,,,n/a,,56.0,md5:9f04366e38137429c4553b74f930859c,"PLAN HASH (HASH (JOIN (HASH (CI INDEX (ROLE_ID_CAST_INFO), T INDEX (KIND_ID_TITLE)), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MK INDEX (KEYWORD_ID_MOVIE_KEYWORD)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=6907109.49)
+            -> Record Buffer (batches: 32, record length: 108) (rows=249655.01)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=249655.01)
+                    -> Nested Loop Join (inner) (rows=313221.81)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=279870.87)
+                            -> Filter (rows=14387796.40)
+                                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=14387796.40)
+                                    -> Bitmap
+                                        -> Index ""ROLE_ID_CAST_INFO"" Range Scan (upper bound: 1/1)
+                            -> Record Buffer (record length: 33) (rows=49180.63)
+                                -> Filter (rows=49180.63)
+                                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                                        -> Bitmap
+                                            -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                        -> Filter (rows=1.12)
+                            -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1.12)
+                                -> Bitmap
+                                    -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=1852310.31)
+                        -> Filter (rows=1852310.31)
+                            -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=1852310.31)
+                                -> Bitmap
+                                    -> Index ""KEYWORD_ID_MOVIE_KEYWORD"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_077,scale,measured,ok,11641.9,1,match,sha1:1ae8a181517b295f67c3f6536e30a0dd07d7799d,,md5:9f04366e38137429c4553b74f930859c,,,
+scale_084,scale,prepare,ok,,,n/a,,43.3,md5:0711c6588b2539e8e8cfeb22083eaeac,"PLAN JOIN (HASH (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T NATURAL), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=501377.09)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=32422.16)
+                -> Filter (rows=3509551.06)
+                    -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=3509551.06)
+                        -> Bitmap
+                            -> Index ""KEYWORD_ID_MOVIE_KEYWORD"" Range Scan (lower bound: 1/1)
+                -> Record Buffer (record length: 33) (rows=23357.22)
+                    -> Filter (rows=23357.22)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Filter (rows=15.46)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.46)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_084,scale,measured,ok,3557.9,1,match,sha1:82985356a6db51e45e055731ed506b3ee559ccf3,,md5:0711c6588b2539e8e8cfeb22083eaeac,,,
+scale_089,scale,prepare,ok,,,n/a,,42.9,md5:053d68298d8211e12b69f2f866632df6,"PLAN HASH (HASH (HASH (MC NATURAL, T INDEX (KIND_ID_TITLE)), MI NATURAL), CI INDEX (PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=18116672.97)
+            -> Record Buffer (batches: 32, record length: 75) (rows=4203455.95)
+                -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=4203455.95)
+                    -> Record Buffer (batches: 32, record length: 50) (rows=701246.92)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=701246.92)
+                            -> Table ""MOVIE_COMPANIES"" as ""MC"" Full Scan (rows=2609129.00)
+                            -> Record Buffer (record length: 33) (rows=679526.00)
+                                -> Filter (rows=679526.00)
+                                    -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                        -> Bitmap
+                                            -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (batches: 32, record length: 33) (rows=10073061.85)
+                -> Filter (rows=10073061.85)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=10073061.85)
+                        -> Bitmap
+                            -> Index ""PERSON_ID_CAST_INFO"" Range Scan (upper bound: 1/1)",
+scale_089,scale,measured,ok,148404.2,1,match,sha1:512af55cac37bb16b261eb49e5f3acca4f5b4950,,md5:053d68298d8211e12b69f2f866632df6,,,
+scale_100,scale,prepare,ok,,,n/a,,254.2,md5:24a14dd4857fb891459b46101bc4fdda,"PLAN HASH (CI NATURAL, T NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2253184.84)
+            -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)
+            -> Record Buffer (record length: 33) (rows=157176.37)
+                -> Filter (rows=157176.37)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)",
+scale_100,scale,measured,ok,10429.0,1,match,sha1:d85864929b8c0f544ff939aafbcf862db8b794ee,,md5:24a14dd4857fb891459b46101bc4fdda,,,
+scale_108,scale,prepare,ok,,,n/a,,51.0,md5:a881d61f3c73fc813cc541fabdedb343,"PLAN HASH (HASH (T INDEX (KIND_ID_TITLE), MI_IDX NATURAL), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=4968887.35)
+            -> Record Buffer (batches: 32, record length: 50) (rows=828940.99)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=828940.99)
+                    -> Filter (rows=1518672.68)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_108,scale,measured,ok,6913.0,1,match,sha1:5512b147fa1902dbd455b208f38b89802ba4121e,,md5:a881d61f3c73fc813cc541fabdedb343,,,
+scale_117,scale,prepare,ok,,,n/a,,58.1,md5:4f6c53168881a7330fdebdeb6c105c90,"PLAN JOIN (HASH (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T NATURAL, MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=830828.23)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=53329.48)
+                -> Filter (rows=460057.66)
+                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460057.66)
+                        -> Bitmap
+                            -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (upper bound: 1/1)
+                -> Record Buffer (record length: 33) (rows=427703.37)
+                    -> Filter (rows=427703.37)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                -> Record Buffer (record length: 33) (rows=1699184.49)
+                    -> Filter (rows=1699184.49)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1699184.49)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Filter (rows=15.58)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.58)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_117,scale,measured,ok,6026.7,1,match,sha1:5a4c3cc4e94150c22954eb461c23f9ad146c82e1,,md5:4f6c53168881a7330fdebdeb6c105c90,,,
+scale_121,scale,prepare,ok,,,n/a,,46.6,md5:c084d7ca9c675d07dceacde602971352,"PLAN HASH (JOIN (T INDEX (KIND_ID_TITLE), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=6674604.58)
+            -> Record Buffer (batches: 64, record length: 75) (rows=430402.57)
+                -> Nested Loop Join (inner) (rows=430402.57)
+                    -> Filter (rows=45327.30)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Filter (rows=1.00)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Filter (rows=9.50)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=9.50)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_121,scale,measured,ok,13645.9,1,match,sha1:d8504f2129e4aa8a9c83536c51e8ccfa912fa740,,md5:c084d7ca9c675d07dceacde602971352,,,
+scale_131,scale,prepare,ok,,,n/a,,47.2,md5:844a848b1eb6ee3758f222c61b9c0712,"PLAN HASH (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (KIND_ID_TITLE))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=25276.03)
+            -> Filter (rows=1378238.40)
+                -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1378238.40)
+                    -> Bitmap
+                        -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (record length: 33) (rows=46367.66)
+                -> Filter (rows=46367.66)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1848786.07)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (lower bound: 1/1)",
+scale_131,scale,measured,ok,1306.6,1,match,sha1:868642bc19b5e3ae0eb1eccdc82c9e3242e7432b,,md5:844a848b1eb6ee3758f222c61b9c0712,,,
+scale_134,scale,prepare,ok,,,n/a,,56.4,md5:cf2413657650326c4af624cf903a49fd,"PLAN HASH (HASH (MI NATURAL, T INDEX (KIND_ID_TITLE)), CI INDEX (PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=18814579.34)
+            -> Record Buffer (batches: 32, record length: 58) (rows=3909418.61)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3909418.61)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+                    -> Record Buffer (record length: 33) (rows=666245.38)
+                        -> Filter (rows=666245.38)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (batches: 32, record length: 33) (rows=11247911.55)
+                -> Filter (rows=11247911.55)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=11247911.55)
+                        -> Bitmap
+                            -> Index ""PERSON_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_134,scale,measured,ok,22400.1,1,match,sha1:890916e04435ff8de43547bc9139e774b44964a6,,md5:cf2413657650326c4af624cf903a49fd,,,
+scale_145,scale,prepare,ok,,,n/a,,54.7,md5:8f20edbfcf8407c711c1bfb6908c3e96,"PLAN JOIN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (TITLE_PK), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=879243.72)
+            -> Filter (rows=459873.65)
+                -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=459873.65)
+                    -> Bitmap
+                        -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+            -> Filter (rows=0.74)
+                -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index ""TITLE_PK"" Unique Scan
+            -> Filter (rows=2.57)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.51)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_145,scale,measured,ok,50124.8,1,match,sha1:e14c4355954070b83eb27c7501883f945f679562,,md5:8f20edbfcf8407c711c1bfb6908c3e96,,,
+scale_155,scale,prepare,ok,,,n/a,,60.5,md5:8eef7353f02ae1f2c77f51d20a8410e6,"PLAN HASH (HASH (JOIN (T INDEX (KIND_ID_TITLE), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=1891722.63)
+            -> Record Buffer (batches: 32, record length: 83) (rows=68185.82)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=68185.82)
+                    -> Nested Loop Join (inner) (rows=65357.60)
+                        -> Filter (rows=36416.96)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                        -> Filter (rows=1.79)
+                            -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=1.84)
+                                -> Bitmap
+                                    -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=460103.68)
+                        -> Filter (rows=460103.68)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_155,scale,measured,ok,6158.8,1,match,sha1:238ea827cd2ab5d580193623a11107693f452e36,,md5:8eef7353f02ae1f2c77f51d20a8410e6,,,
+scale_169,scale,prepare,ok,,,n/a,,37.8,md5:8e0f41f13e645a0d8afe26d440d57a89,"PLAN HASH (MI NATURAL, T INDEX (KIND_ID_TITLE))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3196967.99)
+            -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (record length: 33) (rows=544829.14)
+                -> Filter (rows=544829.14)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)",
+scale_169,scale,measured,ok,6426.7,1,match,sha1:93878991636be9ebcb62f29049dffbc4dae256bc,,md5:8e0f41f13e645a0d8afe26d440d57a89,,,
+scale_182,scale,prepare,ok,,,n/a,,63.9,md5:4170e67508d319f1aae725a8f7938f3f,"PLAN HASH (HASH (JOIN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (TITLE_PK)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=2394818.60)
+            -> Record Buffer (batches: 64, record length: 75) (rows=154444.80)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=154444.80)
+                    -> Nested Loop Join (inner) (rows=919977.28)
+                        -> Filter (rows=919977.30)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=919977.30)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (lower bound: 1/1)
+                        -> Filter (rows=1.00)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                -> Bitmap
+                                    -> Index ""TITLE_PK"" Unique Scan
+                    -> Record Buffer (record length: 33) (rows=415894.68)
+                        -> Filter (rows=415894.68)
+                            -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=415894.68)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_182,scale,measured,ok,17498.0,1,match,sha1:c09be491e34f0a79d61a938b622d7902d803b0ff,,md5:4170e67508d319f1aae725a8f7938f3f,,,
+scale_198,scale,prepare,ok,,,n/a,,51.4,md5:11b0c261fc3fdd11272541e873c3db9e,"PLAN HASH (HASH (T NATURAL, MI_IDX NATURAL, MC INDEX (COMPANY_ID_MOVIE_COMPANIES, COMPANY_TYPE_ID_MOVIE_COMPANIES)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=7836721.88)
+            -> Record Buffer (batches: 64, record length: 83) (rows=505340.08)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=505340.08)
+                    -> Filter (rows=2225503.06)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                    -> Record Buffer (record length: 33) (rows=452658.32)
+                        -> Filter (rows=452658.32)
+                            -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=452658.32)
+                                -> Bitmap And
+                                    -> Bitmap
+                                        -> Index ""COMPANY_ID_MOVIE_COMPANIES"" Range Scan (lower bound: 1/1)
+                                    -> Bitmap
+                                        -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_198,scale,measured,ok,18091.4,1,match,sha1:b00fb09cfbd8f91f52be7d97b1ff6a251c08d9d7,,md5:11b0c261fc3fdd11272541e873c3db9e,,,
+scale_203,scale,prepare,ok,,,n/a,,57.7,md5:915f68cd5122a87794f4d4cba5256711,"PLAN HASH (HASH (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=26084851.47)
+            -> Record Buffer (batches: 64, record length: 58) (rows=1731935.06)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1731935.06)
+                    -> Filter (rows=9988395.49)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=9988395.49)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)
+                    -> Record Buffer (record length: 33) (rows=438395.96)
+                        -> Filter (rows=438395.96)
+                            -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_203,scale,measured,ok,28155.3,1,match,sha1:c41a7f0e4088543c0a1d93e4a314555255c01f1a,,md5:915f68cd5122a87794f4d4cba5256711,,,
+scale_230,scale,prepare,ok,,,n/a,,62.0,md5:919bd77c7358e7d5f88aa853fc241f2c,"PLAN JOIN (HASH (MK NATURAL, T NATURAL), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=896562.33)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=94148.01)
+                -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+                -> Record Buffer (record length: 33) (rows=52616.98)
+                    -> Filter (rows=52616.98)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Filter (rows=9.52)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.51)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_230,scale,measured,ok,5908.3,1,match,sha1:c3361fe68d608dd55a32805f7491b69b9e3a1025,,md5:919bd77c7358e7d5f88aa853fc241f2c,,,
+scale_236,scale,prepare,ok,,,n/a,,46.1,md5:88a1b8c03e40f35dfda8ac49ddd05732,"PLAN HASH (HASH (T INDEX (KIND_ID_TITLE), MI_IDX NATURAL), CI INDEX (PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=7848134.60)
+            -> Record Buffer (batches: 64, record length: 50) (rows=828940.99)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=828940.99)
+                    -> Filter (rows=1518672.68)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+            -> Record Buffer (batches: 64, record length: 33) (rows=22127501.75)
+                -> Filter (rows=22127501.75)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=22127501.75)
+                        -> Bitmap
+                            -> Index ""PERSON_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_236,scale,measured,ok,15078.5,1,match,sha1:ca26af1490d07a340495527b076e4dc4ec391aa7,,md5:88a1b8c03e40f35dfda8ac49ddd05732,,,
+scale_240,scale,prepare,ok,,,n/a,,62.2,md5:d0ce8225e0e569b122f52d752e0917de,"PLAN HASH (JOIN (HASH (MI_IDX NATURAL, T INDEX (KIND_ID_TITLE)), MI INDEX (MOVIE_ID_MOVIE_INFO)), CI INDEX (ROLE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=280861.22)
+            -> Record Buffer (batches: 32, record length: 83) (rows=41749.52)
+                -> Nested Loop Join (inner) (rows=41749.52)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=8109.43)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                        -> Record Buffer (record length: 33) (rows=14856.99)
+                            -> Filter (rows=14856.99)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=103323.68)
+                                    -> Bitmap
+                                        -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Filter (rows=5.15)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=5.99)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 33) (rows=15722796.86)
+                -> Filter (rows=15722796.86)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15722796.86)
+                        -> Bitmap
+                            -> Index ""ROLE_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_240,scale,measured,ok,7264.1,1,match,sha1:3704fe7434ad964bd3700ee1d7461ce44e78f478,,md5:d0ce8225e0e569b122f52d752e0917de,,,
+scale_258,scale,prepare,ok,,,n/a,,44.8,md5:cad35523a2bb70728035d26717f2826f,"PLAN HASH (JOIN (HASH (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (KIND_ID_TITLE)), MC INDEX (MOVIE_ID_MOVIE_COMPANIES)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=797816.00)
+            -> Record Buffer (batches: 32, record length: 83) (rows=133223.64)
+                -> Nested Loop Join (inner) (rows=133223.64)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=81374.38)
+                        -> Filter (rows=919977.30)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=919977.30)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (lower bound: 1/1)
+                        -> Record Buffer (record length: 33) (rows=223635.77)
+                            -> Filter (rows=223635.77)
+                                -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                    -> Bitmap
+                                        -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Filter (rows=1.64)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_258,scale,measured,ok,9008.0,1,match,sha1:0a0748e637d57bd26cc0c63393c1043c5441016c,,md5:cad35523a2bb70728035d26717f2826f,,,
+scale_260,scale,prepare,ok,,,n/a,,56.9,md5:844a848b1eb6ee3758f222c61b9c0712,"PLAN HASH (MI INDEX (INFO_TYPE_ID_MOVIE_INFO), T INDEX (KIND_ID_TITLE))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=780422.78)
+            -> Filter (rows=6290345.21)
+                -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=6290345.21)
+                    -> Bitmap
+                        -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (record length: 33) (rows=313679.49)
+                -> Filter (rows=313679.49)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)",
+scale_260,scale,measured,ok,2692.5,1,match,sha1:ad349b63ed2f52ab643b01088f5927ea4c71e6fd,,md5:844a848b1eb6ee3758f222c61b9c0712,,,
+scale_269,scale,prepare,ok,,,n/a,,38.5,md5:52d0e28304ec3b834d1169f840302ead,"PLAN HASH (HASH (MI_IDX NATURAL, T INDEX (KIND_ID_TITLE)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=8550942.67)
+            -> Record Buffer (batches: 64, record length: 58) (rows=551395.61)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=551395.61)
+                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                    -> Record Buffer (record length: 33) (rows=1010191.88)
+                        -> Filter (rows=1010191.88)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_269,scale,measured,ok,15669.5,1,match,sha1:71d34f0f14e85aa07adde6eb37fc4613c55030f5,,md5:52d0e28304ec3b834d1169f840302ead,,,
+scale_272,scale,prepare,ok,,,n/a,,52.7,md5:2bccb57a1289f403ad402f301d3e89b1,"PLAN JOIN (HASH (MC NATURAL, T NATURAL), MI INDEX (MOVIE_ID_MOVIE_INFO), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=247361.99)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=11034.37)
+                -> Table ""MOVIE_COMPANIES"" as ""MC"" Full Scan (rows=2609129.00)
+                -> Record Buffer (record length: 33) (rows=10692.58)
+                    -> Filter (rows=10692.58)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Filter (rows=1.53)
+                -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=5.99)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Filter (rows=14.63)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=14.63)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_272,scale,measured,ok,4413.8,1,match,sha1:f9695117658e214aa9a8cb767945204015272191,,md5:2bccb57a1289f403ad402f301d3e89b1,,,
+scale_275,scale,prepare,ok,,,n/a,,43.3,md5:0f890df2a8ba5a4054f6d68c6f980930,"PLAN HASH (HASH (HASH (MC INDEX (COMPANY_TYPE_ID_MOVIE_COMPANIES, COMPANY_ID_MOVIE_COMPANIES), T INDEX (KIND_ID_TITLE)), MI NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=38709269.00)
+            -> Record Buffer (batches: 64, record length: 83) (rows=2496113.23)
+                -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2496113.23)
+                    -> Record Buffer (batches: 32, record length: 58) (rows=416417.28)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=416417.28)
+                            -> Filter (rows=1042781.19)
+                                -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1042781.19)
+                                    -> Bitmap And
+                                        -> Bitmap
+                                            -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (lower bound: 1/1)
+                                        -> Bitmap
+                                            -> Index ""COMPANY_ID_MOVIE_COMPANIES"" Range Scan (lower bound: 1/1)
+                            -> Record Buffer (record length: 33) (rows=1009639.25)
+                                -> Filter (rows=1009639.25)
+                                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                                        -> Bitmap
+                                            -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+                    -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_275,scale,measured,ok,107303.7,1,match,sha1:202da2d898a0fbf176cfef116c5116efb46ebd70,,md5:0f890df2a8ba5a4054f6d68c6f980930,,,
+scale_284,scale,prepare,ok,,,n/a,,61.2,md5:7ce1939fa28b4428c820293634d38eb8,"PLAN HASH (HASH (HASH (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI INDEX (ROLE_ID_CAST_INFO, PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2123236.77)
+            -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=1793292.98)
+                -> Record Buffer (batches: 32, record length: 58) (rows=340978.69)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=340978.69)
+                        -> Filter (rows=937135.74)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                        -> Record Buffer (record length: 33) (rows=919931.32)
+                            -> Filter (rows=919931.32)
+                                -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=919931.32)
+                                    -> Bitmap
+                                        -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (upper bound: 1/1)
+                -> Record Buffer (batches: 32, record length: 33) (rows=13035157.92)
+                    -> Filter (rows=13035157.92)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=13035157.92)
+                            -> Bitmap
+                                -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (record length: 33) (rows=2760987.33)
+                -> Filter (rows=2760987.33)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=2760987.33)
+                        -> Bitmap And
+                            -> Bitmap
+                                -> Index ""ROLE_ID_CAST_INFO"" Range Scan (full match)
+                            -> Bitmap
+                                -> Index ""PERSON_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_284,scale,measured,ok,9242.7,1,match,sha1:b028f2aa02460a3735e241f449755856e8e92afc,,md5:7ce1939fa28b4428c820293634d38eb8,,,
+scale_285,scale,prepare,ok,,,n/a,,54.4,md5:dea1faf3a20b5142aa030e86deae5e12,"PLAN HASH (HASH (T INDEX (KIND_ID_TITLE), MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2173274.97)
+            -> Record Buffer (batches: 32, record length: 58) (rows=552572.05)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=552572.05)
+                    -> Filter (rows=1518672.68)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                    -> Record Buffer (record length: 33) (rows=919931.32)
+                        -> Filter (rows=919931.32)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=919931.32)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (batches: 32, record length: 33) (rows=9748056.74)
+                -> Filter (rows=9748056.74)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=9748056.74)
+                        -> Bitmap
+                            -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)",
+scale_285,scale,measured,ok,5721.4,1,match,sha1:58ab3d9d67b3de34710aef50e94eb0909e1fabc8,,md5:dea1faf3a20b5142aa030e86deae5e12,,,
+scale_290,scale,prepare,ok,,,n/a,,56.7,md5:a881d61f3c73fc813cc541fabdedb343,"PLAN HASH (HASH (T INDEX (KIND_ID_TITLE), MI_IDX NATURAL), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=6048972.80)
+            -> Record Buffer (batches: 32, record length: 50) (rows=1009127.63)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1009127.63)
+                    -> Filter (rows=1848786.07)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1848786.07)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (lower bound: 1/1)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_290,scale,measured,ok,7390.8,1,match,sha1:8f32378ee410b2c843ad3a45ebc4b3def3876a80,,md5:a881d61f3c73fc813cc541fabdedb343,,,
+scale_296,scale,prepare,ok,,,n/a,,55.7,md5:9503322f9c7c9b7533c5f45db5766eee,"PLAN HASH (HASH (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (KIND_ID_TITLE)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=21490574.72)
+            -> Record Buffer (batches: 32, record length: 58) (rows=773441.49)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=773441.49)
+                    -> Filter (rows=2877743.30)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=2877743.30)
+                            -> Bitmap
+                                -> Index ""KEYWORD_ID_MOVIE_KEYWORD"" Range Scan (lower bound: 1/1)
+                    -> Record Buffer (record length: 33) (rows=679526.00)
+                        -> Filter (rows=679526.00)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_296,scale,measured,ok,17783.0,1,match,sha1:081bfc642b1a0e9551ed6d5b474c35ce7a2a5c9c,,md5:9503322f9c7c9b7533c5f45db5766eee,,,
+scale_301,scale,prepare,ok,,,n/a,,49.7,md5:8e0f41f13e645a0d8afe26d440d57a89,"PLAN HASH (MI NATURAL, T INDEX (KIND_ID_TITLE))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=4065316.46)
+            -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (record length: 33) (rows=692813.59)
+                -> Filter (rows=692813.59)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (full match)",
+scale_301,scale,measured,ok,5493.8,1,match,sha1:ca60979bd01e97501da78ebdcc6ebbcc2ecccd58,,md5:8e0f41f13e645a0d8afe26d440d57a89,,,
+scale_340,scale,prepare,ok,,,n/a,,52.7,md5:34aad5c3a29f097a96ea06fd098dfa2e,"PLAN JOIN (HASH (MK INDEX (KEYWORD_ID_MOVIE_KEYWORD), T INDEX (KIND_ID_TITLE)), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=301380.46)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=19144.61)
+                -> Filter (rows=4329743.54)
+                    -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=4329743.54)
+                        -> Bitmap
+                            -> Index ""KEYWORD_ID_MOVIE_KEYWORD"" Range Scan (lower bound: 1/1)
+                -> Record Buffer (record length: 33) (rows=11179.31)
+                    -> Filter (rows=11179.31)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+            -> Filter (rows=1.02)
+                -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.36)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+            -> Filter (rows=15.46)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.46)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_340,scale,measured,ok,6721.1,1,match,sha1:09b8a82e41f19aa185b596a678881d173cfa47a4,,md5:34aad5c3a29f097a96ea06fd098dfa2e,,,
+scale_348,scale,prepare,ok,,,n/a,,43.1,md5:4a2f4058ecb1f059acef7b7549efe8a4,"PLAN HASH (HASH (MC INDEX (COMPANY_TYPE_ID_MOVIE_COMPANIES), T INDEX (KIND_ID_TITLE)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=1967561.33)
+            -> Record Buffer (batches: 32, record length: 58) (rows=328122.90)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=328122.90)
+                    -> Filter (rows=1368053.37)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1368053.37)
+                            -> Bitmap
+                                -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (lower bound: 1/1)
+                    -> Record Buffer (record length: 33) (rows=606406.94)
+                        -> Filter (rows=606406.94)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_348,scale,measured,ok,6331.1,1,match,sha1:05e0faf18e134c12948b52a86e408560055fcd55,,md5:4a2f4058ecb1f059acef7b7549efe8a4,,,
+scale_351,scale,prepare,ok,,,n/a,,41.9,md5:499c05cd0aca4bdc6d62061bd4d5d3e3,"PLAN HASH (HASH (T NATURAL, MI_IDX NATURAL, MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=9116797.13)
+            -> Record Buffer (batches: 64, record length: 75) (rows=587883.95)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=587883.95)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                    -> Record Buffer (record length: 33) (rows=1054325.22)
+                        -> Filter (rows=1054325.22)
+                            -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=1054325.22)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_351,scale,measured,ok,20080.0,1,match,sha1:d6f7fc27f739de762cb69988221b4d3fc109c44d,,md5:499c05cd0aca4bdc6d62061bd4d5d3e3,,,
+scale_358,scale,prepare,ok,,,n/a,,45.5,md5:49343fafe567fd4b626aa72cad072d58,"PLAN HASH (JOIN (HASH (MI_IDX NATURAL, T NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=908207.13)
+            -> Record Buffer (batches: 64, record length: 100) (rows=58564.47)
+                -> Nested Loop Join (inner) (rows=58564.47)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5836.36)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                        -> Record Buffer (record length: 33) (rows=10692.58)
+                            -> Filter (rows=10692.58)
+                                -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=1.06)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.40)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Filter (rows=9.50)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=9.50)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_358,scale,measured,ok,15328.5,1,match,sha1:7c75034cae14c4428466c22982d0fe367f945533,,md5:49343fafe567fd4b626aa72cad072d58,,,
+scale_361,scale,prepare,ok,,,n/a,,59.5,md5:524bef74c9200b006d0c0666cd62e60d,"PLAN HASH (HASH (HASH (HASH (T NATURAL, MI_IDX NATURAL), MI NATURAL), MK NATURAL), CI INDEX (PERSON_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=1218123427.34)
+            -> Record Buffer (batches: 64, record length: 92) (rows=78548990.50)
+                -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=78548990.50)
+                    -> Record Buffer (batches: 8, record length: 67) (rows=8272287.82)
+                        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=8272287.82)
+                            -> Record Buffer (batches: 32, record length: 50) (rows=1380035.00)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1380035.00)
+                                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+                    -> Record Buffer (batches: 8, record length: 25) (rows=4523930.00)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+            -> Record Buffer (batches: 64, record length: 33) (rows=36244344.00)
+                -> Filter (rows=36244344.00)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=36244344.00)
+                        -> Bitmap
+                            -> Index ""PERSON_ID_CAST_INFO"" Range Scan (upper bound: 1/1)",
+scale_361,scale,measured,timeout,,,n/a,,,md5:524bef74c9200b006d0c0666cd62e60d,,,watchdog 300s
+scale_374,scale,prepare,ok,,,n/a,,45.9,md5:39f22657dd5a0537b2e56fd8d2da6648,"PLAN JOIN (HASH (MK NATURAL, T INDEX (KIND_ID_TITLE)), CI INDEX (MOVIE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1807389.33)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=116546.98)
+                -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+                -> Record Buffer (record length: 33) (rows=65135.21)
+                    -> Filter (rows=65135.21)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1518672.68)
+                            -> Bitmap
+                                -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Filter (rows=15.51)
+                -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=15.51)
+                    -> Bitmap
+                        -> Index ""MOVIE_ID_CAST_INFO"" Range Scan (full match)",
+scale_374,scale,measured,ok,3601.4,1,match,sha1:ed0b6843ff38662efca556b51245cb4f6f9e43f2,,md5:39f22657dd5a0537b2e56fd8d2da6648,,,
+scale_391,scale,prepare,ok,,,n/a,,42.1,md5:4a2f4058ecb1f059acef7b7549efe8a4,"PLAN HASH (HASH (MC INDEX (COMPANY_TYPE_ID_MOVIE_COMPANIES), T INDEX (KIND_ID_TITLE)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=3384803.27)
+            -> Record Buffer (batches: 32, record length: 58) (rows=512529.97)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=512529.97)
+                    -> Filter (rows=1241075.71)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=1241075.71)
+                            -> Bitmap
+                                -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (upper bound: 1/1)
+                    -> Record Buffer (record length: 33) (rows=1044122.98)
+                        -> Filter (rows=1044122.98)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1848786.07)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_391,scale,measured,ok,8236.6,1,match,sha1:73d6ea4f1f3111a51da63eb0c4e2b3c85221fd93,,md5:4a2f4058ecb1f059acef7b7549efe8a4,,,
+scale_393,scale,prepare,ok,,,n/a,,198.0,md5:83d4a8b583fc149f1ac7872d1570a1e2,"PLAN HASH (JOIN (T NATURAL, MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2691234.49)
+            -> Record Buffer (batches: 32, record length: 58) (rows=97051.61)
+                -> Nested Loop Join (inner) (rows=97051.61)
+                    -> Filter (rows=75461.66)
+                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=1.29)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=1.79)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_393,scale,measured,ok,6755.8,1,match,sha1:564bf55399c288c929390690d902517b691b52cd,,md5:83d4a8b583fc149f1ac7872d1570a1e2,,,
+scale_394,scale,prepare,ok,,,n/a,,65.0,md5:d9ddbce15ee8c3b8924564f1fdf97ad3,"PLAN HASH (HASH (HASH (HASH (T NATURAL, MI_IDX NATURAL), MI NATURAL), MK NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=1218123427.34)
+            -> Record Buffer (batches: 64, record length: 92) (rows=78548990.50)
+                -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=78548990.50)
+                    -> Record Buffer (batches: 8, record length: 67) (rows=8272287.82)
+                        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=8272287.82)
+                            -> Record Buffer (batches: 32, record length: 50) (rows=1380035.00)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1380035.00)
+                                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+                    -> Record Buffer (batches: 8, record length: 25) (rows=4523930.00)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_394,scale,measured,timeout,,,n/a,,,md5:d9ddbce15ee8c3b8924564f1fdf97ad3,,,watchdog 300s
+scale_400,scale,prepare,ok,,,n/a,,32.5,md5:2cf7b6f74e1f8cbf3be0f8a87be02873,"PLAN HASH (HASH (MK NATURAL, T INDEX (KIND_ID_TITLE)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=7529080.88)
+            -> Record Buffer (batches: 64, record length: 58) (rows=485502.28)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=485502.28)
+                    -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+                    -> Record Buffer (record length: 33) (rows=271335.15)
+                        -> Filter (rows=271335.15)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_400,scale,measured,ok,23827.0,1,match,sha1:928c098d2b36f6fac33455ce908b65a141e0e2f2,,md5:2cf7b6f74e1f8cbf3be0f8a87be02873,,,
+scale_407,scale,prepare,ok,,,n/a,,92.6,md5:66fd97ed5b5b8ffad78cf10a806c6360,"PLAN HASH (JOIN (HASH (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T NATURAL), MC INDEX (MOVIE_ID_MOVIE_COMPANIES), MI INDEX (MOVIE_ID_MOVIE_INFO)), CI INDEX (ROLE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=1183450.79)
+            -> Record Buffer (batches: 64, record length: 100) (rows=125969.39)
+                -> Nested Loop Join (inner) (rows=125969.39)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=20897.77)
+                        -> Filter (rows=460057.66)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460057.66)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (upper bound: 1/1)
+                        -> Record Buffer (record length: 33) (rows=114846.68)
+                            -> Filter (rows=114846.68)
+                                -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Filter (rows=2.38)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=2.38)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Filter (rows=2.54)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=5.98)
+                            -> Bitmap
+                                -> Index ""MOVIE_ID_MOVIE_INFO"" Range Scan (full match)
+            -> Record Buffer (batches: 64, record length: 33) (rows=21856546.52)
+                -> Filter (rows=21856546.52)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=21856546.52)
+                        -> Bitmap
+                            -> Index ""ROLE_ID_CAST_INFO"" Range Scan (lower bound: 1/1)",
+scale_407,scale,measured,ok,28480.0,1,match,sha1:f04f9159a68f3d27efd18aa0332502478e87a325,,md5:66fd97ed5b5b8ffad78cf10a806c6360,,,
+scale_408,scale,prepare,ok,,,n/a,,61.2,md5:cde87da05d9afedc41f40f50d72793d2,"PLAN HASH (JOIN (MC INDEX (COMPANY_ID_MOVIE_COMPANIES, COMPANY_TYPE_ID_MOVIE_COMPANIES), T INDEX (TITLE_PK)), CI INDEX (ROLE_ID_CAST_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=830962.60)
+            -> Record Buffer (batches: 16, record length: 66) (rows=295681.31)
+                -> Nested Loop Join (inner) (rows=295681.31)
+                    -> Filter (rows=581715.54)
+                        -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=581715.54)
+                            -> Bitmap And
+                                -> Bitmap
+                                    -> Index ""COMPANY_ID_MOVIE_COMPANIES"" Range Scan (upper bound: 1/1)
+                                -> Bitmap
+                                    -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (full match)
+                    -> Filter (rows=0.51)
+                        -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index ""TITLE_PK"" Unique Scan
+            -> Record Buffer (batches: 16, record length: 33) (rows=6133751.28)
+                -> Filter (rows=6133751.28)
+                    -> Table ""CAST_INFO"" as ""CI"" Access By ID (rows=6133751.28)
+                        -> Bitmap
+                            -> Index ""ROLE_ID_CAST_INFO"" Range Scan (full match)",
+scale_408,scale,measured,ok,4843.9,1,match,sha1:924d487873eec04abc3e719e90f9e13d0ebe4ecf,,md5:cde87da05d9afedc41f40f50d72793d2,,,
+scale_413,scale,prepare,ok,,,n/a,,42.2,md5:7bbaae75e93c992fe325dca87f512520,"PLAN HASH (HASH (JOIN (HASH (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T NATURAL), MK INDEX (MOVIE_ID_MOVIE_KEYWORD)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=9908562.39)
+            -> Record Buffer (batches: 64, record length: 100) (rows=638939.83)
+                -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=638939.83)
+                    -> Record Buffer (batches: 16, record length: 75) (rows=290309.45)
+                        -> Nested Loop Join (inner) (rows=290309.45)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=28603.05)
+                                -> Filter (rows=460103.68)
+                                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=460103.68)
+                                        -> Bitmap
+                                            -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (lower bound: 1/1)
+                                -> Record Buffer (record length: 33) (rows=157176.37)
+                                    -> Filter (rows=157176.37)
+                                        -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                            -> Filter (rows=10.15)
+                                -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=10.15)
+                                    -> Bitmap
+                                        -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+                    -> Record Buffer (batches: 16, record length: 33) (rows=5447181.88)
+                        -> Filter (rows=5447181.88)
+                            -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=5447181.88)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (lower bound: 1/1)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_413,scale,measured,ok,66608.7,1,match,sha1:3ba6d3ce0cc9b2227a0b036de75480dacd4eddfb,,md5:7bbaae75e93c992fe325dca87f512520,,,
+scale_419,scale,prepare,ok,,,n/a,,64.0,md5:8e0f41f13e645a0d8afe26d440d57a89,"PLAN HASH (MI NATURAL, T INDEX (KIND_ID_TITLE))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=6126742.35)
+            -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (record length: 33) (rows=1044122.98)
+                -> Filter (rows=1044122.98)
+                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1848786.07)
+                        -> Bitmap
+                            -> Index ""KIND_ID_TITLE"" Range Scan (lower bound: 1/1)",
+scale_419,scale,measured,ok,6922.4,1,match,sha1:6a112ea4ef73733b4bd248c697a3140e077da7a5,,md5:8e0f41f13e645a0d8afe26d440d57a89,,,
+scale_444,scale,prepare,ok,,,n/a,,53.9,md5:24a14dd4857fb891459b46101bc4fdda,"PLAN HASH (CI NATURAL, T NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=15811158.97)
+            -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)
+            -> Record Buffer (record length: 33) (rows=1102945.69)
+                -> Filter (rows=1102945.69)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)",
+scale_444,scale,measured,ok,17214.1,1,match,sha1:74cac12524d48bb483a56370287bc40c531542b9,,md5:24a14dd4857fb891459b46101bc4fdda,,,
+scale_452,scale,prepare,ok,,,n/a,,42.8,md5:71a01c6a0e77f273e0792ba35e59ff05,"PLAN HASH (HASH (T NATURAL, MI_IDX NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=21401331.24)
+            -> Record Buffer (batches: 64, record length: 50) (rows=1380035.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1380035.00)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_452,scale,measured,ok,19974.0,1,match,sha1:10b45491aa96513c86d6e1b2749f1ef34e1ae0d7,,md5:71a01c6a0e77f273e0792ba35e59ff05,,,
+scale_458,scale,prepare,ok,,,n/a,,44.1,md5:51d8d78ca6ef946c096752e1bd931cb6,"PLAN HASH (HASH (T NATURAL, MI_IDX NATURAL), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=8272287.82)
+            -> Record Buffer (batches: 32, record length: 50) (rows=1380035.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1380035.00)
+                    -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                    -> Record Buffer (record length: 25) (rows=1380035.00)
+                        -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_458,scale,measured,ok,8829.9,1,match,sha1:94fddb780f03ab17ccdf31458047c851fd25a22a,,md5:51d8d78ca6ef946c096752e1bd931cb6,,,
+scale_459,scale,prepare,ok,,,n/a,,61.4,md5:3e0dab4dd76541f9cfa8f77679dcc9b1,"PLAN HASH (HASH (JOIN (T NATURAL, MK INDEX (MOVIE_ID_MOVIE_KEYWORD), MI_IDX INDEX (MOVIE_ID_MOVIE_INFO_IDX)), MI NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=12816567.44)
+            -> Record Buffer (batches: 64, record length: 100) (rows=826458.48)
+                -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=826458.48)
+                    -> Record Buffer (batches: 32, record length: 75) (rows=137874.99)
+                        -> Nested Loop Join (inner) (rows=137874.99)
+                            -> Filter (rows=37607.65)
+                                -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+                            -> Filter (rows=1.84)
+                                -> Table ""MOVIE_KEYWORD"" as ""MK"" Access By ID (rows=1.84)
+                                    -> Bitmap
+                                        -> Index ""MOVIE_ID_MOVIE_KEYWORD"" Range Scan (full match)
+                            -> Filter (rows=1.99)
+                                -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=2.98)
+                                    -> Bitmap
+                                        -> Index ""MOVIE_ID_MOVIE_INFO_IDX"" Range Scan (full match)
+                    -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                        -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_459,scale,measured,ok,143922.3,1,match,sha1:4ff87a6f4bc4dfd65cc2643541a0138799620bd2,,md5:3e0dab4dd76541f9cfa8f77679dcc9b1,,,
+scale_461,scale,prepare,ok,,,n/a,,60.5,md5:e643ec462e5a097e72e3371c83fa4f2a,"PLAN HASH (HASH (HASH (JOIN (MI_IDX INDEX (INFO_TYPE_ID_MOVIE_INFO_IDX), T INDEX (TITLE_PK)), MC INDEX (COMPANY_ID_MOVIE_COMPANIES, COMPANY_TYPE_ID_MOVIE_COMPANIES)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=45397968.47)
+            -> Record Buffer (batches: 64, record length: 108) (rows=2927770.86)
+                -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=2927770.86)
+                    -> Record Buffer (batches: 32, record length: 83) (rows=538964.87)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=538964.87)
+                            -> Nested Loop Join (inner) (rows=919977.28)
+                                -> Filter (rows=919977.30)
+                                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Access By ID (rows=919977.30)
+                                        -> Bitmap
+                                            -> Index ""INFO_TYPE_ID_MOVIE_INFO_IDX"" Range Scan (lower bound: 1/1)
+                                -> Filter (rows=1.00)
+                                    -> Table ""TITLE"" as ""T"" Access By ID (rows=1.00)
+                                        -> Bitmap
+                                            -> Index ""TITLE_PK"" Unique Scan
+                            -> Record Buffer (record length: 33) (rows=637863.04)
+                                -> Filter (rows=637863.04)
+                                    -> Table ""MOVIE_COMPANIES"" as ""MC"" Access By ID (rows=637863.04)
+                                        -> Bitmap And
+                                            -> Bitmap
+                                                -> Index ""COMPANY_ID_MOVIE_COMPANIES"" Range Scan (lower bound: 1/1)
+                                            -> Bitmap
+                                                -> Index ""COMPANY_TYPE_ID_MOVIE_COMPANIES"" Range Scan (upper bound: 1/1)
+                    -> Record Buffer (batches: 32, record length: 33) (rows=13457481.94)
+                        -> Filter (rows=13457481.94)
+                            -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=13457481.94)
+                                -> Bitmap
+                                    -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_461,scale,measured,ok,76774.9,1,match,sha1:2913f9777a17b89239d026a25b6e0390008ae063,,md5:e643ec462e5a097e72e3371c83fa4f2a,,,
+scale_484,scale,prepare,ok,,,n/a,,72.6,md5:f4ee4dc3192ec4a3c8081511536842e0,"PLAN HASH (HASH (HASH (MI_IDX NATURAL, T INDEX (KIND_ID_TITLE), MI INDEX (INFO_TYPE_ID_MOVIE_INFO)), MK NATURAL), CI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 64, keys: 1, total key length: 4) (rows=83702962.42)
+            -> Record Buffer (batches: 64, record length: 100) (rows=5397468.81)
+                -> Batch Hash Join (inner) (batches: 8, keys: 1, total key length: 4) (rows=5397468.81)
+                    -> Record Buffer (batches: 8, record length: 75) (rows=568427.62)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=568427.62)
+                            -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                            -> Record Buffer (record length: 33) (rows=679526.00)
+                                -> Filter (rows=679526.00)
+                                    -> Table ""TITLE"" as ""T"" Access By ID (rows=679526.00)
+                                        -> Bitmap
+                                            -> Index ""KIND_ID_TITLE"" Range Scan (full match)
+                            -> Record Buffer (record length: 33) (rows=3792999.18)
+                                -> Filter (rows=3792999.18)
+                                    -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=3792999.18)
+                                        -> Bitmap
+                                            -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (upper bound: 1/1)
+                    -> Record Buffer (batches: 8, record length: 25) (rows=4523930.00)
+                        -> Table ""MOVIE_KEYWORD"" as ""MK"" Full Scan (rows=4523930.00)
+            -> Record Buffer (batches: 64, record length: 25) (rows=36244344.00)
+                -> Table ""CAST_INFO"" as ""CI"" Full Scan (rows=36244344.00)",
+scale_484,scale,measured,ok,236110.1,1,match,sha1:2779afe8ba0c5afb6381bf83ab7e0d64799d74c9,,md5:f4ee4dc3192ec4a3c8081511536842e0,,,
+scale_490,scale,prepare,ok,,,n/a,,65.9,md5:245ffb0a0e4d6e3427fbea00c49cd9ea,"PLAN HASH (HASH (MI_IDX NATURAL, T INDEX (KIND_ID_TITLE)), MI INDEX (INFO_TYPE_ID_MOVIE_INFO))","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=1155910.13)
+            -> Record Buffer (batches: 16, record length: 58) (rows=393329.17)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=393329.17)
+                    -> Table ""MOVIE_INFO_IDX"" as ""MI_IDX"" Full Scan (rows=1380035.00)
+                    -> Record Buffer (record length: 33) (rows=720604.09)
+                        -> Filter (rows=720604.09)
+                            -> Table ""TITLE"" as ""T"" Access By ID (rows=1009639.25)
+                                -> Bitmap
+                                    -> Index ""KIND_ID_TITLE"" Range Scan (upper bound: 1/1)
+            -> Record Buffer (batches: 16, record length: 33) (rows=7273459.20)
+                -> Filter (rows=7273459.20)
+                    -> Table ""MOVIE_INFO"" as ""MI"" Access By ID (rows=7273459.20)
+                        -> Bitmap
+                            -> Index ""INFO_TYPE_ID_MOVIE_INFO"" Range Scan (upper bound: 1/1)",
+scale_490,scale,measured,ok,5294.1,1,match,sha1:e6436583141c2231e20a6cf8051a78032fb4759f,,md5:245ffb0a0e4d6e3427fbea00c49cd9ea,,,
+scale_499,scale,prepare,ok,,,n/a,,41.3,md5:d13ebb39064b6684a39bee2d7c175254,"PLAN HASH (HASH (MC NATURAL, T NATURAL), MI NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Batch Hash Join (inner) (batches: 32, keys: 1, total key length: 4) (rows=6822672.88)
+            -> Record Buffer (batches: 32, record length: 50) (rows=1138201.13)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1138201.13)
+                    -> Table ""MOVIE_COMPANIES"" as ""MC"" Full Scan (rows=2609129.00)
+                    -> Record Buffer (record length: 33) (rows=1102945.69)
+                        -> Filter (rows=1102945.69)
+                            -> Table ""TITLE"" as ""T"" Full Scan (rows=2528312.00)
+            -> Record Buffer (batches: 32, record length: 25) (rows=14835720.00)
+                -> Table ""MOVIE_INFO"" as ""MI"" Full Scan (rows=14835720.00)",
+scale_499,scale,measured,ok,8764.9,1,match,sha1:44cb77c5354c88396beeec9ca8ef84c1d8a299b2,,md5:d13ebb39064b6684a39bee2d7c175254,,,
