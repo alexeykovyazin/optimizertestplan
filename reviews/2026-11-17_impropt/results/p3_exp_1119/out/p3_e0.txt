@@ -1,0 +1,77 @@
+
+T_START                         2026-11-19 14:05:19.7400 Europe/Budapest
+
+
+Current memory = 862341200
+Delta memory = 10544
+Max memory = 862530560
+Elapsed time = 0.029 sec
+Buffers = 50000
+Reads = 1
+Writes = 0
+Fetches = 21
+Current memory = 860140512
+Delta memory = -2200688
+Max memory = 862768592
+Elapsed time = 0.027 sec
+Buffers = 50000
+Reads = 52
+Writes = 46
+Fetches = 7685
+Current memory = 860132128
+Delta memory = -11088
+Max memory = 862768592
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 2
+
+PLAN SORT (D CAST_INFO ORDER MOVIE_ID_CAST_INFO, D MOVIE_KEYWORD ORDER MOVIE_ID_MOVIE_KEYWORD, D MOVIE_INFO ORDER MOVIE_ID_MOVIE_INFO, D MOVIE_COMPANIES ORDER MOVIE_ID_MOVIE_COMPANIES, D MOVIE_INFO_IDX ORDER MOVIE_ID_MOVIE_INFO_IDX)
+Current memory = 870412608
+Delta memory = 10275072
+Max memory = 1482696624
+Elapsed time = 264.770 sec
+Buffers = 50000
+Reads = 17260058
+Writes = 2789
+Fetches = 455158141
+Current memory = 842558528
+Delta memory = -27854080
+Max memory = 1482696624
+Elapsed time = 0.776 sec
+Buffers = 50000
+Reads = 1
+Writes = 11490
+Fetches = 2
+
+T_END                           2026-11-19 14:09:45.3440 Europe/Budapest
+
+
+Current memory = 842649552
+Delta memory = 58512
+Max memory = 1482696624
+Elapsed time = 0.001 sec
+Buffers = 50000
+Reads = 2
+Writes = 0
+Fetches = 7
+
+KEYS                            2504697
+U_AVG                           0.5000028210574005
+U_MIN                           4.172325134277344e-07
+U_MAX                           0.9999994635581970
+Q1                              626173
+Q2                              626136
+Q3                              626197
+Q4                              626191
+
+
+Current memory = 842748176
+Delta memory = 98768
+Max memory = 1482696624
+Elapsed time = 1.949 sec
+Buffers = 50000
+Reads = 19
+Writes = 3
+Fetches = 2550950

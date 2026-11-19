@@ -1,0 +1,186 @@
+
+TBL                             title               
+N                               2528312
+F1                              484820
+F2                              11141
+F3                              594730
+F4                              1260295
+F5                              985048
+F6                              524129
+F7                              1434466
+F8                              473918
+F9                              662825
+F10                             216282
+F11                             1671292
+F12                             35489
+F13                             2064552
+F14                             1348293
+F15                             568449
+F16                             341626
+F17                             334539
+F18                             753677
+F19                             134760
+F20                             904491
+F21                             1021752
+F22                             84593
+F23                             492483
+
+
+Current memory = 840579456
+Delta memory = 589504
+Max memory = 841184864
+Elapsed time = 7.746 sec
+Buffers = 50000
+Reads = 22001
+Writes = 0
+Fetches = 2616819
+
+TBL                             cast_info                           
+N                               36244344
+F1                              4323018
+F2                              4319178
+F3                              23573656
+F4                              8793914
+F5                              9003868
+F6                              7794903
+F7                              105260
+F8                              28410797
+F9                              24130698
+F10                             12670688
+F11                             6675685
+F12                             452247
+F13                             7441178
+F14                             6158070
+F15                             4776078
+F16                             6366249
+F17                             127
+F18                             33377562
+
+
+Current memory = 840787968
+Delta memory = 208512
+Max memory = 841184864
+Elapsed time = 67.283 sec
+Buffers = 50000
+Reads = 186865
+Writes = 2
+Fetches = 36991596
+
+TBL                             movie_info                              
+N                               14835720
+F1                              5270569
+F2                              6223494
+F3                              2233850
+F4                              9911754
+F5                              1204709
+F6                              14033580
+F7                              802140
+F8                              5884963
+F9                              7286865
+F10                             5410520
+F11                             50267
+F12                             9565151
+F13                             8786582
+F14                             1298989
+
+
+Current memory = 840967744
+Delta memory = 179776
+Max memory = 841254688
+Elapsed time = 25.409 sec
+Buffers = 50000
+Reads = 70874
+Writes = 2
+Fetches = 15119019
+
+TBL                             movie_info_idx                                          
+N                               1380035
+F1                              459925
+F2                              459925
+F3                              459925
+F4                              460185
+F5                              919850
+F6                              920110
+F7                              260
+F8                              459925
+
+
+Current memory = 841148512
+Delta memory = 180768
+Max memory = 841461872
+Elapsed time = 1.669 sec
+Buffers = 50000
+Reads = 6350
+Writes = 0
+Fetches = 1405357
+
+TBL                             movie_keyword                                       
+N                               4523930
+F1                              2144947
+F2                              472545
+F3                              3451782
+F4                              483
+F5                              1913078
+F6                              618
+F7                              3171
+F8                              3940506
+F9                              3023427
+F10                             14
+F11                             2373
+F12                             740
+F13                             363692
+F14                             1768
+F15                             28
+F16                             2393790
+F17                             1218357
+F18                             1378900
+F19                             3357073
+F20                             4049
+F21                             3654913
+F22                             2510356
+F23                             2949101
+F24                             3256578
+
+
+Current memory = 841310112
+Delta memory = 161600
+Max memory = 841543264
+Elapsed time = 10.429 sec
+Buffers = 50000
+Reads = 17680
+Writes = 0
+Fetches = 4594715
+
+TBL                             movie_companies                                             
+N                               2609129
+F1                              1334883
+F2                              1488322
+F3                              904067
+F4                              567496
+F5                              1334883
+F6                              1939535
+F7                              1316104
+F8                              713640
+F9                              1274246
+F10                             1131906
+F11                             1946961
+F12                             788
+F13                             1810713
+F14                             176
+F15                             712782
+F16                             1007606
+F17                             607408
+F18                             1274246
+F19                             29
+F20                             1208
+F21                             1274246
+
+
+Current memory = 841494896
+Delta memory = 184784
+Max memory = 841777280
+Elapsed time = 5.712 sec
+Buffers = 50000
+Reads = 13258
+Writes = 0
+Fetches = 2662241

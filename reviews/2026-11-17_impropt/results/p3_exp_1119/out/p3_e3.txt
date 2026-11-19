@@ -1,0 +1,132 @@
+
+E3_A_M                          0/1024                  
+SAMPLES                         64
+R_AVG                           1.520881236874305
+R_MIN                           0.01874664652502845
+R_MAX                           21.51404232557083
+IN_X2                           22
+IN_X10                          53
+OVER_X2                         12
+UNDER_X2                        30
+MATCHED_MIN                     126
+MATCHED_MAX                     188
+
+
+Current memory = 840499232
+Delta memory = 492848
+Max memory = 846589648
+Elapsed time = 217.491 sec
+Buffers = 50000
+Reads = 11807
+Writes = 2
+Fetches = 492299442
+
+E3_A_M                          0/4096                  
+SAMPLES                         64
+R_AVG                           1.316894398761883
+R_MIN                           0.1334963210788725
+R_MAX                           6.574779746025744
+IN_X2                           44
+IN_X10                          64
+OVER_X2                         12
+UNDER_X2                        8
+MATCHED_MIN                     554
+MATCHED_MAX                     680
+
+
+Current memory = 840610672
+Delta memory = 111440
+Max memory = 852860400
+Elapsed time = 211.075 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 492265479
+
+E3_A_M                          1/1024                  
+SAMPLES                         64
+R_AVG                           1.059160397963774
+R_MIN                           0.3719285997771735
+R_MAX                           2.120937005600909
+IN_X2                           58
+IN_X10                          64
+OVER_X2                         2
+UNDER_X2                        4
+MATCHED_MIN                     150
+MATCHED_MAX                     211
+
+
+Current memory = 840722112
+Delta memory = 111440
+Max memory = 852860400
+Elapsed time = 210.053 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 492265479
+
+E3_A_M                          1/4096                  
+SAMPLES                         64
+R_AVG                           1.026639752288121
+R_MIN                           0.6391376511391994
+R_MAX                           1.632049187019168
+IN_X2                           64
+IN_X10                          64
+OVER_X2                         0
+UNDER_X2                        0
+MATCHED_MIN                     666
+MATCHED_MAX                     763
+
+
+Current memory = 840833552
+Delta memory = 111440
+Max memory = 858681328
+Elapsed time = 208.347 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 492265479
+
+E3_A_M                          1.5/1024                        
+SAMPLES                         64
+R_AVG                           1.027588799978393
+R_MIN                           0.5845158771210583
+R_MAX                           1.535794406498421
+IN_X2                           64
+IN_X10                          64
+OVER_X2                         0
+UNDER_X2                        0
+MATCHED_MIN                     123
+MATCHED_MAX                     165
+
+
+Current memory = 840944992
+Delta memory = 111440
+Max memory = 858681328
+Elapsed time = 213.178 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 492265479
+
+E3_A_M                          1.5/4096                        
+SAMPLES                         64
+R_AVG                           1.015094961506425
+R_MIN                           0.7215012062381637
+R_MAX                           1.258831157207784
+IN_X2                           64
+IN_X10                          64
+OVER_X2                         0
+UNDER_X2                        0
+MATCHED_MIN                     503
+MATCHED_MAX                     603
+
+
+Current memory = 841056432
+Delta memory = 111440
+Max memory = 858681328
+Elapsed time = 214.165 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 492265479

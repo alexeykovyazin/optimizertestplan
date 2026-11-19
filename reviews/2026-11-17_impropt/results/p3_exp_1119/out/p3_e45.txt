@@ -1,0 +1,109 @@
+
+TOPN                            100
+SHARE_IN_ALL                    0.000000000000000
+SHARE_IN_ANY                    0.2922579858583548
+
+TOPN                            1000
+SHARE_IN_ALL                    0.08728964877521923
+SHARE_IN_ANY                    0.7747683953815246
+
+TOPN                            10000
+SHARE_IN_ALL                    0.7444401152563309
+SHARE_IN_ANY                    0.9865180419179267
+
+
+Current memory = 840575248
+Delta memory = 568864
+Max memory = 2952130000
+Elapsed time = 37.916 sec
+Buffers = 50000
+Reads = 11805
+Writes = 2
+Fetches = 40155057
+
+BOUND_RANK4                     2913192242700.000
+
+
+Current memory = 840637968
+Delta memory = 62720
+Max memory = 2952130000
+Elapsed time = 12.074 sec
+Buffers = 50000
+Reads = 1
+Writes = 0
+Fetches = 10202384
+
+BOUND_RANK2                     423851541.0000000
+
+
+Current memory = 840673904
+Delta memory = 35936
+Max memory = 2952130000
+Elapsed time = 4.536 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 5101192
+
+BOUND_HOLDER4                   4266415886510.744
+BOUND_CS2                       595628383.9836607
+
+
+Current memory = 840709760
+Delta memory = 35856
+Max memory = 2952130000
+Elapsed time = 1.571 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 2550618
+
+COL                             CI          
+KEYS                            2331601
+ROWS_N                                                               36244344
+C_AVG                           15.54483121254451
+C_SELF                          37.36217336420822
+C_MAX                           1741
+SUM_C2                          1354167464.000000
+
+COL                             MK          
+KEYS                            476794
+ROWS_N                                                                4523930
+C_AVG                           9.488227620314014
+C_SELF                          57.91119402820114
+C_MAX                           540
+SUM_C2                          261986188.0000000
+
+COL                             MI          
+KEYS                            2468825
+ROWS_N                                                               14835720
+C_AVG                           6.009223010946503
+C_SELF                          37.25488051810090
+C_MAX                           2937
+SUM_C2                          552702976.0000000
+
+COL                             MC          
+KEYS                            1087236
+ROWS_N                                                                2609129
+C_AVG                           2.399781648142630
+C_SELF                          5.518011949581642
+C_MAX                           94
+SUM_C2                          14397205.00000000
+
+COL                             MII         
+KEYS                            459925
+ROWS_N                                                                1380035
+C_AVG                           3.000565309561341
+C_SELF                          3.000753604075259
+C_MAX                           4
+SUM_C2                          4141145.000000000
+
+
+Current memory = 840794672
+Delta memory = 84912
+Max memory = 2952130000
+Elapsed time = 5.231 sec
+Buffers = 50000
+Reads = 0
+Writes = 0
+Fetches = 12752980

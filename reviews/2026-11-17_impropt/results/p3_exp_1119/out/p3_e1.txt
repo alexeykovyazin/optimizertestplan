@@ -1,0 +1,19 @@
+
+KEYS_ANY                        2504697
+KEYS_ALL4                       369125
+J2                                                                  215765477
+J3                                                                25473402919
+J4                                                               674076224290
+J5                              2127734966462.000
+J2_ALL4                                                             207450760
+J3_ALL4                                                           25415051647
+
+
+Current memory = 840256208
+Delta memory = 266256
+Max memory = 840358192
+Elapsed time = 5.653 sec
+Buffers = 50000
+Reads = 11513
+Writes = 0
+Fetches = 2551169
