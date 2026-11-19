@@ -1,0 +1,100 @@
+
+CASE_NAME   PAGE_BUFFERS 
+=========== ============ 
+small cache         1024 
+
+
+PLAN HASH (I NATURAL, O NATURAL)
+
+                   M1 
+===================== 
+                24000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M2 
+===================== 
+                24000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M3 
+===================== 
+                80000 
+
+
+PLAN HASH (I NATURAL, O NATURAL)
+
+                   M4 
+===================== 
+                80000 
+
+
+CASE_NAME   PAGE_BUFFERS 
+=========== ============ 
+large cache        20000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_S_K))
+
+                   M1 
+===================== 
+                24000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M2 
+===================== 
+                24000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M3 
+===================== 
+                80000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M4 
+===================== 
+                80000 
+
+
+CASE_NAME     PAGE_BUFFERS 
+============= ============ 
+miss cost off         1024 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_S_K))
+
+                   M1 
+===================== 
+                24000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M2 
+===================== 
+                24000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M3 
+===================== 
+                80000 
+
+
+PLAN JOIN (O NATURAL, I INDEX (T_C_K))
+
+                   M4 
+===================== 
+                80000 
+
+-- rc=0, 11 s
