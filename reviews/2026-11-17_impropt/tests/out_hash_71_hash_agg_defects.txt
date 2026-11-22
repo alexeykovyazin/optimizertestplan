@@ -1,0 +1,167 @@
+
+Select Expression
+    -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=2.00)
+        -> Table "E" Full Scan (rows=4.00)
+
+T                 D MAX                  MIN                  
+====== ============ ==================== ==================== 
+A2                1 yy                   azz                  
+A2                2 y                    a                    
+A2                3 bbbbbbbbbb           bbbbbbbbbb           
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 70) (rows=0.000000)
+
+T                      COUNT 
+====== ===================== 
+A3v                        2 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 36) (rows=0.000000)
+
+T                      COUNT 
+====== ===================== 
+A3d                        2 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 52) (rows=0.000000)
+
+T                      COUNT 
+====== ===================== 
+A3f                        2 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 52) (rows=0.000000)
+
+T                      COUNT 
+====== ===================== 
+A3z                        2 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> First N Records (rows=1.00)
+            -> Hash Aggregate (keys: 1, key length: 5, group length: 16) (rows=9.00)
+                -> Filter (rows=50.00)
+                    -> Table "T2" Full Scan (rows=100.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "T1" Full Scan (rows=21003.43)
+
+T                      COUNT 
+====== ===================== 
+A6                     20000 
+
+Current memory = 1331928064
+Delta memory = 1311062176
+Max memory = 1331928144
+Elapsed time = 0.414 sec
+Buffers = 2048
+Reads = 138
+Writes = 0
+Fetches = 2100556
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 44) (rows=0.000000)
+
+T                      COUNT 
+====== ===================== 
+A7                      1000 
+
+Current memory = 1094259904
+Delta memory = -237668160
+Max memory = 1331928144
+Elapsed time = 0.333 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 103342
+
+Select Expression
+    -> First N Records (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=100.00)
+            -> Table "T" as "X T" Full Scan (rows=1064018.13)
+
+T                 A                     C 
+====== ============ ===================== 
+B1a               0                 10000 
+
+Current memory = 20507792
+Delta memory = -1073752112
+Max memory = 1331928144
+Elapsed time = 0.221 sec
+Buffers = 2048
+Reads = 7818
+Writes = 2
+Fetches = 1031261
+
+Sub-query (invariant)
+    -> Filter (rows=50.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=100.00)
+            -> Table "T" Full Scan (rows=1064018.13)
+Select Expression
+    -> Filter (preliminary) (rows=1.00)
+        -> Table "RDB$DATABASE" Full Scan (rows=1.00)
+
+T          CONSTANT 
+====== ============ 
+B1b               1 
+
+Current memory = 20593760
+Delta memory = 85968
+Max memory = 1331928144
+Elapsed time = 0.193 sec
+Buffers = 2048
+Reads = 7832
+Writes = 0
+Fetches = 1031349
+
+Select Expression
+    -> First N Records (rows=1.00)
+        -> Sort (record length: 44, key length: 8) (rows=100.00)
+            -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=100.00)
+                -> Table "T" as "X T" Full Scan (rows=1064018.13)
+
+T                 A                     C 
+====== ============ ===================== 
+B1c               0                 10000 
+
+Current memory = 20679536
+Delta memory = 85776
+Max memory = 1331928144
+Elapsed time = 0.196 sec
+Buffers = 2048
+Reads = 7819
+Writes = 0
+Fetches = 1031261
+Statement failed, SQLSTATE = 42000
+index T_A cannot be used in the specified plan
+After line 63 in file 71_hash_agg_defects.sql
+
+Select Expression
+    -> Sort (record length: 36, key length: 16) (rows=106401.81)
+        -> Unique Sort (record length: 36, key length: 16) (rows=106401.81)
+            -> Table "T" Full Scan (rows=1064018.13)
+
+PLAN HASH UNIQUE (U NATURAL)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=1000.00)
+            -> Filter (rows=532009.07)
+                -> Table "T" Full Scan (rows=1064018.13)
+
+T                      COUNT                                           SUM 
+====== ===================== ============================================= 
+A1                    150000                                     115413007 
+
+-- rc=1, 3 s

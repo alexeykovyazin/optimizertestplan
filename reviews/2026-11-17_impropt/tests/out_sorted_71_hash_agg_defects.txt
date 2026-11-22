@@ -1,0 +1,184 @@
+
+Select Expression
+    -> Aggregate (rows=0.004000)
+        -> Sort (record length: 116, key length: 8) (rows=4.00)
+            -> Table "E" Full Scan (rows=4.00)
+
+T                 D MAX                  MIN                  
+====== ============ ==================== ==================== 
+A2                1 zzz                  yy                   
+A2                2 a                    a                    
+A2                3 bbbbbbbbbb           bbbbbbbbbb           
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Unique Sort (record length: 70, key length: 48) (rows=0.20)
+            -> Table "U" Full Scan (rows=2.00)
+
+T                      COUNT 
+====== ===================== 
+A3v                        1 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Unique Sort (record length: 36, key length: 12) (rows=0.20)
+            -> Table "U" Full Scan (rows=2.00)
+
+T                      COUNT 
+====== ===================== 
+A3d                        1 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Unique Sort (record length: 52, key length: 16) (rows=0.20)
+            -> Table "U" Full Scan (rows=2.00)
+
+T                      COUNT 
+====== ===================== 
+A3f                        1 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Unique Sort (record length: 52, key length: 16) (rows=0.20)
+            -> Table "U" Full Scan (rows=2.00)
+
+T                      COUNT 
+====== ===================== 
+A3z                        1 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> First N Records (rows=0.050000)
+            -> Aggregate (rows=0.050000)
+                -> Filter (rows=50.00)
+                    -> Table "T2" Access By ID (rows=100.00)
+                        -> Index "T2_G" Full Scan
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "T1" Full Scan (rows=21003.43)
+
+T                      COUNT 
+====== ===================== 
+A6                     20000 
+
+Current memory = 20561232
+Delta memory = 23152
+Max memory = 58170784
+Elapsed time = 0.090 sec
+Buffers = 2048
+Reads = 138
+Writes = 0
+Fetches = 480738
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Unique Sort (record length: 44, key length: 24) (rows=10720.50)
+            -> Table "T3" Full Scan (rows=107205.00)
+
+T                      COUNT 
+====== ===================== 
+A7                      1000 
+
+Current memory = 20578384
+Delta memory = 17152
+Max memory = 58170784
+Elapsed time = 0.031 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 103340
+
+Select Expression
+    -> First N Records (rows=1.00)
+        -> Aggregate (rows=1064.02)
+            -> Table "T" as "X T" Access By ID (rows=1064018.13)
+                -> Index "T_A" Full Scan
+
+T                 A                     C 
+====== ============ ===================== 
+B1a               0                 10000 
+
+Current memory = 20792048
+Delta memory = 213664
+Max memory = 58170784
+Elapsed time = 0.039 sec
+Buffers = 2048
+Reads = 7825
+Writes = 2
+Fetches = 27832
+
+Sub-query (invariant)
+    -> Filter (rows=532.01)
+        -> Aggregate (rows=1064.02)
+            -> Table "T" Access By ID (rows=1064018.13)
+                -> Index "T_A" Full Scan
+Select Expression
+    -> Filter (preliminary) (rows=1.00)
+        -> Table "RDB$DATABASE" Full Scan (rows=1.00)
+
+T          CONSTANT 
+====== ============ 
+B1b               1 
+
+Current memory = 21006528
+Delta memory = 214480
+Max memory = 58170784
+Elapsed time = 0.042 sec
+Buffers = 2048
+Reads = 7843
+Writes = 0
+Fetches = 27919
+
+Select Expression
+    -> First N Records (rows=1.00)
+        -> Aggregate (rows=1064.02)
+            -> Table "T" as "X T" Access By ID (rows=1064018.13)
+                -> Index "T_A" Full Scan
+
+T                 A                     C 
+====== ============ ===================== 
+B1c               0                 10000 
+
+Current memory = 21220288
+Delta memory = 213760
+Max memory = 58170784
+Elapsed time = 0.040 sec
+Buffers = 2048
+Reads = 7830
+Writes = 0
+Fetches = 27831
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=1064.02)
+            -> Table "T" Access By ID (rows=1064018.13)
+                -> Index "T_A" Full Scan
+
+T                      COUNT 
+====== ===================== 
+B2                       100 
+
+
+Select Expression
+    -> Unique Sort (record length: 36, key length: 16) (rows=106401.81)
+        -> Table "T" Full Scan (rows=1064018.13)
+
+PLAN SORT (U NATURAL)
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=532.01)
+            -> Sort (record length: 28, key length: 8) (rows=532009.07)
+                -> Filter (rows=532009.07)
+                    -> Table "T" Full Scan (rows=1064018.13)
+
+T                      COUNT                                           SUM 
+====== ===================== ============================================= 
+A1                    150000                                        150000 
+
+-- rc=0, 6 s
