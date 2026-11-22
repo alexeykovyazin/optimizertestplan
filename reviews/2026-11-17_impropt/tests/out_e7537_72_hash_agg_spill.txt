@@ -1,0 +1,45 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=20.69)
+            -> Sort (record length: 60, key length: 8) (rows=20692.27)
+                -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20692.27)
+                    -> Table "A" Full Scan (rows=20692.27)
+                    -> Record Buffer (record length: 25) (rows=10501.71)
+                        -> Table "B" Full Scan (rows=10501.71)
+
+T                      COUNT                                           SUM 
+====== ===================== ============================================= 
+A4a                    20000                                         10000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=20.69)
+            -> Sort (record length: 60, key length: 8) (rows=20692.27)
+                -> Hash Join (outer) (keys: 1, total key length: 4) (rows=20692.27)
+                    -> Table "A" Full Scan (rows=20692.27)
+                    -> Record Buffer (record length: 25) (rows=10501.71)
+                        -> Table "B" Full Scan (rows=10501.71)
+
+T                      COUNT                                           SUM                                           SUM 
+====== ===================== ============================================= ============================================= 
+A4b                    20000                                         10000                                     100010000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=22.82)
+            -> Sort (record length: 76, key length: 8) (rows=22820.67)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=22820.67)
+                    -> Table "A" Full Scan (rows=20692.27)
+                    -> Record Buffer (record length: 25) (rows=10501.71)
+                        -> Table "B" Full Scan (rows=10501.71)
+                    -> Record Buffer (record length: 25) (rows=10501.71)
+                        -> Table "B" as "B2" Full Scan (rows=10501.71)
+
+T                      COUNT                                           SUM 
+====== ===================== ============================================= 
+A4c                    10000                                         10000 
+
+-- rc=0, 0 s
