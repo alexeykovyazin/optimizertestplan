@@ -1,0 +1,53 @@
+
+TAG          
+============ 
+B1: the plan 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=18993561.34)
+            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=237999.91)
+                -> Table "L" Full Scan (rows=1073508.57)
+                -> Record Buffer (record length: 25) (rows=22170.29)
+                    -> Table "P" Full Scan (rows=22170.29)
+            -> Record Buffer (record length: 25) (rows=7980491.13)
+                -> Table "G" Full Scan (rows=7980491.13)
+
+PLAN (RDB$DATABASE NATURAL)
+
+TAG             
+=============== 
+B2: the results 
+
+
+PLAN HASH (HASH (L NATURAL, P NATURAL), G NATURAL)
+
+                COUNT                                           SUM                                           SUM 
+===================== ============================================= ============================================= 
+             16000000                                63999768000000                                 7359992000000 
+
+Current memory = 20648000
+Delta memory = 27552
+Max memory = 126569696
+Elapsed time = 11.034 sec
+Buffers = 2048
+Reads = 97447
+Writes = 2
+Fetches = 9409637
+
+PLAN HASH (G NATURAL, P NATURAL, L NATURAL)
+
+                COUNT                                           SUM MAX                                      MIN                                      
+===================== ============================================= ======================================== ======================================== 
+              1600000                                 6400008800000 pad pad pad pad pad pad pad 96           pad pad pad pad pad pad pad 0            
+
+Current memory = 20673008
+Delta memory = 25008
+Max memory = 126569696
+Elapsed time = 3.357 sec
+Buffers = 2048
+Reads = 97463
+Writes = 0
+Fetches = 9409637
+-- rc=0, 33 s

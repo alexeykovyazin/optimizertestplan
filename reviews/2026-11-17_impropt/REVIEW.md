@@ -262,3 +262,9 @@ scale_036 проверен на сборке PR #38: план не измени�
   `s041b_*` (прототип, сборка `f1` = `a2` + `fused_conditions_prototype.diff`).
 - `tests/68_fused_conditions.sql`; вывод `out_base_68_*` — сборка `v5.0-impr-opt` (`51bfe3823f`),
   `out_fusedcond_64_*`, `out_fusedcond_65_*`, `out_fusedcond_68_*` — сборка ветки PR #39.
+- `out_countchains_63_*`, `out_countchains_64_*`, `out_countchains_65_*`, `out_countchains_68_*` — сборка ветки
+  PR #54 после слияния с `v5.0-impr-opt` (`2c1b6cae05`). Агрегат без GROUP BY подсчитывает больше потоков
+  соединения. Сумма `counted streams` по планам теста: 63 — 1 → 2, 64 — 7 → 10, 65 — 11 → 16, 68 — 8 → 9.
+  В тестах 64 и 65 два hash join по одному ключу стали одним слитым:
+  `PLAN HASH (B NATURAL, P NATURAL, G NATURAL)`, `PLAN HASH (T2 NATURAL, T1 NATURAL, T3 NATURAL)`.
+  Результаты запросов те же. Порядок соединения не меняется.
