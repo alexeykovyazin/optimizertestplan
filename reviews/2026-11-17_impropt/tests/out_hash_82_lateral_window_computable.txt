@@ -1,0 +1,118 @@
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=3.87)
+                -> Table "COVER" as "REF C" Access By ID (rows=3.87)
+                    -> Bitmap
+                        -> Index "FK_COVER_HORSE" Range Scan (full match)
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Materialize (rows=3843.76)
+                -> Table "HORSE" as "REF H" Full Scan (rows=3843.76)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=3843.76)
+            -> Nested Loop Join (outer) (rows=3843.76)
+                -> Table "HORSE" as "H" Full Scan (rows=3843.76)
+                -> First N Records (rows=1.00)
+                    -> Sort (record length: 60, key length: 8) (rows=1.12)
+                        -> Filter (rows=1.12)
+                            -> Window (rows=2.24)
+                                -> Window Partition (rows=1.00)
+                                    -> Record Buffer (record length: 91) (rows=1.00)
+                                        -> Sort (record length: 100, key length: 8) (rows=1.00)
+                                            -> Window Partition (rows=1.00)
+                                                -> Window Buffer (rows=2.24)
+                                                    -> Record Buffer (record length: 66) (rows=2.24)
+                                                        -> Nested Loop Join (inner) (rows=2.24)
+                                                            -> Filter (rows=4.48)
+                                                                -> Table "REGISTRATION" as "IMPORT_INFO REGS R" Access By ID (rows=4.48)
+                                                                    -> Bitmap
+                                                                        -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+                                                            -> Filter (rows=0.50)
+                                                                -> Table "FARM" as "IMPORT_INFO REGS FARM" Access By ID (rows=1.00)
+                                                                    -> Bitmap
+                                                                        -> Index "RDB$PRIMARY2" Unique Scan
+            -> Record Buffer (record length: 25) (rows=8712.53)
+                -> Table "COVER" Full Scan (rows=8712.53)
+
+T                                            SUBTRACT 
+======= ============================================= 
+L1 diff                                             0 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=3.87)
+                -> Table "COVER" as "REF C" Access By ID (rows=3.87)
+                    -> Bitmap
+                        -> Index "FK_COVER_HORSE" Range Scan (full match)
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Materialize (rows=3843.76)
+                -> Table "HORSE" as "REF H" Full Scan (rows=3843.76)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=3843.76)
+            -> Nested Loop Join (outer) (rows=3843.76)
+                -> Table "HORSE" as "H" Full Scan (rows=3843.76)
+                -> Aggregate (rows=1.00)
+                    -> Filter (rows=4.48)
+                        -> Table "REGISTRATION" as "IMPORT_INFO R" Access By ID (rows=4.48)
+                            -> Bitmap
+                                -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+            -> Record Buffer (record length: 25) (rows=8712.53)
+                -> Table "COVER" Full Scan (rows=8712.53)
+
+T                                            SUBTRACT 
+======= ============================================= 
+L2 diff                                             0 
+
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=8712.53)
+                -> Table "COVER" as "C" Full Scan (rows=8712.53)
+                -> Record Buffer (record length: 25) (rows=3843.76)
+                    -> Table "HORSE" as "H" Full Scan (rows=3843.76)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=14883.97)
+            -> Nested Loop Join (outer) (rows=3843.76)
+                -> Table "HORSE" as "H" Full Scan (rows=3843.76)
+                -> First N Records (rows=1.00)
+                    -> Sort (record length: 68, key length: 8) (rows=4.48)
+                        -> Window (rows=4.48)
+                            -> Window Partition (rows=0.001000)
+                                -> Record Buffer (record length: 58) (rows=1.00)
+                                    -> Sort (record length: 68, key length: 16) (rows=1.00)
+                                        -> Window Partition (rows=1.00)
+                                            -> Window Buffer (rows=4.48)
+                                                -> Record Buffer (record length: 33) (rows=4.48)
+                                                    -> Filter (rows=4.48)
+                                                        -> Table "REGISTRATION" as "IMPORT_INFO R" Access By ID (rows=4.48)
+                                                            -> Bitmap
+                                                                -> Index "FK_REGISTRATION_HORSE" Range Scan (full match)
+            -> Filter (rows=3.87)
+                -> Table "COVER" Access By ID (rows=3.87)
+                    -> Bitmap
+                        -> Index "FK_COVER_HORSE" Range Scan (full match)
+
+T                    SUBTRACT 
+======= ===================== 
+L3 diff                     0 
+
+
+PLAN (R INDEX (REGISTRATION_IDX_HORSE_REGTYPE))
+PLAN HASH (JOIN (A H NATURAL, A IMPORT_INFO R INDEX (REGISTRATION_IDX_HORSE_REGTYPE)), A COVER NATURAL)
+
+T                       COUNT 
+======= ===================== 
+L4 diff                     0 
+
+-- rc=0, 0 s

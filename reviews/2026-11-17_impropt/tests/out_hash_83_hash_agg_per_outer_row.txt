@@ -1,0 +1,106 @@
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=1.00)
+                -> Table "REGISTRATION" as "R" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=30000.00)
+            -> Nested Loop Join (outer) (rows=60000.00)
+                -> Table "HORSE" as "H" Full Scan (rows=60000.00)
+                -> Filter (rows=1.00)
+                    -> Aggregate (rows=1.00)
+                        -> Filter (rows=1.00)
+                            -> Table "REGISTRATION" as "G R" Access By ID (rows=1.00)
+                                -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+
+T                       COUNT 
+======= ===================== 
+G1 diff                     0 
+
+Current memory = 20884576
+Delta memory = 245392
+Max memory = 26555760
+Elapsed time = 0.166 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 468345
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=1.00)
+                -> Table "REGISTRATION" as "R" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=1.00)
+                -> Table "REGISTRATION" as "R" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=30000.00)
+            -> Nested Loop Join (outer) (rows=60000.00)
+                -> Table "HORSE" as "H" Full Scan (rows=60000.00)
+                -> Filter (rows=1.00)
+                    -> Filter (rows=1.00)
+                        -> Aggregate (rows=1.00)
+                            -> Filter (rows=1.00)
+                                -> Table "REGISTRATION" as "G R" Access By ID (rows=1.00)
+                                    -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+
+T                       COUNT 
+======= ===================== 
+G2 diff                     0 
+
+Current memory = 20929520
+Delta memory = 44944
+Max memory = 26555760
+Elapsed time = 0.244 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 663220
+
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=2.00)
+                -> Table "REGISTRATION" as "R" Access By ID (rows=2.00)
+                    -> Bitmap
+                        -> Index "FK_REGISTRATION_HORSE" Range Scan (full match)
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Materialize (rows=60000.00)
+                -> Table "HORSE" as "H" Full Scan (rows=60000.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=120000.00)
+            -> Table "HORSE" as "H" Full Scan (rows=60000.00)
+            -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=2.00)
+                -> Filter (rows=2.00)
+                    -> Table "REGISTRATION" as "G R" Access By ID (rows=2.00)
+                        -> Bitmap
+                            -> Index "FK_REGISTRATION_HORSE" Range Scan (full match)
+
+T                                            SUBTRACT 
+======= ============================================= 
+G3 diff                                             0 
+
+Current memory = 20973616
+Delta memory = 44096
+Max memory = 26555760
+Elapsed time = 0.452 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 726411
+-- rc=0, 2 s
