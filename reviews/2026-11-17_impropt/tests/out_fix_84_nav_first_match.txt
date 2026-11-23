@@ -15,14 +15,14 @@ T                      COUNT                 COUNT
 ====== ===================== ===================== 
 N1                     20000                  4124 
 
-Current memory = 20905136
+Current memory = 20905840
 Delta memory = 242192
-Max memory = 43351424
-Elapsed time = 0.051 sec
+Max memory = 43352128
+Elapsed time = 0.050 sec
 Buffers = 2048
-Reads = 3111
+Reads = 3094
 Writes = 2
-Fetches = 93077
+Fetches = 93076
 
 Select Expression
     -> Aggregate (rows=1.00)
@@ -38,10 +38,10 @@ T                      COUNT                 COUNT
 ====== ===================== ===================== 
 N2                     20000                  4124 
 
-Current memory = 20929328
+Current memory = 20930032
 Delta memory = 24192
-Max memory = 43351424
-Elapsed time = 0.041 sec
+Max memory = 43352128
+Elapsed time = 0.043 sec
 Buffers = 2048
 Reads = 3724
 Writes = 0
@@ -49,7 +49,7 @@ Fetches = 88822
 
 Select Expression
     -> First N Records (rows=1.00)
-        -> Filter (rows=79093.33)
+        -> Filter (rows=79226.67)
             -> Table "REGISTRATION" as "R" Access By ID (rows=400000.00)
                 -> Index "REGISTRATION_IDX_BYDATE" Full Scan
 
@@ -57,9 +57,9 @@ T           BYDATE
 ====== =========== 
 C1     2010-01-04  
 
-Current memory = 20951664
+Current memory = 20952368
 Delta memory = 22336
-Max memory = 43351424
+Max memory = 43352128
 Elapsed time = 0.001 sec
 Buffers = 2048
 Reads = 118
@@ -79,9 +79,9 @@ C2     2010-01-01
 C2     2010-01-01  
 C2     2010-01-01  
 
-Current memory = 20964752
+Current memory = 20965456
 Delta memory = 13088
-Max memory = 43351424
+Max memory = 43352128
 Elapsed time = 0.000 sec
 Buffers = 2048
 Reads = 0
@@ -100,12 +100,23 @@ T           BYDATE
 ====== =========== 
 C3     2010-01-01  
 
-Current memory = 21084256
+Current memory = 21084960
 Delta memory = 119504
-Max memory = 43351424
-Elapsed time = 0.008 sec
+Max memory = 43352128
+Elapsed time = 0.009 sec
 Buffers = 2048
 Reads = 119
 Writes = 0
 Fetches = 145
--- rc=0, 2 s
+
+PLAN JOIN (H INDEX (RDB$PRIMARY1), I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE))
+PLAN JOIN (H INDEX (RDB$PRIMARY1), I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE))
+PLAN JOIN (H INDEX (RDB$PRIMARY1), SORT (I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE)))
+PLAN JOIN (H INDEX (RDB$PRIMARY1), SORT (I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE)))
+PLAN (RDB$DATABASE NATURAL)
+
+T                                                 N1                                        N1_REF                                            N2                                        N2_REF 
+====== ============================================= ============================================= ============================================= ============================================= 
+V                                            1020237                                       1020237                                       1020237                                       1020237 
+
+-- rc=0, 3 s

@@ -12,7 +12,8 @@
 --   N2: "Aggregate" over "REGISTRATION_IDX_HORSE_REGTYPE", no "REGISTRATION_IDX_BYDATE";
 --   C1, C2, C3 (controls, many matching rows or no filter): the navigation by "REGISTRATION_IDX_BYDATE" stays.
 -- The build before the fix: N1 and N2 walk "REGISTRATION_IDX_BYDATE" (85 s and 91 s here; under a second with
--- the fix). Expected results: N1 and N2 give 20000 and 4124 on both builds.
+-- the fix). Expected results: N1 and N2 give 20000 and 4124 on both builds; in V the columns N1 and N2 are equal
+-- to N1_REF and N2_REF (the values of the same queries in the forms that cannot navigate).
 set bail off;
 create database 'tst2def' user SYSDBA default character set utf8;
 create table horse (code_horse int not null primary key);
@@ -66,3 +67,22 @@ select first 5 'C2' as t, r.bydate from registration r order by r.bydate;
 select first 1 'C3' as t, r.bydate from registration r where r.code_horse < 10000 order by r.bydate;
 set stats off;
 set explain off;
+-- V: the values of N1 and N2 for 2000 horses against the forms that cannot navigate
+select 'V' as t,
+  (select sum(datediff(day from date '2010-01-01' to i.bydate)) from horse h left join lateral (
+    select r.bydate as bydate from registration r
+    where r.code_horse = h.code_horse and r.code_regtype = 6 order by r.bydate fetch first row only) i on true
+    where h.code_horse < 2000) as n1,
+  (select sum(datediff(day from date '2010-01-01' to i.bydate)) from horse h left join lateral (
+    select r.bydate as bydate from registration r
+    where r.code_horse = h.code_horse and r.code_regtype = 6 order by r.bydate + 0 fetch first row only) i on true
+    where h.code_horse < 2000) as n1_ref,
+  (select sum(datediff(day from date '2010-01-01' to i.bydate)) from horse h left join lateral (
+    select min(r.bydate) as bydate from registration r
+    where r.code_horse = h.code_horse and r.code_regtype = 6) i on true
+    where h.code_horse < 2000) as n2,
+  (select sum(datediff(day from date '2010-01-01' to i.bydate)) from horse h left join lateral (
+    select min(r.bydate + 0) as bydate from registration r
+    where r.code_horse = h.code_horse and r.code_regtype = 6) i on true
+    where h.code_horse < 2000) as n2_ref
+from rdb$database;

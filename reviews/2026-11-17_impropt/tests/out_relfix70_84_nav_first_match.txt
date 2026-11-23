@@ -1,0 +1,134 @@
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 20
+-extended
+At line 42 in file 84_nav_first_match.sql
+Statement failed, SQLSTATE = 42000
+Dynamic SQL Error
+-SQL error code = -104
+-Token unknown - line 1, column 16
+-refresh
+At line 44 in file 84_nav_first_match.sql
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table "HORSE" as "H" Full Scan
+            -> First N Records
+                -> Refetch
+                    -> Sort (record length: 28, key length: 8)
+                        -> Filter
+                            -> Table "REGISTRATION" as "I R" Access By ID
+                                -> Bitmap
+                                    -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+
+T                      COUNT                 COUNT 
+====== ===================== ===================== 
+N1                     20000                  4124 
+
+Current memory = 4394054112
+Delta memory = 23184
+Max memory = 4416814064
+Elapsed time = 0.031 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 92979
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table "HORSE" as "H" Full Scan
+            -> Aggregate
+                -> Filter
+                    -> Table "REGISTRATION" as "I R" Access By ID
+                        -> Bitmap
+                            -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+
+T                      COUNT                 COUNT 
+====== ===================== ===================== 
+N2                     20000                  4124 
+
+Current memory = 4394078048
+Delta memory = 23936
+Max memory = 4416814064
+Elapsed time = 0.022 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 88817
+
+Select Expression
+    -> First N Records
+        -> Filter
+            -> Table "REGISTRATION" as "R" Access By ID
+                -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+
+T           BYDATE 
+====== =========== 
+C1     2010-01-04  
+
+Current memory = 4394100352
+Delta memory = 22304
+Max memory = 4416814064
+Elapsed time = 0.000 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 732
+
+Select Expression
+    -> First N Records
+        -> Table "REGISTRATION" as "R" Access By ID
+            -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+
+T           BYDATE 
+====== =========== 
+C2     2010-01-01  
+C2     2010-01-01  
+C2     2010-01-01  
+C2     2010-01-01  
+C2     2010-01-01  
+
+Current memory = 4394113408
+Delta memory = 13056
+Max memory = 4416814064
+Elapsed time = 0.001 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 26
+
+Select Expression
+    -> First N Records
+        -> Filter
+            -> Table "REGISTRATION" as "R" Access By ID
+                -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+                    -> Bitmap
+                        -> Index "FK_REGISTRATION_HORSE" Range Scan (upper bound: 1/1)
+
+T           BYDATE 
+====== =========== 
+C3     2010-01-01  
+
+Current memory = 4394232880
+Delta memory = 119472
+Max memory = 4416814064
+Elapsed time = 0.007 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 138
+
+PLAN JOIN (H INDEX (RDB$PRIMARY1), I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE))
+PLAN JOIN (H INDEX (RDB$PRIMARY1), I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE))
+PLAN JOIN (H INDEX (RDB$PRIMARY1), SORT (I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE)))
+PLAN JOIN (H INDEX (RDB$PRIMARY1), SORT (I R INDEX (REGISTRATION_IDX_HORSE_REGTYPE)))
+PLAN (RDB$DATABASE NATURAL)
+
+T                                                 N1                                        N1_REF                                            N2                                        N2_REF 
+====== ============================================= ============================================= ============================================= ============================================= 
+V                                            1020237                                       1020237                                       1020237                                       1020237 
+
+-- rc=1, 2 s

@@ -1,0 +1,139 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+horses_fdb_02,horses-fdb,prepare,ok,,,n/a,,536.6,md5:a1b79f9a1ac73ab4e5e74f4b5aa2bfb4,"PLAN JOIN (H NATURAL, COVER INDEX (FK_COVER_HORSE))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table ""HORSE"" as ""H"" Full Scan
+            -> Filter
+                -> Table ""COVER"" Access By ID
+                    -> Bitmap
+                        -> Index ""FK_COVER_HORSE"" Range Scan (full match)",
+horses_fdb_02,horses-fdb,measured,ok,1339.7,1,MISMATCH,sha1:52a63d01f75d23f91a7022679b12c5f05c820f80,,md5:a1b79f9a1ac73ab4e5e74f4b5aa2bfb4,,,
+horses_fdb_03,horses-fdb,prepare,ok,,,n/a,,48.9,md5:e39c2a717afff25fcbc4775b022e5efc,"PLAN JOIN (H NATURAL, SORT (SORT (JOIN (IMPORT_INFO REGS R INDEX (REGISTRATION_IDX_HORSE_REGTYPE), IMPORT_INFO REGS FARM INDEX (PK_FARM)))))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table ""HORSE"" as ""H"" Full Scan
+            -> First N Records
+                -> Sort (record length: 68, key length: 8)
+                    -> Filter
+                        -> Window
+                            -> Window Partition
+                                -> Record Buffer (record length: 115)
+                                    -> Sort (record length: 132, key length: 8)
+                                        -> Window Partition
+                                            -> Window Buffer
+                                                -> Record Buffer (record length: 82)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""REGISTRATION"" as ""IMPORT_INFO REGS R"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+                                                        -> Filter
+                                                            -> Table ""FARM"" as ""IMPORT_INFO REGS FARM"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""PK_FARM"" Unique Scan",
+horses_fdb_03,horses-fdb,measured,ok,6781.5,1,MISMATCH,sha1:efabe790e15ef12edf62d1c9597ed88265f639a4,,md5:e39c2a717afff25fcbc4775b022e5efc,,,
+horses_fdb_04,horses-fdb,prepare,ok,,,n/a,,54.3,md5:f198a2a822d097f9e669ee5045dd2eae,"PLAN JOIN (JOIN (H NATURAL, COVER INDEX (FK_COVER_HORSE)), SORT (SORT (JOIN (IMPORT_INFO REGS R INDEX (REGISTRATION_IDX_HORSE_REGTYPE), IMPORT_INFO REGS FARM INDEX (PK_FARM)))))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Table ""HORSE"" as ""H"" Full Scan
+                -> Filter
+                    -> Table ""COVER"" Access By ID
+                        -> Bitmap
+                            -> Index ""FK_COVER_HORSE"" Range Scan (full match)
+            -> First N Records
+                -> Sort (record length: 68, key length: 8)
+                    -> Filter
+                        -> Window
+                            -> Window Partition
+                                -> Record Buffer (record length: 115)
+                                    -> Sort (record length: 132, key length: 8)
+                                        -> Window Partition
+                                            -> Window Buffer
+                                                -> Record Buffer (record length: 82)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""REGISTRATION"" as ""IMPORT_INFO REGS R"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+                                                        -> Filter
+                                                            -> Table ""FARM"" as ""IMPORT_INFO REGS FARM"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""PK_FARM"" Unique Scan",
+horses_fdb_04,horses-fdb,measured,ok,8116.6,1,MISMATCH,sha1:52a63d01f75d23f91a7022679b12c5f05c820f80,,md5:f198a2a822d097f9e669ee5045dd2eae,,,
+horses_fdb_05,horses-fdb,prepare,ok,,,n/a,,49.4,md5:f9fae212e61b59000c449c45684d305a,"PLAN JOIN (JOIN (H NATURAL, SORT (SORT (JOIN (IMPORT_INFO REGS R INDEX (REGISTRATION_IDX_HORSE_REGTYPE), IMPORT_INFO REGS FARM INDEX (PK_FARM))))), COVER INDEX (FK_COVER_HORSE))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (inner)
+            -> Nested Loop Join (outer)
+                -> Table ""HORSE"" as ""H"" Full Scan
+                -> First N Records
+                    -> Sort (record length: 68, key length: 8)
+                        -> Filter
+                            -> Window
+                                -> Window Partition
+                                    -> Record Buffer (record length: 115)
+                                        -> Sort (record length: 132, key length: 8)
+                                            -> Window Partition
+                                                -> Window Buffer
+                                                    -> Record Buffer (record length: 82)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""REGISTRATION"" as ""IMPORT_INFO REGS R"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+                                                            -> Filter
+                                                                -> Table ""FARM"" as ""IMPORT_INFO REGS FARM"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""PK_FARM"" Unique Scan
+            -> Filter
+                -> Table ""COVER"" Access By ID
+                    -> Bitmap
+                        -> Index ""FK_COVER_HORSE"" Range Scan (full match)",
+horses_fdb_05,horses-fdb,measured,ok,7586.3,1,MISMATCH,sha1:28a9f4a8c7ad79004aca4c7ea4c5fdb7f96e6b50,,md5:f9fae212e61b59000c449c45684d305a,,,
+horses_fdb_06,horses-fdb,prepare,ok,,,n/a,,50.7,md5:ec1aeb687424a5fddf1a823a2a4869b8,"PLAN JOIN (JOIN (H NATURAL, SORT (IMPORT_INFO R INDEX (REGISTRATION_IDX_HORSE_REGTYPE))), COVER INDEX (FK_COVER_HORSE))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Table ""HORSE"" as ""H"" Full Scan
+                -> First N Records
+                    -> Refetch
+                        -> Sort (record length: 28, key length: 8)
+                            -> Filter
+                                -> Table ""REGISTRATION"" as ""IMPORT_INFO R"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+            -> Filter
+                -> Table ""COVER"" Access By ID
+                    -> Bitmap
+                        -> Index ""FK_COVER_HORSE"" Range Scan (full match)",
+horses_fdb_06,horses-fdb,measured,ok,3533.3,1,MISMATCH,sha1:52a63d01f75d23f91a7022679b12c5f05c820f80,,md5:ec1aeb687424a5fddf1a823a2a4869b8,,,
+horses_fdb_07,horses-fdb,prepare,ok,,,n/a,,49.7,md5:1491245cbd419ba55bab93f84cb542fa,"PLAN JOIN (JOIN (H NATURAL, IMPORT_INFO R INDEX (REGISTRATION_IDX_HORSE_REGTYPE)), COVER INDEX (FK_COVER_HORSE))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Table ""HORSE"" as ""H"" Full Scan
+                -> Aggregate
+                    -> Filter
+                        -> Table ""REGISTRATION"" as ""IMPORT_INFO R"" Access By ID
+                            -> Bitmap
+                                -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+            -> Filter
+                -> Table ""COVER"" Access By ID
+                    -> Bitmap
+                        -> Index ""FK_COVER_HORSE"" Range Scan (full match)",
+horses_fdb_07,horses-fdb,measured,ok,2763.9,1,MISMATCH,sha1:52a63d01f75d23f91a7022679b12c5f05c820f80,,md5:1491245cbd419ba55bab93f84cb542fa,,,
+horses_fdb_08,horses-fdb,prepare,ok,,,n/a,,47.7,md5:399f359d07b628c28e1065cc3e1b7ffa,"PLAN JOIN (JOIN (H NATURAL, IMPORT_INFO R ORDER REGISTRATION_IDX_HORSE_REGTYPE), COVER INDEX (FK_COVER_HORSE))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Table ""HORSE"" as ""H"" Full Scan
+                -> Filter
+                    -> Aggregate
+                        -> Filter
+                            -> Table ""REGISTRATION"" as ""IMPORT_INFO R"" Access By ID
+                                -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+            -> Filter
+                -> Table ""COVER"" Access By ID
+                    -> Bitmap
+                        -> Index ""FK_COVER_HORSE"" Range Scan (full match)",
+horses_fdb_08,horses-fdb,measured,ok,3801.7,1,MISMATCH,sha1:52a63d01f75d23f91a7022679b12c5f05c820f80,,md5:399f359d07b628c28e1065cc3e1b7ffa,,,
