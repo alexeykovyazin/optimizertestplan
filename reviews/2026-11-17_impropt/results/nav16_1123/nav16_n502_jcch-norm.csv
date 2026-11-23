@@ -1,0 +1,64 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+jcch_norm_11,jcch-norm,prepare,ok,,,n/a,,189.1,md5:026fb2bdf1b451bdc7013ea2a3ddc69e,"PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)
+PLAN SORT (HASH (HASH (PARTSUPP ORDER PARTSUPP_PK, SUPPLIER NATURAL), NATION NATURAL))","Sub-query (invariant)
+    -> Singularity Check
+        -> Aggregate
+            -> Filter
+                -> Hash Join (inner)
+                    -> Hash Join (inner)
+                        -> Table ""PARTSUPP"" Full Scan
+                        -> Record Buffer (record length: 33)
+                            -> Table ""SUPPLIER"" Full Scan
+                    -> Record Buffer (record length: 129)
+                        -> Filter
+                            -> Table ""NATION"" Full Scan
+Select Expression
+    -> Sort (record length: 52, key length: 20)
+        -> Filter
+            -> Aggregate
+                -> Filter
+                    -> Hash Join (inner)
+                        -> Hash Join (inner)
+                            -> Table ""PARTSUPP"" Access By ID
+                                -> Index ""PARTSUPP_PK"" Full Scan
+                            -> Record Buffer (record length: 33)
+                                -> Table ""SUPPLIER"" Full Scan
+                        -> Record Buffer (record length: 129)
+                            -> Filter
+                                -> Table ""NATION"" Full Scan",
+jcch_norm_11,jcch-norm,measured,ok,866.3,20,MISMATCH,sha1:8e7c604804cb3f485587453c00b14b1f8fe89f24,,md5:026fb2bdf1b451bdc7013ea2a3ddc69e,,,
+jcch_norm_13,jcch-norm,prepare,ok,,,n/a,,38.0,md5:9551f4e5ae59f634d1692cebd6af55ea,"PLAN SORT (SORT (JOIN (C_ORDERS CUSTOMER ORDER CUSTOMER_PK, C_ORDERS ORDERS NATURAL)))","Select Expression
+    -> Sort (record length: 44, key length: 24)
+        -> Aggregate
+            -> Sort (record length: 44, key length: 12)
+                -> Aggregate
+                    -> Nested Loop Join (outer)
+                        -> Table ""CUSTOMER"" as ""C_ORDERS CUSTOMER"" Access By ID
+                            -> Index ""CUSTOMER_PK"" Full Scan
+                        -> Filter
+                            -> Filter
+                                -> Table ""ORDERS"" as ""C_ORDERS ORDERS"" Full Scan",
+jcch_norm_13,jcch-norm,measured,timeout,,,n/a,,,md5:9551f4e5ae59f634d1692cebd6af55ea,,,watchdog 300s
+jcch_norm_18,jcch-norm,prepare,ok,,,n/a,,22.0,md5:805cfc546cd68b0f163b69e614e0c3ff,"PLAN SORT (SORT (HASH (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK)), LINEITEM ORDER LINEITEM_PK)))","Select Expression
+    -> Sort (record length: 172, key length: 20)
+        -> Aggregate
+            -> Sort (record length: 222, key length: 144)
+                -> Filter
+                    -> Hash Join (semi)
+                        -> Filter
+                            -> Nested Loop Join (inner)
+                                -> Hash Join (inner)
+                                    -> Table ""ORDERS"" Full Scan
+                                    -> Record Buffer (record length: 129)
+                                        -> Table ""CUSTOMER"" Full Scan
+                                -> Filter
+                                    -> Table ""LINEITEM"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""LINEITEM_PK"" Range Scan (partial match: 1/2)
+                        -> Record Buffer (record length: 41)
+                            -> Filter
+                                -> Aggregate
+                                    -> Filter
+                                        -> Table ""LINEITEM"" Access By ID
+                                            -> Index ""LINEITEM_PK"" Full Scan",
+jcch_norm_18,jcch-norm,measured,ok,12969.7,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:805cfc546cd68b0f163b69e614e0c3ff,,,

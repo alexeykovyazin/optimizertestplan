@@ -1,0 +1,606 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+dsb_064_01,dsb-s1,prepare,ok,,,n/a,,206.5,md5:1a3f16b80101c836d53e7cf171ecbd3c,"PLAN SORT (HASH (SORT (JOIN (JOIN (CS1 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS1 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS1 ITEM INDEX (ITEM_PK), CS1 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS1 STORE_SALES INDEX (STORE_SALES_PK)), CS1 D1 INDEX (DATE_DIM_PK), CS1 STORE INDEX (STORE_PK), CS1 CUSTOMER INDEX (CUSTOMER_PK), CS1 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 PROMOTION INDEX (PROMOTION_PK), CS1 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS1 D2 INDEX (DATE_DIM_PK), CS1 D3 INDEX (DATE_DIM_PK), CS1 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS1 IB1 INDEX (INCOME_BAND_PK), CS1 IB2 INDEX (INCOME_BAND_PK))), SORT (JOIN (JOIN (CS2 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS2 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS2 ITEM INDEX (ITEM_PK), CS2 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS2 STORE_SALES INDEX (STORE_SALES_PK)), CS2 D1 INDEX (DATE_DIM_PK), CS2 STORE INDEX (STORE_PK), CS2 CUSTOMER INDEX (CUSTOMER_PK), CS2 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 PROMOTION INDEX (PROMOTION_PK), CS2 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS2 D2 INDEX (DATE_DIM_PK), CS2 D3 INDEX (DATE_DIM_PK), CS2 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS2 IB1 INDEX (INCOME_BAND_PK), CS2 IB2 INDEX (INCOME_BAND_PK)))))","Select Expression
+    -> Sort (record length: 3342, key length: 448)
+        -> Filter
+            -> Hash Join (inner)
+                -> Filter
+                    -> Aggregate
+                        -> Sort (record length: 2390, key length: 1656)
+                            -> Nested Loop Join (inner)
+                                -> Filter
+                                    -> Aggregate
+                                        -> Nested Loop Join (inner)
+                                            -> Table ""CATALOG_RETURNS"" as ""CS1 CS_UI CATALOG_RETURNS"" Access By ID
+                                                -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" as ""CS1 CS_UI CATALOG_SALES"" Access By ID
+                                                    -> Bitmap
+                                                        -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" as ""CS1 ITEM"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""ITEM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE_RETURNS"" as ""CS1 STORE_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""STORE_SALES"" as ""CS1 STORE_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_SALES_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""STORE"" as ""CS1 STORE"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""STORE_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER"" as ""CS1 CUSTOMER"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""PROMOTION"" as ""CS1 PROMOTION"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""PROMOTION_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D3"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                -> Record Buffer (record length: 1641)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 2390, key length: 1656)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Aggregate
+                                            -> Nested Loop Join (inner)
+                                                -> Table ""CATALOG_RETURNS"" as ""CS2 CS_UI CATALOG_RETURNS"" Access By ID
+                                                    -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CS2 CS_UI CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                    -> Nested Loop Join (inner)
+                                        -> Filter
+                                            -> Table ""ITEM"" as ""CS2 ITEM"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""ITEM_PK"" Unique Scan
+                                        -> Filter
+                                            -> Table ""STORE_RETURNS"" as ""CS2 STORE_RETURNS"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                        -> Filter
+                                            -> Table ""STORE_SALES"" as ""CS2 STORE_SALES"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""CS2 D1"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE"" as ""CS2 STORE"" Access By ID
+                                          ",
+dsb_064_01,dsb-s1,measured,ok,1089.9,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:1a3f16b80101c836d53e7cf171ecbd3c,,,
+dsb_064_02,dsb-s1,prepare,ok,,,n/a,,53.5,md5:1a3f16b80101c836d53e7cf171ecbd3c,"PLAN SORT (HASH (SORT (JOIN (JOIN (CS1 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS1 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS1 ITEM INDEX (ITEM_PK), CS1 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS1 STORE_SALES INDEX (STORE_SALES_PK)), CS1 D1 INDEX (DATE_DIM_PK), CS1 STORE INDEX (STORE_PK), CS1 CUSTOMER INDEX (CUSTOMER_PK), CS1 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 PROMOTION INDEX (PROMOTION_PK), CS1 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS1 D2 INDEX (DATE_DIM_PK), CS1 D3 INDEX (DATE_DIM_PK), CS1 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS1 IB1 INDEX (INCOME_BAND_PK), CS1 IB2 INDEX (INCOME_BAND_PK))), SORT (JOIN (JOIN (CS2 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS2 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS2 ITEM INDEX (ITEM_PK), CS2 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS2 STORE_SALES INDEX (STORE_SALES_PK)), CS2 D1 INDEX (DATE_DIM_PK), CS2 STORE INDEX (STORE_PK), CS2 CUSTOMER INDEX (CUSTOMER_PK), CS2 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 PROMOTION INDEX (PROMOTION_PK), CS2 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS2 D2 INDEX (DATE_DIM_PK), CS2 D3 INDEX (DATE_DIM_PK), CS2 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS2 IB1 INDEX (INCOME_BAND_PK), CS2 IB2 INDEX (INCOME_BAND_PK)))))","Select Expression
+    -> Sort (record length: 3342, key length: 448)
+        -> Filter
+            -> Hash Join (inner)
+                -> Filter
+                    -> Aggregate
+                        -> Sort (record length: 2390, key length: 1656)
+                            -> Nested Loop Join (inner)
+                                -> Filter
+                                    -> Aggregate
+                                        -> Nested Loop Join (inner)
+                                            -> Table ""CATALOG_RETURNS"" as ""CS1 CS_UI CATALOG_RETURNS"" Access By ID
+                                                -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" as ""CS1 CS_UI CATALOG_SALES"" Access By ID
+                                                    -> Bitmap
+                                                        -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" as ""CS1 ITEM"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""ITEM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE_RETURNS"" as ""CS1 STORE_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""STORE_SALES"" as ""CS1 STORE_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_SALES_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""STORE"" as ""CS1 STORE"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""STORE_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER"" as ""CS1 CUSTOMER"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""PROMOTION"" as ""CS1 PROMOTION"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""PROMOTION_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D3"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                -> Record Buffer (record length: 1641)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 2390, key length: 1656)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Aggregate
+                                            -> Nested Loop Join (inner)
+                                                -> Table ""CATALOG_RETURNS"" as ""CS2 CS_UI CATALOG_RETURNS"" Access By ID
+                                                    -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CS2 CS_UI CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                    -> Nested Loop Join (inner)
+                                        -> Filter
+                                            -> Table ""ITEM"" as ""CS2 ITEM"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""ITEM_PK"" Unique Scan
+                                        -> Filter
+                                            -> Table ""STORE_RETURNS"" as ""CS2 STORE_RETURNS"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                        -> Filter
+                                            -> Table ""STORE_SALES"" as ""CS2 STORE_SALES"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""CS2 D1"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE"" as ""CS2 STORE"" Access By ID
+                                          ",
+dsb_064_02,dsb-s1,measured,ok,1045.6,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:1a3f16b80101c836d53e7cf171ecbd3c,,,
+dsb_064_03,dsb-s1,prepare,ok,,,n/a,,52.4,md5:1a3f16b80101c836d53e7cf171ecbd3c,"PLAN SORT (HASH (SORT (JOIN (JOIN (CS1 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS1 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS1 ITEM INDEX (ITEM_PK), CS1 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS1 STORE_SALES INDEX (STORE_SALES_PK)), CS1 D1 INDEX (DATE_DIM_PK), CS1 STORE INDEX (STORE_PK), CS1 CUSTOMER INDEX (CUSTOMER_PK), CS1 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 PROMOTION INDEX (PROMOTION_PK), CS1 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS1 D2 INDEX (DATE_DIM_PK), CS1 D3 INDEX (DATE_DIM_PK), CS1 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS1 IB1 INDEX (INCOME_BAND_PK), CS1 IB2 INDEX (INCOME_BAND_PK))), SORT (JOIN (JOIN (CS2 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS2 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS2 ITEM INDEX (ITEM_PK), CS2 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS2 STORE_SALES INDEX (STORE_SALES_PK)), CS2 D1 INDEX (DATE_DIM_PK), CS2 STORE INDEX (STORE_PK), CS2 CUSTOMER INDEX (CUSTOMER_PK), CS2 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 PROMOTION INDEX (PROMOTION_PK), CS2 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS2 D2 INDEX (DATE_DIM_PK), CS2 D3 INDEX (DATE_DIM_PK), CS2 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS2 IB1 INDEX (INCOME_BAND_PK), CS2 IB2 INDEX (INCOME_BAND_PK)))))","Select Expression
+    -> Sort (record length: 3342, key length: 448)
+        -> Filter
+            -> Hash Join (inner)
+                -> Filter
+                    -> Aggregate
+                        -> Sort (record length: 2390, key length: 1656)
+                            -> Nested Loop Join (inner)
+                                -> Filter
+                                    -> Aggregate
+                                        -> Nested Loop Join (inner)
+                                            -> Table ""CATALOG_RETURNS"" as ""CS1 CS_UI CATALOG_RETURNS"" Access By ID
+                                                -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" as ""CS1 CS_UI CATALOG_SALES"" Access By ID
+                                                    -> Bitmap
+                                                        -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" as ""CS1 ITEM"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""ITEM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE_RETURNS"" as ""CS1 STORE_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""STORE_SALES"" as ""CS1 STORE_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_SALES_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""STORE"" as ""CS1 STORE"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""STORE_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER"" as ""CS1 CUSTOMER"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""PROMOTION"" as ""CS1 PROMOTION"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""PROMOTION_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D3"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                -> Record Buffer (record length: 1641)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 2390, key length: 1656)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Aggregate
+                                            -> Nested Loop Join (inner)
+                                                -> Table ""CATALOG_RETURNS"" as ""CS2 CS_UI CATALOG_RETURNS"" Access By ID
+                                                    -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CS2 CS_UI CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                    -> Nested Loop Join (inner)
+                                        -> Filter
+                                            -> Table ""ITEM"" as ""CS2 ITEM"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""ITEM_PK"" Unique Scan
+                                        -> Filter
+                                            -> Table ""STORE_RETURNS"" as ""CS2 STORE_RETURNS"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                        -> Filter
+                                            -> Table ""STORE_SALES"" as ""CS2 STORE_SALES"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""CS2 D1"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE"" as ""CS2 STORE"" Access By ID
+                                          ",
+dsb_064_03,dsb-s1,measured,ok,1092.5,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:1a3f16b80101c836d53e7cf171ecbd3c,,,
+dsb_064_04,dsb-s1,prepare,ok,,,n/a,,46.2,md5:1a3f16b80101c836d53e7cf171ecbd3c,"PLAN SORT (HASH (SORT (JOIN (JOIN (CS1 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS1 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS1 ITEM INDEX (ITEM_PK), CS1 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS1 STORE_SALES INDEX (STORE_SALES_PK)), CS1 D1 INDEX (DATE_DIM_PK), CS1 STORE INDEX (STORE_PK), CS1 CUSTOMER INDEX (CUSTOMER_PK), CS1 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 PROMOTION INDEX (PROMOTION_PK), CS1 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS1 D2 INDEX (DATE_DIM_PK), CS1 D3 INDEX (DATE_DIM_PK), CS1 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS1 IB1 INDEX (INCOME_BAND_PK), CS1 IB2 INDEX (INCOME_BAND_PK))), SORT (JOIN (JOIN (CS2 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS2 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS2 ITEM INDEX (ITEM_PK), CS2 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS2 STORE_SALES INDEX (STORE_SALES_PK)), CS2 D1 INDEX (DATE_DIM_PK), CS2 STORE INDEX (STORE_PK), CS2 CUSTOMER INDEX (CUSTOMER_PK), CS2 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 PROMOTION INDEX (PROMOTION_PK), CS2 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS2 D2 INDEX (DATE_DIM_PK), CS2 D3 INDEX (DATE_DIM_PK), CS2 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS2 IB1 INDEX (INCOME_BAND_PK), CS2 IB2 INDEX (INCOME_BAND_PK)))))","Select Expression
+    -> Sort (record length: 3342, key length: 448)
+        -> Filter
+            -> Hash Join (inner)
+                -> Filter
+                    -> Aggregate
+                        -> Sort (record length: 2390, key length: 1656)
+                            -> Nested Loop Join (inner)
+                                -> Filter
+                                    -> Aggregate
+                                        -> Nested Loop Join (inner)
+                                            -> Table ""CATALOG_RETURNS"" as ""CS1 CS_UI CATALOG_RETURNS"" Access By ID
+                                                -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" as ""CS1 CS_UI CATALOG_SALES"" Access By ID
+                                                    -> Bitmap
+                                                        -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" as ""CS1 ITEM"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""ITEM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE_RETURNS"" as ""CS1 STORE_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""STORE_SALES"" as ""CS1 STORE_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_SALES_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""STORE"" as ""CS1 STORE"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""STORE_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER"" as ""CS1 CUSTOMER"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""PROMOTION"" as ""CS1 PROMOTION"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""PROMOTION_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D3"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                -> Record Buffer (record length: 1641)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 2390, key length: 1656)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Aggregate
+                                            -> Nested Loop Join (inner)
+                                                -> Table ""CATALOG_RETURNS"" as ""CS2 CS_UI CATALOG_RETURNS"" Access By ID
+                                                    -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CS2 CS_UI CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                    -> Nested Loop Join (inner)
+                                        -> Filter
+                                            -> Table ""ITEM"" as ""CS2 ITEM"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""ITEM_PK"" Unique Scan
+                                        -> Filter
+                                            -> Table ""STORE_RETURNS"" as ""CS2 STORE_RETURNS"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                        -> Filter
+                                            -> Table ""STORE_SALES"" as ""CS2 STORE_SALES"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""CS2 D1"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE"" as ""CS2 STORE"" Access By ID
+                                          ",
+dsb_064_04,dsb-s1,measured,ok,1084.7,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:1a3f16b80101c836d53e7cf171ecbd3c,,,
+dsb_064_05,dsb-s1,prepare,ok,,,n/a,,49.6,md5:1a3f16b80101c836d53e7cf171ecbd3c,"PLAN SORT (HASH (SORT (JOIN (JOIN (CS1 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS1 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS1 ITEM INDEX (ITEM_PK), CS1 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS1 STORE_SALES INDEX (STORE_SALES_PK)), CS1 D1 INDEX (DATE_DIM_PK), CS1 STORE INDEX (STORE_PK), CS1 CUSTOMER INDEX (CUSTOMER_PK), CS1 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 PROMOTION INDEX (PROMOTION_PK), CS1 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS1 D2 INDEX (DATE_DIM_PK), CS1 D3 INDEX (DATE_DIM_PK), CS1 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS1 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS1 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS1 IB1 INDEX (INCOME_BAND_PK), CS1 IB2 INDEX (INCOME_BAND_PK))), SORT (JOIN (JOIN (CS2 CS_UI CATALOG_RETURNS ORDER CATALOG_RETURNS_PK, CS2 CS_UI CATALOG_SALES INDEX (CATALOG_SALES_PK)), JOIN (CS2 ITEM INDEX (ITEM_PK), CS2 STORE_RETURNS INDEX (STORE_RETURNS_PK), CS2 STORE_SALES INDEX (STORE_SALES_PK)), CS2 D1 INDEX (DATE_DIM_PK), CS2 STORE INDEX (STORE_PK), CS2 CUSTOMER INDEX (CUSTOMER_PK), CS2 CD1 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 PROMOTION INDEX (PROMOTION_PK), CS2 HD1 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD1 INDEX (CUSTOMER_ADDRESS_PK), CS2 D2 INDEX (DATE_DIM_PK), CS2 D3 INDEX (DATE_DIM_PK), CS2 CD2 INDEX (CUSTOMER_DEMOGRAPHICS_PK), CS2 HD2 INDEX (HOUSEHOLD_DEMOGRAPHICS_PK), CS2 AD2 INDEX (CUSTOMER_ADDRESS_PK), CS2 IB1 INDEX (INCOME_BAND_PK), CS2 IB2 INDEX (INCOME_BAND_PK)))))","Select Expression
+    -> Sort (record length: 3342, key length: 448)
+        -> Filter
+            -> Hash Join (inner)
+                -> Filter
+                    -> Aggregate
+                        -> Sort (record length: 2390, key length: 1656)
+                            -> Nested Loop Join (inner)
+                                -> Filter
+                                    -> Aggregate
+                                        -> Nested Loop Join (inner)
+                                            -> Table ""CATALOG_RETURNS"" as ""CS1 CS_UI CATALOG_RETURNS"" Access By ID
+                                                -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" as ""CS1 CS_UI CATALOG_SALES"" Access By ID
+                                                    -> Bitmap
+                                                        -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" as ""CS1 ITEM"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""ITEM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE_RETURNS"" as ""CS1 STORE_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""STORE_SALES"" as ""CS1 STORE_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""STORE_SALES_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""STORE"" as ""CS1 STORE"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""STORE_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER"" as ""CS1 CUSTOMER"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""PROMOTION"" as ""CS1 PROMOTION"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""PROMOTION_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""DATE_DIM"" as ""CS1 D3"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_DEMOGRAPHICS"" as ""CS1 CD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""HOUSEHOLD_DEMOGRAPHICS"" as ""CS1 HD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""HOUSEHOLD_DEMOGRAPHICS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""CUSTOMER_ADDRESS"" as ""CS1 AD2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""CUSTOMER_ADDRESS_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB1"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                                -> Filter
+                                    -> Table ""INCOME_BAND"" as ""CS1 IB2"" Access By ID
+                                        -> Bitmap
+                                            -> Index ""INCOME_BAND_PK"" Unique Scan
+                -> Record Buffer (record length: 1641)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 2390, key length: 1656)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Aggregate
+                                            -> Nested Loop Join (inner)
+                                                -> Table ""CATALOG_RETURNS"" as ""CS2 CS_UI CATALOG_RETURNS"" Access By ID
+                                                    -> Index ""CATALOG_RETURNS_PK"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CS2 CS_UI CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                    -> Nested Loop Join (inner)
+                                        -> Filter
+                                            -> Table ""ITEM"" as ""CS2 ITEM"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""ITEM_PK"" Unique Scan
+                                        -> Filter
+                                            -> Table ""STORE_RETURNS"" as ""CS2 STORE_RETURNS"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                        -> Filter
+                                            -> Table ""STORE_SALES"" as ""CS2 STORE_SALES"" Access By ID
+                                                -> Bitmap
+                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""CS2 D1"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                    -> Filter
+                                        -> Table ""STORE"" as ""CS2 STORE"" Access By ID
+                                          ",
+dsb_064_05,dsb-s1,measured,ok,1050.5,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:1a3f16b80101c836d53e7cf171ecbd3c,,,
