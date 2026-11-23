@@ -1,0 +1,28 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+horses_fdb_01,horses-fdb,prepare,ok,,,n/a,,180.1,md5:ca9d2784aacfcee77d0557dad243c958,"PLAN JOIN (JOIN (H NATURAL, SORT (SORT (JOIN (IMPORT_INFO REGS R INDEX (REGISTRATION_IDX_HORSE_REGTYPE), IMPORT_INFO REGS FARM INDEX (PK_FARM))))), COVER NATURAL)","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Table ""HORSE"" as ""H"" Full Scan
+                -> First N Records
+                    -> Sort (record length: 68, key length: 8)
+                        -> Filter
+                            -> Window
+                                -> Window Partition
+                                    -> Record Buffer (record length: 115)
+                                        -> Sort (record length: 132, key length: 8)
+                                            -> Window Partition
+                                                -> Window Buffer
+                                                    -> Record Buffer (record length: 82)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""REGISTRATION"" as ""IMPORT_INFO REGS R"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""REGISTRATION_IDX_HORSE_REGTYPE"" Range Scan (full match)
+                                                            -> Filter
+                                                                -> Table ""FARM"" as ""IMPORT_INFO REGS FARM"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""PK_FARM"" Unique Scan
+            -> Filter
+                -> Table ""COVER"" Full Scan",
+horses_fdb_01,horses-fdb,measured,timeout,,,n/a,,,md5:ca9d2784aacfcee77d0557dad243c958,,,watchdog 120s
