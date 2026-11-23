@@ -1,0 +1,111 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=20000.00)
+            -> Table "HORSE" as "H" Full Scan (rows=20000.00)
+            -> First N Records (rows=1.00)
+                -> Filter (rows=400000.00)
+                    -> Table "REGISTRATION" as "I R" Access By ID (rows=400000.00)
+                        -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+                            -> Bitmap
+                                -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+
+T                      COUNT                 COUNT 
+====== ===================== ===================== 
+N1                     20000                  4124 
+
+Current memory = 20906000
+Delta memory = 243056
+Max memory = 43351424
+Elapsed time = 53.526 sec
+Buffers = 2048
+Reads = 3460
+Writes = 2
+Fetches = 4308281
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=20000.00)
+            -> Table "HORSE" as "H" Full Scan (rows=20000.00)
+            -> Aggregate (rows=1.00)
+                -> Filter (rows=400000.00)
+                    -> Table "REGISTRATION" as "I R" Access By ID (rows=400000.00)
+                        -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+                            -> Bitmap
+                                -> Index "REGISTRATION_IDX_HORSE_REGTYPE" Range Scan (full match)
+
+T                      COUNT                 COUNT 
+====== ===================== ===================== 
+N2                     20000                  4124 
+
+Current memory = 20931408
+Delta memory = 25408
+Max memory = 43351424
+Elapsed time = 67.024 sec
+Buffers = 2048
+Reads = 3724
+Writes = 0
+Fetches = 4308150
+
+Select Expression
+    -> First N Records (rows=1.00)
+        -> Filter (rows=79226.67)
+            -> Table "REGISTRATION" as "R" Access By ID (rows=400000.00)
+                -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+
+T           BYDATE 
+====== =========== 
+C1     2010-01-04  
+
+Current memory = 20953536
+Delta memory = 22128
+Max memory = 43351424
+Elapsed time = 0.001 sec
+Buffers = 2048
+Reads = 132
+Writes = 0
+Fetches = 734
+
+Select Expression
+    -> First N Records (rows=5.00)
+        -> Table "REGISTRATION" as "R" Access By ID (rows=400000.00)
+            -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+
+T           BYDATE 
+====== =========== 
+C2     2010-01-01  
+C2     2010-01-01  
+C2     2010-01-01  
+C2     2010-01-01  
+C2     2010-01-01  
+
+Current memory = 20966624
+Delta memory = 13088
+Max memory = 43351424
+Elapsed time = 0.001 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 27
+
+Select Expression
+    -> First N Records (rows=1.00)
+        -> Filter (rows=400000.00)
+            -> Table "REGISTRATION" as "R" Access By ID (rows=400000.00)
+                -> Index "REGISTRATION_IDX_BYDATE" Full Scan
+                    -> Bitmap
+                        -> Index "FK_REGISTRATION_HORSE" Range Scan (upper bound: 1/1)
+
+T           BYDATE 
+====== =========== 
+C3     2010-01-01  
+
+Current memory = 21086128
+Delta memory = 119504
+Max memory = 43351424
+Elapsed time = 0.007 sec
+Buffers = 2048
+Reads = 120
+Writes = 0
+Fetches = 145
+-- rc=0, 123 s
