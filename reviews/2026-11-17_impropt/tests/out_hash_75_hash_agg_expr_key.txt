@@ -1,0 +1,163 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=100.00)
+            -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E1 rows                    50 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 60, key length: 40) (rows=163.01)
+                    -> Union (rows=163.01)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=100.00)
+                            -> Table "T" Full Scan (rows=63010.29)
+                        -> Aggregate (rows=63.01)
+                            -> Sort (record length: 44, key length: 8) (rows=63010.29)
+                                -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 3, group length: 80) (rows=899.00)
+            -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E2 rows                     3 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000001)
+                -> Sort (record length: 60, key length: 40) (rows=962.01)
+                    -> Union (rows=962.01)
+                        -> Hash Aggregate (keys: 1, key length: 3, group length: 144) (rows=899.00)
+                            -> Table "T" Full Scan (rows=63010.29)
+                        -> Aggregate (rows=63.01)
+                            -> Sort (record length: 52, key length: 8) (rows=63010.29)
+                                -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 3, group length: 80) (rows=13.00)
+            -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E3 rows                    12 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 52, key length: 28) (rows=76.01)
+                    -> Union (rows=76.01)
+                        -> Hash Aggregate (keys: 1, key length: 3, group length: 144) (rows=13.00)
+                            -> Table "T" Full Scan (rows=63010.29)
+                        -> Aggregate (rows=63.01)
+                            -> Sort (record length: 44, key length: 8) (rows=63010.29)
+                                -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E3 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 2, key length: 10, group length: 88) (rows=3699.00)
+            -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E4 rows                  1850 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 68, key length: 48) (rows=3699.06)
+                    -> Union (rows=3699.06)
+                        -> Hash Aggregate (keys: 2, key length: 10, group length: 152) (rows=3699.00)
+                            -> Table "T" Full Scan (rows=63010.29)
+                        -> Aggregate (rows=0.063010)
+                            -> Sort (record length: 52, key length: 16) (rows=63010.29)
+                                -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E4 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 2, group length: 80) (rows=3.00)
+            -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E5 rows                     2 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 52, key length: 28) (rows=66.01)
+                    -> Union (rows=66.01)
+                        -> Hash Aggregate (keys: 1, key length: 2, group length: 144) (rows=3.00)
+                            -> Table "T" Full Scan (rows=63010.29)
+                        -> Aggregate (rows=63.01)
+                            -> Sort (record length: 44, key length: 8) (rows=63010.29)
+                                -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E5 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 123, group length: 80) (rows=499.00)
+            -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E6 rows                   500 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000001)
+                -> Sort (record length: 174, key length: 152) (rows=562.01)
+                    -> Union (rows=562.01)
+                        -> Hash Aggregate (keys: 1, key length: 123, group length: 144) (rows=499.00)
+                            -> Table "T" Full Scan (rows=63010.29)
+                        -> Aggregate (rows=63.01)
+                            -> Sort (record length: 286, key length: 128) (rows=63010.29)
+                                -> Table "T" Full Scan (rows=63010.29)
+
+T                       COUNT 
+======= ===================== 
+E6 diff                     0 
+
+-- rc=0, 1 s

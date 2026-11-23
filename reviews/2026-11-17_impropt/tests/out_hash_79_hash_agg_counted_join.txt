@@ -1,0 +1,141 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=39.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                -> Table "T" as "A" Full Scan (rows=63710.40)
+                -> Record Buffer (record length: 33) (rows=63710.40)
+                    -> Table "T" as "B" Full Scan (rows=63710.40)
+
+T                       COUNT                                           SUM 
+======= ===================== ============================================= 
+W1 rows                    40                                       1200000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000001)
+                -> Sort (record length: 60, key length: 40) (rows=1392.01)
+                    -> Union (rows=1392.01)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=39.00)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                -> Table "T" as "A" Full Scan (rows=63710.40)
+                                -> Record Buffer (record length: 41) (rows=63710.40)
+                                    -> Table "T" as "B" Full Scan (rows=63710.40)
+                        -> Aggregate (rows=1353.01)
+                            -> Sort (record length: 68, key length: 8) (rows=1353005.01)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                    -> Table "T" as "A" Full Scan (rows=63710.40)
+                                    -> Record Buffer (record length: 41) (rows=63710.40)
+                                        -> Table "T" as "B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+W1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 206, key length: 180) (rows=1392.01)
+                    -> Union (rows=1392.01)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 336) (rows=39.00)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                -> Table "T" as "A" Full Scan (rows=63710.40)
+                                -> Record Buffer (record length: 161) (rows=63710.40)
+                                    -> Table "T" as "B" Full Scan (rows=63710.40)
+                        -> Aggregate (rows=1353.01)
+                            -> Sort (record length: 188, key length: 8) (rows=1353005.01)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                    -> Table "T" as "A" Full Scan (rows=63710.40)
+                                    -> Record Buffer (record length: 161) (rows=63710.40)
+                                        -> Table "T" as "B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+W2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000001)
+                -> Sort (record length: 60, key length: 40) (rows=1392.01)
+                    -> Union (rows=1392.01)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=39.00)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                -> Table "T" as "A" Full Scan (rows=63710.40)
+                                -> Record Buffer (record length: 33) (rows=63710.40)
+                                    -> Table "T" as "B" Full Scan (rows=63710.40)
+                        -> Aggregate (rows=1353.01)
+                            -> Sort (record length: 68, key length: 8) (rows=1353005.01)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                    -> Table "T" as "A" Full Scan (rows=63710.40)
+                                    -> Record Buffer (record length: 33) (rows=63710.40)
+                                        -> Table "T" as "B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+W3 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 52, key length: 32) (rows=214.19)
+                    -> Union (rows=214.19)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=18.00)
+                            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=196185.72)
+                                -> Table "T" as "B" Full Scan (rows=63710.40)
+                                -> Record Buffer (record length: 33) (rows=9238.01)
+                                    -> Filter (rows=9238.01)
+                                        -> Table "T" as "A" Access By ID (rows=9238.01)
+                                            -> Bitmap
+                                                -> Index "RDB$PRIMARY1" Range Scan (upper bound: 1/1)
+                        -> Aggregate (rows=196.19)
+                            -> Sort (record length: 196, key length: 8) (rows=196185.72)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=196185.72)
+                                    -> Table "T" as "B" Full Scan (rows=63710.40)
+                                    -> Record Buffer (record length: 33) (rows=9238.01)
+                                        -> Filter (rows=9238.01)
+                                            -> Table "T" as "A" Access By ID (rows=9238.01)
+                                                -> Bitmap
+                                                    -> Index "RDB$PRIMARY1" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+W4 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.001392)
+                -> Sort (record length: 44, key length: 20) (rows=1392.01)
+                    -> Union (rows=1392.01)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=39.00)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=63710.40)
+                                    -> Table "T" as "A" Full Scan (rows=63710.40)
+                                    -> Record Buffer (record length: 25) (rows=63710.40)
+                                        -> Table "T" as "C" Full Scan (rows=63710.40)
+                                -> Record Buffer (record length: 33) (rows=63710.40)
+                                    -> Table "T" as "B" Full Scan (rows=63710.40)
+                        -> Aggregate (rows=1353.01)
+                            -> Sort (record length: 84, key length: 8) (rows=1353005.01)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=63710.40)
+                                        -> Table "T" as "A" Full Scan (rows=63710.40)
+                                        -> Record Buffer (record length: 25) (rows=63710.40)
+                                            -> Table "T" as "C" Full Scan (rows=63710.40)
+                                    -> Record Buffer (record length: 33) (rows=63710.40)
+                                        -> Table "T" as "B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+W5 diff                     0 
+
+-- rc=0, 7 s

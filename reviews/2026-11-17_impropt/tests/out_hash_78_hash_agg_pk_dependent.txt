@@ -1,0 +1,214 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=20000.00)
+            -> Nested Loop Join (inner) (rows=105503.33)
+                -> Table "MUL" Full Scan (rows=5.00)
+                -> Table "T" Full Scan (rows=21100.67)
+
+T                       COUNT 
+======= ===================== 
+K1 rows                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 776, key length: 588) (rows=20000.00)
+                    -> Union (rows=20000.00)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=20000.00)
+                            -> Nested Loop Join (inner) (rows=105503.33)
+                                -> Table "MUL" Full Scan (rows=5.00)
+                                -> Table "T" Full Scan (rows=21100.67)
+                        -> Aggregate (rows=0.000000)
+                            -> Sort (record length: 774, key length: 552) (rows=105503.33)
+                                -> Nested Loop Join (inner) (rows=105503.33)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Table "T" Full Scan (rows=21100.67)
+
+T                       COUNT 
+======= ===================== 
+K1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 2, key length: 10, group length: 88) (rows=20000.00)
+            -> Nested Loop Join (inner) (rows=104368.89)
+                -> Table "MUL" Full Scan (rows=5.00)
+                -> Table "P2" Full Scan (rows=20873.78)
+
+T                       COUNT 
+======= ===================== 
+K2 rows                 20000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 190, key length: 168) (rows=20000.00)
+                    -> Union (rows=20000.00)
+                        -> Hash Aggregate (keys: 2, key length: 10, group length: 152) (rows=20000.00)
+                            -> Nested Loop Join (inner) (rows=104368.89)
+                                -> Table "MUL" Full Scan (rows=5.00)
+                                -> Table "P2" Full Scan (rows=20873.78)
+                        -> Aggregate (rows=0.000104)
+                            -> Sort (record length: 190, key length: 144) (rows=104368.89)
+                                -> Nested Loop Join (inner) (rows=104368.89)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Table "P2" Full Scan (rows=20873.78)
+
+T                       COUNT 
+======= ===================== 
+K2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=0.000104)
+            -> Sort (record length: 182, key length: 144) (rows=104368.89)
+                -> Nested Loop Join (inner) (rows=104368.89)
+                    -> Table "MUL" Full Scan (rows=5.00)
+                    -> Table "P2" Full Scan (rows=20873.78)
+
+T                       COUNT 
+======= ===================== 
+K3 rows                  1400 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 182, key length: 160) (rows=0.21)
+                    -> Union (rows=0.21)
+                        -> Aggregate (rows=0.10)
+                            -> Sort (record length: 182, key length: 136) (rows=104368.89)
+                                -> Nested Loop Join (inner) (rows=104368.89)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Table "P2" Full Scan (rows=20873.78)
+                        -> Aggregate (rows=0.10)
+                            -> Sort (record length: 190, key length: 136) (rows=104368.89)
+                                -> Nested Loop Join (inner) (rows=104368.89)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Table "P2" Full Scan (rows=20873.78)
+
+T                       COUNT 
+======= ===================== 
+K3 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 2, key length: 10, group length: 88) (rows=111309.00)
+            -> Nested Loop Join (inner) (rows=111309.53)
+                -> Table "MUL" Full Scan (rows=5.00)
+                -> Hash Join (inner) (keys: 1, total key length: 8) (rows=22261.91)
+                    -> Table "T" as "X" Full Scan (rows=21100.67)
+                    -> Record Buffer (record length: 193) (rows=21100.67)
+                        -> Table "T" as "Y" Full Scan (rows=21100.67)
+
+T                       COUNT 
+======= ===================== 
+K4 rows                 19000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 710, key length: 520) (rows=111309.00)
+                    -> Union (rows=111309.00)
+                        -> Hash Aggregate (keys: 2, key length: 10, group length: 88) (rows=111309.00)
+                            -> Nested Loop Join (inner) (rows=111309.53)
+                                -> Table "MUL" Full Scan (rows=5.00)
+                                -> Hash Join (inner) (keys: 1, total key length: 8) (rows=22261.91)
+                                    -> Table "T" as "X" Full Scan (rows=21100.67)
+                                    -> Record Buffer (record length: 193) (rows=21100.67)
+                                        -> Table "T" as "Y" Full Scan (rows=21100.67)
+                        -> Aggregate (rows=0.000000)
+                            -> Sort (record length: 734, key length: 508) (rows=111309.53)
+                                -> Nested Loop Join (inner) (rows=111309.53)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Hash Join (inner) (keys: 1, total key length: 8) (rows=22261.91)
+                                        -> Table "T" as "X" Full Scan (rows=21100.67)
+                                        -> Record Buffer (record length: 193) (rows=21100.67)
+                                            -> Table "T" as "Y" Full Scan (rows=21100.67)
+
+T                       COUNT 
+======= ===================== 
+K4 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Aggregate (rows=0.015861)
+            -> Sort (record length: 174, key length: 136) (rows=15860.55)
+                -> Nested Loop Join (inner) (rows=15860.55)
+                    -> Table "MUL" Full Scan (rows=5.00)
+                    -> Filter (rows=3172.11)
+                        -> Table "Q" Access By ID (rows=3172.11)
+                            -> Bitmap Or
+                                -> Bitmap
+                                    -> Index "Q_U" Range Scan (full match)
+                                -> Bitmap
+                                    -> Index "Q_U" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+K5 rows                 16400 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 174, key length: 148) (rows=0.21)
+                    -> Union (rows=0.21)
+                        -> Aggregate (rows=0.11)
+                            -> Sort (record length: 174, key length: 136) (rows=105703.53)
+                                -> Nested Loop Join (inner) (rows=105703.53)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Table "Q" Full Scan (rows=21140.71)
+                        -> Aggregate (rows=0.11)
+                            -> Sort (record length: 182, key length: 136) (rows=105703.53)
+                                -> Nested Loop Join (inner) (rows=105703.53)
+                                    -> Table "MUL" Full Scan (rows=5.00)
+                                    -> Table "Q" Full Scan (rows=21140.71)
+
+T                       COUNT 
+======= ===================== 
+K5 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000020)
+                -> Sort (record length: 294, key length: 268) (rows=20000.02)
+                    -> Union (rows=20000.02)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=20000.00)
+                            -> Hash Join (outer) (keys: 1, total key length: 4) (rows=21100.67)
+                                -> Table "T" as "X" Full Scan (rows=21100.67)
+                                -> Record Buffer (record length: 273) (rows=1105.15)
+                                    -> Filter (rows=1105.15)
+                                        -> Table "T" as "Y" Access By ID (rows=1105.15)
+                                            -> Bitmap
+                                                -> Index "T_K" Range Scan (lower bound: 1/1)
+                        -> Aggregate (rows=0.021101)
+                            -> Sort (record length: 310, key length: 256) (rows=21100.67)
+                                -> Hash Join (outer) (keys: 1, total key length: 4) (rows=21100.67)
+                                    -> Table "T" as "X" Full Scan (rows=21100.67)
+                                    -> Record Buffer (record length: 273) (rows=1105.15)
+                                        -> Filter (rows=1105.15)
+                                            -> Table "T" as "Y" Access By ID (rows=1105.15)
+                                                -> Bitmap
+                                                    -> Index "T_K" Range Scan (lower bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+K6 diff                     0 
+
+-- rc=0, 2 s

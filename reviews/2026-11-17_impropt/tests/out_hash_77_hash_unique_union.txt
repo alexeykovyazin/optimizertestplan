@@ -1,0 +1,187 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 44) (rows=1036.00)
+            -> Union (rows=127057.78)
+                -> Table "T" Full Scan (rows=63528.89)
+                -> Table "T" Full Scan (rows=63528.89)
+
+T                       COUNT 
+======= ===================== 
+U1 rows                  1000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=1.16)
+                -> Sort (record length: 44, key length: 8) (rows=1163.06)
+                    -> Union (rows=1163.06)
+                        -> Hash Unique (record length: 44) (rows=1036.00)
+                            -> Union (rows=127057.78)
+                                -> Table "T" Full Scan (rows=63528.89)
+                                -> Table "T" Full Scan (rows=63528.89)
+                        -> Aggregate (rows=127.06)
+                            -> Sort (record length: 52, key length: 8) (rows=127057.78)
+                                -> Union (rows=127057.78)
+                                    -> Table "T" Full Scan (rows=63528.89)
+                                    -> Table "T" Full Scan (rows=63528.89)
+
+T                       COUNT 
+======= ===================== 
+U1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 174) (rows=66706.34)
+            -> Union (rows=66706.34)
+                -> Table "T" Full Scan (rows=63528.89)
+                -> Filter (rows=3177.45)
+                    -> Table "T" Access By ID (rows=3177.45)
+                        -> Bitmap
+                            -> Index "T_PK" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+U2 rows                 19463 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.066706)
+                -> Sort (record length: 174, key length: 136) (rows=66706.41)
+                    -> Union (rows=66706.41)
+                        -> Hash Unique (record length: 174) (rows=66706.34)
+                            -> Union (rows=66706.34)
+                                -> Table "T" Full Scan (rows=63528.89)
+                                -> Filter (rows=3177.45)
+                                    -> Table "T" Access By ID (rows=3177.45)
+                                        -> Bitmap
+                                            -> Index "T_PK" Range Scan (upper bound: 1/1)
+                        -> Aggregate (rows=0.066706)
+                            -> Sort (record length: 182, key length: 136) (rows=66706.34)
+                                -> Union (rows=66706.34)
+                                    -> Table "T" Full Scan (rows=63528.89)
+                                    -> Filter (rows=3177.45)
+                                        -> Table "T" Access By ID (rows=3177.45)
+                                            -> Bitmap
+                                                -> Index "T_PK" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+U2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 62) (rows=74.00)
+            -> Union (rows=68337.48)
+                -> Table "T" Full Scan (rows=63528.89)
+                -> Table "RDB$DATABASE" Full Scan (rows=1.00)
+                -> Filter (rows=4807.59)
+                    -> Table "T" Access By ID (rows=4807.59)
+                        -> Bitmap
+                            -> Index "T_K" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+U3 rows                    41 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000074)
+                -> Sort (record length: 62, key length: 16) (rows=74.07)
+                    -> Union (rows=74.07)
+                        -> Hash Unique (record length: 62) (rows=74.00)
+                            -> Union (rows=68337.48)
+                                -> Table "T" Full Scan (rows=63528.89)
+                                -> Table "RDB$DATABASE" Full Scan (rows=1.00)
+                                -> Filter (rows=4807.59)
+                                    -> Table "T" Access By ID (rows=4807.59)
+                                        -> Bitmap
+                                            -> Index "T_K" Range Scan (upper bound: 1/1)
+                        -> Aggregate (rows=0.068337)
+                            -> Sort (record length: 70, key length: 16) (rows=68337.48)
+                                -> Union (rows=68337.48)
+                                    -> Table "T" Full Scan (rows=63528.89)
+                                    -> Table "RDB$DATABASE" Full Scan (rows=1.00)
+                                    -> Filter (rows=4807.59)
+                                        -> Table "T" Access By ID (rows=4807.59)
+                                            -> Bitmap
+                                                -> Index "T_K" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+U3 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 174) (rows=127057.78)
+            -> Union (rows=127057.78)
+                -> Table "T" Full Scan (rows=63528.89)
+                -> Table "T" Full Scan (rows=63528.89)
+
+T                       COUNT 
+======= ===================== 
+U4 rows                 60000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.13)
+                -> Sort (record length: 174, key length: 136) (rows=127057.90)
+                    -> Union (rows=127057.90)
+                        -> Hash Unique (record length: 174) (rows=127057.78)
+                            -> Union (rows=127057.78)
+                                -> Table "T" Full Scan (rows=63528.89)
+                                -> Table "T" Full Scan (rows=63528.89)
+                        -> Aggregate (rows=0.13)
+                            -> Sort (record length: 182, key length: 136) (rows=127057.78)
+                                -> Union (rows=127057.78)
+                                    -> Table "T" Full Scan (rows=63528.89)
+                                    -> Table "T" Full Scan (rows=63528.89)
+
+T                       COUNT 
+======= ===================== 
+U4 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 52) (rows=1036.00)
+            -> Union (rows=127057.78)
+                -> Table "T" Full Scan (rows=63528.89)
+                -> Table "T" Full Scan (rows=63528.89)
+
+T                       COUNT 
+======= ===================== 
+U5 rows                  1000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=1.16)
+                -> Sort (record length: 52, key length: 12) (rows=1163.06)
+                    -> Union (rows=1163.06)
+                        -> Hash Unique (record length: 52) (rows=1036.00)
+                            -> Union (rows=127057.78)
+                                -> Table "T" Full Scan (rows=63528.89)
+                                -> Table "T" Full Scan (rows=63528.89)
+                        -> Aggregate (rows=127.06)
+                            -> Sort (record length: 60, key length: 12) (rows=127057.78)
+                                -> Union (rows=127057.78)
+                                    -> Table "T" Full Scan (rows=63528.89)
+                                    -> Table "T" Full Scan (rows=63528.89)
+
+T                       COUNT 
+======= ===================== 
+U5 diff                     0 
+
+-- rc=0, 1 s

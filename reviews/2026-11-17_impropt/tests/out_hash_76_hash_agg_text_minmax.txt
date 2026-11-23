@@ -1,0 +1,130 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 144) (rows=39.00)
+            -> Table "T" Full Scan (rows=63383.68)
+
+T                       COUNT 
+======= ===================== 
+M1 rows                    40 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 1664, key length: 1636) (rows=102.38)
+                    -> Union (rows=102.38)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 208) (rows=39.00)
+                            -> Table "T" Full Scan (rows=63383.68)
+                        -> Aggregate (rows=63.38)
+                            -> Table "T" Access By ID (rows=63383.68)
+                                -> Index "T_K" Full Scan
+
+T                       COUNT 
+======= ===================== 
+M1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 912, key length: 884) (rows=126.77)
+                    -> Union (rows=126.77)
+                        -> Aggregate (rows=63.38)
+                            -> Table "T" Access By ID (rows=63383.68)
+                                -> Index "T_M" Full Scan
+                        -> Aggregate (rows=63.38)
+                            -> Table "T" Access By ID (rows=63383.68)
+                                -> Index "T_M" Full Scan
+
+T                       COUNT 
+======= ===================== 
+M2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 876, key length: 524) (rows=63383.06)
+                    -> Union (rows=63383.06)
+                        -> Hash Aggregate (keys: 2, key length: 10, group length: 216) (rows=63383.00)
+                            -> Table "T" Full Scan (rows=63383.68)
+                        -> Aggregate (rows=0.063384)
+                            -> Sort (record length: 220, key length: 16) (rows=63383.68)
+                                -> Table "T" Full Scan (rows=63383.68)
+
+T                       COUNT 
+======= ===================== 
+M3 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 1664, key length: 1636) (rows=102.38)
+                    -> Union (rows=102.38)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 208) (rows=39.00)
+                            -> Table "T" Full Scan (rows=63383.68)
+                        -> Aggregate (rows=63.38)
+                            -> Table "T" Access By ID (rows=63383.68)
+                                -> Index "T_K" Full Scan
+
+T                       COUNT 
+======= ===================== 
+M4 diff                     0 
+
+
+PLAN (P NATURAL)
+
+T                 N A                                                                                                                                                                                                        B                                                                                                                                                                                                        
+====== ============ ======================================================================================================================================================================================================== ======================================================================================================================================================================================================== 
+call 1           40 name0                                                                                                                                                                                                    name9x                                                                                                                                                                                                   
+
+
+PLAN (P NATURAL)
+
+T                 N A                                                                                                                                                                                                        B                                                                                                                                                                                                        
+====== ============ ======================================================================================================================================================================================================== ======================================================================================================================================================================================================== 
+call 2           40 name0                                                                                                                                                                                                    name9x                                                                                                                                                                                                   
+
+
+PLAN (P NATURAL)
+
+T                 N A                                                                                                                                                                                                        B                                                                                                                                                                                                        
+====== ============ ======================================================================================================================================================================================================== ======================================================================================================================================================================================================== 
+call 3           40 name0                                                                                                                                                                                                    name9x                                                                                                                                                                                                   
+
+
+-- line 6, column 5
+PLAN (T NATURAL)
+
+T          MSG                  
+========== ==================== 
+M6         error caught         
+
+
+PLAN (T NATURAL)
+
+T                       COUNT 
+======= ===================== 
+M7 rows                    40 
+
+
+PLAN (T ORDER T_M)
+
+T                      COUNT 
+====== ===================== 
+M8                         5 
+
+
+PLAN (T ORDER T_M)
+
+T                       COUNT 
+======= ===================== 
+M9 rows                  3000 
+
+-- rc=0, 1 s

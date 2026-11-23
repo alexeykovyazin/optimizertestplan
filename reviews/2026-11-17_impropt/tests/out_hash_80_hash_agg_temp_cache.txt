@@ -1,0 +1,124 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 208) (rows=60000.00)
+            -> Table "T" Full Scan (rows=126798.48)
+
+T                       COUNT 
+======= ===================== 
+C1 rows                 30000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.000000)
+                -> Sort (record length: 118, key length: 96) (rows=60126.80)
+                    -> Union (rows=60126.80)
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 208) (rows=60000.00)
+                            -> Table "T" Full Scan (rows=126798.48)
+                        -> Aggregate (rows=126.80)
+                            -> Sort (record length: 100, key length: 8) (rows=126798.48)
+                                -> Table "T" Full Scan (rows=126798.48)
+
+T                       COUNT 
+======= ===================== 
+C1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 86) (rows=126798.48)
+            -> Table "T" Full Scan (rows=126798.48)
+
+T                       COUNT 
+======= ===================== 
+C2 rows                 30000 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.13)
+                -> Sort (record length: 94, key length: 64) (rows=126798.60)
+                    -> Union (rows=126798.60)
+                        -> Hash Unique (record length: 86) (rows=126798.48)
+                            -> Table "T" Full Scan (rows=126798.48)
+                        -> Aggregate (rows=0.13)
+                            -> Sort (record length: 94, key length: 64) (rows=126798.48)
+                                -> Table "T" Full Scan (rows=126798.48)
+
+T                       COUNT 
+======= ===================== 
+C2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Unique (record length: 102) (rows=253596.95)
+            -> Union (rows=253596.95)
+                -> Table "T" Full Scan (rows=126798.48)
+                -> Table "T" Full Scan (rows=126798.48)
+
+T                       COUNT 
+======= ===================== 
+C3 rows                 59994 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=1.00)
+            -> Aggregate (rows=0.25)
+                -> Sort (record length: 102, key length: 64) (rows=253597.21)
+                    -> Union (rows=253597.21)
+                        -> Hash Unique (record length: 102) (rows=253596.95)
+                            -> Union (rows=253596.95)
+                                -> Table "T" Full Scan (rows=126798.48)
+                                -> Table "T" Full Scan (rows=126798.48)
+                        -> Aggregate (rows=0.25)
+                            -> Sort (record length: 110, key length: 64) (rows=253596.95)
+                                -> Union (rows=253596.95)
+                                    -> Table "T" Full Scan (rows=126798.48)
+                                    -> Table "T" Full Scan (rows=126798.48)
+
+T                       COUNT 
+======= ===================== 
+C3 diff                     0 
+
+
+PLAN (P NATURAL)
+
+T                 N 
+====== ============ 
+call 1        30000 
+
+
+PLAN (P NATURAL)
+
+T                 N 
+====== ============ 
+call 2        30000 
+
+
+PLAN (P NATURAL)
+
+T                 N 
+====== ============ 
+call 3        30000 
+
+
+-- line 6, column 5
+PLAN (T NATURAL)
+
+T          MSG                  
+========== ==================== 
+C5         error caught         
+
+
+PLAN (T NATURAL)
+
+T                      COUNT 
+====== ===================== 
+C6                     30000 
+
+-- rc=0, 2 s
