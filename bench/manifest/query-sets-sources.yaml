@@ -82,3 +82,15 @@
     PRECISION; at->"at"; BLOB в GROUP BY: сортировка ключует blob-ID — не-blob ключи
     первыми, all-blob ключи -> скрытый HASH(SUBSTRING...||#||...) первым ключом; SELECT
     с голым blob (вывод = PG байт-в-байт)'
+- set: horses-fdb
+  source_url: null
+  license: закрытая база; запросы написаны для этого набора
+  paper: null
+  files:
+    HORSES.FDB (golden, только на стенде): a1a9336d8808c52630b155f8b17f2d70d4f518a33d04f6d5c6fb10e1ea732032
+  queries: 8
+  downloaded_at: '2026-11-23'
+  db: horses (golden HORSES.FDB — только на стенде dellg15, публично не распространяется;
+    см. bench/datasets/horses/README.md)
+  recovery: запрос 01 взят из отчёта о дефекте плана (LEFT JOIN LATERAL с оконной функцией,
+    затем LEFT JOIN большой таблицы); запросы 02-08 — его варианты

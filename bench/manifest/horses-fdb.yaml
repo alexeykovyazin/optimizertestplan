@@ -1,0 +1,186 @@
+- id: horses_fdb_01
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: 03b1f11f
+  tables: 4
+  table_list:
+  - cover
+  - farm
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - first_rows
+  - lateral
+  - order_by
+  - outer_join
+  - window
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'запрос из отчёта: LATERAL с оконной функцией и FETCH FIRST, затем LEFT
+    JOIN COVER'
+- id: horses_fdb_02
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: 47a95399
+  tables: 2
+  table_list:
+  - cover
+  - horse
+  tags:
+  - aggregate
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: 'контроль: только HORSE LEFT JOIN COVER'
+- id: horses_fdb_03
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: 7be29f4d
+  tables: 3
+  table_list:
+  - farm
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - first_rows
+  - lateral
+  - order_by
+  - outer_join
+  - window
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: только LATERAL, без COVER
+- id: horses_fdb_04
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: de3292b2
+  tables: 4
+  table_list:
+  - cover
+  - farm
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - first_rows
+  - lateral
+  - order_by
+  - outer_join
+  - window
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: COVER присоединена до LATERAL
+- id: horses_fdb_05
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: 0ec5086f
+  tables: 4
+  table_list:
+  - cover
+  - farm
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - first_rows
+  - lateral
+  - order_by
+  - outer_join
+  - window
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: как 01, но COVER через INNER JOIN
+- id: horses_fdb_06
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: 2a1b09ee
+  tables: 3
+  table_list:
+  - cover
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - first_rows
+  - lateral
+  - order_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: LATERAL без оконной функции (первая строка REGISTRATION), затем LEFT
+    JOIN COVER
+- id: horses_fdb_07
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: 05aa2633
+  tables: 3
+  table_list:
+  - cover
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - lateral
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: LATERAL с агрегатом MIN без GROUP BY, затем LEFT JOIN COVER
+- id: horses_fdb_08
+  suite: horses-fdb
+  db: horses
+  index_config:
+  - pk
+  - fk
+  template: b6d27de2
+  tables: 3
+  table_list:
+  - cover
+  - horse
+  - registration
+  tags:
+  - aggregate
+  - group_by
+  - outer_join
+  deterministic: true
+  float_tolerance: null
+  subplan_scope: null
+  result: null
+  port_notes: обычная производная таблица с GROUP BY вместо LATERAL, затем LEFT JOIN
+    COVER

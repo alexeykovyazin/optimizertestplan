@@ -1,0 +1,28 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+horses_fdb_01,horses-fdb,prepare,ok,,,n/a,,235.8,md5:ae6da94e25ad978c6dedc848d2511c3e,"PLAN JOIN (JOIN (H NATURAL, SORT (SORT (JOIN (IMPORT_INFO REGS R INDEX (FK_REGISTRATION_HORSE), IMPORT_INFO REGS FARM INDEX (PK_FARM))))), COVER NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (outer) (rows=788615.14)
+            -> Nested Loop Join (outer) (rows=579278.16)
+                -> Table ""HORSE"" as ""H"" Full Scan (rows=579278.16)
+                -> First N Records (rows=1.00)
+                    -> Sort (record length: 68, key length: 8) (rows=1.00)
+                        -> Filter (rows=1.00)
+                            -> Window (rows=1.22)
+                                -> Window Partition (rows=1.00)
+                                    -> Record Buffer (record length: 115) (rows=1.00)
+                                        -> Sort (record length: 132, key length: 8) (rows=1.00)
+                                            -> Window Partition (rows=1.00)
+                                                -> Window Buffer (rows=1.22)
+                                                    -> Record Buffer (record length: 82) (rows=1.22)
+                                                        -> Nested Loop Join (inner) (rows=1.22)
+                                                            -> Filter (rows=1.25)
+                                                                -> Table ""REGISTRATION"" as ""IMPORT_INFO REGS R"" Access By ID (rows=2.03)
+                                                                    -> Bitmap
+                                                                        -> Index ""FK_REGISTRATION_HORSE"" Range Scan (full match)
+                                                            -> Filter (rows=0.97)
+                                                                -> Table ""FARM"" as ""IMPORT_INFO REGS FARM"" Access By ID (rows=1.00)
+                                                                    -> Bitmap
+                                                                        -> Index ""PK_FARM"" Unique Scan
+            -> Filter (rows=1.36)
+                -> Table ""COVER"" Full Scan (rows=788615.14)",
+horses_fdb_01,horses-fdb,measured,timeout,,,n/a,,,md5:ae6da94e25ad978c6dedc848d2511c3e,,,watchdog 120s
