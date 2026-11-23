@@ -1,0 +1,91 @@
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1.00)
+            -> Aggregate (rows=1.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=1353005.01)
+                    -> Table "T" as "P A" Full Scan (rows=63710.40)
+                    -> Record Buffer (record length: 25) (rows=63710.40)
+                        -> Table "T" as "P B" Full Scan (rows=63710.40)
+            -> Filter (rows=1.00)
+                -> Aggregate (rows=1.00)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                        -> Table "T" as "Q A" Full Scan (rows=63710.40)
+                        -> Record Buffer (record length: 25) (rows=63710.40)
+                            -> Table "T" as "Q B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+M1 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1.00)
+            -> Aggregate (rows=1.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=1353005.01)
+                    -> Table "T" as "P A" Full Scan (rows=63710.40)
+                    -> Record Buffer (record length: 25) (rows=63710.40)
+                        -> Table "T" as "P B" Full Scan (rows=63710.40)
+            -> Filter (rows=1.00)
+                -> Aggregate (rows=1.00)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                        -> Table "T" as "Q A" Full Scan (rows=63710.40)
+                        -> Record Buffer (record length: 25) (rows=63710.40)
+                            -> Table "T" as "Q B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+M2 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1.00)
+            -> Aggregate (rows=1.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=1353005.01)
+                    -> Table "T" as "P A" Full Scan (rows=63710.40)
+                    -> Record Buffer (record length: 25) (rows=63710.40)
+                        -> Table "T" as "P B" Full Scan (rows=63710.40)
+            -> Filter (rows=1.00)
+                -> Aggregate (rows=1.00)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1353005.01)
+                        -> Table "T" as "Q A" Full Scan (rows=63710.40)
+                        -> Record Buffer (record length: 25) (rows=63710.40)
+                            -> Table "T" as "Q B" Full Scan (rows=63710.40)
+
+T                       COUNT 
+======= ===================== 
+M3 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=1.00)
+            -> Aggregate (rows=1.00)
+                -> Hash Join (inner) (keys: 1, total key length: 8, counted streams: 1) (rows=63710.40)
+                    -> Table "T" as "P A" Full Scan (rows=63710.40)
+                    -> Record Buffer (record length: 25) (rows=40.00)
+                        -> Table "D" as "P D" Full Scan (rows=40.00)
+            -> Filter (rows=1.00)
+                -> Aggregate (rows=1.00)
+                    -> Hash Join (inner) (keys: 1, total key length: 8) (rows=63710.40)
+                        -> Table "T" as "Q A" Full Scan (rows=63710.40)
+                        -> Record Buffer (record length: 25) (rows=40.00)
+                            -> Table "D" as "Q D" Full Scan (rows=40.00)
+
+T                       COUNT 
+======= ===================== 
+M4 diff                     0 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Table "T" as "A" Access By ID (rows=63710.40)
+            -> Index "RDB$PRIMARY1" Full Scan
+
+T               MIN 
+====== ============ 
+M5 val            0 
+
+-- rc=0, 2 s
