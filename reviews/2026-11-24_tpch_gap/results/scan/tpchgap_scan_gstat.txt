@@ -1,0 +1,67 @@
+
+Database "E:\FBDATA\IMPROPT_WORK\TPCH_SF1_FB5.FDB"
+Gstat execution time Tue Nov 24 18:45:23 2026
+
+Database header page information:
+	Flags			0
+	Generation		3948
+	System Change Number	0
+	Page size		16384
+	ODS version		13.1
+	Oldest transaction	7349
+	Oldest active		7350
+	Oldest snapshot		7350
+	Next transaction	7354
+	Sequence number		0
+	Next attachment ID	4910
+	Implementation		HW=AMD/Intel/x64 little-endian OS=Windows CC=MSVC
+	Shadow count		0
+	Page buffers		0
+	Next header page	0
+	Database dialect	3
+	Creation date		Oct 10, 2026 18:41:07
+	Attributes		force write
+
+    Variable header data:
+	Database GUID:	{F5FA934B-BE9A-4785-9FF9-82DD7BB09942}
+	*END*
+
+
+Database file sequence:
+File E:\FBDATA\IMPROPT_WORK\TPCH_SF1_FB5.FDB is the only file
+
+Analyzing database pages ...
+LINEITEM (135)
+    Primary pointer page: 204, Index root page: 205
+    Total formats: 1, used formats: 1
+    Average record length: 129.55, total records: 6001215
+    Average version length: 0.00, total versions: 0, max versions: 0
+    Average fragment length: 0.00, total fragments: 0, max fragments: 0
+    Average unpacked length: 394.00, compression ratio: 3.04
+    Pointer pages: 20, data page slots: 64808
+    Data pages: 64808, average fill: 83%
+    Primary pages: 64808, secondary pages: 0, swept pages: 0
+    Empty pages: 3, full pages: 64804
+    Table size: 1062141952 bytes
+    Fill distribution:
+	 0 - 19% = 3
+	20 - 39% = 1
+	40 - 59% = 0
+	60 - 79% = 0
+	80 - 99% = 64804
+
+    Index LINEITEM_PK (0)
+	Root page: 96907, depth: 3, leaf buckets: 2741, nodes: 6001215
+	Average node length: 7.36, total dup: 0, max dup: 0
+	Average key length: 4.37, compression ratio: 2.24
+	Average prefix length: 7.67, average data length: 2.12
+	Clustering factor: 64805, ratio: 0.01
+	Fill distribution:
+	     0 - 19% = 0
+	    20 - 39% = 0
+	    40 - 59% = 0
+	    60 - 79% = 0
+	    80 - 99% = 2741
+
+Gstat completion time Tue Nov 24 18:45:24 2026
+

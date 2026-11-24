@@ -1,0 +1,336 @@
+Pager usage is off.
+ relpages |  reltuples   | pg_relation_size 
+----------+--------------+------------------
+   112600 | 6.001215e+06 |        922419200
+(1 row)
+
+                         Table "public.lineitem"
+     Column      |         Type          | Collation | Nullable | Default 
+-----------------+-----------------------+-----------+----------+---------
+ l_orderkey      | integer               |           | not null | 
+ l_partkey       | integer               |           | not null | 
+ l_suppkey       | integer               |           | not null | 
+ l_linenumber    | integer               |           | not null | 
+ l_quantity      | numeric(15,2)         |           | not null | 
+ l_extendedprice | numeric(15,2)         |           | not null | 
+ l_discount      | numeric(15,2)         |           | not null | 
+ l_tax           | numeric(15,2)         |           | not null | 
+ l_returnflag    | character(1)          |           | not null | 
+ l_linestatus    | character(1)          |           | not null | 
+ l_shipdate      | date                  |           | not null | 
+ l_commitdate    | date                  |           | not null | 
+ l_receiptdate   | date                  |           | not null | 
+ l_shipinstruct  | character(25)         |           | not null | 
+ l_shipmode      | character(10)         |           | not null | 
+ l_comment       | character varying(44) |           | not null | 
+Indexes:
+    "lineitem_pkey" PRIMARY KEY, btree (l_orderkey, l_linenumber)
+Foreign-key constraints:
+    "lineitem_l_orderkey_fkey" FOREIGN KEY (l_orderkey) REFERENCES orders(o_orderkey)
+    "lineitem_l_partkey_l_suppkey_fkey" FOREIGN KEY (l_partkey, l_suppkey) REFERENCES partsupp(ps_partkey, ps_suppkey)
+
+ max_parallel_workers_per_gather 
+---------------------------------
+ 0
+(1 row)
+
+Timing is on.
+m01 count(*) no data run 1
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 364,394 ms
+m01 count(*) no data run 2
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 374,284 ms
+m01 count(*) no data run 3
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 322,292 ms
+m02 count(field) unpack only run 1
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 347,890 ms
+m02 count(field) unpack only run 2
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 369,662 ms
+m02 count(field) unpack only run 3
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 367,314 ms
+m03 int compare first field run 1
+ count 
+-------
+     0
+(1 row)
+
+Time: 0,311 ms
+m03 int compare first field run 2
+ count 
+-------
+     0
+(1 row)
+
+Time: 0,198 ms
+m03 int compare first field run 3
+ count 
+-------
+     0
+(1 row)
+
+Time: 0,189 ms
+m04 numeric compare run 1
+  count  
+---------
+ 2878793
+(1 row)
+
+Time: 1720,079 ms (00:01,720)
+m04 numeric compare run 2
+  count  
+---------
+ 2878793
+(1 row)
+
+Time: 719,137 ms
+m04 numeric compare run 3
+  count  
+---------
+ 2878793
+(1 row)
+
+Time: 766,567 ms
+m05 one date literal run 1
+  count  
+---------
+ 1598237
+(1 row)
+
+Time: 604,798 ms
+m05 one date literal run 2
+  count  
+---------
+ 1598237
+(1 row)
+
+Time: 625,987 ms
+m05 one date literal run 3
+  count  
+---------
+ 1598237
+(1 row)
+
+Time: 747,192 ms
+m06 two date literals run 1
+ count  
+--------
+ 911395
+(1 row)
+
+Time: 654,476 ms
+m06 two date literals run 2
+ count  
+--------
+ 911395
+(1 row)
+
+Time: 657,605 ms
+m06 two date literals run 3
+ count  
+--------
+ 911395
+(1 row)
+
+Time: 664,790 ms
+m09 between literals run 1
+  count  
+---------
+ 1637557
+(1 row)
+
+Time: 872,175 ms
+m09 between literals run 2
+  count  
+---------
+ 1637557
+(1 row)
+
+Time: 876,105 ms
+m09 between literals run 3
+  count  
+---------
+ 1637557
+(1 row)
+
+Time: 888,688 ms
+m10 between const arithmetic run 1
+  count  
+---------
+ 1637557
+(1 row)
+
+Time: 872,585 ms
+m10 between const arithmetic run 2
+  count  
+---------
+ 1637557
+(1 row)
+
+Time: 870,937 ms
+m10 between const arithmetic run 3
+  count  
+---------
+ 1637557
+(1 row)
+
+Time: 927,160 ms
+m11 q6 all literals run 1
+      sum       
+----------------
+ 134176196.0895
+(1 row)
+
+Time: 747,308 ms
+m11 q6 all literals run 2
+      sum       
+----------------
+ 134176196.0895
+(1 row)
+
+Time: 741,184 ms
+m11 q6 all literals run 3
+      sum       
+----------------
+ 134176196.0895
+(1 row)
+
+Time: 726,733 ms
+m12 q6 date literals run 1
+      sum       
+----------------
+ 134176196.0895
+(1 row)
+
+Time: 746,604 ms
+m12 q6 date literals run 2
+      sum       
+----------------
+ 134176196.0895
+(1 row)
+
+Time: 763,919 ms
+m12 q6 date literals run 3
+      sum       
+----------------
+ 134176196.0895
+(1 row)
+
+Time: 753,750 ms
+m14 sum(expr) all rows run 1
+       sum        
+------------------
+ 11475087016.1999
+(1 row)
+
+Time: 1274,797 ms (00:01,275)
+m14 sum(expr) all rows run 2
+       sum        
+------------------
+ 11475087016.1999
+(1 row)
+
+Time: 1443,909 ms (00:01,444)
+m14 sum(expr) all rows run 3
+       sum        
+------------------
+ 11475087016.1999
+(1 row)
+
+Time: 1213,363 ms (00:01,213)
+m15 last field compare run 1
+ count 
+-------
+     0
+(1 row)
+
+Time: 785,038 ms
+m15 last field compare run 2
+ count 
+-------
+     0
+(1 row)
+
+Time: 783,145 ms
+m15 last field compare run 3
+ count 
+-------
+     0
+(1 row)
+
+Time: 720,128 ms
+m16 four cheap predicates all true run 1
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 621,223 ms
+m16 four cheap predicates all true run 2
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 690,088 ms
+m16 four cheap predicates all true run 3
+  count  
+---------
+ 6001215
+(1 row)
+
+Time: 691,894 ms
+Timing is off.
+explain m01 count(*) no data
+                                                                      QUERY PLAN                                                                      
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=170957.76..170957.77 rows=1 width=8) (actual time=547.584..547.584 rows=1 loops=1)
+   Buffers: shared hit=16413
+   ->  Index Only Scan using lineitem_pkey on lineitem  (cost=0.43..155954.72 rows=6001215 width=0) (actual time=0.020..354.155 rows=6001215 loops=1)
+         Heap Fetches: 0
+         Buffers: shared hit=16413
+ Planning Time: 0.054 ms
+ Execution Time: 547.608 ms
+(7 rows)
+
+explain m11 q6 all literals
+                                                                                  QUERY PLAN                                                                                   
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=248215.81..248215.82 rows=1 width=32) (actual time=645.430..645.430 rows=1 loops=1)
+   Buffers: shared hit=75646 read=36954
+   ->  Seq Scan on lineitem  (cost=0.00..247627.34 rows=117694 width=12) (actual time=0.049..627.888 rows=119194 loops=1)
+         Filter: ((l_shipdate >= '1997-01-01'::date) AND (l_shipdate < '1998-01-01'::date) AND (l_discount >= 0.05) AND (l_discount <= 0.07) AND (l_quantity < '25'::numeric))
+         Rows Removed by Filter: 5882021
+         Buffers: shared hit=75646 read=36954
+ Planning Time: 0.069 ms
+ Execution Time: 645.450 ms
+(8 rows)
+

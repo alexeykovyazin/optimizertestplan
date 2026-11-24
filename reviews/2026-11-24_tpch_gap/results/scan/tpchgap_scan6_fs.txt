@@ -1,0 +1,388 @@
+
+MON$PAGE_BUFFERS                130000
+
+
+
+TAG                             m01 count(*) no data run 1                                                                              
+
+
+Current memory = 2181577296
+Delta memory = 10864
+Max memory = 2181663568
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 20
+
+COUNT                           6001215
+
+
+Current memory = 2182084064
+Delta memory = 506768
+Max memory = 2182536944
+Elapsed time = 4.611 sec
+Buffers = 130000
+Reads = 64868
+Writes = 0
+Fetches = 6261227
+
+TAG                             m01 count(*) no data run 2                                                                              
+
+
+Current memory = 2182094176
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.000 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182094352
+Delta memory = 176
+Max memory = 2182536944
+Elapsed time = 0.729 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m01 count(*) no data run 3                                                                              
+
+
+Current memory = 2182104464
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182104464
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 0.801 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m01 count(*) no data run 4                                                                              
+
+
+Current memory = 2182114576
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182114576
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 0.841 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m02 count(field) unpack only run 1                                                                                                      
+
+
+Current memory = 2182124752
+Delta memory = 10176
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182138304
+Delta memory = 13552
+Max memory = 2182536944
+Elapsed time = 1.149 sec
+Buffers = 130000
+Reads = 1
+Writes = 0
+Fetches = 6260460
+
+TAG                             m02 count(field) unpack only run 2                                                                                                      
+
+
+Current memory = 2182149104
+Delta memory = 10800
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182149280
+Delta memory = 176
+Max memory = 2182536944
+Elapsed time = 1.242 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m02 count(field) unpack only run 3                                                                                                      
+
+
+Current memory = 2182159456
+Delta memory = 10176
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182159456
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 1.287 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m02 count(field) unpack only run 4                                                                                                      
+
+
+Current memory = 2182169632
+Delta memory = 10176
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+COUNT                           6001215
+
+
+Current memory = 2182169632
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 1.300 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m11 q6 all literals run 1                                                                           
+
+
+Current memory = 2182179744
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182196544
+Delta memory = 16800
+Max memory = 2182536944
+Elapsed time = 1.576 sec
+Buffers = 130000
+Reads = 1
+Writes = 0
+Fetches = 6260456
+
+TAG                             m11 q6 all literals run 2                                                                           
+
+
+Current memory = 2182206656
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182206976
+Delta memory = 320
+Max memory = 2182536944
+Elapsed time = 1.567 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m11 q6 all literals run 3                                                                           
+
+
+Current memory = 2182217088
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.000 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182217088
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 1.547 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m11 q6 all literals run 4                                                                           
+
+
+Current memory = 2182227200
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.000 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182227200
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 1.759 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m13 q6 original run 1                                                               
+
+
+Current memory = 2182237312
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182255776
+Delta memory = 18464
+Max memory = 2182536944
+Elapsed time = 3.220 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260456
+
+TAG                             m13 q6 original run 2                                                               
+
+
+Current memory = 2182265888
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.000 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182266240
+Delta memory = 352
+Max memory = 2182536944
+Elapsed time = 3.226 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m13 q6 original run 3                                                               
+
+
+Current memory = 2182276352
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.000 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182276352
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 3.019 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
+
+TAG                             m13 q6 original run 4                                                               
+
+
+Current memory = 2182286464
+Delta memory = 10112
+Max memory = 2182536944
+Elapsed time = 0.001 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 7
+
+SUM                                                            134176196.0895
+
+
+Current memory = 2182286464
+Delta memory = 0
+Max memory = 2182536944
+Elapsed time = 4.300 sec
+Buffers = 130000
+Reads = 0
+Writes = 0
+Fetches = 6260455
