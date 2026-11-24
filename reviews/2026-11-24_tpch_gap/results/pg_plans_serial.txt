@@ -1,0 +1,534 @@
+##### tpch_01 exec_ms=5370.771 planning_ms=1.677 jit=None
+-> Sort  (est=6 act=4 loops=1 t=5371ms)
+     Sort Key: l_returnflag, l_linestatus
+     Sort Method: quicksort
+  -> Aggregate Hashed  (est=6 act=4 loops=1 t=5371ms)
+       Group Key: l_returnflag, l_linestatus
+       memory: 24 kB, batches: None
+    -> Seq Scan on lineitem  (est=5911760 act=5914748 loops=1 t=1063ms)
+         Filter: (l_shipdate <= '1998-09-01 00:00:00'::timestamp without time zone)
+         removed by filter: 86467
+##### tpch_02 exec_ms=319.045 planning_ms=8.079 jit=None
+-> Sort  (est=1 act=495 loops=1 t=316ms)
+     Sort Key: supplier.s_acctbal DESC, nation.n_name, supplier.s_name, part.p_partkey
+     Sort Method: quicksort
+  -> Hash Join Inner  (est=1 act=495 loops=1 t=315ms)
+       Hash Cond: ((part.p_partkey = partsupp.ps_partkey) AND ((SubPlan 1) = partsupp.ps_supplycost))
+    -> Seq Scan on part  (est=870 act=801 loops=1 t=38ms)
+         Filter: (((p_type)::text ~~ '%COPPER'::text) AND (p_size = 37))
+         removed by filter: 199199
+    -> Hash  (est=160000 act=162880 loops=1 t=255ms)
+         memory: 35361 kB, batches: 1
+      -> Hash Join Inner  (est=160000 act=162880 loops=1 t=199ms)
+           Hash Cond: (partsupp.ps_suppkey = supplier.s_suppkey)
+        -> Seq Scan on partsupp  (est=800000 act=800000 loops=1 t=123ms)
+        -> Hash  (est=2000 act=2036 loops=1 t=3ms)
+             memory: 419 kB, batches: 1
+          -> Hash Join Inner  (est=2000 act=2036 loops=1 t=2ms)
+               Hash Cond: (supplier.s_nationkey = nation.n_nationkey)
+            -> Seq Scan on supplier  (est=10000 act=10000 loops=1 t=1ms)
+            -> Hash  (est=5 act=5 loops=1 t=0ms)
+                 memory: 9 kB, batches: 1
+              -> Hash Join Inner  (est=5 act=5 loops=1 t=0ms)
+                   Hash Cond: (nation.n_regionkey = region.r_regionkey)
+                -> Seq Scan on nation  (est=25 act=25 loops=1 t=0ms)
+                -> Hash  (est=1 act=1 loops=1 t=0ms)
+                     memory: 9 kB, batches: 1
+                  -> Seq Scan on region  (est=1 act=1 loops=1 t=0ms)
+                       Filter: (r_name = 'AMERICA'::bpchar)
+                       removed by filter: 4
+    -> Aggregate  (est=1 act=1 loops=1296 t=21ms) [SubPlan]
+         Subplan Name: SubPlan 1
+      -> Nested Loop Inner  (est=1 act=1 loops=1296 t=19ms)
+           Join Filter: (region_1.r_regionkey = nation_1.n_regionkey)
+        -> Seq Scan on region region_1  (est=1 act=1 loops=1296 t=1ms)
+             Filter: (r_name = 'AMERICA'::bpchar)
+             removed by filter: 4
+        -> Nested Loop Inner  (est=4 act=4 loops=1296 t=18ms)
+          -> Nested Loop Inner  (est=4 act=4 loops=1296 t=14ms)
+            -> Index Scan on partsupp partsupp_1 using partsupp_pkey  (est=4 act=4 loops=1296 t=8ms)
+                 Index Cond: (ps_partkey = part.p_partkey)
+            -> Index Scan on supplier supplier_1 using supplier_pkey  (est=1 act=1 loops=5184 t=5ms)
+                 Index Cond: (s_suppkey = partsupp_1.ps_suppkey)
+          -> Index Scan on nation nation_1 using nation_pkey  (est=1 act=1 loops=5184 t=0ms)
+               Index Cond: (n_nationkey = supplier_1.s_nationkey)
+##### tpch_03 exec_ms=1270.993 planning_ms=3.203 jit=None
+-> Sort  (est=316628 act=11626 loops=1 t=1268ms)
+     Sort Key: (sum((lineitem.l_extendedprice * ('1'::numeric - lineitem.l_discount)))) DESC, orders.o_orderdate
+     Sort Method: quicksort
+  -> Aggregate Hashed  (est=316628 act=11626 loops=1 t=1265ms)
+       Group Key: lineitem.l_orderkey, orders.o_orderdate, orders.o_shippriority
+       memory: 12305 kB, batches: None
+    -> Hash Join Inner  (est=316628 act=30538 loops=1 t=1247ms)
+         Hash Cond: (lineitem.l_orderkey = orders.o_orderkey)
+      -> Seq Scan on lineitem  (est=3223489 act=3249315 loops=1 t=683ms)
+           Filter: (l_shipdate > '1995-03-12'::date)
+           removed by filter: 2751900
+      -> Hash  (est=147328 act=146719 loops=1 t=287ms)
+           memory: 8353 kB, batches: 1
+        -> Hash Join Inner  (est=147328 act=146719 loops=1 t=257ms)
+             Hash Cond: (orders.o_custkey = customer.c_custkey)
+          -> Seq Scan on orders  (est=725514 act=725359 loops=1 t=155ms)
+               Filter: (o_orderdate < '1995-03-12'::date)
+               removed by filter: 774641
+          -> Hash  (est=30460 act=30142 loops=1 t=24ms)
+               memory: 1316 kB, batches: 1
+            -> Seq Scan on customer  (est=30460 act=30142 loops=1 t=21ms)
+                 Filter: (c_mktsegment = 'BUILDING'::bpchar)
+                 removed by filter: 119858
+##### tpch_04 exec_ms=506.456 planning_ms=2.523 jit=None
+-> Aggregate Sorted  (est=5 act=5 loops=1 t=506ms)
+     Group Key: orders.o_orderpriority
+  -> Sort  (est=15677 act=52887 loops=1 t=503ms)
+       Sort Key: orders.o_orderpriority
+       Sort Method: quicksort
+    -> Nested Loop Semi  (est=15677 act=52887 loops=1 t=493ms)
+      -> Seq Scan on orders  (est=57441 act=57683 loops=1 t=142ms)
+           Filter: ((o_orderdate >= '1994-11-01'::date) AND (o_orderdate < '1995-02-01 00:00:00'::timestamp without time zone))
+           removed by filter: 1442317
+      -> Index Scan on lineitem using lineitem_pkey  (est=5 act=1 loops=57683 t=346ms)
+           Index Cond: (l_orderkey = orders.o_orderkey)
+           Filter: (l_commitdate < l_receiptdate)
+           removed by filter: 1
+##### tpch_05 exec_ms=564.583 planning_ms=6.25 jit=None
+-> Sort  (est=25 act=5 loops=1 t=564ms)
+     Sort Key: (sum((lineitem.l_extendedprice * ('1'::numeric - lineitem.l_discount)))) DESC
+     Sort Method: quicksort
+  -> Aggregate Sorted  (est=25 act=5 loops=1 t=564ms)
+       Group Key: nation.n_name
+    -> Sort  (est=7225 act=6991 loops=1 t=562ms)
+         Sort Key: nation.n_name
+         Sort Method: quicksort
+      -> Hash Join Inner  (est=7225 act=6991 loops=1 t=560ms)
+           Hash Cond: ((lineitem.l_suppkey = supplier.s_suppkey) AND (customer.c_nationkey = supplier.s_nationkey))
+        -> Nested Loop Inner  (est=181039 act=181249 loops=1 t=531ms)
+          -> Hash Join Inner  (est=45248 act=45450 loops=1 t=216ms)
+               Hash Cond: (orders.o_custkey = customer.c_custkey)
+            -> Seq Scan on orders  (est=226238 act=227783 loops=1 t=139ms)
+                 Filter: ((o_orderdate >= '1997-01-01'::date) AND (o_orderdate < '1998-01-01 00:00:00'::timestamp without time zone))
+                 removed by filter: 1272217
+            -> Hash  (est=30000 act=29764 loops=1 t=30ms)
+                 memory: 2349 kB, batches: 1
+              -> Hash Join Inner  (est=30000 act=29764 loops=1 t=26ms)
+                   Hash Cond: (customer.c_nationkey = nation.n_nationkey)
+                -> Seq Scan on customer  (est=150000 act=150000 loops=1 t=11ms)
+                -> Hash  (est=5 act=5 loops=1 t=0ms)
+                     memory: 9 kB, batches: 1
+                  -> Hash Join Inner  (est=5 act=5 loops=1 t=0ms)
+                       Hash Cond: (nation.n_regionkey = region.r_regionkey)
+                    -> Seq Scan on nation  (est=25 act=25 loops=1 t=0ms)
+                    -> Hash  (est=1 act=1 loops=1 t=0ms)
+                         memory: 9 kB, batches: 1
+                      -> Seq Scan on region  (est=1 act=1 loops=1 t=0ms)
+                           Filter: (r_name = 'AFRICA'::bpchar)
+                           removed by filter: 4
+          -> Index Scan on lineitem using lineitem_pkey  (est=15 act=4 loops=45450 t=273ms)
+               Index Cond: (l_orderkey = orders.o_orderkey)
+        -> Hash  (est=10000 act=10000 loops=1 t=2ms)
+             memory: 519 kB, batches: 1
+          -> Seq Scan on supplier  (est=10000 act=10000 loops=1 t=2ms)
+##### tpch_06 exec_ms=804.451 planning_ms=1.059 jit=None
+-> Aggregate  (est=1 act=1 loops=1 t=804ms)
+  -> Seq Scan on lineitem  (est=117694 act=119194 loops=1 t=785ms)
+       Filter: ((l_shipdate >= '1997-01-01'::date) AND (l_shipdate < '1998-01-01 00:00:00'::timestamp without time zone) AND (l_discount >= 0.05) AND (l_discount <= 0.07) AND (l_quantity < '25'::numeric))
+       removed by filter: 5882021
+##### tpch_07 exec_ms=904.981 planning_ms=5.036 jit=None
+-> Aggregate Sorted  (est=6107 act=4 loops=1 t=905ms)
+     Group Key: n1.n_name, n2.n_name, (EXTRACT(year FROM lineitem.l_shipdate))
+  -> Sort  (est=6107 act=5432 loops=1 t=903ms)
+       Sort Key: n1.n_name, n2.n_name, (EXTRACT(year FROM lineitem.l_shipdate))
+       Sort Method: quicksort
+    -> Hash Join Inner  (est=6107 act=5432 loops=1 t=900ms)
+         Hash Cond: (lineitem.l_suppkey = supplier.s_suppkey)
+         Join Filter: (((n1.n_name = 'JAPAN'::bpchar) AND (n2.n_name = 'JORDAN'::bpchar)) OR ((n1.n_name = 'JORDAN'::bpchar) AND (n2.n_name = 'JAPAN'::bpchar)))
+      -> Nested Loop Inner  (est=147087 act=146618 loops=1 t=883ms)
+        -> Hash Join Inner  (est=119992 act=120141 loops=1 t=285ms)
+             Hash Cond: (orders.o_custkey = customer.c_custkey)
+          -> Seq Scan on orders  (est=1499901 act=1500000 loops=1 t=96ms)
+          -> Hash  (est=12000 act=11981 loops=1 t=26ms)
+               memory: 854 kB, batches: 1
+            -> Hash Join Inner  (est=12000 act=11981 loops=1 t=24ms)
+                 Hash Cond: (customer.c_nationkey = n2.n_nationkey)
+              -> Seq Scan on customer  (est=150000 act=150000 loops=1 t=11ms)
+              -> Hash  (est=2 act=2 loops=1 t=0ms)
+                   memory: 9 kB, batches: 1
+                -> Seq Scan on nation n2  (est=2 act=2 loops=1 t=0ms)
+                     Filter: ((n_name = 'JORDAN'::bpchar) OR (n_name = 'JAPAN'::bpchar))
+                     removed by filter: 23
+        -> Index Scan on lineitem using lineitem_pkey  (est=4 act=1 loops=120141 t=601ms)
+             Index Cond: (l_orderkey = orders.o_orderkey)
+             Filter: ((l_shipdate >= '1995-01-01'::date) AND (l_shipdate <= '1996-12-31'::date))
+             removed by filter: 3
+      -> Hash  (est=800 act=739 loops=1 t=2ms)
+           memory: 53 kB, batches: 1
+        -> Hash Join Inner  (est=800 act=739 loops=1 t=2ms)
+             Hash Cond: (supplier.s_nationkey = n1.n_nationkey)
+          -> Seq Scan on supplier  (est=10000 act=10000 loops=1 t=1ms)
+          -> Hash  (est=2 act=2 loops=1 t=0ms)
+               memory: 9 kB, batches: 1
+            -> Seq Scan on nation n1  (est=2 act=2 loops=1 t=0ms)
+                 Filter: ((n_name = 'JAPAN'::bpchar) OR (n_name = 'JORDAN'::bpchar))
+                 removed by filter: 23
+##### tpch_08 exec_ms=1102.708 planning_ms=7.403 jit=None
+-> Aggregate Sorted  (est=2406 act=2 loops=1 t=1102ms)
+     Group Key: (EXTRACT(year FROM orders.o_orderdate))
+  -> Sort  (est=2461 act=2386 loops=1 t=1102ms)
+       Sort Key: (EXTRACT(year FROM orders.o_orderdate))
+       Sort Method: quicksort
+    -> Hash Join Inner  (est=2461 act=2386 loops=1 t=1101ms)
+         Hash Cond: (supplier.s_nationkey = n2.n_nationkey)
+      -> Nested Loop Inner  (est=2461 act=2386 loops=1 t=1100ms)
+        -> Hash Join Inner  (est=2467 act=2386 loops=1 t=1094ms)
+             Hash Cond: (customer.c_nationkey = n1.n_nationkey)
+          -> Nested Loop Inner  (est=12337 act=11922 loops=1 t=1092ms)
+            -> Nested Loop Inner  (est=12337 act=11922 loops=1 t=1049ms)
+              -> Hash Join Inner  (est=39698 act=39333 loops=1 t=922ms)
+                   Hash Cond: (lineitem.l_partkey = part.p_partkey)
+                -> Seq Scan on lineitem  (est=6001215 act=6001215 loops=1 t=453ms)
+                -> Hash  (est=1323 act=1313 loops=1 t=40ms)
+                     memory: 63 kB, batches: 1
+                  -> Seq Scan on part  (est=1323 act=1313 loops=1 t=39ms)
+                       Filter: ((p_type)::text = 'SMALL PLATED STEEL'::text)
+                       removed by filter: 198687
+              -> Index Scan on orders using orders_pkey  (est=1 act=0 loops=39333 t=118ms)
+                   Index Cond: (o_orderkey = lineitem.l_orderkey)
+                   Filter: ((o_orderdate >= '1995-01-01'::date) AND (o_orderdate <= '1996-12-31'::date))
+                   removed by filter: 1
+            -> Index Scan on customer using customer_pkey  (est=1 act=1 loops=11922 t=36ms)
+                 Index Cond: (c_custkey = orders.o_custkey)
+          -> Hash  (est=5 act=5 loops=1 t=0ms)
+               memory: 9 kB, batches: 1
+            -> Hash Join Inner  (est=5 act=5 loops=1 t=0ms)
+                 Hash Cond: (n1.n_regionkey = region.r_regionkey)
+              -> Seq Scan on nation n1  (est=25 act=25 loops=1 t=0ms)
+              -> Hash  (est=1 act=1 loops=1 t=0ms)
+                   memory: 9 kB, batches: 1
+                -> Seq Scan on region  (est=1 act=1 loops=1 t=0ms)
+                     Filter: (r_name = 'MIDDLE EAST'::bpchar)
+                     removed by filter: 4
+        -> Index Scan on supplier using supplier_pkey  (est=1 act=1 loops=2386 t=5ms)
+             Index Cond: (s_suppkey = lineitem.l_suppkey)
+      -> Hash  (est=25 act=25 loops=1 t=0ms)
+           memory: 10 kB, batches: 1
+        -> Seq Scan on nation n2  (est=25 act=25 loops=1 t=0ms)
+##### tpch_09 exec_ms=2296.309 planning_ms=7.459 jit=None
+-> Sort  (est=60150 act=175 loops=1 t=2288ms)
+     Sort Key: nation.n_name, (EXTRACT(year FROM orders.o_orderdate)) DESC
+     Sort Method: quicksort
+  -> Aggregate Hashed  (est=60150 act=175 loops=1 t=2288ms)
+       Group Key: nation.n_name, EXTRACT(year FROM orders.o_orderdate)
+       memory: 3217 kB, batches: None
+    -> Hash Join Inner  (est=302365 act=326506 loops=1 t=2128ms)
+         Hash Cond: (supplier.s_nationkey = nation.n_nationkey)
+      -> Hash Join Inner  (est=302365 act=326506 loops=1 t=2071ms)
+           Hash Cond: ((supplier.s_suppkey = partsupp.ps_suppkey) AND (lineitem.l_partkey = partsupp.ps_partkey))
+        -> Hash Join Inner  (est=302365 act=326506 loops=1 t=1648ms)
+             Hash Cond: (orders.o_orderkey = lineitem.l_orderkey)
+          -> Seq Scan on orders  (est=1499901 act=1500000 loops=1 t=147ms)
+          -> Hash  (est=302365 act=326506 loops=1 t=1114ms)
+               memory: 28306 kB, batches: 1
+            -> Hash Join Inner  (est=302365 act=326506 loops=1 t=1015ms)
+                 Hash Cond: (lineitem.l_suppkey = supplier.s_suppkey)
+              -> Hash Join Inner  (est=303091 act=326506 loops=1 t=957ms)
+                   Hash Cond: (lineitem.l_partkey = part.p_partkey)
+                -> Seq Scan on lineitem  (est=6001215 act=6001215 loops=1 t=455ms)
+                -> Hash  (est=10101 act=10899 loops=1 t=29ms)
+                     memory: 512 kB, batches: 1
+                  -> Seq Scan on part  (est=10101 act=10899 loops=1 t=27ms)
+                       Filter: ((p_name)::text ~~ '%dim%'::text)
+                       removed by filter: 189101
+              -> Hash  (est=10000 act=10000 loops=1 t=2ms)
+                   memory: 519 kB, batches: 1
+                -> Seq Scan on supplier  (est=10000 act=10000 loops=1 t=1ms)
+        -> Hash  (est=800000 act=800000 loops=1 t=292ms)
+             memory: 45692 kB, batches: 1
+          -> Seq Scan on partsupp  (est=800000 act=800000 loops=1 t=150ms)
+      -> Hash  (est=25 act=25 loops=1 t=0ms)
+           memory: 10 kB, batches: 1
+        -> Seq Scan on nation  (est=25 act=25 loops=1 t=0ms)
+##### tpch_10 exec_ms=1267.677 planning_ms=5.103 jit=None
+-> Sort  (est=57248 act=37633 loops=1 t=1262ms)
+     Sort Key: (sum((lineitem.l_extendedprice * ('1'::numeric - lineitem.l_discount)))) DESC
+     Sort Method: quicksort
+  -> Aggregate Hashed  (est=57248 act=37633 loops=1 t=1247ms)
+       Group Key: customer.c_custkey, nation.n_name
+       memory: 24081 kB, batches: None
+    -> Hash Join Inner  (est=57248 act=112740 loops=1 t=1176ms)
+         Hash Cond: (customer.c_nationkey = nation.n_nationkey)
+      -> Hash Join Inner  (est=57248 act=112740 loops=1 t=1161ms)
+           Hash Cond: (orders.o_custkey = customer.c_custkey)
+        -> Hash Join Inner  (est=57248 act=112740 loops=1 t=1061ms)
+             Hash Cond: (lineitem.l_orderkey = orders.o_orderkey)
+          -> Seq Scan on lineitem  (est=1499704 act=1478870 loops=1 t=751ms)
+               Filter: (l_returnflag = 'R'::bpchar)
+               removed by filter: 4522345
+          -> Hash  (est=57256 act=56434 loops=1 t=149ms)
+               memory: 2717 kB, batches: 1
+            -> Seq Scan on orders  (est=57256 act=56434 loops=1 t=140ms)
+                 Filter: ((o_orderdate >= '1993-04-01'::date) AND (o_orderdate < '1993-07-01 00:00:00'::timestamp without time zone))
+                 removed by filter: 1443566
+        -> Hash  (est=150000 act=150000 loops=1 t=61ms)
+             memory: 28861 kB, batches: 1
+          -> Seq Scan on customer  (est=150000 act=150000 loops=1 t=27ms)
+      -> Hash  (est=25 act=25 loops=1 t=0ms)
+           memory: 10 kB, batches: 1
+        -> Seq Scan on nation  (est=25 act=25 loops=1 t=0ms)
+##### tpch_11 exec_ms=232.765 planning_ms=2.817 jit=None
+-> Sort  (est=10667 act=839 loops=1 t=232ms)
+     Sort Key: (sum((partsupp.ps_supplycost * (partsupp.ps_availqty)::numeric))) DESC
+     Sort Method: quicksort
+  -> Aggregate  (est=1 act=1 loops=1 t=90ms) [InitPlan]
+       Subplan Name: InitPlan 1
+    -> Hash Join Inner  (est=32000 act=32880 loops=1 t=85ms)
+         Hash Cond: (partsupp_1.ps_suppkey = supplier_1.s_suppkey)
+      -> Seq Scan on partsupp partsupp_1  (est=800000 act=800000 loops=1 t=33ms)
+      -> Hash  (est=400 act=411 loops=1 t=1ms)
+           memory: 23 kB, batches: 1
+        -> Hash Join Inner  (est=400 act=411 loops=1 t=1ms)
+             Hash Cond: (supplier_1.s_nationkey = nation_1.n_nationkey)
+          -> Seq Scan on supplier supplier_1  (est=10000 act=10000 loops=1 t=0ms)
+          -> Hash  (est=1 act=1 loops=1 t=0ms)
+               memory: 9 kB, batches: 1
+            -> Seq Scan on nation nation_1  (est=1 act=1 loops=1 t=0ms)
+                 Filter: (n_name = 'SAUDI ARABIA'::bpchar)
+                 removed by filter: 24
+  -> Aggregate Hashed  (est=10667 act=839 loops=1 t=232ms)
+       Filter: (sum((partsupp.ps_supplycost * (partsupp.ps_availqty)::numeric)) > (InitPlan 1).col1)
+       Group Key: partsupp.ps_partkey
+       removed by filter: 30007
+       memory: 13841 kB, batches: None
+    -> Hash Join Inner  (est=32000 act=32880 loops=1 t=119ms)
+         Hash Cond: (partsupp.ps_suppkey = supplier.s_suppkey)
+      -> Seq Scan on partsupp  (est=800000 act=800000 loops=1 t=51ms)
+      -> Hash  (est=400 act=411 loops=1 t=2ms)
+           memory: 23 kB, batches: 1
+        -> Hash Join Inner  (est=400 act=411 loops=1 t=2ms)
+             Hash Cond: (supplier.s_nationkey = nation.n_nationkey)
+          -> Seq Scan on supplier  (est=10000 act=10000 loops=1 t=1ms)
+          -> Hash  (est=1 act=1 loops=1 t=0ms)
+               memory: 9 kB, batches: 1
+            -> Seq Scan on nation  (est=1 act=1 loops=1 t=0ms)
+                 Filter: (n_name = 'SAUDI ARABIA'::bpchar)
+                 removed by filter: 24
+##### tpch_12 exec_ms=1479.242 planning_ms=2.499 jit=None
+-> Aggregate Sorted  (est=7 act=2 loops=1 t=1479ms)
+     Group Key: lineitem.l_shipmode
+  -> Sort  (est=29106 act=30883 loops=1 t=1473ms)
+       Sort Key: lineitem.l_shipmode
+       Sort Method: quicksort
+    -> Merge Join Inner  (est=29106 act=30883 loops=1 t=1467ms)
+         Merge Cond: (orders.o_orderkey = lineitem.l_orderkey)
+      -> Index Scan on orders using orders_pkey  (est=1499901 act=1499957 loops=1 t=183ms)
+      -> Sort  (est=29106 act=30883 loops=1 t=1223ms)
+           Sort Key: lineitem.l_orderkey
+           Sort Method: quicksort
+        -> Seq Scan on lineitem  (est=29106 act=30883 loops=1 t=1217ms)
+             Filter: ((l_shipmode = ANY ('{SHIP,TRUCK}'::bpchar[])) AND (l_commitdate < l_receiptdate) AND (l_shipdate < l_commitdate) AND (l_receiptdate >= '1994-01-01'::date) AND (l_receiptdate < '1995-01-01 00:00:00'::timestamp without time zone))
+             removed by filter: 5970332
+##### tpch_13 exec_ms=1145.592 planning_ms=2.796 jit=None
+-> Sort  (est=200 act=42 loops=1 t=1143ms)
+     Sort Key: (count(*)) DESC, (count(orders.o_orderkey)) DESC
+     Sort Method: quicksort
+  -> Aggregate Hashed  (est=200 act=42 loops=1 t=1143ms)
+       Group Key: count(orders.o_orderkey)
+       memory: 40 kB, batches: None
+    -> Aggregate Hashed  (est=150000 act=150000 loops=1 t=1129ms)
+         Group Key: customer.c_custkey
+         memory: 16401 kB, batches: None
+      -> Hash Join Right  (est=1484750 act=1533903 loops=1 t=737ms)
+           Hash Cond: (orders.o_custkey = customer.c_custkey)
+        -> Seq Scan on orders  (est=1484750 act=1483898 loops=1 t=338ms)
+             Filter: ((o_comment)::text !~~ '%pending%packages%'::text)
+             removed by filter: 16102
+        -> Hash  (est=150000 act=150000 loops=1 t=27ms)
+             memory: 7322 kB, batches: 1
+          -> Index Only Scan on customer using customer_pkey  (est=150000 act=150000 loops=1 t=10ms)
+##### tpch_14 exec_ms=1021.282 planning_ms=2.323 jit=None
+-> Aggregate  (est=1 act=1 loops=1 t=1020ms)
+  -> Hash Join Inner  (est=82323 act=77819 loops=1 t=993ms)
+       Hash Cond: (lineitem.l_partkey = part.p_partkey)
+    -> Seq Scan on lineitem  (est=82323 act=77819 loops=1 t=870ms)
+         Filter: ((l_shipdate >= '1994-03-01'::date) AND (l_shipdate < '1994-04-01 00:00:00'::timestamp without time zone))
+         removed by filter: 5923396
+    -> Hash  (est=200000 act=200000 loops=1 t=73ms)
+         memory: 13600 kB, batches: 1
+      -> Seq Scan on part  (est=200000 act=200000 loops=1 t=43ms)
+##### tpch_15 exec_ms=1816.285 planning_ms=2.4 jit=None
+-> Merge Join Inner  (est=50 act=1 loops=1 t=1815ms)
+     Merge Cond: (supplier.s_suppkey = revenue0.supplier_no)
+  -> Aggregate  (est=1 act=1 loops=1 t=808ms) [InitPlan]
+       Subplan Name: InitPlan 1
+    -> Aggregate Hashed  (est=10024 act=10000 loops=1 t=807ms)
+         Group Key: lineitem_1.l_suppkey
+         memory: 4497 kB, batches: None
+      -> Seq Scan on lineitem lineitem_1  (est=236756 act=230322 loops=1 t=709ms)
+           Filter: ((l_shipdate >= '1994-03-01'::date) AND (l_shipdate < '1994-06-01 00:00:00'::timestamp without time zone))
+           removed by filter: 5770893
+  -> Index Scan on supplier using supplier_pkey  (est=10000 act=1344 loops=1 t=0ms)
+  -> Sort  (est=50 act=1 loops=1 t=1815ms)
+       Sort Key: revenue0.supplier_no
+       Sort Method: quicksort
+    -> Subquery Scan  (est=50 act=1 loops=1 t=1815ms)
+      -> Aggregate Hashed  (est=50 act=1 loops=1 t=1815ms) [Subquery]
+           Filter: (sum((lineitem.l_extendedprice * ('1'::numeric - lineitem.l_discount))) = (InitPlan 1).col1)
+           Group Key: lineitem.l_suppkey
+           removed by filter: 9999
+           memory: 4497 kB, batches: None
+        -> Seq Scan on lineitem  (est=236756 act=230322 loops=1 t=895ms)
+             Filter: ((l_shipdate >= '1994-03-01'::date) AND (l_shipdate < '1994-06-01 00:00:00'::timestamp without time zone))
+             removed by filter: 5770893
+##### tpch_16 exec_ms=376.381 planning_ms=3.108 jit=None
+-> Sort  (est=16014 act=18150 loops=1 t=375ms)
+     Sort Key: (count(DISTINCT partsupp.ps_suppkey)) DESC, part.p_brand, part.p_type, part.p_size
+     Sort Method: quicksort
+  -> Aggregate Sorted  (est=16014 act=18150 loops=1 t=361ms)
+       Group Key: part.p_brand, part.p_type, part.p_size
+    -> Sort  (est=59582 act=118295 loops=1 t=343ms)
+         Sort Key: part.p_brand, part.p_type, part.p_size, partsupp.ps_suppkey
+         Sort Method: quicksort
+      -> Hash Join Inner  (est=59582 act=118295 loops=1 t=214ms)
+           Hash Cond: (partsupp.ps_partkey = part.p_partkey)
+        -> Index Only Scan on partsupp using partsupp_pkey  (est=400000 act=799680 loops=1 t=105ms)
+             Filter: (NOT (ANY (ps_suppkey = (hashed SubPlan 1).col1)))
+             removed by filter: 320
+          -> Seq Scan on supplier  (est=1 act=4 loops=1 t=2ms) [SubPlan]
+               Filter: ((s_comment)::text ~~ '%Customer%Complaints%'::text)
+               Subplan Name: SubPlan 1
+               removed by filter: 9996
+        -> Hash  (est=29791 act=29586 loops=1 t=42ms)
+             memory: 2396 kB, batches: 1
+          -> Seq Scan on part  (est=29791 act=29586 loops=1 t=38ms)
+               Filter: ((p_brand <> 'Brand#12'::bpchar) AND ((p_type)::text !~~ 'STANDARD POLISHED%'::text) AND (p_size = ANY ('{41,28,43,38,8,30,12,45}'::integer[])))
+               removed by filter: 170414
+##### tpch_17 exec_ms=None planning_ms=None jit=None
+-> Aggregate  (est=1 act=None loops=None)
+  -> Hash Join Inner  (est=2150 act=None loops=None)
+       Hash Cond: (lineitem.l_partkey = part.p_partkey)
+       Join Filter: (lineitem.l_quantity < (SubPlan 1))
+    -> Seq Scan on lineitem  (est=6001215 act=None loops=None)
+    -> Hash  (est=215 act=None loops=None)
+      -> Seq Scan on part  (est=215 act=None loops=None)
+           Filter: ((p_brand = 'Brand#21'::bpchar) AND (p_container = 'WRAP CASE'::bpchar))
+    -> Aggregate  (est=1 act=None loops=None) [SubPlan]
+         Subplan Name: SubPlan 1
+      -> Seq Scan on lineitem lineitem_1  (est=31 act=None loops=None)
+           Filter: (l_partkey = part.p_partkey)
+##### tpch_18 exec_ms=2506.1 planning_ms=3.295 jit=None
+-> Sort  (est=545963 act=10 loops=1 t=2506ms)
+     Sort Key: orders.o_totalprice DESC, orders.o_orderdate
+     Sort Method: quicksort
+  -> Aggregate Sorted  (est=545963 act=10 loops=1 t=2506ms)
+       Group Key: customer.c_custkey, orders.o_orderkey
+    -> Incremental Sort  (est=545963 act=70 loops=1 t=2506ms)
+         Sort Key: customer.c_custkey, orders.o_orderkey
+      -> Nested Loop Inner  (est=545963 act=70 loops=1 t=2506ms)
+        -> Merge Join Inner  (est=136454 act=10 loops=1 t=2505ms)
+             Merge Cond: (customer.c_custkey = orders.o_custkey)
+          -> Index Scan on customer using customer_pkey  (est=150000 act=148886 loops=1 t=28ms)
+          -> Sort  (est=136454 act=10 loops=1 t=2472ms)
+               Sort Key: orders.o_custkey
+               Sort Method: quicksort
+            -> Hash Join Inner  (est=136454 act=10 loops=1 t=2472ms)
+                 Hash Cond: (orders.o_orderkey = lineitem_1.l_orderkey)
+              -> Seq Scan on orders  (est=1499901 act=1500000 loops=1 t=88ms)
+              -> Hash  (est=136454 act=10 loops=1 t=2266ms)
+                   memory: 2049 kB, batches: 1
+                -> Aggregate Sorted  (est=136454 act=10 loops=1 t=2266ms)
+                     Filter: (sum(lineitem_1.l_quantity) > '312'::numeric)
+                     Group Key: lineitem_1.l_orderkey
+                     removed by filter: 1499990
+                  -> Index Scan on lineitem lineitem_1 using lineitem_pkey  (est=6001215 act=6001215 loops=1 t=1285ms)
+        -> Index Scan on lineitem using lineitem_pkey  (est=15 act=7 loops=10 t=0ms)
+             Index Cond: (l_orderkey = orders.o_orderkey)
+##### tpch_19 exec_ms=1129.556 planning_ms=2.293 jit=None
+-> Aggregate  (est=1 act=1 loops=1 t=1129ms)
+  -> Hash Join Inner  (est=110 act=101 loops=1 t=1129ms)
+       Hash Cond: (lineitem.l_partkey = part.p_partkey)
+       Join Filter: (((part.p_brand = 'Brand#53'::bpchar) AND (part.p_container = ANY ('{"SM CASE","SM BOX","SM PACK","SM PKG"}'::bpchar[])) AND (lineitem.l_quantity >= '2'::numeric) AND (lineitem.l_quantity <= '12'::numeric) AND (part.p_size <= 5)) 
+    -> Seq Scan on lineitem  (est=111176 act=120140 loops=1 t=1066ms)
+         Filter: ((l_shipmode = ANY ('{AIR,"AIR REG"}'::bpchar[])) AND (l_shipinstruct = 'DELIVER IN PERSON'::bpchar) AND (((l_quantity >= '2'::numeric) AND (l_quantity <= '12'::numeric)) OR ((l_quantity >= '19'::numeric) AND (l_quantity <= '29'::
+         removed by filter: 5881075
+    -> Hash  (est=477 act=489 loops=1 t=54ms)
+         memory: 39 kB, batches: 1
+      -> Seq Scan on part  (est=477 act=489 loops=1 t=54ms)
+           Filter: ((p_size >= 1) AND (((p_brand = 'Brand#53'::bpchar) AND (p_container = ANY ('{"SM CASE","SM BOX","SM PACK","SM PKG"}'::bpchar[])) AND (p_size <= 5)) OR ((p_brand = 'Brand#54'::bpchar) AND (p_container = ANY ('{"MED BAG","MED BOX",
+           removed by filter: 199511
+##### tpch_20 exec_ms=None planning_ms=None jit=None
+-> Sort  (est=108 act=None loops=None)
+     Sort Key: supplier.s_name
+  -> Nested Loop Inner  (est=108 act=None loops=None)
+       Join Filter: (nation.n_nationkey = supplier.s_nationkey)
+    -> Seq Scan on nation  (est=1 act=None loops=None)
+         Filter: (n_name = 'CHINA'::bpchar)
+    -> Nested Loop Semi  (est=2693 act=None loops=None)
+         Join Filter: (supplier.s_suppkey = partsupp.ps_suppkey)
+      -> Seq Scan on supplier  (est=10000 act=None loops=None)
+      -> Materialize  (est=2693 act=None loops=None)
+        -> Nested Loop Inner  (est=2693 act=None loops=None)
+          -> Seq Scan on part  (est=2020 act=None loops=None)
+               Filter: ((p_name)::text ~~ 'medium%'::text)
+          -> Index Scan on partsupp using partsupp_pkey  (est=1 act=None loops=None)
+               Index Cond: (ps_partkey = part.p_partkey)
+               Filter: ((ps_availqty)::numeric > (SubPlan 1))
+            -> Aggregate  (est=1 act=None loops=None) [SubPlan]
+                 Subplan Name: SubPlan 1
+              -> Seq Scan on lineitem  (est=1 act=None loops=None)
+                   Filter: ((l_shipdate >= '1997-01-01'::date) AND (l_shipdate < '1998-01-01 00:00:00'::timestamp without time zone) AND (l_partkey = partsupp.ps_partkey) AND (l_suppkey = partsupp.ps_suppkey))
+##### tpch_21 exec_ms=1384.511 planning_ms=4.276 jit=None
+-> Sort  (est=1 act=399 loops=1 t=1384ms)
+     Sort Key: (count(*)) DESC, supplier.s_name
+     Sort Method: quicksort
+  -> Aggregate Sorted  (est=1 act=399 loops=1 t=1384ms)
+       Group Key: supplier.s_name
+    -> Sort  (est=1 act=3901 loops=1 t=1384ms)
+         Sort Key: supplier.s_name
+         Sort Method: quicksort
+      -> Nested Loop Inner  (est=1 act=3901 loops=1 t=1382ms)
+        -> Nested Loop Semi  (est=1 act=7909 loops=1 t=1337ms)
+          -> Nested Loop Anti  (est=1 act=13313 loops=1 t=1321ms)
+            -> Hash Join Inner  (est=79825 act=151237 loops=1 t=1004ms)
+                 Hash Cond: (l1.l_suppkey = supplier.s_suppkey)
+              -> Seq Scan on lineitem l1  (est=2000405 act=3793296 loops=1 t=816ms)
+                   Filter: (l_receiptdate > l_commitdate)
+                   removed by filter: 2207919
+              -> Hash  (est=400 act=399 loops=1 t=2ms)
+                   memory: 33 kB, batches: 1
+                -> Hash Join Inner  (est=400 act=399 loops=1 t=2ms)
+                     Hash Cond: (supplier.s_nationkey = nation.n_nationkey)
+                  -> Seq Scan on supplier  (est=10000 act=10000 loops=1 t=1ms)
+                  -> Hash  (est=1 act=1 loops=1 t=0ms)
+                       memory: 9 kB, batches: 1
+                    -> Seq Scan on nation  (est=1 act=1 loops=1 t=0ms)
+                         Filter: (n_name = 'VIETNAM'::bpchar)
+                         removed by filter: 24
+            -> Index Scan on lineitem l3 using lineitem_pkey  (est=5 act=1 loops=151237 t=302ms)
+                 Index Cond: (l_orderkey = l1.l_orderkey)
+                 Filter: ((l_receiptdate > l_commitdate) AND (l_suppkey <> l1.l_suppkey))
+                 removed by filter: 1
+          -> Index Scan on lineitem l2 using lineitem_pkey  (est=15 act=1 loops=13313 t=13ms)
+               Index Cond: (l_orderkey = l1.l_orderkey)
+               Filter: (l_suppkey <> l1.l_suppkey)
+               removed by filter: 1
+        -> Index Scan on orders using orders_pkey  (est=1 act=0 loops=7909 t=40ms)
+             Index Cond: (o_orderkey = l1.l_orderkey)
+             Filter: (o_orderstatus = 'F'::bpchar)
+             removed by filter: 1
+##### tpch_22 exec_ms=365.366 planning_ms=2.266 jit=None
+-> Aggregate Sorted  (est=724 act=5 loops=1 t=365ms)
+     Group Key: (SUBSTRING(customer.c_phone FROM 1 FOR 2))
+  -> Aggregate  (est=1 act=1 loops=1 t=60ms) [InitPlan]
+       Subplan Name: InitPlan 1
+    -> Seq Scan on customer customer_1  (est=4760 act=27188 loops=1 t=58ms)
+         Filter: ((c_acctbal > 0.00) AND (SUBSTRING(c_phone FROM 1 FOR 2) = ANY ('{38,22,34,25,42,21,23}'::text[])))
+         removed by filter: 122812
+  -> Sort  (est=724 act=4567 loops=1 t=365ms)
+       Sort Key: (SUBSTRING(customer.c_phone FROM 1 FOR 2))
+       Sort Method: quicksort
+    -> Hash Join Right Anti  (est=724 act=4567 loops=1 t=364ms)
+         Hash Cond: (orders.o_custkey = customer.c_custkey)
+      -> Seq Scan on orders  (est=1499901 act=1500000 loops=1 t=138ms)
+      -> Hash  (est=1750 act=13597 loops=1 t=95ms)
+           memory: 925 kB, batches: 1
+        -> Seq Scan on customer  (est=1750 act=13597 loops=1 t=94ms)
+             Filter: ((c_acctbal > (InitPlan 1).col1) AND (SUBSTRING(c_phone FROM 1 FOR 2) = ANY ('{38,22,34,25,42,21,23}'::text[])))
+             removed by filter: 136403

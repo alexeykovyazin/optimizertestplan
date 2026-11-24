@@ -1,0 +1,3 @@
+SET statement_timeout = '300s';
+\timing on
+\copy (select s_name, s_address from supplier, nation where s_suppkey in ( select ps_suppkey from partsupp, (select l_partkey as t_partkey, l_suppkey as t_suppkey, 0.5 * sum(l_quantity) as t_qty from lineitem where l_shipdate >= date '1997-01-01' and l_shipdate < date '1998-01-01' group by l_partkey, l_suppkey) t where ps_partkey in (select p_partkey from part where p_name like 'medium%') and t.t_partkey = ps_partkey and t.t_suppkey = ps_suppkey and ps_availqty > t.t_qty ) and s_nationkey = n_nationkey and n_name = 'CHINA' order by s_name) TO STDOUT WITH (FORMAT csv)

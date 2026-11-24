@@ -1,0 +1,378 @@
+##### tpch_01
+PLAN SORT (LINEITEM NATURAL)
+Select Expression
+    -> Sort (record length: 140, key length: 16) (rows=6.00)
+        -> Hash Aggregate (keys: 2, key length: 14, group length: 720) (rows=6.00)
+            -> Filter (rows=3000607.50)
+                -> Table "LINEITEM" Full Scan (rows=6001215.00)
+##### tpch_02
+PLAN JOIN (PARTSUPP INDEX (PARTSUPP_PK), SUPPLIER INDEX (SUPPLIER_PK), NATION INDEX (NATION_PK), REGION INDEX (REGION_PK))
+PLAN SORT (HASH (HASH (HASH (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK)), SUPPLIER NATURAL), NATION NATURAL), REGION NATURAL))
+Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Nested Loop Join (inner) (rows=1.00)
+                -> Filter (rows=3.96)
+                    -> Table "PARTSUPP" Access By ID (rows=3.96)
+                        -> Bitmap
+                            -> Index "PARTSUPP_PK" Range Scan (partial match: 1/2)
+                -> Filter (rows=1.00)
+                    -> Table "SUPPLIER" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "SUPPLIER_PK" Unique Scan
+                -> Filter (rows=1.00)
+                    -> Table "NATION" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "NATION_PK" Unique Scan
+                -> Count (rows=1.00)
+                    -> Filter (rows=0.20)
+                        -> Table "REGION" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index "REGION_PK" Unique Scan
+Select Expression
+    -> Sort (record length: 1312, key length: 228) (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1.00)
+                    -> Nested Loop Join (inner) (rows=1.00)
+                        -> Filter (rows=1340.01)
+                            -> Table "PART" Full Scan (rows=200000.00)
+                        -> Filter (rows=0.000040)
+                            -> Table "PARTSUPP" Access By ID (rows=3.96)
+                                -> Bitmap
+                                    -> Index "PARTSUPP_PK" Range Scan (partial match: 1/2)
+                    -> Record Buffer (record length: 769) (rows=10000.00)
+                        -> Table "SUPPLIER" Full Scan (rows=10000.00)
+                -> Record Buffer (record length: 129) (rows=25.00)
+                    -> Table "NATION" Full Scan (rows=25.00)
+            -> Record Buffer (record length: 129) (rows=1.00)
+                -> Filter (rows=1.00)
+                    -> Table "REGION" Full Scan (rows=5.00)
+##### tpch_03
+PLAN SORT (JOIN (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM INDEX (LINEITEM_PK)))
+Select Expression
+    -> Sort (record length: 60, key length: 28) (rows=312565.41)
+        -> Hash Aggregate (keys: 3, key length: 15, group length: 96) (rows=312565.41)
+            -> Nested Loop Join (inner) (rows=312565.41)
+                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=144959.00)
+                    -> Filter (rows=721380.48)
+                        -> Table "ORDERS" Full Scan (rows=1500000.00)
+                    -> Record Buffer (record length: 65) (rows=30142.00)
+                        -> Filter (rows=30142.00)
+                            -> Table "CUSTOMER" Full Scan (rows=150000.00)
+                -> Filter (rows=2.16)
+                    -> Table "LINEITEM" Access By ID (rows=3.98)
+                        -> Bitmap
+                            -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+##### tpch_04
+PLAN SORT (JOIN (ORDERS NATURAL, LINEITEM INDEX (LINEITEM_PK)))
+Select Expression
+    -> Sort (record length: 100, key length: 64) (rows=5.00)
+        -> Hash Aggregate (keys: 1, key length: 63, group length: 80) (rows=5.00)
+            -> Nested Loop Join (semi) (rows=285726.71)
+                -> Filter (rows=571453.41)
+                    -> Table "ORDERS" Full Scan (rows=1500000.00)
+                -> Filter (rows=1.99)
+                    -> Table "LINEITEM" Access By ID (rows=3.98)
+                        -> Bitmap
+                            -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+##### tpch_05
+PLAN SORT (HASH (JOIN (HASH (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), REGION NATURAL), LINEITEM INDEX (LINEITEM_PK)), SUPPLIER NATURAL))
+Select Expression
+    -> Sort (record length: 148, key length: 20) (rows=25.00)
+        -> Hash Aggregate (keys: 1, key length: 103, group length: 80) (rows=25.00)
+            -> Filter (rows=1693.65)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=211705.04)
+                    -> Nested Loop Join (inner) (rows=211705.05)
+                        -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=53244.05)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=266220.22)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=266220.23)
+                                    -> Filter (rows=266220.23)
+                                        -> Table "ORDERS" Full Scan (rows=1500000.00)
+                                    -> Record Buffer (record length: 33) (rows=150000.00)
+                                        -> Table "CUSTOMER" Full Scan (rows=150000.00)
+                                -> Record Buffer (record length: 129) (rows=25.00)
+                                    -> Table "NATION" Full Scan (rows=25.00)
+                            -> Record Buffer (record length: 129) (rows=1.00)
+                                -> Filter (rows=1.00)
+                                    -> Table "REGION" Full Scan (rows=5.00)
+                        -> Filter (rows=3.98)
+                            -> Table "LINEITEM" Access By ID (rows=3.98)
+                                -> Bitmap
+                                    -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+                    -> Record Buffer (record length: 33) (rows=10000.00)
+                        -> Table "SUPPLIER" Full Scan (rows=10000.00)
+##### tpch_06
+PLAN (LINEITEM NATURAL)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=828139.69)
+            -> Table "LINEITEM" Full Scan (rows=6001215.00)
+##### tpch_07
+PLAN SORT (HASH (HASH (HASH (HASH (HASH (SHIPPING ORDERS NATURAL, SHIPPING CUSTOMER NATURAL), SHIPPING N2 NATURAL), SHIPPING LINEITEM NATURAL), SHIPPING SUPPLIER NATURAL), SHIPPING N1 NATURAL))
+Select Expression
+    -> Sort (record length: 260, key length: 216) (rows=625.00)
+        -> Hash Aggregate (keys: 3, key length: 209, group length: 80) (rows=625.00)
+            -> Filter (rows=46610.80)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2924874.47)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2924874.54)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2924874.61)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1499999.97)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1500000.00)
+                                    -> Table "ORDERS" as "SHIPPING ORDERS" Full Scan (rows=1500000.00)
+                                    -> Record Buffer (record length: 33) (rows=150000.00)
+                                        -> Table "CUSTOMER" as "SHIPPING CUSTOMER" Full Scan (rows=150000.00)
+                                -> Record Buffer (record length: 129) (rows=25.00)
+                                    -> Table "NATION" as "SHIPPING N2" Full Scan (rows=25.00)
+                            -> Record Buffer (record length: 57) (rows=2943032.31)
+                                -> Filter (rows=2943032.31)
+                                    -> Table "LINEITEM" as "SHIPPING LINEITEM" Full Scan (rows=6001215.00)
+                        -> Record Buffer (record length: 33) (rows=10000.00)
+                            -> Table "SUPPLIER" as "SHIPPING SUPPLIER" Full Scan (rows=10000.00)
+                    -> Record Buffer (record length: 129) (rows=25.00)
+                        -> Table "NATION" as "SHIPPING N1" Full Scan (rows=25.00)
+##### tpch_08
+PLAN SORT (HASH (HASH (HASH (JOIN (HASH (HASH (HASH (ALL_NATIONS ORDERS NATURAL, ALL_NATIONS CUSTOMER NATURAL), ALL_NATIONS N1 NATURAL), ALL_NATIONS REGION NATURAL), ALL_NATIONS LINEITEM INDEX (LINEITEM_PK)), ALL_NATIONS SUPPLIER NATURAL), ALL_NATIONS N2 NATURAL), ALL_NATIONS PART NATURAL))
+Select Expression
+    -> Sort (record length: 68, key length: 8) (rows=2398.00)
+        -> Hash Aggregate (keys: 1, key length: 3, group length: 144) (rows=2398.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=3766.97)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=578767.99)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=578768.01)
+                        -> Nested Loop Join (inner) (rows=578768.02)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=145560.78)
+                                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=727803.88)
+                                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=727803.90)
+                                        -> Filter (rows=727803.90)
+                                            -> Table "ORDERS" as "ALL_NATIONS ORDERS" Full Scan (rows=1500000.00)
+                                        -> Record Buffer (record length: 33) (rows=150000.00)
+                                            -> Table "CUSTOMER" as "ALL_NATIONS CUSTOMER" Full Scan (rows=150000.00)
+                                    -> Record Buffer (record length: 33) (rows=25.00)
+                                        -> Table "NATION" as "ALL_NATIONS N1" Full Scan (rows=25.00)
+                                -> Record Buffer (record length: 129) (rows=1.00)
+                                    -> Filter (rows=1.00)
+                                        -> Table "REGION" as "ALL_NATIONS REGION" Full Scan (rows=5.00)
+                            -> Filter (rows=3.98)
+                                -> Table "LINEITEM" as "ALL_NATIONS LINEITEM" Access By ID (rows=3.98)
+                                    -> Bitmap
+                                        -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+                        -> Record Buffer (record length: 33) (rows=10000.00)
+                            -> Table "SUPPLIER" as "ALL_NATIONS SUPPLIER" Full Scan (rows=10000.00)
+                    -> Record Buffer (record length: 129) (rows=25.00)
+                        -> Table "NATION" as "ALL_NATIONS N2" Full Scan (rows=25.00)
+                -> Record Buffer (record length: 129) (rows=1301.72)
+                    -> Filter (rows=1301.72)
+                        -> Table "PART" as "ALL_NATIONS PART" Full Scan (rows=200000.00)
+##### tpch_09
+PLAN SORT (JOIN (HASH (HASH (HASH (PROFIT LINEITEM NATURAL, PROFIT SUPPLIER NATURAL), PROFIT NATION NATURAL), PROFIT PART NATURAL), PROFIT PARTSUPP INDEX (PARTSUPP_PK), PROFIT ORDERS INDEX (ORDERS_PK)))
+Select Expression
+    -> Sort (record length: 156, key length: 112) (rows=25.00)
+        -> Hash Aggregate (keys: 2, key length: 106, group length: 80) (rows=25.00)
+            -> Nested Loop Join (inner) (rows=161498.56)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=161498.56)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5985055.22)
+                        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=5985055.35)
+                            -> Table "LINEITEM" as "PROFIT LINEITEM" Full Scan (rows=6001215.00)
+                            -> Record Buffer (record length: 33) (rows=10000.00)
+                                -> Table "SUPPLIER" as "PROFIT SUPPLIER" Full Scan (rows=10000.00)
+                        -> Record Buffer (record length: 129) (rows=25.00)
+                            -> Table "NATION" as "PROFIT NATION" Full Scan (rows=25.00)
+                    -> Record Buffer (record length: 249) (rows=5396.73)
+                        -> Filter (rows=5396.73)
+                            -> Table "PART" as "PROFIT PART" Full Scan (rows=200000.00)
+                -> Filter (rows=1.00)
+                    -> Table "PARTSUPP" as "PROFIT PARTSUPP" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "PARTSUPP_PK" Unique Scan
+                -> Filter (rows=1.00)
+                    -> Table "ORDERS" as "PROFIT ORDERS" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "ORDERS_PK" Unique Scan
+##### tpch_10
+PLAN SORT (HASH (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), NATION NATURAL), LINEITEM NATURAL))
+Select Expression
+    -> Sort (record length: 956, key length: 20) (rows=675553.49)
+        -> Hash Aggregate (keys: 2, key length: 108, group length: 96) (rows=675553.49)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=675553.49)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=677531.95)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=677531.96)
+                        -> Filter (rows=677531.96)
+                            -> Table "ORDERS" Full Scan (rows=1500000.00)
+                        -> Record Buffer (record length: 833) (rows=150000.00)
+                            -> Table "CUSTOMER" Full Scan (rows=150000.00)
+                    -> Record Buffer (record length: 129) (rows=25.00)
+                        -> Table "NATION" Full Scan (rows=25.00)
+                -> Record Buffer (record length: 49) (rows=1504904.68)
+                    -> Filter (rows=1504904.68)
+                        -> Table "LINEITEM" Full Scan (rows=6001215.00)
+##### tpch_11
+PLAN HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL)
+PLAN SORT (HASH (HASH (PARTSUPP NATURAL, SUPPLIER NATURAL), NATION NATURAL))
+Sub-query (invariant)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=31913.83)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=797845.82)
+                    -> Table "PARTSUPP" Full Scan (rows=800000.00)
+                    -> Record Buffer (record length: 33) (rows=10000.00)
+                        -> Table "SUPPLIER" Full Scan (rows=10000.00)
+                -> Record Buffer (record length: 129) (rows=1.00)
+                    -> Filter (rows=1.00)
+                        -> Table "NATION" Full Scan (rows=25.00)
+Select Expression
+    -> Sort (record length: 52, key length: 20) (rows=15956.92)
+        -> Filter (rows=15956.92)
+            -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=31913.83)
+                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=31913.83)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=797845.82)
+                        -> Table "PARTSUPP" Full Scan (rows=800000.00)
+                        -> Record Buffer (record length: 33) (rows=10000.00)
+                            -> Table "SUPPLIER" Full Scan (rows=10000.00)
+                    -> Record Buffer (record length: 129) (rows=1.00)
+                        -> Filter (rows=1.00)
+                            -> Table "NATION" Full Scan (rows=25.00)
+##### tpch_12
+PLAN SORT (HASH (ORDERS NATURAL, LINEITEM NATURAL))
+Select Expression
+    -> Sort (record length: 84, key length: 44) (rows=2.00)
+        -> Hash Aggregate (keys: 1, key length: 43, group length: 144) (rows=2.00)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=928814.96)
+                -> Table "ORDERS" Full Scan (rows=1500000.00)
+                -> Record Buffer (record length: 81) (rows=934581.05)
+                    -> Filter (rows=934581.05)
+                        -> Table "LINEITEM" Full Scan (rows=6001215.00)
+##### tpch_13
+PLAN SORT (SORT (HASH (C_ORDERS CUSTOMER NATURAL, C_ORDERS ORDERS NATURAL)))
+Select Expression
+    -> Sort (record length: 44, key length: 24) (rows=150.00)
+        -> Aggregate (rows=150.00)
+            -> Sort (record length: 44, key length: 12) (rows=150000.00)
+                -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=150000.00)
+                    -> Hash Join (outer) (keys: 1, total key length: 4) (rows=1492505.00)
+                        -> Table "CUSTOMER" as "C_ORDERS CUSTOMER" Full Scan (rows=150000.00)
+                        -> Record Buffer (record length: 353) (rows=1492505.00)
+                            -> Filter (rows=1492505.00)
+                                -> Table "ORDERS" as "C_ORDERS ORDERS" Full Scan (rows=1500000.00)
+##### tpch_14
+PLAN HASH (LINEITEM NATURAL, PART NATURAL)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2485486.02)
+            -> Filter (rows=2507905.10)
+                -> Table "LINEITEM" Full Scan (rows=6001215.00)
+            -> Record Buffer (record length: 129) (rows=200000.00)
+                -> Table "PART" Full Scan (rows=200000.00)
+##### tpch_15
+PLAN (REVENUE0 LINEITEM NATURAL)
+PLAN SORT (JOIN (REVENUE0 LINEITEM NATURAL, SUPPLIER INDEX (SUPPLIER_PK)))
+Sub-query (invariant)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=10027.00)
+                -> Filter (rows=2507905.10)
+                    -> Table "LINEITEM" as "REVENUE0 LINEITEM" Full Scan (rows=6001215.00)
+Select Expression
+    -> Sort (record length: 396, key length: 8) (rows=1002.70)
+        -> Nested Loop Join (inner) (rows=1002.70)
+            -> Filter (rows=1002.70)
+                -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=10027.00)
+                    -> Filter (rows=2507905.10)
+                        -> Table "LINEITEM" as "REVENUE0 LINEITEM" Full Scan (rows=6001215.00)
+            -> Filter (rows=1.00)
+                -> Table "SUPPLIER" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "SUPPLIER_PK" Unique Scan
+##### tpch_16
+PLAN (SUPPLIER NATURAL)
+PLAN (SUPPLIER INDEX (SUPPLIER_PK, SUPPLIER_PK))
+PLAN SORT (SORT (JOIN (PART NATURAL, PARTSUPP INDEX (PARTSUPP_PK))))
+Sub-query (invariant)
+    -> Filter (rows=50.00)
+        -> Table "SUPPLIER" Full Scan (rows=10000.00)
+Sub-query
+    -> Filter (rows=0.009986)
+        -> Table "SUPPLIER" Access By ID (rows=2.00)
+            -> Bitmap Or
+                -> Bitmap
+                    -> Index "SUPPLIER_PK" Unique Scan
+                -> Bitmap
+                    -> Index "SUPPLIER_PK" Unique Scan
+Select Expression
+    -> Sort (record length: 198, key length: 172) (rows=20000.00)
+        -> Aggregate (rows=20000.00)
+            -> Sort (record length: 214, key length: 160) (rows=61391.33)
+                -> Nested Loop Join (inner) (rows=61391.33)
+                    -> Filter (rows=30972.54)
+                        -> Table "PART" Full Scan (rows=200000.00)
+                    -> Filter (rows=1.98)
+                        -> Table "PARTSUPP" Access By ID (rows=3.96)
+                            -> Bitmap
+                                -> Index "PARTSUPP_PK" Range Scan (partial match: 1/2)
+##### tpch_18
+PLAN SORT (HASH (HASH (HASH (ORDERS NATURAL, CUSTOMER NATURAL), LINEITEM NATURAL), LINEITEM NATURAL))
+Select Expression
+    -> Sort (record length: 172, key length: 20) (rows=2982094.65)
+        -> Hash Aggregate (keys: 2, key length: 10, group length: 112) (rows=2982094.65)
+            -> Filter (rows=2982094.65)
+                -> Hash Join (semi) (keys: 1, total key length: 4) (rows=2982094.65)
+                    -> Batch Hash Join (inner) (batches: 16, keys: 1, total key length: 4) (rows=5964189.29)
+                        -> Record Buffer (batches: 16, record length: 170) (rows=1500000.00)
+                            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1500000.00)
+                                -> Table "ORDERS" Full Scan (rows=1500000.00)
+                                -> Record Buffer (record length: 129) (rows=150000.00)
+                                    -> Table "CUSTOMER" Full Scan (rows=150000.00)
+                        -> Record Buffer (batches: 16, record length: 33) (rows=6001215.00)
+                            -> Table "LINEITEM" Full Scan (rows=6001215.00)
+                    -> Record Buffer (record length: 41) (rows=754656.00)
+                        -> Filter (rows=754656.00)
+                            -> Hash Aggregate (keys: 1, key length: 5, group length: 80) (rows=1509312.00)
+                                -> Table "LINEITEM" Full Scan (rows=6001215.00)
+##### tpch_19
+PLAN JOIN (LINEITEM NATURAL, PART INDEX (PART_PK, PART_PK, PART_PK))
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=17842615.56)
+            -> Table "LINEITEM" Full Scan (rows=6001215.00)
+            -> Count (rows=1.00)
+                -> Filter (rows=2.97)
+                    -> Table "PART" Access By ID (rows=2.97)
+                        -> Bitmap Or
+                            -> Bitmap Or
+                                -> Bitmap
+                                    -> Index "PART_PK" Unique Scan
+                                -> Bitmap
+                                    -> Index "PART_PK" Unique Scan
+                            -> Bitmap
+                                -> Index "PART_PK" Unique Scan
+##### tpch_21
+PLAN (L2 INDEX (LINEITEM_PK))
+PLAN (L3 INDEX (LINEITEM_PK))
+PLAN SORT (JOIN (HASH (HASH (L1 NATURAL, SUPPLIER NATURAL), NATION NATURAL), ORDERS INDEX (ORDERS_PK)))
+Sub-query
+    -> Filter (rows=18.23)
+        -> Table "LINEITEM" as "L2" Access By ID (rows=36.47)
+            -> Bitmap
+                -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+Sub-query
+    -> Filter (rows=12.89)
+        -> Table "LINEITEM" as "L3" Access By ID (rows=36.47)
+            -> Bitmap
+                -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+Select Expression
+    -> Sort (record length: 140, key length: 116) (rows=10000.00)
+        -> Hash Aggregate (keys: 1, key length: 103, group length: 80) (rows=10000.00)
+            -> Nested Loop Join (inner) (rows=34424.83)
+                -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1) (rows=71174.70)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=1779367.60)
+                        -> Filter (rows=1784171.89)
+                            -> Table "LINEITEM" as "L1" Full Scan (rows=6001215.00)
+                        -> Record Buffer (record length: 129) (rows=10000.00)
+                            -> Table "SUPPLIER" Full Scan (rows=10000.00)
+                    -> Record Buffer (record length: 129) (rows=1.00)
+                        -> Filter (rows=1.00)
+                            -> Table "NATION" Full Scan (rows=25.00)
+                -> Count (rows=1.00)
+                    -> Filter (rows=0.48)
+                        -> Table "ORDERS" Access By ID (rows=1.00)
+                            -> Bitmap
+                                -> Index "ORDERS_PK" Unique Scan

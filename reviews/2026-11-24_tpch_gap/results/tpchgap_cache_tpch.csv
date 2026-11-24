@@ -1,0 +1,26 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+tpch_01,tpch,prepare,ok,,,n/a,,446.9,md5:f426c2f91ec6127bbfb91a57413a59e9,PLAN SORT (LINEITEM NATURAL),"Select Expression
+    -> Sort (record length: 140, key length: 16) (rows=6.00)
+        -> Hash Aggregate (keys: 2, key length: 14, group length: 720) (rows=6.00)
+            -> Filter (rows=3000607.50)
+                -> Table ""LINEITEM"" Full Scan (rows=6001215.00)",
+tpch_01,tpch,measured,ok,11156.1,4,MISMATCH,sha1:ab291ab1b216283c6c379e5d501453a5b186ff7e,,md5:f426c2f91ec6127bbfb91a57413a59e9,,,
+tpch_01,tpch,measured,ok,11384.1,4,MISMATCH,sha1:ab291ab1b216283c6c379e5d501453a5b186ff7e,,md5:f426c2f91ec6127bbfb91a57413a59e9,,,
+tpch_01,tpch,measured,ok,11368.5,4,MISMATCH,sha1:ab291ab1b216283c6c379e5d501453a5b186ff7e,,md5:f426c2f91ec6127bbfb91a57413a59e9,,,
+tpch_06,tpch,prepare,ok,,,n/a,,74.1,md5:7edd07cb9c357bde4516b3aeeea404c1,PLAN (LINEITEM NATURAL),"Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=828139.69)
+            -> Table ""LINEITEM"" Full Scan (rows=6001215.00)",
+tpch_06,tpch,measured,ok,7267.8,1,MISMATCH,sha1:7f6ee2f54c0a364ac66374467a77b7acdb424243,,md5:7edd07cb9c357bde4516b3aeeea404c1,,,
+tpch_06,tpch,measured,ok,6633.0,1,MISMATCH,sha1:7f6ee2f54c0a364ac66374467a77b7acdb424243,,md5:7edd07cb9c357bde4516b3aeeea404c1,,,
+tpch_06,tpch,measured,ok,6499.1,1,MISMATCH,sha1:7f6ee2f54c0a364ac66374467a77b7acdb424243,,md5:7edd07cb9c357bde4516b3aeeea404c1,,,
+tpch_14,tpch,prepare,ok,,,n/a,,86.5,md5:5d486ea4504b6093489f744b7ae10b1d,"PLAN HASH (LINEITEM NATURAL, PART NATURAL)","Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=2485486.02)
+            -> Filter (rows=2507905.10)
+                -> Table ""LINEITEM"" Full Scan (rows=6001215.00)
+            -> Record Buffer (record length: 129) (rows=200000.00)
+                -> Table ""PART"" Full Scan (rows=200000.00)",
+tpch_14,tpch,measured,ok,7270.5,1,MISMATCH,sha1:d2bd95a91156336e094e9bfe8bd51b8f3c3343db,,md5:5d486ea4504b6093489f744b7ae10b1d,,,
+tpch_14,tpch,measured,ok,7199.8,1,MISMATCH,sha1:d2bd95a91156336e094e9bfe8bd51b8f3c3343db,,md5:5d486ea4504b6093489f744b7ae10b1d,,,
+tpch_14,tpch,measured,ok,7536.6,1,MISMATCH,sha1:d2bd95a91156336e094e9bfe8bd51b8f3c3343db,,md5:5d486ea4504b6093489f744b7ae10b1d,,,

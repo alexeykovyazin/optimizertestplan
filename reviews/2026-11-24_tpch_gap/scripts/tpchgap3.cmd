@@ -1,0 +1,17 @@
+@echo off
+rem tpchgap3.cmd - queries 4, 10, 12 with DATE literals as both range bounds, engine nv (v5.0-impr-opt ddd4169f9a).
+rem Results: E:\results\tpchgap_rw3_tpch.csv. Then f2 and the original config are put back.
+set FB_CLIENT_DIR=C:\HQbird\Firebird50
+set PY=python.exe
+set CONF=E:\fb50-impropt\firebird.conf
+sc stop FB_impropt >nul
+ping -n 15 127.0.0.1 >nul
+copy /y E:\fbdata\engine13_nv.dll E:\fb50-impropt\plugins\engine13.dll >nul
+copy /y E:\fbdata\firebird_orig.conf %CONF% >nul
+sc start FB_impropt >nul
+ping -n 8 127.0.0.1 >nul
+del /q E:\results\tpchgap_rw3_tpch.csv E:\results\tpchgap_rw3_tpch.log 2>nul
+%PY% -u E:\fbdata\tg_ab2.py --out E:\results\tpchgap_rw3_tpch.csv --expected E:\fbdata\tg_rw3\exp_tg_rw3.json --db E:/fbdata/impropt_work/TPCH_SF1_FB5.FDB --queries E:\fbdata\tg_rw3 --watchdog 180 --reps 2 >> E:\results\tpchgap_rw3_tpch.log 2>&1
+echo fb rw3 done %time%
+call E:\fbdata\wc_restore.cmd
+echo TPCHGAP3DONE

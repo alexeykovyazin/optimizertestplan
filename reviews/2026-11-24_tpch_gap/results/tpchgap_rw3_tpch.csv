@@ -1,0 +1,43 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+rw3_04,tpch,prepare,ok,,,n/a,,279.5,md5:329f454c0a3e0a04f39067f7f1d59c78,"PLAN SORT (JOIN (ORDERS NATURAL, LINEITEM INDEX (LINEITEM_PK)))","Select Expression
+    -> Sort (record length: 100, key length: 64) (rows=5.00)
+        -> Hash Aggregate (keys: 1, key length: 63, group length: 80) (rows=5.00)
+            -> Nested Loop Join (semi) (rows=27136.73)
+                -> Filter (rows=54273.46)
+                    -> Table ""ORDERS"" Full Scan (rows=1500000.00)
+                -> Filter (rows=1.99)
+                    -> Table ""LINEITEM"" Access By ID (rows=3.98)
+                        -> Bitmap
+                            -> Index ""LINEITEM_PK"" Range Scan (partial match: 1/2)",
+rw3_04,tpch,measured,ok,1138.2,5,MISMATCH,sha1:9e31ffe1e7c63f083b291fce2ab79afa076eb7df,,md5:329f454c0a3e0a04f39067f7f1d59c78,,,
+rw3_04,tpch,measured,ok,1194.3,5,MISMATCH,sha1:9e31ffe1e7c63f083b291fce2ab79afa076eb7df,,md5:329f454c0a3e0a04f39067f7f1d59c78,,,
+rw3_10,tpch,prepare,ok,,,n/a,,66.5,md5:ea9d14958860e5af20dfae49c1ccc4bc,"PLAN SORT (JOIN (HASH (HASH (CUSTOMER NATURAL, ORDERS NATURAL), NATION NATURAL), LINEITEM INDEX (LINEITEM_PK)))","Select Expression
+    -> Sort (record length: 956, key length: 20) (rows=57111.86)
+        -> Hash Aggregate (keys: 2, key length: 108, group length: 96) (rows=57111.86)
+            -> Nested Loop Join (inner) (rows=57111.86)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=57279.12)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=57279.12)
+                        -> Table ""CUSTOMER"" Full Scan (rows=150000.00)
+                        -> Record Buffer (record length: 33) (rows=57279.12)
+                            -> Filter (rows=57279.12)
+                                -> Table ""ORDERS"" Full Scan (rows=1500000.00)
+                    -> Record Buffer (record length: 129) (rows=25.00)
+                        -> Table ""NATION"" Full Scan (rows=25.00)
+                -> Filter (rows=1.00)
+                    -> Table ""LINEITEM"" Access By ID (rows=3.98)
+                        -> Bitmap
+                            -> Index ""LINEITEM_PK"" Range Scan (partial match: 1/2)",
+rw3_10,tpch,measured,ok,2948.0,37633,MISMATCH,sha1:47efa54498e7ffabf481c81d3b424f92196e6e00,,md5:ea9d14958860e5af20dfae49c1ccc4bc,,,
+rw3_10,tpch,measured,ok,2869.1,37633,MISMATCH,sha1:47efa54498e7ffabf481c81d3b424f92196e6e00,,md5:ea9d14958860e5af20dfae49c1ccc4bc,,,
+rw3_12,tpch,prepare,ok,,,n/a,,43.9,md5:43a45e54831d86276c9207276174b136,"PLAN SORT (JOIN (LINEITEM NATURAL, ORDERS INDEX (ORDERS_PK)))","Select Expression
+    -> Sort (record length: 84, key length: 44) (rows=2.00)
+        -> Hash Aggregate (keys: 1, key length: 43, group length: 144) (rows=2.00)
+            -> Nested Loop Join (inner) (rows=375995.07)
+                -> Filter (rows=375995.07)
+                    -> Table ""LINEITEM"" Full Scan (rows=6001215.00)
+                -> Filter (rows=1.00)
+                    -> Table ""ORDERS"" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index ""ORDERS_PK"" Unique Scan",
+rw3_12,tpch,measured,ok,2835.1,2,MISMATCH,sha1:03befedc981c342ec267fa280efd1c7d8cd861b5,,md5:43a45e54831d86276c9207276174b136,,,
+rw3_12,tpch,measured,ok,2972.1,2,MISMATCH,sha1:03befedc981c342ec267fa280efd1c7d8cd861b5,,md5:43a45e54831d86276c9207276174b136,,,

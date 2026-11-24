@@ -1,0 +1,42 @@
+##### rw3_04
+PLAN SORT (JOIN (ORDERS NATURAL, LINEITEM INDEX (LINEITEM_PK)))
+Select Expression
+    -> Sort (record length: 100, key length: 64) (rows=5.00)
+        -> Hash Aggregate (keys: 1, key length: 63, group length: 80) (rows=5.00)
+            -> Nested Loop Join (semi) (rows=27136.73)
+                -> Filter (rows=54273.46)
+                    -> Table "ORDERS" Full Scan (rows=1500000.00)
+                -> Filter (rows=1.99)
+                    -> Table "LINEITEM" Access By ID (rows=3.98)
+                        -> Bitmap
+                            -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+##### rw3_10
+PLAN SORT (JOIN (HASH (HASH (CUSTOMER NATURAL, ORDERS NATURAL), NATION NATURAL), LINEITEM INDEX (LINEITEM_PK)))
+Select Expression
+    -> Sort (record length: 956, key length: 20) (rows=57111.86)
+        -> Hash Aggregate (keys: 2, key length: 108, group length: 96) (rows=57111.86)
+            -> Nested Loop Join (inner) (rows=57111.86)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=57279.12)
+                    -> Hash Join (inner) (keys: 1, total key length: 4) (rows=57279.12)
+                        -> Table "CUSTOMER" Full Scan (rows=150000.00)
+                        -> Record Buffer (record length: 33) (rows=57279.12)
+                            -> Filter (rows=57279.12)
+                                -> Table "ORDERS" Full Scan (rows=1500000.00)
+                    -> Record Buffer (record length: 129) (rows=25.00)
+                        -> Table "NATION" Full Scan (rows=25.00)
+                -> Filter (rows=1.00)
+                    -> Table "LINEITEM" Access By ID (rows=3.98)
+                        -> Bitmap
+                            -> Index "LINEITEM_PK" Range Scan (partial match: 1/2)
+##### rw3_12
+PLAN SORT (JOIN (LINEITEM NATURAL, ORDERS INDEX (ORDERS_PK)))
+Select Expression
+    -> Sort (record length: 84, key length: 44) (rows=2.00)
+        -> Hash Aggregate (keys: 1, key length: 43, group length: 144) (rows=2.00)
+            -> Nested Loop Join (inner) (rows=375995.07)
+                -> Filter (rows=375995.07)
+                    -> Table "LINEITEM" Full Scan (rows=6001215.00)
+                -> Filter (rows=1.00)
+                    -> Table "ORDERS" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "ORDERS_PK" Unique Scan

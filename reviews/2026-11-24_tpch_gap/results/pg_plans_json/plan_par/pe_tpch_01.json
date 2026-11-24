@@ -1,0 +1,222 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Aggregate",
+      "Strategy": "Sorted",
+      "Partial Mode": "Finalize",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 184081.97,
+      "Total Cost": 184085.79,
+      "Plan Rows": 6,
+      "Plan Width": 236,
+      "Actual Startup Time": 1267.532,
+      "Actual Total Time": 1282.601,
+      "Actual Rows": 4,
+      "Actual Loops": 1,
+      "Group Key": ["l_returnflag", "l_linestatus"],
+      "Shared Hit Blocks": 77193,
+      "Shared Read Blocks": 35435,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0,
+      "Plans": [
+        {
+          "Node Type": "Gather Merge",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 184081.97,
+          "Total Cost": 184084.84,
+          "Plan Rows": 24,
+          "Plan Width": 236,
+          "Actual Startup Time": 1267.508,
+          "Actual Total Time": 1282.558,
+          "Actual Rows": 20,
+          "Actual Loops": 1,
+          "Workers Planned": 4,
+          "Workers Launched": 4,
+          "Shared Hit Blocks": 77193,
+          "Shared Read Blocks": 35435,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Sort",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 183081.91,
+              "Total Cost": 183081.92,
+              "Plan Rows": 6,
+              "Plan Width": 236,
+              "Actual Startup Time": 1226.379,
+              "Actual Total Time": 1226.379,
+              "Actual Rows": 4,
+              "Actual Loops": 5,
+              "Sort Key": ["l_returnflag", "l_linestatus"],
+              "Sort Method": "quicksort",
+              "Sort Space Used": 26,
+              "Sort Space Type": "Memory",
+              "Shared Hit Blocks": 77193,
+              "Shared Read Blocks": 35435,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Workers": [
+                {
+                  "Worker Number": 0,
+                  "Sort Method": "quicksort",
+                  "Sort Space Used": 26,
+                  "Sort Space Type": "Memory"
+                },
+                {
+                  "Worker Number": 1,
+                  "Sort Method": "quicksort",
+                  "Sort Space Used": 26,
+                  "Sort Space Type": "Memory"
+                },
+                {
+                  "Worker Number": 2,
+                  "Sort Method": "quicksort",
+                  "Sort Space Used": 26,
+                  "Sort Space Type": "Memory"
+                },
+                {
+                  "Worker Number": 3,
+                  "Sort Method": "quicksort",
+                  "Sort Space Used": 26,
+                  "Sort Space Type": "Memory"
+                }
+              ],
+              "Plans": [
+                {
+                  "Node Type": "Aggregate",
+                  "Strategy": "Hashed",
+                  "Partial Mode": "Partial",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 183081.70,
+                  "Total Cost": 183081.83,
+                  "Plan Rows": 6,
+                  "Plan Width": 236,
+                  "Actual Startup Time": 1226.344,
+                  "Actual Total Time": 1226.348,
+                  "Actual Rows": 4,
+                  "Actual Loops": 5,
+                  "Group Key": ["l_returnflag", "l_linestatus"],
+                  "Planned Partitions": 0,
+                  "HashAgg Batches": 1,
+                  "Peak Memory Usage": 24,
+                  "Disk Usage": 0,
+                  "Shared Hit Blocks": 77165,
+                  "Shared Read Blocks": 35435,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Workers": [
+                    {
+                      "Worker Number": 0,
+                      "HashAgg Batches": 1,
+                      "Peak Memory Usage": 24,
+                      "Disk Usage": 0
+                    },
+                    {
+                      "Worker Number": 1,
+                      "HashAgg Batches": 1,
+                      "Peak Memory Usage": 24,
+                      "Disk Usage": 0
+                    },
+                    {
+                      "Worker Number": 2,
+                      "HashAgg Batches": 1,
+                      "Peak Memory Usage": 24,
+                      "Disk Usage": 0
+                    },
+                    {
+                      "Worker Number": 3,
+                      "HashAgg Batches": 1,
+                      "Peak Memory Usage": 24,
+                      "Disk Usage": 0
+                    }
+                  ],
+                  "Plans": [
+                    {
+                      "Node Type": "Seq Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": true,
+                      "Async Capable": false,
+                      "Relation Name": "lineitem",
+                      "Alias": "lineitem",
+                      "Startup Cost": 0.00,
+                      "Total Cost": 131353.80,
+                      "Plan Rows": 1477940,
+                      "Plan Width": 25,
+                      "Actual Startup Time": 0.386,
+                      "Actual Total Time": 242.678,
+                      "Actual Rows": 1182950,
+                      "Actual Loops": 5,
+                      "Filter": "(l_shipdate <= '1998-09-01 00:00:00'::timestamp without time zone)",
+                      "Rows Removed by Filter": 17293,
+                      "Shared Hit Blocks": 77165,
+                      "Shared Read Blocks": 35435,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0,
+                      "Workers": [
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Planning": {
+      "Shared Hit Blocks": 153,
+      "Shared Read Blocks": 2,
+      "Shared Dirtied Blocks": 0,
+      "Shared Written Blocks": 0,
+      "Local Hit Blocks": 0,
+      "Local Read Blocks": 0,
+      "Local Dirtied Blocks": 0,
+      "Local Written Blocks": 0,
+      "Temp Read Blocks": 0,
+      "Temp Written Blocks": 0
+    },
+    "Planning Time": 1.940,
+    "Triggers": [
+    ],
+    "Execution Time": 1282.768
+  }
+]
+Time: 1287,268 ms (00:01,287)
