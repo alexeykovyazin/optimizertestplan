@@ -1,0 +1,1196 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+dsb_040_01,dsb-s2,prepare,ok,,,n/a,,197.3,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,"PLAN SORT (JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK)))","Select Expression
+    -> First N Records
+        -> Aggregate
+            -> Refetch
+                -> Sort (record length: 168, key length: 80)
+                    -> Filter
+                        -> Nested Loop Join (inner)
+                            -> Hash Join (inner)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" Full Scan
+                                    -> Filter
+                                        -> Table ""CATALOG_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""CATALOG_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table ""WAREHOUSE"" Full Scan
+                            -> Filter
+                                -> Table ""DATE_DIM"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_01,dsb-s2,measured,ok,84.2,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,,,
+dsb_040_02,dsb-s2,prepare,ok,,,n/a,,44.2,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,"PLAN SORT (JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK)))","Select Expression
+    -> First N Records
+        -> Aggregate
+            -> Refetch
+                -> Sort (record length: 168, key length: 80)
+                    -> Filter
+                        -> Nested Loop Join (inner)
+                            -> Hash Join (inner)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" Full Scan
+                                    -> Filter
+                                        -> Table ""CATALOG_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""CATALOG_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table ""WAREHOUSE"" Full Scan
+                            -> Filter
+                                -> Table ""DATE_DIM"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_02,dsb-s2,measured,ok,75.0,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,,,
+dsb_040_03,dsb-s2,prepare,ok,,,n/a,,39.5,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,"PLAN SORT (JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK)))","Select Expression
+    -> First N Records
+        -> Aggregate
+            -> Refetch
+                -> Sort (record length: 168, key length: 80)
+                    -> Filter
+                        -> Nested Loop Join (inner)
+                            -> Hash Join (inner)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" Full Scan
+                                    -> Filter
+                                        -> Table ""CATALOG_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""CATALOG_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table ""WAREHOUSE"" Full Scan
+                            -> Filter
+                                -> Table ""DATE_DIM"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_03,dsb-s2,measured,ok,76.1,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,,,
+dsb_040_04,dsb-s2,prepare,ok,,,n/a,,39.1,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,"PLAN SORT (JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK)))","Select Expression
+    -> First N Records
+        -> Aggregate
+            -> Refetch
+                -> Sort (record length: 168, key length: 80)
+                    -> Filter
+                        -> Nested Loop Join (inner)
+                            -> Hash Join (inner)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" Full Scan
+                                    -> Filter
+                                        -> Table ""CATALOG_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""CATALOG_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table ""WAREHOUSE"" Full Scan
+                            -> Filter
+                                -> Table ""DATE_DIM"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_04,dsb-s2,measured,ok,76.9,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,,,
+dsb_040_05,dsb-s2,prepare,ok,,,n/a,,40.6,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,"PLAN SORT (JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK)))","Select Expression
+    -> First N Records
+        -> Aggregate
+            -> Refetch
+                -> Sort (record length: 168, key length: 80)
+                    -> Filter
+                        -> Nested Loop Join (inner)
+                            -> Hash Join (inner)
+                                -> Nested Loop Join (inner)
+                                    -> Filter
+                                        -> Table ""ITEM"" Full Scan
+                                    -> Filter
+                                        -> Table ""CATALOG_RETURNS"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                    -> Filter
+                                        -> Table ""CATALOG_SALES"" Access By ID
+                                            -> Bitmap
+                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table ""WAREHOUSE"" Full Scan
+                            -> Filter
+                                -> Table ""DATE_DIM"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_05,dsb-s2,measured,ok,75.0,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:b1ce6b4f4fc7b0c053b4f307dcc2b6d0,,,
+dsb_040_spj_01,dsb-s2,prepare,ok,,,n/a,,40.9,md5:d43576809f62295383251acb8793c012,"PLAN JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK))","Select Expression
+    -> Aggregate
+        -> Filter
+            -> Nested Loop Join (inner)
+                -> Hash Join (inner)
+                    -> Nested Loop Join (inner)
+                        -> Filter
+                            -> Table ""ITEM"" Full Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                        -> Filter
+                            -> Table ""CATALOG_SALES"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_SALES_PK"" Unique Scan
+                    -> Record Buffer (record length: 33)
+                        -> Table ""WAREHOUSE"" Full Scan
+                -> Filter
+                    -> Table ""DATE_DIM"" Access By ID
+                        -> Bitmap
+                            -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_spj_01,dsb-s2,measured,ok,81.9,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:d43576809f62295383251acb8793c012,,,
+dsb_040_spj_02,dsb-s2,prepare,ok,,,n/a,,38.5,md5:d43576809f62295383251acb8793c012,"PLAN JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK))","Select Expression
+    -> Aggregate
+        -> Filter
+            -> Nested Loop Join (inner)
+                -> Hash Join (inner)
+                    -> Nested Loop Join (inner)
+                        -> Filter
+                            -> Table ""ITEM"" Full Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                        -> Filter
+                            -> Table ""CATALOG_SALES"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_SALES_PK"" Unique Scan
+                    -> Record Buffer (record length: 33)
+                        -> Table ""WAREHOUSE"" Full Scan
+                -> Filter
+                    -> Table ""DATE_DIM"" Access By ID
+                        -> Bitmap
+                            -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_spj_02,dsb-s2,measured,ok,78.5,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:d43576809f62295383251acb8793c012,,,
+dsb_040_spj_03,dsb-s2,prepare,ok,,,n/a,,39.7,md5:d43576809f62295383251acb8793c012,"PLAN JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK))","Select Expression
+    -> Aggregate
+        -> Filter
+            -> Nested Loop Join (inner)
+                -> Hash Join (inner)
+                    -> Nested Loop Join (inner)
+                        -> Filter
+                            -> Table ""ITEM"" Full Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                        -> Filter
+                            -> Table ""CATALOG_SALES"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_SALES_PK"" Unique Scan
+                    -> Record Buffer (record length: 33)
+                        -> Table ""WAREHOUSE"" Full Scan
+                -> Filter
+                    -> Table ""DATE_DIM"" Access By ID
+                        -> Bitmap
+                            -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_spj_03,dsb-s2,measured,ok,74.6,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:d43576809f62295383251acb8793c012,,,
+dsb_040_spj_04,dsb-s2,prepare,ok,,,n/a,,38.2,md5:d43576809f62295383251acb8793c012,"PLAN JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK))","Select Expression
+    -> Aggregate
+        -> Filter
+            -> Nested Loop Join (inner)
+                -> Hash Join (inner)
+                    -> Nested Loop Join (inner)
+                        -> Filter
+                            -> Table ""ITEM"" Full Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                        -> Filter
+                            -> Table ""CATALOG_SALES"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_SALES_PK"" Unique Scan
+                    -> Record Buffer (record length: 33)
+                        -> Table ""WAREHOUSE"" Full Scan
+                -> Filter
+                    -> Table ""DATE_DIM"" Access By ID
+                        -> Bitmap
+                            -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_spj_04,dsb-s2,measured,ok,76.4,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:d43576809f62295383251acb8793c012,,,
+dsb_040_spj_05,dsb-s2,prepare,ok,,,n/a,,40.7,md5:d43576809f62295383251acb8793c012,"PLAN JOIN (HASH (JOIN (ITEM NATURAL, CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CATALOG_SALES INDEX (CATALOG_SALES_PK)), WAREHOUSE NATURAL), DATE_DIM INDEX (DATE_DIM_PK))","Select Expression
+    -> Aggregate
+        -> Filter
+            -> Nested Loop Join (inner)
+                -> Hash Join (inner)
+                    -> Nested Loop Join (inner)
+                        -> Filter
+                            -> Table ""ITEM"" Full Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                        -> Filter
+                            -> Table ""CATALOG_SALES"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_SALES_PK"" Unique Scan
+                    -> Record Buffer (record length: 33)
+                        -> Table ""WAREHOUSE"" Full Scan
+                -> Filter
+                    -> Table ""DATE_DIM"" Access By ID
+                        -> Bitmap
+                            -> Index ""DATE_DIM_PK"" Unique Scan",
+dsb_040_spj_05,dsb-s2,measured,ok,71.5,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:d43576809f62295383251acb8793c012,,,
+dsb_072_01,dsb-s2,prepare,ok,,,n/a,,39.4,md5:54b45919eb7e5c68efd270d08fd3b1a9,"PLAN SORT (SORT (JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 960, key length: 916)
+            -> Aggregate
+                -> Sort (record length: 1504, key length: 904)
+                    -> Nested Loop Join (outer)
+                        -> Nested Loop Join (outer)
+                            -> Filter
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Hash Join (inner)
+                                                        -> Hash Join (inner)
+                                                            -> Hash Join (inner)
+                                                                -> Table ""INVENTORY"" Full Scan
+                                                                -> Record Buffer (record length: 113)
+                                                                    -> Table ""WAREHOUSE"" Full Scan
+                                                            -> Record Buffer (record length: 1033)
+                                                                -> Filter
+                                                                    -> Table ""ITEM"" Full Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                                    -> Record Buffer (record length: 57)
+                                                        -> Filter
+                                                            -> Table ""CATALOG_SALES"" Full Scan
+                                                -> Record Buffer (record length: 89)
+                                                    -> Filter
+                                                        -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                            -> Record Buffer (record length: 41)
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                                        -> Record Buffer (record length: 33)
+                                            -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Filter
+                                            -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                            -> Filter
+                                -> Table ""PROMOTION"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""PROMOTION_PK"" Unique Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_01,dsb-s2,measured,ok,39924.6,8,MISMATCH,sha1:8ff3ce27f8d7e5962c7358cef067a21a5a843133,,md5:54b45919eb7e5c68efd270d08fd3b1a9,,,
+dsb_072_02,dsb-s2,prepare,ok,,,n/a,,38.8,md5:54b45919eb7e5c68efd270d08fd3b1a9,"PLAN SORT (SORT (JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 960, key length: 916)
+            -> Aggregate
+                -> Sort (record length: 1504, key length: 904)
+                    -> Nested Loop Join (outer)
+                        -> Nested Loop Join (outer)
+                            -> Filter
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Hash Join (inner)
+                                                        -> Hash Join (inner)
+                                                            -> Hash Join (inner)
+                                                                -> Table ""INVENTORY"" Full Scan
+                                                                -> Record Buffer (record length: 113)
+                                                                    -> Table ""WAREHOUSE"" Full Scan
+                                                            -> Record Buffer (record length: 1033)
+                                                                -> Filter
+                                                                    -> Table ""ITEM"" Full Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                                    -> Record Buffer (record length: 57)
+                                                        -> Filter
+                                                            -> Table ""CATALOG_SALES"" Full Scan
+                                                -> Record Buffer (record length: 89)
+                                                    -> Filter
+                                                        -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                            -> Record Buffer (record length: 41)
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                                        -> Record Buffer (record length: 33)
+                                            -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Filter
+                                            -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                            -> Filter
+                                -> Table ""PROMOTION"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""PROMOTION_PK"" Unique Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_02,dsb-s2,measured,ok,25535.5,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:54b45919eb7e5c68efd270d08fd3b1a9,,,
+dsb_072_03,dsb-s2,prepare,ok,,,n/a,,49.7,md5:54b45919eb7e5c68efd270d08fd3b1a9,"PLAN SORT (SORT (JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 960, key length: 916)
+            -> Aggregate
+                -> Sort (record length: 1504, key length: 904)
+                    -> Nested Loop Join (outer)
+                        -> Nested Loop Join (outer)
+                            -> Filter
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Hash Join (inner)
+                                                        -> Hash Join (inner)
+                                                            -> Hash Join (inner)
+                                                                -> Table ""INVENTORY"" Full Scan
+                                                                -> Record Buffer (record length: 113)
+                                                                    -> Table ""WAREHOUSE"" Full Scan
+                                                            -> Record Buffer (record length: 1033)
+                                                                -> Filter
+                                                                    -> Table ""ITEM"" Full Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                                    -> Record Buffer (record length: 57)
+                                                        -> Filter
+                                                            -> Table ""CATALOG_SALES"" Full Scan
+                                                -> Record Buffer (record length: 89)
+                                                    -> Filter
+                                                        -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                            -> Record Buffer (record length: 41)
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                                        -> Record Buffer (record length: 33)
+                                            -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Filter
+                                            -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                            -> Filter
+                                -> Table ""PROMOTION"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""PROMOTION_PK"" Unique Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_03,dsb-s2,measured,ok,28810.2,34,MISMATCH,sha1:8bd12c51ddd71ea87ae124e8bf5cbe5cd503478b,,md5:54b45919eb7e5c68efd270d08fd3b1a9,,,
+dsb_072_04,dsb-s2,prepare,ok,,,n/a,,45.5,md5:54b45919eb7e5c68efd270d08fd3b1a9,"PLAN SORT (SORT (JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 960, key length: 916)
+            -> Aggregate
+                -> Sort (record length: 1504, key length: 904)
+                    -> Nested Loop Join (outer)
+                        -> Nested Loop Join (outer)
+                            -> Filter
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Hash Join (inner)
+                                                        -> Hash Join (inner)
+                                                            -> Hash Join (inner)
+                                                                -> Table ""INVENTORY"" Full Scan
+                                                                -> Record Buffer (record length: 113)
+                                                                    -> Table ""WAREHOUSE"" Full Scan
+                                                            -> Record Buffer (record length: 1033)
+                                                                -> Filter
+                                                                    -> Table ""ITEM"" Full Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                                    -> Record Buffer (record length: 57)
+                                                        -> Filter
+                                                            -> Table ""CATALOG_SALES"" Full Scan
+                                                -> Record Buffer (record length: 89)
+                                                    -> Filter
+                                                        -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                            -> Record Buffer (record length: 41)
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                                        -> Record Buffer (record length: 33)
+                                            -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Filter
+                                            -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                            -> Filter
+                                -> Table ""PROMOTION"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""PROMOTION_PK"" Unique Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_04,dsb-s2,measured,ok,25199.8,0,MISMATCH,sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709,,md5:54b45919eb7e5c68efd270d08fd3b1a9,,,
+dsb_072_05,dsb-s2,prepare,ok,,,n/a,,40.9,md5:54b45919eb7e5c68efd270d08fd3b1a9,"PLAN SORT (SORT (JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 960, key length: 916)
+            -> Aggregate
+                -> Sort (record length: 1504, key length: 904)
+                    -> Nested Loop Join (outer)
+                        -> Nested Loop Join (outer)
+                            -> Filter
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Hash Join (inner)
+                                                        -> Hash Join (inner)
+                                                            -> Hash Join (inner)
+                                                                -> Table ""INVENTORY"" Full Scan
+                                                                -> Record Buffer (record length: 113)
+                                                                    -> Table ""WAREHOUSE"" Full Scan
+                                                            -> Record Buffer (record length: 1033)
+                                                                -> Filter
+                                                                    -> Table ""ITEM"" Full Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                                    -> Record Buffer (record length: 57)
+                                                        -> Filter
+                                                            -> Table ""CATALOG_SALES"" Full Scan
+                                                -> Record Buffer (record length: 89)
+                                                    -> Filter
+                                                        -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                            -> Record Buffer (record length: 41)
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                                        -> Record Buffer (record length: 33)
+                                            -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Filter
+                                            -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                            -> Filter
+                                -> Table ""PROMOTION"" Access By ID
+                                    -> Bitmap
+                                        -> Index ""PROMOTION_PK"" Unique Scan
+                        -> Filter
+                            -> Table ""CATALOG_RETURNS"" Access By ID
+                                -> Bitmap
+                                    -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_05,dsb-s2,measured,ok,22274.2,45,MISMATCH,sha1:f1ba2600aea3d85171cee4ee8cc904957a39b790,,md5:54b45919eb7e5c68efd270d08fd3b1a9,,,
+dsb_072_spj_01,dsb-s2,prepare,ok,,,n/a,,51.7,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,"PLAN JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Filter
+                    -> Hash Join (inner)
+                        -> Hash Join (inner)
+                            -> Hash Join (inner)
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Table ""INVENTORY"" Full Scan
+                                                    -> Record Buffer (record length: 113)
+                                                        -> Table ""WAREHOUSE"" Full Scan
+                                                -> Record Buffer (record length: 225)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" Full Scan
+                                            -> Record Buffer (record length: 33)
+                                                -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                        -> Record Buffer (record length: 57)
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" Full Scan
+                                    -> Record Buffer (record length: 89)
+                                        -> Filter
+                                            -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                -> Record Buffer (record length: 41)
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                            -> Record Buffer (record length: 33)
+                                -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                        -> Record Buffer (record length: 33)
+                            -> Filter
+                                -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                -> Filter
+                    -> Table ""PROMOTION"" Access By ID
+                        -> Bitmap
+                            -> Index ""PROMOTION_PK"" Unique Scan
+            -> Filter
+                -> Table ""CATALOG_RETURNS"" Access By ID
+                    -> Bitmap
+                        -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_spj_01,dsb-s2,measured,ok,34006.9,1,MISMATCH,sha1:e0e2b2a0cff168ade362110e3690256a3e1e0382,,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,,,
+dsb_072_spj_02,dsb-s2,prepare,ok,,,n/a,,43.5,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,"PLAN JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Filter
+                    -> Hash Join (inner)
+                        -> Hash Join (inner)
+                            -> Hash Join (inner)
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Table ""INVENTORY"" Full Scan
+                                                    -> Record Buffer (record length: 113)
+                                                        -> Table ""WAREHOUSE"" Full Scan
+                                                -> Record Buffer (record length: 225)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" Full Scan
+                                            -> Record Buffer (record length: 33)
+                                                -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                        -> Record Buffer (record length: 57)
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" Full Scan
+                                    -> Record Buffer (record length: 89)
+                                        -> Filter
+                                            -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                -> Record Buffer (record length: 41)
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                            -> Record Buffer (record length: 33)
+                                -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                        -> Record Buffer (record length: 33)
+                            -> Filter
+                                -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                -> Filter
+                    -> Table ""PROMOTION"" Access By ID
+                        -> Bitmap
+                            -> Index ""PROMOTION_PK"" Unique Scan
+            -> Filter
+                -> Table ""CATALOG_RETURNS"" Access By ID
+                    -> Bitmap
+                        -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_spj_02,dsb-s2,measured,ok,24429.5,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,,,
+dsb_072_spj_03,dsb-s2,prepare,ok,,,n/a,,46.5,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,"PLAN JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Filter
+                    -> Hash Join (inner)
+                        -> Hash Join (inner)
+                            -> Hash Join (inner)
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Table ""INVENTORY"" Full Scan
+                                                    -> Record Buffer (record length: 113)
+                                                        -> Table ""WAREHOUSE"" Full Scan
+                                                -> Record Buffer (record length: 225)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" Full Scan
+                                            -> Record Buffer (record length: 33)
+                                                -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                        -> Record Buffer (record length: 57)
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" Full Scan
+                                    -> Record Buffer (record length: 89)
+                                        -> Filter
+                                            -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                -> Record Buffer (record length: 41)
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                            -> Record Buffer (record length: 33)
+                                -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                        -> Record Buffer (record length: 33)
+                            -> Filter
+                                -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                -> Filter
+                    -> Table ""PROMOTION"" Access By ID
+                        -> Bitmap
+                            -> Index ""PROMOTION_PK"" Unique Scan
+            -> Filter
+                -> Table ""CATALOG_RETURNS"" Access By ID
+                    -> Bitmap
+                        -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_spj_03,dsb-s2,measured,ok,27792.5,1,MISMATCH,sha1:a4922d671c8f85b54dbeadc1f2d1729b547a739c,,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,,,
+dsb_072_spj_04,dsb-s2,prepare,ok,,,n/a,,43.3,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,"PLAN JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Filter
+                    -> Hash Join (inner)
+                        -> Hash Join (inner)
+                            -> Hash Join (inner)
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Table ""INVENTORY"" Full Scan
+                                                    -> Record Buffer (record length: 113)
+                                                        -> Table ""WAREHOUSE"" Full Scan
+                                                -> Record Buffer (record length: 225)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" Full Scan
+                                            -> Record Buffer (record length: 33)
+                                                -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                        -> Record Buffer (record length: 57)
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" Full Scan
+                                    -> Record Buffer (record length: 89)
+                                        -> Filter
+                                            -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                -> Record Buffer (record length: 41)
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                            -> Record Buffer (record length: 33)
+                                -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                        -> Record Buffer (record length: 33)
+                            -> Filter
+                                -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                -> Filter
+                    -> Table ""PROMOTION"" Access By ID
+                        -> Bitmap
+                            -> Index ""PROMOTION_PK"" Unique Scan
+            -> Filter
+                -> Table ""CATALOG_RETURNS"" Access By ID
+                    -> Bitmap
+                        -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_spj_04,dsb-s2,measured,ok,24779.4,1,MISMATCH,sha1:d3d4682306351ae2583a3d4f779233c0d9365eab,,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,,,
+dsb_072_spj_05,dsb-s2,prepare,ok,,,n/a,,40.3,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,"PLAN JOIN (JOIN (HASH (HASH (HASH (HASH (HASH (HASH (HASH (HASH (INVENTORY NATURAL, WAREHOUSE NATURAL), ITEM NATURAL), D2 NATURAL), CATALOG_SALES NATURAL), HOUSEHOLD_DEMOGRAPHICS NATURAL), D1 NATURAL), D3 NATURAL), CUSTOMER_DEMOGRAPHICS NATURAL), PROMOTION INDEX (PROMOTION_PK)), CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK))","Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Filter
+                    -> Hash Join (inner)
+                        -> Hash Join (inner)
+                            -> Hash Join (inner)
+                                -> Hash Join (inner)
+                                    -> Hash Join (inner)
+                                        -> Hash Join (inner)
+                                            -> Hash Join (inner)
+                                                -> Hash Join (inner)
+                                                    -> Table ""INVENTORY"" Full Scan
+                                                    -> Record Buffer (record length: 113)
+                                                        -> Table ""WAREHOUSE"" Full Scan
+                                                -> Record Buffer (record length: 225)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" Full Scan
+                                            -> Record Buffer (record length: 33)
+                                                -> Table ""DATE_DIM"" as ""D2"" Full Scan
+                                        -> Record Buffer (record length: 57)
+                                            -> Filter
+                                                -> Table ""CATALOG_SALES"" Full Scan
+                                    -> Record Buffer (record length: 89)
+                                        -> Filter
+                                            -> Table ""HOUSEHOLD_DEMOGRAPHICS"" Full Scan
+                                -> Record Buffer (record length: 41)
+                                    -> Filter
+                                        -> Table ""DATE_DIM"" as ""D1"" Full Scan
+                            -> Record Buffer (record length: 33)
+                                -> Table ""DATE_DIM"" as ""D3"" Full Scan
+                        -> Record Buffer (record length: 33)
+                            -> Filter
+                                -> Table ""CUSTOMER_DEMOGRAPHICS"" Full Scan
+                -> Filter
+                    -> Table ""PROMOTION"" Access By ID
+                        -> Bitmap
+                            -> Index ""PROMOTION_PK"" Unique Scan
+            -> Filter
+                -> Table ""CATALOG_RETURNS"" Access By ID
+                    -> Bitmap
+                        -> Index ""CATALOG_RETURNS_PK"" Unique Scan",
+dsb_072_spj_05,dsb-s2,measured,ok,22889.6,1,MISMATCH,sha1:e38e8dcdbb94a1635644e5f8399f8400c0eb7b3f,,md5:670cb7a31b6c9a346c15fd91c4bc6ba8,,,
+dsb_075_01,dsb-s2,prepare,ok,,,n/a,,43.4,md5:eead6bcf7fb982e884b5d83727dc5f97,"PLAN SORT (HASH (SORT (SORT (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CURR_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), CURR_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), CURR_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), CURR_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)))), SORT (SORT (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), PREV_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), PREV_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), PREV_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), PREV_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK))))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 204, key length: 40)
+            -> Filter
+                -> Hash Join (inner)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 192, key length: 40)
+                                -> Unique Sort (record length: 192, key length: 64)
+                                    -> Filter
+                                        -> Union
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_RETURNS"" as ""CURR_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CURR_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                            -> Filter
+                                                -> Hash Join (inner)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                        -> Filter
+                                                            -> Table ""STORE_RETURNS"" as ""CURR_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                        -> Filter
+                                                            -> Table ""STORE_SALES"" as ""CURR_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                                    -> Record Buffer (record length: 33)
+                                                        -> Filter
+                                                            -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""WEB_RETURNS"" as ""CURR_YR SALES_DETAIL WEB_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""WEB_SALES"" as ""CURR_YR SALES_DETAIL WEB_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                    -> Record Buffer (record length: 73)
+                        -> Filter
+                            -> Aggregate
+                                -> Sort (record length: 192, key length: 40)
+                                    -> Unique Sort (record length: 192, key length: 64)
+                                        -> Filter
+                                            -> Union
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                    -> Filter
+                                                        -> Table ""CATALOG_RETURNS"" as ""PREV_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                    -> Filter
+                                                        -> Table ""CATALOG_SALES"" as ""PREV_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                    -> Filter
+                                                        -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Hash Join (inner)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                            -> Filter
+                                                                -> Table ""STORE_RETURNS"" as ""PREV_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                            -> Filter
+                                                                -> Table ""STORE_SALES"" as ""PREV_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_SALES_PK"" Unique Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Filter
+                                                                -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                  ",
+dsb_075_01,dsb-s2,measured,ok,1194.7,51,MISMATCH,sha1:b72cb7080a14c2ae7a776c61e9a8f1c37d70213f,,md5:eead6bcf7fb982e884b5d83727dc5f97,,,
+dsb_075_02,dsb-s2,prepare,ok,,,n/a,,48.1,md5:eead6bcf7fb982e884b5d83727dc5f97,"PLAN SORT (HASH (SORT (SORT (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CURR_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), CURR_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), CURR_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), CURR_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)))), SORT (SORT (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), PREV_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), PREV_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), PREV_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), PREV_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK))))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 204, key length: 40)
+            -> Filter
+                -> Hash Join (inner)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 192, key length: 40)
+                                -> Unique Sort (record length: 192, key length: 64)
+                                    -> Filter
+                                        -> Union
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_RETURNS"" as ""CURR_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CURR_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                            -> Filter
+                                                -> Hash Join (inner)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                        -> Filter
+                                                            -> Table ""STORE_RETURNS"" as ""CURR_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                        -> Filter
+                                                            -> Table ""STORE_SALES"" as ""CURR_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                                    -> Record Buffer (record length: 33)
+                                                        -> Filter
+                                                            -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""WEB_RETURNS"" as ""CURR_YR SALES_DETAIL WEB_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""WEB_SALES"" as ""CURR_YR SALES_DETAIL WEB_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                    -> Record Buffer (record length: 73)
+                        -> Filter
+                            -> Aggregate
+                                -> Sort (record length: 192, key length: 40)
+                                    -> Unique Sort (record length: 192, key length: 64)
+                                        -> Filter
+                                            -> Union
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                    -> Filter
+                                                        -> Table ""CATALOG_RETURNS"" as ""PREV_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                    -> Filter
+                                                        -> Table ""CATALOG_SALES"" as ""PREV_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                    -> Filter
+                                                        -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Hash Join (inner)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                            -> Filter
+                                                                -> Table ""STORE_RETURNS"" as ""PREV_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                            -> Filter
+                                                                -> Table ""STORE_SALES"" as ""PREV_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_SALES_PK"" Unique Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Filter
+                                                                -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                  ",
+dsb_075_02,dsb-s2,measured,ok,506.5,4,MISMATCH,sha1:8ef5edee3ae47491288678e5028282e13822c340,,md5:eead6bcf7fb982e884b5d83727dc5f97,,,
+dsb_075_03,dsb-s2,prepare,ok,,,n/a,,45.7,md5:eead6bcf7fb982e884b5d83727dc5f97,"PLAN SORT (HASH (SORT (SORT (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CURR_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), CURR_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), CURR_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), CURR_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)))), SORT (SORT (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), PREV_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), PREV_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), PREV_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), PREV_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK))))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 204, key length: 40)
+            -> Filter
+                -> Hash Join (inner)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 192, key length: 40)
+                                -> Unique Sort (record length: 192, key length: 64)
+                                    -> Filter
+                                        -> Union
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_RETURNS"" as ""CURR_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CURR_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                            -> Filter
+                                                -> Hash Join (inner)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                        -> Filter
+                                                            -> Table ""STORE_RETURNS"" as ""CURR_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                        -> Filter
+                                                            -> Table ""STORE_SALES"" as ""CURR_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                                    -> Record Buffer (record length: 33)
+                                                        -> Filter
+                                                            -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""WEB_RETURNS"" as ""CURR_YR SALES_DETAIL WEB_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""WEB_SALES"" as ""CURR_YR SALES_DETAIL WEB_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                    -> Record Buffer (record length: 73)
+                        -> Filter
+                            -> Aggregate
+                                -> Sort (record length: 192, key length: 40)
+                                    -> Unique Sort (record length: 192, key length: 64)
+                                        -> Filter
+                                            -> Union
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                    -> Filter
+                                                        -> Table ""CATALOG_RETURNS"" as ""PREV_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                    -> Filter
+                                                        -> Table ""CATALOG_SALES"" as ""PREV_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                    -> Filter
+                                                        -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Hash Join (inner)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                            -> Filter
+                                                                -> Table ""STORE_RETURNS"" as ""PREV_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                            -> Filter
+                                                                -> Table ""STORE_SALES"" as ""PREV_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_SALES_PK"" Unique Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Filter
+                                                                -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                  ",
+dsb_075_03,dsb-s2,measured,ok,632.3,13,MISMATCH,sha1:849bb52e7d36fa470bddb75812e523a0261d5277,,md5:eead6bcf7fb982e884b5d83727dc5f97,,,
+dsb_075_04,dsb-s2,prepare,ok,,,n/a,,42.9,md5:eead6bcf7fb982e884b5d83727dc5f97,"PLAN SORT (HASH (SORT (SORT (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CURR_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), CURR_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), CURR_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), CURR_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)))), SORT (SORT (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), PREV_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), PREV_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), PREV_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), PREV_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK))))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 204, key length: 40)
+            -> Filter
+                -> Hash Join (inner)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 192, key length: 40)
+                                -> Unique Sort (record length: 192, key length: 64)
+                                    -> Filter
+                                        -> Union
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_RETURNS"" as ""CURR_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CURR_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                            -> Filter
+                                                -> Hash Join (inner)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                        -> Filter
+                                                            -> Table ""STORE_RETURNS"" as ""CURR_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                        -> Filter
+                                                            -> Table ""STORE_SALES"" as ""CURR_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                                    -> Record Buffer (record length: 33)
+                                                        -> Filter
+                                                            -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""WEB_RETURNS"" as ""CURR_YR SALES_DETAIL WEB_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""WEB_SALES"" as ""CURR_YR SALES_DETAIL WEB_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                    -> Record Buffer (record length: 73)
+                        -> Filter
+                            -> Aggregate
+                                -> Sort (record length: 192, key length: 40)
+                                    -> Unique Sort (record length: 192, key length: 64)
+                                        -> Filter
+                                            -> Union
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                    -> Filter
+                                                        -> Table ""CATALOG_RETURNS"" as ""PREV_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                    -> Filter
+                                                        -> Table ""CATALOG_SALES"" as ""PREV_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                    -> Filter
+                                                        -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Hash Join (inner)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                            -> Filter
+                                                                -> Table ""STORE_RETURNS"" as ""PREV_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                            -> Filter
+                                                                -> Table ""STORE_SALES"" as ""PREV_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_SALES_PK"" Unique Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Filter
+                                                                -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                  ",
+dsb_075_04,dsb-s2,measured,ok,648.8,14,MISMATCH,sha1:1a0daa91127d26f5f72341f122681fedaab3582b,,md5:eead6bcf7fb982e884b5d83727dc5f97,,,
+dsb_075_05,dsb-s2,prepare,ok,,,n/a,,40.0,md5:eead6bcf7fb982e884b5d83727dc5f97,"PLAN SORT (HASH (SORT (SORT (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), CURR_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), CURR_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), CURR_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (CURR_YR SALES_DETAIL ITEM NATURAL, CURR_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), CURR_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), CURR_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)))), SORT (SORT (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL CATALOG_RETURNS INDEX (CATALOG_RETURNS_PK), PREV_YR SALES_DETAIL CATALOG_SALES INDEX (CATALOG_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK)), HASH (JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL STORE_RETURNS INDEX (STORE_RETURNS_PK), PREV_YR SALES_DETAIL STORE_SALES INDEX (STORE_SALES_PK)), PREV_YR SALES_DETAIL DATE_DIM NATURAL), JOIN (PREV_YR SALES_DETAIL ITEM NATURAL, PREV_YR SALES_DETAIL WEB_RETURNS INDEX (WEB_RETURNS_PK), PREV_YR SALES_DETAIL WEB_SALES INDEX (WEB_SALES_PK), PREV_YR SALES_DETAIL DATE_DIM INDEX (DATE_DIM_PK))))))","Select Expression
+    -> First N Records
+        -> Sort (record length: 204, key length: 40)
+            -> Filter
+                -> Hash Join (inner)
+                    -> Filter
+                        -> Aggregate
+                            -> Sort (record length: 192, key length: 40)
+                                -> Unique Sort (record length: 192, key length: 64)
+                                    -> Filter
+                                        -> Union
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""CATALOG_RETURNS"" as ""CURR_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""CATALOG_SALES"" as ""CURR_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                                            -> Filter
+                                                -> Hash Join (inner)
+                                                    -> Nested Loop Join (inner)
+                                                        -> Filter
+                                                            -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                        -> Filter
+                                                            -> Table ""STORE_RETURNS"" as ""CURR_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                        -> Filter
+                                                            -> Table ""STORE_SALES"" as ""CURR_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                -> Bitmap
+                                                                    -> Index ""STORE_SALES_PK"" Unique Scan
+                                                    -> Record Buffer (record length: 33)
+                                                        -> Filter
+                                                            -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                            -> Nested Loop Join (inner)
+                                                -> Filter
+                                                    -> Table ""ITEM"" as ""CURR_YR SALES_DETAIL ITEM"" Full Scan
+                                                -> Filter
+                                                    -> Table ""WEB_RETURNS"" as ""CURR_YR SALES_DETAIL WEB_RETURNS"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                -> Filter
+                                                    -> Table ""WEB_SALES"" as ""CURR_YR SALES_DETAIL WEB_SALES"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""WEB_SALES_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Table ""DATE_DIM"" as ""CURR_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                        -> Bitmap
+                                                            -> Index ""DATE_DIM_PK"" Unique Scan
+                    -> Record Buffer (record length: 73)
+                        -> Filter
+                            -> Aggregate
+                                -> Sort (record length: 192, key length: 40)
+                                    -> Unique Sort (record length: 192, key length: 64)
+                                        -> Filter
+                                            -> Union
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                        -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                    -> Filter
+                                                        -> Table ""CATALOG_RETURNS"" as ""PREV_YR SALES_DETAIL CATALOG_RETURNS"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                    -> Filter
+                                                        -> Table ""CATALOG_SALES"" as ""PREV_YR SALES_DETAIL CATALOG_SALES"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""CATALOG_SALES_PK"" Unique Scan
+                                                    -> Filter
+                                                        -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Access By ID
+                                                            -> Bitmap
+                                                                -> Index ""DATE_DIM_PK"" Unique Scan
+                                                -> Filter
+                                                    -> Hash Join (inner)
+                                                        -> Nested Loop Join (inner)
+                                                            -> Filter
+                                                                -> Table ""ITEM"" as ""PREV_YR SALES_DETAIL ITEM"" Full Scan
+                                                            -> Filter
+                                                                -> Table ""STORE_RETURNS"" as ""PREV_YR SALES_DETAIL STORE_RETURNS"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_RETURNS_PK"" Range Scan (partial match: 1/2)
+                                                            -> Filter
+                                                                -> Table ""STORE_SALES"" as ""PREV_YR SALES_DETAIL STORE_SALES"" Access By ID
+                                                                    -> Bitmap
+                                                                        -> Index ""STORE_SALES_PK"" Unique Scan
+                                                        -> Record Buffer (record length: 33)
+                                                            -> Filter
+                                                                -> Table ""DATE_DIM"" as ""PREV_YR SALES_DETAIL DATE_DIM"" Full Scan
+                                                -> Nested Loop Join (inner)
+                                                    -> Filter
+                                                  ",
+dsb_075_05,dsb-s2,measured,ok,421.4,5,MISMATCH,sha1:952c74168e92d3399621ec689c89bf2f3521ff1e,,md5:eead6bcf7fb982e884b5d83727dc5f97,,,

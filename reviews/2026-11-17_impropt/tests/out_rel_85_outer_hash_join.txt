@@ -1,0 +1,109 @@
+
+Select Expression
+    -> Sort (record length: 44, key length: 24)
+        -> Aggregate
+            -> Sort (record length: 44, key length: 12)
+                -> Aggregate
+                    -> Nested Loop Join (outer)
+                        -> Table "CUSTOMER" as "C_ORDERS C" Access By ID
+                            -> Index "CUSTOMER_PK" Full Scan
+                        -> Filter
+                            -> Filter
+                                -> Table "ORDERS" as "C_ORDERS O" Full Scan
+
+T                    C_COUNT              CUSTDIST 
+====== ===================== ===================== 
+H1                        30                  1800 
+H1                         0                  1200 
+
+Current memory = 4394475984
+Delta memory = 29856
+Max memory = 4395543248
+Elapsed time = 50.255 sec
+Buffers = 512000
+Reads = 0
+Writes = 5
+Fetches = 186813073
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Table "CUSTOMER" as "C" Full Scan
+            -> Filter
+                -> Table "ORDERS" as "O" Full Scan
+
+T                      COUNT                 COUNT                   SUM 
+====== ===================== ===================== ===================== 
+H2                     17500                 15000             450015000 
+
+Current memory = 4394495392
+Delta memory = 19408
+Max memory = 4395543248
+Elapsed time = 5.955 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 46704848
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Filter
+                -> Table "CUSTOMER" as "C" Access By ID
+                    -> Bitmap
+                        -> Index "CUSTOMER_PK" Range Scan (lower bound: 1/1, upper bound: 1/1)
+            -> Filter
+                -> Filter
+                    -> Table "BIG_ORDERS" as "B" Full Scan
+
+T                      COUNT                 COUNT 
+====== ===================== ===================== 
+H3                     60100                 60000 
+
+Current memory = 4394516224
+Delta memory = 20832
+Max memory = 4395543248
+Elapsed time = 28.109 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 247060612
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Filter
+                -> Table "CUSTOMER" as "C" Access By ID
+                    -> Bitmap
+                        -> Index "CUSTOMER_PK" Range Scan (upper bound: 1/1)
+            -> Filter
+                -> Table "ORDERS" as "O" Access By ID
+                    -> Bitmap
+                        -> Index "ORDERS_PK" Unique Scan
+
+T                      COUNT                 COUNT                   SUM 
+====== ===================== ===================== ===================== 
+C1                        10                    10                    45 
+
+Current memory = 4394537952
+Delta memory = 21728
+Max memory = 4395543248
+Elapsed time = 0.000 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 66
+
+PLAN JOIN (C INDEX (CUSTOMER_PK), B NATURAL)
+PLAN JOIN (C INDEX (CUSTOMER_PK), B NATURAL)
+PLAN JOIN (C INDEX (CUSTOMER_PK), O NATURAL)
+PLAN JOIN (C INDEX (CUSTOMER_PK), O NATURAL)
+PLAN JOIN (C INDEX (CUSTOMER_PK), O NATURAL)
+PLAN JOIN (C INDEX (CUSTOMER_PK), O NATURAL)
+PLAN (RDB$DATABASE NATURAL)
+
+T      H1                                                             H1_REF                                                         H2                                                             H2_REF                                                         H3                                                             H3_REF                                                         
+====== ============================================================== ============================================================== ============================================================== ============================================================== ============================================================== ============================================================== 
+V      2811/2700/81375000                                             2811/2700/81375000                                             926/750/22610250                                               926/750/22610250                                               6010/6000/3600681000                                           6010/6000/3600681000                                           
+
+-- rc=0, 99 s
