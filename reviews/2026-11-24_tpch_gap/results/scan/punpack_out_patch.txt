@@ -1,0 +1,228 @@
+SQL> SQL> clean | select sum(id) from t | [(364513500,)]
+clean | select count(*), count(a), sum(a) from t | [(27000, 24546, 98184)]
+clean | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('36452443540500'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('364383495.00'))]
+clean | select count(d), min(d), max(d) from t | [(27000, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+clean | select sum(char_length(e)), min(e), max(e) from t | [(249240, 'e0        ', 'e96       ')]
+clean | select sum(char_length(f)), sum(hash(f)) from t | [(345313, Decimal('6348420141434186461448'))]
+clean | select sum(g), min(h), max(h) from t | [(52072200.000001244, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+clean | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(27000, 2505128, Decimal('62440801266504919296723'))]
+clean | select sum(char_length(k)), count(k) from t | [(Decimal('11249'), 1173)]
+clean | select sum(char_length(m)), sum(hash(m)) from t | [(5498583, Decimal('1339237304878305070065'))]
+clean | select sum(n), count(n) from t | [(351931966, 26069)]
+clean | select sum(o), count(o), count(p), min(p), max(p) from t | [(35000, 7000, 7000, 'dflt', 'dflt')]
+clean | select sum(a), count(c) from t where id between 100 and 9000 | [(32364, 8901)]
+clean | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(21235, 5389)]
+clean | select count(*), sum(b) from t where f starting with 'строка 12' | [(1046, Decimal('1188136143015'))]
+clean | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 231893fcc63396c05d80c92393883723b9d145ef
+clean | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 3e31e4c74b762a80081343ce484642c663294cac
+clean | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 80abd0e226ca1a7aacf507d65cd0cc2602349a1b
+clean | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2999, Decimal('19640'))]
+clean | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2727, 35556009)]
+clean | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 683bfd9ab40b662e2d710fbefd3f04dbdb9807dc
+clean | select a, count(*), min(e), max(f) from t group by a order by a | 10 rows sha1 cdd752db1afccc0b2cc14f082a94d530ed51350b
+clean | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 10 rows sha1 d47bda751044895c57425ea3a1d99f18cb80e70c
+clean | select count(*) from t where f like '%7%' and a > 3 | [(4155,)]
+clean | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+clean | select count(distinct e), count(distinct a) from t | [(97, 9)]
+clean | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 5, True), (28, 1, True), (31, 4, True)]
+clean | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('72236617946570033992936'), 98184, Decimal('36452443540500'), Decimal('364383495.00'), 351931966, 35000)]
+old snapshot rows [(27000,)]
+old | select sum(id) from t | [(364513500,)]
+old | select count(*), count(a), sum(a) from t | [(27000, 24546, 98184)]
+old | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('36452443540500'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('364383495.00'))]
+old | select count(d), min(d), max(d) from t | [(27000, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+old | select sum(char_length(e)), min(e), max(e) from t | [(249240, 'e0        ', 'e96       ')]
+old | select sum(char_length(f)), sum(hash(f)) from t | [(345313, Decimal('6348420141434186461448'))]
+old | select sum(g), min(h), max(h) from t | [(52072200.000001244, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+old | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(27000, 2505128, Decimal('62440801266504919296723'))]
+old | select sum(char_length(k)), count(k) from t | [(Decimal('11249'), 1173)]
+old | select sum(char_length(m)), sum(hash(m)) from t | [(5498583, Decimal('1339237304878305070065'))]
+old | select sum(n), count(n) from t | [(351931966, 26069)]
+old | select sum(o), count(o), count(p), min(p), max(p) from t | [(35000, 7000, 7000, 'dflt', 'dflt')]
+old | select sum(a), count(c) from t where id between 100 and 9000 | [(32364, 8901)]
+old | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(21235, 5389)]
+old | select count(*), sum(b) from t where f starting with 'строка 12' | [(1046, Decimal('1188136143015'))]
+old | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 231893fcc63396c05d80c92393883723b9d145ef
+old | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 3e31e4c74b762a80081343ce484642c663294cac
+old | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 80abd0e226ca1a7aacf507d65cd0cc2602349a1b
+old | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2999, Decimal('19640'))]
+old | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2727, 35556009)]
+old | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 683bfd9ab40b662e2d710fbefd3f04dbdb9807dc
+old | select a, count(*), min(e), max(f) from t group by a order by a | 10 rows sha1 cdd752db1afccc0b2cc14f082a94d530ed51350b
+old | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 10 rows sha1 d47bda751044895c57425ea3a1d99f18cb80e70c
+old | select count(*) from t where f like '%7%' and a > 3 | [(4155,)]
+old | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+old | select count(distinct e), count(distinct a) from t | [(97, 9)]
+old | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 5, True), (28, 1, True), (31, 4, True)]
+old | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('72236617946570033992936'), 98184, Decimal('36452443540500'), Decimal('364383495.00'), 351931966, 35000)]
+new | select sum(id) from t | [(352768065,)]
+new | select count(*), count(a), sum(a) from t | [(26130, 23755, 96717)]
+new | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('35277864804195'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('352645982.05'))]
+new | select count(d), min(d), max(d) from t | [(26130, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+new | select sum(char_length(e)), min(e), max(e) from t | [(241200, 'e0        ', 'e96       ')]
+new | select sum(char_length(f)), sum(hash(f)) from t | [(337699, Decimal('6024387274301069206042'))]
+new | select sum(g), min(h), max(h) from t | [(50394318.00000104, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+new | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(26130, 2274328, Decimal('56178185651512548129030'))]
+new | select sum(char_length(k)), count(k) from t | [(Decimal('10894'), 1136)]
+new | select sum(char_length(m)), sum(hash(m)) from t | [(2707768, Decimal('665427283724412555893'))]
+new | select sum(n), count(n) from t | [(340606368, 25229)]
+new | select sum(o), count(o), count(p), min(p), max(p) from t | [(33875, 6775, 6775, 'dflt', 'dflt')]
+new | select sum(a), count(c) from t where id between 100 and 9000 | [(31881, 8614)]
+new | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(20919, 5216)]
+new | select count(*), sum(b) from t where f starting with 'строка 12' | [(1012, Decimal('1150200304974'))]
+new | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 8b0fd57142b01e5fdd981287c90bc07bfc910d59
+new | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 d57425e526a0c227518a2e5034d44b2b41508053
+new | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 c0a6b0d1f7854277dec7eb930bed43d8d4d7ce07
+new | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2807, Decimal('18696'))]
+new | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2551, 33277596)]
+new | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 b5fc73aedfab253d02467552b8530ee1c363663b
+new | select a, count(*), min(e), max(f) from t group by a order by a | 11 rows sha1 44ba6270710f50eaaec33fed7c495bc752805c8f
+new | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 8 rows sha1 033621efba7c42da97d6a5e04a38ef593e816c83
+new | select count(*) from t where f like '%7%' and a > 3 | [(4067,)]
+new | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+new | select count(distinct e), count(distinct a) from t | [(97, 10)]
+new | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 6, True), (28, 2, True)]
+new | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('70094420908750420707757'), 96717, Decimal('35277864804195'), Decimal('352645982.05'), 340606368, 33875)]
+own | select sum(id) from t | [(352768065,)]
+own | select count(*), count(a), sum(a) from t | [(26130, 23755, 96717)]
+own | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('35277864804195'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('352645982.05'))]
+own | select count(d), min(d), max(d) from t | [(26130, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+own | select sum(char_length(e)), min(e), max(e) from t | [(245220, 'e0        ', 'own2      ')]
+own | select sum(char_length(f)), sum(hash(f)) from t | [(337699, Decimal('6024387274301069206042'))]
+own | select sum(g), min(h), max(h) from t | [(50396931.00000104, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+own | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(26130, 2274328, Decimal('56178185651512548129030'))]
+own | select sum(char_length(k)), count(k) from t | [(Decimal('10894'), 1136)]
+own | select sum(char_length(m)), sum(hash(m)) from t | [(2707768, Decimal('665427283724412555893'))]
+own | select sum(n), count(n) from t | [(340606368, 25229)]
+own | select sum(o), count(o), count(p), min(p), max(p) from t | [(33875, 6775, 6775, 'dflt', 'dflt')]
+own | select sum(a), count(c) from t where id between 100 and 9000 | [(31881, 8614)]
+own | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(20919, 5303)]
+own | select count(*), sum(b) from t where f starting with 'строка 12' | [(1012, Decimal('1150200304974'))]
+own | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 8b0fd57142b01e5fdd981287c90bc07bfc910d59
+own | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 d57425e526a0c227518a2e5034d44b2b41508053
+own | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 c0a6b0d1f7854277dec7eb930bed43d8d4d7ce07
+own | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2807, Decimal('18696'))]
+own | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2551, 33277596)]
+own | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 b5fc73aedfab253d02467552b8530ee1c363663b
+own | select a, count(*), min(e), max(f) from t group by a order by a | 11 rows sha1 44ba6270710f50eaaec33fed7c495bc752805c8f
+own | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 8 rows sha1 c751e426331d772125236d3a630c233117b50700
+own | select count(*) from t where f like '%7%' and a > 3 | [(4067,)]
+own | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+own | select count(distinct e), count(distinct a) from t | [(99, 10)]
+own | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 6, True), (28, 2, True)]
+own | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('69718771125569170576301'), 96717, Decimal('35277864804195'), Decimal('352645982.05'), 340606368, 33875)]
+old2 | select sum(id) from t | [(364513500,)]
+old2 | select count(*), count(a), sum(a) from t | [(27000, 24546, 98184)]
+old2 | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('36452443540500'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('364383495.00'))]
+old2 | select count(d), min(d), max(d) from t | [(27000, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+old2 | select sum(char_length(e)), min(e), max(e) from t | [(249240, 'e0        ', 'e96       ')]
+old2 | select sum(char_length(f)), sum(hash(f)) from t | [(345313, Decimal('6348420141434186461448'))]
+old2 | select sum(g), min(h), max(h) from t | [(52072200.000001244, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+old2 | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(27000, 2505128, Decimal('62440801266504919296723'))]
+old2 | select sum(char_length(k)), count(k) from t | [(Decimal('11249'), 1173)]
+old2 | select sum(char_length(m)), sum(hash(m)) from t | [(5498583, Decimal('1339237304878305070065'))]
+old2 | select sum(n), count(n) from t | [(351931966, 26069)]
+old2 | select sum(o), count(o), count(p), min(p), max(p) from t | [(35000, 7000, 7000, 'dflt', 'dflt')]
+old2 | select sum(a), count(c) from t where id between 100 and 9000 | [(32364, 8901)]
+old2 | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(21235, 5389)]
+old2 | select count(*), sum(b) from t where f starting with 'строка 12' | [(1046, Decimal('1188136143015'))]
+old2 | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 231893fcc63396c05d80c92393883723b9d145ef
+old2 | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 3e31e4c74b762a80081343ce484642c663294cac
+old2 | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 80abd0e226ca1a7aacf507d65cd0cc2602349a1b
+old2 | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2999, Decimal('19640'))]
+old2 | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2727, 35556009)]
+old2 | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 683bfd9ab40b662e2d710fbefd3f04dbdb9807dc
+old2 | select a, count(*), min(e), max(f) from t group by a order by a | 10 rows sha1 cdd752db1afccc0b2cc14f082a94d530ed51350b
+old2 | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 10 rows sha1 d47bda751044895c57425ea3a1d99f18cb80e70c
+old2 | select count(*) from t where f like '%7%' and a > 3 | [(4155,)]
+old2 | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+old2 | select count(distinct e), count(distinct a) from t | [(97, 9)]
+old2 | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 5, True), (28, 1, True), (31, 4, True)]
+old2 | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('72236617946570033992936'), 98184, Decimal('36452443540500'), Decimal('364383495.00'), 351931966, 35000)]
+gc1 | select sum(id) from t | [(352768065,)]
+gc1 | select count(*), count(a), sum(a) from t | [(26130, 23755, 96717)]
+gc1 | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('35277864804195'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('352645982.05'))]
+gc1 | select count(d), min(d), max(d) from t | [(26130, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+gc1 | select sum(char_length(e)), min(e), max(e) from t | [(241200, 'e0        ', 'e96       ')]
+gc1 | select sum(char_length(f)), sum(hash(f)) from t | [(337699, Decimal('6024387274301069206042'))]
+gc1 | select sum(g), min(h), max(h) from t | [(50394318.00000104, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+gc1 | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(26130, 2274328, Decimal('56178185651512548129030'))]
+gc1 | select sum(char_length(k)), count(k) from t | [(Decimal('10894'), 1136)]
+gc1 | select sum(char_length(m)), sum(hash(m)) from t | [(2707768, Decimal('665427283724412555893'))]
+gc1 | select sum(n), count(n) from t | [(340606368, 25229)]
+gc1 | select sum(o), count(o), count(p), min(p), max(p) from t | [(33875, 6775, 6775, 'dflt', 'dflt')]
+gc1 | select sum(a), count(c) from t where id between 100 and 9000 | [(31881, 8614)]
+gc1 | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(20919, 5216)]
+gc1 | select count(*), sum(b) from t where f starting with 'строка 12' | [(1012, Decimal('1150200304974'))]
+gc1 | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 8b0fd57142b01e5fdd981287c90bc07bfc910d59
+gc1 | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 d57425e526a0c227518a2e5034d44b2b41508053
+gc1 | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 c0a6b0d1f7854277dec7eb930bed43d8d4d7ce07
+gc1 | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2807, Decimal('18696'))]
+gc1 | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2551, 33277596)]
+gc1 | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 b5fc73aedfab253d02467552b8530ee1c363663b
+gc1 | select a, count(*), min(e), max(f) from t group by a order by a | 11 rows sha1 44ba6270710f50eaaec33fed7c495bc752805c8f
+gc1 | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 8 rows sha1 033621efba7c42da97d6a5e04a38ef593e816c83
+gc1 | select count(*) from t where f like '%7%' and a > 3 | [(4067,)]
+gc1 | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+gc1 | select count(distinct e), count(distinct a) from t | [(97, 10)]
+gc1 | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 6, True), (28, 2, True)]
+gc1 | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('70094420908750420707757'), 96717, Decimal('35277864804195'), Decimal('352645982.05'), 340606368, 33875)]
+gc2 | select sum(id) from t | [(352768065,)]
+gc2 | select count(*), count(a), sum(a) from t | [(26130, 23755, 96717)]
+gc2 | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('35277864804195'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('352645982.05'))]
+gc2 | select count(d), min(d), max(d) from t | [(26130, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+gc2 | select sum(char_length(e)), min(e), max(e) from t | [(241200, 'e0        ', 'e96       ')]
+gc2 | select sum(char_length(f)), sum(hash(f)) from t | [(337699, Decimal('6024387274301069206042'))]
+gc2 | select sum(g), min(h), max(h) from t | [(50394318.00000104, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+gc2 | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(26130, 2274328, Decimal('56178185651512548129030'))]
+gc2 | select sum(char_length(k)), count(k) from t | [(Decimal('10894'), 1136)]
+gc2 | select sum(char_length(m)), sum(hash(m)) from t | [(2707768, Decimal('665427283724412555893'))]
+gc2 | select sum(n), count(n) from t | [(340606368, 25229)]
+gc2 | select sum(o), count(o), count(p), min(p), max(p) from t | [(33875, 6775, 6775, 'dflt', 'dflt')]
+gc2 | select sum(a), count(c) from t where id between 100 and 9000 | [(31881, 8614)]
+gc2 | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(20919, 5216)]
+gc2 | select count(*), sum(b) from t where f starting with 'строка 12' | [(1012, Decimal('1150200304974'))]
+gc2 | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 8b0fd57142b01e5fdd981287c90bc07bfc910d59
+gc2 | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 d57425e526a0c227518a2e5034d44b2b41508053
+gc2 | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 c0a6b0d1f7854277dec7eb930bed43d8d4d7ce07
+gc2 | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2807, Decimal('18696'))]
+gc2 | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2551, 33277596)]
+gc2 | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2500 rows sha1 b5fc73aedfab253d02467552b8530ee1c363663b
+gc2 | select a, count(*), min(e), max(f) from t group by a order by a | 11 rows sha1 44ba6270710f50eaaec33fed7c495bc752805c8f
+gc2 | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 8 rows sha1 033621efba7c42da97d6a5e04a38ef593e816c83
+gc2 | select count(*) from t where f like '%7%' and a > 3 | [(4067,)]
+gc2 | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+gc2 | select count(distinct e), count(distinct a) from t | [(97, 10)]
+gc2 | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 6, True), (28, 2, True)]
+gc2 | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('70094420908750420707757'), 96717, Decimal('35277864804195'), Decimal('352645982.05'), 340606368, 33875)]
+dml | select sum(id) from t | [(317132961,)]
+dml | select count(*), count(a), sum(a) from t | [(23491, 21116, 86161)]
+dml | select sum(b), min(c), max(c), sum(c) from t | [(Decimal('31714247498883'), Decimal('-4998.63'), Decimal('31990.00'), Decimal('317020512.57'))]
+dml | select count(d), min(d), max(d) from t | [(23491, datetime.date(2000, 1, 1), datetime.date(2006, 11, 4))]
+dml | select sum(char_length(e)), min(e), max(e) from t | [(216830, 'e0        ', 'e96       ')]
+dml | select sum(char_length(f)), sum(hash(f)) from t | [(303588, Decimal('5415679316127914337384'))]
+dml | select sum(g), min(h), max(h) from t | [(45303702.00000045, datetime.datetime(2001, 2, 3, 4, 6, 6), datetime.datetime(2001, 2, 21, 22, 5, 6))]
+dml | select count(i), sum(char_length(j)), sum(hash(j)) from t | [(23491, 2044721, Decimal('50634047522184621468955'))]
+dml | select sum(char_length(k)), count(k) from t | [(Decimal('9803'), 1022)]
+dml | select sum(char_length(m)), sum(hash(m)) from t | [(2434088, Decimal('573836226058059913181'))]
+dml | select sum(n), count(n) from t | [(306226113, 22683)]
+dml | select sum(o), count(o), count(p), min(p), max(p) from t | [(30450, 6090, 6090, 'dflt', 'dflt')]
+dml | select sum(a), count(c) from t where id between 100 and 9000 | [(28405, 7745)]
+dml | select sum(a), count(e) from t where c > 1000 and c < 9000 | [(18643, 4688)]
+dml | select count(*), sum(b) from t where f starting with 'строка 12' | [(913, Decimal('1037760731888'))]
+dml | select first 50 id, a, c from t order by c desc, id | 50 rows sha1 24af6eb936cd07604be606a56f957f42c61a3fcf
+dml | select first 20 id, f, j from t order by f nulls last, id | 20 rows sha1 45231d519e9df02ae1bd41f07ebaca03de7a770d
+dml | select first 20 id, a, m from t where id >= 19990 order by a, id | 20 rows sha1 c0a6b0d1f7854277dec7eb930bed43d8d4d7ce07
+dml | select count(*), sum(t1.a + t2.a) from t t1 join t t2 on t2.b = t1.b + | [(2258, Decimal('14765'))]
+dml | select count(*), sum(t2.n) from t t1 join t t2 on t2.id = t1.id + 1 wh | [(2387, 31148135)]
+dml | select d, count(*), sum(c) from t where id < 6000 group by d order by  | 2488 rows sha1 bf251cff4f0f9e59c1532196c1af189dc846db4d
+dml | select a, count(*), min(e), max(f) from t group by a order by a | 10 rows sha1 3a019f113a7add10d83bf1eb2f11a238f50e73e7
+dml | select * from t where id in (1, 50, 100, 7000, 20500, 26000, 21, 14, 3 | 8 rows sha1 344d2257d6c2aee85fed6e801a0a98687287bebf
+dml | select count(*) from t where f like '%7%' and a > 3 | [(3255,)]
+dml | select count(*) from t t1 where exists (select 1 from t t2 where t2.id | [(0,)]
+dml | select count(distinct e), count(distinct a) from t | [(97, 9)]
+dml | select id, a, rdb$record_version is not null from t where id in (7, 14 | [(7, 7, True), (14, 6, True), (28, 2, True)]
+dml | select sum(hash(coalesce(e, '') || coalesce(f, '') || coalesce(j, '')  | [(Decimal('62872808644274405926327'), 86161, Decimal('31714247498883'), Decimal('317020512.57'), 306226113, 30450)]
+index against natural [(23491,)] [(23491,)]
+index against natural [(22109,)] [(22109,)]
+gfix validate rc 0 | 
