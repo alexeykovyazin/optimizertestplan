@@ -16,10 +16,10 @@ T                    C_COUNT              CUSTDIST
 H1                        30                  1800 
 H1                         0                  1200 
 
-Current memory = 4394475984
-Delta memory = 29856
-Max memory = 4395543248
-Elapsed time = 50.255 sec
+Current memory = 4394476064
+Delta memory = 31184
+Max memory = 4395543328
+Elapsed time = 71.773 sec
 Buffers = 512000
 Reads = 0
 Writes = 5
@@ -36,10 +36,10 @@ T                      COUNT                 COUNT                   SUM
 ====== ===================== ===================== ===================== 
 H2                     17500                 15000             450015000 
 
-Current memory = 4394495392
+Current memory = 4394495472
 Delta memory = 19408
-Max memory = 4395543248
-Elapsed time = 5.955 sec
+Max memory = 4395543328
+Elapsed time = 8.222 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
@@ -60,14 +60,47 @@ T                      COUNT                 COUNT
 ====== ===================== ===================== 
 H3                     60100                 60000 
 
-Current memory = 4394516224
+Current memory = 4394516304
 Delta memory = 20832
-Max memory = 4395543248
-Elapsed time = 28.109 sec
+Max memory = 4395543328
+Elapsed time = 40.336 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
 Fetches = 247060612
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Nested Loop Join (outer)
+                -> Nested Loop Join (outer)
+                    -> Nested Loop Join (outer)
+                        -> Filter
+                            -> Table "CUSTOMER" as "C" Access By ID
+                                -> Bitmap
+                                    -> Index "CUSTOMER_PK" Range Scan (upper bound: 1/1)
+                        -> Filter
+                            -> Filter
+                                -> Table "BIG_ORDERS" as "B1" Full Scan
+                    -> Filter
+                        -> Table "BIG_ORDERS" as "B2" Full Scan
+                -> Filter
+                    -> Table "BIG_ORDERS" as "B3" Full Scan
+            -> Filter
+                -> Table "BIG_ORDERS" as "B4" Full Scan
+
+T                      COUNT                 COUNT                 COUNT                 COUNT                 COUNT 
+====== ===================== ===================== ===================== ===================== ===================== 
+H4                        20                    20                    20                    20                    20 
+
+Current memory = 4394548032
+Delta memory = 31728
+Max memory = 4395543328
+Elapsed time = 19.846 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 98824201
 
 Select Expression
     -> Aggregate
@@ -85,10 +118,10 @@ T                      COUNT                 COUNT                   SUM
 ====== ===================== ===================== ===================== 
 C1                        10                    10                    45 
 
-Current memory = 4394537952
+Current memory = 4394569760
 Delta memory = 21728
-Max memory = 4395543248
-Elapsed time = 0.000 sec
+Max memory = 4395543328
+Elapsed time = 0.001 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
@@ -106,4 +139,4 @@ T      H1                                                             H1_REF    
 ====== ============================================================== ============================================================== ============================================================== ============================================================== ============================================================== ============================================================== 
 V      2811/2700/81375000                                             2811/2700/81375000                                             926/750/22610250                                               926/750/22610250                                               6010/6000/3600681000                                           6010/6000/3600681000                                           
 
--- rc=0, 99 s
+-- rc=0, 160 s

@@ -17,9 +17,9 @@ H1                        30                  1800
 H1                         0                  1200 
 
 Current memory = 4394476832
-Delta memory = 33152
+Delta memory = 32912
 Max memory = 4406675872
-Elapsed time = 0.039 sec
+Elapsed time = 0.037 sec
 Buffers = 512000
 Reads = 0
 Writes = 5
@@ -63,11 +63,44 @@ H3                     60100                 60000
 Current memory = 4394518768
 Delta memory = 21680
 Max memory = 4406675872
-Elapsed time = 0.146 sec
+Elapsed time = 0.141 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
 Fetches = 1235514
+
+Select Expression
+    -> Aggregate
+        -> Nested Loop Join (outer)
+            -> Hash Join (outer)
+                -> Hash Join (outer)
+                    -> Hash Join (outer)
+                        -> Filter
+                            -> Table "CUSTOMER" as "C" Access By ID
+                                -> Bitmap
+                                    -> Index "CUSTOMER_PK" Range Scan (upper bound: 1/1)
+                        -> Record Buffer (record length: 25)
+                            -> Filter
+                                -> Table "BIG_ORDERS" as "B1" Full Scan
+                    -> Record Buffer (record length: 25)
+                        -> Table "BIG_ORDERS" as "B2" Full Scan
+                -> Record Buffer (record length: 25)
+                    -> Table "BIG_ORDERS" as "B3" Full Scan
+            -> Filter
+                -> Table "BIG_ORDERS" as "B4" Full Scan
+
+T                      COUNT                 COUNT                 COUNT                 COUNT                 COUNT 
+====== ===================== ===================== ===================== ===================== ===================== 
+H4                        20                    20                    20                    20                    20 
+
+Current memory = 4394553152
+Delta memory = 34384
+Max memory = 4489525552
+Elapsed time = 5.942 sec
+Buffers = 512000
+Reads = 0
+Writes = 0
+Fetches = 28411987
 
 Select Expression
     -> Aggregate
@@ -85,9 +118,9 @@ T                      COUNT                 COUNT                   SUM
 ====== ===================== ===================== ===================== 
 C1                        10                    10                    45 
 
-Current memory = 4394540496
+Current memory = 4394574880
 Delta memory = 21728
-Max memory = 4406675872
+Max memory = 4489525552
 Elapsed time = 0.000 sec
 Buffers = 512000
 Reads = 0
@@ -106,4 +139,4 @@ T      H1                                                             H1_REF    
 ====== ============================================================== ============================================================== ============================================================== ============================================================== ============================================================== ============================================================== 
 V      2811/2700/81375000                                             2811/2700/81375000                                             926/750/22610250                                               926/750/22610250                                               6010/6000/3600681000                                           6010/6000/3600681000                                           
 
--- rc=0, 8 s
+-- rc=0, 18 s

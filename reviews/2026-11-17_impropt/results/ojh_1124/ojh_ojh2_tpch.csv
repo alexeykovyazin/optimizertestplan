@@ -1,0 +1,13 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+tpch_13,tpch,prepare,ok,,,n/a,,528.1,md5:4bc368bbeb65efe6abb4193b354c017b,"PLAN SORT (SORT (HASH (C_ORDERS CUSTOMER ORDER CUSTOMER_PK, C_ORDERS ORDERS NATURAL)))","Select Expression
+    -> Sort (record length: 44, key length: 24)
+        -> Aggregate
+            -> Sort (record length: 44, key length: 12)
+                -> Aggregate
+                    -> Hash Join (outer)
+                        -> Table ""CUSTOMER"" as ""C_ORDERS CUSTOMER"" Access By ID
+                            -> Index ""CUSTOMER_PK"" Full Scan
+                        -> Record Buffer (record length: 353)
+                            -> Filter
+                                -> Table ""ORDERS"" as ""C_ORDERS ORDERS"" Full Scan",
+tpch_13,tpch,measured,ok,2703.1,42,MISMATCH,sha1:8d15777c86d69434c7c443f7064552ac87702d2a,,md5:4bc368bbeb65efe6abb4193b354c017b,,,

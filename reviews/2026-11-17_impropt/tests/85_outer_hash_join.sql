@@ -8,10 +8,13 @@
 -- Expected plans (the build with the change):
 --   H1, H2: "Hash Join (outer)" over "ORDERS" Full Scan (one scan);
 --   H3: "Hash Join (outer)" over "BIG_ORDERS" Full Scan;
+--   H4 (a chain of four joins of 1 200 000 hashed rows each): three "Hash Join (outer)" and one
+--       "Nested Loop Join (outer)" - the outer joins of a statement share one budget of 4 001 000 hashed rows;
 --   C1 (control, few outer rows and an index on the inner key): "Nested Loop Join (outer)" with "ORDERS_PK" stays.
 -- The build before the change: H1 and H2 scan ORDERS 3000 times (180 000 000 record reads each), H3 scans
--- BIG_ORDERS 200 times (240 000 000 record reads).
--- Expected results: H1, H2, H3, C1 return the same rows on both builds (H3: 60100, 60000); in V the columns H1, H2
+-- BIG_ORDERS 200 times (240 000 000 record reads), H4 scans it 80 times.
+-- Expected results: H1, H2, H3, H4, C1 return the same rows on both builds (H3: 60100, 60000; H4: five times 20);
+-- in V the columns H1, H2
 -- and H3 are equal to H1_REF, H2_REF and H3_REF (the same joins written with a BETWEEN, which cannot be hashed).
 set bail off;
 create database 'tst2def' user SYSDBA default character set utf8;
@@ -60,6 +63,13 @@ select 'H2' as t, count(*), count(o.o_orderkey), sum(o.o_orderkey) from customer
 select 'H3' as t, count(*), count(b.b_id) from customer c
   left join big_orders b on c.c_custkey = b.b_custkey
   where c.c_custkey between 1900 and 2099;
+-- H4: a chain of outer joins, every hashed table is above the capacity of the inner joins
+select 'H4' as t, count(*), count(b1.b_id), count(b2.b_id), count(b3.b_id), count(b4.b_id) from customer c
+  left join big_orders b1 on b1.b_id = c.c_custkey
+  left join big_orders b2 on b2.b_id = c.c_custkey + 1
+  left join big_orders b3 on b3.b_id = c.c_custkey + 2
+  left join big_orders b4 on b4.b_id = c.c_custkey + 3
+  where c.c_custkey < 20;
 -- C1 (control): few outer rows, the inner table is read by its primary key
 select 'C1' as t, count(*), count(o.o_orderkey), sum(o.o_orderkey) from customer c
   left join orders o on o.o_orderkey = c.c_custkey
