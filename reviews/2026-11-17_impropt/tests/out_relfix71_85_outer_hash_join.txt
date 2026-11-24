@@ -16,10 +16,10 @@ T                    C_COUNT              CUSTDIST
 H1                        30                  1800 
 H1                         0                  1200 
 
-Current memory = 4394476832
-Delta memory = 32912
-Max memory = 4406675872
-Elapsed time = 0.037 sec
+Current memory = 4394476816
+Delta memory = 32128
+Max memory = 4406620352
+Elapsed time = 0.035 sec
 Buffers = 512000
 Reads = 0
 Writes = 5
@@ -36,10 +36,10 @@ T                      COUNT                 COUNT                   SUM
 ====== ===================== ===================== ===================== 
 H2                     17500                 15000             450015000 
 
-Current memory = 4394497088
-Delta memory = 20256
-Max memory = 4406675872
-Elapsed time = 0.015 sec
+Current memory = 4394497056
+Delta memory = 20240
+Max memory = 4406620352
+Elapsed time = 0.013 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
@@ -60,10 +60,10 @@ T                      COUNT                 COUNT
 ====== ===================== ===================== 
 H3                     60100                 60000 
 
-Current memory = 4394518768
-Delta memory = 21680
-Max memory = 4406675872
-Elapsed time = 0.141 sec
+Current memory = 4394518720
+Delta memory = 21664
+Max memory = 4406620352
+Elapsed time = 0.147 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
@@ -93,10 +93,10 @@ T                      COUNT                 COUNT                 COUNT        
 ====== ===================== ===================== ===================== ===================== ===================== 
 H4                        20                    20                    20                    20                    20 
 
-Current memory = 4394553152
-Delta memory = 34384
-Max memory = 4489525552
-Elapsed time = 5.942 sec
+Current memory = 4394553056
+Delta memory = 34336
+Max memory = 4496227536
+Elapsed time = 5.842 sec
 Buffers = 512000
 Reads = 0
 Writes = 0
@@ -118,9 +118,9 @@ T                      COUNT                 COUNT                   SUM
 ====== ===================== ===================== ===================== 
 C1                        10                    10                    45 
 
-Current memory = 4394574880
+Current memory = 4394574784
 Delta memory = 21728
-Max memory = 4489525552
+Max memory = 4496227536
 Elapsed time = 0.000 sec
 Buffers = 512000
 Reads = 0
