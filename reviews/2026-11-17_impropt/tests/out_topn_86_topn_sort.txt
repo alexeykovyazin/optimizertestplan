@@ -1,0 +1,117 @@
+
+Select Expression
+    -> First N Records (rows=10.00)
+        -> Top N Sort (top: 10, record length: 36, key length: 16) (rows=10.00)
+            -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=10.00)
+        -> Skip N Records (rows=15.00)
+            -> Refetch
+                -> Top N Sort (top: 15, record length: 212, key length: 192) (rows=15.00)
+                    -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=1000.00)
+        -> Skip N Records (rows=20.00)
+            -> Top N Sort (top: 20, record length: 36, key length: 16) (rows=20.00)
+                -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=10.00)
+        -> Skip N Records (rows=15.00)
+            -> Top N Sort (top: 15, record length: 6038, key length: 6016) (rows=15.00)
+                -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=1000.00)
+        -> Sort (record length: 36, key length: 16) (rows=18033.25)
+            -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=10.00)
+        -> Filter (preliminary) (rows=18033.25)
+            -> Sort (record length: 36, key length: 16) (rows=18033.25)
+                -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> Skip N Records (rows=18033.25)
+        -> Sort (record length: 36, key length: 16) (rows=18033.25)
+            -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=10.00)
+        -> Refetch
+            -> Top N Sort (top: 10, record length: 212, key length: 192) (rows=10.00)
+                -> Unique Sort (record length: 340, key length: 192) (rows=1803.32)
+                    -> Table "T86" as "X T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=18033.25)
+        -> Sort (record length: 36, key length: 16) (rows=18033.25)
+            -> Table "T86" Full Scan (rows=18033.25)
+
+Select Expression
+    -> First N Records (rows=25.00)
+        -> Top N Sort (top: 25, record length: 36, key length: 16) (rows=25.00)
+            -> Table "T86" Full Scan (rows=18033.25)
+
+       CASES   MISMATCHES FIRST_MISMATCH                                                                                                                                                                                                                                                                                               
+============ ============ ============================================================================================================================================================================================================================================================================================================ 
+         252            0 <null>                                                                                                                                                                                                                                                                                                       
+
+
+PLAN SORT (X B INDEX (T86_PK))
+PLAN (A INDEX (T86_PK))
+
+T                       HEAP 
+====== ===================== 
+R1                 112576654 
+
+Current memory = 23125952
+Delta memory = -1664
+Max memory = 86060816
+Elapsed time = 5.597 sec
+Buffers = 2048
+Reads = 1238
+Writes = 0
+Fetches = 151609
+
+PLAN SORT (X B INDEX (T86_PK))
+PLAN (A INDEX (T86_PK))
+
+T                  FULL_SORT 
+====== ===================== 
+R2                 112576654 
+
+Current memory = 23124672
+Delta memory = -1280
+Max memory = 86060816
+Elapsed time = 0.105 sec
+Buffers = 2048
+Reads = 0
+Writes = 0
+Fetches = 151609
+
+PLAN SORT (T86 NATURAL)
+
+PLAN SORT (T86 NATURAL)
+
+PLAN (T86 NATURAL)
+
+T                      COUNT                   SUM                   SUM 
+====== ===================== ===================== ===================== 
+D heap                 19950             199706467                 37300 
+
+
+PLAN SORT (T86 NATURAL)
+
+PLAN SORT (T86 NATURAL)
+
+PLAN (T86 NATURAL)
+
+T                      COUNT                   SUM                   SUM 
+====== ===================== ===================== ===================== 
+D full                 19950             199706467                 37300 
+
+-- rc=0, 10 s
