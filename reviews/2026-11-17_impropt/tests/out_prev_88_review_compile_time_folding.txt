@@ -1,0 +1,109 @@
+
+Q          CONCATENATION 
+====== ================= 
+S1                   0:4 
+==============================================================================
+CONCATENATION:  
+[ab]
+==============================================================================
+
+
+Q          CONCATENATION 
+====== ================= 
+S2                   0:a 
+==============================================================================
+CONCATENATION:  
+[ab]
+==============================================================================
+
+
+Q      V      
+====== ====== 
+S3            
+
+
+Q                      COUNT 
+====== ===================== 
+S4                         1 
+
+
+Q          CONCATENATION 
+====== ================= 
+S5                  0:10 
+==============================================================================
+CONCATENATION:  
+[|]
+==============================================================================
+
+
+Q                                               A 
+====== ========================================== 
+FS        4.115226300411522630041152263004117E+38 
+
+
+Q                                               A 
+====== ========================================== 
+F4        4.115226300411522630041152263004117E+38 
+
+
+Q                                               A 
+====== ========================================== 
+FS        4.115226300411522630041152263004116E+38 
+
+
+Q                                               A 
+====== ========================================== 
+F5        4.115226300411522630041152263004116E+38 
+
+
+Q                                               A 
+====== ========================================== 
+Statement failed, SQLSTATE = 22000
+Decimal float inexact result.  The result of an operation cannot be represented as a decimal fraction.
+After line 64 in file 88_review_compile_time_folding.sql
+
+Q                                               A 
+====== ========================================== 
+Statement failed, SQLSTATE = 22000
+Decimal float inexact result.  The result of an operation cannot be represented as a decimal fraction.
+-At procedure 'PF' line: 3, col: 3
+After line 65 in file 88_review_compile_time_folding.sql
+WARNING: Client SQL dialect has been set to 1 when connecting to Database SQL dialect 3 database. 
+
+              0 
+
+
+               127008 
+
+
+N1     differs 
+
+
+Select Expression
+    -> First N Records (rows=1000.00)
+        -> Skip N Records (rows=10.00)
+            -> Refetch
+                -> Top N Sort (top: 10, record length: 60, key length: 36) (rows=10.00)
+                    -> Table "T" Full Scan (rows=3630.22)
+
+Select Expression
+    -> First N Records (rows=1000.00)
+        -> Refetch
+            -> Top N Sort (top: 5, record length: 60, key length: 36) (rows=5.00)
+                -> Table "T" Full Scan (rows=3630.22)
+
+Select Expression
+    -> Filter (rows=500.00)
+        -> First N Records (rows=1000.00)
+            -> Skip N Records (rows=6.00)
+                -> Refetch
+                    -> Top N Sort (top: 6, record length: 60, key length: 36) (rows=6.00)
+                        -> Table "T" Full Scan (rows=3630.22)
+
+PLAN (RDB$DATABASE NATURAL)
+
+Q                          A           B C                          D 
+====== ===================== =========== ====== ===================== 
+C1                         3 2020-01-02  AB                         5 
+
+-- rc=1, 2 s
