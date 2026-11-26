@@ -1,0 +1,57 @@
+qid,suite,kind,status,exec_ms,rows,check,checksum,prepare_ms,plan_hash,plan,dplan,error
+tpch_17,tpch,prepare,ok,,,n/a,,27.5,md5:fff09a2420cbfe73ce1c058e0e588637,"PLAN (LINEITEM NATURAL)
+PLAN HASH (LINEITEM NATURAL, PART NATURAL)","Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=29.74)
+                -> Table ""LINEITEM"" Full Scan (rows=6001215.00)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=14994.30)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=29988.60)
+                -> Table ""LINEITEM"" Full Scan (rows=6001215.00)
+                -> Record Buffer (record length: 105) (rows=1008.43)
+                    -> Filter (rows=1008.43)
+                        -> Table ""PART"" Full Scan (rows=200000.00)",
+tpch_17,tpch,measured,timeout,,,n/a,,,md5:fff09a2420cbfe73ce1c058e0e588637,,,watchdog 600s
+tpch_20,tpch,prepare,ok,,,n/a,,34.2,md5:3569c6fe0d35fad0e43b3fda62ec17ee,"PLAN (LINEITEM NATURAL)
+PLAN HASH (SORT (HASH (SUPPLIER NATURAL, NATION NATURAL)), HASH (PARTSUPP NATURAL, PART NATURAL))","Sub-query
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=1.00)
+                -> Filter (rows=1147992.38)
+                    -> Table ""LINEITEM"" Full Scan (rows=6001215.00)
+Select Expression
+    -> Filter (rows=200.00)
+        -> Hash Join (semi) (keys: 1, total key length: 4) (rows=200.00)
+            -> Sort (record length: 428, key length: 104) (rows=400.00)
+                -> Hash Join (inner) (keys: 1, total key length: 4) (rows=400.00)
+                    -> Table ""SUPPLIER"" Full Scan (rows=10000.00)
+                    -> Record Buffer (record length: 129) (rows=1.00)
+                        -> Filter (rows=1.00)
+                            -> Table ""NATION"" Full Scan (rows=25.00)
+            -> Record Buffer (record length: 282) (rows=200000.00)
+                -> Filter (rows=200000.00)
+                    -> Hash Join (semi) (keys: 1, total key length: 4) (rows=200000.00)
+                        -> Filter (rows=400000.00)
+                            -> Table ""PARTSUPP"" Full Scan (rows=800000.00)
+                        -> Record Buffer (record length: 249) (rows=999.97)
+                            -> Filter (rows=999.97)
+                                -> Table ""PART"" Full Scan (rows=200000.00)",
+tpch_20,tpch,measured,timeout,,,n/a,,,md5:3569c6fe0d35fad0e43b3fda62ec17ee,,,watchdog 600s
+tpch_22,tpch,prepare,ok,,,n/a,,32.3,md5:4c00f56d0a26f50e620ba2a776d6aff3,"PLAN (CUSTSALE CUSTOMER NATURAL)
+PLAN (CUSTSALE ORDERS NATURAL)
+PLAN SORT (CUSTSALE CUSTOMER NATURAL)","Sub-query (invariant)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Filter (rows=71885.05)
+                -> Table ""CUSTOMER"" as ""CUSTSALE CUSTOMER"" Full Scan (rows=150000.00)
+Sub-query
+    -> Filter (rows=10.00)
+        -> Table ""ORDERS"" as ""CUSTSALE ORDERS"" Full Scan (rows=1500000.00)
+Select Expression
+    -> Sort (record length: 70, key length: 16) (rows=150000.00)
+        -> Hash Aggregate (keys: 1, key length: 11, group length: 144) (rows=150000.00)
+            -> Filter (rows=44595.27)
+                -> Table ""CUSTOMER"" as ""CUSTSALE CUSTOMER"" Full Scan (rows=150000.00)",
+tpch_22,tpch,measured,timeout,,,n/a,,,md5:4c00f56d0a26f50e620ba2a776d6aff3,,,watchdog 600s
