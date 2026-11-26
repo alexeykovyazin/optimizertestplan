@@ -1,0 +1,130 @@
+
+Q                 R S          
+====== ============ ========== 
+PA                3 X3         
+PA                3 X3         
+PA                3 X3         
+
+
+Q                 R 
+====== ============ 
+PB               50 
+
+
+Q                 K S          
+====== ============ ========== 
+PC                1 q1         
+PC                2 q1         
+PC                3 q1         
+
+
+Q                 R 
+====== ============ 
+PD                1 
+PD                2 
+PD                3 
+
+
+Q                 K S                    
+====== ============ ==================== 
+PE                0 V1                   
+PE                1 V1                   
+PE                2 V1                   
+
+
+Q                 K S                    
+====== ============ ==================== 
+PF                0 w1                   
+PF                1 w1                   
+PF                2 w1                   
+
+
+Q                 K S                    
+====== ============ ==================== 
+PG                0 s1                   
+PG                1 s1                   
+PG                2 s1                   
+
+
+Q      FH                                                           
+====== ============================================================ 
+FH     36,36,36,                                                    
+
+
+Q                ID S                    
+====== ============ ==================== 
+PI                1 CONST11              
+PI                2 CONST22              
+PI                3 CONST33              
+
+
+Q                      COUNT 
+====== ===================== 
+V1                         0 
+
+
+Q                      COUNT 
+====== ===================== 
+V2                         0 
+
+
+Q                      COUNT 
+====== ===================== 
+V3                       682 
+
+Statement failed, SQLSTATE = HY004
+SQL error code = -104
+-Datatypes are not comparable in expression LIST
+After line 159 in file 87_review_invariants_or_in.sql
+
+Q                      COUNT 
+====== ===================== 
+V5                         1 
+
+
+Q                      COUNT 
+====== ===================== 
+Statement failed, SQLSTATE = 22018
+conversion error from string "abc"
+After line 161 in file 87_review_invariants_or_in.sql
+
+Q                      COUNT 
+====== ===================== 
+V7                         0 
+
+
+Q                      COUNT 
+====== ===================== 
+D1                         0 
+
+Statement failed, SQLSTATE = 22018
+conversion error from string "-Infinity"
+After line 170 in file 87_review_invariants_or_in.sql
+
+Q                      COUNT 
+====== ===================== 
+D3                         1 
+
+
+Q                      COUNT 
+====== ===================== 
+W1                         1 
+
+
+PLAN (T INDEX (T_I))
+
+Q                      COUNT 
+====== ===================== 
+X1                        87 
+
+Statement failed, SQLSTATE = 42000
+index IP cannot be used in the specified plan
+After line 179 in file 87_review_invariants_or_in.sql
+
+PLAN (T INDEX (T_I))
+
+Q                      COUNT 
+====== ===================== 
+X3                        87 
+
+-- rc=1, 1 s
