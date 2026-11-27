@@ -36,6 +36,7 @@ ALIASES = {
     'tst20dp12': ['JoinOrderDP = true', 'JoinOrderDPBudget = 12'],
     'tst20dp100': ['JoinOrderDP = true', 'JoinOrderDPBudget = 100'],
     'tsthagg512': ['AggregateHashMemory = 512K'],
+    'tstsqc': ['SubQueryConversion = true'],
 }
 
 

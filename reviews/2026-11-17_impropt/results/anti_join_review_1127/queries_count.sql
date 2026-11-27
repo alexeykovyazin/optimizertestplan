@@ -1,0 +1,12 @@
+set bail off;
+set list on;
+select 'L81' q, count(*) c from p left join (d join c on c.id = d.id) on d.k = p.k where d.k is null;
+select 'L82' q, count(*) c from p left join (d join c on c.k = d.k) on d.j = p.j where d.j is null;
+select 'L83' q, count(*) c from (p left join d on d.k = p.k) join c on c.j = p.j where d.k is null;
+select 'L84' q, count(*) c from c join (p left join d on d.k = p.k) on c.j = p.j where d.k is null;
+select 'L85' q, count(*) c from p left join d on d.k = p.k left join c on c.j = p.j where d.k is null;
+select 'L86' q, p.x, count(*) c from (p left join d on d.k = p.k) join c on c.j = p.j where d.k is null group by p.x order by p.x;
+select 'N76' q, count(*) c from p join c on c.j = p.j where not exists (select 1 from d where d.k = p.k);
+select 'N77' q, count(*) c from p where not exists (select 1 from d join c on c.k = d.k where d.j = p.j);
+select 'N78' q, count(*) c from p join c on c.j = p.j where not exists (select 1 from d where d.k = p.k and p.x = 3);
+select 'N79' q, count(*) c from c join p on c.j = p.j where c.x = 1 and not exists (select 1 from d where d.k = p.k and d.j = c.j);

@@ -1,0 +1,148 @@
+
+RDB$CONFIG_VALUE                                                                                                                                                                                                                                                
+=============================================================================================================================================================================================================================================================== 
+true                                                                                                                                                                                                                                                            
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A01         
+C                               62
+S                               15694
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A02         
+C                               49
+S                               11662
+
+
+
+PLAN JOIN (P NATURAL, D NATURAL)
+
+Q                               A03         
+C                               0
+S                               <null>
+
+
+
+PLAN JOIN (P NATURAL, E NATURAL)
+
+Q                               A04         
+C                               125
+S                               31375
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A05         
+C                               14
+S                               3876
+
+
+
+PLAN JOIN (P INDEX (RDB$PRIMARY1), C INDEX (RDB$PRIMARY2))
+
+Q                               A06         
+C                               0
+S                               <null>
+
+
+
+PLAN JOIN (P INDEX (RDB$PRIMARY1), C INDEX (RDB$PRIMARY2))
+
+Q                               A07         
+C                               0
+S                               <null>
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A08         
+C                               24
+S                               6364
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A09         
+C                               51
+S                               12769
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A10         
+C                               63
+S                               15681
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A11         
+C                               63
+S                               15681
+
+
+
+PLAN HASH (HASH (C NATURAL, P NATURAL), D NATURAL)
+
+Q                               A12         
+C                               31
+S                               7234
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A13         
+C                               12
+S                               2780
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A14         
+C                               275
+S                               68425
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A15         
+C                               275
+S                               68425
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A16         
+C                               437
+S                               109569
+
+
+
+PLAN SORT (HASH (P NATURAL, D NATURAL))
+
+Q                               A17         
+X                               3
+C                               62
+
+
+
+Q                               A18         
+C                               438
+S                               109556
+
+
+-- rc=0, 0 s

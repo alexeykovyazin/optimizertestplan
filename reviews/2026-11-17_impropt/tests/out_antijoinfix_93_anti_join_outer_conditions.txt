@@ -1,0 +1,160 @@
+
+RDB$CONFIG_VALUE                                                                                                                                                                                                                                                
+=============================================================================================================================================================================================================================================================== 
+true                                                                                                                                                                                                                                                            
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A01         
+C                               437
+S                               109569
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A02         
+C                               462
+S                               115428
+
+
+
+PLAN JOIN (P NATURAL, D NATURAL)
+
+Q                               A03         
+C                               375
+S                               93875
+
+
+
+PLAN JOIN (P NATURAL, E NATURAL)
+
+Q                               A04         
+C                               500
+S                               125250
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A05         
+C                               482
+S                               120544
+
+
+
+PLAN JOIN (P INDEX (RDB$PRIMARY1), C INDEX (RDB$PRIMARY2))
+
+Q                               A06         
+C                               21
+S                               1785
+
+
+
+PLAN JOIN (P INDEX (RDB$PRIMARY1), C INDEX (RDB$PRIMARY2))
+
+Q                               A07         
+C                               29
+S                               2465
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A08         
+C                               500
+S                               125250
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A09         
+C                               462
+S                               116027
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A10         
+C                               63
+S                               15681
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A11         
+C                               63
+S                               15681
+
+
+
+PLAN HASH (HASH (C NATURAL, P NATURAL), D NATURAL)
+
+Q                               A12         
+C                               459
+S                               115024
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A13         
+C                               12
+S                               2780
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A14         
+C                               275
+S                               68425
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A15         
+C                               275
+S                               68425
+
+
+
+PLAN HASH (P NATURAL, D NATURAL)
+
+Q                               A16         
+C                               437
+S                               109569
+
+
+
+PLAN SORT (HASH (P NATURAL, D NATURAL))
+
+Q                               A17         
+X                               0
+C                               125
+
+Q                               A17         
+X                               1
+C                               125
+
+Q                               A17         
+X                               2
+C                               125
+
+Q                               A17         
+X                               3
+C                               62
+
+
+
+Q                               A18         
+C                               63
+S                               15681
+
+
+-- rc=0, 0 s
