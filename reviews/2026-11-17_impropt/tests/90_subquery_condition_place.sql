@@ -1,4 +1,4 @@
--- Test 90: the place of a condition that runs a subquery for every row (the optimizer note 4.69).
+-- Test 90: the place of a condition that runs a subquery for every row (the optimizer note 4.70).
 -- Such a condition of a stream waits for the end of the inner join when the join leaves fewer rows than the
 -- stream delivers. The results are the same before and after the change; the explained plans differ.
 -- Expected results: P1: 99, 10000;  P2: 18, 1791;  P3: 834, 184867;  P4: 29, 2841;  P5: 97, 22256;  P6: 600, 180300
