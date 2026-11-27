@@ -1,0 +1,90 @@
+
+PLAN JOIN (A INDEX (A_I, A_S, A_I, A_S, A_I, A_S), B INDEX (RDB$PRIMARY2))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+Q1                        14                  1535 
+
+
+PLAN (A INDEX (A_P1))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+I1                        13                  4441 
+
+
+PLAN (A INDEX (A_P1))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+I2                        13                  4441 
+
+
+PLAN (A INDEX (A_P1))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+I3                        13                  4441 
+
+
+PLAN (A INDEX (A_P1))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+I4                        13                  4441 
+
+
+PLAN (A INDEX (A_I))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+A1                        66                 20476 
+
+
+PLAN (A INDEX (A_IJ))
+
+Q                          C                    SA 
+====== ===================== ===================== 
+A2                        13                  3916 
+
+
+Q                          C                     T                     F 
+====== ===================== ===================== ===================== 
+L1                       600                    20                   558 
+
+
+Q                          C                     T                     F 
+====== ===================== ===================== ===================== 
+L2                       600                    20                   558 
+
+
+Q                          C                    SA 
+====== ===================== ===================== 
+V1                        13                  3916 
+
+
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=204.78)
+            -> Hash Join (inner) (keys: 1, total key length: 4) (rows=409.56)
+                -> Filter (rows=245.04)
+                    -> Table "A" Access By ID (rows=245.04)
+                        -> Bitmap Or
+                            -> Bitmap
+                                -> Index "A_S" Range Scan (full match)
+                            -> Bitmap
+                                -> Index "A_S" Range Scan (full match)
+                -> Record Buffer (record length: 57) (rows=112.82)
+                    -> Filter (rows=112.82)
+                        -> Table "B" Access By ID (rows=112.82)
+                            -> Bitmap Or
+                                -> Bitmap
+                                    -> Index "B_K" Range Scan (lower bound: 1/1)
+                                -> Bitmap
+                                    -> Index "B_K" Range Scan (upper bound: 1/1)
+
+Q                          C                    SA 
+====== ===================== ===================== 
+D1                       258                 74220 
+
+-- rc=0, 1 s

@@ -1,0 +1,124 @@
+
+Sub-query
+    -> Filter (rows=1.13)
+        -> Table "C" as "L2" Access By ID (rows=2.26)
+            -> Bitmap
+                -> Index "C_AI" Range Scan (full match)
+Sub-query
+    -> Filter (rows=0.57)
+        -> Table "C" as "L3" Access By ID (rows=2.26)
+            -> Bitmap
+                -> Index "C_AI" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=63.81)
+            -> Table "B" Full Scan (rows=255.25)
+            -> Record Buffer (record length: 33) (rows=170.17)
+                -> Filter (rows=170.17)
+                    -> Table "A" Full Scan (rows=680.67)
+
+Q                          C                    SA 
+====== ===================== ===================== 
+P1                        99                 10000 
+
+
+Sub-query
+    -> Filter (rows=1.13)
+        -> Table "C" as "L2" Access By ID (rows=2.26)
+            -> Bitmap
+                -> Index "C_AI" Range Scan (full match)
+Sub-query
+    -> Filter (rows=0.57)
+        -> Table "C" as "L3" Access By ID (rows=2.26)
+            -> Bitmap
+                -> Index "C_AI" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=3.19)
+            -> Filter (rows=25.53)
+                -> Table "B" Full Scan (rows=255.25)
+            -> Filter (rows=0.12)
+                -> Table "A" Access By ID (rows=1.00)
+                    -> Bitmap
+                        -> Index "RDB$PRIMARY1" Unique Scan
+
+Q                          C                    SA 
+====== ===================== ===================== 
+P2                        18                  1791 
+
+
+Sub-query
+    -> Filter (rows=14.18)
+        -> Table "B" as "B2" Access By ID (rows=28.36)
+            -> Bitmap
+                -> Index "B_I" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (inner) (keys: 1, total key length: 4) (rows=510.50)
+            -> Table "C" Full Scan (rows=1021.00)
+            -> Record Buffer (record length: 33) (rows=340.33)
+                -> Filter (rows=340.33)
+                    -> Table "A" Full Scan (rows=680.67)
+
+Q                          C                    SA 
+====== ===================== ===================== 
+P3                       834                184867 
+
+
+Sub-query (invariant)
+    -> Singularity Check (rows=1.00)
+        -> Aggregate (rows=1.00)
+            -> Table "B" Full Scan (rows=255.25)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Nested Loop Join (inner) (rows=9.57)
+            -> Filter (rows=95.70)
+                -> Table "A" Access By ID (rows=95.70)
+                    -> Bitmap
+                        -> Index "A_I" Range Scan (lower bound: 1/1)
+            -> Count (rows=1.00)
+                -> Filter (rows=0.10)
+                    -> Table "B" Access By ID (rows=1.00)
+                        -> Bitmap
+                            -> Index "RDB$PRIMARY2" Unique Scan
+
+Q                          C                    SA 
+====== ===================== ===================== 
+P4                        29                  2841 
+
+
+Sub-query
+    -> Filter (rows=2.26)
+        -> Table "C" as "L2" Access By ID (rows=2.26)
+            -> Bitmap
+                -> Index "C_AI" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Filter (rows=68.07)
+            -> Table "A" Access By ID (rows=136.13)
+                -> Bitmap
+                    -> Index "A_S" Range Scan (full match)
+
+Q                          C                    SA 
+====== ===================== ===================== 
+P5                        97                 22256 
+
+
+Sub-query
+    -> Filter (rows=2.26)
+        -> Table "C" as "L2" Access By ID (rows=2.26)
+            -> Bitmap
+                -> Index "C_AI" Range Scan (full match)
+Select Expression
+    -> Aggregate (rows=1.00)
+        -> Hash Join (outer) (keys: 1, total key length: 4) (rows=340.33)
+            -> Filter (rows=340.33)
+                -> Table "A" Full Scan (rows=680.67)
+            -> Record Buffer (record length: 25) (rows=255.25)
+                -> Table "B" Full Scan (rows=255.25)
+
+Q                          C                    SA 
+====== ===================== ===================== 
+P6                       600                180300 
+
+-- rc=0, 0 s
