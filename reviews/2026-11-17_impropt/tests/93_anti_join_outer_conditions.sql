@@ -12,9 +12,11 @@
 --   A11: 63, 15681       A12: 459, 115024     A13: 12, 2780        A14: 275, 68425      A15: 275, 68425
 --   A16: 437, 109569     A17: 125 / 125 / 125 / 62                 A18: 63, 15681
 -- The build with the defect gives other results in A01 - A09, A12, A17 and A18.
--- Expected plans: A01, A02, A05, A08, A09 - HASH (P NATURAL, D NATURAL); A03 - JOIN (P NATURAL, D NATURAL);
---   A04 - JOIN (P NATURAL, E NATURAL); A06, A07 - JOIN (P INDEX (RDB$PRIMARY1), C INDEX (RDB$PRIMARY2));
---   A12 - HASH (HASH (C NATURAL, P NATURAL), D NATURAL). Every query has one PLAN line (no sub-query).
+-- Expected plans: A01, A02, A05, A08, A09 - HASH (P NATURAL, D NATURAL);
+--   A06, A07 - JOIN (P INDEX (RDB$PRIMARY1), C INDEX (RDB$PRIMARY2));
+--   A12 - HASH (HASH (C NATURAL, P NATURAL), D NATURAL). These queries have one PLAN line (no sub-query).
+--   A03, A04 stay sub-queries (no condition ties the inner table to the outer one): two PLAN lines,
+--   (D NATURAL) or (E NATURAL), then (P NATURAL).
 set bail off;
 set names utf8;
 create database 'tstsqc' user SYSDBA default character set utf8;
@@ -61,9 +63,9 @@ set plan on;
 select 'A01' q, count(*) c, sum(p.id) s from p where not exists (select 1 from d where d.k = p.k and p.x = 3);
 -- A02: the join key and an equality of two outer columns
 select 'A02' q, count(*) c, sum(p.id) s from p where not exists (select 1 from d where d.k = p.k and p.x = p.j);
--- A03: only a condition over the outer table, the inner table is not empty
+-- A03: only a condition over the outer table, the inner table is not empty (it stays a sub-query)
 select 'A03' q, count(*) c, sum(p.id) s from p where not exists (select 1 from d where p.x = 3);
--- A04: the same, the inner table is empty
+-- A04: the same, the inner table is empty (it stays a sub-query)
 select 'A04' q, count(*) c, sum(p.id) s from p where not exists (select 1 from e where p.x = 3);
 -- A05: two equalities with one inner column; the optimizer derives P.K = P.J
 select 'A05' q, count(*) c, sum(p.id) s from p where not exists (select 1 from d where d.k = p.k and d.k = p.j);

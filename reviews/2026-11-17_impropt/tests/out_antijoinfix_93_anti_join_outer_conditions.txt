@@ -20,7 +20,8 @@ S                               115428
 
 
 
-PLAN JOIN (P NATURAL, D NATURAL)
+PLAN (D NATURAL)
+PLAN (P NATURAL)
 
 Q                               A03         
 C                               375
@@ -28,7 +29,8 @@ S                               93875
 
 
 
-PLAN JOIN (P NATURAL, E NATURAL)
+PLAN (E NATURAL)
+PLAN (P NATURAL)
 
 Q                               A04         
 C                               500
