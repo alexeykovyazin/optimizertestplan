@@ -9,6 +9,8 @@
 --   L1: 600, 20, 558  the three-valued logic: the rows, the rows where the OR is true, the rows where NOT (OR) is true
 --   L2: the same numbers for the factored form written by hand
 --   V1: 13, 3916      RAND() in every arm is not taken out, the result is the same
+--   W1: five rows     an IN list with a PSQL variable in a loop: the list follows the variable (v = 0..4):
+--                     260/78689, 234/75062, 273/85163, 260/76154, 0/null
 --   D1: 258, 74220    no common condition but the join equality outside the OR: the restriction of every table is
 --                     derived from two conditions of an arm
 -- Expected plans (before the change -> after it):
@@ -85,6 +87,22 @@ select 'L2' q, count(*) c,
   sum(iif(not (i = 1 and k = 1 and (j = 2 or j = 3)), 1, 0)) f from a;
 
 select 'V1' q, count(*) c, sum(a.id) sa from a where (i = 1 and rand() >= 0 and j = 2) or (i = 1 and rand() >= 0 and j = 2);
+
+set term ^;
+execute block returns (q varchar(2), v int, c int, sa bigint) as
+begin
+  q = 'W1';
+  v = 0;
+  while (v <= 4) do
+  begin
+    select count(*), sum(a.id) from a join b on b.i = a.i
+      where (a.j in (:v, 100) and a.s = 'a' and b.k >= 1) or (a.j in (:v + 1, 200) and a.s = 'A' and b.k <= 2)
+      into :c, :sa;
+    suspend;
+    v = v + 1;
+  end
+end^
+set term ;^
 
 set explain on;
 select 'D1' q, count(*) c, sum(a.id) sa from a, b
