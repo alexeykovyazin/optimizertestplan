@@ -1,0 +1,142 @@
+
+Select Expression
+    -> Aggregate
+        -> Hash Aggregate (keys: 1, key length: 5, group length: 80)
+            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1)
+                -> Table "T" as "B" Full Scan
+                -> Record Buffer (record length: 25)
+                    -> Table "T" as "A" Full Scan
+
+T                       COUNT                                           SUM 
+======= ===================== ============================================= 
+W1 rows                    40                                       1200000 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Aggregate
+                -> Sort (record length: 60, key length: 40)
+                    -> Union
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144)
+                            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1)
+                                -> Table "T" as "B" Full Scan
+                                -> Record Buffer (record length: 25)
+                                    -> Table "T" as "A" Full Scan
+                        -> Aggregate
+                            -> Sort (record length: 68, key length: 8)
+                                -> Hash Join (inner) (keys: 1, total key length: 4)
+                                    -> Table "T" as "A" Full Scan
+                                    -> Record Buffer (record length: 41)
+                                        -> Table "T" as "B" Full Scan
+
+T                       COUNT 
+======= ===================== 
+W1 diff                     0 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Aggregate
+                -> Sort (record length: 206, key length: 180)
+                    -> Union
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 336)
+                            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1)
+                                -> Table "T" as "B" Full Scan
+                                -> Record Buffer (record length: 25)
+                                    -> Table "T" as "A" Full Scan
+                        -> Aggregate
+                            -> Sort (record length: 188, key length: 8)
+                                -> Hash Join (inner) (keys: 1, total key length: 4)
+                                    -> Table "T" as "A" Full Scan
+                                    -> Record Buffer (record length: 161)
+                                        -> Table "T" as "B" Full Scan
+
+T                       COUNT 
+======= ===================== 
+W2 diff                     0 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Aggregate
+                -> Sort (record length: 60, key length: 40)
+                    -> Union
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144)
+                            -> Hash Join (inner) (keys: 1, total key length: 4)
+                                -> Table "T" as "A" Full Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table "T" as "B" Full Scan
+                        -> Aggregate
+                            -> Sort (record length: 68, key length: 8)
+                                -> Hash Join (inner) (keys: 1, total key length: 4)
+                                    -> Table "T" as "A" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Table "T" as "B" Full Scan
+
+T                       COUNT 
+======= ===================== 
+W3 diff                     0 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Aggregate
+                -> Sort (record length: 52, key length: 32)
+                    -> Union
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 144)
+                            -> Hash Join (inner) (keys: 1, total key length: 4, counted streams: 1)
+                                -> Table "T" as "B" Full Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Filter
+                                        -> Table "T" as "A" Access By ID
+                                            -> Bitmap
+                                                -> Index "RDB$PRIMARY1" Range Scan (upper bound: 1/1)
+                        -> Aggregate
+                            -> Sort (record length: 196, key length: 8)
+                                -> Hash Join (inner) (keys: 1, total key length: 4)
+                                    -> Table "T" as "B" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Filter
+                                            -> Table "T" as "A" Access By ID
+                                                -> Bitmap
+                                                    -> Index "RDB$PRIMARY1" Range Scan (upper bound: 1/1)
+
+T                       COUNT 
+======= ===================== 
+W4 diff                     0 
+
+
+Select Expression
+    -> Aggregate
+        -> Filter
+            -> Aggregate
+                -> Sort (record length: 44, key length: 20)
+                    -> Union
+                        -> Hash Aggregate (keys: 1, key length: 5, group length: 80)
+                            -> Hash Join (inner) (keys: 1, total key length: 4)
+                                -> Hash Join (inner) (keys: 1, total key length: 4)
+                                    -> Table "T" as "A" Full Scan
+                                    -> Record Buffer (record length: 25)
+                                        -> Table "T" as "C" Full Scan
+                                -> Record Buffer (record length: 33)
+                                    -> Table "T" as "B" Full Scan
+                        -> Aggregate
+                            -> Sort (record length: 84, key length: 8)
+                                -> Hash Join (inner) (keys: 1, total key length: 4)
+                                    -> Hash Join (inner) (keys: 1, total key length: 4)
+                                        -> Table "T" as "A" Full Scan
+                                        -> Record Buffer (record length: 25)
+                                            -> Table "T" as "C" Full Scan
+                                    -> Record Buffer (record length: 33)
+                                        -> Table "T" as "B" Full Scan
+
+T                       COUNT 
+======= ===================== 
+W5 diff                     0 
+
+
+##### rc=0

@@ -8,6 +8,9 @@
 -- Expected plans (the build with the change): the mark "counted streams: 1" of a hash join under "Hash Aggregate"
 -- in the first branch of the cases where the optimizer hashes the table nothing refers to (W4 and W5 here; in
 -- W1 and W2 it hashes the other table, in W3 both tables are referred to).
+-- Since the optimizer notes 4.67 and 4.68 (see also the test 91): W1 and W2 have the mark too (the table nothing
+-- refers to goes to the hashed side); W5 has no mark (the table C is joined by its primary key and is not
+-- counted, the table A gives it the key). Reference: out_countedside_79_hash_agg_counted_join.txt.
 set bail off;
 create database 'tst2def' user SYSDBA default character set utf8;
 create table t (id int not null primary key, k int not null, m int not null, s varchar(30), v numeric(18,2));
